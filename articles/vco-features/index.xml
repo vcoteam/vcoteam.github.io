@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vCO Features on </title>
-    <link>http://new.vcoteam.info/articles/vco-features.html</link>
+    <link>http://localhost:1313/articles/vco-features.html</link>
     <description>Recent content in vCO Features on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 13 Jun 2020 15:53:08 -0400</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/articles/vco-features/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/articles/vco-features/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

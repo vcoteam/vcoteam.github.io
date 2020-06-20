@@ -2,43 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on </title>
-    <link>http://new.vcoteam.info/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 Jun 2010 15:54:00 -0400</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to create a Microsoft DNS Dynamic Types plug-in ?</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</link>
+      <link>http://localhost:1313/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</guid>
-      <description>On the VMware blogI have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.
+      <guid>http://localhost:1313/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</guid>
+      <description>On the VMware blog I have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.
 In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:
  The Microsoft DNS dynamic types plug-in DNS record as a service in vRA DNS record as a blueprint component  This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.</description>
     </item>
     
     <item>
       <title>Are there any professional services available for vCO ?</title>
-      <link>http://new.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</link>
+      <link>http://localhost:1313/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</guid>
+      <guid>http://localhost:1313/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</guid>
       <description>There are VMware and VMware partner services such as:
  Consulting services (VMware and partners) - Requirement analysis, implementation workshops Orchestration Solution Centers (VMware and partners) - Design, develop vCO workflows. vCO Instructor Lead Training (VMware) - 5 days  </description>
     </item>
     
     <item>
       <title>How can I engage vCO professional services ?</title>
-      <link>http://new.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</link>
+      <link>http://localhost:1313/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</guid>
-      <description></description>
+      <guid>http://localhost:1313/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</guid>
+      <description>Please contact your VMware sales representative to engage VMware or partners Professional Services. VMware has vCenter Orchestrator Subject Matter Experts in different regions and a development team delivering engagements worldwide.</description>
     </item>
     
   </channel>
