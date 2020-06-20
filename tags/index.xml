@@ -6,37 +6,10 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jun 2020 15:43:12 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://new.vcoteam.info/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>tag1</title>
-      <link>http://new.vcoteam.info/tags/tag1.html</link>
-      <pubDate>Sat, 13 Jun 2020 15:43:12 -0400</pubDate>
-      
-      <guid>http://new.vcoteam.info/tags/tag1.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag2</title>
-      <link>http://new.vcoteam.info/tags/tag2.html</link>
-      <pubDate>Sat, 13 Jun 2020 15:43:12 -0400</pubDate>
-      
-      <guid>http://new.vcoteam.info/tags/tag2.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag3</title>
-      <link>http://new.vcoteam.info/tags/tag3.html</link>
-      <pubDate>Sat, 13 Jun 2020 15:43:12 -0400</pubDate>
-      
-      <guid>http://new.vcoteam.info/tags/tag3.html</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>DNS</title>
