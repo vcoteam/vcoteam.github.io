@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tag3 on </title>
+    <link>http://new.vcoteam.info/tags/tag3.html</link>
+    <description>Recent content in tag3 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Jun 2020 15:43:12 -0400</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/tags/tag3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A</title>
+      <link>http://new.vcoteam.info/a.html</link>
+      <pubDate>Sat, 13 Jun 2020 15:43:12 -0400</pubDate>
+      
+      <guid>http://new.vcoteam.info/a.html</guid>
+      <description>This is a test page</description>
+    </item>
+    
+  </channel>
+</rss>

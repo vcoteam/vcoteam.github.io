@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DNS on </title>
+    <link>http://new.vcoteam.info/tags/dns.html</link>
+    <description>Recent content in DNS on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to create a Microsoft DNS Dynamic Types plug-in ?</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</link>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</guid>
+      <description>On the VMware blogI have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.
+In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:
+ The Microsoft DNS dynamic types plug-in DNS record as a service in vRA DNS record as a blueprint component  This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.</description>
+    </item>
+    
+  </channel>
+</rss>

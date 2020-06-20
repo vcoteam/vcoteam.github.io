@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>How to create a Microsoft DNS Dynamic Types plug-in ? - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="On the 1 I have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.&lt;br /&gt;&lt;br /&gt;In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;The Microsoft DNS dynamic types plug-in&lt;/li&gt;&lt;li&gt;DNS record as a service in vRA&lt;/li&gt;&lt;li&gt;DNS record as a blueprint component&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.&lt;/p&gt;">
+		<meta property="og:title" content="How to create a Microsoft DNS Dynamic Types plug-in ?" />
+<meta property="og:description" content="On the 1 I have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.&lt;br /&gt;&lt;br /&gt;In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;The Microsoft DNS dynamic types plug-in&lt;/li&gt;&lt;li&gt;DNS record as a service in vRA&lt;/li&gt;&lt;li&gt;DNS record as a blueprint component&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.&lt;/p&gt;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html" />
+<meta property="article:published_time" content="2017-10-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-10-18T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to create a Microsoft DNS Dynamic Types plug-in ?"/>
+<meta name="twitter:description" content="On the 1 I have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.&lt;br /&gt;&lt;br /&gt;In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;The Microsoft DNS dynamic types plug-in&lt;/li&gt;&lt;li&gt;DNS record as a service in vRA&lt;/li&gt;&lt;li&gt;DNS record as a blueprint component&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.&lt;/p&gt;"/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn vCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">Newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">How to create a Microsoft DNS Dynamic Types plug-in ?</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-10-18T00:00:00Z">October 18, 2017</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>On the <a href="https://blogs.vmware.com/orchestrator/?p=780">VMware blog</a>I have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.</p>
+<p>In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:</p>
+<ul>
+<li>The Microsoft DNS dynamic types plug-in</li>
+<li>DNS record as a service in vRA</li>
+<li>DNS record as a blueprint component</li>
+</ul>
+<p>This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.</p>
+<h2 id="creating-a-microsoft-dns-plug-in">Creating a Microsoft DNS plug-in</h2>
+<h3 id="-1--the-name-space">-1- The name space</h3>
+<p>First you need to run the &ldquo;Define Namespace&rdquo; workflow.</p>
+<p>If you look at the plug-in inventory you will notice that Dynamic Types as a root element. All the namespaces you will create will be listed under this root element. The name should define your plug-in. In my case &ldquo;Microsoft DNS&rdquo;. This name will be used to prefix the type of your plug-in objects. For example &ldquo;DynamicTypes:Microsoft DNS.zone&rdquo;
+<figure>
+    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-002.png"/> <figcaption>
+            <h4>The Dynamic Types namespaces</h4>
+        </figcaption>
+</figure>
+</p>
+<!-- raw HTML omitted -->
+<p>if (relationName == &ldquo;hosts-host&rdquo;) {
+resultObjs = System.getModule(&ldquo;com.vmware.coe.microsoft.dns.dt&rdquo;).findAllMicrosoftDNSHost(&ldquo;host&rdquo;);
+}
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>for each(var powershellHost in powershellHosts) {
+var object = DynamicTypesManager.makeObject(&ldquo;Microsoft DNS&rdquo;, &ldquo;host&rdquo;, powershellHost.id, powershellHost.name, new Array());
+sess = powershellHost.openSession()
+sess.addCommandFromString(&lsquo;get-dnsServerSetting | ConvertTo-Json&rsquo;);
+var invResult = sess.invokePipeline();
+if (invResult.invocationState == &lsquo;Failed&rsquo;) {
+System.error(invResult.getErrors());
+} else {
+//System.log( invResult.getHostOutput() );
+var serverSetting = JSON.parse(invResult.getHostOutput());
+for each(var properties in serverSetting.CimInstanceProperties) {
+object.setProperty(properties.Name, properties.Value);
+//System.log(properties.Name + &quot; = &quot; + properties.Value);
+}
+}
+resultObjs.push(object);
+}
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code>var sess;
+try {  
+    sess = powershellHost.openSession()  
+    sess.addCommandFromString('get-DnsServerZone | ConvertTo-Json -Compress');  
+    var invResult = sess.invokePipeline();
+    if (invResult.invocationState  == 'Failed'){  
+        System.error(invResult.getErrors());  
+    }    
+    else { 
+        //System.log( invResult.getHostOutput() );
+        var zones = JSON.parse(invResult.getHostOutput());
+		
+        for each (var zone in zones) {
+            System.log(zone.ZoneName);
+            var object = null;
+            if (zoneFolderType == &quot;conditionalForwarders&quot; &amp;amp;&amp;amp; zone.ZoneType == &quot;Forwarder&quot;){			
+                object = DynamicTypesManager.makeObject(&quot;Microsoft DNS&quot;, &quot;zone&quot;, powershellHostId + &quot;/&quot; + zone.ZoneName, zone.ZoneName, new Array());
+            }
+            if (zoneFolderType == &quot;forwardLookupZones&quot; &amp;amp;&amp;amp; zone.ZoneType == &quot;Primary&quot; &amp;amp;&amp;amp; zone.IsReverseLookupZone == false) {
+                object = DynamicTypesManager.makeObject(&quot;Microsoft DNS&quot;, &quot;zone&quot;, powershellHostId + &quot;/&quot; + zone.ZoneName, zone.ZoneName, new Array());
+            }
+            if (zoneFolderType == &quot;reverseLookupZones&quot; &amp;amp;&amp;amp; zone.ZoneType == &quot;Primary&quot; &amp;amp;&amp;amp; zone.IsReverseLookupZone == true) {
+                object = DynamicTypesManager.makeObject(&quot;Microsoft DNS&quot;, &quot;zone&quot;, powershellHostId + &quot;/&quot; + zone.ZoneName, zone.ZoneName, new Array());
+            }
+		
+            if (object != null) {
+                object.setProperty(&quot;ZoneType&quot;, zone.ZoneType);
+                object.setProperty(&quot;IsAutoCreated&quot;, zone.IsAutoCreated);
+                object.setProperty(&quot;IsDsIntegrated&quot;, zone.IsDsIntegrated);
+                object.setProperty(&quot;IsReverseLookupZone&quot;, zone.IsReverseLookupZone);
+                resultObjs.push(object);				
+            }
+        }	
+    }
+} catch ( ex ) {  
+    System.log (ex);  
+} finally {  
+    if (sess) {  
+        powershellHost.closeSession( sess.getSessionId());  
+    }  
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code>        for each (var resourceRecord in resourceRecords) {
+            var resourceRecordProperties = System.getModule(&quot;com.vmware.coe.microsoft.dns.dt&quot;).getMicrosoftDNSObjectProperties(resourceRecord);
+            // Adding parent zone name
+            resourceRecordProperties.put(&quot;Zone&quot;, zoneName);
+						
+            var name = resourceRecord.HostName;
+            if (name == &quot;@&quot;) name = &quot;(same as parent folder)&quot;;
+            var encodedId = System.getModule(&quot;com.vmware.coe.microsoft.dns.dt&quot;).getMicrosoftResourceRecordId(resourceRecordProperties) ;
+            var object = DynamicTypesManager.makeObject(&quot;Microsoft DNS&quot;, &quot;resourceRecord&quot;, powershellHost.id + &quot;/&quot; + encodedId, name, new Array());
+
+            for each (var key in resourceRecordProperties.keys) {
+                System.log(key + &quot; : &quot; + resourceRecordProperties.get(key));
+                object.setProperty(key, resourceRecordProperties.get(key));
+            }
+            resultObjs.push(object);
+        }
+    }
+} catch ( ex ) {  
+    System.log (ex);  
+} finally {  
+    if (sess) {  
+        powershellHost.closeSession( sess.getSessionId());  
+    } 
+}
+</code></pre>
+<p>}
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>for each (var  property in dynamicTypeObject.getOrderedPropertyNames()) {
+try {
+System.log(&quot;\t&rdquo; + property + &quot; = &quot; + dynamicTypeObject.getProperty(property));
+} catch(e) {System.warn(&ldquo;Did not found property &quot; + property)};	
+}
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>for each (var powershellHost in powershellHosts) {
+resultObjs.push(DynamicTypesManager.makeObject(&ldquo;Microsoft DNS&rdquo;, &ldquo;zones&rdquo;, powershellHost.id + &ldquo;/forwardLookupZones&rdquo;, &ldquo;Forward Lookup Zones&rdquo;, new Array()));
+resultObjs.push(DynamicTypesManager.makeObject(&ldquo;Microsoft DNS&rdquo;, &ldquo;zones&rdquo;, powershellHost.id + &ldquo;/reverseLookupZones&rdquo;, &ldquo;Reverse Lookup Zones&rdquo;, new Array()));
+resultObjs.push(DynamicTypesManager.makeObject(&ldquo;Microsoft DNS&rdquo;, &ldquo;zones&rdquo;, powershellHost.id + &ldquo;/conditionalForwarders&rdquo;, &ldquo;Conditional Forwarders&rdquo;, new Array()));
+}
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>for each(var powershellHost in powershellHosts) {
+resultObjs = new Array();
+var sess;
+try {
+sess = powershellHost.openSession()
+sess.addCommandFromString(&lsquo;get-dnsServerZone| ConvertTo-Json -depth 3 -Compress&rsquo;);
+var invResult = sess.invokePipeline();
+if (invResult.invocationState == &lsquo;Failed&rsquo;) {
+System.error(invResult.getErrors());
+} else {
+//System.log( invResult.getHostOutput() );
+var zones = JSON.parse(invResult.getHostOutput());</p>
+<pre><code>        for each(var zone in zones) {
+            var object = null;
+            object = DynamicTypesManager.makeObject(&quot;Microsoft DNS&quot;, &quot;zone&quot;, powershellHost.id + &quot;/&quot; + zone.ZoneName, zone.ZoneName, new Array());
+
+            for each(var properties in zone.CimInstanceProperties) {
+                if (properties.Value == null) object.setProperty(properties.Name, &quot;&quot;);
+                else object.setProperty(properties.Name, properties.Value);
+                //System.log(properties.Name + &quot; = &quot; + properties.Value);	
+            }
+            resultObjs.push(object);
+        }
+    }
+} catch (ex) {
+    System.log(ex);
+} finally {
+    if (sess) {
+        powershellHost.closeSession(sess.getSessionId());
+    }
+}
+</code></pre>
+<p>}<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>for each(var powershellHost in powershellHosts) {
+resultObjs = new Array();
+var sess;
+try {
+sess = powershellHost.openSession();
+// We get the zones first instead of piping them since we want the zone to be a property of the object
+sess.addCommandFromString(&lsquo;get-dnsServerZone | ConvertTo-Json -depth 1 -Compress&rsquo;);</p>
+<pre><code>    var invResult = sess.invokePipeline();
+    if (invResult.invocationState == 'Failed') {
+        System.error(invResult.getErrors());
+    } else {
+
+        //System.log(invResult.getHostOutput() );
+        var zones = JSON.parse(invResult.getHostOutput());
+
+        for each(var zone in zones) {
+            var zoneName = zone.ZoneName;
+            sess.addCommandFromString('get-dnsServerResourceRecord ' + zoneName + ' | ConvertTo-Json -depth 3 -Compress'); //3 required to get proper recordData
+
+            var invResult = sess.invokePipeline();
+            if (invResult.invocationState == 'Failed') {
+                System.error(invResult.getErrors());
+            } else {
+                //System.log( invResult.getHostOutput() );
+                var resourceRecords = JSON.parse(invResult.getHostOutput());
+
+                for each(var resourceRecord in resourceRecords) {						
+                    var resourceRecordProperties = System.getModule(&quot;com.vmware.coe.microsoft.dns.dt&quot;).getMicrosoftDNSObjectProperties(resourceRecord);
+                    // Adding parent zone name
+                    resourceRecordProperties.put(&quot;Zone&quot;, zoneName);
+								
+                    var name = resourceRecord.HostName;
+                    if (name == &quot;@&quot;) name = &quot;(same as parent folder)&quot;;
+                    var encodedId = System.getModule(&quot;com.vmware.coe.microsoft.dns.dt&quot;).getMicrosoftResourceRecordId(resourceRecordProperties) ;
+                    var object = DynamicTypesManager.makeObject(&quot;Microsoft DNS&quot;, &quot;resourceRecord&quot;, powershellHost.id + &quot;/&quot; + encodedId, name, new Array());
+
+                    for each (var key in resourceRecordProperties.keys) {
+                        System.log(key + &quot; : &quot; + resourceRecordProperties.get(key));
+                        object.setProperty(key, resourceRecordProperties.get(key));
+                    }
+                    resultObjs.push(object);
+                }
+            }
+        }
+    }
+} catch (ex) {
+    System.log(ex);
+} finally {
+    if (sess) {
+        powershellHost.closeSession(sess.getSessionId());
+    }
+}
+</code></pre>
+<p>}
+<!-- raw HTML omitted -->
+The scripting is very similar to &ldquo;Find All Microsoft DNS-zone&rdquo;. The difference is that we make two PowerShell calls : one for the zones and one for the records since we must provide a zone for the get-dnsServerResourceRecord cmdlet. At first I managed it in a single call where I piped the zones but since I want to add a zone property for each record this was not working since the zone is not a property of the resource Record. Then I am generating the ID with the resourceRcord properties as explained before.<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code>    var invResult = sess.invokePipeline();
+    if (invResult.invocationState == 'Failed') {
+        System.error(invResult.getErrors());
+    } else {
+        //System.log( invResult.getHostOutput() );
+        var serverSetting = JSON.parse(invResult.getHostOutput());
+        for each(var properties in serverSetting.CimInstanceProperties) {
+            object.setProperty(properties.Name, properties.Value);
+            //System.log(properties.Name + &quot; = &quot; + properties.Value);	
+        }
+    }
+} catch (ex) {
+    System.log(ex);
+} finally {
+    if (sess) {
+        powershellHost.closeSession(sess.getSessionId());
+
+    }
+}
+</code></pre>
+<p>}
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->Same code as already completed except we query a single DNS host to gets its property settings.<!-- raw HTML omitted -->I could put this in an action to call it from the find All Microsoft DNS Host workflow.<!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code>        for each(var properties in zone.CimInstanceProperties) {
+            if (properties.Value == null) object.setProperty(properties.Name, &quot;&quot;);
+            else object.setProperty(properties.Name, properties.Value);
+            //System.log(properties.Name + &quot; = &quot; + properties.Value);	
+        }
+    }
+} catch (ex) {
+    System.log(ex);
+} finally {
+    if (sess) {
+        powershellHost.closeSession(sess.getSessionId());
+    }
+}
+resultObj = object;
+</code></pre>
+<p>}
+<!-- raw HTML omitted -->
+Here we leverage the fact we used the zone name as the ID. This allows passing it to get-dnsServerZone and get all the object properties.<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code>// private property
+_keyStr: &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,
+
+// public method for decoding
+decode: function(input) {
+    var output = &quot;&quot;;
+    var chr1, chr2, chr3;
+    var enc1, enc2, enc3, enc4;
+    var i = 0;
+
+    input = input.replace(/[^A-Za-z0-9\+\/\=]/g, &quot;&quot;);
+
+    while (i &amp;lt; input.length) {
+
+        enc1 = this._keyStr.indexOf(input.charAt(i++));
+        enc2 = this._keyStr.indexOf(input.charAt(i++));
+        enc3 = this._keyStr.indexOf(input.charAt(i++));
+        enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+        chr1 = (enc1 &amp;lt;&amp;lt; 2) | (enc2 &amp;gt;&amp;gt; 4);
+        chr2 = ((enc2 &amp;amp; 15) &amp;lt;&amp;lt; 4) | (enc3 &amp;gt;&amp;gt; 2);
+        chr3 = ((enc3 &amp;amp; 3) &amp;lt;&amp;lt; 6) | enc4;
+
+        output = output + String.fromCharCode(chr1);
+
+        if (enc3 != 64) {
+            output = output + String.fromCharCode(chr2);
+        }
+        if (enc4 != 64) {
+            output = output + String.fromCharCode(chr3);
+        }
+    }
+
+    output = Base64._utf8_decode(output);
+
+    return output;
+},
+
+// private method for UTF-8 decoding
+_utf8_decode: function(utftext) {
+    var string = &quot;&quot;;
+    var i = 0;
+    var c = c1 = c2 = 0;
+
+    while (i &amp;lt; utftext.length) {
+
+        c = utftext.charCodeAt(i);
+
+        if (c &amp;lt; 128) {
+            string += String.fromCharCode(c);
+            i++;
+        } else if ((c &amp;gt; 191) &amp;amp;&amp;amp; (c &amp;lt; 224)) {
+            c2 = utftext.charCodeAt(i + 1);
+            string += String.fromCharCode(((c &amp;amp; 31) &amp;lt;&amp;lt; 6) | (c2 &amp;amp; 63));
+            i += 2;
+        } else {
+            c2 = utftext.charCodeAt(i + 1);
+            c3 = utftext.charCodeAt(i + 2);
+            string += String.fromCharCode(((c &amp;amp; 15) &amp;lt;&amp;lt; 12) | ((c2 &amp;amp; 63) &amp;lt;&amp;lt; 6) | (c3 &amp;amp; 63));
+            i += 3;
+        }
+    }
+
+    return string;
+}
+</code></pre>
+<p>}</p>
+<p>var decodedId = Base64.decode(id.split(&quot;/&quot;)[1]);
+var resourceRecord = JSON.parse(decodedId);
+var object = DynamicTypesManager.makeObject(&ldquo;Microsoft DNS&rdquo;, &ldquo;resourceRecord&rdquo;, id, resourceRecord.HostName, new Array());</p>
+<p>var idObj = JSON.parse(decodedId);</p>
+<p>for (var propertyName in idObj) {
+//System.log(&quot;*** PropertyName : &quot; + propertyName); 
+object.setProperty(propertyName, idObj[propertyName]);
+}</p>
+<p>resultObj = object;
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->Here is the most complex action. First we define a base 64 decode function. Then we use it to decode the ID as a JSON string representing the resource record. Then we use the resourceRecord JavaScript object to get its properties. This way we can manage to extract all properties without ever querying the DNS server for the information. It is a good way to avoid a lot of queries and reliability issues when there are different rcords for the same record name. The drawback is that these properties are as old as the findRelation or findAll call that created the ID for the resourceRecord.<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code>    if (allowUpdateAny == true) command += ' -AllowUpdateAny ';
+    if (createPtr == true) command += ' -CreatePtr ';
+    command += ' ' + ipAddress;
+    command += ' -PassThru'
+    command += ' | ConvertTo-Json -Compress';
+    System.log(command);
+    sess.addCommandFromString(command);
+    var invResult = sess.invokePipeline();
+    if (invResult.invocationState == 'Failed') {
+        success = false;
+        errorCode = invResult.getErrors().toString();
+    } else {
+        success = true;
+        //System.log(invResult.getHostOutput());
+        jsonOutput = invResult.getHostOutput();
+    }			
+} catch (ex) {
+    System.log(ex);
+} finally {
+    if (sess) {
+        powershellHost.closeSession(sess.getSessionId());
+    }
+}
+</code></pre>
+<p>} <!-- raw HTML omitted -->
+The scripting goes like this: <!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>// Generating the second part of the ID from the properties
+var resourceRecordId = System.getModule(&ldquo;com.vmware.coe.microsoft.dns.dt&rdquo;).getMicrosoftResourceRecordId(resourceRecordProperties);</p>
+<p>resourceRecord = Server.findForType(&ldquo;DynamicTypes:Microsoft DNS.resourceRecord&rdquo;, powershellHostId + &ldquo;/&rdquo; + resourceRecordId);
+DynamicTypesManager.invalidate(&ldquo;Microsoft DNS&rdquo;, &ldquo;zone&rdquo;, zoneName);
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->With this design the plug-in can be extended with other PowerShell commands mapping to plug-in workflows.<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>var hosts = Server.findAllForType(&ldquo;DynamicTypes:Microsoft DNS.host&rdquo;);
+if (hosts.length == 1) zone = Server.findForType(&ldquo;DynamicTypes:Microsoft DNS.zone&rdquo;, hosts[0].id + &ldquo;/&rdquo; + zoneName);
+else {
+var zones = System.getModule(&ldquo;com.vmware.coe.microsoft.dns.dt&rdquo;).getMicrosoftDNSForwardZones();
+for each (var zone in zones) {
+if (zone.name == zoneName) break;
+}	
+}
+<!-- raw HTML omitted -->
+At first we get the ipAddress and name from the JSON output. This is done using JSON.parse which will return an array which in my case will have a single element.<!-- raw HTML omitted --><!-- raw HTML omitted -->The second part is to create a zone attribute from the zone string input to pass it to the add a host (A) workflow.<!-- raw HTML omitted -->For the end user confort I have also created an action that get all the Forward zones and return these as an array that I use with the presentation properties &ldquo;Predefined list of elements&quot;<!-- raw HTML omitted --><!-- raw HTML omitted -->Finally I place this wotkflow in an XaaS components folder so I can identify the workflows in there as being designed for being used as XaaS components.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/plug-in/" rel="tag">plug-in</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vrealize-automation/" rel="tag">vRealize Automation</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/dns/" rel="tag">DNS</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/microsoft/" rel="tag">Microsoft</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="John Doe avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About John Doe</span>
+	</div>
+	<div class="authorbox__description">
+		John Doe&rsquo;s true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it.
+	</div>
+</div>
+
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://new.vcoteam.info/" />
+	</form>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Youtube" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCEoWW8Zm19x2ZXqzJEOnHDw" target="_blank">
+				<span>Youtube</span>
+			</a>
+		</div>
+		
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/cat1.html">cat1</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tag1.html" title="tag1">tag1 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tag2.html" title="tag2">tag2 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tag3.html" title="tag3">tag3 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

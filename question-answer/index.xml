@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Question-answers on </title>
+    <link>http://new.vcoteam.info/question-answer.html</link>
+    <description>Recent content in Question-answers on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/question-answer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Are there any professional services available for vCO ?</title>
+      <link>http://new.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How can I engage vCO professional services ?</title>
+      <link>http://new.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
