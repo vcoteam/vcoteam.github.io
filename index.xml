@@ -12,6 +12,26 @@
     
     
     <item>
+      <title>Building a Kubernetes Blueprint for vRealize Automation - Intro</title>
+      <link>http://localhost:1313/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html</guid>
+      <description>In my efforts to learn more in the Cloud Native Apps space, I recently attended DockerCon 2018 and have been playing around with Docker a bit so I get the basics. Since VMware has Pivotal Container Services (PKS) for self-hosted enterprise ready Kubernetes and VMware Kubernetes Engine (VKE) as an upcoming SaaS offering, I figured it was time to start getting a feel for Kubernetes.
+Docker Training For the first two days of DockerCon, I opted for the Docker Fundamentals training as an add-on.</description>
+    </item>
+    
+    <item>
+      <title>Lightweight DNS Server for Home or Test Lab</title>
+      <link>http://localhost:1313/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html</guid>
+      <description>A power outage recently made a mess of my home lab due to a resulting issue with VSAN. As a result, I needed to setup a fresh Virtual Center Server Appliance (VCSA), but my DNS server was on the VSAN! vCenter now requires working DNS resolution during install&amp;hellip; What to do??
+Well, I&amp;rsquo;ve recently been getting started with Docker so figured this would be a good opportunity to use that to address an immediate need that I, and potentially others, would need: A quick and easy lightweight DNS server that could be used for resolving my lab domain.</description>
+    </item>
+    
+    <item>
       <title>How to create a Microsoft DNS Dynamic Types plug-in ?</title>
       <link>http://localhost:1313/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
@@ -20,6 +40,46 @@
       <description>On the VMware blog I have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.
 In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:
  The Microsoft DNS dynamic types plug-in DNS record as a service in vRA DNS record as a blueprint component  This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.</description>
+    </item>
+    
+    <item>
+      <title>Nuc Nuc Nuc - vSAN !</title>
+      <link>http://localhost:1313/articles/home-lab/320-nuc-nuc-nuc-vsan.html</link>
+      <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/home-lab/320-nuc-nuc-nuc-vsan.html</guid>
+      <description>In a previous article VMworld 2016 Barcelona Hackathon, I noted that I had won an i3 NUC at VMworld in Barcelona. After playing with that for a few days and helping Alan Renouf test his Home Lab Deployment Script, I decided I wanted to have a full 3 node cluster - but with the i5 Processor &amp;hellip; so, I went shopping!
+  Gear Intel NUC i5 Model:
+Intel NUC i5: NUC6i5SYH</description>
+    </item>
+    
+    <item>
+      <title>How to create USB Boot stick for ESXi</title>
+      <link>http://localhost:1313/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html</link>
+      <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html</guid>
+      <description>The Intel NUC has become a popular device for a variety of use cases. It&amp;rsquo;s quite a powerful little box that can be used as a regular Windows/Linux machine, a Home Theater PC (HTPC), or a techie Test/Dev box for many different types of software, including VMware ESXi - and even vSAN! This will be a short blog post on setting up a USB boot stick for the installation of ESXi on a SanDisk Ultra Fit 16GB USB.</description>
+    </item>
+    
+    <item>
+      <title>Burke&#39;s Home Lab</title>
+      <link>http://localhost:1313/articles/home-lab/313-burke-s-home-lab.html</link>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/home-lab/313-burke-s-home-lab.html</guid>
+      <description>Since I&amp;rsquo;m preparing to write a short series of articles on my recent Home Lab purchases, I figured I should preface those articles with a little history on my current hardware&amp;hellip;
+During the summer of 2011 around June/July, I wanted to have a home environment to install, configure, and test things - you know, the typical techie Hands-On environment. My requirements were as follows:
+ Try to keep costs down Try for quiet equipment Minimize power consumption  This article will describe the original purchase and progression of the lab.</description>
+    </item>
+    
+    <item>
+      <title>VMworld 2016 Barcelona - Hackathon</title>
+      <link>http://localhost:1313/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html</link>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html</guid>
+      <description>This post is about my experience with the VMworld 2016 Barcelona Hackathon. Since I had never participated in such an event, I wasn&amp;rsquo;t sure about signing up. I hope that after reading this post, you consider signing up for any such Hackathon in the future, whether it is an internal event, VMUG gathering, VMworld, or any similar gathering of tech-geeks like me and many of the readers of this blog!</description>
     </item>
     
     <item>

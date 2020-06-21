@@ -23,7 +23,7 @@
 	<link rel="alternate" type="application/rss+xml" href="/index.xml" title="">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
-	
+	<link rel="stylesheet" href="/css/customCSS">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 <script type="application/javascript">
@@ -107,16 +107,172 @@ if (!doNotTrack) {
 			<div class="primary">
 			
 <main class="main list" role="main">
-	
-		<div class="warning">
-			<svg class="warning__icon icon icon-files" width="96" height="96" viewBox="0 0 384 384"><path d="m368 64h-224-16v16 288 16h16 224 16v-16-288-16zm-16 288h-192v-256h192zm-320-320h192v16h32v-32-16h-16-224-16v16 288 16h16 96v-32h-80zm144 272h160v-32h-160zm0-64h160v-32h-160zm0-64h160v-32h-160zm-128 64h64v-32h-64zm0-64h64v-32h-64zm0-64h64v-32h-64z"/></svg>
-			<h3 class="warning__headline">You don't have any posts yet!</h3>
-			<div class="warning__text">
-				<p class="warning__description">Once you post something in any folder (section) under the <b>content</b> directory, it will appear here. Only one section (with the most posts) will be displayed on the main page by default.</p>
-				<p class="warning__tip"><b>Tip:</b> You can show as many sections as you like with <b><a href="https://gohugo.io/functions/where/#mainsections" rel="nofollow noopener" target="_blank">mainSections</a></b> config parameter.</p>
-			</div>
-		</div>
-	
+	<article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html" rel="bookmark">
+			Building a Kubernetes Blueprint for vRealize Automation - Intro
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-08-08T00:00:00Z">August 08, 2018</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		In my efforts to learn more in the Cloud Native Apps space, I recently attended DockerCon 2018 and have been playing around with Docker a bit so I get the basics. Since VMware has Pivotal Container Services (PKS) for self-hosted enterprise ready Kubernetes and VMware Kubernetes Engine (VKE) as an upcoming SaaS offering, I figured it was time to start getting a feel for Kubernetes.
+Docker Training For the first two days of DockerCon, I opted for the Docker Fundamentals training as an add-on.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html" rel="bookmark">
+			Lightweight DNS Server for Home or Test Lab
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-07-06T00:00:00Z">July 06, 2018</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		A power outage recently made a mess of my home lab due to a resulting issue with VSAN. As a result, I needed to setup a fresh Virtual Center Server Appliance (VCSA), but my DNS server was on the VSAN! vCenter now requires working DNS resolution during install&hellip; What to do??
+Well, I&rsquo;ve recently been getting started with Docker so figured this would be a good opportunity to use that to address an immediate need that I, and potentially others, would need: A quick and easy lightweight DNS server that could be used for resolving my lab domain.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html" rel="bookmark">
+			How to create a Microsoft DNS Dynamic Types plug-in ?
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-10-18T00:00:00Z">October 18, 2017</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		On the VMware blog I have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.
+In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:
+ The Microsoft DNS dynamic types plug-in DNS record as a service in vRA DNS record as a blueprint component  This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/articles/home-lab/320-nuc-nuc-nuc-vsan.html" rel="bookmark">
+			Nuc Nuc Nuc - vSAN !
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-28T00:00:00Z">December 28, 2016</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		In a previous article VMworld 2016 Barcelona Hackathon, I noted that I had won an i3 NUC at VMworld in Barcelona. After playing with that for a few days and helping Alan Renouf test his Home Lab Deployment Script, I decided I wanted to have a full 3 node cluster - but with the i5 Processor &hellip; so, I went shopping!
+  Gear Intel NUC i5 Model:
+Intel NUC i5: NUC6i5SYH
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/home-lab/320-nuc-nuc-nuc-vsan.html">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html" rel="bookmark">
+			How to create USB Boot stick for ESXi
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-05T00:00:00Z">December 05, 2016</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		The Intel NUC has become a popular device for a variety of use cases. It&rsquo;s quite a powerful little box that can be used as a regular Windows/Linux machine, a Home Theater PC (HTPC), or a techie Test/Dev box for many different types of software, including VMware ESXi - and even vSAN! This will be a short blog post on setting up a USB boot stick for the installation of ESXi on a SanDisk Ultra Fit 16GB USB.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/articles/home-lab/313-burke-s-home-lab.html" rel="bookmark">
+			Burke&#39;s Home Lab
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-04T00:00:00Z">December 04, 2016</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Since I&rsquo;m preparing to write a short series of articles on my recent Home Lab purchases, I figured I should preface those articles with a little history on my current hardware&hellip;
+During the summer of 2011 around June/July, I wanted to have a home environment to install, configure, and test things - you know, the typical techie Hands-On environment. My requirements were as follows:
+ Try to keep costs down Try for quiet equipment Minimize power consumption  This article will describe the original purchase and progression of the lab.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/home-lab/313-burke-s-home-lab.html">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html" rel="bookmark">
+			VMworld 2016 Barcelona - Hackathon
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-04T00:00:00Z">December 04, 2016</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		This post is about my experience with the VMworld 2016 Barcelona Hackathon. Since I had never participated in such an event, I wasn&rsquo;t sure about signing up. I hope that after reading this post, you consider signing up for any such Hackathon in the future, whether it is an internal event, VMUG gathering, VMworld, or any similar gathering of tech-geeks like me and many of the readers of this blog!
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html" rel="bookmark">
+			Are there any professional services available for vCO ?
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-06-14T00:00:00Z">June 14, 2010</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		There are VMware and VMware partner services such as:
+ Consulting services (VMware and partners) - Requirement analysis, implementation workshops Orchestration Solution Centers (VMware and partners) - Design, develop vCO workflows. vCO Instructor Lead Training (VMware) - 5 days  
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/question-answer/service/82-how-can-i-engage-vco-professional-services-.html" rel="bookmark">
+			How can I engage vCO professional services ?
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-06-14T00:00:00Z">June 14, 2010</time></div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Please contact your VMware sales representative to engage VMware or partners Professional Services. VMware has vCenter Orchestrator Subject Matter Experts in different regions and a development team delivering engagements worldwide.
+	</div>
+</article>
 </main>
 
 
@@ -129,6 +285,18 @@ if (!doNotTrack) {
 		<input class="widget-search__submit" type="submit" value="Search">
 		<input type="hidden" name="sitesearch" value="http://localhost:1313/" />
 	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/320-nuc-nuc-nuc-vsan.html">Nuc Nuc Nuc - vSAN !</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html">How to create USB Boot stick for ESXi</a></li>
+		</ul>
+	</div>
 </div>
 <div class="widget-social widget">
 	<h4 class="widget-social__title widget__title">Social</h4>
@@ -144,13 +312,28 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
 	</div>
 </div>
 </aside>

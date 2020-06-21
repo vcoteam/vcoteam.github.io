@@ -6,17 +6,98 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Blueprint</title>
+      <link>http://localhost:1313/tags/blueprint.html</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/blueprint.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>http://localhost:1313/tags/kubernetes.html</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/kubernetes.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vRA</title>
+      <link>http://localhost:1313/tags/vra.html</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vra.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Container</title>
+      <link>http://localhost:1313/tags/container.html</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/container.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CoreDNS</title>
+      <link>http://localhost:1313/tags/coredns.html</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/coredns.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DNS</title>
       <link>http://localhost:1313/tags/dns.html</link>
-      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/dns.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>http://localhost:1313/tags/docker.html</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/docker.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker-compose</title>
+      <link>http://localhost:1313/tags/docker-compose.html</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/docker-compose.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>http://localhost:1313/tags/github.html</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/github.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lab</title>
+      <link>http://localhost:1313/tags/lab.html</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/lab.html</guid>
       <description></description>
     </item>
     
@@ -71,6 +152,60 @@
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/vro-7.x.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homelab</title>
+      <link>http://localhost:1313/tags/homelab.html</link>
+      <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/homelab.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NUC</title>
+      <link>http://localhost:1313/tags/nuc.html</link>
+      <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/nuc.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vSAN</title>
+      <link>http://localhost:1313/tags/vsan.html</link>
+      <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vsan.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bootable usb</title>
+      <link>http://localhost:1313/tags/bootable-usb.html</link>
+      <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/bootable-usb.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hackathon</title>
+      <link>http://localhost:1313/tags/hackathon.html</link>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/hackathon.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMworld</title>
+      <link>http://localhost:1313/tags/vmworld.html</link>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vmworld.html</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,13 @@
+figure.floatright {
+	max-width: 30%;
+	width: auto\9*0.3; /* ie8 */
+	height: auto;
+	float: right;
+}
+
+.floatleft {
+	float: left;
+	padding: 3px;
+	margin: 0 0 0 0;
+	border: 1px solid #ebebeb;
+}

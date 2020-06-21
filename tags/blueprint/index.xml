@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blueprint on </title>
+    <link>http://localhost:1313/tags/blueprint.html</link>
+    <description>Recent content in Blueprint on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/blueprint/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building a Kubernetes Blueprint for vRealize Automation - Intro</title>
+      <link>http://localhost:1313/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html</guid>
+      <description>In my efforts to learn more in the Cloud Native Apps space, I recently attended DockerCon 2018 and have been playing around with Docker a bit so I get the basics. Since VMware has Pivotal Container Services (PKS) for self-hosted enterprise ready Kubernetes and VMware Kubernetes Engine (VKE) as an upcoming SaaS offering, I figured it was time to start getting a feel for Kubernetes.
+Docker Training For the first two days of DockerCon, I opted for the Docker Fundamentals training as an add-on.</description>
+    </item>
+    
+  </channel>
+</rss>

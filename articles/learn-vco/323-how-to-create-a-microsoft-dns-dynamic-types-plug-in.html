@@ -22,7 +22,7 @@
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
-	
+	<link rel="stylesheet" href="/css/customCSS">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 <script type="application/javascript">
@@ -111,7 +111,8 @@ if (!doNotTrack) {
 			<h1 class="post__title">How to create a Microsoft DNS Dynamic Types plug-in ?</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-10-18T00:00:00Z">October 18, 2017</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-10-18T00:00:00Z">October 18, 2017</time></div>
+</div>
 		</header><div class="content post__content clearfix">
 			<p>On the <a href="https://blogs.vmware.com/orchestrator/?p=780"  target="_blank" rel="noreferrer noopener" >VMware blog</a> I have explained how vRealize Automation Anything as a Service (XaaS) work with Orchestrator and how a vRO plug-in works.</p>
 <p>In this tutorial I will walk you through how I managed to implement Microsoft DNS as a service I used for the screenshot examples on that blog including:</p>
@@ -126,7 +127,7 @@ if (!doNotTrack) {
 <p>First you need to run the &ldquo;Define Namespace&rdquo; workflow.</p>
 <p>If you look at the plug-in inventory you will notice that Dynamic Types as a root element. All the namespaces you will create will be listed under this root element. The name should define your plug-in. In my case &ldquo;Microsoft DNS&rdquo;. This name will be used to prefix the type of your plug-in objects. For example &ldquo;DynamicTypes:Microsoft DNS.zone&rdquo;
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-002.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-002.png"/> <figcaption>
             <h4>The Dynamic Types namespaces</h4>
         </figcaption>
 </figure>
@@ -143,14 +144,14 @@ if (!doNotTrack) {
 <p>This is my implementation but I could for example have decided to have different types for the zones parent folders, the zones (i.E forwardZone and reverseZone) and the records depending on their different types.</p>
 <p>To adjust which type I needed I did a little bit of research checking the Microsoft DNS user interface and most importantly the Microsoft DNS API which is Powershell based. When I saw that for example that I could query all zones types and they returned the same properties I decided on this design with one object.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-001.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-001.png"/> <figcaption>
             <h4>Microsoft DNS manager</h4>
         </figcaption>
 </figure>
 </p>
 <p>Exploring the user interface and what the API can return for the different object is also important to determine what properties you want the object to have in vRO. If these properties are in the UI or returned by the PowerShell cmdlts this must be for a good reason. In my case I looked at the results of get-dnsServerZone and get-dnsServerResourceRecord.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-003.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-003.png"/> <figcaption>
             <h4>Checking the properties returned by the API call. Micorsoft DNS has a PowerShell API.</h4>
         </figcaption>
 </figure>
@@ -163,7 +164,7 @@ if (!doNotTrack) {
 </ul>
 <p>I highly recommend using workflow stubs. The reason is that when you will test the plug-in you will see the workflow runs which will help you understand when the methods are called and see if they are successful or not.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-004.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-004.png"/> <figcaption>
             <h4>Workflow stubs created by the &#39;Define Type&#39; workflow</h4>
         </figcaption>
 </figure>
@@ -173,7 +174,7 @@ if (!doNotTrack) {
 <p>Run the &ldquo;Define Relation&rdquo;. For relation name I always put [parentType]-[childType]. For example &ldquo;hosts-host&rdquo;.</p>
 <p>Once done check the result under Dynamic Types / Type Hierarchy.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-005.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-005.png"/> <figcaption>
             <h4>Type hierarchy as created by the &#39;Define relation&#39; workflow</h4>
         </figcaption>
 </figure>
@@ -182,7 +183,7 @@ if (!doNotTrack) {
 <h2 id="-4--implementing-the-haschildreninrelation-methods">-4- Implementing the HasChildrenInRelation methods</h2>
 <p>Since we know every object will have children except the resourceRecord we can edit all the &ldquo;Has Microsoft DNS-[objectName]&rdquo; workflows scriptable task with result = true; and the &ldquo;Has Microsoft DNS-resourceRecord&rdquo; with result = false;
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-006.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-006.png"/> <figcaption>
             <h4>Editing Has Children In Relation</h4>
         </figcaption>
 </figure>
@@ -198,7 +199,7 @@ if (!doNotTrack) {
 <h3 id="find-relation-microsoft-dns-hosts">Find Relation Microsoft DNS-hosts</h3>
 <p>There is something specific with the first object and its child relation under the Dynamic Types level : This same workflow will be called when unfolding the namespace to display the root folder &ldquo;Hosts&rdquo; and when unfolding the &ldquo;Hosts&rdquo; folder.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-008.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-008.png"/> <figcaption>
             <h4>Find Relation Microsoft DNS-hosts is called to display these two levels</h4>
         </figcaption>
 </figure>
@@ -319,7 +320,7 @@ Array/DynamicTypes:Microsoft DNS.host findAllMicrosoftDNSHost(type)</p>
 </div><p>to get a javascript object that is much more convenient to extract properties</p>
 <p>To understand the structure of the JSON file did copy and paste the text output to a JSON viewer such as jsonviewer.stack.nu
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-007.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-007.png"/> <figcaption>
             <h4>The DNS server settings opened in a JSON viewer</h4>
         </figcaption>
 </figure>
@@ -499,7 +500,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 </div><p>Note that I used the Compress parameter. This reduces the amount of space characters in the output which are only useful for having a nice indentation but useless for us as we convert this to a JavaScript object. Compressing will also allow the PowerShell query to run faster which will translate in unfolding the tree view quicker.</p>
 <p>Once again we use a JSON viewer to see the output
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-009.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-009.png"/> <figcaption>
             <h4>Array of zone objects</h4>
         </figcaption>
 </figure>
@@ -611,7 +612,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <p>The second reason if for reliability and efficiency of the &ldquo;Find Microsoft DNS-resourceRecord By Id&rdquo; workflow we will have to implement next. Since there is no unique ID it is not possible to effectively query a single record and there is the risk, at this leaf level of the tree view of starting a great number of requests on the PowerShell host which may be configured to not accept as many and will result in slow response times.</p>
 <p>Now that we are done implementing all the find Relation workflows we can test unfolding the inventory and compare to the Microsoft DNS UI
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-010.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-010.png"/> <figcaption>
             <h4>The Microsoft DNS Manager UI reproduced in the Orchestrator inventory</h4>
         </figcaption>
 </figure>
@@ -621,7 +622,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <p>We still need findAll to use drop down lists as input and findById to be able to use a plug-in object within a scriptable task or action.</p>
 <p>In order to test these methods with the different types we created we should create some test workflow for each type
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-011.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-011.png"/> <figcaption>
             <h4>Test workflows</h4>
         </figcaption>
 </figure>
@@ -1213,28 +1214,28 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h2 id="creating-plug-in-action-methods">Creating plug-in action methods</h2>
 <p>At this point we do have a functioning plug-in but while using workflows for development is convenient to understand when they are called and check they run properly it has some important drawbacks for an Orchestrator running in production. Plug-in methods can be called hundreds of times in minutes if not seconds. This is the case if you use an array of DynamicType objects that get iterated in the workflow. Running a workflow instead of an action has a lot of overhead. It will store many workflow runs in the Orchestrator database very quickly.The way to avoid that is to convert all workflows to actions and edit the types so their methods call actions instead of workflows. This will immediately have an great impact on the performance as well in the order of 10 to 20 times faster.So the first thing is to create all the actions in a scripting module and add the same inputs / ouptuts as in the workflows. Then copy paste the workflow scriptable task and not forget to return the result.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-012.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-012.png"/> <figcaption>
             <h4>Plug-in action methods</h4>
         </figcaption>
 </figure>
 </p>
 <p>If you check the &ldquo;Update type&rdquo; workflow you will notice it does not provide you with the option to change the worflow stubs to actions. This leaves us with exporting the Dynamic Types configuration, edit it and import it back again.You can export all the Dynamic Types configuration with saving to file the resource element under Library / DynamicTypes / Configuration
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-013.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-013.png"/> <figcaption>
             <h4>Save the Dynamic Types configuration to a file</h4>
         </figcaption>
 </figure>
 </p>
 <p>Once saved you should always make a copy of it in case you make some unwanted / unsupported changes. It is easier to update it with the copy instead of editing it back.Open it in a text editor. For each object change the findByIdBinding, findAllBinding, hasChildrenInrelationBinding, findRelationBinding values from the workflow ID to the path of the scripting module and action name.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-014.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-014.png"/> <figcaption>
             <h4>Bindings updated with actions</h4>
         </figcaption>
 </figure>
 </p>
 <p>Once all types updated you can save and update the resource
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-015.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-015.png"/> <figcaption>
             <h4>Updating the Dynamic Types configuration</h4>
         </figcaption>
 </figure>
@@ -1244,7 +1245,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="powershell-workflows">PowerShell workflows</h3>
 <p>To do so I first created these workflows with using the PowerShell host as input.</p>
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-016.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-016.png"/> <figcaption>
             <h4>PowerShell workflows</h4>
         </figcaption>
 </figure>
@@ -1330,7 +1331,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="plug-in-workflows">Plug-in workflows</h3>
 <p>For each PowerShell workflow I have created a matching workflow using plug-in types as inputs and outputs.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-017.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-017.png"/> <figcaption>
             <h4>Plug-in workflows</h4>
         </figcaption>
 </figure>
@@ -1341,7 +1342,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <li>The PowerShell workflow runs and sets the JSON output</li>
 <li>The Last scriptable tasks find and output the object from its ID and invalidates its parent object to refresh the inventory. In case of a delete operation no object need to be found.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-018.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-018.png"/> <figcaption>
             <h4>Plug-in workflows steps</h4>
         </figcaption>
 </figure>
@@ -1413,7 +1414,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="custom-resource">Custom resource</h3>
 <p>The first step is to add a new custom resource in vRA. This basically maps a resource Name in vRA to a plug-in object in vRO.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-027.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-027.png"/> <figcaption>
             <h4>Custom resource</h4>
         </figcaption>
 </figure>
@@ -1421,14 +1422,14 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="xaas-blueprint">XaaS blueprint</h3>
 <p>To be able to request a DNS record the next step is to add an XaaS Blueprint using &ldquo;Add a DNS host (A) workflow
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-020.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-020.png"/> <figcaption>
             <h4>Auto generated Blueprint form</h4>
         </figcaption>
 </figure>
 </p>
 <p>A part from selecting the workflow you need to set the Provisioned Resource to &ldquo;DNS Host&rdquo; 
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-021.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-021.png"/> <figcaption>
             <h4>Setting the Provisioned resource in the XaaS blueprint</h4>
         </figcaption>
 </figure>
@@ -1436,21 +1437,21 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <p>Once created, published and entitled you can test requesting a new DNS record from the catalog. You can customize the icon in Administration / Catalog Items</p>
 <h3 id="testing-the-dns-hort-record-request">Testing the DNS hort record request</h3>
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-022.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-022.png"/> <figcaption>
             <h4>Add a DNS host catalog item</h4>
         </figcaption>
 </figure>
 
 <p>You will have to provide a zone, a name and IP address and if you want to create the PTR record and allow updates.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-023.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-023.png"/> <figcaption>
             <h4>New Request</h4>
         </figcaption>
 </figure>
 </p>
 <p>A few seconds later you get a new DNS entry that is under the Itams / Dynamic Types tab
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-024.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-024.png"/> <figcaption>
             <h4>New DNS host record item provisioned</h4>
         </figcaption>
 </figure>
@@ -1458,7 +1459,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="resource-action">Resource action</h3>
 <p>You can also add an action to Remove the record that maps to the &ldquo;Remove a resource record&rdquo; workflow. The important part here is to indicate this is a disposal type of action so vRA will remove the item once the workflow has been successfully ran.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-025.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-025.png"/> <figcaption>
             <h4>Resource action with disposal option</h4>
         </figcaption>
 </figure>
@@ -1466,7 +1467,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="testing-the-remove-a-dns-host-record-action">Testing the Remove a DNS host record action</h3>
 <p>Then you can test the removal action from the items tab.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-026.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-026.png"/> <figcaption>
             <h4>Remove a DNS Host</h4>
         </figcaption>
 </figure>
@@ -1477,7 +1478,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="xaas-component-workflow">XaaS component workflow</h3>
 <p>The first requirement is to be able to start the workflow adding the record from the deployment. This is done by adding the XaaS Blueprint to the software Blueprint. However we cannot just use our existing XaaS blueprint since the designer passes the blueprint output fileds such as IP address and host name has an array of strings in a JSON format.To use with the designer I have created a wrapper workflow converting JSON inputs as the name and IP string that calls our &ldquo;Add a host (A)&rdquo; plug-in workflow. I have also added a zone drop down using strings instead of array of zones since vRA has an issue listing array of Dynamic Types.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-028.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-028.png"/> <figcaption>
             <h4>Workflow wrapper for XaaS blueprint component</h4>
         </figcaption>
 </figure>
@@ -1519,14 +1520,14 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="xaas-host-service-blueprint">XaaS host service blueprint</h3>
 <p>Now that we have a workflow that can be used by the designer we can add it as a new XaaS blueprint. The important part here is the &ldquo;Make available as a component in the design canvas&rdquo;
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-029.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-029.png"/> <figcaption>
             <h4>XaaS blueprint for XaaS component</h4>
         </figcaption>
 </figure>
 </p>
 <p>The next important thing to set is the provisioned resource and the component lifecycle tab.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-031.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-031.png"/> <figcaption>
             <h4>XaaS component lifecycle</h4>
         </figcaption>
 </figure>
@@ -1535,7 +1536,7 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="adding-the-xaas-component-in-the-software-blueprint">Adding the XaaS component in the software blueprint</h3>
 <p>Next we need to edit our software blueprint(s) to include the DNS XaaS component. For this we drag and drop the XaaS component we created on the schema and for the ipJson and nameJson switch to the advanced view to define the value as fields from the blueprint output (IP address and Blueprint Name)
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-030.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-030.png"/> <figcaption>
             <h4>Binding the blueprint IP and host name outputs to the XaaS component inputs</h4>
         </figcaption>
 </figure>
@@ -1543,14 +1544,14 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <h3 id="testing-the-software-blueprint-with-xaas-component">Testing the software blueprint with XaaS component</h3>
 <p>We can now request our software blueprint with the DNS host record component. Note that the name and address fields are not shown to the end user since we bound them to the software blueprint. The end user here will select the zone, and the record option. In production we would likely have set constants defaults for these in the software blueprint designer. This screenshot also show the drop down I created for the zones list.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-033.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-033.png"/> <figcaption>
             <h4>Software blueprint with XaaS DNS host record component</h4>
         </figcaption>
 </figure>
 </p>
 <p>After we request this blueprint we get a new deployment that include the DNS record.
 <figure>
-    <img src="/images/phocagallery/christophe-articles-dd23/DNS-plugin-032.png"/> <figcaption>
+    <img src="/images/christophe-articles-dd23/DNS-plugin-032.png"/> <figcaption>
             <h4>Deployment including the DNS host record</h4>
         </figcaption>
 </figure>
@@ -1595,8 +1596,11 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
   
   
   <div class="authorbox clearfix">
+    <figure class="authorbox__avatar">
+      <img alt="Christophe Decanini avatar" src="/images/authors/christophe.jpg" class="avatar" height="130" width="130">
+    </figure>
     <div class="authorbox__header">
-      <span class="authorbox__name">About Christophe Decanini</span>
+      <span class="authorbox__name">About Christophe Decanini:</span>
     </div>
     <div class="authorbox__description">
       Christophe has worked at VMware, Inc., where he started in 2007 after VMware acquired Dunes. Based in Gland, Switzerland, Christophe is a global resource supporting customers in their orchestration and automation needs. He has presented orchestration solutions at conferences such as VMworld and is the primary contributor to this site.
@@ -1608,10 +1612,6 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
       </a>
     </div>
   </div>
-  
-
-
-
   
 
 
@@ -1628,6 +1628,18 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 		<input type="hidden" name="sitesearch" value="http://localhost:1313/" />
 	</form>
 </div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/320-nuc-nuc-nuc-vsan.html">Nuc Nuc Nuc - vSAN !</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html">How to create USB Boot stick for ESXi</a></li>
+		</ul>
+	</div>
+</div>
 <div class="widget-social widget">
 	<h4 class="widget-social__title widget__title">Social</h4>
 	<div class="widget-social__content widget__content">
@@ -1642,13 +1654,28 @@ To mimic the Microsoft GUI we will return three folders like this:</p>
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
 	</div>
 </div>
 </aside>
