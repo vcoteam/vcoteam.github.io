@@ -21,5 +21,25 @@
 Docker Training For the first two days of DockerCon, I opted for the Docker Fundamentals training as an add-on.</description>
     </item>
     
+    <item>
+      <title>How to Configure vRA&#39;s Embedded vRO to Allow Domain Account Login</title>
+      <link>http://localhost:1313/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</guid>
+      <description>Two years ago, I wrote a similar article around vCAC&amp;rsquo;s embedded vCO but a lot has changed since then so those older steps no longer apply. This brief article will quickly walk you through the steps required to allow vRealize Automation 7.0/7.1/7.2&amp;rsquo;s embedded vRealize Orchestrator to allow Active Directory Domain accounts login to the vRO Client.
+Pre-Requisites This article assumes the following:
+ vRealize Automation 7.0-7.2 is installed and configured (NOTE: This has not been tested with 7.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - part 1</title>
+      <link>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</link>
+      <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</guid>
+      <description>In a previous articleI have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.Then explained how to build your own twitter plug-in using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.</description>
+    </item>
+    
   </channel>
 </rss>

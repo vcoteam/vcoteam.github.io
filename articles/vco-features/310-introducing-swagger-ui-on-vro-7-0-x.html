@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Introducing Swagger UI on vRO 7.0.1 - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Learn about vRO&#39;s new Swagger UI for the REST API">
+		<meta property="og:title" content="Introducing Swagger UI on vRO 7.0.1" />
+<meta property="og:description" content="Learn about vRO&#39;s new Swagger UI for the REST API" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html" />
+<meta property="article:published_time" content="2016-04-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-04-14T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Introducing Swagger UI on vRO 7.0.1"/>
+<meta name="twitter:description" content="Learn about vRO&#39;s new Swagger UI for the REST API"/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-16400053-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn VCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">Newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Introducing Swagger UI on vRO 7.0.1</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-04-14T00:00:00Z">April 14, 2016</time></div>
+</div>
+		</header><div class="content post__content clearfix">
+			<p>Although vRealize Orchestrator (vRO) has provided API documentation built-in to the server, it was static content that could not be quickly used for tests or building queries. When a product provides a nice API explorer that not only tells you the available urls and basic docs, but also provides a web-based UI that allows you to quickly build up custom calls and shows you the generated content, the consumption and integration time for developers is reduced considerably. This article will provide a brief introduction to Orchestrator&rsquo;s latest API Documentation feature: Swagger !</p>
+<p>Browse to the API Docs on your vRO Server
+<figure>
+    <img src="/images/intro-swagger-ui/browse_to_the_api_docs_on_your_vro_server.png"
+         alt="browse_to_the_api_docs_on_your_vro_server.png" width="994" height="1020"/> 
+</figure>
+
+As with past versions of vRO, visit the built-in API docs at: https://vro7:8281/vco/api/docs/</p>
+<p>Once the page loads, you&rsquo;ll be presented with a page a bit different than what you may have seen in past versions of the API docs for Orchestrator&hellip;</p>
+<p>If you are using a Standalone vRO 7.0.1 Appliance, no additional steps are required in order to begin using the Swagger UI that is seen further down the page. If, however, you happen to be trying this out on a vRO server that has been configured for SSO then you&rsquo;ll need to add the line <strong>com.vmware.o11n.sso.basic-authentication.enabled=true</strong> to the /etc/vco/app-server/vmo.properties file as indicated on the API Documentation page shown here. You <em><strong>may</strong></em> need to restart the vco-server service (I&rsquo;m not sure because the server I&rsquo;m testing with is not using SSO.)</p>
+<p><strong>NOTE:</strong> For the duration of this article, my vRO Hostname is <strong>vro7</strong></p>
+<h2 id="scroll-down-to-the-swagger-interface">Scroll down to the Swagger Interface</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/scroll_down_to_the_swagger_interface.png"
+         alt="scroll_down_to_the_swagger_interface.png" width="992" height="1034"/> 
+</figure>
+
+Scroll down the page until you see the API Services listing shown here.</p>
+<p>You can learn more about the available Operations for each service by clicking any of them&hellip; let&rsquo;s click on the <strong>workflow-service</strong> (can click <strong>Show/Hide, List Operations</strong>) to get the next screen as well&hellip;</p>
+<h2 id="workflow-service">workflow-service</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/workflow-service.png"
+         alt="workflow-service.png" width="980" height="831"/> 
+</figure>
+
+As you can see, there are a number of operations available for the Workflow Service.</p>
+<p>When dealing with the Orchestrator API, one of the first things someone wants to do is get a workflow so let&rsquo;s try that.</p>
+<p>Click the <strong>GET /api/workflows</strong> link to expand that operation
+<figure>
+    <img src="/images/intro-swagger-ui/media_1460670305634.png"
+         alt="media_1460670305634.png" width="773" height="1017"/> 
+</figure>
+
+Look at that! A form to help you create your query.</p>
+<p>At this point, even a fresh install of Orchestrator has 100s of workflows so before we try out this form, change the <strong>maxResult</strong> box to a smaller number - I&rsquo;ll set mine to 20</p>
+<p>Click the <strong>Try it out!</strong> button when you&rsquo;re ready.</p>
+<h2 id="credentials-required">Credentials Required!</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/credentials_required_.png"
+         alt="credentials_required_.png" width="476" height="194"/> 
+</figure>
+
+If you have not already authenticated to your vRO Server you&rsquo;ll need to provide credentials now. Since I&rsquo;m using a standalone server, not exposed anywhere I just enter the default vcoadmin/vcoadmin as my credentials and click <strong>OK</strong></p>
+<h2 id="response">Response</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/response.png"
+         alt="response.png" width="783" height="707"/> 
+</figure>
+
+Note that the Request URL has been generated with the parameters added. The extra &amp; at the end are due to not adding values to all the other form fields. They do not affect anything.</p>
+<p>You&rsquo;re also provided with the Response Body, Code, and Headers. All of this can be very helpful when coding your system/script to call an Orchestrator workflow.</p>
+<p>Let&rsquo;s try using a <em><strong>condition</strong></em> to search for a specific workflow&hellip;..</p>
+<h2 id="find-a-specific-workflow-using-a-condition">Find a specific workflow using a condition</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/find_a_specific_workflow_using_a_condition.png"
+         alt="find_a_specific_workflow_using_a_condition.png" width="767" height="645"/> 
+</figure>
+
+Here, I have added the condition <strong>name=Hello World - Custom</strong> since that is the workflow I would like to find. If you wished to use multiple conditions to further narrow down results, specify them in that same box just delimit each key=value pair with a comma. For example, in this <a href="https://communities.vmware.com/message/2589445"  target="_blank" rel="noreferrer noopener" >VMware Communities post</a>, I used the following as condition: <strong>name=Management,vimHost=https://vcsa-01a.corp.local:443/sdk</strong> because my results had two different vCenters with a &ldquo;Management&rdquo; folder for vms.</p>
+<h2 id="results">Results</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/results.png"
+         alt="results.png" width="975" height="905"/> 
+</figure>
+
+Here, the Response URL was built like this: <code>plain https://vro7:8281/vco/api/workflows?maxResult=20&amp;amp;startIndex=0&amp;amp;queryCount=false&amp;amp;&amp;amp;conditions=name%3DHello%20World%20-%20Custom&amp;amp;&amp;amp;</code></p>
+<p>We can clean that up a little by removing the maxResult, startIndex, queryCount, and the extra &amp;&amp; at the end: <code>plain https://vro7:8281/vco/api/workflows?conditions=name%3DHello%20World%20-%20Custom</code></p>
+<p>In the Response Body, we can see the URL to access that workflow as well as various attributes for that workflow, including its ID: 20923da9-20c5-451e-9ead-5285186e93a5 &hellip;</p>
+<p>One of the other operations available from the Swagger UI is <strong>GET /api/workflows/{id}</strong> which <em>Retrieves the definition of a workflow</em>. Let&rsquo;s take a look at that now. Copy the ID you got from the workflow you searched for (you can&rsquo;t use mine because you don&rsquo;t have my workflow!)</p>
+<h2 id="wait-a-sec---all-that-work-to-get-a-workflow-id-isnt-there-an-easier-way">Wait a sec - all that work to get a workflow ID? Isn&rsquo;t there an easier way?</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/wait_a_sec_-_all_that_work_to_get_a_workflow_id_isn_t_the.png"
+         alt="wait_a_sec_-_all_that_work_to_get_a_workflow_id_isn_t_the.png" width="1056" height="272"/> 
+</figure>
+
+Yes, that was a lot of clicking around, but the purpose here is to introduce Swagger ;)</p>
+<p>If you want/need to get a workflow ID, the easiest way is to simply open your vRO Client, select the workflow you wish to interact with via the API&hellip;.</p>
+<p>Click the General tab, then highlight and copy the ID value as shown in this screenshot!</p>
+<h2 id="back-to-swagger---get-a-workflow-definition">Back to Swagger - Get a workflow definition</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/back_to_swagger_-_get_a_workflow_definition.png"
+         alt="back_to_swagger_-_get_a_workflow_definition.png" width="883" height="1054"/> 
+</figure>
+
+So now that we have a workflow id in our clipboard, expand out the <strong>GET /api/workflows/{id}</strong> operation and paste the <strong>ID</strong> into the field as shown above and click <strong>Try it Out!</strong></p>
+<h2 id="response---workflow-definition">Response - Workflow definition</h2>
+<p><figure>
+    <img src="/images/intro-swagger-ui/response_-_workflow_definition.png"
+         alt="response_-_workflow_definition.png" width="872" height="791"/> 
+</figure>
+
+As you can see, the Request URL is the same as the HREF we saw in the last form. The important stuff here is the Response Body:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
+<span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/workflows/20923da9-20c5-451e-9ead-5285186e93a5/&#34;</span>,
+<span style="color:#f92672">&#34;relations&#34;</span>: {
+<span style="color:#f92672">&#34;link&#34;</span>: [
+  {
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/inventory/System/Workflows/vCO%2BMaster%2BClass%2BLab%2BSolutions/&#34;</span>,
+  <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;up&#34;</span>
+  },{
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/workflows/20923da9-20c5-451e-9ead-5285186e93a5/executions/&#34;</span>,
+  <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;executions&#34;</span>
+  },{
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/workflows/20923da9-20c5-451e-9ead-5285186e93a5/presentation/&#34;</span>,
+  <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;presentation&#34;</span>
+  },{
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/workflows/20923da9-20c5-451e-9ead-5285186e93a5/tasks/&#34;</span>,
+  <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;tasks&#34;</span>
+  },{
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/workflows/20923da9-20c5-451e-9ead-5285186e93a5/icon/&#34;</span>,
+  <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;icon&#34;</span>
+  },{
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/workflows/20923da9-20c5-451e-9ead-5285186e93a5/schema/&#34;</span>,
+  <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;schema&#34;</span>
+  },{
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/workflows/20923da9-20c5-451e-9ead-5285186e93a5/permissions/&#34;</span>,
+  <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;permissions&#34;</span>
+  },{
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vro7:8281/vco/api/workflows/20923da9-20c5-451e-9ead-5285186e93a5/interactions/&#34;</span>,
+  <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;interactions&#34;</span>
+  }
+]
+},
+<span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;20923da9-20c5-451e-9ead-5285186e93a5&#34;</span>,
+<span style="color:#f92672">&#34;customized-icon&#34;</span>: <span style="color:#66d9ef">false</span>,
+<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Hello World - Custom&#34;</span>,
+<span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.0.0&#34;</span>,
+<span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+<span style="color:#f92672">&#34;input-parameters&#34;</span>: [
+  {
+  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Given Name (First Name)&#34;</span>,
+  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;firstName&#34;</span>
+  },{
+  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Surname (Last Name)&#34;</span>,
+  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;lastName&#34;</span>
+  }
+],
+<span style="color:#f92672">&#34;output-parameters&#34;</span>: [
+  {
+  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Complete salutation line&#34;</span>,
+  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;salutation&#34;</span>
+  }
+]
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>So at this point, you can reference my older, but still relevant, article on interacting with <a href="http://bit.ly/restvco"  target="_blank" rel="noreferrer noopener" >Orchestrator via REST</a>.</p>
+<h2 id="summary">Summary</h2>
+<p>As you can see from the very brief introduction here, Swagger can be very helpful in determining the correct format of a request URL for your REST calls for scripts and integrations. When I came across this new feature today, I was very pleasantly surprised since it did not appear in any official documentation around vRO 7.0.1 such as the <a href="http://pubs.vmware.com/Release_Notes/en/orchestrator/vrealize-orchestrator-701-release-notes.html"  target="_blank" rel="noreferrer noopener" >Release Notes</a> or <a href="http://pubs.vmware.com/orchestrator-70/index.jsp?topic=%2Fcom.vmware.vrealize.orchestrator-develop-web-services.doc%2FGUID-35EFD3A0-5F65-4875-A495-EE03E0B471C2.html&amp;amp;__utma=207178772.1552784692.1460585609.1460674884.1460674884.1&amp;amp;__utmb=207178772.1.10.1460674884&amp;amp;__utmc=207178772&amp;amp;__utmx=-&amp;amp;__utmz=207178772.1460674884.1.1.utmcsr=%28direct%29%7cutmccn=%28direct%29%7cutmcmd=%28none%29&amp;amp;__utmv=-&amp;amp;__utmk=111278855"  target="_blank" rel="noreferrer noopener" >Developing a Web Services Client for VMware vRealize Orchestrator</a>. If &ldquo;swagger&rdquo; appears in either of these locations when you are reading this, they have been added <strong>after</strong> this article was written.</p>
+<p>Please explore this feature and share your findings!</p>
+<p>Enjoy!</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vro/" rel="tag">vRO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/swagger/" rel="tag">Swagger</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/api/" rel="tag">API</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/rest/" rel="tag">REST</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+  
+  
+  <div class="authorbox clearfix">
+    <figure class="authorbox__avatar">
+      <img alt="Burke Azbill avatar" src="/images/authors/burke.jpg" class="avatar" height="130" width="130">
+    </figure>
+    <div class="authorbox__header">
+      <span class="authorbox__name">About Burke Azbill:</span>
+    </div>
+    <div class="authorbox__description">
+      Burke has been a technology professional since 1996 and has held certifications from the CNCF, Cisco, Citrix, ITIL, Linux Professional Institute, Microsoft, Novell, and VMware.  He joined VMware in 2007 as part of the <a href="http://ir.vmware.com/overview/press-releases/press-release-details/2007/VMware-Acquires-Dunes-Technologies/default.aspx">acquisition of Dunes Technologies from Lausanne, Switzerland</a> where he had begun his work with Orchestrator.  Burke is founder and contributor of the <a href="https://VCOTeam.info">vCOTeam.info</a> blog as well as a leading contributor to the <a href="https://communities.vmware.com/community/vmtn/vrealize/orchestrator">VMTN Communities for Orchestrator</a>.  He has been recognized by the community as a <a href="https://vexpert.vmware.com/">vExpert</a> since 2010. During his tenure at VMware, Burke co-created the Orchestrator Masters Training program, has trained hundreds of employees on Orchestrator, built many integrations for customers and partners, and has worked various roles in the VMworld Hands On Labs.  He has also been a member, and technical lead, of the <a href="https://www.livefire.solutions">SDDC Livefire program</a>, building content, labs, and vPods for the program. Publications include contributing author for &lsquo;VMware vCloud Architecture Toolkit (vCAT)&rsquo; (VMware Press 2013) and technical resource for <a href="http://bit.ly/vroCookbook2">&lsquo;VMware vRealize Orchestrator Cookbook - Second Edition&rsquo;</a>, <a href="http://bit.ly/vroCookbook">&lsquo;VMware vRealize Orchestrator Cookbook</a>, and <a href="http://bit.ly/vroEssentials">VMware vRealize Orchestrator Essentials (Packt Publishing 2015)</a>, Automating vSphere with VMware vCenter Orchestrator (VMware Press 2012), and VMware vSphere for Dummies (For Dummies 2011).
+    </div>
+    <div class="widget-social__item widget__item">
+      <a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer"
+        href="https://twitter.com/TechnicalValues" target="_blank">
+        <svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+      </a>
+    </div>
+  </div>
+  
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/articles/vco-features/243-vmware-released-updated-vcenter-configuration-manager-vcenter-orchestrator-workflows.html" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">VMware released updated vCenter Configuration Manager vCenter Orchestrator Workflows</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://localhost:1313/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html">Please share your code at the Sample Exchange</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html">How to update a Resource Element Script&#39;s Contents using curl</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

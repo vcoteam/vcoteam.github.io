@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>REST on </title>
+    <link>http://localhost:1313/tags/rest.html</link>
+    <description>Recent content in REST on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing Swagger UI on vRO 7.0.1</title>
+      <link>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</link>
+      <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</guid>
+      <description>Although vRealize Orchestrator (vRO) has provided API documentation built-in to the server, it was static content that could not be quickly used for tests or building queries. When a product provides a nice API explorer that not only tells you the available urls and basic docs, but also provides a web-based UI that allows you to quickly build up custom calls and shows you the generated content, the consumption and integration time for developers is reduced considerably.</description>
+    </item>
+    
+    <item>
+      <title>Leveraging vCenter 6 vAPI REST endpoint</title>
+      <link>http://localhost:1313/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</link>
+      <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</guid>
+      <description>vCenter 6 has introduced an important new feature for anyone interested in Automation and integration : a REST based endpoint providing access to some of the recent functionality such as the tagging service, the content library and transfer service : It is called &amp;ldquo;VMware vCloud Suite SDK&amp;rdquo; and codenamed vAPI. In addition to the REST API it provides language bindings for Java, Python, .NET, Perl and Ruby. If you want to know more about vAPI you can read the blog article I wrote on the VMware CTO Ambassadors blog.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - Part 4</title>
+      <link>http://localhost:1313/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</link>
+      <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</guid>
+      <description>In part 1 and part 2 we created the inventory objects, in part 3 we created methods for this objects and ran a generic workflow to run these methods.
+In this article we will create workflows for calling these methods, include them in a package with all the plug-in configuration to ship it to our end users.
+Creating the workflows The invoke workflows in the plug-in facilitate running REST operations. End users and or external system will expect simpler workflows.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - Part 3</title>
+      <link>http://localhost:1313/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</link>
+      <pubDate>Wed, 25 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</guid>
+      <description>Part 1 of the plug-in generator v2 series covered how to create new plug-in inventory types, part 2 how to create their child object types. This part will focus on how to define object methods and associated workflows. Having Orchestrator inventory types is a necessity to use with vRealize Automation (formerly vCAC) Advanced Service Designer. Once you have these inventory objects you may wonder how to use these in workflows. This is what this article covers.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - Part 2</title>
+      <link>http://localhost:1313/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</link>
+      <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</guid>
+      <description>In the part 1 I walk through step by step to create a plug-in object type leveraging the Plug-in Generator version 2.
+In this article I will demonstrate one of the new feature of this version 2 : Create a child object type.
+Having the plug-in inventory organized in a tree view allows to represent most of the objects hierarchies found in applications APIs.
+Resuming from part 1 I need to create a vNIC object.</description>
+    </item>
+    
+  </channel>
+</rss>

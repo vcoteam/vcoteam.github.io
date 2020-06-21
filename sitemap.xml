@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:1313/articles/home-lab.html</loc>
-    <lastmod>2020-06-13T15:53:08-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/articles/vco-features.html</loc>
     <lastmod>2020-06-13T15:53:08-04:00</lastmod>
   </url>
@@ -78,6 +73,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</loc>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
   </url>
@@ -113,6 +113,21 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/curl.html</loc>
+    <lastmod>2017-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html</loc>
+    <lastmod>2017-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/321-how-to-retrieve-a-script-resource-from-vro-via-curl.html</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/homelab.html</loc>
     <lastmod>2016-12-28T00:00:00+00:00</lastmod>
   </url>
@@ -130,6 +145,21 @@
   <url>
     <loc>http://localhost:1313/tags/vsan.html</loc>
     <lastmod>2016-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html</loc>
+    <lastmod>2016-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/powercli.html</loc>
+    <lastmod>2016-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vro.html</loc>
+    <lastmod>2016-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -153,6 +183,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/articles/home-lab.html</loc>
+    <lastmod>2016-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/vmworld.html</loc>
     <lastmod>2016-12-04T00:00:00+00:00</lastmod>
   </url>
@@ -163,12 +198,1042 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/ad.html</loc>
+    <lastmod>2016-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</loc>
+    <lastmod>2016-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html</loc>
+    <lastmod>2016-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/api.html</loc>
+    <lastmod>2016-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</loc>
+    <lastmod>2016-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/rest.html</loc>
+    <lastmod>2016-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/swagger.html</loc>
+    <lastmod>2016-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</loc>
+    <lastmod>2016-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/308-configure-linux-networking-with-network-manager.html</loc>
+    <lastmod>2015-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/linux.html</loc>
+    <lastmod>2015-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/networkmanager.html</loc>
+    <lastmod>2015-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/nmcli.html</loc>
+    <lastmod>2015-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</loc>
+    <lastmod>2015-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vapi.html</loc>
+    <lastmod>2015-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/presentation.html</loc>
+    <lastmod>2015-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html</loc>
+    <lastmod>2015-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</loc>
+    <lastmod>2015-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/json.html</loc>
+    <lastmod>2015-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html</loc>
+    <lastmod>2015-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/http.html</loc>
+    <lastmod>2015-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/log.html</loc>
+    <lastmod>2015-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/303-log-plug-ins-http-communications.html</loc>
+    <lastmod>2015-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/dynamictypes.html</loc>
+    <lastmod>2015-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/302-create-a-plug-in-for-orchestrator.html</loc>
+    <lastmod>2015-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</loc>
+    <lastmod>2015-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</loc>
+    <lastmod>2015-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</loc>
+    <lastmod>2015-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</loc>
+    <lastmod>2015-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/nsx.html</loc>
+    <lastmod>2015-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vcac.html</loc>
+    <lastmod>2015-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</loc>
+    <lastmod>2015-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</loc>
+    <lastmod>2015-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</loc>
+    <lastmod>2015-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/293-get-addresses-in-range.html</loc>
+    <lastmod>2015-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</loc>
+    <lastmod>2014-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</loc>
+    <lastmod>2014-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/290-dynamic-input-values-based-on-other-inputs.html</loc>
+    <lastmod>2014-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</loc>
+    <lastmod>2014-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/f5-networks.html</loc>
+    <lastmod>2014-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</loc>
+    <lastmod>2014-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</loc>
+    <lastmod>2014-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</loc>
+    <lastmod>2014-04-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</loc>
+    <lastmod>2014-04-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/282-dynamic-types-tutorial-implement-your-own-twitter-plug-in-without-any-scripting.html</loc>
+    <lastmod>2014-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</loc>
+    <lastmod>2014-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</loc>
+    <lastmod>2014-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/278-how-to-allow-the-vco-appliance-to-write-files-to-a-windows-cifs-share.html</loc>
+    <lastmod>2014-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/279-vmware-released-vcenter-orchestrator-5-5-1.html</loc>
+    <lastmod>2014-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/277-how-to-change-ad-usergroup-scope-and-type.html</loc>
+    <lastmod>2014-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/276-getting-started-with-vco-and-vchs.html</loc>
+    <lastmod>2014-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/273-how-to-get-active-directory-user-properties.html</loc>
+    <lastmod>2014-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/272-leveraging-the-guest-script-manager-package.html</loc>
+    <lastmod>2013-11-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/271-code-snippet-find-a-workflow-by-name.html</loc>
+    <lastmod>2013-11-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco.html</loc>
+    <lastmod>2013-11-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/270-how-to-enable-vco-51x-to-log-api-requests.html</loc>
+    <lastmod>2013-11-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/263-run-a-program-in-guest-from-vcloud-automation-center-.html</loc>
+    <lastmod>2013-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</loc>
+    <lastmod>2013-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</loc>
+    <lastmod>2013-10-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/267-how-to-use-the-soapinterceptor-to-see-the-soap-header-and-body.html</loc>
+    <lastmod>2013-10-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/266-making-vco-workflow-wrappers.html</loc>
+    <lastmod>2013-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</loc>
+    <lastmod>2013-08-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/265-how-to-run-a-perl-script-from-a-vcenter-orchestrator-workflow.html</loc>
+    <lastmod>2013-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</loc>
+    <lastmod>2013-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/261-get-supported-hardware-versions-from-cluster.html</loc>
+    <lastmod>2013-05-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/251-vco-on-facebook.html</loc>
+    <lastmod>2013-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</loc>
+    <lastmod>2013-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</loc>
+    <lastmod>2013-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</loc>
+    <lastmod>2013-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/258-free-vmware-vcenter-orchestrator-videos.html</loc>
+    <lastmod>2013-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/257-enable-vcenter-orchestrator-vco-to-read-and-write-excel-files.html</loc>
+    <lastmod>2013-03-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/254-vcloud-director-catalog-replication.html</loc>
+    <lastmod>2013-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/253-extend-vcloud-director-with-service-builder.html</loc>
+    <lastmod>2013-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/252-free-vmware-vcenter-orchestrator-instructional-videos.html</loc>
+    <lastmod>2012-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/250-create-your-own-vcloud-download-lossless-vapp-template-workflow-in-less-than-5-minutes.html</loc>
+    <lastmod>2012-10-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/249-code-snippets-using-vcloud-director-object-metadata.html</loc>
+    <lastmod>2012-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</loc>
+    <lastmod>2012-09-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</loc>
+    <lastmod>2012-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</loc>
+    <lastmod>2012-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</loc>
+    <lastmod>2012-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</loc>
+    <lastmod>2012-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vco.html</loc>
+    <lastmod>2012-07-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/vco-features/243-vmware-released-updated-vcenter-configuration-manager-vcenter-orchestrator-workflows.html</loc>
+    <lastmod>2012-07-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</loc>
+    <lastmod>2012-06-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</loc>
+    <lastmod>2012-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/240-manage-services-on-your-esxi-hosts-with-vco.html</loc>
+    <lastmod>2012-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/239-leveraging-the-vmware-vcloud-director-query-service.html</loc>
+    <lastmod>2012-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</loc>
+    <lastmod>2012-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</loc>
+    <lastmod>2012-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/234-pimp-my-vcenter-orchestrator-virtual-appliance.html</loc>
+    <lastmod>2012-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</loc>
+    <lastmod>2012-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/230-vcloud-director-custom-deploy-vapp-workflow.html</loc>
+    <lastmod>2012-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</loc>
+    <lastmod>2012-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</loc>
+    <lastmod>2012-01-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</loc>
+    <lastmod>2012-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/224-vcloud-director-blocking-tasks-and-notifications-integration-with-vco-implementation.html</loc>
+    <lastmod>2012-01-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/226-vmware-is-hiring-integration-orchestration-development-engineers-and-practice-managers.html</loc>
+    <lastmod>2012-01-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</loc>
+    <lastmod>2011-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</loc>
+    <lastmod>2011-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</loc>
+    <lastmod>2011-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</loc>
+    <lastmod>2011-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</loc>
+    <lastmod>2011-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/198-building-your-custom-cloud-when-to-use-the-vcloud-api-or-the-vcenter-orchestrator-web-service.html</loc>
+    <lastmod>2011-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/217-code-snippets-use-the-api-explorer-to-write-your-own-custom-workflows.html</loc>
+    <lastmod>2011-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</loc>
+    <lastmod>2011-11-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/211-unnattended-deployment-of-vcenter-orchestrator-appliance.html</loc>
+    <lastmod>2011-11-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</loc>
+    <lastmod>2011-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/208-code-snippets-change-the-name-of-a-vcloud-director-organization.html</loc>
+    <lastmod>2011-11-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</loc>
+    <lastmod>2011-11-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/199-how-to-handle-vcenter-orchestrator-logs.html</loc>
+    <lastmod>2011-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/207-developing-your-first-vmware-vco-workflow-video-series.html</loc>
+    <lastmod>2011-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/203-code-snippets-create-your-database-plug-in.html</loc>
+    <lastmod>2011-10-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</loc>
+    <lastmod>2011-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</loc>
+    <lastmod>2011-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</loc>
+    <lastmod>2011-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/192-getting-started-with-perspectives-webview.html</loc>
+    <lastmod>2011-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/201-code-snippets-change-the-name-of-a-workflow-run.html</loc>
+    <lastmod>2011-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</loc>
+    <lastmod>2011-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/200-no-code-required-for-functional-workflows.html</loc>
+    <lastmod>2011-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/197-how-to-provide-vcenter-orchestrator-customized-workflows-to-your-customers.html</loc>
+    <lastmod>2011-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/196-monitoring-the-vcenter-orchestrator-java-virtual-machine.html</loc>
+    <lastmod>2011-09-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</loc>
+    <lastmod>2011-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</loc>
+    <lastmod>2011-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</loc>
+    <lastmod>2011-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</loc>
+    <lastmod>2011-09-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</loc>
+    <lastmod>2011-09-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/172-take-cloud-automation-scripting-to-another-level-with-cloud-orchestration.html</loc>
+    <lastmod>2011-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/179-configure-the-amqp-plug-in.html</loc>
+    <lastmod>2011-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</loc>
+    <lastmod>2011-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</loc>
+    <lastmod>2011-08-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</loc>
+    <lastmod>2011-08-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/180-extend-vcloud-director-with-vcenter-orchestrator.html</loc>
+    <lastmod>2011-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</loc>
+    <lastmod>2011-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</loc>
+    <lastmod>2011-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</loc>
+    <lastmod>2011-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/182-tips-export-and-import-input-parameters.html</loc>
+    <lastmod>2011-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</loc>
+    <lastmod>2011-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/181-work-with-vco-over-ssl.html</loc>
+    <lastmod>2011-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</loc>
+    <lastmod>2011-08-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/176-how-to-retrieve-workflow-execution-details.html</loc>
+    <lastmod>2011-07-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/vco-features/175-release-management-for-vm-clones-with-vco.html</loc>
+    <lastmod>2011-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/vco-features/174-radware-adc-virtualization-a-vmware-orchestrator-an-integration-demo.html</loc>
+    <lastmod>2011-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</loc>
+    <lastmod>2011-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</loc>
+    <lastmod>2011-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/168-how-to-automate-labmanager-with-vco.html</loc>
+    <lastmod>2011-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</loc>
+    <lastmod>2011-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</loc>
+    <lastmod>2011-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/169-code-snippets-get-vms-that-triggered-vcenter-alarms.html</loc>
+    <lastmod>2011-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html</loc>
+    <lastmod>2011-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</loc>
+    <lastmod>2011-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/164-force-a-vm-to-boot-from-several-devices.html</loc>
+    <lastmod>2011-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</loc>
+    <lastmod>2011-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/163-automatic-delivery-of-customized-vms-into-vcloud-director.html</loc>
+    <lastmod>2011-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</loc>
+    <lastmod>2011-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html</loc>
+    <lastmod>2011-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</loc>
+    <lastmod>2011-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/156-automate-the-cloud-or-die-.html</loc>
+    <lastmod>2011-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</loc>
+    <lastmod>2011-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/147-vcloud-director-vapp-hot-clone-in-less-than-one-hour-solution-video.html</loc>
+    <lastmod>2011-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</loc>
+    <lastmod>2011-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/145-need-an-analogy-around-vco-and-vcloud-director.html</loc>
+    <lastmod>2011-04-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</loc>
+    <lastmod>2011-03-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</loc>
+    <lastmod>2011-03-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/140-vcloud-director-vapp-hot-clone.html</loc>
+    <lastmod>2011-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/138-vcenter-orchestrator-identify-permission-problems.html</loc>
+    <lastmod>2011-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</loc>
+    <lastmod>2011-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/vco-features/135-burke-azbill-returns-to-the-vmware-communities-roundtable.html</loc>
+    <lastmod>2011-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vcloud-director.html</loc>
+    <lastmod>2011-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/133-vmware-kb-tv-how-to-install-and-configure-vmware-vcenter-orchestrator-plug-in-for-vcloud-director.html</loc>
+    <lastmod>2011-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</loc>
+    <lastmod>2011-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/127-vmware-is-hiring-a-sr-product-manager-vcloud-services.html</loc>
+    <lastmod>2011-02-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</loc>
+    <lastmod>2011-02-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/126-vmware-is-hiring-a-senior-integration-engineer-workflow-developer.html</loc>
+    <lastmod>2011-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/125-mightycare-vco-code-snippets.html</loc>
+    <lastmod>2011-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/124-vcenter-orchestrator-vcap-topic-brown-bag.html</loc>
+    <lastmod>2011-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/123-code-snippets-cancel-one-of-your-running-workflows.html</loc>
+    <lastmod>2011-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/vco-features/122-new-version-of-the-administration-and-developers-guides.html</loc>
+    <lastmod>2011-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/plug-ins.html</loc>
+    <lastmod>2011-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/vco-features/121-vco-plug-ins-wish-list.html</loc>
+    <lastmod>2011-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/120-vmware-looking-for-vcenter-orchestrator-workflow-developers.html</loc>
+    <lastmod>2010-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/115-some-tips-for-new-vco-plug-in-developers-ii.html</loc>
+    <lastmod>2010-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/114-some-tips-for-new-vco-plug-in-developers-i.html</loc>
+    <lastmod>2010-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/118-vmware-labs-releases-python-bindings-for-vmware-vcenter-orchestrator-vco.html</loc>
+    <lastmod>2010-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/117-cyber-monday-website-hosting-savings.html</loc>
+    <lastmod>2010-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/116-vendorwag-with-mike-laverick-features-our-very-own-burke-azbill.html</loc>
+    <lastmod>2010-11-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/113-expand-your-vco-library-with-onyx.html</loc>
+    <lastmod>2010-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</loc>
+    <lastmod>2010-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</loc>
+    <lastmod>2010-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/109-vmware-kb-tv-how-to-install-vmware-vcenter-orchestrator.html</loc>
+    <lastmod>2010-10-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/107-create-a-simple-vco-self-service-vm-provisioning-portal-part-3.html</loc>
+    <lastmod>2010-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/106-vco-simple-example-and-hints.html</loc>
+    <lastmod>2010-10-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</loc>
+    <lastmod>2010-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</loc>
+    <lastmod>2010-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/103-vco-vix-plug-in-released.html</loc>
+    <lastmod>2010-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/102-creating-workflow-loops.html</loc>
+    <lastmod>2010-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/101-lifecycle-manager-reports-made-excel-friendly.html</loc>
+    <lastmod>2010-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/98-lifecycle-manager-end-of-availability.html</loc>
+    <lastmod>2010-09-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</loc>
+    <lastmod>2010-09-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</loc>
+    <lastmod>2010-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html</loc>
+    <lastmod>2010-08-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</loc>
+    <lastmod>2010-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</loc>
+    <lastmod>2010-08-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/89-how-to-configure-vcenter-orchestrator-vco.html</loc>
+    <lastmod>2010-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/93-vcenter-orchestrator-41-released-.html</loc>
+    <lastmod>2010-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/87-create-a-simple-vco-self-service-vm-provisioning-portal-part-2.html</loc>
+    <lastmod>2010-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</loc>
+    <lastmod>2010-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/86-q-and-a-section-added.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -188,11 +1253,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/articles/learn-vco.html</loc>
-    <lastmod>2010-06-13T15:54:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/articles/newsflash.html</loc>
     <lastmod>2010-06-13T15:54:00-04:00</lastmod>
   </url>
@@ -200,6 +1260,31 @@
   <url>
     <loc>http://localhost:1313/links.html</loc>
     <lastmod>2010-06-13T15:53:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/54-create-a-simple-vco-self-service-vm-provisioning-portal-part-1.html</loc>
+    <lastmod>2010-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/newsflash/52-vco-plugin-for-vsphere-client.html</loc>
+    <lastmod>2010-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vcenter-orchestrator.html</loc>
+    <lastmod>2010-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/vco-features/51-vco-help-topics-request.html</loc>
+    <lastmod>2010-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/articles/learn-vco/47-how-to-install-vcenter-orchestrator-vco.html</loc>
+    <lastmod>2010-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -216,6 +1301,10 @@
   
   <url>
     <loc>http://localhost:1313/categories.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/storage-i/o.html</loc>
   </url>
   
 </urlset>

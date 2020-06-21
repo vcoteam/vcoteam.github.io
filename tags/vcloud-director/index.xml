@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vCloud Director on </title>
+    <link>http://localhost:1313/tags/vcloud-director.html</link>
+    <description>Recent content in vCloud Director on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Feb 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/vcloud-director/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Burke Azbill returns to the VMware Communities Roundtable</title>
+      <link>http://localhost:1313/articles/vco-features/135-burke-azbill-returns-to-the-vmware-communities-roundtable.html</link>
+      <pubDate>Mon, 28 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/135-burke-azbill-returns-to-the-vmware-communities-roundtable.html</guid>
+      <description>Hello all, it looks like we have Burke Azbill participating in this week&amp;rsquo;s VMware Communities Roundtable (Episode #130) Podcast by @jtroyer. Be sure to stop by! The session will be discussing
+vCloud Connector and other delights, including that new Plug-in that allows vCenter Orchestrator to work with vCloud Director!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vCO on </title>
+    <link>http://localhost:1313/tags/vco.html</link>
+    <description>Recent content in vCO on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Jul 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/vco/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VMware released updated vCenter Configuration Manager vCenter Orchestrator Workflows</title>
+      <link>http://localhost:1313/articles/vco-features/243-vmware-released-updated-vcenter-configuration-manager-vcenter-orchestrator-workflows.html</link>
+      <pubDate>Mon, 16 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/243-vmware-released-updated-vcenter-configuration-manager-vcenter-orchestrator-workflows.html</guid>
+      <description>This vCenter Configuration Manager workflow package includes vCenter Orchestrator workflows for managing vSphere Virtual Machines and templates.These are sample workflows for illustrating Configuration Manager&amp;rsquo;s ability to perform Operating System patching, configuration compliance, Software Provisioning and OS Provisioning.These workflows are compatible with vCenter Orchestrator Rest Plug-in version 1.0.1 and later.
+This is version 2.0 of the package. It contains:
+ Enhancements and Bug fixes in the original (version 1) workflows New workflows to automate OS provisioning and Windows Software distribution functions  New workflow package and associated documents can be downloaded from here</description>
+    </item>
+    
+    <item>
+      <title>Release Management for VM Clones with vCO</title>
+      <link>http://localhost:1313/articles/vco-features/175-release-management-for-vm-clones-with-vco.html</link>
+      <pubDate>Sun, 10 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/175-release-management-for-vm-clones-with-vco.html</guid>
+      <description>Last week I was member of a roundtable for designing SAP application delivery. The main things they discussed about were VM templates and their clones. SAP has an own application abstraction layer (ACC - adaptive computing controller) which hosts an API. With this knowledge I designed a little whiteboard workflow with the vCenter Orchestrator as clone intelligence and automation instance for future release management.
+  As you can see the software delivery application could be every other deployment system (HP Radia, Altiris etc.</description>
+    </item>
+    
+    <item>
+      <title>Burke Azbill returns to the VMware Communities Roundtable</title>
+      <link>http://localhost:1313/articles/vco-features/135-burke-azbill-returns-to-the-vmware-communities-roundtable.html</link>
+      <pubDate>Mon, 28 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/135-burke-azbill-returns-to-the-vmware-communities-roundtable.html</guid>
+      <description>Hello all, it looks like we have Burke Azbill participating in this week&amp;rsquo;s VMware Communities Roundtable (Episode #130) Podcast by @jtroyer. Be sure to stop by! The session will be discussing
+vCloud Connector and other delights, including that new Plug-in that allows vCenter Orchestrator to work with vCloud Director!</description>
+    </item>
+    
+    <item>
+      <title>New version of the administration and developer&#39;s guides</title>
+      <link>http://localhost:1313/articles/vco-features/122-new-version-of-the-administration-and-developers-guides.html</link>
+      <pubDate>Wed, 19 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/122-new-version-of-the-administration-and-developers-guides.html</guid>
+      <description>The vCO 4.01 and 4.1 administration and developer&amp;rsquo;s guides were recently updated with quite a few additions in the latest covering items such as
+ Running a workflow on a Selection of Objects Implement the &amp;ldquo;Start Workflows in a Series&amp;rdquo; and &amp;ldquo;Start Workflows in Parallel&amp;rdquo; workflows Running a workflow in a scripted loop scripting example  Get these updated version from the VMware vCenter Orchestrator (vCO) Documentation page.
+See the &amp;lsquo;Updated Information&amp;rsquo; section in each guide for the full details of the additions.</description>
+    </item>
+    
+    <item>
+      <title>vCO plug-ins wish list</title>
+      <link>http://localhost:1313/articles/vco-features/121-vco-plug-ins-wish-list.html</link>
+      <pubDate>Wed, 19 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/121-vco-plug-ins-wish-list.html</guid>
+      <description>If you wish vCO had additional plug-ins to orchestrate more technologies please comment with your top 5 wish list.</description>
+    </item>
+    
+    <item>
+      <title>vCO Help Topics Request</title>
+      <link>http://localhost:1313/articles/vco-features/51-vco-help-topics-request.html</link>
+      <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/51-vco-help-topics-request.html</guid>
+      <description>Are you getting started with VMware&amp;rsquo;s vCenter Orchestrator? vCO can be a challenge or a breeze to learn depending on your skill sets and what you&amp;rsquo;re trying to accomplish. It allows for the creation of very complicated workflows with minimal effort if you know where to look and are familiar with the interface. Knowing where to look can sometimes be key.
+I&amp;rsquo;ve launched this site in an effort to help enlighten those getting started with vCO so I welcome your feedback.</description>
+    </item>
+    
+  </channel>
+</rss>

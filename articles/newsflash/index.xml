@@ -11,5 +11,762 @@
 	<atom:link href="http://localhost:1313/articles/newsflash/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Please share your code at the Sample Exchange</title>
+      <link>http://localhost:1313/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</link>
+      <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</guid>
+      <description>Last week, I was leading discussions at a Technical session for VMware&amp;rsquo;s internal TechSummit event in Toronto, Canada. During one of the discussions, we ended up on the topic of where and how we were storing workflows and packages we had developed. I was a bit surprised that people in the room had workflows and packages in GitHub repos but weren&amp;rsquo;t aware of some aspects of the Sample Exchange at the VMware Codesite!</description>
+    </item>
+    
+    <item>
+      <title>vRO Essentials Book Update for 7.x</title>
+      <link>http://localhost:1313/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</link>
+      <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</guid>
+      <description>Hello everyone!I&amp;rsquo;ve recently received news that there is some Errata update for the VMware vRealize Orchestrator Essentials book. The author has provided some updated material to reflect changes as a result of the GA of VMware vRealize Orchestrator 7.0. You can learn more about the updates here: http://langenhan.info/publications.html.</description>
+    </item>
+    
+    <item>
+      <title>VMware Horizon vCenter Orchestrator Plug-in Released</title>
+      <link>http://localhost:1313/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</link>
+      <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</guid>
+      <description>Hello all you end user compute admins! If you&amp;rsquo;ve been waiting for a vCO plug-in for your Horizon environment, your wait is over. Join Aaron Black in this &amp;ldquo;Getting Started with vCenter Orchestrator Horizon Plug In&amp;rdquo; video. http://www.youtube.com/watch?v=xDKUE71ltfs In order to get the plug-in, you must be licensed for Horizon 6.0 Enterprise. For a quick link to the download (login required at VMware&amp;rsquo;s site), click Links -&amp;gt; Plug Ins, then scroll down to the &amp;ldquo;Horizon&amp;rdquo; plugin link :)VMware Horizon on Twitter</description>
+    </item>
+    
+    <item>
+      <title>VMware released new and updated vCO plug-ins</title>
+      <link>http://localhost:1313/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</link>
+      <pubDate>Wed, 23 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware announced vCenter Orchestrator 5.5</title>
+      <link>http://localhost:1313/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</link>
+      <pubDate>Mon, 26 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Orchestrate NetApp OnCommand Workflow Automation (WFA)</title>
+      <link>http://localhost:1313/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</link>
+      <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO on Facebook</title>
+      <link>http://localhost:1313/articles/newsflash/251-vco-on-facebook.html</link>
+      <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/251-vco-on-facebook.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Orchestrator 5.1 Update 1</title>
+      <link>http://localhost:1313/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</link>
+      <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware vCenter Orchestrator 5.1 Quick Reference</title>
+      <link>http://localhost:1313/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</link>
+      <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</guid>
+      <description>vCO Configuration Quick ReferencevCO Developer&amp;rsquo;s Quick ReferencevCO Scripting Quick Reference</description>
+    </item>
+    
+    <item>
+      <title>Time to get your hands on the most complete cloud orchestration</title>
+      <link>http://localhost:1313/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</link>
+      <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCloud Director 5.1</title>
+      <link>http://localhost:1313/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</link>
+      <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCloud Architecture Toolkit (vCAT) version 3.0</title>
+      <link>http://localhost:1313/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</link>
+      <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware has demonstrated a major upgrade of vCenter Orchestrator as part of its vCloud Suite</title>
+      <link>http://localhost:1313/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</link>
+      <pubDate>Fri, 20 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Several vCenter Orchestrator plug-ins updates</title>
+      <link>http://localhost:1313/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</link>
+      <pubDate>Tue, 19 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</guid>
+      <description>Quoting the communities post:</description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vShield 5.0</title>
+      <link>http://localhost:1313/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Configuration Manager 5.5 with vCenter Orchestrator integration</title>
+      <link>http://localhost:1313/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</link>
+      <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Orchestrator 4.2.1</title>
+      <link>http://localhost:1313/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</link>
+      <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for VMware vCenter Chargeback Manager 2.0</title>
+      <link>http://localhost:1313/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Virtual Customer Labs Automated with vCenter Orchestrator</title>
+      <link>http://localhost:1313/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</link>
+      <pubDate>Sun, 05 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</guid>
+      <description>The article explains what is the vCL and how it works. A part of the solution involves a vCO powered request / approval portal. Read more about it here.</description>
+    </item>
+    
+    <item>
+      <title>VMware Opens Online Virtualization and Cloud Solutions Marketplace featuring vCenter Orchestrator  </title>
+      <link>http://localhost:1313/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</link>
+      <pubDate>Wed, 25 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>@PowerScripting chat with vCO Managers</title>
+      <link>http://localhost:1313/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</link>
+      <pubDate>Tue, 17 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware is hiring Integration Orchestration Development Engineers and Practice Managers</title>
+      <link>http://localhost:1313/articles/newsflash/226-vmware-is-hiring-integration-orchestration-development-engineers-and-practice-managers.html</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/226-vmware-is-hiring-integration-orchestration-development-engineers-and-practice-managers.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Multi-Node Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for Microsoft Windows PowerShell</title>
+      <link>http://localhost:1313/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vSphere Auto Deploy</title>
+      <link>http://localhost:1313/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator SQL Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCloud Director orchestrated infrastructure provisioning featuring VCE UIM vCO plug-in preview</title>
+      <link>http://localhost:1313/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</link>
+      <pubDate>Mon, 05 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in update for vCloud Director 1.5</title>
+      <link>http://localhost:1313/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Get trained on vCenter Orchestrator: 10 classes planned in EMEA </title>
+      <link>http://localhost:1313/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</link>
+      <pubDate>Wed, 09 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vFabric Application Performance Manager featuring vCenter Orchestrator integration</title>
+      <link>http://localhost:1313/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</link>
+      <pubDate>Wed, 02 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EMC VMAX, VNX, VMware vSphere, vCloud Director integration powered by vCenter Orchestrator </title>
+      <link>http://localhost:1313/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</link>
+      <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Virtual Appliance</title>
+      <link>http://localhost:1313/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</link>
+      <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Labs released the vCenter Orchestrator CIM Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</link>
+      <pubDate>Tue, 18 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Labs released the Perspectives Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</link>
+      <pubDate>Tue, 04 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>No Code Required For Functional Workflows</title>
+      <link>http://localhost:1313/articles/newsflash/200-no-code-required-for-functional-workflows.html</link>
+      <pubDate>Mon, 03 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/200-no-code-required-for-functional-workflows.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware published the vCenter Orchestrator Plug-ins Documentation Center</title>
+      <link>http://localhost:1313/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</link>
+      <pubDate>Sat, 17 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released an update for the vCenter Orchestrator for vCloud Director 1.01</title>
+      <link>http://localhost:1313/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</link>
+      <pubDate>Sat, 17 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infoblox released a Tech Note on their vCenter Orchestrator plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</link>
+      <pubDate>Fri, 16 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCenter Server 5.0</title>
+      <link>http://localhost:1313/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</link>
+      <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator SNMP Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</link>
+      <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released a vCenter Orchestrator Training course</title>
+      <link>http://localhost:1313/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</link>
+      <pubDate>Tue, 06 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Free preview of &#34;Automating vSphere: With VMware vCenter Orchestrator&#34; by Cody Bunch</title>
+      <link>http://localhost:1313/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</link>
+      <pubDate>Tue, 30 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infoblox announced a vCenter Orchestrator plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</link>
+      <pubDate>Tue, 30 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator at VMworld 2011</title>
+      <link>http://localhost:1313/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</link>
+      <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Orchestrator 4.2</title>
+      <link>http://localhost:1313/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</link>
+      <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware releases vCloud Architecture Toolkit (vCAT) version 2.0</title>
+      <link>http://localhost:1313/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</link>
+      <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in SDK</title>
+      <link>http://localhost:1313/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</link>
+      <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the AMQP plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</link>
+      <pubDate>Wed, 17 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator new plug-ins covered in &#34;This week in virtualization&#34;</title>
+      <link>http://localhost:1313/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</link>
+      <pubDate>Thu, 30 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware is seeking for vCenter Orchestrator Plug-ins documentation feedback</title>
+      <link>http://localhost:1313/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</link>
+      <pubDate>Tue, 28 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released Service Manager 9.0 vCenter Orchestrator connector</title>
+      <link>http://localhost:1313/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</link>
+      <pubDate>Mon, 20 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator SOAP and REST Plug-ins</title>
+      <link>http://localhost:1313/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</link>
+      <pubDate>Thu, 16 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCenter Update Manager</title>
+      <link>http://localhost:1313/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</link>
+      <pubDate>Wed, 15 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring solution has built-in support for vCO based Remediation!</title>
+      <link>http://localhost:1313/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</link>
+      <pubDate>Fri, 10 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware press to release a book on automating vSphere with vCenter Orchestrator</title>
+      <link>http://localhost:1313/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</link>
+      <pubDate>Fri, 20 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMworld 2011 - Help to reveal VMware&#34;s best kept secret !</title>
+      <link>http://localhost:1313/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</link>
+      <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automate the cloud or die </title>
+      <link>http://localhost:1313/articles/newsflash/156-automate-the-cloud-or-die-.html</link>
+      <pubDate>Wed, 04 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/156-automate-the-cloud-or-die-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for Microsoft Active Directory</title>
+      <link>http://localhost:1313/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</link>
+      <pubDate>Wed, 04 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Blog posts a Sample scenario for the Cisco UCS Manager plug-in!</title>
+      <link>http://localhost:1313/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</link>
+      <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</guid>
+      <description>As some of you may know, VMware recently launched an official vCenter Orchestrator blog! The team at VMware has put together a nice sample scenario post that walks you through the use of the Cisco UCS Manager plug-in. Be sure to stop by and check it out! To keep up on the posts there, feel free to follow their RSS Feed.</description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for the Cisco UCS Manager</title>
+      <link>http://localhost:1313/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</link>
+      <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware vCenter Orchestrator Blog now live</title>
+      <link>http://localhost:1313/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</link>
+      <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCloud Connector and other delights on VMware Communities Roundtable</title>
+      <link>http://localhost:1313/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</link>
+      <pubDate>Wed, 02 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCloud Director</title>
+      <link>http://localhost:1313/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</link>
+      <pubDate>Mon, 21 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware is hiring a Sr. Product Manager, vCloud Services</title>
+      <link>http://localhost:1313/articles/newsflash/127-vmware-is-hiring-a-sr-product-manager-vcloud-services.html</link>
+      <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/127-vmware-is-hiring-a-sr-product-manager-vcloud-services.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware vCenter Orchestrator 4.1.1 released !</title>
+      <link>http://localhost:1313/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</link>
+      <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware is hiring a Senior Integration Engineer - Workflow Developer</title>
+      <link>http://localhost:1313/articles/newsflash/126-vmware-is-hiring-a-senior-integration-engineer-workflow-developer.html</link>
+      <pubDate>Thu, 10 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/126-vmware-is-hiring-a-senior-integration-engineer-workflow-developer.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware looking for vCenter Orchestrator workflow developers feedback</title>
+      <link>http://localhost:1313/articles/newsflash/120-vmware-looking-for-vcenter-orchestrator-workflow-developers.html</link>
+      <pubDate>Tue, 21 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/120-vmware-looking-for-vcenter-orchestrator-workflow-developers.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Labs releases Python Bindings for VMware vCenter Orchestrator (vCO)</title>
+      <link>http://localhost:1313/articles/newsflash/118-vmware-labs-releases-python-bindings-for-vmware-vcenter-orchestrator-vco.html</link>
+      <pubDate>Wed, 01 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/118-vmware-labs-releases-python-bindings-for-vmware-vcenter-orchestrator-vco.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cyber Monday Website Hosting Savings!</title>
+      <link>http://localhost:1313/articles/newsflash/117-cyber-monday-website-hosting-savings.html</link>
+      <pubDate>Sun, 28 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/117-cyber-monday-website-hosting-savings.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VendorWag with Mike Laverick features our very own Burke Azbill</title>
+      <link>http://localhost:1313/articles/newsflash/116-vendorwag-with-mike-laverick-features-our-very-own-burke-azbill.html</link>
+      <pubDate>Sat, 27 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/116-vendorwag-with-mike-laverick-features-our-very-own-burke-azbill.html</guid>
+      <description>This week&amp;rsquo;s VendorWag with @Mike_Laverick features the recent interview he conducted with Burke Azbill here at vCOTeam.com. Stop by RTFM Educationto see/hear the interview regarding vCenter Orchestrator (vCO).
+Happy Thanksgiving holiday to all of you here in the U.S.A. :)</description>
+    </item>
+    
+    <item>
+      <title>Did you miss the roundtable podcast?</title>
+      <link>http://localhost:1313/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</link>
+      <pubDate>Thu, 28 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>See and Hear vCOTeam&#34;s Burke Azbill on Upcoming PodCasts</title>
+      <link>http://localhost:1313/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</link>
+      <pubDate>Wed, 27 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO simple example &amp; hints</title>
+      <link>http://localhost:1313/articles/newsflash/106-vco-simple-example-and-hints.html</link>
+      <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/106-vco-simple-example-and-hints.html</guid>
+      <description>Regards, Andreas</description>
+    </item>
+    
+    <item>
+      <title>vCloud Director orchestrated infrastructure provisioning featuring NetApp vCO plug-in preview</title>
+      <link>http://localhost:1313/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</link>
+      <pubDate>Mon, 04 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware vCloud Director vCO plug-in preview</title>
+      <link>http://localhost:1313/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</link>
+      <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO VIX plug-in released !</title>
+      <link>http://localhost:1313/articles/newsflash/103-vco-vix-plug-in-released.html</link>
+      <pubDate>Fri, 24 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/103-vco-vix-plug-in-released.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lifecycle Manager End of Availability</title>
+      <link>http://localhost:1313/articles/newsflash/98-lifecycle-manager-end-of-availability.html</link>
+      <pubDate>Tue, 07 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/98-lifecycle-manager-end-of-availability.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO web views not deprecated anymore</title>
+      <link>http://localhost:1313/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</link>
+      <pubDate>Tue, 07 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMworld 2010 session on Orchestrating the Cloud</title>
+      <link>http://localhost:1313/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</link>
+      <pubDate>Tue, 31 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware releases vCenter Lifecycle Manager 1.2</title>
+      <link>http://localhost:1313/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</link>
+      <pubDate>Fri, 13 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator (vCO) at VMworld 2010</title>
+      <link>http://localhost:1313/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</link>
+      <pubDate>Mon, 02 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator 4.1 released !</title>
+      <link>http://localhost:1313/articles/newsflash/93-vcenter-orchestrator-41-released-.html</link>
+      <pubDate>Mon, 12 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/93-vcenter-orchestrator-41-released-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Q and A Section Added</title>
+      <link>http://localhost:1313/articles/newsflash/86-q-and-a-section-added.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/86-q-and-a-section-added.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO Plugin for vSphere Client</title>
+      <link>http://localhost:1313/articles/newsflash/52-vco-plugin-for-vsphere-client.html</link>
+      <pubDate>Thu, 27 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/52-vco-plugin-for-vsphere-client.html</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

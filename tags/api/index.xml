@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on </title>
+    <link>http://localhost:1313/tags/api.html</link>
+    <description>Recent content in API on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing Swagger UI on vRO 7.0.1</title>
+      <link>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</link>
+      <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</guid>
+      <description>Although vRealize Orchestrator (vRO) has provided API documentation built-in to the server, it was static content that could not be quickly used for tests or building queries. When a product provides a nice API explorer that not only tells you the available urls and basic docs, but also provides a web-based UI that allows you to quickly build up custom calls and shows you the generated content, the consumption and integration time for developers is reduced considerably.</description>
+    </item>
+    
+  </channel>
+</rss>

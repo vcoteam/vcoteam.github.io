@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vcac on </title>
+    <link>http://localhost:1313/tags/vcac.html</link>
+    <description>Recent content in vcac on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Feb 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/vcac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - part 1</title>
+      <link>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</link>
+      <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</guid>
+      <description>In a previous articleI have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.Then explained how to build your own twitter plug-in using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.</description>
+    </item>
+    
+    <item>
+      <title>Extend Automation Center with F5 AFM using vCO &#43; Dynamic Types </title>
+      <link>http://localhost:1313/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</link>
+      <pubDate>Mon, 13 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</guid>
+      <description>My colleague, Chris Slater at defined by softwarehas published an article on how to extend VMware Automation Center (vCAC) with F5 firewall functionality. I usually do not cross post articles but this one is worth mentioning since it is a real world example on how to leverage vCAC + vCO + Dynamic Types + third party API. The first part of the articleexplain what are the different options available to automate F5 including the F5 plug-in for vCO, PowerShell, the big IP CLI, the SOAP and REST APIs and give an overview of the solution.</description>
+    </item>
+    
+    <item>
+      <title>Extend vCAC 6 IaaS Lifecycle with vCO introduction video</title>
+      <link>http://localhost:1313/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</link>
+      <pubDate>Mon, 05 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</guid>
+      <description>Last year I have created an extensibility package to simplify and automate the steps necessary to extend the vCAC IaaS lifecycle process with calling out vCO workflows. While this was mainly aimed at accelerating Proof of Concepts it has been since then broadly adopted in production environments. Since vCAC 6.0 it is part of the product and available for vCAC 5.2 as a separate download.Since this is now becoming a very hot topic I am including here a very useful extensibility introduction video that was released by my colleagues from tech marketing almost three months ago.</description>
+    </item>
+    
+  </channel>
+</rss>

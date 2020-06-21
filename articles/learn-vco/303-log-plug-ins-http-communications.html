@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Log plug-ins HTTP communications - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="How to log http communications for plug-ins">
+		<meta property="og:title" content="Log plug-ins HTTP communications" />
+<meta property="og:description" content="How to log http communications for plug-ins" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/articles/learn-vco/303-log-plug-ins-http-communications.html" />
+<meta property="article:published_time" content="2015-04-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-04-15T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Log plug-ins HTTP communications"/>
+<meta name="twitter:description" content="How to log http communications for plug-ins"/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-16400053-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn VCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">Newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Log plug-ins HTTP communications</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-04-15T00:00:00Z">April 15, 2015</time></div>
+</div>
+		</header><div class="content post__content clearfix">
+			<p>A lot of the Orchestrator plug-ins use the Apache HTTP client to communicate with the target hosts. You may want to log the HTTP communications for many purposes:</p>
+<ul>
+<li>Understanding how vCO does the API calls</li>
+<li>Troubleshoot a problem with a target host</li>
+<li>Re-engineering an existing call with capturing it, changing it as you like and use it via the REST or SOAP plug-in</li>
+<li>Brag you have found an &ldquo;Onyx&rdquo; like functionality for most Orchestrated products</li>
+</ul>
+<p>This article will guide you on how to log these calls to a file.</p>
+<p>In a <a href="/articles/learn-vco/199-how-to-handle-vcenter-orchestrator-logs.html" >previous article</a> I explained how the Orchestrator logs work and how to update the log4j configuration file.</p>
+<p>Orchestrator leverages a powerful logging framework named log4j.</p>
+<p>This framework can log the activity of the Apache HTTP client as documented <a href="https://hc.apache.org/httpcomponents-client-ga/logging.html"  target="_blank" rel="noreferrer noopener" >here</a>.</p>
+<p>Log4j has two configuration files. A log4j.properties file and in the case of orchestrator is using a log4j.xml file. The Apache documentation only covers the first one but it is not hard to adapt it to the xml one with understanding the basics of log4j appenders and loggers.</p>
+<p>The following modification is not supported in production. It will considerably slow down your Orchestrator server since it will log all the Apache HTTP traffic, all the headers and other information to a file. It is recommended to be used on a test / dev environment only. Also updating the log configuration from the Orchestrator web based configuration will overwrite the changes you will apply to log4j.</p>
+<p>First ssh in your Orchestrator appliance (or open RDP on your Windows host).<!-- raw HTML omitted -->Locate the log4j.xml file (in /etc/vco/app-server in the appliance)</p>
+<p>Edit log4j.xml (I use VI on the appliance - you may use another editor or transfer the file on your host, modify it and send it back)</p>
+<p>Insert the highlighted lines.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;</span>
+<span style="color:#75715e">&lt;!DOCTYPE log4j:configuration SYSTEM &#34;log4j.dtd&#34;&gt;</span>
+<span style="color:#f92672">&lt;log4j:configuration</span> <span style="color:#a6e22e">xmlns:log4j=</span><span style="color:#e6db74">&#34;http://jakarta.apache.org/log4j/&#34;</span> <span style="color:#a6e22e">debug=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">reset=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">threshold=</span><span style="color:#e6db74">&#34;null&#34;</span><span style="color:#f92672">&gt;</span>
+
+<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#f92672">&lt;appender</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;rolling&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.apache.log4j.DailyRollingFileAppender&#34;</span><span style="color:#f92672">&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;File&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${catalina.base}/logs/http.log&#34;</span><span style="color:#f92672">/&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#f92672">&lt;layout</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.apache.log4j.PatternLayout&#34;</span><span style="color:#f92672">&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">            <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ConversionPattern&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;%d [%t] %-5p %c:%L - %m%n&#34;</span><span style="color:#f92672">/&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#f92672">&lt;/layout&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#f92672">&lt;/appender&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#f92672">&lt;logger</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;org.apache.http&#34;</span><span style="color:#f92672">&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#f92672">&lt;level</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;DEBUG&#34;</span><span style="color:#f92672">/&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#f92672">&lt;appender-ref</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;rolling&#34;</span><span style="color:#f92672">/&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#f92672">&lt;/logger&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The appender define a new log target and the log format. It is going to be the file named http.log that will be located in the /var/log/vco/app-server in the appliance.</p>
+<p>The logger defines what is logged. Here we log all Apache HTTP log.</p>
+<p>Save and quit the file.</p>
+<p>You can now watch all the HTTP traffic.</p>
+<p>To do this on the appliance you can use <code>tail -f /var/log/vco/app-server/http.log</code> On windows you can use baretail</p>
+<p>You may notice traffic being logged right away for the vCenter and SSO Identity server SOAP connections.</p>
+<p>Now let&rsquo;s say I want to know what request the NSX plug-in is doing to display its datacenter objects in the inventory. I have just to unfold the Datacenters object and watch the logs.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plain" data-lang="plain"><span style="display:block;width:100%;background-color:#3c3d38">2015-04-15 22:00:10,426 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.headers:124 - http-outgoing-2 &gt;&gt; GET /api/2.0/services/usermgmt/scopingobjects HTTP/1.1
+</span><span style="display:block;width:100%;background-color:#3c3d38">2015-04-15 22:00:10,427 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.headers:127 - http-outgoing-2 &gt;&gt; Accept: application/xml, text/xml, application/*+xml
+</span>2015-04-15 22:00:10,427 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.headers:127 - http-outgoing-2 &gt;&gt; Host: home.cdecanini.fr
+2015-04-15 22:00:10,427 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.headers:127 - http-outgoing-2 &gt;&gt; Connection: Keep-Alive
+2015-04-15 22:00:10,428 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.headers:127 - http-outgoing-2 &gt;&gt; User-Agent: Apache-HttpClient/4.3.3 (java 1.5)
+<span style="display:block;width:100%;background-color:#3c3d38">2015-04-15 22:00:10,428 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.headers:127 - http-outgoing-2 &gt;&gt; Accept-Encoding: gzip,deflate
+</span>2015-04-15 22:00:10,429 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.headers:127 - http-outgoing-2 &gt;&gt; Authorization: Basic YSWERCtRaEWT
+2015-04-15 22:00:10,429 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &gt;&gt; &#34;GET /api/2.0/services/usermgmt/scopingobjects HTTP/1.1[\r][\n]&#34;
+2015-04-15 22:00:10,429 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &gt;&gt; &#34;Accept: application/xml, text/xml, application/*+xml[\r][\n]&#34;
+2015-04-15 22:00:10,429 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &gt;&gt; &#34;Host: home.cdecanini.fr[\r][\n]&#34;
+2015-04-15 22:00:10,430 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &gt;&gt; &#34;Connection: Keep-Alive[\r][\n]&#34;
+2015-04-15 22:00:10,430 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &gt;&gt; &#34;User-Agent: Apache-HttpClient/4.3.3 (java 1.5)[\r][\n]&#34;
+2015-04-15 22:00:10,430 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &gt;&gt; &#34;Accept-Encoding: gzip,deflate[\r][\n]&#34;
+2015-04-15 22:00:10,431 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &gt;&gt; &#34;Authorization: Basic YSWERCtRaEWT[\r][\n]&#34;
+2015-04-15 22:00:10,432 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &gt;&gt; &#34;[\r][\n]&#34;
+2015-04-15 22:00:10,898 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;HTTP/1.1 200 OK[\r][\n]&#34;
+2015-04-15 22:00:10,899 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;Cache-Control: private[\r][\n]&#34;
+2015-04-15 22:00:10,899 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;Expires: Thu, 01 Jan 1970 00:00:00 GMT[\r][\n]&#34;
+2015-04-15 22:00:10,900 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;Server:  [\r][\n]&#34;
+2015-04-15 22:00:10,900 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;Cache-Control: no-cache[\r][\n]&#34;
+2015-04-15 22:00:10,900 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;Set-Cookie: JSESSIONID=32B7A5CBF7E338498FCE36ABA5DD708B; Path=/[\r][\n]&#34;
+2015-04-15 22:00:10,901 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;Date: Wed, 15 Apr 2015 20:00:09 GMT[\r][\n]&#34;
+2015-04-15 22:00:10,901 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;Content-Type: application/xml[\r][\n]&#34;
+2015-04-15 22:00:10,901 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;Transfer-Encoding: chunked[\r][\n]&#34;
+2015-04-15 22:00:10,901 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;[\r][\n]&#34;
+2015-04-15 22:00:10,902 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;fbe[\r][\n]&#34;
+2015-04-15 22:00:10,902 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;[\n]&#34;
+<span style="display:block;width:100%;background-color:#3c3d38">2015-04-15 22:00:10,902 [http-bio-172.16.3.131-8281-exec-3] DEBUG org.apache.http.wire:72 - http-outgoing-2 &lt;&lt; &#34;&lt;scopingObjects&gt;&lt;object&gt;&lt;objectId&gt;network-39&lt;/objectId&gt;&lt;objectTypeName&gt;Network&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;33&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;Network&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;VM Network&lt;/name&gt;&lt;scope&gt;&lt;id&gt;datacenter-21&lt;/id&gt;&lt;objectTypeName&gt;Datacenter&lt;/objectTypeName&gt;&lt;name&gt;Homelab&lt;/name&gt;&lt;/scope&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;edge-16&lt;/objectId&gt;&lt;objectTypeName&gt;Edge&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;4&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;Edge&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;Christophe&lt;/name&gt;&lt;description&gt;&lt;/description&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;virtualwire-4&lt;/objectId&gt;&lt;objectTypeName&gt;VirtualWire&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;49&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;VirtualWire&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;LS-TransitNetwork&lt;/name&gt;&lt;description&gt;&lt;/description&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;virtualwire-3&lt;/objectId&gt;&lt;objectTypeName&gt;VirtualWire&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;49&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;VirtualWire&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;LS-DBTier&lt;/name&gt;&lt;description&gt;&lt;/description&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;virtualwire-2&lt;/objectId&gt;&lt;objectTypeName&gt;VirtualWire&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;49&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;VirtualWire&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;LS-AppTier&lt;/name&gt;&lt;description&gt;&lt;/description&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;dvportgroup-58&lt;/objectId&gt;&lt;objectTypeName&gt;DistributedVirtualPortgroup&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;8&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;DistributedVirtualPortgroup&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;dvPortGroup-Mgmt&lt;/name&gt;&lt;scope&gt;&lt;id&gt;datacenter-21&lt;/id&gt;&lt;objectTypeName&gt;Datacenter&lt;/objectTypeName&gt;&lt;name&gt;Homelab&lt;/name&gt;&lt;/scope&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;virtualwire-1&lt;/objectId&gt;&lt;objectTypeName&gt;VirtualWire&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;50&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;VirtualWire&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;LS-WebTier&lt;/name&gt;&lt;description&gt;&lt;/description&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;edge-1&lt;/objectId&gt;&lt;objectTypeName&gt;Edge&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;43&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;Edge&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;LDR-Lab&lt;/name&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;edge-2&lt;/objectId&gt;&lt;objectTypeName&gt;Edge&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;220&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;Edge&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;ESG-Lab&lt;/name&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;datacenter-21&lt;/objectId&gt;&lt;objectTypeName&gt;Datacenter&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;5&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;Datacenter&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;Homelab&lt;/name&gt;&lt;scope&gt;&lt;id&gt;group-d1&lt;/id&gt;&lt;objectTypeName&gt;Folder&lt;/objectTypeName&gt;&lt;name&gt;Datacenters&lt;/name&gt;&lt;/scope&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;network-131&lt;/objectId&gt;&lt;objectTypeName&gt;Network&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;12&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;Network&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;none&lt;/name&gt;&lt;scope&gt;&lt;id&gt;datacenter-21&lt;/id&gt;&lt;objectTypeName&gt;Datacenter&lt;/objectTypeName&gt;&lt;name&gt;Homelab&lt;/name&gt;&lt;/scope&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;object&gt;&lt;objectId&gt;globalroot-0&lt;/objectId&gt;&lt;objectTypeName&gt;GlobalRoot&lt;/objectTypeName&gt;&lt;vsmUuid&gt;42022E92-A37C-259D-962A-947649CEDBA7&lt;/vsmUuid&gt;&lt;revision&gt;21&lt;/revision&gt;&lt;type&gt;&lt;typeName&gt;GlobalRoot&lt;/typeName&gt;&lt;/type&gt;&lt;name&gt;Global&lt;/name&gt;&lt;clientHandle&gt;&lt;/clientHandle&gt;&lt;extendedAttributes/&gt;&lt;/object&gt;&lt;/scopingObjects&gt;[\r][\n]&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The first highlighted line is the HTTP method and URL.</p>
+<p>The second one the headers that were passed : XML is sent and recieved to from / NSX</p>
+<p>Then the authorization type : basic with my encrypted password.</p>
+<p>These are all the headers log. The next logs are the wire logs. Any HTTP traffic between Orchastrator Apache library and the remote system will appear here.</p>
+<p>A line of interest is the 200 Status code meaning the request was successful and the response on the last line including a long XML string I have formatted below:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;scopingObjects&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>network-39<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>Network<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>33<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>Network<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>VM Network<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>
+      <span style="color:#f92672">&lt;id&gt;</span>datacenter-21<span style="color:#f92672">&lt;/id&gt;</span>
+      <span style="color:#f92672">&lt;objectTypeName&gt;</span>Datacenter<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+      <span style="color:#f92672">&lt;name&gt;</span>Homelab<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;/scope&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>edge-16<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>Edge<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>4<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>Edge<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>Christophe<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;description&gt;&lt;/description&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>virtualwire-4<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>VirtualWire<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>49<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>VirtualWire<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>LS-TransitNetwork<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;description&gt;&lt;/description&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>virtualwire-3<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>VirtualWire<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>49<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>VirtualWire<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>LS-DBTier<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;description&gt;&lt;/description&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>virtualwire-2<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>VirtualWire<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>49<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>VirtualWire<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>LS-AppTier<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;description&gt;&lt;/description&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>dvportgroup-58<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>DistributedVirtualPortgroup<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>8<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>DistributedVirtualPortgroup<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>dvPortGroup-Mgmt<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>
+      <span style="color:#f92672">&lt;id&gt;</span>datacenter-21<span style="color:#f92672">&lt;/id&gt;</span>
+      <span style="color:#f92672">&lt;objectTypeName&gt;</span>Datacenter<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+      <span style="color:#f92672">&lt;name&gt;</span>Homelab<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;/scope&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>virtualwire-1<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>VirtualWire<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>50<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>VirtualWire<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>LS-WebTier<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;description&gt;&lt;/description&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>edge-1<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>Edge<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>43<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>Edge<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>LDR-Lab<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>edge-2<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>Edge<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>220<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>Edge<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>ESG-Lab<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#f92672">&lt;objectId&gt;</span>datacenter-21<span style="color:#f92672">&lt;/objectId&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#f92672">&lt;objectTypeName&gt;</span>Datacenter<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+</span>    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#f92672">&lt;revision&gt;</span>5<span style="color:#f92672">&lt;/revision&gt;</span>
+</span>    <span style="color:#f92672">&lt;type&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38">      <span style="color:#f92672">&lt;typeName&gt;</span>Datacenter<span style="color:#f92672">&lt;/typeName&gt;</span>
+</span>    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>Homelab<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>
+      <span style="color:#f92672">&lt;id&gt;</span>group-d1<span style="color:#f92672">&lt;/id&gt;</span>
+      <span style="color:#f92672">&lt;objectTypeName&gt;</span>Folder<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+      <span style="color:#f92672">&lt;name&gt;</span>Datacenters<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;/scope&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>network-131<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>Network<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>12<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>Network<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>none<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>
+      <span style="color:#f92672">&lt;id&gt;</span>datacenter-21<span style="color:#f92672">&lt;/id&gt;</span>
+      <span style="color:#f92672">&lt;objectTypeName&gt;</span>Datacenter<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+      <span style="color:#f92672">&lt;name&gt;</span>Homelab<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;/scope&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+  <span style="color:#f92672">&lt;object&gt;</span>
+    <span style="color:#f92672">&lt;objectId&gt;</span>globalroot-0<span style="color:#f92672">&lt;/objectId&gt;</span>
+    <span style="color:#f92672">&lt;objectTypeName&gt;</span>GlobalRoot<span style="color:#f92672">&lt;/objectTypeName&gt;</span>
+    <span style="color:#f92672">&lt;vsmUuid&gt;</span>42022E92-A37C-259D-962A-947649CEDBA7<span style="color:#f92672">&lt;/vsmUuid&gt;</span>
+    <span style="color:#f92672">&lt;revision&gt;</span>21<span style="color:#f92672">&lt;/revision&gt;</span>
+    <span style="color:#f92672">&lt;type&gt;</span>
+      <span style="color:#f92672">&lt;typeName&gt;</span>GlobalRoot<span style="color:#f92672">&lt;/typeName&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>Global<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;clientHandle&gt;&lt;/clientHandle&gt;</span>
+    <span style="color:#f92672">&lt;extendedAttributes/&gt;</span>
+  <span style="color:#f92672">&lt;/object&gt;</span>
+<span style="color:#f92672">&lt;/scopingObjects&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The highlighted text shows the information that is used to be displayed in the inventory tree : The homelab datacenter. The plug-in had to pull all this XML just to get this piece of information.</p>
+<p>With this log I can now do a lot more. For example the NSX plug-in has several workflows applying changes on NSX. I can capture the traffic and include similar operations in my NSX Dynamic Type plug-in or slightly different ones with checking the API documentation and changing some of the parameters.</p>
+<p>I can also do the same thing with the vCAC plug-in to get a good understanding on how the REST API is leveraged. I could push it to do some custom SOAP calls to vCenter if I really wanted. There are also several third parties plug-ins to control storage, network, IPAM, CMDB, ticketing systems that I could learn just by running their workflows and possibly extend creating my own HTTP REST or SOAP requests. I can also understand how the communication to the identity appliance is working.</p>
+<p>The possibilities are endless and the knowledge to get from using this logging enormous.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/log/" rel="tag">log</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/http/" rel="tag">http</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+  
+  
+  <div class="authorbox clearfix">
+    <figure class="authorbox__avatar">
+      <img alt="Christophe Decanini avatar" src="/images/authors/christophe.jpg" class="avatar" height="130" width="130">
+    </figure>
+    <div class="authorbox__header">
+      <span class="authorbox__name">About Christophe Decanini:</span>
+    </div>
+    <div class="authorbox__description">
+      Christophe has worked at VMware, Inc., where he started in 2007 after VMware acquired Dunes. Based in Gland, Switzerland, Christophe is a global resource supporting customers in their orchestration and automation needs. He has presented orchestration solutions at conferences such as VMworld and is the primary contributor to this site.
+    </div>
+    <div class="widget-social__item widget__item">
+      <a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer"
+        href="https://twitter.com/cdecanini_" target="_blank">
+        <svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+      </a>
+    </div>
+  </div>
+  
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/articles/learn-vco/302-create-a-plug-in-for-orchestrator.html" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Plug-in Generator v2 advanced techniques</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Postman &#43; vRO = HTTP-REST Plug-in Operations</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://localhost:1313/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html">Please share your code at the Sample Exchange</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html">How to update a Resource Element Script&#39;s Contents using curl</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

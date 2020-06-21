@@ -156,6 +156,15 @@
     </item>
     
     <item>
+      <title>curl</title>
+      <link>http://localhost:1313/tags/curl.html</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/curl.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>homelab</title>
       <link>http://localhost:1313/tags/homelab.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
@@ -183,6 +192,24 @@
     </item>
     
     <item>
+      <title>PowerCLI</title>
+      <link>http://localhost:1313/tags/powercli.html</link>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/powercli.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vRO</title>
+      <link>http://localhost:1313/tags/vro.html</link>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vro.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>bootable usb</title>
       <link>http://localhost:1313/tags/bootable-usb.html</link>
       <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
@@ -206,6 +233,195 @@
       <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/vmworld.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AD</title>
+      <link>http://localhost:1313/tags/ad.html</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/ad.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>http://localhost:1313/tags/api.html</link>
+      <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/api.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>REST</title>
+      <link>http://localhost:1313/tags/rest.html</link>
+      <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/rest.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swagger</title>
+      <link>http://localhost:1313/tags/swagger.html</link>
+      <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/swagger.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://localhost:1313/tags/linux.html</link>
+      <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/linux.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networkManager</title>
+      <link>http://localhost:1313/tags/networkmanager.html</link>
+      <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/networkmanager.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nmcli</title>
+      <link>http://localhost:1313/tags/nmcli.html</link>
+      <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/nmcli.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vAPI</title>
+      <link>http://localhost:1313/tags/vapi.html</link>
+      <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vapi.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>presentation</title>
+      <link>http://localhost:1313/tags/presentation.html</link>
+      <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/presentation.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>json</title>
+      <link>http://localhost:1313/tags/json.html</link>
+      <pubDate>Fri, 29 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/json.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>http</title>
+      <link>http://localhost:1313/tags/http.html</link>
+      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/http.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>http://localhost:1313/tags/log.html</link>
+      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/log.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DynamicTypes</title>
+      <link>http://localhost:1313/tags/dynamictypes.html</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/dynamictypes.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NSX</title>
+      <link>http://localhost:1313/tags/nsx.html</link>
+      <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/nsx.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vcac</title>
+      <link>http://localhost:1313/tags/vcac.html</link>
+      <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vcac.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>F5 Networks</title>
+      <link>http://localhost:1313/tags/f5-networks.html</link>
+      <pubDate>Mon, 13 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/f5-networks.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO</title>
+      <link>http://localhost:1313/tags/vco.html</link>
+      <pubDate>Mon, 16 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vco.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCloud Director</title>
+      <link>http://localhost:1313/tags/vcloud-director.html</link>
+      <pubDate>Mon, 28 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vcloud-director.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plug-ins</title>
+      <link>http://localhost:1313/tags/plug-ins.html</link>
+      <pubDate>Wed, 19 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/plug-ins.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator</title>
+      <link>http://localhost:1313/tags/vcenter-orchestrator.html</link>
+      <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vcenter-orchestrator.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Storage I/O</title>
+      <link>http://localhost:1313/tags/storage-i/o.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/storage-i/o.html</guid>
       <description></description>
     </item>
     

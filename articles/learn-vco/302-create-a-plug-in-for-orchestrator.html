@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Plug-in Generator v2 advanced techniques - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="create an orchestrator plug-in to list vCO / vRO workflows">
+		<meta property="og:title" content="Plug-in Generator v2 advanced techniques" />
+<meta property="og:description" content="create an orchestrator plug-in to list vCO / vRO workflows" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/articles/learn-vco/302-create-a-plug-in-for-orchestrator.html" />
+<meta property="article:published_time" content="2015-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-03-02T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Plug-in Generator v2 advanced techniques"/>
+<meta name="twitter:description" content="create an orchestrator plug-in to list vCO / vRO workflows"/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-16400053-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn VCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">Newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Plug-in Generator v2 advanced techniques</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-03-02T00:00:00Z">March 02, 2015</time></div>
+</div>
+		</header><div class="content post__content clearfix">
+			<p>In previous tutorials we created inventory object types, their children objects, workflows to operate these that we packaged for our end users.</p>
+<p>In this tutorial we are going to create an orchestrator plug-in to list vCO / vRO workflows ! You may wonder why doing so ?</p>
+<p>This is a good use case for leveraging some of the more advanced features of the plug-in generator v2 to handle complex REST APIs and improving performance when needed.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>vCO 5.5.1 build 1617131 (vCO 5.5 U1 released with vSphere 5.5 U1) or greater.</li>
+<li><strong><a href="https://communities.vmware.com/docs/DOC-26607"  target="_blank" rel="noreferrer noopener" >DynamicTypes plug-in build 166032</a></strong> or later</li>
+<li><a href="https://code.vmware.com/samples/1892/dynamic-types-plugin-generator-v2---updated"  target="_blank" rel="noreferrer noopener" >Plug-in generator v2</a> package installed (make sure you get the latest version since it is updated often)</li>
+</ul>
+<h2 id="create-a-plug-in">Create a plug-in</h2>
+<p>Right click on the inventory &ldquo;Type hierarchy&rdquo; / run Plugin gen -1- Create new plug-in
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-001.png"/> 
+</figure>
+</p>
+<p>Name your plug-in and select an icon (any of your choice if you did not bother importing the multi node plug-in icons).
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-002.png"/> 
+</figure>
+</p>
+<p>Submit / Run in background
+Hit the F5 key to refresh the inventory and see your vCO namespace.</p>
+<h2 id="add-a-host">Add a host</h2>
+<p>We need a vCO host to interact with.</p>
+<p>Right click on the vCO namespace / run the workflow &ldquo;Plugin gen -2- Add new host:</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-003.png"/> 
+</figure>
+
+<p>Let the selected namespace.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-004.png"/> 
+</figure>
+
+<p>Enter a name for the vCO server you are going to use and its URL (note that I used the API URL)</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-005.png"/> 
+</figure>
+
+<p>Select basic authentication</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-006.png"/> 
+</figure>
+
+<p>Enter a vCO admin credential</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-007.png"/> 
+</figure>
+
+<p>Submit.</p>
+<h2 id="create-a-workflow-type">Create a workflow type</h2>
+<p>Right click on the vCOHost type / run the workflow &ldquo;Plugin gen -3- Create a type</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-008.png"/> 
+</figure>
+
+<p>Enter the parameters:
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-009.png"/> 
+</figure>
+</p>
+<ul>
+<li>Type name : workflow (no upper case)</li>
+<li>Folder name : Workflows</li>
+</ul>
+<p>Click next. It is going to show the host you have defined.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-010b.png"/> 
+</figure>
+
+<p>Click next. Choose not to provide a findById and findAll URL</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-011.png"/> 
+</figure>
+
+<p>Click next. Since we will need to know the URL to get the workflows let&rsquo;s check the built in API docs. Enter <code>https://yourvCOServer:8281/vco/api/docs</code> and browse to the workflow service.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-011a.png"/> 
+</figure>
+
+<p>The URL is /workflows. Enter it in the findRelation URL input</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-012.png"/> 
+</figure>
+
+<p>Hit tab - After a few seconds the response should be filled. Copy and paste it to a JSON viewer (I.E <a href="http://jsonviewer.stack.hu">http://jsonviewer.stack.hu</a>)</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-013.png"/> 
+</figure>
+
+<p>The array of workflow objects is under link.</p>
+<p>Click next. Set the objects selector to .link, hit tab</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-014.png"/> 
+</figure>
+
+<p>Copy the objects preview. Click next.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-015.png"/> 
+</figure>
+
+<p>There is an error as it seems the properties that were collected are missing the required id and name properties. Click on the properties selectors input.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-016.png"/> 
+</figure>
+
+<p>Unfortunately the properties there does not seem to match workflow properties such as id, name. description, version.
+Paste the JSON you just copied to the JSON viewer.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-017.png"/> 
+</figure>
+
+<p>With unfolding the attributes property you can see that each of them has a name and a value. The issue with having such objects attributes instead of regular object properties is that you cannot just define id as being .id since there is no id property. You may think a few seconds that you can always use .attributes.1.value with assuming .1 will always contain the id but this may not always be the case, at least the API documentation does not guarantee it. What you need is to get the attribute value for the attribute having a name equal to &ldquo;id&rdquo;.</p>
+<p>With the plug-in generator V1 there was no way to write an expression for doing so but the V2 now include JSONSelect.
+To understand how to write these queries you can read JSONSelect <a href="http://jsonselect.org/#docs"  target="_blank" rel="noreferrer noopener" >documentation</a>. To test your expressions called selectors you can use online JSONSelect expression testers such as <a href="%22http://jsonselect.curiousconcept.com" >http://jsonselect.curiousconcept.com</a></p>
+<p>Open it in a web browser, paste the JSON you copied and test your expressions to get the name, id and other values.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-018.png"/> 
+</figure>
+
+<p>If you did not find on your own to get the id the expression is .name:val(&ldquo;id&rdquo;) ~ .value
+Basically it means that we look for the .value property for a .name sibling set with a value of &ldquo;id&rdquo;.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-019.png"/> 
+</figure>
+
+<p>And it returns 5 workflow ids which is the sample I was working on (Preview size was set to 5 to avoid working with the full set of workflows which in my case are 1036).</p>
+<p>You can now remove the existing properties that are not useful and add the id property.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-020.png"/> 
+</figure>
+
+<p>Repeat the last operation for name, description, version</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-021.png"/> 
+</figure>
+
+<p>If you got your expression right the properties preview should now be populated</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-022.png"/> 
+</figure>
+
+<p>Click next.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-023.png"/> 
+</figure>
+
+<p>The properties are listing description and version (id and name being mandatory, they are not listed here). Submit.</p>
+<p>Unfold the inventory. You should see something similar as below.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-024.png"/> 
+</figure>
+
+<p>You may have noticed that during the creation of the object and unfolding the inventory is taking a long time.
+We will now see what we can do to make the plug-in be faster. Using JSON Select is a code free way of implementing gathering objects properties of complex objects but while powerful making a JSON Select query per object properties * total objects number can be too long. Also in some cases getting some properties may require transforming the properties values with doing some parsing or even making new REST calls to get linked objects.</p>
+<h2 id="testing-and-improving-performance">Testing and improving performance</h2>
+<p>Let&rsquo;s test getting all the Workflows objects.</p>
+<p>Right click on the workflow type / Run the &ldquo;Find all objects for type&rdquo; workflow.</p>
+<p><figure>
+    <img src="/images/generator-v2-adv/DTVCO-028.png"/> 
+</figure>
+ Submit. Click &ldquo;Show workflow run&rdquo;. Select the General tab and wait for the workflow to finish.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-029.png"/> 
+</figure>
+
+<p>In my case it took 1 minute 39 seconds to get all workflows. While this is not a disaster it is not offering a very good end user experience when unfolding the inventory or listing all the elements in a workflow input.</p>
+<p>Right click again on the workflow type and run the &ldquo;Plugin gen - Define a get properties action&rdquo;</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-030.png"/> 
+</figure>
+
+<p>Fill in the parameters</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-031.png"/> 
+</figure>
+
+<ul>
+<li>method : findAll</li>
+<li>operationAction : getWorkflowsProperties (and do not set getWorkflowProperties - singular workflow)</li>
+</ul>
+<p>Submit.</p>
+<p>Right click again on the workflow type and run the &ldquo;Plugin gen - Define a get properties action&rdquo; - Show workflow run / General tab.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-032.png"/> 
+</figure>
+
+<p>We are now down to 22 seconds which is a lot better for end users.</p>
+<p>The getWorkflowsProperties is included in the plug-in generator package as an example on how to get object properties from the JSON returned by the HTTP query</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-033.png"/> 
+</figure>
+
+<p>It takes a jsonString as input, use JSON.parse to transform it in a JavaScript object, get the link property as we did previously and add each attribute name and value to a Properties() object and add it into an array of object properties it returns.</p>
+<p>Here it was pretty straight forward. In other cases you may have to add more logic to get the properties, for example do additional HTTP GET operations to get linked properties. If you need so you can add a second input to the action that will be set with the REST Host this object is from.</p>
+<p>If needed / wanted you can use actions for all three methods (findRelation, findAll, findById - in this case return a single Properties).</p>
+<p>If the action is defined for an object and a method it will always be used before the configured selectors.</p>
+<p>You may wonder how the cache timeout setting available during the type creation is affecting the performances. By default it was set to 30 seconds.</p>
+<p>Change the cache setting by editing the cache configuration element. Right click / edit.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-033b.png"/> 
+</figure>
+
+<p>Set a very high number here to make sure it exceed the time in second since the last time you ran the workflow to get all the workflow objects.</p>
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-034.png"/> 
+</figure>
+
+<p>Right click again on the workflow type and run the &ldquo;Plugin gen - Define a get properties action&rdquo; - Show workflow run / General tab.
+<figure>
+    <img src="/images/generator-v2-adv/DTVCO-035.png"/> 
+</figure>
+</p>
+<p>We are now down to 3 seconds to get hundreds to thousands of objects.</p>
+<p>While making the cache timeout longer may sound like a good idea to increase a lot the performance it has a drawback : if you set a 1 hour timeout your inventory may be different from the remote system if change happened in the last hour. Using very small timeout will give you a very accurate inventory but then vCO will send a LOT of queries. For example vCO does a findById between each workflow step involving a given object. If you did not define a findById URL it will call the findRelation one that will pull a lot of objects and get their properties. If you do so in a workflow loop it is going to slow down vCO, the remote system and eventually cause the remote system to reject your queries.</p>
+<p>This is why the timeout value should be adjusted to a value that will likely avoid repeating the queries returning the same results. The workflows operating the inventory objects should handle the case where there is a discrepancy between the inventory and the remote system (For example deleting an object that has been deleted by another process a few seconds before).</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this tutorial we could get the (complex) workflow object properties leveraging JSONSelect and tested the performance improvements using an action.</p>
+<p>JSONSelect gives more flexibility to gather objects properties and the action allows for even more flexibility and for much better performance.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/plug-in/" rel="tag">plug-in</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/dynamictypes/" rel="tag">DynamicTypes</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+  
+  
+  <div class="authorbox clearfix">
+    <figure class="authorbox__avatar">
+      <img alt="Christophe Decanini avatar" src="/images/authors/christophe.jpg" class="avatar" height="130" width="130">
+    </figure>
+    <div class="authorbox__header">
+      <span class="authorbox__name">About Christophe Decanini:</span>
+    </div>
+    <div class="authorbox__description">
+      Christophe has worked at VMware, Inc., where he started in 2007 after VMware acquired Dunes. Based in Gland, Switzerland, Christophe is a global resource supporting customers in their orchestration and automation needs. He has presented orchestration solutions at conferences such as VMworld and is the primary contributor to this site.
+    </div>
+    <div class="widget-social__item widget__item">
+      <a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer"
+        href="https://twitter.com/cdecanini_" target="_blank">
+        <svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+      </a>
+    </div>
+  </div>
+  
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Create a plug-in for a REST based web service in minutes - Part 4</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/articles/learn-vco/303-log-plug-ins-http-communications.html" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Log plug-ins HTTP communications</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://localhost:1313/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html">Please share your code at the Sample Exchange</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html">How to update a Resource Element Script&#39;s Contents using curl</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

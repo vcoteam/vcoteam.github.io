@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NSX on </title>
+    <link>http://localhost:1313/tags/nsx.html</link>
+    <description>Recent content in NSX on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Feb 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/nsx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - part 1</title>
+      <link>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</link>
+      <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</guid>
+      <description>In a previous articleI have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.Then explained how to build your own twitter plug-in using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.</description>
+    </item>
+    
+  </channel>
+</rss>

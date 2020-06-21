@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Configure Linux networking with network manager - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Learn how to configure Linux network settings via guest operations">
+		<meta property="og:title" content="Configure Linux networking with network manager" />
+<meta property="og:description" content="Learn how to configure Linux network settings via guest operations" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/articles/learn-vco/308-configure-linux-networking-with-network-manager.html" />
+<meta property="article:published_time" content="2015-09-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-09-30T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configure Linux networking with network manager"/>
+<meta name="twitter:description" content="Learn how to configure Linux network settings via guest operations"/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-16400053-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn VCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">Newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Configure Linux networking with network manager</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-09-30T00:00:00Z">September 30, 2015</time></div>
+</div>
+		</header><div class="content post__content clearfix">
+			<p>I am working on a project where I need to apply live, permanent networking configuration changes to Linux VMs that may not even have a network configured in the first place.</p>
+<p>To do so I am leveraging:</p>
+<ul>
+<li>vSphere guest operations allowing to run commands in the guest OS even if it is not networked yet.</li>
+<li><a href="https://en.wikipedia.org/wiki/NetworkManager"  target="_blank" rel="noreferrer noopener" >NetworkManager</a> / nmcli which provides a command line way to get and set a broad set of network configurations that can be applied immediately and permanently . NetworkManager was first developed by Red Hat and is now available in several distributions.</li>
+</ul>
+<p>The VM network cards appear as network manager devices.</p>
+<p>The &ldquo;Get all properties from a device&rdquo; workflow will list all the devices and their properties in the workflow log and set a workflow output parameter of type array of properties</p>
+<p>The inputs are the virtual Machine hosting the Linux guest OS, the credentials to access the guest OS.</p>
+<figure>
+    <img src="/images/network-manager/NM1.png"
+         alt="Network Manager"/> 
+</figure>
+
+<p>Here is a sample output showing some properties with the most important being :</p>
+<p>GENERAL.DEVICE later referred as &ldquo;device name&rdquo; and used in all workflows requiring a device name input.</p>
+<p>GENERAL.CONNECTION later referred as &ldquo;connection profile&rdquo; or &ldquo;connection id&rdquo; and used in all workflows requiring a connection name input.</p>
+<p>The list of properties is variable depending on the type of device and the connection profile it is bound to.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plain" data-lang="plain">GENERAL.DEVICE:eno33557248  
+GENERAL.TYPE:ethernet  
+GENERAL.VENDOR:VMware  
+GENERAL.PRODUCT:VMXNET3 Ethernet Controller  
+GENERAL.DRIVER:vmxnet3  
+GENERAL.DRIVER-VERSION:1.1.30.0-k-NAPI  
+GENERAL.FIRMWARE-VERSION:  
+GENERAL.HWADDR:00:50:56:94:8D:26  
+GENERAL.MTU:1500  
+GENERAL.STATE:100 (connected)  
+GENERAL.REASON:0 (No reason given)  
+GENERAL.UDI:/sys/devices/pci0000:00/0000:00:16.0/0000:0b:00.0/net/eno33557248  
+GENERAL.IP-IFACE:eno33557248  
+GENERAL.IS-SOFTWARE:no  
+GENERAL.NM-MANAGED:yes  
+GENERAL.AUTOCONNECT:yes  
+GENERAL.FIRMWARE-MISSING:no  
+GENERAL.CONNECTION:ethernet-eno33557248  
+GENERAL.CON-UUID:7eda20cc-5474-4192-b40a-ff61a57de7e0  
+GENERAL.CON-PATH:/org/freedesktop/NetworkManager/ActiveConnection/37  
+CAPABILITIES.CARRIER-DETECT:yes  
+CAPABILITIES.SPEED:10000 Mb/s  
+CAPABILITIES.IS-SOFTWARE:no  
+WIRED-PROPERTIES.CARRIER:on  
+IP4.ADDRESS[1]:192.168.1.32/24  
+IP4.GATEWAY:192.168.1.254  
+IP4.DNS[1]:192.168.1.254  
+DHCP4.OPTION[1]:requested_domain_search = 1  
+DHCP4.OPTION[2]:requested_nis_domain = 1  
+DHCP4.OPTION[3]:requested_time_offset = 1  
+DHCP4.OPTION[4]:requested_broadcast_address = 1  
+DHCP4.OPTION[5]:requested_rfc3442_classless_static_routes = 1  
+DHCP4.OPTION[6]:requested_classless_static_routes = 1  
+DHCP4.OPTION[7]:requested_domain_name = 1  
+DHCP4.OPTION[8]:expiry = 1443269566  
+DHCP4.OPTION[9]:requested_wpad = 1  
+DHCP4.OPTION[10]:next_server = 0.0.0.0  
+DHCP4.OPTION[11]:broadcast_address = 192.168.1.255  
+DHCP4.OPTION[12]:dhcp_message_type = 5  
+DHCP4.OPTION[13]:requested_subnet_mask = 1  
+DHCP4.OPTION[14]:dhcp_lease_time = 43200  
+DHCP4.OPTION[15]:routers = 192.168.1.254  
+DHCP4.OPTION[16]:ip_address = 192.168.1.32  
+DHCP4.OPTION[17]:requested_static_routes = 1  
+DHCP4.OPTION[18]:requested_interface_mtu = 1  
+DHCP4.OPTION[19]:requested_nis_servers = 1  
+DHCP4.OPTION[20]:requested_ntp_servers = 1  
+DHCP4.OPTION[21]:subnet_mask = 255.255.255.0  
+DHCP4.OPTION[22]:domain_name_servers = 192.168.1.254  
+DHCP4.OPTION[23]:requested_ms_classless_static_routes = 1  
+DHCP4.OPTION[24]:requested_routers = 1  
+DHCP4.OPTION[25]:requested_domain_name_servers = 1  
+DHCP4.OPTION[26]:network_number = 192.168.1.0  
+DHCP4.OPTION[27]:requested_host_name = 1  
+DHCP4.OPTION[28]:dhcp_server_identifier = 192.168.1.254  
+IP6.ADDRESS[1]:2a01:e35:8bae:5370:250:56ff:fe94:8d26/128  
+IP6.ADDRESS[2]:fe80::250:56ff:fe94:8d26/64  
+IP6.GATEWAY:fe80::f6ca:e5ff:fe46:bb4a  
+IP6.ROUTE[1]:dst = 2a01:e35:8bae:5370::/64, nh = ::, mt = 100  
+IP6.DNS[1]:2a01:e00::2  
+IP6.DNS[2]:2a01:e00::1  
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS:/org/freedesktop/NetworkManager/Settings/{6}  
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]:7eda20cc-5474-4192-b40a-ff61a57de7e0 | ethernet-eno33557248  
+  
+GENERAL.DEVICE:eno16777984  
+GENERAL.TYPE:ethernet  
+GENERAL.VENDOR:VMware  
+GENERAL.PRODUCT:VMXNET3 Ethernet Controller  
+GENERAL.DRIVER:vmxnet3  
+GENERAL.DRIVER-VERSION:1.1.30.0-k-NAPI  
+GENERAL.FIRMWARE-VERSION:  
+GENERAL.HWADDR:00:50:56:94:51:00  
+GENERAL.MTU:1500  
+GENERAL.STATE:30 (disconnected)  
+GENERAL.REASON:38 (The device&#39;s active connection disappeared)  
+GENERAL.UDI:/sys/devices/pci0000:00/0000:00:15.0/0000:03:00.0/net/eno16777984  
+GENERAL.IP-IFACE:  
+GENERAL.IS-SOFTWARE:no  
+GENERAL.NM-MANAGED:yes  
+GENERAL.AUTOCONNECT:yes  
+GENERAL.FIRMWARE-MISSING:no  
+GENERAL.CONNECTION:--  
+GENERAL.CON-UUID:--  
+GENERAL.CON-PATH:--  
+CAPABILITIES.CARRIER-DETECT:yes  
+CAPABILITIES.SPEED:10000 Mb/s  
+CAPABILITIES.IS-SOFTWARE:no  
+WIRED-PROPERTIES.CARRIER:on  
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS:
+</code></pre></td></tr></table>
+</div>
+</div><p>If you already know the device name (for example eth0) you can use the &ldquo;Get all properties from a device&rdquo; that will have the same inputs with the addition of the device name.</p>
+<p>The configured network interface have devices that are bound to a connection profile. The connection profile determines the configuration of the device.</p>
+<p>You can use the &ldquo;Get all properties from all connections&rdquo; workflow to get all general connection properties.</p>
+<p>The NAME property is the one containing the connection ID that we will use as workflow input to perform connection profile configuration changes</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plain" data-lang="plain">NAME:ethernet-eno33557248  
+UUID:7eda20cc-5474-4192-b40a-ff61a57de7e0  
+TYPE:802-3-ethernet  
+TIMESTAMP:1443239447  
+TIMESTAMP-REAL:Sat 26 Sep 2015 05:50:47 AM CEST  
+AUTOCONNECT:yes  
+AUTOCONNECT-PRIORITY:0  
+READONLY:no  
+DBUS-PATH:/org/freedesktop/NetworkManager/Settings/6  
+ACTIVE:yes  
+DEVICE:eno33557248  
+STATE:activated  
+ACTIVE-PATH:/org/freedesktop/NetworkManager/ActiveConnection/37
+</code></pre></td></tr></table>
+</div>
+</div><p>The get all properties from a connection will require entering the connection id as input and will output a different set of properties:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plain" data-lang="plain">    connection.id:ethernet-eno33557248  
+    connection.uuid:7eda20cc-5474-4192-b40a-ff61a57de7e0  
+    connection.interface-name:eno33557248  
+    connection.type:802-3-ethernet  
+    connection.autoconnect:yes  
+    connection.autoconnect-priority:0  
+    connection.timestamp:1443239447  
+    connection.read-only:no  
+    connection.permissions:  
+    connection.zone:--  
+    connection.master:--  
+    connection.slave-type:--  
+    connection.secondaries:  
+    connection.gateway-ping-timeout:0  
+    802-3-ethernet.port:--  
+    802-3-ethernet.speed:0  
+    802-3-ethernet.duplex:--  
+    802-3-ethernet.auto-negotiate:yes  
+    802-3-ethernet.mac-address:--  
+    802-3-ethernet.cloned-mac-address:--  
+    802-3-ethernet.mac-address-blacklist:  
+    802-3-ethernet.mtu:auto  
+    802-3-ethernet.s390-subchannels:  
+    802-3-ethernet.s390-nettype:--  
+    802-3-ethernet.s390-options:  
+    ipv4.method:auto  
+    ipv4.dns:  
+    ipv4.dns-search:  
+    ipv4.addresses:  
+    ipv4.gateway:--  
+    ipv4.routes:  
+    ipv4.route-metric:-1  
+    ipv4.ignore-auto-routes:no  
+    ipv4.ignore-auto-dns:no  
+    ipv4.dhcp-client-id:--  
+    ipv4.dhcp-send-hostname:yes  
+    ipv4.dhcp-hostname:--  
+    ipv4.never-default:no  
+    ipv4.may-fail:yes  
+    ipv6.method:auto  
+    ipv6.dns:  
+    ipv6.dns-search:  
+    ipv6.addresses:  
+    ipv6.gateway:--  
+    ipv6.routes:  
+    ipv6.route-metric:-1  
+    ipv6.ignore-auto-routes:no  
+    ipv6.ignore-auto-dns:no  
+    ipv6.never-default:no  
+    ipv6.may-fail:yes  
+    ipv6.ip6-privacy:-1 (unknown)  
+    ipv6.dhcp-send-hostname:yes  
+    ipv6.dhcp-hostname:--  
+    GENERAL.NAME:ethernet-eno33557248  
+    GENERAL.UUID:7eda20cc-5474-4192-b40a-ff61a57de7e0  
+    GENERAL.DEVICES:eno33557248  
+    GENERAL.STATE:activated  
+    GENERAL.DEFAULT:yes  
+    GENERAL.DEFAULT6:yes  
+    GENERAL.VPN:no  
+    GENERAL.ZONE:--  
+    GENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/ActiveConnection/37  
+    GENERAL.CON-PATH:/org/freedesktop/NetworkManager/Settings/6  
+    GENERAL.SPEC-OBJECT:/  
+    GENERAL.MASTER-PATH:--  
+    IP4.ADDRESS[1]:192.168.1.32/24  
+    IP4.GATEWAY:192.168.1.254  
+    IP4.DNS[1]:192.168.1.254  
+    DHCP4.OPTION[1]:requested_domain_search = 1  
+    DHCP4.OPTION[2]:requested_nis_domain = 1  
+    DHCP4.OPTION[3]:requested_time_offset = 1  
+    DHCP4.OPTION[4]:requested_broadcast_address = 1  
+    DHCP4.OPTION[5]:requested_rfc3442_classless_static_routes = 1  
+    DHCP4.OPTION[6]:requested_classless_static_routes = 1  
+    DHCP4.OPTION[7]:requested_domain_name = 1  
+    DHCP4.OPTION[8]:expiry = 1443269566  
+    DHCP4.OPTION[9]:requested_wpad = 1  
+    DHCP4.OPTION[10]:next_server = 0.0.0.0  
+    DHCP4.OPTION[11]:broadcast_address = 192.168.1.255  
+    DHCP4.OPTION[12]:dhcp_message_type = 5  
+    DHCP4.OPTION[13]:requested_subnet_mask = 1  
+    DHCP4.OPTION[14]:dhcp_lease_time = 43200  
+    DHCP4.OPTION[15]:routers = 192.168.1.254  
+    DHCP4.OPTION[16]:ip_address = 192.168.1.32  
+    DHCP4.OPTION[17]:requested_static_routes = 1  
+    DHCP4.OPTION[18]:requested_interface_mtu = 1  
+    DHCP4.OPTION[19]:requested_nis_servers = 1  
+    DHCP4.OPTION[20]:requested_ntp_servers = 1  
+    DHCP4.OPTION[21]:subnet_mask = 255.255.255.0  
+    DHCP4.OPTION[22]:domain_name_servers = 192.168.1.254  
+    DHCP4.OPTION[23]:requested_ms_classless_static_routes = 1  
+    DHCP4.OPTION[24]:requested_routers = 1  
+    DHCP4.OPTION[25]:requested_domain_name_servers = 1  
+    DHCP4.OPTION[26]:network_number = 192.168.1.0  
+    DHCP4.OPTION[27]:requested_host_name = 1  
+    DHCP4.OPTION[28]:dhcp_server_identifier = 192.168.1.254  
+    IP6.ADDRESS[1]:2a01:e35:8bae:5370:250:56ff:fe94:8d26/128  
+    IP6.ADDRESS[2]:fe80::250:56ff:fe94:8d26/64  
+    IP6.GATEWAY:fe80::f6ca:e5ff:fe46:bb4a  
+    IP6.ROUTE[1]:dst = 2a01:e35:8bae:5370::/64, nh = ::, mt = 100  
+    IP6.DNS[1]:2a01:e00::2  
+    IP6.DNS[2]:2a01:e00::
+</code></pre></td></tr></table>
+</div>
+</div><p>In case you need to get this set of properties for all connections I have created a &ldquo;Get really all properties from all connections&rdquo; workflow that work in 2 steps:</p>
+<ul>
+<li>First it gets all the connection names</li>
+<li>Then it run a command for each connection and outputting an aggregated array of properties.</li>
+</ul>
+<p>The workflows &ldquo;Get connection names for given property values&rdquo; and &ldquo;Get devices names for given property values&rdquo; allow you to find out the name of a connection or a device that has a set of property values matching the one you request.</p>
+<p>For example if I need to change the IP address of a connection without knowing its name I can for example get the connections that have and ipv4 gateway set to a given IP.</p>
+<figure>
+    <img src="/images/network-manager/NM2.png"/> 
+</figure>
+
+<p>Another example would be to find out devices without a connection. This would be the case if a new NIC would be added via vSphere but no configuration would be done yet in the OS. For this the &ldquo;Get device names for given property values&rdquo; could be used with the device property &ldquo;GENERAL.STATE&rdquo; with a value of &ldquo;30 (disconnected)&rdquo; or with an empty connection : &ldquo;GENERAL.CONNECTION&rdquo; property with &ldquo;&ndash;&rdquo; value.</p>
+<p>The &ldquo;Run network manager command&rdquo; workflow assist you to generate a network manager command and runs it.</p>
+<p><figure>
+    <img src="/images/network-manager/NM3.png"/> 
+</figure>
+
+The timeout is the time the workflow will wait for the command to complete before failing.</p>
+<p>The second time is the period in seconds the result of the command is going to be checked.</p>
+<p><figure>
+    <img src="/images/network-manager/NM4.png"/> 
+</figure>
+
+The second screen allows to select the object you will be acting on, the command, the ID / name of the device or connection if these are required.</p>
+<p>The last field is the command string being built. You may need to add additional parameters manually if you want to do more complex operations or if the workflow run tells you it is missing a parameter.</p>
+<p>The &ldquo;Commands samples&rdquo; folder contains workflows that have hard coded network manager commands I used often and provide simple inputs to be used as part of your custom workflows.</p>
+<p><figure>
+    <img src="/images/network-manager/NM5.png"/> 
+</figure>
+
+You should find most of the workflows you need to operate and change settings on connections and devices. If not it is easy to duplicate one of these workflows and to modify the nmcli command to be run.</p>
+<p>The sample flows category contains an example of a flow called &ldquo;Change IP addresses and hostname on Oracle RAC node&rdquo; with multiple get / set operations:</p>
+<figure>
+    <img src="/images/network-manager/NM6.png"/> 
+</figure>
+
+<p>Basically the node we need to configure has 2 devices (one for public, one for private access) and the only information we have at run time is the network gateway used for each of these networks. By getting all the connection properties the workflow finds the unactive connections having the gateways we are looking for and assign new IPs for each. As a last step the hostname is changed.</p>
+<p><figure>
+    <img src="/images/network-manager/NM7.png"/> 
+</figure>
+
+Note that the IP addresses include the sub-netting in the form /xx and that to make an IP address change immediate the &ldquo;Set a connection IP V4 addresses&rdquo; workflow run an additional &ldquo;nmcli connection up&rdquo; command.</p>
+<p>Here is a demo of this workflow:</p>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/QVQG19tBikA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+You can download the networkManager package from <a href="https://flowgrab.com/project/view.xhtml?id=361e0d1e-029a-4aec-83f3-341b952b8cdb"  target="_blank" rel="noreferrer noopener" >flowgrab</a>.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/linux/" rel="tag">linux</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/networkmanager/" rel="tag">networkManager</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/nmcli/" rel="tag">nmcli</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+  
+  
+  <div class="authorbox clearfix">
+    <figure class="authorbox__avatar">
+      <img alt="Christophe Decanini avatar" src="/images/authors/christophe.jpg" class="avatar" height="130" width="130">
+    </figure>
+    <div class="authorbox__header">
+      <span class="authorbox__name">About Christophe Decanini:</span>
+    </div>
+    <div class="authorbox__description">
+      Christophe has worked at VMware, Inc., where he started in 2007 after VMware acquired Dunes. Based in Gland, Switzerland, Christophe is a global resource supporting customers in their orchestration and automation needs. He has presented orchestration solutions at conferences such as VMworld and is the primary contributor to this site.
+    </div>
+    <div class="widget-social__item widget__item">
+      <a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer"
+        href="https://twitter.com/cdecanini_" target="_blank">
+        <svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+      </a>
+    </div>
+  </div>
+  
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Leveraging vCenter 6 vAPI REST endpoint</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">How to limit number of workflow tokens</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://localhost:1313/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html">Please share your code at the Sample Exchange</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html">How to update a Resource Element Script&#39;s Contents using curl</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

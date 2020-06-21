@@ -22,5 +22,25 @@ In this tutorial I will walk you through how I managed to implement Microsoft DN
  The Microsoft DNS dynamic types plug-in DNS record as a service in vRA DNS record as a blueprint component  This is the first public tutorial on how to create a Dynamic Types plug-in from scratch and the overall methodology used applies to other integrations.</description>
     </item>
     
+    <item>
+      <title>Plug-in Generator v2 advanced techniques</title>
+      <link>http://localhost:1313/articles/learn-vco/302-create-a-plug-in-for-orchestrator.html</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/302-create-a-plug-in-for-orchestrator.html</guid>
+      <description>In previous tutorials we created inventory object types, their children objects, workflows to operate these that we packaged for our end users.
+In this tutorial we are going to create an orchestrator plug-in to list vCO / vRO workflows ! You may wonder why doing so ?
+This is a good use case for leveraging some of the more advanced features of the plug-in generator v2 to handle complex REST APIs and improving performance when needed.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - part 1</title>
+      <link>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</link>
+      <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</guid>
+      <description>In a previous articleI have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.Then explained how to build your own twitter plug-in using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.</description>
+    </item>
+    
   </channel>
 </rss>

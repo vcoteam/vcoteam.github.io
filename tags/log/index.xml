@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>log on </title>
+    <link>http://localhost:1313/tags/log.html</link>
+    <description>Recent content in log on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Apr 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/log/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Log plug-ins HTTP communications</title>
+      <link>http://localhost:1313/articles/learn-vco/303-log-plug-ins-http-communications.html</link>
+      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/303-log-plug-ins-http-communications.html</guid>
+      <description>A lot of the Orchestrator plug-ins use the Apache HTTP client to communicate with the target hosts. You may want to log the HTTP communications for many purposes:
+ Understanding how vCO does the API calls Troubleshoot a problem with a target host Re-engineering an existing call with capturing it, changing it as you like and use it via the REST or SOAP plug-in Brag you have found an &amp;ldquo;Onyx&amp;rdquo; like functionality for most Orchestrated products  This article will guide you on how to log these calls to a file.</description>
+    </item>
+    
+  </channel>
+</rss>

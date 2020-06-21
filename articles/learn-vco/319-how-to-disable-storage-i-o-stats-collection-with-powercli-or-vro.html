@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>How to Disable Storage I/O Stats Collection with PowerCLI or vRO - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Learn how to use PowerCLI and vRO to disable storage IO Stats Collection">
+		<meta property="og:title" content="How to Disable Storage I/O Stats Collection with PowerCLI or vRO" />
+<meta property="og:description" content="Learn how to use PowerCLI and vRO to disable storage IO Stats Collection" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html" />
+<meta property="article:published_time" content="2016-12-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-12-08T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Disable Storage I/O Stats Collection with PowerCLI or vRO"/>
+<meta name="twitter:description" content="Learn how to use PowerCLI and vRO to disable storage IO Stats Collection"/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-16400053-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn VCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">Newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">How to Disable Storage I/O Stats Collection with PowerCLI or vRO</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-08T00:00:00Z">December 08, 2016</time></div>
+</div>
+		</header><div class="content post__content clearfix">
+			<p>I recently came across a thread asking about how to disable Storage I/O Statistics Collection using PowerCLI. The thread referenced this article by <a href="https://twitter.com/vcdxnz001"  target="_blank" rel="noreferrer noopener" >Michael Webster</a>: <a href="http://longwhiteclouds.com/2016/10/17/disable-sioc-io-metrics-collection-for-auto-tiering-storage-systems/"  target="_blank" rel="noreferrer noopener" >Disable SIOC IO Metrics Collection For Auto Tiering Storage Systems</a>. In one of the comments, someone asked about using PowerCLI.. Unfortunately there was no answer there so I thought - I might be able to figure this out! With regards to checking that box, I can&rsquo;t say whether it&rsquo;s a good idea or not, my purpose here was just to illustrate how to do it via PowerCLI and vRO.</p>
+<h2 id="goal">Goal</h2>
+<p>The overall goal of this post is to teach you how to Disable Storage I/O Statistics Collection using PowerCLI&hellip; more importantly, I will step you through my approach as a vRO guy trying to figure out how to create some PowerCLI code to accomplish the task. Once I&rsquo;m done, I&rsquo;ll also provide a simple vRO workflow to do the same&hellip;</p>
+<p>I&rsquo;m a vRO guy with MINIMAL PowerShell and PowerCLI experience. One thing I AM familiar with is the fact that the current version of <a href="https://labs.vmware.com/flings/onyx-for-the-web-client"  target="_blank" rel="noreferrer noopener" >Onyx works with the vSphere Web Client</a> and is able to produce PowerCLI code based on recorded actions in the client. I&rsquo;m still waiting for some developer-type people to get this tool updated to output vRO Javascript like the old version did&hellip;.ok.. enough babbling&hellip; let&rsquo;s get on with how to actually do this.</p>
+<p>First off, make sure you have Onyx installed in your vSphere Web Client. Then, proceed as follows&hellip;</p>
+<h2 id="vsphere-web-client---view-datastore-general-settings">vSphere Web Client - View Datastore General Settings</h2>
+<figure>
+    <img src="/images/disable-storage-io/vSphere_Web_Client_-_View_Datastore_General_Settings_lg.png"/> 
+</figure>
+
+<p>As seen in the screenshot, navigate to the Datastore you wish to modify. It&rsquo;s important to get the client to the object you wish to modify BEFORE starting the ONYX recording tool in order to minimize the amount of code that gets generated. As you&rsquo;ll see, it generates quite a bit!</p>
+<ul>
+<li>Now, Click the Record Button at the top of your vSphere Web Client</li>
+<li>Next, Click EDIT next to <strong>Datastore Capabilities</strong></li>
+</ul>
+<h2 id="vsphere-web-client---adjust-desired-settings">vSphere Web Client - Adjust Desired Settings</h2>
+<figure>
+    <img src="/images/disable-storage-io/vSphere_Web_Client_-_Adjust_Desired_Settings_lg.png"
+         alt="vSphere Web Client - Adjust Desired Settings"/> 
+</figure>
+
+<ul>
+<li>Note that the red circle is now a red squre (stop) to indicate that Onyx is recording your actions&hellip;</li>
+<li>Adjust the settings as desired.. for this article, we are focusing on Disable Storage I/O statistics collection so enable the checkbox there</li>
+<li>Click OK when Done</li>
+<li>Click the Onyx icon to the right of the Red square at the top of the client</li>
+</ul>
+<h2 id="vsphere-web-client-onyx-ui">vSphere Web Client Onyx UI</h2>
+<figure>
+    <img src="/images/disable-storage-io/vSphere_Web_Client_Onyx_UI_lg.png"
+         alt="vSphere Web Client Onyx UI"/> 
+</figure>
+
+<ul>
+<li>Click the &ldquo;Stop&rdquo; button &ndash; once clicked, the button changes to &ldquo;Start&rdquo; as shown in the screenshot</li>
+<li>Once recording has stopped, the code will appear in the text area</li>
+</ul>
+<p>As you can see, quite a bit of code got generated:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># ------- ConfigureDatastoreIORM_Task -------</span>
+$datastore = New-Object VMware.Vim.ManagedObjectReference
+$datastore.value = <span style="color:#e6db74">&#39;datastore-61&#39;</span>
+$datastore.type = <span style="color:#e6db74">&#39;Datastore&#39;</span>
+$spec = New-Object VMware.Vim.StorageIORMConfigSpec
+$spec.percentOfPeakThroughput = 95
+$spec.statsCollectionEnabled = $false
+$spec.enabled = $false
+$spec.congestionThreshold = 30
+$spec.congestionThresholdMode = <span style="color:#e6db74">&#39;automatic&#39;</span>
+$spec.statsAggregationDisabled = $true
+$_this = Get-View -Id <span style="color:#e6db74">&#39;StorageResourceManager-StorageResourceManager&#39;</span>
+$_this.ConfigureDatastoreIORM_Task($datastore, $spec)
+
+<span style="color:#75715e"># ------- getRuntime -------</span>
+$_this = Get-View -Id <span style="color:#e6db74">&#39;HostSystem-host-129&#39;</span>
+$_this.getRuntime()
+
+<span style="color:#75715e"># ------- getContent -------</span>
+$_this = Get-View -Id <span style="color:#e6db74">&#39;ServiceInstance-ServiceInstance&#39;</span>
+$_this.getContent()
+
+<span style="color:#75715e"># ------- getCapabilities -------</span>
+$_this = Get-View -Id <span style="color:#e6db74">&#39;HostDatastoreSystem-datastoreSystem-129&#39;</span>
+$_this.getCapabilities()
+
+<span style="color:#75715e"># ------- getRuntime -------</span>
+$_this = Get-View -Id <span style="color:#e6db74">&#39;HostSystem-host-129&#39;</span>
+$_this.getRuntime()
+
+<span style="color:#75715e"># ------- getContent -------</span>
+$_this = Get-View -Id <span style="color:#e6db74">&#39;ServiceInstance-ServiceInstance&#39;</span>
+$_this.getContent()
+
+<span style="color:#75715e"># ------- getCapabilities -------</span>
+$_this = Get-View -Id <span style="color:#e6db74">&#39;HostDatastoreSystem-datastoreSystem-129&#39;</span>
+$_this.getCapabilities()
+</code></pre></td></tr></table>
+</div>
+</div><p>Okay, there&rsquo;s a bunch of stuff on there statically coded based on my selections in the vSphere Web Client&hellip;Based on what we actually want here, it looks like the most relevant bit of code is that top chunk, everything after that seems irrelevant so were are now left with:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># ------- ConfigureDatastoreIORM_Task -------</span>
+$datastore = New-Object VMware.Vim.ManagedObjectReference
+$datastore.value = <span style="color:#e6db74">&#39;datastore-61&#39;</span>
+$datastore.type = <span style="color:#e6db74">&#39;Datastore&#39;</span>
+$spec = New-Object VMware.Vim.StorageIORMConfigSpec
+$spec.percentOfPeakThroughput = 95
+$spec.statsCollectionEnabled = $false
+$spec.enabled = $false
+$spec.congestionThreshold = 30
+$spec.congestionThresholdMode = <span style="color:#e6db74">&#39;automatic&#39;</span>
+$spec.statsAggregationDisabled = $true
+$_this = Get-View -Id <span style="color:#e6db74">&#39;StorageResourceManager-StorageResourceManager&#39;</span>
+$_this.ConfigureDatastoreIORM_Task($datastore, $spec)
+</code></pre></td></tr></table>
+</div>
+</div><p>Alright, now, looking through the settings here, we can comment out several lines that are for other settings (unless you also want the ability to set those as well), giving us:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># ------- ConfigureDatastoreIORM_Task -------</span>
+$spec = New-Object VMware.Vim.StorageIORMConfigSpec
+<span style="color:#75715e"># $spec.percentOfPeakThroughput = 90</span>
+$spec.statsCollectionEnabled = $false
+<span style="color:#75715e"># $spec.enabled = $false</span>
+<span style="color:#75715e"># $spec.congestionThreshold = 30</span>
+<span style="color:#75715e"># $spec.congestionThresholdMode = &#39;automatic&#39;</span>
+<span style="color:#75715e"># $spec.statsAggregationDisabled = $false</span>
+$_this = Get-View -Id <span style="color:#e6db74">&#39;StorageResourceManager-StorageResourceManager&#39;</span>
+$_this.ConfigureDatastoreIORM_Task($datastore, $spec)
+</code></pre></td></tr></table>
+</div>
+</div><p>Okay, we&rsquo;re getting closer now, but there are still static values in here&hellip; after a few minutes of googling around various blog sites, I updated the code to the following:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Provide vCenter Host and Credentials</span>
+$VCUser = <span style="color:#e6db74">&#34;specify-vcenter-user-here&#34;</span>
+$VCPass = <span style="color:#e6db74">&#34;specify-vcenter-pw-here&#34;</span>
+$VCIP = <span style="color:#e6db74">&#34;specify-vcenter-ip-or-fqdn-here&#34;</span>
+<span style="color:#75715e"># Set Datastore Name:</span>
+$DSName = <span style="color:#e6db74">&#34;specify-datastore-name-here&#34;</span>
+
+$connection = Connect-VIServer -Server $VCIP -User $VCUser -Password $vcpass -WarningAction SilentlyContinue
+$datastore = Get-Datastore -Name $DSName
+$dsView = Get-View $datastore
+$dsMoRef = $dsView.MoRef
+
+<span style="color:#75715e"># ------- ConfigureDatastoreIORM_Task -------</span>
+$spec = New-Object VMware.Vim.StorageIORMConfigSpec
+<span style="color:#75715e"># $spec.percentOfPeakThroughput = 90</span>
+$spec.statsCollectionEnabled = $false
+<span style="color:#75715e"># $spec.enabled = $false</span>
+<span style="color:#75715e"># $spec.congestionThreshold = 30</span>
+<span style="color:#75715e"># $spec.congestionThresholdMode = &#39;automatic&#39;</span>
+<span style="color:#75715e"># $spec.statsAggregationDisabled = $false</span>
+$_this = Get-View -Id <span style="color:#e6db74">&#39;StorageResourceManager-StorageResourceManager&#39;</span>
+$_this.ConfigureDatastoreIORM_Task($dsMoRef, $spec)
+</code></pre></td></tr></table>
+</div>
+</div><p>We now should have a working script&hellip; so, go back to your datastore and uncheck the box&hellip; then try running your new script!</p>
+<h2 id="launch-your-vro-client">Launch your vRO Client</h2>
+<figure>
+    <img src="/images/disable-storage-io/Launch_your_vRO_Client.png"
+         alt="Launch vRO Client"/> 
+</figure>
+
+<p>There aren&rsquo;t any out of the box workflows or actions that do this that I&rsquo;m aware of&hellip; but, looking at the code above, I see a couple really important objects:</p>
+<ul>
+<li><strong>StorageResourceManager</strong></li>
+<li><strong>StorageIORMConfigSpec</strong></li>
+</ul>
+<p>&hellip; and then, the various properties of the spec &hellip;</p>
+<p>and a method to apply the spec:</p>
+<ul>
+<li><strong>ConfigureDatastoreIORM_Task()</strong></li>
+</ul>
+<p>So, based on that, use the API explorer in vRO to look for those Scriptable Objects..</p>
+<h2 id="review-the-api-explorer">Review the API Explorer</h2>
+<figure>
+    <img src="/images/disable-storage-io/Review_the_API_Explorer_lg.png"
+         alt="Review the API Explorer"/> 
+</figure>
+
+<ul>
+<li>At the top of your vRO Client, click on <strong>Tools - &gt; API Explorer</strong></li>
+<li>Enter <strong>ConfigureDatastore</strong> in the Containing text box</li>
+<li>Click <strong>SEARCH</strong></li>
+<li>Inspect the results in the bottom pane, and double-click on the entry with configureDatastoreIORM_Task in it</li>
+<li>You should be taken to that method in the tree on the left</li>
+<li>Note that the method is tied to the VcStorageResourceManager object - slightly different name (preceded by Vc) than the PowerCLI equivalent</li>
+</ul>
+<p>Okay, this is good, things are aligning to what we found in PowerCLI - let&rsquo;s create a simple workflow!</p>
+<h2 id="workflow-disable-io-stats-collection">Workflow: Disable IO Stats Collection</h2>
+<p><figure>
+    <img src="/images/disable-storage-io/Workflow_Disable_IO_Stats_Collection.png"
+         alt="Workflow - Disable I/O Stats Collection"/> 
+</figure>
+
+Create a new workflow with:</p>
+<ul>
+<li>Scriptable Task -. Name the scriptable task Disable IOStats Collection</li>
+<li>Action &ndash;&gt; vim3WaitTaskEnd</li>
+</ul>
+<h2 id="scriptable-task-disable-iostats-collection">Scriptable Task: Disable IOStats Collection</h2>
+<p><figure>
+    <img src="/images/disable-storage-io/Scriptable_Task_Disable_IOStats_Collection_lg.png"
+         alt="Scriptable Task: Disable IOStats Collection"/> 
+</figure>
+
+We&rsquo;ll keep this simple so add a single input to the Scriptable task to pass in the Datastore object we wish to modify:</p>
+<ul>
+<li>Select the Disable IOStats Collection Scriptable task</li>
+<li>Make sure the <strong>IN</strong> tab is selected</li>
+<li>Click the button to add a new parameter (when prompted, click the &ldquo;Create parameter/attribute in workflow&rdquo; link in the Chooser window that comes up</li>
+<li>In the Create parameter window, name the parameter <strong>datastore</strong></li>
+<li>Use the Filter box to filter on &ldquo;datastore&rdquo;</li>
+<li>Scroll through the Type box and verify that <strong>VC:Datastore</strong>  is selected</li>
+<li>Set the option to <strong>Create workflow INPUT PARAMETER with the same name</strong></li>
+<li>Click <strong>OK</strong> when done</li>
+<li>Now, on the <strong>OUT</strong> Tab, create a new <strong>ATTRIBUTE</strong>  named &ldquo;task&rdquo; of type <strong>VC:Task</strong></li>
+<li>Click on the Scripting tab when done</li>
+</ul>
+<h2 id="scriptable-task-disable-iostats-collection---script">Scriptable Task: Disable IOStats Collection - Script</h2>
+<p>Fortunately, Onyx did the hardest work for us earlier - even though it generated PowerCLI code, it identified the important objects and methods required to accomplish the task at hand. Based on that earlier code and a bit of experience with vRO JavaScript, I managed to convert the code to vRO-ready code as follows:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">storageResourceManager</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">datastore</span>.<span style="color:#a6e22e">sdkConnection</span>.<span style="color:#a6e22e">storageResourceManager</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">spec</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">VcStorageIORMConfigSpec</span>();
+<span style="color:#a6e22e">spec</span>.<span style="color:#a6e22e">statsCollectionEnabled</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">task</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">storageResourceManager</span>.<span style="color:#a6e22e">configureDatastoreIORM_Task</span>(<span style="color:#a6e22e">datastore</span>, <span style="color:#a6e22e">spec</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p>The first line sets oup our Storage manager. Using the API Explorer, I was able to determine that the StorageManager was a property of the SdkConnection object - AND - the SdkConnection is typically a property of most vCenter objects, such as a Datastore!</p>
+<p>The next line Initializes a new object that will be used for the vCenter Storage IO Resource Manager Configuration Spec (VcStorageIORMConfigSpec).</p>
+<p>Line 3 sets the statsCollectionEnabled value to false.</p>
+<p>The final line runs the configureDatastoreIORM_Task methond, passing in the datastore object and the config spec. It returns a VC:Task object (this can be determined by inspecting the method using the API Explorer) and assigning the resulting object to the <strong>task</strong>  variable.</p>
+<p>Next, we need to wait for that task to complete - that is handled by the action we added to the workflow&hellip;</p>
+<h2 id="scriptable-task-disable-iostats-collection---vim3waittaskend-bindings">Scriptable Task: Disable IOStats Collection - vim3WaitTaskEnd bindings</h2>
+<figure>
+    <img src="/images/disable-storage-io/Scriptable_Task_Disable_IOStats_Collection_-_vim3WaitTa_1_lg.png"
+         alt="Scriptable Task: Disable IOStats Collection - vim3WaitTaskEnd bindings"/> 
+</figure>
+
+<ul>
+<li>Now, we need to bind the inputs and outputs for the vim3WaitTaskEnd action so select it</li>
+<li>Select the <strong>Visual Binding</strong> tab</li>
+<li>Drag the <strong>task</strong> in from the center section to the bottom left</li>
+<li>Release on the existing <strong>In Attribute</strong> : task (VC:Task)</li>
+<li>Drag Progress to the In Attributes box as well, initially, the &ldquo;progress&rdquo; attribute won&rsquo;t be there so release the attribute in the white-space of the box. You&rsquo;ll then be prompted to create the attribute so just click <strong>OK</strong></li>
+<li>Drag pollRate to the In Attributes box to create and bind that attribute just like the progress attribute</li>
+<li>On the right side, drag <strong>actionResult</strong> down to the <strong>Out Attributes</strong>  box and release, click <strong>OK</strong> to create that attribute</li>
+<li>Finally, click <strong>Validate</strong> to make sure the workflow is ready</li>
+<li>Click <strong>Save and close</strong> when done</li>
+</ul>
+<p>Our next step is to test the workflow and confirm it works. Before proceeding to the next step, be sure that you have <strong>UNCHECKED</strong>  the box if you had checked it manually or via PowerCLI as shown earlier in this article.</p>
+<h2 id="test-the-disable-iostats-collection-workflow">Test the Disable IOStats Collection Workflow</h2>
+<p><figure>
+    <img src="/images/disable-storage-io/Test_the_Disable_IOStats_Collection_Workflow_lg.png"
+         alt="Test the Disable IOStats Collection Workflow"/> 
+</figure>
+
+Run the workflow, select the Datastore you wish to take action and and Submit.</p>
+<p>When done, check vSphere Web Client and confirm that the box is checked!</p>
+<h2 id="summary">Summary</h2>
+<p>While this article focused on a specific use case, the approach taken here can be used for many other vCenter tasks as well. I sincerely hope you have gained a new appreciation for the Onyx client, PowerCLI, and vRealize Orchestrator (vRO).</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vro/" rel="tag">vRO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/powercli/" rel="tag">PowerCLI</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/storage-i/o/" rel="tag">Storage I/O</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+  
+  
+  <div class="authorbox clearfix">
+    <figure class="authorbox__avatar">
+      <img alt="Burke Azbill avatar" src="/images/authors/burke.jpg" class="avatar" height="130" width="130">
+    </figure>
+    <div class="authorbox__header">
+      <span class="authorbox__name">About Burke Azbill:</span>
+    </div>
+    <div class="authorbox__description">
+      Burke has been a technology professional since 1996 and has held certifications from the CNCF, Cisco, Citrix, ITIL, Linux Professional Institute, Microsoft, Novell, and VMware.  He joined VMware in 2007 as part of the <a href="http://ir.vmware.com/overview/press-releases/press-release-details/2007/VMware-Acquires-Dunes-Technologies/default.aspx">acquisition of Dunes Technologies from Lausanne, Switzerland</a> where he had begun his work with Orchestrator.  Burke is founder and contributor of the <a href="https://VCOTeam.info">vCOTeam.info</a> blog as well as a leading contributor to the <a href="https://communities.vmware.com/community/vmtn/vrealize/orchestrator">VMTN Communities for Orchestrator</a>.  He has been recognized by the community as a <a href="https://vexpert.vmware.com/">vExpert</a> since 2010. During his tenure at VMware, Burke co-created the Orchestrator Masters Training program, has trained hundreds of employees on Orchestrator, built many integrations for customers and partners, and has worked various roles in the VMworld Hands On Labs.  He has also been a member, and technical lead, of the <a href="https://www.livefire.solutions">SDDC Livefire program</a>, building content, labs, and vPods for the program. Publications include contributing author for &lsquo;VMware vCloud Architecture Toolkit (vCAT)&rsquo; (VMware Press 2013) and technical resource for <a href="http://bit.ly/vroCookbook2">&lsquo;VMware vRealize Orchestrator Cookbook - Second Edition&rsquo;</a>, <a href="http://bit.ly/vroCookbook">&lsquo;VMware vRealize Orchestrator Cookbook</a>, and <a href="http://bit.ly/vroEssentials">VMware vRealize Orchestrator Essentials (Packt Publishing 2015)</a>, Automating vSphere with VMware vCenter Orchestrator (VMware Press 2012), and VMware vSphere for Dummies (For Dummies 2011).
+    </div>
+    <div class="widget-social__item widget__item">
+      <a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer"
+        href="https://twitter.com/TechnicalValues" target="_blank">
+        <svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+      </a>
+    </div>
+  </div>
+  
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">How to Configure vRA&#39;s Embedded vRO to Allow Domain Account Login</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/articles/learn-vco/321-how-to-retrieve-a-script-resource-from-vro-via-curl.html" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">How to retrieve a script Resource from vRO via curl</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://localhost:1313/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html">Please share your code at the Sample Exchange</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html">How to update a Resource Element Script&#39;s Contents using curl</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

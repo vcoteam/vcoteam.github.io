@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Leveraging vCenter 6 vAPI REST endpoint - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Learn how to use the vCenter 6 vAPI REST endpoit">
+		<meta property="og:title" content="Leveraging vCenter 6 vAPI REST endpoint" />
+<meta property="og:description" content="Learn how to use the vCenter 6 vAPI REST endpoit" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html" />
+<meta property="article:published_time" content="2015-08-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-08-25T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leveraging vCenter 6 vAPI REST endpoint"/>
+<meta name="twitter:description" content="Learn how to use the vCenter 6 vAPI REST endpoit"/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-16400053-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn VCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">Newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Leveraging vCenter 6 vAPI REST endpoint</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-08-25T00:00:00Z">August 25, 2015</time></div>
+</div>
+		</header><div class="content post__content clearfix">
+			<p>vCenter 6 has introduced an important new feature for anyone interested in Automation and integration : a REST based endpoint providing access to some of the recent functionality such as the tagging service, the content library and transfer service : It is called &ldquo;VMware vCloud Suite SDK&rdquo; and codenamed vAPI. In addition to the REST API it provides language bindings for Java, Python, .NET, Perl and Ruby. If you want to know more about vAPI you can read the <a href="https://blogs.vmware.com/cto/vmwares-solution-to-api-challenges"  target="_blank" rel="noreferrer noopener" >blog article I wrote on the VMware CTO Ambassadors blog</a>.</p>
+<p>The following article is an introduction to using the vAPI REST Endpoint from vRealize Orchestrator REST plug-in. The concepts in this article may be useful even if you plan to consume the REST service with any REST client.</p>
+<h2 id="background">Background</h2>
+<p>A few months ago I quickly developed a <a href="https://communities.vmware.com/docs/DOC-29782"  target="_blank" rel="noreferrer noopener" >tagging plug-in for vRealize Orchestrator</a> leveraging the vAPI REST endpoint. While it is possible to look at the code I thought providing a tutorial would be more convenient for learning purposes.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>vCenter 6</li>
+<li>vRealize Orchestrator (6 was used for the tutorial but 5.X may be used as well)</li>
+<li>Have at least a tag category created in vCenter to make sure the tutorial output something</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<p>First, we need to add a new REST Host. Log in the vRO client, search and run the &ldquo;Add a REST host&rdquo; workflow.</p>
+<p>Add a name and enter the URL of your vCenter 6 server in the format <code>https://[vcenterServer]/rest</code> (do not use http or do not forget the /rest).</p>
+<p>The /rest points to the vAPI REST endpoint service. The other field can be left with default values. Click next.</p>
+<figure>
+    <img src="/images/vcenter6-vapi/vAPI-REST-01.png"/> 
+</figure>
+
+<p>You can skip the proxy settings. For the Host authentication select Basic.</p>
+<figure>
+    <img src="/images/vcenter6-vapi/vAPI-REST-02.png"/> 
+</figure>
+
+<p>For session mode you can either use &ldquo;Per User Session&rdquo; or &ldquo;Shared Session&rdquo;.</p>
+<p>his mainly depends if the username you used to authenticate in vRO has permissions on the target vCenter. If this is the case you can use per user session, if not use Shared session and enter credentials with permissions on the vCenter. You can submit the workflow.</p>
+<figure>
+    <img src="/images/vcenter6-vapi/vAPI-REST-03.png"/> 
+</figure>
+
+<h2 id="demo-workflow">Demo workflow</h2>
+<p>Now we need to create our own workflow:</p>
+<ul>
+<li>Create a new workflow called for example &ldquo;vAPI REST demo&rdquo;.</li>
+<li>Add an input parameter named restHost of type restHost</li>
+<li>Add a scriptable task on the schema. Bind the restHost input parameter to this scriptable task input parameter.</li>
+</ul>
+<p>Here is the JavaScript code to put in the scriptable task</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">createCisSession</span>(<span style="color:#a6e22e">restHost</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cisSession</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCisSession</span>(<span style="color:#a6e22e">restHost</span>);
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Log in with user &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cisSession</span>.<span style="color:#a6e22e">user</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">categoryIds</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getTagCategories</span>(<span style="color:#a6e22e">restHost</span>);
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">categoryId</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">categoryIds</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">category</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getTagCategory</span>(<span style="color:#a6e22e">restHost</span>, <span style="color:#a6e22e">categoryId</span>);
+    <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Found category &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">category</span>.<span style="color:#a6e22e">name</span>);
+}
+
+<span style="color:#a6e22e">deleteCisSession</span>(<span style="color:#a6e22e">restHost</span>);
+
+<span style="color:#75715e">// This function will set the Cookie header vmware-api-session-id=[CIS Session ID] based on the Basic AUthorization header set by vRO REST plug-in
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createCisSession</span>(<span style="color:#a6e22e">restHost</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">restHost</span>.<span style="color:#a6e22e">createRequest</span>(<span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;/com/vmware/cis/session&#34;</span>);
+    <span style="color:#75715e">// Alternate syntaxes
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//var request = restHost.createRequest(&#34;POST&#34;, &#34;/com/vmware/cis/session?~action=create&#34;);
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//var request = restHost.createRequest(&#34;GET&#34;, &#34;/com/vmware/cis/session?~method=post&#34;);
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Setting an unset vmware-api-session-id Cookie header enforce using Basic Authorization instead of using a Cookie based authentication based on a previous sesion
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">setHeader</span>(<span style="color:#e6db74">&#34;Cookie&#34;</span>, <span style="color:#e6db74">&#34;vmware-api-session-id&#34;</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">execute</span>();
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>) <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;Status code &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">contentAsString</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCisSession</span>(<span style="color:#a6e22e">restHost</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">restHost</span>.<span style="color:#a6e22e">createRequest</span>(<span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;/com/vmware/cis/session?~action=get&#34;</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">execute</span>();
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>) <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;Status code &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">contentAsString</span>;
+    <span style="color:#75715e">// Returning the object
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">contentAsString</span>).<span style="color:#a6e22e">value</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getTagCategories</span>(<span style="color:#a6e22e">restHost</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">restHost</span>.<span style="color:#a6e22e">createRequest</span>(<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;/com/vmware/cis/tagging/category&#34;</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">execute</span>();
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>) <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;Status code &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">contentAsString</span>;
+    <span style="color:#75715e">// Returning an array of tag category ids
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">contentAsString</span>)).<span style="color:#a6e22e">value</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getTagCategory</span>(<span style="color:#a6e22e">restHost</span>, <span style="color:#a6e22e">categoryId</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">restHost</span>.<span style="color:#a6e22e">createRequest</span>(<span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;/com/vmware/cis/tagging/category?~action=get&amp;amp;category_id=&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">categoryId</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">execute</span>();
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>) <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;Status code &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">contentAsString</span>;
+    <span style="color:#75715e">// Returning the object
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">contentAsString</span>).<span style="color:#a6e22e">value</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deleteCisSession</span>(<span style="color:#a6e22e">restHost</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">restHost</span>.<span style="color:#a6e22e">createRequest</span>(<span style="color:#e6db74">&#34;DELETE&#34;</span>, <span style="color:#e6db74">&#34;/com/vmware/cis/session&#34;</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">execute</span>();
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>) <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;Status code &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">contentAsString</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>I have created 5 JavaScript functions.</p>
+<ul>
+<li><strong>CreateCisSession</strong> : Equivalent of login : Creates a REST request to create a new session using the credentials you selected during the REST host configuration. Creating a session will set a Cookie in vRO that will be used to authenticate any subsequent API call. The tricky part in this function was to set an empty session ID in the cookie to avoid authenticating with a previously generated cookie that may contain an older session ID. I have also commented out alternate vAPI request syntaxes. While using POST /com/vmware/cis/session is a common way to create a resource there is another syntax using POST with the &ldquo;/com/vmware/cis/session?<strong>~action=create</strong>&rdquo; URL : this allows to specify other operations with POST instead of limiting POST for the sole purpose of creating a resource. This syntax allows to define more operations than the limited number of HTTP verbs. The second alternative uses a GET verb but uses ~method=post to indicate this is a resource creation. Offering the choice to create resources using GET allows to interface the vAPI endpoint with HTTP client that do not have options besides GET.</li>
+<li><strong>GetCisSession</strong> : Get the created session. Note the use of the POST verb with the get action in the URL. This function output a JavaScript session object from the JSON returned by the request. This function will be called to identify the current user of the session.</li>
+<li><strong>getTagCategories</strong> : Returns an array of the tag categories. In this case vAPI returns an array of the ids of these categories.</li>
+<li><strong>getTagCategory</strong> : Returns the category object that we will use to list the category names. In this one I have used an interesting feature of vAPI allowing to pass the categoryId parameter in the URL. In this case this is more convenient to the other regular approach which is to provide a catogory ID attribute in a JSON content.</li>
+<li><strong>deleteCisSession</strong> : Equivalent of logout : Delete the actual session meaning that a new createCisSession will have to be performed before being able to perform other requests requiring authentications.</li>
+</ul>
+<p>These functions are called in order. The categoryIds are returned in a variable which are iterated in a foreach loop getting each tagCategory object and displaying its name.</p>
+<p>You can now run your workflow with selecting the vAPI REST endpoint you added.</p>
+<figure>
+    <img src="/images/vcenter6-vapi/vAPI-REST-03a.png"/> 
+</figure>
+
+<p>And check the logs.</p>
+<figure>
+    <img src="/images/vcenter6-vapi/vAPI-REST-04.png"/> 
+</figure>
+
+<p>In my case vRealize Orchestrator is set to use vCenter 6 SSO. I authenticated as myself in vRO. The REST plug-in passed the credentials to the vAPI endpoint to create a session and the getSession function allowed to display my username.&lt;</p>
+<p>One category was found and displayed.</p>
+<p>Also a feature that is very conveneient is that the API is browsable so you can use a browser and enter the <code>https://[vcenterServer]/rest</code> URL to find out the resources and components available in the endpoint.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;value&#34;</span>: {
+    <span style="color:#f92672">&#34;resources&#34;</span>: {
+      <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+      <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/rest/navigation/resource&#34;</span>,
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.vapi.rest.navigation.resource/id:list&#34;</span>
+      }
+    },
+    <span style="color:#f92672">&#34;components&#34;</span>: {
+      <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+      <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/rest/navigation/component&#34;</span>,
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.vapi.rest.navigation.component/id:list&#34;</span>
+      }
+    }
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>So if you follow the resource link and and then tagging one you get all URLs for tags including documentation and links to metadata describing the object and the POST content format.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;value&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;get&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Fetches the tag information for the given tag identifier. To invoke this {@term operation}, you need the read privilege on the tag in order to view the tag info.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=get&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag/id:get&#34;</span>
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;update&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Updates an existing tag. To invoke this {@term operation}, you need the edit privilege on the tag.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;PATCH&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=update&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag/id:update&#34;</span>
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;detach&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Detaches the tag from the given object. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag_association&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=detach&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag_association/id:detach&#34;</span>
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;attach&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Attaches the given tag to the input object. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag_association&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=attach&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag_association/id:attach&#34;</span>
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;revoke_propagating_permissions&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Revokes all propagating permissions on the given tag. You should then attach a direct permission with tagging privileges on the given tag. To invoke this {@term operation}, you need tag related privileges (direct or propagating) on the concerned tag.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=revoke-propagating-permissions&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag/id:revoke_propagating_permissions&#34;</span>
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;remove_from_used_by&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Removes the {@param.name usedByEntity} from the {@link TagModel#usedBy} subscribers set. If the {@param.name usedByEntity} is not using this tag, then this becomes a no-op. To invoke this {@term operation}, you need modify {@link TagModel#usedBy} privilege on the tag.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=remove-from-used-by&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag/id:remove_from_used_by&#34;</span>
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;add_to_used_by&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=add-to-used-by&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag/id:add_to_used_by&#34;</span>
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;list_attached_objects&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Fetches the {@term list} of attached objects for the given tag. To invoke this {@term operation}, you need the read privilege on the input tag. Only those objects for which you have read privileges will be returned.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag_association&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=list-attached-objects&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag_association/id:list_attached_objects&#34;</span>
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;delete&#34;</span>,
+      <span style="color:#f92672">&#34;documentation&#34;</span>: <span style="color:#e6db74">&#34;Deletes an existing tag. To invoke this {@term operation}, you need the delete privilege on the tag.&#34;</span>,
+      <span style="color:#f92672">&#34;service&#34;</span>: <span style="color:#e6db74">&#34;com.vmware.cis.tagging.tag&#34;</span>,
+      <span style="color:#f92672">&#34;links&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;DELETE&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>,
+          <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=delete&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;metadata&#34;</span>: {
+        <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://192.168.1.98/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:com.vmware.cis.tagging.tag/id:delete&#34;</span>
+      }
+    }
+  ]
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>I hope this is a good introduction for leveraging vAPI. You can explore the current features documented in the <a href="https://developercenter.vmware.com/web/sdk/60/vcloudsuite-rest%5D"  target="_blank" rel="noreferrer noopener" >VMware vCloud Suite SDK for REST</a> and expect the APIs covered to grow over the next vAPI releases.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vapi/" rel="tag">vAPI</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/rest/" rel="tag">REST</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+  
+  
+  <div class="authorbox clearfix">
+    <figure class="authorbox__avatar">
+      <img alt="Christophe Decanini avatar" src="/images/authors/christophe.jpg" class="avatar" height="130" width="130">
+    </figure>
+    <div class="authorbox__header">
+      <span class="authorbox__name">About Christophe Decanini:</span>
+    </div>
+    <div class="authorbox__description">
+      Christophe has worked at VMware, Inc., where he started in 2007 after VMware acquired Dunes. Based in Gland, Switzerland, Christophe is a global resource supporting customers in their orchestration and automation needs. He has presented orchestration solutions at conferences such as VMworld and is the primary contributor to this site.
+    </div>
+    <div class="widget-social__item widget__item">
+      <a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer"
+        href="https://twitter.com/cdecanini_" target="_blank">
+        <svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+      </a>
+    </div>
+  </div>
+  
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Synchronize Presentation Settings from embedded workflow</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/articles/learn-vco/308-configure-linux-networking-with-network-manager.html" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Configure Linux networking with network manager</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://localhost:1313/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html">Please share your code at the Sample Exchange</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html">How to update a Resource Element Script&#39;s Contents using curl</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

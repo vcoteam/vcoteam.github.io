@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>networkManager on </title>
+    <link>http://localhost:1313/tags/networkmanager.html</link>
+    <description>Recent content in networkManager on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/networkmanager/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configure Linux networking with network manager</title>
+      <link>http://localhost:1313/articles/learn-vco/308-configure-linux-networking-with-network-manager.html</link>
+      <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/308-configure-linux-networking-with-network-manager.html</guid>
+      <description>I am working on a project where I need to apply live, permanent networking configuration changes to Linux VMs that may not even have a network configured in the first place.
+To do so I am leveraging:
+ vSphere guest operations allowing to run commands in the guest OS even if it is not networked yet. NetworkManager / nmcli which provides a command line way to get and set a broad set of network configurations that can be applied immediately and permanently .</description>
+    </item>
+    
+  </channel>
+</rss>

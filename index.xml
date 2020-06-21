@@ -32,6 +32,15 @@ Well, I&amp;rsquo;ve recently been getting started with Docker so figured this w
     </item>
     
     <item>
+      <title>Please share your code at the Sample Exchange</title>
+      <link>http://localhost:1313/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</link>
+      <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</guid>
+      <description>Last week, I was leading discussions at a Technical session for VMware&amp;rsquo;s internal TechSummit event in Toronto, Canada. During one of the discussions, we ended up on the topic of where and how we were storing workflows and packages we had developed. I was a bit surprised that people in the room had workflows and packages in GitHub repos but weren&amp;rsquo;t aware of some aspects of the Sample Exchange at the VMware Codesite!</description>
+    </item>
+    
+    <item>
       <title>How to create a Microsoft DNS Dynamic Types plug-in ?</title>
       <link>http://localhost:1313/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
@@ -43,6 +52,25 @@ In this tutorial I will walk you through how I managed to implement Microsoft DN
     </item>
     
     <item>
+      <title>How to update a Resource Element Script&#39;s Contents using curl</title>
+      <link>http://localhost:1313/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html</guid>
+      <description>In a previous article, I taught you How to retrieve a script Resource from vRO via curl. That can be helpful to some people, but how about updating that script? Easy! Read on&amp;hellip;
+This is a super short post since all the tough details were already outlined in the article linked above. So, assuming you already know the ID and name of the script you wish to update, all you need to do is run the following curl command:</description>
+    </item>
+    
+    <item>
+      <title>How to retrieve a script Resource from vRO via curl</title>
+      <link>http://localhost:1313/articles/learn-vco/321-how-to-retrieve-a-script-resource-from-vro-via-curl.html</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/321-how-to-retrieve-a-script-resource-from-vro-via-curl.html</guid>
+      <description>I recently spent time with a customer doing a vRO workshop with them. During the course of the workshop, I was asked how you could retrieve a script that had been stored as a resource element on a vRO server using curl. Well, I had never done that before so I set out to figure it out and was able to provide the solution before I left! Throughout this article, I will be using a vRA 7.</description>
+    </item>
+    
+    <item>
       <title>Nuc Nuc Nuc - vSAN !</title>
       <link>http://localhost:1313/articles/home-lab/320-nuc-nuc-nuc-vsan.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
@@ -51,6 +79,15 @@ In this tutorial I will walk you through how I managed to implement Microsoft DN
       <description>In a previous article VMworld 2016 Barcelona Hackathon, I noted that I had won an i3 NUC at VMworld in Barcelona. After playing with that for a few days and helping Alan Renouf test his Home Lab Deployment Script, I decided I wanted to have a full 3 node cluster - but with the i5 Processor &amp;hellip; so, I went shopping!
   Gear Intel NUC i5 Model:
 Intel NUC i5: NUC6i5SYH</description>
+    </item>
+    
+    <item>
+      <title>How to Disable Storage I/O Stats Collection with PowerCLI or vRO</title>
+      <link>http://localhost:1313/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html</link>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html</guid>
+      <description>I recently came across a thread asking about how to disable Storage I/O Statistics Collection using PowerCLI. The thread referenced this article by Michael Webster: Disable SIOC IO Metrics Collection For Auto Tiering Storage Systems. In one of the comments, someone asked about using PowerCLI.. Unfortunately there was no answer there so I thought - I might be able to figure this out! With regards to checking that box, I can&amp;rsquo;t say whether it&amp;rsquo;s a good idea or not, my purpose here was just to illustrate how to do it via PowerCLI and vRO.</description>
     </item>
     
     <item>
@@ -83,6 +120,1733 @@ During the summer of 2011 around June/July, I wanted to have a home environment 
     </item>
     
     <item>
+      <title>How to Configure vRA&#39;s Embedded vRO to Allow Domain Account Login</title>
+      <link>http://localhost:1313/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</guid>
+      <description>Two years ago, I wrote a similar article around vCAC&amp;rsquo;s embedded vCO but a lot has changed since then so those older steps no longer apply. This brief article will quickly walk you through the steps required to allow vRealize Automation 7.0/7.1/7.2&amp;rsquo;s embedded vRealize Orchestrator to allow Active Directory Domain accounts login to the vRO Client.
+Pre-Requisites This article assumes the following:
+ vRealize Automation 7.0-7.2 is installed and configured (NOTE: This has not been tested with 7.</description>
+    </item>
+    
+    <item>
+      <title>How to limit number of workflow tokens</title>
+      <link>http://localhost:1313/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html</link>
+      <pubDate>Wed, 05 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html</guid>
+      <description>Each time vRealize Orchestrator (vRO) runs a workflow, a token (workflow execution) is added beneath the workflow in the vRO client. By default vRO will keep up to 100 of these tokens! This may be a slight annoyance to people who are only interested in the last 5-20 runs. This article will shed some light on the configuration options you have available to you.
+Tired of seeing too many workflow tokens?</description>
+    </item>
+    
+    <item>
+      <title>Introducing Swagger UI on vRO 7.0.1</title>
+      <link>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</link>
+      <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</guid>
+      <description>Although vRealize Orchestrator (vRO) has provided API documentation built-in to the server, it was static content that could not be quickly used for tests or building queries. When a product provides a nice API explorer that not only tells you the available urls and basic docs, but also provides a web-based UI that allows you to quickly build up custom calls and shows you the generated content, the consumption and integration time for developers is reduced considerably.</description>
+    </item>
+    
+    <item>
+      <title>vRO Essentials Book Update for 7.x</title>
+      <link>http://localhost:1313/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</link>
+      <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</guid>
+      <description>Hello everyone!I&amp;rsquo;ve recently received news that there is some Errata update for the VMware vRealize Orchestrator Essentials book. The author has provided some updated material to reflect changes as a result of the GA of VMware vRealize Orchestrator 7.0. You can learn more about the updates here: http://langenhan.info/publications.html.</description>
+    </item>
+    
+    <item>
+      <title>Configure Linux networking with network manager</title>
+      <link>http://localhost:1313/articles/learn-vco/308-configure-linux-networking-with-network-manager.html</link>
+      <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/308-configure-linux-networking-with-network-manager.html</guid>
+      <description>I am working on a project where I need to apply live, permanent networking configuration changes to Linux VMs that may not even have a network configured in the first place.
+To do so I am leveraging:
+ vSphere guest operations allowing to run commands in the guest OS even if it is not networked yet. NetworkManager / nmcli which provides a command line way to get and set a broad set of network configurations that can be applied immediately and permanently .</description>
+    </item>
+    
+    <item>
+      <title>Leveraging vCenter 6 vAPI REST endpoint</title>
+      <link>http://localhost:1313/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</link>
+      <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</guid>
+      <description>vCenter 6 has introduced an important new feature for anyone interested in Automation and integration : a REST based endpoint providing access to some of the recent functionality such as the tagging service, the content library and transfer service : It is called &amp;ldquo;VMware vCloud Suite SDK&amp;rdquo; and codenamed vAPI. In addition to the REST API it provides language bindings for Java, Python, .NET, Perl and Ruby. If you want to know more about vAPI you can read the blog article I wrote on the VMware CTO Ambassadors blog.</description>
+    </item>
+    
+    <item>
+      <title>Synchronize Presentation Settings from embedded workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html</link>
+      <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html</guid>
+      <description>VMware&amp;rsquo;s vRealize Orchestrator (vRO) is all about modular, reusable components. Many times you wish to call an existing workflow from your own custom workflow but don&amp;rsquo;t want to manually re-create all the different presentation settings. It&amp;rsquo;s not such a big task if there are only one or two workflows, but how about when there are 10+ ? Good news is that you don&amp;rsquo;t have to! This quick little video demonstrates how to Synchronize the Presentation of an embedded workflow to your own.</description>
+    </item>
+    
+    <item>
+      <title>Creating json objects in Orchestrator</title>
+      <link>http://localhost:1313/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</link>
+      <pubDate>Fri, 29 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</guid>
+      <description>Recently I saw a pair of articles by @RoeyAzroel on vRO XML &amp;amp; JSON Gotcha! - Part 1 and Part 2. This reminded me that I had some sample code that I refer to when working with json as well so figured I would share here.
+Be sure you know about the JSON object and its .parse and .stringify methods since they do not appear anywhere in the Orchestrator&amp;rsquo;s API explorer or documentation.</description>
+    </item>
+    
+    <item>
+      <title>Postman &#43; vRO = HTTP-REST Plug-in Operations</title>
+      <link>http://localhost:1313/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html</guid>
+      <description>In a previous article, I stepped through the process of working with vRealize Orchestrator&amp;rsquo;s (vRO) REST API using the RestClient add-on for FireFox. This was before I was introduced to my new favorite REST client: POSTMAN! @postmanclient In this article, I&amp;rsquo;ll provide a little detail on an approach you can use to improve your work with REST APIs and consuming them with Orchestrator&amp;rsquo;s REST plug-in. Throughout the article, I will use a FreeNAS 9.</description>
+    </item>
+    
+    <item>
+      <title>Log plug-ins HTTP communications</title>
+      <link>http://localhost:1313/articles/learn-vco/303-log-plug-ins-http-communications.html</link>
+      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/303-log-plug-ins-http-communications.html</guid>
+      <description>A lot of the Orchestrator plug-ins use the Apache HTTP client to communicate with the target hosts. You may want to log the HTTP communications for many purposes:
+ Understanding how vCO does the API calls Troubleshoot a problem with a target host Re-engineering an existing call with capturing it, changing it as you like and use it via the REST or SOAP plug-in Brag you have found an &amp;ldquo;Onyx&amp;rdquo; like functionality for most Orchestrated products  This article will guide you on how to log these calls to a file.</description>
+    </item>
+    
+    <item>
+      <title>Plug-in Generator v2 advanced techniques</title>
+      <link>http://localhost:1313/articles/learn-vco/302-create-a-plug-in-for-orchestrator.html</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/302-create-a-plug-in-for-orchestrator.html</guid>
+      <description>In previous tutorials we created inventory object types, their children objects, workflows to operate these that we packaged for our end users.
+In this tutorial we are going to create an orchestrator plug-in to list vCO / vRO workflows ! You may wonder why doing so ?
+This is a good use case for leveraging some of the more advanced features of the plug-in generator v2 to handle complex REST APIs and improving performance when needed.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - Part 4</title>
+      <link>http://localhost:1313/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</link>
+      <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</guid>
+      <description>In part 1 and part 2 we created the inventory objects, in part 3 we created methods for this objects and ran a generic workflow to run these methods.
+In this article we will create workflows for calling these methods, include them in a package with all the plug-in configuration to ship it to our end users.
+Creating the workflows The invoke workflows in the plug-in facilitate running REST operations. End users and or external system will expect simpler workflows.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - Part 3</title>
+      <link>http://localhost:1313/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</link>
+      <pubDate>Wed, 25 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</guid>
+      <description>Part 1 of the plug-in generator v2 series covered how to create new plug-in inventory types, part 2 how to create their child object types. This part will focus on how to define object methods and associated workflows. Having Orchestrator inventory types is a necessity to use with vRealize Automation (formerly vCAC) Advanced Service Designer. Once you have these inventory objects you may wonder how to use these in workflows. This is what this article covers.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - Part 2</title>
+      <link>http://localhost:1313/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</link>
+      <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</guid>
+      <description>In the part 1 I walk through step by step to create a plug-in object type leveraging the Plug-in Generator version 2.
+In this article I will demonstrate one of the new feature of this version 2 : Create a child object type.
+Having the plug-in inventory organized in a tree view allows to represent most of the objects hierarchies found in applications APIs.
+Resuming from part 1 I need to create a vNIC object.</description>
+    </item>
+    
+    <item>
+      <title>Create a plug-in for a REST based web service in minutes - part 1</title>
+      <link>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</link>
+      <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</guid>
+      <description>In a previous articleI have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.Then explained how to build your own twitter plug-in using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.</description>
+    </item>
+    
+    <item>
+      <title>How to use PowerShell to start an Orchestrator Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</link>
+      <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</guid>
+      <description>add-type @&amp;rdquo; using System.Net; using System.Security.Cryptography.X509Certificates; public class TrustAllCertsPolicy : ICertificatePolicy { public bool CheckValidationResult( ServicePoint srvPoint, X509Certificate certificate, WebRequest request, int certificateProblem) { return true; } } &amp;ldquo;@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+function ConvertTo-Base64($string) { $bytes = [System.Text.Encoding]::UTF8.GetBytes($string); $encoded = [System.Convert]::ToBase64String($bytes);
+return $encoded; }
+$token = ConvertTo-Base64(&amp;ldquo;$($usr):$($pwd)&amp;quot;) $auth = &amp;ldquo;Basic $($token)&amp;rdquo;
+$headers = @{&amp;ldquo;Authorization&amp;quot;=$auth;&amp;ldquo;Content-Type&amp;quot;=&amp;quot;application/$($apiFormat)&amp;quot;;&amp;ldquo;Accept&amp;quot;=&amp;quot;application/$($apiFormat)&amp;quot;} $body = Get-Content $inputFile -Raw
+write-output &amp;ldquo;Using body: &amp;quot; + $body $URL = &amp;ldquo;https://$($vroServer)/vco/api/workflows/$($wfid)/executions&amp;rdquo; Write-Output $URL $ret = Invoke-WebRequest -Method Post -uri $URL -Headers $headers -body $body $headers = $ret.</description>
+    </item>
+    
+    <item>
+      <title>How to use perl to start an Orchestrator Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</link>
+      <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</guid>
+      <description>Update for your environment here. Use double quotes around each defined value. $usr = {REPLACE WITH YOUR VRO USERNAME}; $pwd = {REPLACE WITH YOUR VRO PASSWORD}; $wfid = {REPLACE WITH YOUR VRO WORKFLOW ID}; $jsonFile = read_file({REPLACE WITH PATH TO JSON BODY FILE}); // updated as per comment at end of article $vroServer = {REPLACE WITH VRO URL:PORT};
+Make no changes below this line Disable server verification (for older LWP implementations) $ENV{PERL_LWP_SSL_VERIFY_HOSTNAME}=0;</description>
+    </item>
+    
+    <item>
+      <title>How to use Python to start an Orchestrator Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</link>
+      <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</guid>
+      <description>Make no changes below this line Import the modules to handle HTTP calls and work with json:  requests: http://docs.python-requests.org/en/latest/user/install/ To install the &amp;ldquo;requests&amp;rdquo; module, python -m pip install requests json (http://docs.python.org/2/library/json.html)   import requests, json requests.packages.urllib3.disable_warnings()
+Create basic authorization for API vroAuth = requests.auth.HTTPBasicAuth(usr,pwd)
+Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsquo;:&amp;lsquo;application/json&amp;rsquo;,&amp;lsquo;Accept&amp;rsquo;:&amp;lsquo;application/json&amp;rsquo;} url = &amp;lsquo;https://&amp;rsquo; + vroServer + &amp;lsquo;/vco/api/workflows/&amp;rsquo; + wfid + &amp;lsquo;/executions&amp;rsquo; data = open(jsonFile).read()</description>
+    </item>
+    
+    <item>
+      <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 3</title>
+      <link>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</link>
+      <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Get Addresses in Range</title>
+      <link>http://localhost:1313/articles/learn-vco/293-get-addresses-in-range.html</link>
+      <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/293-get-addresses-in-range.html</guid>
+      <description>vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this Converting IP Addressesarticle that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simply it by returning the total number of addresses in the range.</description>
+    </item>
+    
+    <item>
+      <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 2</title>
+      <link>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</link>
+      <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 1</title>
+      <link>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</link>
+      <pubDate>Fri, 05 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dynamic Input Values Based on other Inputs</title>
+      <link>http://localhost:1313/articles/learn-vco/290-dynamic-input-values-based-on-other-inputs.html</link>
+      <pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/290-dynamic-input-values-based-on-other-inputs.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extend Automation Center with F5 AFM using vCO &#43; Dynamic Types </title>
+      <link>http://localhost:1313/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</link>
+      <pubDate>Mon, 13 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</guid>
+      <description>My colleague, Chris Slater at defined by softwarehas published an article on how to extend VMware Automation Center (vCAC) with F5 firewall functionality. I usually do not cross post articles but this one is worth mentioning since it is a real world example on how to leverage vCAC + vCO + Dynamic Types + third party API. The first part of the articleexplain what are the different options available to automate F5 including the F5 plug-in for vCO, PowerShell, the big IP CLI, the SOAP and REST APIs and give an overview of the solution.</description>
+    </item>
+    
+    <item>
+      <title>VMware Horizon vCenter Orchestrator Plug-in Released</title>
+      <link>http://localhost:1313/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</link>
+      <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</guid>
+      <description>Hello all you end user compute admins! If you&amp;rsquo;ve been waiting for a vCO plug-in for your Horizon environment, your wait is over. Join Aaron Black in this &amp;ldquo;Getting Started with vCenter Orchestrator Horizon Plug In&amp;rdquo; video. http://www.youtube.com/watch?v=xDKUE71ltfs In order to get the plug-in, you must be licensed for Horizon 6.0 Enterprise. For a quick link to the download (login required at VMware&amp;rsquo;s site), click Links -&amp;gt; Plug Ins, then scroll down to the &amp;ldquo;Horizon&amp;rdquo; plugin link :)VMware Horizon on Twitter</description>
+    </item>
+    
+    <item>
+      <title>Extend vCAC 6 IaaS Lifecycle with vCO introduction video</title>
+      <link>http://localhost:1313/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</link>
+      <pubDate>Mon, 05 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</guid>
+      <description>Last year I have created an extensibility package to simplify and automate the steps necessary to extend the vCAC IaaS lifecycle process with calling out vCO workflows. While this was mainly aimed at accelerating Proof of Concepts it has been since then broadly adopted in production environments. Since vCAC 6.0 it is part of the product and available for vCAC 5.2 as a separate download.Since this is now becoming a very hot topic I am including here a very useful extensibility introduction video that was released by my colleagues from tech marketing almost three months ago.</description>
+    </item>
+    
+    <item>
+      <title>How to use the REST API to Resume a Failed Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</link>
+      <pubDate>Fri, 25 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released new and updated vCO plug-ins</title>
+      <link>http://localhost:1313/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</link>
+      <pubDate>Wed, 23 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dynamic Types tutorial : Implement your own Twitter plug-in without any scripting</title>
+      <link>http://localhost:1313/articles/learn-vco/282-dynamic-types-tutorial-implement-your-own-twitter-plug-in-without-any-scripting.html</link>
+      <pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/282-dynamic-types-tutorial-implement-your-own-twitter-plug-in-without-any-scripting.html</guid>
+      <description>In a previous articleI have explained how the vCO dynamic Types allow to simplify the development of vCO plug-ins and how these are leveraged by VMware vCloud Automation Center XaaS. It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.Warning : You can do it without Java development experience and without having to write a single line of scripting !As a first step download the Dynamic Types plug-in generator packagefrom VMware communities.</description>
+    </item>
+    
+    <item>
+      <title>Enabling VMware vCloud Automation Center XaaS with vCO dynamic types</title>
+      <link>http://localhost:1313/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</link>
+      <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How To Configure vCAC&#34;s Embedded vCO To Allow Domain Account Login</title>
+      <link>http://localhost:1313/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</link>
+      <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to allow the vCO Appliance to write files to a Windows CIFS share</title>
+      <link>http://localhost:1313/articles/learn-vco/278-how-to-allow-the-vco-appliance-to-write-files-to-a-windows-cifs-share.html</link>
+      <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/278-how-to-allow-the-vco-appliance-to-write-files-to-a-windows-cifs-share.html</guid>
+      <description>A frequent question around vCenter Orchestrator is: Can I read/write to shared folders? The answer is always yes, but the documentation may be difficult to find - especially when you are referring to a Windows share - aka CIFS in samba and *nix mounting terminology. Read on to learn EXACTLY what you need to do to allow your vCO server to read/write to a Windows Share!</description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Orchestrator 5.5.1</title>
+      <link>http://localhost:1313/articles/learn-vco/279-vmware-released-vcenter-orchestrator-5-5-1.html</link>
+      <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/279-vmware-released-vcenter-orchestrator-5-5-1.html</guid>
+      <description>This week VMware released vCenter Orchestrator 5.5.1. While this is not a major new release it contains a lot of new features focusing on making vCO content development easier. Also important is a list of deprecated features.</description>
+    </item>
+    
+    <item>
+      <title>How to Change AD:UserGroup Scope and Type</title>
+      <link>http://localhost:1313/articles/learn-vco/277-how-to-change-ad-usergroup-scope-and-type.html</link>
+      <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/277-how-to-change-ad-usergroup-scope-and-type.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting started with vCO and vCHS</title>
+      <link>http://localhost:1313/articles/learn-vco/276-getting-started-with-vco-and-vchs.html</link>
+      <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/276-getting-started-with-vco-and-vchs.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to get Active Directory User Attributes</title>
+      <link>http://localhost:1313/articles/learn-vco/273-how-to-get-active-directory-user-properties.html</link>
+      <pubDate>Wed, 15 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/273-how-to-get-active-directory-user-properties.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leveraging the Guest Script Manager package</title>
+      <link>http://localhost:1313/articles/learn-vco/272-leveraging-the-guest-script-manager-package.html</link>
+      <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/272-leveraging-the-guest-script-manager-package.html</guid>
+      <description>Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms. A popular way was to use the VIX plug-in for vCO. This plug-in is not needed anymore since the VIX functionality is part of the vCenter API since vCenter 5.0 and there are guest operations workflows to copy a script and run it into a VM guest OS since vCO 5.</description>
+    </item>
+    
+    <item>
+      <title>Code snippet : Find a workflow by name</title>
+      <link>http://localhost:1313/articles/learn-vco/271-code-snippet-find-a-workflow-by-name.html</link>
+      <pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/271-code-snippet-find-a-workflow-by-name.html</guid>
+      <description>var wfByName = null;
+if (workflows != null){
+if (workflows.length == 1){
+System.log(&amp;ldquo;Match found for workflow named: &amp;ldquo;+wfName);
+wfByName = workflows[0];
+}else{
+System.log(&amp;ldquo;More than one VM found with that name! &amp;ldquo;+wfName);
+for each (wfl in workflows){
+ System.log(&amp;quot;Workflow ID: &amp;quot;+wfByName.id); }
+}
+}The interesting part is the second parameter of the findAllForType method : it is a query running on the server side, hence making the find a lot quicker than getting all the workflows and iterating through them to get the ones with the matching name.</description>
+    </item>
+    
+    <item>
+      <title>How to Enable vCO 5.1.x to log API requests</title>
+      <link>http://localhost:1313/articles/learn-vco/270-how-to-enable-vco-51x-to-log-api-requests.html</link>
+      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/270-how-to-enable-vco-51x-to-log-api-requests.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Run a program in guest from vCloud Automation Center</title>
+      <link>http://localhost:1313/articles/learn-vco/263-run-a-program-in-guest-from-vcloud-automation-center-.html</link>
+      <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/263-run-a-program-in-guest-from-vcloud-automation-center-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Working with vCloud Automation Center IaaS entities</title>
+      <link>http://localhost:1313/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</link>
+      <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to use the REST API to Start a Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</link>
+      <pubDate>Thu, 17 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to use the SOAPInterceptor to see the SOAP Header and Body</title>
+      <link>http://localhost:1313/articles/learn-vco/267-how-to-use-the-soapinterceptor-to-see-the-soap-header-and-body.html</link>
+      <pubDate>Mon, 07 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/267-how-to-use-the-soapinterceptor-to-see-the-soap-header-and-body.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Making vCO Workflow Wrappers</title>
+      <link>http://localhost:1313/articles/learn-vco/266-making-vco-workflow-wrappers.html</link>
+      <pubDate>Wed, 11 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/266-making-vco-workflow-wrappers.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware announced vCenter Orchestrator 5.5</title>
+      <link>http://localhost:1313/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</link>
+      <pubDate>Mon, 26 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to run a Perl Script from a vCenter Orchestrator Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/265-how-to-run-a-perl-script-from-a-vcenter-orchestrator-workflow.html</link>
+      <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/265-how-to-run-a-perl-script-from-a-vcenter-orchestrator-workflow.html</guid>
+      <description>// Create and execute the command: var command = new Command(cmd); command.execute(true);
+// Display command results and output var scriptResult = command.result; System.debug(&amp;ldquo;Script Result: &amp;quot; + scriptResult);
+var scriptOutput = command.output; System.debug(&amp;ldquo;Script Output: &amp;quot; + scriptOutput);</description>
+    </item>
+    
+    <item>
+      <title>Orchestrate NetApp OnCommand Workflow Automation (WFA)</title>
+      <link>http://localhost:1313/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</link>
+      <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Get Supported Hardware Versions from Cluster</title>
+      <link>http://localhost:1313/articles/learn-vco/261-get-supported-hardware-versions-from-cluster.html</link>
+      <pubDate>Fri, 03 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/261-get-supported-hardware-versions-from-cluster.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO on Facebook</title>
+      <link>http://localhost:1313/articles/newsflash/251-vco-on-facebook.html</link>
+      <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/251-vco-on-facebook.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Orchestrator 5.1 Update 1</title>
+      <link>http://localhost:1313/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</link>
+      <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware vCenter Orchestrator 5.1 Quick Reference</title>
+      <link>http://localhost:1313/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</link>
+      <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</guid>
+      <description>vCO Configuration Quick ReferencevCO Developer&amp;rsquo;s Quick ReferencevCO Scripting Quick Reference</description>
+    </item>
+    
+    <item>
+      <title>Remove computer from AD using vCO during vCAC Decommission</title>
+      <link>http://localhost:1313/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</link>
+      <pubDate>Wed, 17 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</guid>
+      <description>// Nothing found so throw exception: throw &amp;ldquo;No matching Computer found: &amp;quot; + computerName;</description>
+    </item>
+    
+    <item>
+      <title>FREE VMware vCenter Orchestrator Instructional Videos [Updated]</title>
+      <link>http://localhost:1313/articles/learn-vco/258-free-vmware-vcenter-orchestrator-videos.html</link>
+      <pubDate>Mon, 08 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/258-free-vmware-vcenter-orchestrator-videos.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enable vCenter Orchestrator (vCO) to read and write Excel files</title>
+      <link>http://localhost:1313/articles/learn-vco/257-enable-vcenter-orchestrator-vco-to-read-and-write-excel-files.html</link>
+      <pubDate>Fri, 22 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/257-enable-vcenter-orchestrator-vco-to-read-and-write-excel-files.html</guid>
+      <description>$DataTable = New-Object &amp;ldquo;System.Data.DataTable&amp;rdquo;
+$OleDbAdapter = New-Object System.Data.OleDb.OleDbDataAdapter $qry,$connString $RowsReturned = $OleDbAdapter.Fill($DataTable)
+ForEach ($DataRec in $DataTable) { Write-host &amp;ldquo;Hostname=$($DataRec.Hostname) Domain=$($DataRec.Domain) FQDN=$($DataRec.fqdn) IP Address=$($DataRec.&amp;lsquo;IP Address&amp;rsquo;) Memory=$($DataRec.&amp;lsquo;Memory (GB)&#39;) CPU Count=$($DataRec.cpu) Processed=$($DataRec.processed)&amp;rdquo; }</description>
+    </item>
+    
+    <item>
+      <title>vCloud Director catalog replication</title>
+      <link>http://localhost:1313/articles/learn-vco/254-vcloud-director-catalog-replication.html</link>
+      <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/254-vcloud-director-catalog-replication.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extend vCloud Director with service builder</title>
+      <link>http://localhost:1313/articles/learn-vco/253-extend-vcloud-director-with-service-builder.html</link>
+      <pubDate>Thu, 28 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/253-extend-vcloud-director-with-service-builder.html</guid>
+      <description>Blog articles written by Christopher Knowles:Introduction to vCloud API extensions</description>
+    </item>
+    
+    <item>
+      <title>FREE VMware vCenter Orchestrator Instructional Videos</title>
+      <link>http://localhost:1313/articles/learn-vco/252-free-vmware-vcenter-orchestrator-instructional-videos.html</link>
+      <pubDate>Thu, 13 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/252-free-vmware-vcenter-orchestrator-instructional-videos.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Create your own vCloud Download lossless vApp Template workflow in less than 5 minutes</title>
+      <link>http://localhost:1313/articles/learn-vco/250-create-your-own-vcloud-download-lossless-vapp-template-workflow-in-less-than-5-minutes.html</link>
+      <pubDate>Tue, 02 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/250-create-your-own-vcloud-download-lossless-vapp-template-workflow-in-less-than-5-minutes.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code snippets : Using vCloud Director object metadata</title>
+      <link>http://localhost:1313/articles/learn-vco/249-code-snippets-using-vcloud-director-object-metadata.html</link>
+      <pubDate>Thu, 20 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/249-code-snippets-using-vcloud-director-object-metadata.html</guid>
+      <description>var vclMetadataStringValue = new VclMetadataStringValue() ; vclMetadataStringValue.value = value;
+var vclAbstractValueObject = new VclAbstractValueObject(); vclAbstractValueObject.setValue(vclMetadataStringValue);
+var vclMetadataEntry = new VclMetadataEntry(); vclMetadataEntry.key = key; vclMetadataEntry.typedValue = vclAbstractValueObject;
+System.log(&amp;ldquo;Setting key &amp;quot; + key + &amp;quot; with value &amp;quot; + value); return metadata.updateTypedEntry(vclMetadataEntry);var metadataEntries = metadata.getTypedEntries().enumerate(); var value = null; for each (var metadataEntry in metadataEntries) { if (metadataEntry.key == key) { value = metadataEntry.typedValue.getValue(new VclMetadataStringValue).value; System.log(&amp;ldquo;Got key : &amp;quot; + key + &amp;quot; with value : &amp;quot; + value); break; } }</description>
+    </item>
+    
+    <item>
+      <title>vSphere 5.1 Web client - The single pane of glass I always wanted</title>
+      <link>http://localhost:1313/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</link>
+      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time to get your hands on the most complete cloud orchestration</title>
+      <link>http://localhost:1313/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</link>
+      <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCloud Director 5.1</title>
+      <link>http://localhost:1313/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</link>
+      <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCloud Architecture Toolkit (vCAT) version 3.0</title>
+      <link>http://localhost:1313/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</link>
+      <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware has demonstrated a major upgrade of vCenter Orchestrator as part of its vCloud Suite</title>
+      <link>http://localhost:1313/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</link>
+      <pubDate>Fri, 20 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released updated vCenter Configuration Manager vCenter Orchestrator Workflows</title>
+      <link>http://localhost:1313/articles/vco-features/243-vmware-released-updated-vcenter-configuration-manager-vcenter-orchestrator-workflows.html</link>
+      <pubDate>Mon, 16 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/243-vmware-released-updated-vcenter-configuration-manager-vcenter-orchestrator-workflows.html</guid>
+      <description>This vCenter Configuration Manager workflow package includes vCenter Orchestrator workflows for managing vSphere Virtual Machines and templates.These are sample workflows for illustrating Configuration Manager&amp;rsquo;s ability to perform Operating System patching, configuration compliance, Software Provisioning and OS Provisioning.These workflows are compatible with vCenter Orchestrator Rest Plug-in version 1.0.1 and later.
+This is version 2.0 of the package. It contains:
+ Enhancements and Bug fixes in the original (version 1) workflows New workflows to automate OS provisioning and Windows Software distribution functions  New workflow package and associated documents can be downloaded from here</description>
+    </item>
+    
+    <item>
+      <title>Several vCenter Orchestrator plug-ins updates</title>
+      <link>http://localhost:1313/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</link>
+      <pubDate>Tue, 19 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</guid>
+      <description>Quoting the communities post:</description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vShield 5.0</title>
+      <link>http://localhost:1313/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manage Services on your ESXi Hosts with vCO</title>
+      <link>http://localhost:1313/articles/learn-vco/240-manage-services-on-your-esxi-hosts-with-vco.html</link>
+      <pubDate>Tue, 24 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/240-manage-services-on-your-esxi-hosts-with-vco.html</guid>
+      <description>// refresh services info to make sure all properties are fresh: hostServiceSystem.refreshServices();case &amp;quot;stop&amp;quot;: // Only run the stopService method if the service is runningif (serviceObj.running == true){ hostServiceSystem.stopService(serviceObj.key); } break;case &amp;quot;restart&amp;quot;: hostServiceSystem.restartService(serviceObj.key); break;case &amp;quot;uninstall&amp;quot;: // Not all services can be uninstalled so we use a try/catch heretry{ hostServiceSystem.uninstallService(serviceObj.key); }catch(err){ System.error(&amp;quot;Error uninstalling service &amp;quot;+serviceObj.key+&amp;quot; (&amp;quot;+err+&amp;quot;)&amp;quot;); Server.error(&amp;quot;Error uninstalling service &amp;quot;+serviceObj.key,serviceObj.key); } break;default: // We should never get here so Provide some warning logging and optionally throw an exception if appropriate for your environmentSystem.</description>
+    </item>
+    
+    <item>
+      <title>Leveraging the VMware vCloud Director query service</title>
+      <link>http://localhost:1313/articles/learn-vco/239-leveraging-the-vmware-vcloud-director-query-service.html</link>
+      <pubDate>Mon, 16 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/239-leveraging-the-vmware-vcloud-director-query-service.html</guid>
+      <description>for each (var catalog in catalogs) { var catalogItems = catalog.getCatalogItems(); for each (var catalogItem in catalogItems) { if (catalogItem.entity.href == vAppTemplate.getReference().href) { System.log(catalogItem.name + &amp;quot; : &amp;quot; + catalogItem.entity.href); catalogItemsOut.push(catalogItem); } } } return catalogItemsOut;var vcdHost = vAppTemplate.getHost(); var queryService = vcdHost.getQueryService(); var expression = new VclExpression(VclQueryCatalogItemField.ENTITY, vAppTemplate.getReference().href , VclExpressionType.EQUALS); var filter = new VclFilter(expression); var params = new VclQueryParams(); params.setFilter(filter);
+var resultSet = queryService.queryRecords(VclQueryRecordType.CATALOGITEM, params);
+while (resultSet != null) { var records = resultSet.</description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Configuration Manager 5.5 with vCenter Orchestrator integration</title>
+      <link>http://localhost:1313/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</link>
+      <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Orchestrator 4.2.1</title>
+      <link>http://localhost:1313/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</link>
+      <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pimp my vCenter Orchestrator Virtual Appliance</title>
+      <link>http://localhost:1313/articles/learn-vco/234-pimp-my-vcenter-orchestrator-virtual-appliance.html</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/234-pimp-my-vcenter-orchestrator-virtual-appliance.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for VMware vCenter Chargeback Manager 2.0</title>
+      <link>http://localhost:1313/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCloud Director Custom Deploy vApp Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/230-vcloud-director-custom-deploy-vapp-workflow.html</link>
+      <pubDate>Fri, 02 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/230-vcloud-director-custom-deploy-vapp-workflow.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Virtual Customer Labs Automated with vCenter Orchestrator</title>
+      <link>http://localhost:1313/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</link>
+      <pubDate>Sun, 05 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</guid>
+      <description>The article explains what is the vCL and how it works. A part of the solution involves a vCO powered request / approval portal. Read more about it here.</description>
+    </item>
+    
+    <item>
+      <title>VMware Opens Online Virtualization and Cloud Solutions Marketplace featuring vCenter Orchestrator  </title>
+      <link>http://localhost:1313/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</link>
+      <pubDate>Wed, 25 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>@PowerScripting chat with vCO Managers</title>
+      <link>http://localhost:1313/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</link>
+      <pubDate>Tue, 17 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCloud Director blocking tasks and notifications integration with vCO implementation</title>
+      <link>http://localhost:1313/articles/learn-vco/224-vcloud-director-blocking-tasks-and-notifications-integration-with-vco-implementation.html</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/224-vcloud-director-blocking-tasks-and-notifications-integration-with-vco-implementation.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware is hiring Integration Orchestration Development Engineers and Practice Managers</title>
+      <link>http://localhost:1313/articles/newsflash/226-vmware-is-hiring-integration-orchestration-development-engineers-and-practice-managers.html</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/226-vmware-is-hiring-integration-orchestration-development-engineers-and-practice-managers.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Multi-Node Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for Microsoft Windows PowerShell</title>
+      <link>http://localhost:1313/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vSphere Auto Deploy</title>
+      <link>http://localhost:1313/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator SQL Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCloud Director orchestrated infrastructure provisioning featuring VCE UIM vCO plug-in preview</title>
+      <link>http://localhost:1313/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</link>
+      <pubDate>Mon, 05 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Building your custom cloud portal - Knowing when to use the vCloud API and the vCenter Orchestrator web service</title>
+      <link>http://localhost:1313/articles/learn-vco/198-building-your-custom-cloud-when-to-use-the-vcloud-api-or-the-vcenter-orchestrator-web-service.html</link>
+      <pubDate>Wed, 30 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/198-building-your-custom-cloud-when-to-use-the-vcloud-api-or-the-vcenter-orchestrator-web-service.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code snippets :  Use vCenter Orchestrator API explorer to write your own custom getGuestCustomization workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/217-code-snippets-use-the-api-explorer-to-write-your-own-custom-workflows.html</link>
+      <pubDate>Wed, 23 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/217-code-snippets-use-the-api-explorer-to-write-your-own-custom-workflows.html</guid>
+      <description>for each (var vm in vms) { //iterating the vms var getGuestCustomizationSection = vm.getGuestCustomizationSection(); System.log(getGuestCustomizationSection.computerName); }var vms = vApp.getChildrenVms();
+for each (var vm in vms) { //iterating the vms var getGuestCustomizationSection = vm.getGuestCustomizationSection(); vmNames.push(getGuestCustomizationSection.computerName); }
+return vmNames;</description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in update for vCloud Director 1.5</title>
+      <link>http://localhost:1313/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unattended deployment of vCenter Orchestrator Appliance</title>
+      <link>http://localhost:1313/articles/learn-vco/211-unnattended-deployment-of-vcenter-orchestrator-appliance.html</link>
+      <pubDate>Mon, 14 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/211-unnattended-deployment-of-vcenter-orchestrator-appliance.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Get trained on vCenter Orchestrator: 10 classes planned in EMEA </title>
+      <link>http://localhost:1313/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</link>
+      <pubDate>Wed, 09 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code snippets : Change the name of a vCloud Director organization</title>
+      <link>http://localhost:1313/articles/learn-vco/208-code-snippets-change-the-name-of-a-vcloud-director-organization.html</link>
+      <pubDate>Wed, 02 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/208-code-snippets-change-the-name-of-a-vcloud-director-organization.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vFabric Application Performance Manager featuring vCenter Orchestrator integration</title>
+      <link>http://localhost:1313/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</link>
+      <pubDate>Wed, 02 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to handle vCenter Orchestrator logs?</title>
+      <link>http://localhost:1313/articles/learn-vco/199-how-to-handle-vcenter-orchestrator-logs.html</link>
+      <pubDate>Mon, 31 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/199-how-to-handle-vcenter-orchestrator-logs.html</guid>
+      <description> &amp;amp;lt;appender-ref ref=&amp;quot;CONSOLE&amp;quot;/&amp;amp;gt;&amp;amp;lt;appender-ref ref=&amp;quot;FILE&amp;quot;/&amp;amp;gt;  &amp;lt;/root&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Developing Your First VMware vCO Workflow Video Series</title>
+      <link>http://localhost:1313/articles/learn-vco/207-developing-your-first-vmware-vco-workflow-video-series.html</link>
+      <pubDate>Thu, 27 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/207-developing-your-first-vmware-vco-workflow-video-series.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code snippets : Create your database plug-in</title>
+      <link>http://localhost:1313/articles/learn-vco/203-code-snippets-create-your-database-plug-in.html</link>
+      <pubDate>Thu, 20 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/203-code-snippets-create-your-database-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EMC VMAX, VNX, VMware vSphere, vCloud Director integration powered by vCenter Orchestrator </title>
+      <link>http://localhost:1313/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</link>
+      <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Virtual Appliance</title>
+      <link>http://localhost:1313/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</link>
+      <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Labs released the vCenter Orchestrator CIM Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</link>
+      <pubDate>Tue, 18 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting Started With Perspectives Webview</title>
+      <link>http://localhost:1313/articles/learn-vco/192-getting-started-with-perspectives-webview.html</link>
+      <pubDate>Wed, 05 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/192-getting-started-with-perspectives-webview.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code snippets : Change the name of a workflow run</title>
+      <link>http://localhost:1313/articles/learn-vco/201-code-snippets-change-the-name-of-a-workflow-run.html</link>
+      <pubDate>Tue, 04 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/201-code-snippets-change-the-name-of-a-workflow-run.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Labs released the Perspectives Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</link>
+      <pubDate>Tue, 04 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>No Code Required For Functional Workflows</title>
+      <link>http://localhost:1313/articles/newsflash/200-no-code-required-for-functional-workflows.html</link>
+      <pubDate>Mon, 03 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/200-no-code-required-for-functional-workflows.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to provide vCenter Orchestrator customized workflows to your customers ?</title>
+      <link>http://localhost:1313/articles/learn-vco/197-how-to-provide-vcenter-orchestrator-customized-workflows-to-your-customers.html</link>
+      <pubDate>Tue, 27 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/197-how-to-provide-vcenter-orchestrator-customized-workflows-to-your-customers.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring the vCenter Orchestrator Java Virtual Machine</title>
+      <link>http://localhost:1313/articles/learn-vco/196-monitoring-the-vcenter-orchestrator-java-virtual-machine.html</link>
+      <pubDate>Mon, 19 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/196-monitoring-the-vcenter-orchestrator-java-virtual-machine.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware published the vCenter Orchestrator Plug-ins Documentation Center</title>
+      <link>http://localhost:1313/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</link>
+      <pubDate>Sat, 17 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released an update for the vCenter Orchestrator for vCloud Director 1.01</title>
+      <link>http://localhost:1313/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</link>
+      <pubDate>Sat, 17 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infoblox released a Tech Note on their vCenter Orchestrator plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</link>
+      <pubDate>Fri, 16 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCenter Server 5.0</title>
+      <link>http://localhost:1313/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</link>
+      <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator SNMP Plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</link>
+      <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Take cloud automation scripting to another level with cloud orchestration</title>
+      <link>http://localhost:1313/articles/learn-vco/172-take-cloud-automation-scripting-to-another-level-with-cloud-orchestration.html</link>
+      <pubDate>Mon, 12 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/172-take-cloud-automation-scripting-to-another-level-with-cloud-orchestration.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configure the AMQP plug-in to monitor vCloud Director</title>
+      <link>http://localhost:1313/articles/learn-vco/179-configure-the-amqp-plug-in.html</link>
+      <pubDate>Fri, 09 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/179-configure-the-amqp-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released a vCenter Orchestrator Training course</title>
+      <link>http://localhost:1313/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</link>
+      <pubDate>Tue, 06 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Free preview of &#34;Automating vSphere: With VMware vCenter Orchestrator&#34; by Cody Bunch</title>
+      <link>http://localhost:1313/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</link>
+      <pubDate>Tue, 30 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infoblox announced a vCenter Orchestrator plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</link>
+      <pubDate>Tue, 30 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extend vCloud Director with vCenter Orchestrator</title>
+      <link>http://localhost:1313/articles/learn-vco/180-extend-vcloud-director-with-vcenter-orchestrator.html</link>
+      <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/180-extend-vcloud-director-with-vcenter-orchestrator.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator at VMworld 2011</title>
+      <link>http://localhost:1313/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</link>
+      <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released vCenter Orchestrator 4.2</title>
+      <link>http://localhost:1313/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</link>
+      <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware releases vCloud Architecture Toolkit (vCAT) version 2.0</title>
+      <link>http://localhost:1313/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</link>
+      <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips: Export and import input parameters</title>
+      <link>http://localhost:1313/articles/learn-vco/182-tips-export-and-import-input-parameters.html</link>
+      <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/182-tips-export-and-import-input-parameters.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in SDK</title>
+      <link>http://localhost:1313/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</link>
+      <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Work with vCO over SSL</title>
+      <link>http://localhost:1313/articles/learn-vco/181-work-with-vco-over-ssl.html</link>
+      <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/181-work-with-vco-over-ssl.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the AMQP plug-in</title>
+      <link>http://localhost:1313/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</link>
+      <pubDate>Wed, 17 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to Retrieve Workflow Execution Details</title>
+      <link>http://localhost:1313/articles/learn-vco/176-how-to-retrieve-workflow-execution-details.html</link>
+      <pubDate>Thu, 28 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/176-how-to-retrieve-workflow-execution-details.html</guid>
+      <description>if (token.isStillValid){ System.log(&amp;quot;&amp;quot;); System.log(&amp;ldquo;==== Checking token ====&amp;rdquo;); System.log(&amp;ldquo;Start Date: &amp;ldquo;+token.startDate);
+if(token.endDate != null){System.log(&amp;quot;End Date: &amp;quot;+token.endDate);}System.log(&amp;quot;Business State: &amp;quot;+token.businessState); // Indicates the business state as defined by the workflow dev in each of the elements of the workflow (not always specified)System.log(&amp;quot;State: &amp;quot;+token.state); // Indicates the system state of this workflow/* State values are likely to be one of the following:waitingfailedcompletedcanceledrunning*/System.log(&amp;quot;&amp;quot;);System.</description>
+    </item>
+    
+    <item>
+      <title>Release Management for VM Clones with vCO</title>
+      <link>http://localhost:1313/articles/vco-features/175-release-management-for-vm-clones-with-vco.html</link>
+      <pubDate>Sun, 10 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/175-release-management-for-vm-clones-with-vco.html</guid>
+      <description>Last week I was member of a roundtable for designing SAP application delivery. The main things they discussed about were VM templates and their clones. SAP has an own application abstraction layer (ACC - adaptive computing controller) which hosts an API. With this knowledge I designed a little whiteboard workflow with the vCenter Orchestrator as clone intelligence and automation instance for future release management.
+  As you can see the software delivery application could be every other deployment system (HP Radia, Altiris etc.</description>
+    </item>
+    
+    <item>
+      <title>Radware ADC Virtualization &amp; VMware Orchestrator — An Integration Demo</title>
+      <link>http://localhost:1313/articles/vco-features/174-radware-adc-virtualization-a-vmware-orchestrator-an-integration-demo.html</link>
+      <pubDate>Mon, 04 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/174-radware-adc-virtualization-a-vmware-orchestrator-an-integration-demo.html</guid>
+      <description>Radware is one of the few VMware partners leveraging extensively vCenter Orchestrator in combination with their products. Find below a demo video presenting the integrated solution.
+  Quoting their site:
+This short demo walks through a sample workflow scenario to illustrate how Radware&amp;rsquo;s solutions can help you maintain tight integration between your virtual/physical ADC environment and VMware vCenter Orchestrator/vSphere. In just a few easy steps you can dynamically configure, provision, load balance, and monitor your virtualized environment.</description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator new plug-ins covered in &#34;This week in virtualization&#34;</title>
+      <link>http://localhost:1313/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</link>
+      <pubDate>Thu, 30 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware is seeking for vCenter Orchestrator Plug-ins documentation feedback</title>
+      <link>http://localhost:1313/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</link>
+      <pubDate>Tue, 28 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automate VMware LabManager with vCenter Orchestrator</title>
+      <link>http://localhost:1313/articles/learn-vco/168-how-to-automate-labmanager-with-vco.html</link>
+      <pubDate>Fri, 24 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/168-how-to-automate-labmanager-with-vco.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released Service Manager 9.0 vCenter Orchestrator connector</title>
+      <link>http://localhost:1313/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</link>
+      <pubDate>Mon, 20 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator SOAP and REST Plug-ins</title>
+      <link>http://localhost:1313/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</link>
+      <pubDate>Thu, 16 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code snippets : Get VMs that triggered vCenter Alarms</title>
+      <link>http://localhost:1313/articles/learn-vco/169-code-snippets-get-vms-that-triggered-vcenter-alarms.html</link>
+      <pubDate>Wed, 15 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/169-code-snippets-get-vms-that-triggered-vcenter-alarms.html</guid>
+      <description>for each (var datacenter in allDatacenters); {
+var date1 = new Date(); triggeredAlarmStates = datacenter.triggeredAlarmState; var date2 = new Date(); System.log(&amp;ldquo;Got alarms from datacenter &amp;quot; + datacenter.name + &amp;quot; in &amp;quot; + (date2.getTime() - date1.getTime())/1000 + &amp;quot; seconds&amp;rdquo;);
+for each (var alarmState in triggeredAlarmStates) {
+if (filterOnName == true &amp;amp;&amp;amp; alarmState.alarm.info.name != name) { var foundName = false; //System.log(&amp;ldquo;Alarm name &amp;quot; + alarmState.alarm.info.name + &amp;quot; is not matching&amp;rdquo;); } else { var foundName = true; }</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Create your own Twitter Application with a vCO workflow in a few minutes</title>
+      <link>http://localhost:1313/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html</link>
+      <pubDate>Wed, 15 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCenter Update Manager</title>
+      <link>http://localhost:1313/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</link>
+      <pubDate>Wed, 15 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Force a VM to boot from several devices</title>
+      <link>http://localhost:1313/articles/learn-vco/164-force-a-vm-to-boot-from-several-devices.html</link>
+      <pubDate>Fri, 10 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/164-force-a-vm-to-boot-from-several-devices.html</guid>
+      <description>changedValue.BootOrder = new Array(ethValue, hddValue); var ConfigSpec = new VcVirtualMachineConfigSpec(); ConfigSpec.BootOptions = changedValue; task = vm.reconfigVM_Task(ConfigSpec);for ( i in devices ) { if (devices[i] instanceof VcVirtualCdrom)
+{ var cdKey = devices[i].key; System.log(&amp;ldquo;cdkey &amp;ldquo;+cdKey);	} if (devices[i] instanceof VcVirtualDisk)
+{ var hddKey = devices[i].key; var label = devices[i].deviceInfo.label; //looking for Festplatte 1 or Hard Disk 1, hopefully there is no 10th disk if(label.indexOf(&amp;ldquo;1&amp;rdquo;) != -1) { System.log(&amp;ldquo;hddkey &amp;ldquo;+hddKey);	} } if (devices[i] instanceof VcVirtualVmxnet || devices[i] instanceof VcVirtualVmxnet2 || devices[i] instanceof VcVirtualVmxnet3</description>
+    </item>
+    
+    <item>
+      <title>Monitoring solution has built-in support for vCO based Remediation!</title>
+      <link>http://localhost:1313/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</link>
+      <pubDate>Fri, 10 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automatic delivery of customized VMs into vCloud Director</title>
+      <link>http://localhost:1313/articles/learn-vco/163-automatic-delivery-of-customized-vms-into-vcloud-director.html</link>
+      <pubDate>Wed, 08 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/163-automatic-delivery-of-customized-vms-into-vcloud-director.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware press to release a book on automating vSphere with vCenter Orchestrator</title>
+      <link>http://localhost:1313/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</link>
+      <pubDate>Fri, 20 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Blog demonstrates an user accounts creation scenario with the Active Directory Plug-in for vCenter Orchestrator</title>
+      <link>http://localhost:1313/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html</link>
+      <pubDate>Tue, 17 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMworld 2011 - Help to reveal VMware&#34;s best kept secret !</title>
+      <link>http://localhost:1313/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</link>
+      <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automate the cloud or die </title>
+      <link>http://localhost:1313/articles/newsflash/156-automate-the-cloud-or-die-.html</link>
+      <pubDate>Wed, 04 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/156-automate-the-cloud-or-die-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for Microsoft Active Directory</title>
+      <link>http://localhost:1313/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</link>
+      <pubDate>Wed, 04 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCloud Director vApp hot clone in less than one hour Solution Video</title>
+      <link>http://localhost:1313/articles/learn-vco/147-vcloud-director-vapp-hot-clone-in-less-than-one-hour-solution-video.html</link>
+      <pubDate>Sun, 24 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/147-vcloud-director-vapp-hot-clone-in-less-than-one-hour-solution-video.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Blog posts a Sample scenario for the Cisco UCS Manager plug-in!</title>
+      <link>http://localhost:1313/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</link>
+      <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</guid>
+      <description>As some of you may know, VMware recently launched an official vCenter Orchestrator blog! The team at VMware has put together a nice sample scenario post that walks you through the use of the Cisco UCS Manager plug-in. Be sure to stop by and check it out! To keep up on the posts there, feel free to follow their RSS Feed.</description>
+    </item>
+    
+    <item>
+      <title>Need an analogy around vCO and vCloud Director?</title>
+      <link>http://localhost:1313/articles/learn-vco/145-need-an-analogy-around-vco-and-vcloud-director.html</link>
+      <pubDate>Mon, 11 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/145-need-an-analogy-around-vco-and-vcloud-director.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for the Cisco UCS Manager</title>
+      <link>http://localhost:1313/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</link>
+      <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware vCenter Orchestrator Blog now live</title>
+      <link>http://localhost:1313/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</link>
+      <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Create your own vCloud Director vApp hot clone in less than one hour</title>
+      <link>http://localhost:1313/articles/learn-vco/140-vcloud-director-vapp-hot-clone.html</link>
+      <pubDate>Tue, 15 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/140-vcloud-director-vapp-hot-clone.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator identify permission problems</title>
+      <link>http://localhost:1313/articles/learn-vco/138-vcenter-orchestrator-identify-permission-problems.html</link>
+      <pubDate>Wed, 09 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/138-vcenter-orchestrator-identify-permission-problems.html</guid>
+      <description>The error occurs later in the workflow because of the empty array. What the problem was? I described it here: http://mighty-virtualization.blogspot.com/2011/03/vco-internal-methods-and-authorizations.htmlI hope this helps you to avoid the same problems :-)</description>
+    </item>
+    
+    <item>
+      <title>vCloud Connector and other delights on VMware Communities Roundtable</title>
+      <link>http://localhost:1313/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</link>
+      <pubDate>Wed, 02 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Burke Azbill returns to the VMware Communities Roundtable</title>
+      <link>http://localhost:1313/articles/vco-features/135-burke-azbill-returns-to-the-vmware-communities-roundtable.html</link>
+      <pubDate>Mon, 28 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/135-burke-azbill-returns-to-the-vmware-communities-roundtable.html</guid>
+      <description>Hello all, it looks like we have Burke Azbill participating in this week&amp;rsquo;s VMware Communities Roundtable (Episode #130) Podcast by @jtroyer. Be sure to stop by! The session will be discussing
+vCloud Connector and other delights, including that new Plug-in that allows vCenter Orchestrator to work with vCloud Director!</description>
+    </item>
+    
+    <item>
+      <title>VMware KB TV - How to install and configure VMware vCenter Orchestrator Plug-in for vCloud Director</title>
+      <link>http://localhost:1313/articles/learn-vco/133-vmware-kb-tv-how-to-install-and-configure-vmware-vcenter-orchestrator-plug-in-for-vcloud-director.html</link>
+      <pubDate>Sat, 26 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/133-vmware-kb-tv-how-to-install-and-configure-vmware-vcenter-orchestrator-plug-in-for-vcloud-director.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCloud Director</title>
+      <link>http://localhost:1313/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</link>
+      <pubDate>Mon, 21 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware is hiring a Sr. Product Manager, vCloud Services</title>
+      <link>http://localhost:1313/articles/newsflash/127-vmware-is-hiring-a-sr-product-manager-vcloud-services.html</link>
+      <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/127-vmware-is-hiring-a-sr-product-manager-vcloud-services.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware vCenter Orchestrator 4.1.1 released !</title>
+      <link>http://localhost:1313/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</link>
+      <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware is hiring a Senior Integration Engineer - Workflow Developer</title>
+      <link>http://localhost:1313/articles/newsflash/126-vmware-is-hiring-a-senior-integration-engineer-workflow-developer.html</link>
+      <pubDate>Thu, 10 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/126-vmware-is-hiring-a-senior-integration-engineer-workflow-developer.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mightycare vCenter Orchestrator code snippets</title>
+      <link>http://localhost:1313/articles/learn-vco/125-mightycare-vco-code-snippets.html</link>
+      <pubDate>Wed, 09 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/125-mightycare-vco-code-snippets.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator VCAP Topic Brown Bag</title>
+      <link>http://localhost:1313/articles/learn-vco/124-vcenter-orchestrator-vcap-topic-brown-bag.html</link>
+      <pubDate>Wed, 26 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/124-vcenter-orchestrator-vcap-topic-brown-bag.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code snippets : Cancel one of your running workflows</title>
+      <link>http://localhost:1313/articles/learn-vco/123-code-snippets-cancel-one-of-your-running-workflows.html</link>
+      <pubDate>Fri, 21 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/123-code-snippets-cancel-one-of-your-running-workflows.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>New version of the administration and developer&#39;s guides</title>
+      <link>http://localhost:1313/articles/vco-features/122-new-version-of-the-administration-and-developers-guides.html</link>
+      <pubDate>Wed, 19 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/122-new-version-of-the-administration-and-developers-guides.html</guid>
+      <description>The vCO 4.01 and 4.1 administration and developer&amp;rsquo;s guides were recently updated with quite a few additions in the latest covering items such as
+ Running a workflow on a Selection of Objects Implement the &amp;ldquo;Start Workflows in a Series&amp;rdquo; and &amp;ldquo;Start Workflows in Parallel&amp;rdquo; workflows Running a workflow in a scripted loop scripting example  Get these updated version from the VMware vCenter Orchestrator (vCO) Documentation page.
+See the &amp;lsquo;Updated Information&amp;rsquo; section in each guide for the full details of the additions.</description>
+    </item>
+    
+    <item>
+      <title>vCO plug-ins wish list</title>
+      <link>http://localhost:1313/articles/vco-features/121-vco-plug-ins-wish-list.html</link>
+      <pubDate>Wed, 19 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/121-vco-plug-ins-wish-list.html</guid>
+      <description>If you wish vCO had additional plug-ins to orchestrate more technologies please comment with your top 5 wish list.</description>
+    </item>
+    
+    <item>
+      <title>VMware looking for vCenter Orchestrator workflow developers feedback</title>
+      <link>http://localhost:1313/articles/newsflash/120-vmware-looking-for-vcenter-orchestrator-workflow-developers.html</link>
+      <pubDate>Tue, 21 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/120-vmware-looking-for-vcenter-orchestrator-workflow-developers.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Some tips for new vCO plug-in developers (II)</title>
+      <link>http://localhost:1313/articles/learn-vco/115-some-tips-for-new-vco-plug-in-developers-ii.html</link>
+      <pubDate>Fri, 03 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/115-some-tips-for-new-vco-plug-in-developers-ii.html</guid>
+      <description>Create higher-level workflows based on smaller components</description>
+    </item>
+    
+    <item>
+      <title>Some tips for new vCO plug-in developers (I)</title>
+      <link>http://localhost:1313/articles/learn-vco/114-some-tips-for-new-vco-plug-in-developers-i.html</link>
+      <pubDate>Thu, 02 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/114-some-tips-for-new-vco-plug-in-developers-i.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Labs releases Python Bindings for VMware vCenter Orchestrator (vCO)</title>
+      <link>http://localhost:1313/articles/newsflash/118-vmware-labs-releases-python-bindings-for-vmware-vcenter-orchestrator-vco.html</link>
+      <pubDate>Wed, 01 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/118-vmware-labs-releases-python-bindings-for-vmware-vcenter-orchestrator-vco.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cyber Monday Website Hosting Savings!</title>
+      <link>http://localhost:1313/articles/newsflash/117-cyber-monday-website-hosting-savings.html</link>
+      <pubDate>Sun, 28 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/117-cyber-monday-website-hosting-savings.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VendorWag with Mike Laverick features our very own Burke Azbill</title>
+      <link>http://localhost:1313/articles/newsflash/116-vendorwag-with-mike-laverick-features-our-very-own-burke-azbill.html</link>
+      <pubDate>Sat, 27 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/116-vendorwag-with-mike-laverick-features-our-very-own-burke-azbill.html</guid>
+      <description>This week&amp;rsquo;s VendorWag with @Mike_Laverick features the recent interview he conducted with Burke Azbill here at vCOTeam.com. Stop by RTFM Educationto see/hear the interview regarding vCenter Orchestrator (vCO).
+Happy Thanksgiving holiday to all of you here in the U.S.A. :)</description>
+    </item>
+    
+    <item>
+      <title>Expand your vCO library with Onyx</title>
+      <link>http://localhost:1313/articles/learn-vco/113-expand-your-vco-library-with-onyx.html</link>
+      <pubDate>Fri, 29 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/113-expand-your-vco-library-with-onyx.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Did you miss the roundtable podcast?</title>
+      <link>http://localhost:1313/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</link>
+      <pubDate>Thu, 28 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>See and Hear vCOTeam&#34;s Burke Azbill on Upcoming PodCasts</title>
+      <link>http://localhost:1313/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</link>
+      <pubDate>Wed, 27 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware KB TV - How to install and configure VMware vCenter Orchestrator</title>
+      <link>http://localhost:1313/articles/learn-vco/109-vmware-kb-tv-how-to-install-vmware-vcenter-orchestrator.html</link>
+      <pubDate>Thu, 21 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/109-vmware-kb-tv-how-to-install-vmware-vcenter-orchestrator.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Create a Simple vCO Self Service VM Provisioning Portal - Part 3</title>
+      <link>http://localhost:1313/articles/learn-vco/107-create-a-simple-vco-self-service-vm-provisioning-portal-part-3.html</link>
+      <pubDate>Sun, 10 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/107-create-a-simple-vco-self-service-vm-provisioning-portal-part-3.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO simple example &amp; hints</title>
+      <link>http://localhost:1313/articles/newsflash/106-vco-simple-example-and-hints.html</link>
+      <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/106-vco-simple-example-and-hints.html</guid>
+      <description>Regards, Andreas</description>
+    </item>
+    
+    <item>
+      <title>vCloud Director orchestrated infrastructure provisioning featuring NetApp vCO plug-in preview</title>
+      <link>http://localhost:1313/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</link>
+      <pubDate>Mon, 04 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware vCloud Director vCO plug-in preview</title>
+      <link>http://localhost:1313/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</link>
+      <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO VIX plug-in released !</title>
+      <link>http://localhost:1313/articles/newsflash/103-vco-vix-plug-in-released.html</link>
+      <pubDate>Fri, 24 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/103-vco-vix-plug-in-released.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creating workflow loops</title>
+      <link>http://localhost:1313/articles/learn-vco/102-creating-workflow-loops.html</link>
+      <pubDate>Wed, 22 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/102-creating-workflow-loops.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lifecycle Manager Reports made Excel Friendly</title>
+      <link>http://localhost:1313/articles/learn-vco/101-lifecycle-manager-reports-made-excel-friendly.html</link>
+      <pubDate>Fri, 17 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/101-lifecycle-manager-reports-made-excel-friendly.html</guid>
+      <description>var document = XMLManager.newDocument(); var workbook = document.createElement(&amp;ldquo;Workbook&amp;rdquo;); workbook.setAttribute(&amp;ldquo;xmlns&amp;rdquo;,&amp;ldquo;urn:schemas-microsoft-com:office:spreadsheet&amp;rdquo;); workbook.setAttribute(&amp;ldquo;xmlns:o&amp;rdquo;,&amp;ldquo;urn:schemas-microsoft-com:office:office&amp;rdquo;); workbook.setAttribute(&amp;ldquo;xmlns:x&amp;rdquo;,&amp;ldquo;urn:schemas-microsoft-com:office:excel&amp;rdquo;); workbook.setAttribute(&amp;ldquo;xmlns:ss&amp;rdquo;,&amp;ldquo;urn:schemas-microsoft-com:office:spreadsheet&amp;rdquo;); workbook.setAttribute(&amp;ldquo;xmlns:html&amp;rdquo;,&amp;ldquo;http://www.w3.org/TR/REC-html40&amp;quot;); document.appendChild(workbook);
+var worksheet=document.createElement(&amp;ldquo;Worksheet&amp;rdquo;); worksheet.setAttribute(&amp;ldquo;ss:Name&amp;rdquo;,&amp;ldquo;report.csv&amp;rdquo;); workbook.appendChild(worksheet);
+table = document.createElement(&amp;ldquo;Table&amp;rdquo;); // Setup Column Headers: System.log(&amp;ldquo;Setting up column headers&amp;rdquo;); if(props.length &amp;gt; 0){ var row = document.createElement(&amp;ldquo;Row&amp;rdquo;); for each (key in props[0].keys){ cell = document.createElement(&amp;ldquo;Cell&amp;rdquo;); data = document.createElement(&amp;ldquo;Data&amp;rdquo;); data.setAttribute(&amp;ldquo;ss:Type&amp;rdquo;, &amp;ldquo;String&amp;rdquo;); try { System.log(&amp;ldquo;Key: &amp;ldquo;+key.toString()); data.textContent=key.toString(); } catch(e) { System.debug(e); } cell.appendChild(data); row.appendChild(cell); } table.appendChild(row); }
+for(var i in props){ var keys = props[i].</description>
+    </item>
+    
+    <item>
+      <title>Lifecycle Manager End of Availability</title>
+      <link>http://localhost:1313/articles/newsflash/98-lifecycle-manager-end-of-availability.html</link>
+      <pubDate>Tue, 07 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/98-lifecycle-manager-end-of-availability.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO web views not deprecated anymore</title>
+      <link>http://localhost:1313/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</link>
+      <pubDate>Tue, 07 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMworld 2010 session on Orchestrating the Cloud</title>
+      <link>http://localhost:1313/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</link>
+      <pubDate>Tue, 31 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to create an all in one vCO dev server on Windows 2008 64-bit</title>
+      <link>http://localhost:1313/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html</link>
+      <pubDate>Sat, 28 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware releases vCenter Lifecycle Manager 1.2</title>
+      <link>http://localhost:1313/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</link>
+      <pubDate>Fri, 13 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator (vCO) at VMworld 2010</title>
+      <link>http://localhost:1313/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</link>
+      <pubDate>Mon, 02 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to Configure vCenter Orchestrator (vCO)</title>
+      <link>http://localhost:1313/articles/learn-vco/89-how-to-configure-vcenter-orchestrator-vco.html</link>
+      <pubDate>Mon, 12 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/89-how-to-configure-vcenter-orchestrator-vco.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Orchestrator 4.1 released !</title>
+      <link>http://localhost:1313/articles/newsflash/93-vcenter-orchestrator-41-released-.html</link>
+      <pubDate>Mon, 12 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/93-vcenter-orchestrator-41-released-.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Create a simple vCO self service VM Provisioning Portal - Part 2</title>
+      <link>http://localhost:1313/articles/learn-vco/87-create-a-simple-vco-self-service-vm-provisioning-portal-part-2.html</link>
+      <pubDate>Thu, 17 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/87-create-a-simple-vco-self-service-vm-provisioning-portal-part-2.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Are there any professional services available for vCO ?</title>
       <link>http://localhost:1313/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
@@ -99,6 +1863,52 @@ During the summer of 2011 around June/July, I wanted to have a home environment 
       
       <guid>http://localhost:1313/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</guid>
       <description>Please contact your VMware sales representative to engage VMware or partners Professional Services. VMware has vCenter Orchestrator Subject Matter Experts in different regions and a development team delivering engagements worldwide.</description>
+    </item>
+    
+    <item>
+      <title>Q and A Section Added</title>
+      <link>http://localhost:1313/articles/newsflash/86-q-and-a-section-added.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/86-q-and-a-section-added.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Create a simple vCO self service VM Provisioning Portal - Part 1</title>
+      <link>http://localhost:1313/articles/learn-vco/54-create-a-simple-vco-self-service-vm-provisioning-portal-part-1.html</link>
+      <pubDate>Wed, 02 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/54-create-a-simple-vco-self-service-vm-provisioning-portal-part-1.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO Plugin for vSphere Client</title>
+      <link>http://localhost:1313/articles/newsflash/52-vco-plugin-for-vsphere-client.html</link>
+      <pubDate>Thu, 27 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/newsflash/52-vco-plugin-for-vsphere-client.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCO Help Topics Request</title>
+      <link>http://localhost:1313/articles/vco-features/51-vco-help-topics-request.html</link>
+      <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/vco-features/51-vco-help-topics-request.html</guid>
+      <description>Are you getting started with VMware&amp;rsquo;s vCenter Orchestrator? vCO can be a challenge or a breeze to learn depending on your skill sets and what you&amp;rsquo;re trying to accomplish. It allows for the creation of very complicated workflows with minimal effort if you know where to look and are familiar with the interface. Knowing where to look can sometimes be key.
+I&amp;rsquo;ve launched this site in an effort to help enlighten those getting started with vCO so I welcome your feedback.</description>
+    </item>
+    
+    <item>
+      <title>How to install vCenter Orchestrator (vCO)</title>
+      <link>http://localhost:1313/articles/learn-vco/47-how-to-install-vcenter-orchestrator-vco.html</link>
+      <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/47-how-to-install-vcenter-orchestrator-vco.html</guid>
+      <description></description>
     </item>
     
   </channel>

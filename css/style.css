@@ -665,6 +665,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .authorbox__description a:hover {
 	color: #ff9900;
 	text-decoration: underline;
+	height: 150px;
 }
 
 .content .alignnone {
