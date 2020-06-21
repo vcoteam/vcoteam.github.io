@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Create a plug-in for a REST based web service in minutes - part 1 - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="In a 1 I have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.&lt;br /&gt;Then explained 1using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.&lt;br /&gt;">
+	<meta name="description" content="This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.">
 		<meta property="og:title" content="Create a plug-in for a REST based web service in minutes - part 1" />
-<meta property="og:description" content="In a 1 I have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.&lt;br /&gt;Then explained 1using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.&lt;br /&gt;" />
+<meta property="og:description" content="This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html" />
 <meta property="article:published_time" content="2015-02-16T00:00:00+00:00" />
@@ -16,7 +16,7 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create a plug-in for a REST based web service in minutes - part 1"/>
-<meta name="twitter:description" content="In a 1 I have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.&lt;br /&gt;Then explained 1using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.&lt;br /&gt;"/>
+<meta name="twitter:description" content="This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -114,9 +114,217 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-02-16T00:00:00Z">February 16, 2015</time></div>
 </div>
 		</header><div class="content post__content clearfix">
-			<p>In a <!-- raw HTML omitted -->previous article<!-- raw HTML omitted --> I have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.<!-- raw HTML omitted -->Then explained <!-- raw HTML omitted -->how to build your own twitter plug-in <!-- raw HTML omitted -->using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->Pre- requisites<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+			<p>In a <a href="/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html" >previous article</a> I have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.</p>
+<p>Then explained <a href="articles/learn-vco/282-dynamic-types-tutorial-implement-your-own-twitter-plug-in-without-any-scripting.html" >how to build your own twitter plug-in</a> using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.</p>
+<h2 id="pre--requisites">Pre- requisites</h2>
+<ul>
+<li>The system to be Orchestrated via the plug-in must have a REST based interface that works with the REST plug-in.</li>
+<li>Make sure that you have the minimum version of the DynamicTypes plug-in and of vCO as specified on <a href="https://communities.vmware.com/docs/DOC-26354"  target="_blank" rel="noreferrer noopener" >VMware communities</a>.</li>
+<li>Import the v2 package to your vCO client.</li>
+<li>Import icons for the inventory objects you will want to create as resource elements. In case you do not find these you will still be able to use some defaults icons but having nice icons makes things so much prettier.If you need the NSX icons I have posted these on <a href="https://communities.vmware.com/docs/DOC-28658"  target="_blank" rel="noreferrer noopener" >communities</a>.</li>
+</ul>
+<p><strong>Warning : Not a single line of code is required for generating a plug-in when using the plug-in generator - if you landed here looking for complex development tasks taking several days of work and requiring a complex development environment you will be frustrated by the efficiency and simplicity of this tutorial !</strong></p>
+<p>To create a new plug-in, go in the inventory view, unfold Dynamic Types / Type Hierarchy. Right click on Type hierarchy / run the workflow Plug-in Gen - Create new plug-in.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-001a.png"/> 
+</figure>
+
+<p>Enter a plug-in name and select an icon.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-002.png"/> 
+</figure>
+
+<p>Submit. If the &ldquo;Running workflow&rdquo; windows stays open click on : &ldquo;Run in background&rdquo;</p>
+<p>To create the inventory objects we first need to add a new host. Right click on the newly created namespace and run the &ldquo;Plugin gen - Add new host&rdquo; workflow</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-003.png"/> 
+</figure>
+
+<p>The next screens are exactly the same as the library workflow to add a REST host. Provide a name and URL.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-004.png"/> 
+</figure>
+
+<p>On the next screens you will have to enter proxy settings if required and authentication types and credentials.</p>
+<p>Once you have submitted you can check that you have a new host in the HTTP-REST inventory. You can even right click / add a REST operation and then invoke it to make sure everything work as expected.</p>
+<p>We are now ready to create a type. Unfold the Type Hierarchy and right click on the plug-in namespace host type / run the workflow Plugin gen - Create a type</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-005.png"/> 
+</figure>
+
+<p>After the presentation finish loading (this can be from 20 s to 1 min).</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-006.png"/> 
+</figure>
+
+<ul>
+<li>Enter a type name. This should be all lower case, singular and alpha only.</li>
+<li>Select an icon for the type (If you do not have any specific you can use the &ldquo;item-16x16&rdquo;)</li>
+<li>Choose a Folder name. This is going to be the name of the folder showing in the inventory. You can use Upper case for the first letter, plural and spaces if needed.</li>
+<li>By default the same icon as for the type will be used for the folder. If you decide otherwise the default icon will be a folder that you may change to a more specific folder icon.</li>
+<li>Object cache is the time for which this object type will stay in the cache. This means that once the plug-in get an object from the remote system it will store the result for this time and not request it again. This will improve the performance by a lot in the vCO UI but also in the workflows manipulating the objects, particularly with array of objects or if using loops within the workflow. A lower value will maintain the inventory more current against any changes not done by vCO but also slow down performance. A too high value would mean a not so current inventory which may cause errors in a workflow if for example there is an attempt to modify an object that was deleted outside of vCO.</li>
+</ul>
+<p>On the next screen you can choose the host that will be used interactively to create the object. If you created a single host it should be set by default. Click next.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-008.png"/> 
+</figure>
+
+<p>If you are in a hurry just click next.</p>
+<p>The relation types screen define how many URL you can provide to get the object.</p>
+<p>It is now time to read your endpoint API guide and search how to get the object.</p>
+<p>In my case the /api/4.0/edges URL gets all the edges objects and the /api/4.0/edges/{edgeId} URL get a single edge.</p>
+<p>The findRelation URL will get all the objects under the Edges folder. Since this is a 1rst child of the host these will be all the edges using the /api/4.0/edges URL. The findRelation URL is always mandatory.</p>
+<p>In a similar way the findAll URL will be using the /api/4.0/edges URL. FindAll is used to list all objects when selecting one for a workflow input.</p>
+<p>The findById URL needs to be specified with a parameter in curly braces {}.</p>
+<p>If you do not provide a findAll URL findRelation will be used on all the objects that are of the parent type of the object you are looking for.</p>
+<p>If you do not provide a findById URL findAll will be used to get all objects and be iterated until finding the one having a matching ID.</p>
+<p>To implement quickly a plug-in you can use NOT to use the findById and findAll URL. This will shorten the creation of a single object and avoid the case where the API returns different object properties for the different URLs. Also some APIs do not provide an URL for findAll or findById but only for findRelation. If you have further time to implement, an API that implements the different URLs and returns the same object properties than you should definitely use findById and findAll URLs since this will improve the queries performance a lot.</p>
+<p>The version 1 of the plug-in generator required all URL to be filled making impossible to implement objects with API not providing one of these URLs.</p>
+<p>On the next screen you will have to set the findRelation properties.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-009.png"/> 
+</figure>
+
+<p>Enter the URL. Likely this will be an object under the host object and the inventory and the URL will be the same as the one to find all objects.</p>
+<p>Once you will set the focus on the next input the response should appear. It should be in JSON format. Do not edit the response content. Instead copy and paste the response content, open a web browser and look for a JSON viewer or JSON editor online. I like to use <a href="http://jsonviewer.stack.hu"  target="_blank" rel="noreferrer noopener" >http://jsoniewer.stack.hu</a>. Paste your JSON in the text area and check the viewer.</p>
+<p>The &ldquo;Use action &hellip;&rdquo; is an alternative way to get the object properties requiring you to write an action taking as input a json string and as output an array of properties object. It is used when performance is key or when the object has complex properties requiring that need to be parsed / transformed programmatically. I will cover this case in another article since it is not needed in most cases.</p>
+<p>You may wonder what happen if the REST web service send a response in the XML format. The plug-in generator des a request with providing a header requesting for JSON format. This works for example with the NSX API. When this is not supported the plug-in generator use an XML2JSON method included in the REST plug-in to do the conversion.</p>
+<p>The JSON viewer will show something like this. Unfold the tree to recognize the different elements.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-010.png"/> 
+</figure>
+
+<p>What you are looking for is the path to the array [] of objects {} that are returned. Some APIs will return the array of objects at the root element while other will have intermediary objects. Once you have identified this path get to the next screen.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-011.png"/> 
+</figure>
+
+<p>The objects selector or object accessor is the path you have identified. If the array of object included child objects enter the path starting with a &ldquo;.&rdquo; and separated with &ldquo;.&rdquo; as if it was a javascript object. In my case the array of objects is under the path .edgePage.data
+The preview size limits the number of objects returned in the objects preview. This was designed to avoid to get very large number of objects since it is not needed to identify the properties we will need.
+After using tab to get from one field to another the objects preview should be populated. if you copy and paste the content to the JSON viewer it should look similar to this:</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-012.png"/> 
+</figure>
+
+<p>With the objects selector entered the objects will be found automatically for each request happening. Get on the next screen to define the objects properties selectors.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-013.png"/> 
+</figure>
+
+<p>The list of properties selectors will be set bu default based on the properties that were returned by the objects previously. You have to edit the properties selector to:</p>
+<ul>
+<li>Check that it includes only properties you need.</li>
+<li>Check that it include at least an id and a name properties
+In my case it is missing the id property. Click on the insert value.</li>
+</ul>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-014.png"/> 
+</figure>
+
+<p>To determine which property can be used as an unique ID for the object look at the object properties in the JSON viewer. In my case this property is objectId so the accessor is .objectId.</p>
+<p>Once you accept the change the properties preview should be filled. You can copy and paste the content to a text editor to check the properties are retrieved as expected.</p>
+<p>The object properties that are not simple types may not be displayed in a visible form for example it may list [object Object]. Since Dynamic Types only support string properties in the object such properties will be made available in the object in a JSON format. This allows to convert these properties to a javaScript object in a vCO scriptable task using var object = JSON.parse(objectProperty);</p>
+<p>If you had selected to provide findById or findAll URL you will have to go through similar steps to provide object and properties accessors. Once done you will be asked if you want to merge or intersect the properties returned by the different URLs.
+If not you will see the list of object properties. You can submit the workflow and click run in background.
+You can now check the Type Hierarchy in the inventory.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-016.png"/> 
+</figure>
+
+<p>The type was created under a Folder type created under the host type.
+Unfold the namespace.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-017.png"/> 
+</figure>
+
+<p>Under the namespace there is your host instance having for child the folder instance having for child the objects instances. Managing multiple hosts is a new feature of the version 2 of the plug-in generator.
+If you click on one of the object and check the right pane for its properties.</p>
+<figure>
+    <img src="/images/rest-plugin-part1/DTG-018.png"/> 
+</figure>
+
+<p>All the properties are listed. As explained above the complex ones are in JSON format.
+If you look for the id property it will be in the format hostId/objectID so there won&rsquo;t be any conflict when using more than a single host.</p>
+<p>You managed to create your own plug-in object in minutes without typing a single line of code. The next article in the series will walk though creating objects that have for parent another object type different than the host type.
+If you want to create other objects for an NSX plug-in you can run the Create type workflow using the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Type name</th>
+<th>Icon</th>
+<th>Folder name</th>
+<th>FindRelation URL</th>
+<th>Objects selector</th>
+<th>Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datacenter</td>
+<td>datacenter.png</td>
+<td>Datacenters</td>
+<td>/api/2.0/vdn/scopes/vdnscope-1</td>
+<td>.clusters</td>
+<td>id: .cluster.scope.id name</td>
+</tr>
+<tr>
+<td>name : .cluster.scope.name</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>edge</td>
+<td>edge.png</td>
+<td>Edges</td>
+<td>/api/4.0/edges</td>
+<td>.edgePage.data</td>
+<td></td>
+</tr>
+<tr>
+<td>securityGroup</td>
+<td>securityGroup.png</td>
+<td>Security Groups</td>
+<td>/api/2.0/services/securitygroup/scope/globalroot-0</td>
+<td></td>
+<td>id: .objectId</td>
+</tr>
+<tr>
+<td>transportZone</td>
+<td>transportZone.png</td>
+<td>Transport Zones</td>
+<td>/api/2.0/vdn/scopes</td>
+<td>.allScopes</td>
+<td></td>
+</tr>
+<tr>
+<td>securityTag</td>
+<td>securityTag.png</td>
+<td>Security Tags</td>
+<td>/api/2.0/services/securitytags/tag</td>
+<td>.tagList</td>
+<td>id: .objectId</td>
+</tr>
+<tr>
+<td>securityPolicy</td>
+<td>securityPolicy.png</td>
+<td>Security Policies</td>
+<td>/api/2.0/services/policy/securitypolicy/all</td>
+<td>.policies</td>
+<td>id: .objectId</td>
+</tr>
+<tr>
+<td>virtualWire</td>
+<td>virtualWire.png</td>
+<td>Virtual Wires</td>
+<td>/api/2.0/vdn/virtualwires</td>
+<td>.dataPage.data</td>
+<td>id: .objectId</td>
+</tr>
+</tbody>
+</table>
 
 		</div>
 		<footer class="post__footer">
