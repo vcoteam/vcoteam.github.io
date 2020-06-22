@@ -19,3 +19,17 @@ figure.floatleft {
   margin-bottom: 5px;
 	;border: 2px solid #ebebeb;
 }
+
+.authorbox {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.authorbox__avatar {
+  margin: 0 10px 0 0;
+}
+
+.authorbox__description {
+min-height: 130px;
+}
+
