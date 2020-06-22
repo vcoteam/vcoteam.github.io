@@ -353,6 +353,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/powershell.html</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
   </url>
@@ -360,6 +365,26 @@
   <url>
     <loc>http://localhost:1313/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/perl.html</loc>
+    <lastmod>2015-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/python.html</loc>
+    <lastmod>2015-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vco.html</loc>
+    <lastmod>2015-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/sql.html</loc>
+    <lastmod>2015-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -600,11 +625,6 @@
   <url>
     <loc>http://localhost:1313/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</loc>
     <lastmod>2012-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/vco.html</loc>
-    <lastmod>2012-07-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>

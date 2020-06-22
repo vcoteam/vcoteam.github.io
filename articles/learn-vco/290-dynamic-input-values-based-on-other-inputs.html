@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Dynamic Input Values Based on other Inputs - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;A frequent requirement when performing orchestration tasks is to have input fields interdependent. For example, if I input XYZ into the first input, I want the second input to be relevant to XYZ. In the past, I have frequently done such workflows where you select a Datacenter for the first input, then the second input would present a list of Datastores (or VMs or Clusters or Hosts). In this tutorial, I&#34;m going to do something a little different. The first input of this demo workflow will be a string and the second will be an AD:User object chosen from a list of objects that were found in Active Directory based on the first input.&lt;/p&gt;">
+	<meta name="description" content="Learn how to setup input dependency to allow for dynamic value selection">
 		<meta property="og:title" content="Dynamic Input Values Based on other Inputs" />
-<meta property="og:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;A frequent requirement when performing orchestration tasks is to have input fields interdependent. For example, if I input XYZ into the first input, I want the second input to be relevant to XYZ. In the past, I have frequently done such workflows where you select a Datacenter for the first input, then the second input would present a list of Datastores (or VMs or Clusters or Hosts). In this tutorial, I&#34;m going to do something a little different. The first input of this demo workflow will be a string and the second will be an AD:User object chosen from a list of objects that were found in Active Directory based on the first input.&lt;/p&gt;" />
+<meta property="og:description" content="Learn how to setup input dependency to allow for dynamic value selection" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/articles/learn-vco/290-dynamic-input-values-based-on-other-inputs.html" />
 <meta property="article:published_time" content="2014-11-19T00:00:00+00:00" />
@@ -16,13 +16,13 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dynamic Input Values Based on other Inputs"/>
-<meta name="twitter:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;A frequent requirement when performing orchestration tasks is to have input fields interdependent. For example, if I input XYZ into the first input, I want the second input to be relevant to XYZ. In the past, I have frequently done such workflows where you select a Datacenter for the first input, then the second input would present a list of Datastores (or VMs or Clusters or Hosts). In this tutorial, I&#34;m going to do something a little different. The first input of this demo workflow will be a string and the second will be an AD:User object chosen from a list of objects that were found in Active Directory based on the first input.&lt;/p&gt;"/>
+<meta name="twitter:description" content="Learn how to setup input dependency to allow for dynamic value selection"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 <script type="application/javascript">
@@ -114,11 +114,321 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2014-11-19T00:00:00Z">November 19, 2014</time></div>
 </div>
 		</header><div class="content post__content clearfix">
-			<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+			<p>A frequent requirement when performing orchestration tasks is to have input fields interdependent. For example, if I input XYZ into the first input, I want the second input to be relevant to XYZ. In the past, I have frequently done such workflows where you select a Datacenter for the first input, then the second input would present a list of Datastores (or VMs or Clusters or Hosts). In this tutorial, I&rsquo;m going to do something a little different. The first input of this demo workflow will be a string and the second will be an AD:User object chosen from a list of objects that were found in Active Directory based on the first input.</p>
+<h2 id="scenario-overview">Scenario Overview</h2>
+<p>This article will address the following requirements:</p>
+<p>Provide an inteface for admins to login via a web browser to search for and add newly created Active Directory User to one or more groups.</p>
+<p>The front-end for this will be vCloud Automation Center (vCAC) 6.1. The Advanced Service Designer (XaaS) will be used to call a custom vCenter Orchestrator (vCO) workflow that actually does the work. Results of the workflow should be visible in vCAC.</p>
+<p>This tutorial will touch on the following topics:</p>
+<ul>
+<li>Link input fields so that the values presented on one depend on another</li>
+<li>Present vCO Workflow output via vCAC&rsquo;s Requests</li>
+<li>Parameter bindings in vCO</li>
+<li>vCO Presentation properties</li>
+<li>vCO Action creation</li>
+<li>vCO Worfklow creation</li>
+<li>Using the vCAC Advanced Service Designer (ASD) to add a vCO Workflow as a Catalog Item</li>
+<li>Publishing a Catalog Item and tying it to a Service</li>
+</ul>
+<p><strong>Note:</strong> Throughout this article, I use vCO and vCAC as unofficial abbreviations for VMware&rsquo;s vCenter Orchestrator and vCloud Automation Center respectively. In upcoming versions, these will be vRealize Orchestrator (vRO) and vRealize Automation (vRA).</p>
+<h2 id="environment-requirements">Environment Requirements</h2>
+<ul>
+<li>vCAC should be setup with the default or externa vCO Server configured server (See Administration -&gt; Advanced Services -&gt; Server Configuration)</li>
+<li>A service should be configured and entitled in vCAC to place the custom request in (This article will use a Service named &ldquo;Demos&rdquo;)</li>
+<li>An account capable of managing Advanced Services in vCAC and requesting services (this may be the same account or separate accounts: admin acct and user acct)</li>
+<li>The connected vCO Server should have the Active Directory plug-in configured with a SharedSession account in AD with sufficient permissions to add users to groups</li>
+<li><strong>NOTE:</strong> () Recent versions of the AD Plug-in will fail to do the user search if you have not defined a default AD server - EVEN IF you have only a single AD server connected! Run the <em><strong>Configure Active Directory plug-in options</strong></em> workflow, and specify a default AD server. <strong>This note added Jan 18, 2017</strong></li>
+<li>An account in the vCO Admins group capable of creating new vCO Workflows</li>
+</ul>
+<h2 id="create-vco-workflow-schema">Create vCO Workflow Schema</h2>
+<figure>
+    <img src="/images/dynamic-inputs/create_vco_workflow_schema.png"
+         alt="create_vco_workflow_schema.png"/> 
+</figure>
+
+<p>This will be the workflow we call from vCAC&rsquo;s Advanced Service Designer later, so be sure everything is set as described:</p>
+<ol>
+<li>Create a new workflow called Find and Add User to Group</li>
+<li>Drag the &ldquo;Add a user to a userGroup&rdquo; library workflow, an exception element, and two Scriptable tasks onto the schema as shown in the diagram above</li>
+<li>Create 3 Inputs for this workflow: name (String), user (AD:User), and group (AD:UserGroup)</li>
+<li>Create 1 Output for the workflow: outputText (String)</li>
+<li>Confirm (create if it does not exist) that an attribute named &ldquo;errorCode&rdquo; was created and is bound to the &ldquo;Exception&rdquo; tab of the &ldquo;Add a user to a user group&rdquo; workflow</li>
+<li>Rename each of the Scriptable task elements to &ldquo;Set Output&rdquo;</li>
+</ol>
+<p>Next, review and/or set Input/Attribute/Output bindings.</p>
+<h2 id="bindings-add-a-user-to-a-user-group">Bindings: Add a user to a user group</h2>
+<figure>
+    <img src="/images/dynamic-inputs/bindings_add_a_user_to_a_user_group.png"
+         alt="bindings_add_a_user_to_a_user_group.png"/> 
+</figure>
+
+<ol>
+<li>Select the Add a user to user group workflow</li>
+<li>In the bottom pane (or click the edit icon to bring up the pop-up window for the details), click ont he Visual Binding tab and confirm or set bindings as shown above</li>
+<li>Make sure that <strong>group</strong> is bound to the <em><strong>In Parameters</strong></em> <strong>group</strong> and that <strong>user</strong> is bound to the <em><strong>In Parameters</strong></em> <strong>user</strong> as shown above</li>
+</ol>
+<p><strong>NOTE:</strong> If you prefer the behavior shown here where the detail pane is below the selected item rather than clicking the edit icon and having a pop-up window, you can change this on your vCO client:</p>
+<ol>
+<li>If in edit mode, Save and Close</li>
+<li>Click Tools -&gt; User Preferences -&gt; Workflows</li>
+<li>Remove the check from &ldquo;Edit workflow items in a pop-up window</li>
+</ol>
+<p>With this preference set, you can always pop-out the details pane by clicking the small box in the top right corner (highlighted with a BLUE Arrow in the screenshot above.</p>
+<h2 id="bindings-normal-path-set-output-scriptable-task">Bindings: Normal path &ldquo;Set Output&rdquo; Scriptable task</h2>
+<figure>
+    <img src="/images/dynamic-inputs/bindings_normal_path_set_output_scriptable_task.png"
+         alt="bindings_normal_path_set_output_scriptable_task.png"/> 
+</figure>
+
+<p>Bind the <strong>user</strong> and <strong>userGroup</strong> inputs to the <strong>IN</strong> and outputText to the <strong>OUT</strong> for this element as shown in the screenshot above.</p>
+<p>Paste the following in to the <strong>Scripting</strong> tab of the element:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">outputText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Added &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">distinguishedName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; to group &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">group</span>.<span style="color:#a6e22e">distinguishedName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;. &#34;</span>;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="bindings-exception-path-set-output-scriptable-task">Bindings: Exception path &ldquo;Set Output&rdquo; Scriptable task</h2>
+<figure>
+    <img src="/images/dynamic-inputs/bindings_exception_path_set_output_scriptable_task.png"
+         alt="bindings_exception_path_set_output_scriptable_task.png"/> 
+</figure>
+
+<p>Bind the <strong>user</strong> and <strong>userGroup</strong> inputs to the <strong>IN</strong> and outputText to the <strong>OUT</strong> for this element. Also, bind the <strong>errorCode</strong> attribute to the <strong>IN</strong> tab of this element as shown in the screenshot above.</p>
+<p>Paste the following in to the <strong>Scripting</strong> tab of the element:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">outputText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Error encountered when attempting to add &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">distinguishedName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; to group &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">group</span>.<span style="color:#a6e22e">distinguishedName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;. &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">errorCode</span>;
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#a6e22e">outputText</span>);
+<span style="color:#a6e22e">Server</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#a6e22e">outputText</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p>Click Save and Close.</p>
+<h2 id="vco-workflow-current-state-and-next-steps">vCO Workflow Current State and next Steps</h2>
+<figure>
+    <img src="/images/dynamic-inputs/vco_workflow_current_state_and_next_steps.png"
+         alt="vco_workflow_current_state_and_next_steps.png"/> 
+</figure>
+
+<p>At this point, the workflow should be capable of prompting for all three inputs individually and processing the request. However, the <strong>name</strong> input has no effects on the <strong>user</strong> input at this stage. That can be setup in the Presentation tab of our workflow, but in order to do that, we&rsquo;ll need an action that:</p>
+<ul>
+<li>Takes a string as an input</li>
+<li>Returns an Array of AD:User objects or an Empty Array if no users are found to match the input string</li>
+</ul>
+<p>Let&rsquo;s create that action now!</p>
+<h2 id="create-a-finduserbyname-action">Create a findUserByName Action</h2>
+<figure>
+    <img src="/images/dynamic-inputs/create_a_finduserbyname_action.png"
+         alt="create_a_finduserbyname_action.png"/> 
+</figure>
+
+<p>If you don&rsquo;t already have a module (Action Folder) to place your new action in, create one now. As shown above, I have created one named: com.vmware.coe.library.ad.user &lt;- Note the syntax. vmware.com reversed, followed by my dept. &ldquo;coe&rdquo;, then general and specific categories: library.ad</p>
+<p>Once you have the action created, set the <em><strong>Return type</strong></em> to <strong>Array/AD:User</strong></p>
+<p>Add 1 string input and set the name to <strong>name</strong></p>
+<p>Next, add the following to the scripting box down below:</p>
+<p><code>if (!name) return []; // IMPORTANT: if the &quot;name&quot; input has not been provided, return an empty array. Returning a null will cause presentation issues and excluding the line will generate invalid calls to the AD Plug-in.</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">users</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ActiveDirectory</span>.<span style="color:#a6e22e">searchRecursively</span>(<span style="color:#e6db74">&#34;User&#34;</span>,<span style="color:#a6e22e">name</span>); <span style="color:#75715e">// Do a recursive search in Active Directory for User objects with the &#34;name&#34; provided
+</span><span style="color:#75715e">// If users is not null, perform some System debug
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">users</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
+    <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">debug</span>(<span style="color:#e6db74">&#34;Found &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; matching users for: &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">name</span>);
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span> (<span style="color:#a6e22e">usr</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">users</span>){
+        <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">debug</span>(<span style="color:#a6e22e">usr</span>);
+    }
+}
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">users</span>; <span style="color:#75715e">// Finally, don&#39;t forget this line!!! you must return your array of users
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="vco-workflow-presentation">vCO Workflow Presentation</h2>
+<figure>
+    <img src="/images/dynamic-inputs/vco_workflow_presentation.png"
+         alt="vco_workflow_presentation.png"/> 
+</figure>
+
+<p>Return to the &ldquo;Find and add user to group&rdquo; workflow created earlier and enter edit mode.</p>
+<ol>
+<li>Click on the <strong>Presentation</strong> tab</li>
+<li>Select the <strong>user</strong> input</li>
+<li>In the bottom pane, click the <strong>Properties</strong> tab</li>
+<li>Click the little blue triangle icon to add a new property. When the window pops up, select the <strong>Predefined list of elements</strong> and click <strong>OK</strong></li>
+<li>Click the small puzzle icon to the far right of the window to choose an action that will provide the array of choices. The Search action with result window will pop up and present a list of actions that return an array of objects that are the same type as the input field we have selected. In this case an Array/AD:User. Select the <strong>findUsersByName</strong> action.</li>
+<li>When an action is selected, each of the inputs to the action are presented in the bottom window. To allow us to specify an existing Input Parameter or Attribute, click the drop-down and select the Double-Arrow icon as shown above.</li>
+<li>Use the Pencil icon to select an Input or Attribute to be used as the action input. This will present the <strong>Linked parameter of type string</strong> window</li>
+<li>Select the <strong>name</strong> input</li>
+<li>Click <strong>Accept</strong></li>
+</ol>
+<p>To wrap up our Presentation settings, add the <strong>Mandatory input</strong> property to all three inputs and set each to <strong>Yes</strong></p>
+<h2 id="save-and-test-vco-workflow">Save and Test vCO Workflow</h2>
+<figure>
+    <img src="/images/dynamic-inputs/save_and_test_vco_workflow.png"
+         alt="save_and_test_vco_workflow.png"/> 
+</figure>
+
+<p>At this point, it is important to Save and Close the workflow. Be sure to set your initial Version number and Description for the workflow.</p>
+<p>Now, Test the workflow in the vCO Client by running it and specifying the first name or last name of an account you know is in Active Directory.</p>
+<p>Once you have a name entered the name (Yes, it will lag a little - this is a small bug with the vCO client and will not be present when the workflow is presented to you in vCAC), Click on the <strong>Not set</strong> link for the <em>Active Directory User Account</em> input. Confirm that you are presented with one or more accounts that have the &ldquo;name&rdquo; you specified as part of their accounts. In my case, I entered &ldquo;developer&rdquo; and there are <em>4</em> Developer accounts to choose from.</p>
+<p>Choose one of the accounts, and click Select.</p>
+<p>Choose an Active Directory group to add the user to and click <strong>Submit.</strong></p>
+<p>Confirm that the user gets added to your AD Group.</p>
+<p>Try running the workflow again to add the same user to the same group - what happens?</p>
+<p>In both results above, review the value of the <strong>outputText</strong> Output Parameter to confirm you have expected values.</p>
+<p>This workflow should now be ready to incorporate into vCloud Automation Center, let&rsquo;s do that now!</p>
+<h2 id="vcloud-automation-center---create-a-new-service-blueprint">vCloud Automation Center - Create a new Service Blueprint</h2>
+<figure>
+    <img src="/images/dynamic-inputs/vcloud_automation_center_-_create_a_new_service_blueprint.png"
+         alt="vcloud_automation_center_-_create_a_new_service_blueprint.png"/> 
+</figure>
+
+<p>Login to vCAC with your administrative account.</p>
+<p>Click the <strong>Advanced Services</strong>, then select the <strong>Service Blueprints</strong> entry on the left</p>
+<p>Click the Green <strong>+ Add</strong> button to add a new blueprint</p>
+<p>Select your <strong>Find and Add User to Group</strong> workflow that you created in vCenter Orchestrator and click <strong>Next</strong></p>
+<p>On the next page, place a check in the <strong>Hide catalog request information page</strong> box and click <strong>Next</strong></p>
+<h2 id="vcloud-automation-center---add-form">vCloud Automation Center - Add Form</h2>
+<figure>
+    <img src="/images/dynamic-inputs/vcloud_automation_center_-_add_form.png"
+         alt="vcloud_automation_center_-_add_form.png"/> 
+</figure>
+
+<p>Add a new Form to the Blueprint so that the output text may be available to the user.</p>
+<ol>
+<li>Click the Add Form button (Green +)</li>
+<li>Specify a name such as <strong>Output Text</strong></li>
+<li>Select the <strong>Submitted request details</strong> entry for the Screen Type</li>
+<li>Click Submit</li>
+</ol>
+<h2 id="form-page-header---output-text">Form Page Header - Output Text</h2>
+<figure>
+    <img src="/images/dynamic-inputs/form_page_header_-_output_text.png"
+         alt="form_page_header_-_output_text.png"/> 
+</figure>
+
+<ol>
+<li>Click the New Page (Green +) button to add a new Page to the form</li>
+<li>Set the Heading to <strong>Output Text</strong></li>
+<li>Click <strong>Submit</strong></li>
+</ol>
+<h2 id="output-text-page">Output Text Page</h2>
+<figure>
+    <img src="/images/dynamic-inputs/output_text_page.png"
+         alt="output_text_page.png"/> 
+</figure>
+
+<ol>
+<li>In the left pane, scroll down until you see the <strong>Outputs</strong> section. This area will have each of your vCO workflow outputs. In our case, there is only 1.</li>
+<li>Drag the <strong>outputText</strong> field onto the form page, just under the &ldquo;Form page&rdquo; dropdown box as shown above</li>
+<li>Click the <strong>Edit</strong> icon (pencil)</li>
+<li>Update the Label to be more user friendly: <strong>Output Text</strong></li>
+<li>Set <strong>Size</strong> to Large</li>
+<li>Click <strong>Submit</strong></li>
+<li>Click <strong>Next</strong></li>
+<li>On the <strong>Provisioned Resource</strong> page, there is nothing to change so click <strong>Add</strong></li>
+</ol>
+<figure>
+    <img src="/images/dynamic-inputs/media_1416431710920.png"
+         alt="media_1416431710920.png"/> 
+</figure>
+
+<ol>
+<li>When you return to the Service blueprints page, select the row containing your new workflow</li>
+<li>Click <strong>Publish</strong></li>
+</ol>
+<p>Your new vCO workflow is now published as a Catalog Item. But, in order to allow anyone to see it, we need to have it entitled. In this environment I have a &ldquo;Demos&rdquo; Service that already has entitlements setup so all I need to do is specify the &ldquo;Demos&rdquo; Service on my Catalog Item. Let&rsquo;s do that now.</p>
+<figure>
+    <img src="/images/dynamic-inputs/media_1416432038100.png"
+         alt="media_1416432038100.png"/> 
+</figure>
+
+<p>Click Administration -&gt; Catalog Management -&gt; Catalog Items</p>
+<p>Select the row containing the <strong>Find and Add User to Group</strong> item</p>
+<p>Click <strong>Configure</strong></p>
+<figure>
+    <img src="/images/dynamic-inputs/media_1416432108771.png"
+         alt="media_1416432108771.png"/> 
+</figure>
+
+<p>On the <strong>Configure Catalog Item</strong> page:</p>
+<ol>
+<li>Browse for and add a custom icon if desired</li>
+<li>Confirm that Status is <strong>Active</strong></li>
+<li>Click the Service dropdown and select the appropriate Service to tie the Catalog Item to. In my case, this is the <strong>Demos</strong> service</li>
+<li>Click the Entitlements tab to confirm that Entitlements exist for the selected service</li>
+<li>Click <strong>Update</strong> when done</li>
+</ol>
+<p>You are now ready to test the request via the <strong>Catalog</strong> tab!</p>
+<h2 id="vcac---catalog---demos">vCAC - Catalog - Demos</h2>
+<figure>
+    <img src="/images/dynamic-inputs/vcac_-_catalog_-_demos.png"
+         alt="vcac_-_catalog_-_demos.png"/> 
+</figure>
+
+<p>The integration should be ready to test. At this point, if necessary, log out of the admin account then login using an account that is entitled to the Service specified in the previous step. My admin account is entitled, so I will continue on with the same account.</p>
+<ol>
+<li>Click on the <strong>Catalog</strong> tab</li>
+<li>Select the Service (in my case <strong>Demos</strong>) from the list on the left to narrow the available requestable items (If your account is only entitled to 1 service, then your screen will not have the services listed down the side of the screen.</li>
+<li>Click the <strong>Request</strong> button</li>
+</ol>
+<h2 id="new-request">New Request</h2>
+<figure>
+    <img src="/images/dynamic-inputs/new_request.png"
+         alt="new_request.png"/> 
+</figure>
+
+<ul>
+<li>Enter a valid given or surname in the <strong>name</strong> input then tab or click into the <strong>user</strong> dropdown</li>
+<li>After a brief moment (vCO Action running in the background), the dropdown should populate with valid AD:User accounts</li>
+<li>Select an account, then select an AD Group and <strong>Submit</strong> the request</li>
+<li>Click <strong>OK</strong> on the confirmation page</li>
+</ul>
+<h2 id="review-requests">Review Requests</h2>
+<figure>
+    <img src="/images/dynamic-inputs/review_requests.png"
+         alt="review_requests.png"/> 
+</figure>
+
+<p>Click on the <strong>Requests</strong> tab</p>
+<p>Locate and click on the Request Number that matches the request you just submitted. In the screenshot above, I click on the <strong>23</strong> at the far left of the table</p>
+<h2 id="request-details">Request Details</h2>
+<figure>
+    <img src="/images/dynamic-inputs/request_details.png"
+         alt="request_details.png"/> 
+</figure>
+
+<p>Review the <strong>General, Step,</strong> and <strong>Output Text</strong> tabs.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>See if you can customize this process to accept multiple groups to add the user to. There was some good information here that taught reusable techniques. I hope you enjoyed this tutorial. Please share if you found it worthwhile!</p>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -198,7 +508,7 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
@@ -207,7 +517,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (8)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
@@ -223,24 +533,28 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
 	</div>

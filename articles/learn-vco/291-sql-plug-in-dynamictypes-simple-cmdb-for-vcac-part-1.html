@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 1 - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;This multi-part series will step you through the process of mapping a Microsoft SQL Server table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table (using my workflow package), then exposing it to vRealize Automation&#34;s Advanced Service Designer (ASD).&lt;/p&gt;&lt;h2 class=&#34;StepTitle&#34;&gt;Introduction&lt;/h2&gt;&lt;p&gt;vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object. This means you must have a plug-in that provides such an inventory. In the past, this meant Java skills to build out a plug-in. This, fortunately, is no longer the case with the Dynamic Types plug-in. We touched on this plug-in in the past with regards to using the HTTP-REST plug-in. This article will take a different approach in that we will use the SQL Plug-in to provide our back-end service - a mini CMDB consisting of Server names and IPs.&lt;/p&gt;">
+	<meta name="description" content="Start learning how to build a DynamicTypes plug-in for SQL Server!">
 		<meta property="og:title" content="SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 1" />
-<meta property="og:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;This multi-part series will step you through the process of mapping a Microsoft SQL Server table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table (using my workflow package), then exposing it to vRealize Automation&#34;s Advanced Service Designer (ASD).&lt;/p&gt;&lt;h2 class=&#34;StepTitle&#34;&gt;Introduction&lt;/h2&gt;&lt;p&gt;vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object. This means you must have a plug-in that provides such an inventory. In the past, this meant Java skills to build out a plug-in. This, fortunately, is no longer the case with the Dynamic Types plug-in. We touched on this plug-in in the past with regards to using the HTTP-REST plug-in. This article will take a different approach in that we will use the SQL Plug-in to provide our back-end service - a mini CMDB consisting of Server names and IPs.&lt;/p&gt;" />
+<meta property="og:description" content="Start learning how to build a DynamicTypes plug-in for SQL Server!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html" />
 <meta property="article:published_time" content="2014-12-05T00:00:00+00:00" />
@@ -16,13 +16,13 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 1"/>
-<meta name="twitter:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;This multi-part series will step you through the process of mapping a Microsoft SQL Server table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table (using my workflow package), then exposing it to vRealize Automation&#34;s Advanced Service Designer (ASD).&lt;/p&gt;&lt;h2 class=&#34;StepTitle&#34;&gt;Introduction&lt;/h2&gt;&lt;p&gt;vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object. This means you must have a plug-in that provides such an inventory. In the past, this meant Java skills to build out a plug-in. This, fortunately, is no longer the case with the Dynamic Types plug-in. We touched on this plug-in in the past with regards to using the HTTP-REST plug-in. This article will take a different approach in that we will use the SQL Plug-in to provide our back-end service - a mini CMDB consisting of Server names and IPs.&lt;/p&gt;"/>
+<meta name="twitter:description" content="Start learning how to build a DynamicTypes plug-in for SQL Server!"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 <script type="application/javascript">
@@ -114,11 +114,180 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2014-12-05T00:00:00Z">December 05, 2014</time></div>
 </div>
 		</header><div class="content post__content clearfix">
-			<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+			<p>This multi-part series will step you through the process of mapping a Microsoft SQL Server table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table (using my workflow package), then exposing it to vRealize Automation&rsquo;s Advanced Service Designer (ASD).</p>
+<h2 id="introduction">Introduction</h2>
+<p>vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object. This means you must have a plug-in that provides such an inventory. In the past, this meant Java skills to build out a plug-in. This, fortunately, is no longer the case with the Dynamic Types plug-in. We touched on this plug-in in the past with regards to using the HTTP-REST plug-in. This article will take a different approach in that we will use the SQL Plug-in to provide our back-end service - a mini CMDB consisting of Server names and IPs.</p>
+<p><strong>NOTE/WARNING:</strong> This package was developed and tested with a Microsoft SQL Server. As such, the query in the action &ldquo;com.vmware.coe.sql.getTableColumnNames&rdquo; is likely to only work with a SQL Server. If you are using PostgreSQL, MySQL, or Oracle, you will likely need to modify the first line of this action to reflect the proper syntax of retrieving a record.</p>
+<p>This first article will cover the following topics:</p>
+<ul>
+<li>Microsoft SQL Server Database Table for use in tutorial</li>
+<li>How to determine JDBC URL for use with the SQL Plug-in (or jdbc plug-in)</li>
+<li>Adding the Database table to vRO</li>
+</ul>
+<p>Future articles will build upon the work performed here. They will cover:</p>
+<ul>
+<li><a href="/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html" >How to create a Dynamic Types Plug-in Inventory using my workflow package</a></li>
+<li><a href="/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html" >How to add the simple CMDB to vRAs Advanced Service Designer</a></li>
+</ul>
+<h2 id="the-database">The Database</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/the_database.png"
+         alt="the_database.png"/> 
+</figure>
+
+<p>For this tutorial series, we will keep things very simple. Our CMDB will consist of a single &ldquo;Assets&rdquo; table. The table will reside in a database named &ldquo;CMDB&rdquo; on a SQL Server 2008 R2 server (vcac-iaas-01a.corp.local).</p>
+<p>The table will have only 5 fields:</p>
+<ol>
+<li>ServerName - Hostname of the server</li>
+<li>ServerIP - IP Address of the server</li>
+<li>ServerDNS - Domain that server resides in</li>
+<li>ServerID - Unique ID of the server, for simplicity, this article will simply use the same value as the ServerName</li>
+<li>ServerOwner - e-mail address of the person who provisioned the system</li>
+</ol>
+<p>Before proceeding, make sure you have a simple table created and available for you to connect to. Also be sure to note whether or not your database is listening on its standard port. In my case, SQL Server <strong>IS</strong> listening on port 1433.</p>
+<h2 id="database-plug-ins-and-jdbc-url">Database Plug-ins and JDBC URL</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/database_plug-ins_and_jdbc_url.png"
+         alt="database_plug-ins_and_jdbc_url.png"/> 
+</figure>
+
+<p>vRO features two plug-ins capable of communicating with external databases: SQL Plug-in and JDBC Plug-in. Regardless of which plug-in you decide to use for your solution, you will require a JDBC URL to connect to a database. The syntax for the url can be tricky, but vRO ships with a handy workflow to help you figure that out: <strong>JDBC URL generator</strong></p>
+<p>Run that workflow now.</p>
+<h2 id="jdbc-url-generator---screen-1">JDBC URL generator - Screen 1</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/jdbc_url_generator_-_screen_1.png"
+         alt="jdbc_url_generator_-_screen_1.png"/> 
+</figure>
+
+<p>In my lab environment, the vcac-iaas-01a server is running SQL Server 2008 R2 and is a member of the corp.local domain. Additionally, the default instance is being used and Windows authentication is enabled.<!-- raw HTML omitted --></p>
+<ol>
+<li>Use the drop-down to select your database. Based on my note above, I will select the SQL Server/MSDE entry</li>
+<li>Specify either the FQDN or IP Address of the Database Server</li>
+<li>Provide the name of the database you wish to connect to</li>
+<li>(OPTIONAL) Provide the database port - if left blank, the default port will be used as specified by the description above the inputs based on the type of database chosen</li>
+<li>Provide the username of an account with permission to add/remove content to the database</li>
+<li>Provide the password for the account</li>
+</ol>
+<h2 id="jdbc-url-generator---screen-2">JDBC URL generator - Screen 2</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/jdbc_url_generator_-_screen_2.png"
+         alt="jdbc_url_generator_-_screen_2.png"/> 
+</figure>
+
+<p>If the Microsoft database (SQL Server/MSDE) was chosen in the first screen then an additonal screen will be presented so that you may specify an optional instance name and domain name.</p>
+<ol>
+<li>If using the default instance of SQL Server, it should be safe to leave this field blank. Otherwise, specify the appropriate Instance Name that holds your database.</li>
+<li>If your database server is a member of a domain and is using WIndows based authentication, enter the Windows Domain here as shown in the screenshot above. If you are using a standalone SQL Server with Windows authentication (local accounts) then specify the server&rsquo;s HostName in this field.</li>
+</ol>
+<p>Click submit</p>
+<p>Upon submission, vRO will construct the JDBC URL then attempt a connection to the database using that URL and the credentials provided.</p>
+<h2 id="jdbc-url-generator---results">JDBC URL generator - Results</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/jdbc_url_generator_-_results.png"
+         alt="jdbc_url_generator_-_results.png"/> 
+</figure>
+
+<p>Review the <strong>Logs</strong> tab or the <strong>Variables</strong> tab to obtain your JDBC URL (Connection string).</p>
+<p>If the workflow fails, you may need to try different variations of your inputs. Most commonly, I have seen issues around not having the correct port specified / DB listening on dynamic port instead of default, specifying invalid credentials, specifying an invalid database instance, or missing/incorrect domain name.</p>
+<p>When successful, the Logs tab should contain text like this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plain" data-lang="plain">[2014-12-02 10:13:57.831] [I] Connection String: jdbc:jtds:sqlserver://vcac-iaas-01a.corp.local:1433/CMDB;domain=corp
+[2014-12-02 10:13:58.170] [I] Connection to database successful
+</code></pre></td></tr></table>
+</div>
+</div><p>You should now have the necessary connection string for use in the SQL and JDBC workflows to connect to a database!</p>
+<h2 id="add-sql-database-to-vco">Add SQL Database to vCO</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/add_sql_database_to_vco.png"
+         alt="add_sql_database_to_vco.png"/> 
+</figure>
+
+<p>Now that we have the JDBC URL, we can run the <strong>Add a database</strong> workflow (found under Workflows\Library\SQL\Configuration)</p>
+<p>For the Name input, this is the display name shown in the vRO Inventory so set it to something friendly and that makes sense. In my case, I will simply call it CMDB - I could just as well name it &ldquo;Server Inventory).</p>
+<p>Choose the Database Type, then paste in your connection url from the workflow you ran in the last step.</p>
+<p>On the next screen, I suggest using Shared Session, then providing the same credentials as you used in the JDBC URL generator workflow.</p>
+<p>Upon submission, your <strong>Logs</strong> tab should display something similar to this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plain" data-lang="plain">[2014-12-02 10:57:19.071] [I] Database object added: DynamicWrapper (Instance) : [SQLDatabase]-[class com.vmware.o11n.plugin.database.Database] -- VALUE : Database[name: CMDB, type: MS SQL, connectionURL: jdbc:jtds:sqlserver://vcac-iaas-01a.corp.local:1433/CMDB;domain=corp, sessionMode: Shared Session, username: administrator]
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="verify-sql-inventory">Verify SQL Inventory</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/verify_sql_inventory.png"
+         alt="verify_sql_inventory.png"/> 
+</figure>
+
+<p>View the Inventory of your vRO Server and expand the SQL plug-in to confirm that the &ldquo;CMDB&rdquo; entry is there and you can see the tables in the database.</p>
+<h2 id="create-folder-for-cmdb-workflows">Create Folder for CMDB Workflows</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/create_folder_for_cmdb_workflows.png"
+         alt="create_folder_for_cmdb_workflows.png"/> 
+</figure>
+
+<p>Return to the workflows tab in the vRO client and create a new root folder named &ldquo;CMDB Workflows&rdquo;</p>
+<p>We will use this folder in the next step&hellip;</p>
+<h2 id="generate-workflows-to-manage-the-table">Generate Workflows to manage the table</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/generate_workflows_to_manage_the_table.png"
+         alt="generate_workflows_to_manage_the_table.png"/> 
+</figure>
+
+<p>We are now ready to generate some simple CRUD (Create Read Update Delete) workflows for our Assets table.</p>
+<ul>
+<li>Run the <strong>Generate CRUD workflows for a table</strong> workflow</li>
+<li>Select the Assets table and then specify the CMDB Workflows folder (Workflow Category) as the destination</li>
+<li>Click Submit</li>
+</ul>
+<h2 id="verify-workflows-are-generated">Verify Workflows are Generated</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/verify_workflows_are_generated.png"
+         alt="verify_workflows_are_generated.png"/> 
+</figure>
+
+<p>Confirm that the four workflows have been created in the folder specified&hellip;</p>
+<p><strong>NOTE/WARNING:</strong> It seems that in version 5.5.2.1 of vRO, there is a small bug (I have just reported this to Engineering) that does not bind the &ldquo;databaseResource&rdquo; attribute to the ResourceElement object properly. This &ldquo;Not found&rdquo; value will prevent the workflows from validating or running properly. If this happens for you, it is pretty simple to fix. Just EDIT each of the four generated workflows, and DELETE the &ldquo;databaseResource&rdquo; attribute from the General tab AND remove it from the &ldquo;IN&rdquo; binding of the Scriptable task.</p>
+<p>Be sure to Test / Adjust each of these CRUD workflow to make sure they function with the Database you are using. With the slight mod above, they work fine for me with SQL Server, but I needed to modify the query syntax when working with PostgreSQL.</p>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>This concludes the first article in the series. Stay tuned for additional articles that will build upon the database table we have mapped here in this article.</p>
+<p><a href="/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html" >SQL Plug-in + DynamicTypes = Simple CMDB for vCAC - Part 2</a></p>
+<p><a href="/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html" >SQL Plug-in + DynamicTypes = Simple CMDB for vCAC - Part 3</a></p>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vro/" rel="tag">vRO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vra/" rel="tag">vRA</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcac/" rel="tag">vCAC</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/sql/" rel="tag">SQL</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/dynamictypes/" rel="tag">DynamicTypes</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -198,7 +367,7 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
@@ -207,7 +376,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (8)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
@@ -223,24 +392,28 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
 	</div>

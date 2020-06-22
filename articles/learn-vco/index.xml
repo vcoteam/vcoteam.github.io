@@ -188,13 +188,8 @@ Then explained how to build your own twitter plug-in using the plug-in generator
       <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</guid>
-      <description>add-type @&amp;rdquo; using System.Net; using System.Security.Cryptography.X509Certificates; public class TrustAllCertsPolicy : ICertificatePolicy { public bool CheckValidationResult( ServicePoint srvPoint, X509Certificate certificate, WebRequest request, int certificateProblem) { return true; } } &amp;ldquo;@
-[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-function ConvertTo-Base64($string) { $bytes = [System.Text.Encoding]::UTF8.GetBytes($string); $encoded = [System.Convert]::ToBase64String($bytes);
-return $encoded; }
-$token = ConvertTo-Base64(&amp;ldquo;$($usr):$($pwd)&amp;quot;) $auth = &amp;ldquo;Basic $($token)&amp;rdquo;
-$headers = @{&amp;ldquo;Authorization&amp;quot;=$auth;&amp;ldquo;Content-Type&amp;quot;=&amp;quot;application/$($apiFormat)&amp;quot;;&amp;ldquo;Accept&amp;quot;=&amp;quot;application/$($apiFormat)&amp;quot;} $body = Get-Content $inputFile -Raw
-write-output &amp;ldquo;Using body: &amp;quot; + $body $URL = &amp;ldquo;https://$($vroServer)/vco/api/workflows/$($wfid)/executions&amp;rdquo; Write-Output $URL $ret = Invoke-WebRequest -Method Post -uri $URL -Headers $headers -body $body $headers = $ret.</description>
+      <description>Okay now I have provided Python and [perl](/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html&amp;rdquo; rel=&amp;quot;alternate) articles to start a vRealize Orchestrator (vRO / vCO) workflow via it&amp;rsquo;s REST API so now it&amp;rsquo;s time for a PowerShell script. For this article, I followed the same format as the previous two BUT provided the option to call the script with command line parameters! You may download the script in this article from my vroClientScripts Repository on GitHub.
+The Script The following code should be saved as something like runWorkflow.</description>
     </item>
     
     <item>
@@ -203,8 +198,7 @@ write-output &amp;ldquo;Using body: &amp;quot; + $body $URL = &amp;ldquo;https:/
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</guid>
-      <description>Update for your environment here. Use double quotes around each defined value. $usr = {REPLACE WITH YOUR VRO USERNAME}; $pwd = {REPLACE WITH YOUR VRO PASSWORD}; $wfid = {REPLACE WITH YOUR VRO WORKFLOW ID}; $jsonFile = read_file({REPLACE WITH PATH TO JSON BODY FILE}); // updated as per comment at end of article $vroServer = {REPLACE WITH VRO URL:PORT};
-Make no changes below this line Disable server verification (for older LWP implementations) $ENV{PERL_LWP_SSL_VERIFY_HOSTNAME}=0;</description>
+      <description>In a previous article, I taught you how to explore and use the REST API to start a Workflow using a generic browser based REST Client. In this article, I will provide a perl based example of running the &amp;ldquo;Create a Record&amp;rdquo; workflow that was created in Part 2 of my SQL Plug-in Dynamic Types Simple CMDB for vCAC article. I have barely more experience with perl than Python so this will be another very short article!</description>
     </item>
     
     <item>
@@ -213,9 +207,7 @@ Make no changes below this line Disable server verification (for older LWP imple
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</guid>
-      <description>Make no changes below this line Import the modules to handle HTTP calls and work with json:  requests: http://docs.python-requests.org/en/latest/user/install/ To install the &amp;ldquo;requests&amp;rdquo; module, python -m pip install requests json (http://docs.python.org/2/library/json.html)   import requests, json requests.packages.urllib3.disable_warnings()
-Create basic authorization for API vroAuth = requests.auth.HTTPBasicAuth(usr,pwd)
-Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsquo;:&amp;lsquo;application/json&amp;rsquo;,&amp;lsquo;Accept&amp;rsquo;:&amp;lsquo;application/json&amp;rsquo;} url = &amp;lsquo;https://&amp;rsquo; + vroServer + &amp;lsquo;/vco/api/workflows/&amp;rsquo; + wfid + &amp;lsquo;/executions&amp;rsquo; data = open(jsonFile).read()</description>
+      <description>In a previous article, I taught you how to explore and use the REST API to start a Workflow using a generic browser based REST Client. In this article, I will provide a Python based example of running the &amp;ldquo;Create a Record&amp;rdquo; workflow that was created in Part 2 of my SQL Plug-in Dynamic Types Simple CMDB for vCACarticle. Since I&amp;rsquo;m not even close to being proficient with Python, this will be a very short article!</description>
     </item>
     
     <item>
@@ -224,7 +216,9 @@ Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsqu
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</guid>
-      <description></description>
+      <description>Welcome back! This is the third article of a multi-part series that steps you through the process of exposing our workflows from the last article to vRealize Automation&amp;rsquo;s (vRA) Advanced Service Designer (ASD).
+Introduction This third article will cover the following topics:
+ How to add the simple CMDB to vRealize Automation&amp;rsquo;s Advanced Service Designer Add a Day 2 operation to delete an Asset from our table  Future article will cover the following topic:</description>
     </item>
     
     <item>
@@ -233,7 +227,7 @@ Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsqu
       <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/293-get-addresses-in-range.html</guid>
-      <description>vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this Converting IP Addressesarticle that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simply it by returning the total number of addresses in the range.</description>
+      <description>vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this Converting IP Addresses article that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simplify it by returning the total number of addresses in the range.</description>
     </item>
     
     <item>
@@ -242,7 +236,8 @@ Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsqu
       <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</guid>
-      <description></description>
+      <description>Welcome back! This is the second article of a multi-part series that steps you through the process of mapping a SQL table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table, then exposing it to vRealize Automation&amp;rsquo;s Advanced Service Designer (ASD). In the first article, we got our database table mapped using the SQL Plug-in and generated some CRUD workflows.
+Introduction Let&amp;rsquo;s build a simple Dynamic Types plug-in around our SQL Table that we created in our previous article.</description>
     </item>
     
     <item>
@@ -251,7 +246,8 @@ Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsqu
       <pubDate>Fri, 05 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</guid>
-      <description></description>
+      <description>This multi-part series will step you through the process of mapping a Microsoft SQL Server table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table (using my workflow package), then exposing it to vRealize Automation&amp;rsquo;s Advanced Service Designer (ASD).
+Introduction vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object.</description>
     </item>
     
     <item>
@@ -260,7 +256,7 @@ Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsqu
       <pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/290-dynamic-input-values-based-on-other-inputs.html</guid>
-      <description></description>
+      <description>A frequent requirement when performing orchestration tasks is to have input fields interdependent. For example, if I input XYZ into the first input, I want the second input to be relevant to XYZ. In the past, I have frequently done such workflows where you select a Datacenter for the first input, then the second input would present a list of Datastores (or VMs or Clusters or Hosts). In this tutorial, I&amp;rsquo;m going to do something a little different.</description>
     </item>
     
     <item>
@@ -269,7 +265,8 @@ Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsqu
       <pubDate>Mon, 13 Oct 2014 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</guid>
-      <description>My colleague, Chris Slater at defined by softwarehas published an article on how to extend VMware Automation Center (vCAC) with F5 firewall functionality. I usually do not cross post articles but this one is worth mentioning since it is a real world example on how to leverage vCAC + vCO + Dynamic Types + third party API. The first part of the articleexplain what are the different options available to automate F5 including the F5 plug-in for vCO, PowerShell, the big IP CLI, the SOAP and REST APIs and give an overview of the solution.</description>
+      <description>My colleague, Chris Slater at defined by software has published an article on how to extend VMware Automation Center (vCAC) with F5 firewall functionality. I usually do not cross post articles but this one is worth mentioning since it is a real world example on how to leverage vCAC + vCO + Dynamic Types + third party API.
+The first part of the article explains the different options available to automate F5 including the F5 plug-in for vCO, PowerShell, the big IP CLI, the SOAP and REST APIs and give an overview of the solution.</description>
     </item>
     
     <item>
@@ -278,7 +275,8 @@ Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsqu
       <pubDate>Mon, 05 May 2014 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</guid>
-      <description>Last year I have created an extensibility package to simplify and automate the steps necessary to extend the vCAC IaaS lifecycle process with calling out vCO workflows. While this was mainly aimed at accelerating Proof of Concepts it has been since then broadly adopted in production environments. Since vCAC 6.0 it is part of the product and available for vCAC 5.2 as a separate download.Since this is now becoming a very hot topic I am including here a very useful extensibility introduction video that was released by my colleagues from tech marketing almost three months ago.</description>
+      <description>Last year I have created an extensibility package to simplify and automate the steps necessary to extend the vCAC IaaS lifecycle process with calling out vCO workflows. While this was mainly aimed at accelerating Proof of Concepts it has been since then broadly adopted in production environments. Since vCAC 6.0 it is part of the product and available for vCAC 5.2 as a separate download.
+Since this is now becoming a very hot topic I am including here a very useful extensibility introduction video that was released by my colleagues from tech marketing almost three months ago.</description>
     </item>
     
     <item>
@@ -287,7 +285,8 @@ Set headers to allow for json format headers = {&amp;lsquo;Content-Type&amp;rsqu
       <pubDate>Fri, 25 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</guid>
-      <description></description>
+      <description>One of the relatively new 5.x features of vCenter Orchestrator (vCO) is the ability to Enable a workflow to resume on failure. Essentially, this means that a workflow could fail 1/2 or 3/4 the way through and you could go and tell vCO to resume that workflow, perhaps after fixing whatever issue caused it to fail in the first place, rather than start a fresh instance of the workflow.
+Introduction   As noted in the intro snippet, vCO now has the ability to let you resume a failed workflow.</description>
     </item>
     
     <item>

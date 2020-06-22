@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>How to use the REST API to Resume a Failed Workflow - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;One of the relatively new 5.x features of vCenter Orchestrator (vCO) is the ability to Enable a workflow to resume on failure. Essentially, this means that a workflow could fail 1/2 or 3/4 the way through and you could go and tell vCO to resume that workflow, perhaps after fixing whatever issue caused it to fail in the first place, rather than start a fresh instance of the workflow.&lt;/p&gt;">
+	<meta name="description" content="Learn how to Enable a workflow to resume on failure.">
 		<meta property="og:title" content="How to use the REST API to Resume a Failed Workflow" />
-<meta property="og:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;One of the relatively new 5.x features of vCenter Orchestrator (vCO) is the ability to Enable a workflow to resume on failure. Essentially, this means that a workflow could fail 1/2 or 3/4 the way through and you could go and tell vCO to resume that workflow, perhaps after fixing whatever issue caused it to fail in the first place, rather than start a fresh instance of the workflow.&lt;/p&gt;" />
+<meta property="og:description" content="Learn how to Enable a workflow to resume on failure." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html" />
 <meta property="article:published_time" content="2014-04-25T00:00:00+00:00" />
@@ -16,13 +16,13 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to use the REST API to Resume a Failed Workflow"/>
-<meta name="twitter:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;One of the relatively new 5.x features of vCenter Orchestrator (vCO) is the ability to Enable a workflow to resume on failure. Essentially, this means that a workflow could fail 1/2 or 3/4 the way through and you could go and tell vCO to resume that workflow, perhaps after fixing whatever issue caused it to fail in the first place, rather than start a fresh instance of the workflow.&lt;/p&gt;"/>
+<meta name="twitter:description" content="Learn how to Enable a workflow to resume on failure."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 <script type="application/javascript">
@@ -114,11 +114,370 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2014-04-25T00:00:00Z">April 25, 2014</time></div>
 </div>
 		</header><div class="content post__content clearfix">
-			<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+			<p>One of the relatively new 5.x features of vCenter Orchestrator (vCO) is the ability to Enable a workflow to resume on failure. Essentially, this means that a workflow could fail 1/2 or 3/4 the way through and you could go and tell vCO to resume that workflow, perhaps after fixing whatever issue caused it to fail in the first place, rather than start a fresh instance of the workflow.</p>
+<h2 id="introduction">Introduction</h2>
+<figure>
+    <img src="/images/resume-failed/introduction.png"
+         alt="introduction.png"/> 
+</figure>
+
+<p>As noted in the intro snippet, vCO now has the ability to let you resume a failed workflow. See the following vCO Documentation page <a href="http://pubs.vmware.com/vsphere-55/topic/com.vmware.vsphere.vco_dev.doc/GUID-71B0D7DF-1E97-4000-8625-90747B9835DF.html"  target="_blank" rel="noreferrer noopener" >vCO Documentation on Resuming a Failed Workflows</a> to learn more about this feature and get it setup. (I recommend doing this on a workflow-by-workflow basis only.) This new feature can be quite helpful as it automatically generates a User Interaction prompt when your workflow fails, allowing you to resume the workflow from where it left off. This could be very helpful when, for instance, your target environment lacks resources for a deployment and the workflow has already progressed through several steps of external integration (IE: Generated a Helpdesk request for tracking, reserved an IP Address, etc&hellip;) rather than rolling everything back and starting all over each time a workflow fails.</p>
+<h2 id="failed-workflow-appearance-when-enabled">Failed workflow appearance when Enabled</h2>
+<figure>
+    <img src="/images/resume-failed/failed_workflow_appearance_when_enabled.png"
+         alt="failed_workflow_appearance_when_enabled.png"/> 
+</figure>
+
+<ul>
+<li>When that option is enabled, rather than the workflow being in a permanently failed state, upon failure the workflow will enter into &ldquo;Waiting&rdquo; state for an interaction as depicted above by the icon next to the workflow execution.</li>
+<li>The Schema shows you where the workflow had failed by highlighting the failed element in Red.</li>
+<li>The Variable tab will show the Exception details in the &ldquo;Exception&rdquo; window at the bottom in RED TEXT.</li>
+</ul>
+<h2 id="using-the-vco-client-to-answer">Using the vCO Client to Answer</h2>
+<figure>
+    <img src="/images/resume-failed/using_the_vco_client_to_answer.png"
+         alt="using_the_vco_client_to_answer.png"/> 
+</figure>
+
+<p>The process to resume a failed workflow using the vCO Client is the same as answering a User Interaction - Right Click on the workflow execution, then select the &ldquo;Answer&rdquo; link.</p>
+<p>The Workflow interaction window will come up, allowing you to choose to either &ldquo;Resume&rdquo; the workflow or &ldquo;Cancel&rdquo; the workflow.</p>
+<p>If you chose Cancel and hit Submit, the workflow would cancel out and would no longer be a viable execution to resume.</p>
+<figure>
+    <img src="/images/resume-failed/media_1398455105328.png"
+         alt="media_1398455105328.png"/> 
+</figure>
+
+<p>However, if you chose to &ldquo;Resume&rdquo;, the &ldquo;Parameters&rdquo; section of input gets loaded with all the Input Parameters for your workflow, allowing you to modify as needed before submitting the workflow to complete from where it had failed.</p>
+<h2 id="okay-great-but-the-title-said-rest-api">Okay, great but the title said REST API&hellip;</h2>
+<p>Right, so I wanted to lay a little ground work to make sure you understood the general flow of a failed workflow and what the UI process was before we go off to XML land for the REST API.</p>
+<p>Before you continue on, be sure you have:</p>
+<ol>
+<li>Set the &ldquo;Resume from failed behavior&rdquo; to &ldquo;Enabled&rdquo; on your test workflow</li>
+<li>Have executed the workflow and gotten it to Fail before completing (Feel free to use the attached Test workflow at the bottom of this article.)</li>
+</ol>
+<h2 id="retrieve-the-workflow-executions-list">Retrieve the Workflow Executions list</h2>
+<figure>
+    <img src="/images/resume-failed/retrieve_the_workflow_executions_list.png"
+         alt="retrieve_the_workflow_executions_list.png"/> 
+</figure>
+
+<p>Reminder: vCO API Documentation can be found on your vCO Server &ndash; <code>https://your-vco-server:8281/vco/api/docs</code></p>
+<p>In order to retrieve our list of Executions, we need the following information:</p>
+<ul>
+<li>vCO API URL format &ndash;&gt; <code>https://your-vco-server:8281/vco/api/workflows/&lt;workflow-ID&gt;/executions/&lt;workflow-execution-id&gt;</code></li>
+<li>Workflow ID &ndash;&gt; See item 1 in Screenshot above &ndash;&gt; The workflow ID will remain the same across vCO instances. So, if you import the workflow attached to this post, your id will be the same.</li>
+<li>Workflow Execution ID &ndash;&gt; See item 2 in Screenshot above &ndash;&gt; this is your workflow execution ID, it is unique for every run of the workflow.</li>
+</ul>
+<h2 id="review-results">Review results</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+<span style="color:#f92672">&lt;workflow-execution</span>
+    <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;relations&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;up&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;remove&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/logs/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;logs&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/state/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;state&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/interaction/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;interaction&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/state/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;cancel&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/relations&gt;</span>
+    <span style="color:#f92672">&lt;id&gt;</span>ff808081458f848b01459a60144f0723<span style="color:#f92672">&lt;/id&gt;</span>
+    <span style="color:#f92672">&lt;state&gt;</span>waiting<span style="color:#f92672">&lt;/state&gt;</span>
+    <span style="color:#f92672">&lt;input-parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;boolean&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;isFailWorkflow&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;boolean&gt;</span>true<span style="color:#f92672">&lt;/boolean&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+    <span style="color:#f92672">&lt;/input-parameters&gt;</span>
+    <span style="color:#f92672">&lt;output-parameters/&gt;</span>
+    <span style="color:#f92672">&lt;start-date&gt;</span>2014-04-25T15:32:39.118-04:00<span style="color:#f92672">&lt;/start-date&gt;</span>
+    <span style="color:#f92672">&lt;business-state&gt;</span>Default System Error Handling for item: item2<span style="color:#f92672">&lt;/business-state&gt;</span>
+    <span style="color:#f92672">&lt;started-by&gt;</span>bazbill@VCOTEAM.LAB<span style="color:#f92672">&lt;/started-by&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>3A) Resume tester<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;content-exception&gt;</span>Workflow failed because user decided so<span style="color:#f92672">&lt;/content-exception&gt;</span>
+    <span style="color:#f92672">&lt;current-item-display-name&gt;</span>Workflow Error System Handler<span style="color:#f92672">&lt;/current-item-display-name&gt;</span>
+<span style="color:#f92672">&lt;/workflow-execution&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Based on the above information, the URL <strong>I</strong> need to use is: <code>https://my-vco-server:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/</code> (Be sure to adjust YOUR request to reflect YOUR workflow ID and Execution ID).</p>
+<p>Upon submitting a GET request to that url, the above XML (screenshot) is displayed.</p>
+<p>We can see in this execution that there is an &ldquo;interaction&rdquo; link &ndash; see Line 9, state is waiting &ndash; see Line 13, and a &ldquo;content-exception&rdquo; tag is present &ndash; see Line 24. The 3 of these present in a workflow execution indicates that the workflow has failed and the Resume feature is enabled and waiting for a user interaction.</p>
+<p>We now have the link to the interaction, so we can learn more about it by performing a GET on that URL&hellip;</p>
+<h2 id="get-the-interaction">GET the interaction</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+<span style="color:#f92672">&lt;user-interaction</span> 
+    <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/interaction/&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;relations&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;up&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/interaction/presentation/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;down&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/interaction/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;add&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/relations&gt;</span>
+    <span style="color:#f92672">&lt;input-parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;boolean&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;isFailWorkflow&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;Date&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;resume.fail.timeout.date&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;__System_Action&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/input-parameters&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>3A) Resume tester : Workflow Error System Handler<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;state&gt;</span>waiting<span style="color:#f92672">&lt;/state&gt;</span>
+<span style="color:#f92672">&lt;/user-interaction&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The interaction XML provides the inputs that are needed for the interaction, but don&rsquo;t provide any decorators, default values, etc&hellip; &ndash; see Lines 10-12.</p>
+<p>If you wish to see the current values and other presentation options, you can drill down to the /interaction/presentation URL &ndash; see Line 6</p>
+<h2 id="presentation-xml">Presentation XML</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+<span style="color:#f92672">&lt;presentation</span>
+    <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb:ff808081458f848b01459a60144f0723&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;3A) Resume tester : Workflow Error System Handler&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/interaction/presentation/&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;relations&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/interaction/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;up&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/interaction/presentation/instances/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;down&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/883af9aa-7b98-4c6a-8cf5-6ec54f28c3cb/executions/ff808081458f848b01459a60144f0723/interaction/presentation/instances/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;add&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/relations&gt;</span>
+    <span style="color:#f92672">&lt;steps&gt;</span>
+        <span style="color:#f92672">&lt;step</span> <span style="color:#a6e22e">hidden=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;display-name&gt;</span>Error in workflow<span style="color:#f92672">&lt;/display-name&gt;</span>
+            <span style="color:#f92672">&lt;description&gt;</span>Workflow execution has stopped on error<span style="color:#f92672">&lt;/description&gt;</span>
+            <span style="color:#f92672">&lt;messages/&gt;</span>
+            <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">hidden=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;messages/&gt;</span>
+                <span style="color:#f92672">&lt;fields&gt;</span>
+                    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;__System_Action&#34;</span> <span style="color:#a6e22e">hidden=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+                        <span style="color:#f92672">&lt;display-name&gt;</span>Choose action to continue<span style="color:#f92672">&lt;/display-name&gt;</span>
+                        <span style="color:#f92672">&lt;description&gt;</span>Choose action to continue<span style="color:#f92672">&lt;/description&gt;</span>
+                        <span style="color:#f92672">&lt;messages/&gt;</span>
+                        <span style="color:#f92672">&lt;constraints/&gt;</span>
+                        <span style="color:#f92672">&lt;decorators&gt;</span>
+                            <span style="color:#f92672">&lt;refresh-on-change/&gt;</span>
+                            <span style="color:#f92672">&lt;drop-down&gt;</span>
+                                <span style="color:#f92672">&lt;array&gt;</span>
+                                    <span style="color:#f92672">&lt;string&gt;</span>Cancel<span style="color:#f92672">&lt;/string&gt;</span>
+                                    <span style="color:#f92672">&lt;string&gt;</span>Resume<span style="color:#f92672">&lt;/string&gt;</span>
+                                <span style="color:#f92672">&lt;/array&gt;</span>
+                            <span style="color:#f92672">&lt;/drop-down&gt;</span>
+                        <span style="color:#f92672">&lt;/decorators&gt;</span>
+                        <span style="color:#f92672">&lt;fields/&gt;</span>
+                    <span style="color:#f92672">&lt;/field&gt;</span>
+                <span style="color:#f92672">&lt;/fields&gt;</span>
+            <span style="color:#f92672">&lt;/group&gt;</span>
+        <span style="color:#f92672">&lt;/step&gt;</span>
+        <span style="color:#f92672">&lt;step</span> <span style="color:#a6e22e">hidden=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;display-name&gt;</span>Parameters<span style="color:#f92672">&lt;/display-name&gt;</span>
+            <span style="color:#f92672">&lt;description&gt;</span>Modify the parameters for resume<span style="color:#f92672">&lt;/description&gt;</span>
+            <span style="color:#f92672">&lt;messages/&gt;</span>
+            <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">hidden=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;messages/&gt;</span>
+                <span style="color:#f92672">&lt;fields&gt;</span>
+                    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;boolean&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;isFailWorkflow&#34;</span> <span style="color:#a6e22e">hidden=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+                        <span style="color:#f92672">&lt;display-name&gt;</span>isFailWorkflow<span style="color:#f92672">&lt;/display-name&gt;</span>
+                        <span style="color:#f92672">&lt;description&gt;</span>isFailWorkflow<span style="color:#f92672">&lt;/description&gt;</span>
+                        <span style="color:#f92672">&lt;messages/&gt;</span>
+                        <span style="color:#f92672">&lt;constraints/&gt;</span>
+                        <span style="color:#f92672">&lt;decorators/&gt;</span>
+                        <span style="color:#f92672">&lt;fields/&gt;</span>
+                        <span style="color:#f92672">&lt;boolean&gt;</span>true<span style="color:#f92672">&lt;/boolean&gt;</span>
+                    <span style="color:#f92672">&lt;/field&gt;</span>
+                    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;Date&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;resume.fail.timeout.date&#34;</span> <span style="color:#a6e22e">hidden=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+                        <span style="color:#f92672">&lt;display-name&gt;</span>resume.fail.timeout.date<span style="color:#f92672">&lt;/display-name&gt;</span>
+                        <span style="color:#f92672">&lt;description&gt;</span>resume.fail.timeout.date<span style="color:#f92672">&lt;/description&gt;</span>
+                        <span style="color:#f92672">&lt;messages/&gt;</span>
+                        <span style="color:#f92672">&lt;constraints/&gt;</span>
+                        <span style="color:#f92672">&lt;decorators/&gt;</span>
+                        <span style="color:#f92672">&lt;fields/&gt;</span>
+                        <span style="color:#f92672">&lt;date&gt;</span>2014-04-26T15:32:40-04:00<span style="color:#f92672">&lt;/date&gt;</span>
+                    <span style="color:#f92672">&lt;/field&gt;</span>
+                <span style="color:#f92672">&lt;/fields&gt;</span>
+            <span style="color:#f92672">&lt;/group&gt;</span>
+        <span style="color:#f92672">&lt;/step&gt;</span>
+    <span style="color:#f92672">&lt;/steps&gt;</span>
+    <span style="color:#f92672">&lt;input-parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;Choose action to continue&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;__System_Action&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;isFailWorkflow&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;boolean&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;isFailWorkflow&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;resume.fail.timeout.date&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;Date&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;resume.fail.timeout.date&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/input-parameters&gt;</span>
+    <span style="color:#f92672">&lt;output-parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;__System_Action&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;Date&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;resume.fail.timeout.date&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;boolean&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;isFailWorkflow&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/output-parameters&gt;</span>
+<span style="color:#f92672">&lt;/presentation&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In the code above, you can see the extra info about the running workflow in the Parameters section of the Steps section.</p>
+<h2 id="prepare-post-body">Prepare POST BODY</h2>
+<p>As noted earlier, resuming a failed workflow is similar to a User Interaction. The <a href="http://pubs.vmware.com/vsphere-55/index.jsp?topic=%2Fcom.vmware.vsphere.vco_develop_web_services.doc%2FGUID-AF6DEC91-FABD-4ABA-8D77-90CA1CCB79AF.html"  target="_blank" rel="noreferrer noopener" >vCO Develop Web Service Documentation</a> - provides details on this.</p>
+<p>After a little testing, I found that the necessary params for my workflow to resume were the &ldquo;isFailWorkflow&rdquo; (this was my Input Parameter for the workflow - if your workflow has additional inputs, you should populate them as well) and the &ldquo;__System_Action&rdquo; Parameter. The &ldquo;__System_Action&rdquo; Parameter is what we saw at the beginning of the article - the drop-down with &ldquo;Resume&rdquo; and &ldquo;Cancel&rdquo;. The third available parameter (resume.fail.timeout.date) is not needed when Submitting the body to resume or cancel the workflow.</p>
+<p>Here&rsquo;s the body required to answer the attached test workflow to get it to Resume using the Resume Failed Workflow feature:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;execution-context</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;parameters&gt;</span>
+     <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;__System_Action&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span><span style="color:#f92672">&gt;</span>
+       <span style="color:#f92672">&lt;string&gt;</span>Resume<span style="color:#f92672">&lt;/string&gt;</span>
+     <span style="color:#f92672">&lt;/parameter&gt;</span>
+     <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;isFailWorkflow&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;boolean&#34;</span><span style="color:#f92672">&gt;</span>
+       <span style="color:#f92672">&lt;string&gt;</span>false<span style="color:#f92672">&lt;/string&gt;</span>
+     <span style="color:#f92672">&lt;/parameter&gt;</span>
+   <span style="color:#f92672">&lt;/parameters&gt;</span>
+<span style="color:#f92672">&lt;/execution-context&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="summary">Summary</h2>
+<p>This article has provided a quick intro to a cool vCO feature and provided a light walk-through of not only using the vCO client to use the feature, but also covered the necessary steps to take advantage of the feature over the REST API :)</p>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/rest/" rel="tag">REST</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/api/" rel="tag">API</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -198,7 +557,7 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
@@ -207,7 +566,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (8)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
@@ -223,24 +582,28 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
 	</div>

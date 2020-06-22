@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Get Addresses in Range - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this 1 article that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simply it by returning the total number of addresses in the range. Either way, I hope you find this code helpful in your workflows.&lt;br /&gt;">
+	<meta name="description" content="Learn how to work with an address range in vRO">
 		<meta property="og:title" content="Get Addresses in Range" />
-<meta property="og:description" content="vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this 1 article that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simply it by returning the total number of addresses in the range. Either way, I hope you find this code helpful in your workflows.&lt;br /&gt;" />
+<meta property="og:description" content="Learn how to work with an address range in vRO" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/articles/learn-vco/293-get-addresses-in-range.html" />
 <meta property="article:published_time" content="2015-01-08T00:00:00+00:00" />
@@ -16,13 +16,13 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Get Addresses in Range"/>
-<meta name="twitter:description" content="vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this 1 article that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simply it by returning the total number of addresses in the range. Either way, I hope you find this code helpful in your workflows.&lt;br /&gt;"/>
+<meta name="twitter:description" content="Learn how to work with an address range in vRO"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 <script type="application/javascript">
@@ -114,30 +114,125 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-01-08T00:00:00Z">January 08, 2015</time></div>
 </div>
 		</header><div class="content post__content clearfix">
-			<p>vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this <!-- raw HTML omitted -->Converting IP Addresses<!-- raw HTML omitted --> article that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simply it by returning the total number of addresses in the range. Either way, I hope you find this code helpful in your workflows.<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<p>var ipList = new Array();</p>
-<p>System.debug(&ldquo;Total Addresses in Range: &ldquo;+((endNum + 1)-startNum));</p>
-<p>for (i = startNum; i != endNum +1 ; i++ ){
-System.debug(num2dot(i));	<!-- raw HTML omitted -->    ipList.push(num2dot(i));
-}
-return ipList;</p>
-<p>// Function source: <a href="http://javascript.about.com/library/blipconvert.htm">http://javascript.about.com/library/blipconvert.htm</a>
-function dot2num(dot) {
-var d = dot.split(&rsquo;.');
-return ((((((+d[0])*256)+(+d[1]))*256)+(+d[2]))*256)+(+d[3]);
-}</p>
-<p>function num2dot(num) {
-var d = num%256;
-for (var i = 3; i &gt; 0; i&ndash;) {
-num = Math.floor(num/256);
-d = num%256 + &lsquo;.&rsquo; + d;
-}
-return d;
-}<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+			<p>vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this <a href="http://javascript.about.com/library/blipconvert.htm"  target="_blank" rel="noreferrer noopener" >Converting IP Addresses</a> article that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simplify it by returning the total number of addresses in the range. Either way, I hope you find this code helpful in your workflows.</p>
+<ul>
+<li>To get started, create an action named <strong>getAddressesInRange</strong></li>
+<li>Set the Return Type to <strong>Array/string</strong> as this will be an array containing ALL the addresses in the range</li>
+<li>Define two inputs: startIP and endIP - both as strings and give them Descriptions as &ldquo;Starting IP Address&rdquo; and &ldquo;Ending IP Address&rdquo; respectively</li>
+<li>Now, paste in the following code for the script</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">startNum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dot2num</span>(<span style="color:#a6e22e">startIP</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endNum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dot2num</span>(<span style="color:#a6e22e">endIP</span>);
 
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ipList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
+
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">debug</span>(<span style="color:#e6db74">&#34;Total Addresses in Range: &#34;</span><span style="color:#f92672">+</span>((<span style="color:#a6e22e">endNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span><span style="color:#a6e22e">startNum</span>));
+
+<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">startNum</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">endNum</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> ; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> ){
+    <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">debug</span>(<span style="color:#a6e22e">num2dot</span>(<span style="color:#a6e22e">i</span>));
+    <span style="color:#a6e22e">ipList</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">num2dot</span>(<span style="color:#a6e22e">i</span>));
+}
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ipList</span>;
+
+<span style="color:#75715e">// Function source: http://javascript.about.com/library/blipconvert.htm
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">dot2num</span>(<span style="color:#a6e22e">dot</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dot</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;.&#39;</span>);
+  <span style="color:#66d9ef">return</span> ((((((<span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">*</span><span style="color:#ae81ff">256</span>)<span style="color:#f92672">+</span>(<span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">1</span>]))<span style="color:#f92672">*</span><span style="color:#ae81ff">256</span>)<span style="color:#f92672">+</span>(<span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">2</span>]))<span style="color:#f92672">*</span><span style="color:#ae81ff">256</span>)<span style="color:#f92672">+</span>(<span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">3</span>]);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">num2dot</span>(<span style="color:#a6e22e">num</span>) {
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">num</span><span style="color:#f92672">%</span><span style="color:#ae81ff">256</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">gt</span>; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span>) {
+    <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">num</span><span style="color:#f92672">/</span><span style="color:#ae81ff">256</span>);
+    <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">num</span><span style="color:#f92672">%</span><span style="color:#ae81ff">256</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">d</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">d</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>Some example output:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plain" data-lang="plain">[2015-01-08 14:57:54.182] [D] Total Addresses in Range: 15
+[2015-01-08 14:57:54.183] [D] 192.168.1.1
+[2015-01-08 14:57:54.185] [D] 192.168.1.2
+[2015-01-08 14:57:54.187] [D] 192.168.1.3
+[2015-01-08 14:57:54.188] [D] 192.168.1.4
+[2015-01-08 14:57:54.190] [D] 192.168.1.5
+[2015-01-08 14:57:54.192] [D] 192.168.1.6
+[2015-01-08 14:57:54.193] [D] 192.168.1.7
+[2015-01-08 14:57:54.195] [D] 192.168.1.8
+[2015-01-08 14:57:54.196] [D] 192.168.1.9
+[2015-01-08 14:57:54.197] [D] 192.168.1.10
+[2015-01-08 14:57:54.199] [D] 192.168.1.11
+[2015-01-08 14:57:54.199] [D] 192.168.1.12
+[2015-01-08 14:57:54.200] [D] 192.168.1.13
+[2015-01-08 14:57:54.201] [D] 192.168.1.14
+[2015-01-08 14:57:54.202] [D] 192.168.1.15
+</code></pre></td></tr></table>
+</div>
+</div>
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vro/" rel="tag">vRO</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -217,7 +312,7 @@ return d;
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
@@ -226,7 +321,7 @@ return d;
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (8)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
@@ -242,24 +337,28 @@ return d;
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
 	</div>

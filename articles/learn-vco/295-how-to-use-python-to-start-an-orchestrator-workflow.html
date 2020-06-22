@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>How to use Python to start an Orchestrator Workflow - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;In a previous article, I taught you how to explore and 1 using a generic browser based REST Client. In this article, I will provide a Python based example of running the &#34;Create a Record&#34; workflow that was created in Part 2 of my 1article. Since I&#34;m not even close to being proficient with Python, this will be a very short article! You may download the script in this article from my 1 on GitHub. Be sure to check out that repo because my colleague has provided a better written Python module there for calling workflows.&lt;/p&gt;">
+	<meta name="description" content="Learn how to start an Orchestrator workflow with Python">
 		<meta property="og:title" content="How to use Python to start an Orchestrator Workflow" />
-<meta property="og:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;In a previous article, I taught you how to explore and 1 using a generic browser based REST Client. In this article, I will provide a Python based example of running the &#34;Create a Record&#34; workflow that was created in Part 2 of my 1article. Since I&#34;m not even close to being proficient with Python, this will be a very short article! You may download the script in this article from my 1 on GitHub. Be sure to check out that repo because my colleague has provided a better written Python module there for calling workflows.&lt;/p&gt;" />
+<meta property="og:description" content="Learn how to start an Orchestrator workflow with Python" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html" />
 <meta property="article:published_time" content="2015-01-29T00:00:00+00:00" />
@@ -16,13 +16,13 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to use Python to start an Orchestrator Workflow"/>
-<meta name="twitter:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;In a previous article, I taught you how to explore and 1 using a generic browser based REST Client. In this article, I will provide a Python based example of running the &#34;Create a Record&#34; workflow that was created in Part 2 of my 1article. Since I&#34;m not even close to being proficient with Python, this will be a very short article! You may download the script in this article from my 1 on GitHub. Be sure to check out that repo because my colleague has provided a better written Python module there for calling workflows.&lt;/p&gt;"/>
+<meta name="twitter:description" content="Learn how to start an Orchestrator workflow with Python"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 <script type="application/javascript">
@@ -114,32 +114,249 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-01-29T00:00:00Z">January 29, 2015</time></div>
 </div>
 		</header><div class="content post__content clearfix">
-			<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h5 id="make-no-changes-below-this-line-">Make no changes below this line</h5>
-<h1 id="import-the-modules-to-handle-http-calls-and-work-with-json">Import the modules to handle HTTP calls and work with json:</h1>
-<h1 id="heading"></h1>
-<h1 id="requests-httpdocspython-requestsorgenlatestuserinstall">requests: <a href="http://docs.python-requests.org/en/latest/user/install/">http://docs.python-requests.org/en/latest/user/install/</a></h1>
-<h1 id="to-install-the-requests-module-python--m-pip-install-requests">To install the &ldquo;requests&rdquo; module, python -m pip install requests</h1>
-<h1 id="json-httpdocspythonorg2libraryjsonhtml">json (<a href="http://docs.python.org/2/library/json.html">http://docs.python.org/2/library/json.html</a>)</h1>
-<h1 id="heading-1"></h1>
-<h5 id="heading-2"></h5>
-<p>import requests, json
-requests.packages.urllib3.disable_warnings()</p>
-<h1 id="create-basic-authorization-for-api">Create basic authorization for API</h1>
-<p>vroAuth = requests.auth.HTTPBasicAuth(usr,pwd)</p>
-<h1 id="set-headers-to-allow-for-json-format">Set headers to allow for json format</h1>
-<p>headers = {&lsquo;Content-Type&rsquo;:&lsquo;application/json&rsquo;,&lsquo;Accept&rsquo;:&lsquo;application/json&rsquo;}
-url = &lsquo;https://&rsquo; + vroServer + &lsquo;/vco/api/workflows/&rsquo; + wfid + &lsquo;/executions&rsquo;
-data = open(jsonFile).read()</p>
-<h1 id="note-verifyfalse-tells-python-to-ignore-ssl-cert-issues">NOTE: verify=False tells Python to ignore SSL Cert issues</h1>
-<h1 id="execute-a-workflow-using-a-json-file-for-the-body">Execute a workflow using a json file for the body:</h1>
-<p>r = requests.post(url, data=data, verify=False, auth=vroAuth, headers=headers)<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->Note:<!-- raw HTML omitted --> Before attempting to run the script, be sure to modify the parameters at the beginning of the script to reflect YOUR workflow.</p>
-<!-- raw HTML omitted -->
+			<p>In a previous article, I taught you how to explore and <a href="/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html" >use the REST API to start a Workflow</a> using a generic browser based REST Client. In this article, I will provide a Python based example of running the &ldquo;Create a Record&rdquo; workflow that was created in Part 2 of my <a href="/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html" >SQL Plug-in Dynamic Types Simple CMDB for vCAC</a>article. Since I&rsquo;m not even close to being proficient with Python, this will be a very short article! You may download the script in this article from my <a href="http://bit.ly/vroClientScripts"  target="_blank" rel="noreferrer noopener" >vroClientScripts Repository on GitHub</a>. Be sure to check out that repo because my colleague has provided a better written Python module there for calling workflows.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>In my efforts to figure out how to consume a REST API using Python, I found the following sites helpful:</p>
+<ul>
+<li><a href="http://www.pythonforbeginners.com/web/how-to-access-various-web-services-in-python"  target="_blank" rel="noreferrer noopener" >http://www.pythonforbeginners.com/web/how-to-access-various-web-services-in-python</a></li>
+<li><a href="http://docs.python-requests.org/en/latest/"  target="_blank" rel="noreferrer noopener" >http://docs.python-requests.org/en/latest/</a></li>
+<li><a href="https://pip.pypa.io/"  target="_blank" rel="noreferrer noopener" >https://pip.pypa.io/</a></li>
+</ul>
+<p>In particular, be sure you have a functional Python install with the &ldquo;requests&rdquo; module installed and ready to use. From what I can tell, the &ldquo;json&rdquo; module is part of the recent Python versions so no extra step should be required to install that.</p>
+<h2 id="the-script">The Script</h2>
+<p>The following code should be saved as something like runWorkflow.py:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-python" data-lang="python"><span style="color:#75715e"># Update for your environment here. Use single quotes around each defined value.</span>
+usr <span style="color:#f92672">=</span> {REPLACE WITH YOUR VRO USERNAME}
+pwd <span style="color:#f92672">=</span> {REPLACE WITH YOUR VRO PASSWORD}
+wfid <span style="color:#f92672">=</span> {REPLACE WITH YOUR VRO WORKFLOW ID}
+<span style="color:#75715e">#NOTE: use double \\ or single / when specifying file path</span>
+jsonFile <span style="color:#f92672">=</span> {REPLACE WITH PATH TO JSON BODY FILE}
+vroServer <span style="color:#f92672">=</span> {REPLACE WITH VRO URL:PORT}
+
+<span style="color:#75715e">##### Make no changes below this line ####</span>
+<span style="color:#75715e"># Import the modules to handle HTTP calls and work with json:</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># requests: http://docs.python-requests.org/en/latest/user/install/</span>
+<span style="color:#75715e"># To install the &#34;requests&#34; module, python -m pip install requests</span>
+<span style="color:#75715e"># json (http://docs.python.org/2/library/json.html)</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#####</span>
+<span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span> json
+requests<span style="color:#f92672">.</span>packages<span style="color:#f92672">.</span>urllib3<span style="color:#f92672">.</span>disable_warnings()
+
+<span style="color:#75715e"># Create basic authorization for API</span>
+vroAuth <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>auth<span style="color:#f92672">.</span>HTTPBasicAuth(usr,pwd)
+<span style="color:#75715e"># Set headers to allow for json format</span>
+headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Content-Type&#39;</span>:<span style="color:#e6db74">&#39;application/json&#39;</span>,<span style="color:#e6db74">&#39;Accept&#39;</span>:<span style="color:#e6db74">&#39;application/json&#39;</span>}
+url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://&#39;</span> <span style="color:#f92672">+</span> vroServer <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/vco/api/workflows/&#39;</span> <span style="color:#f92672">+</span> wfid <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/executions&#39;</span>
+data <span style="color:#f92672">=</span> open(jsonFile)<span style="color:#f92672">.</span>read()
+<span style="color:#75715e"># NOTE: verify=False tells Python to ignore SSL Cert issues</span>
+<span style="color:#75715e"># Execute a workflow using a json file for the body:</span>
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, data<span style="color:#f92672">=</span>data, verify<span style="color:#f92672">=</span>False, auth<span style="color:#f92672">=</span>vroAuth, headers<span style="color:#f92672">=</span>headers)
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Note:</strong> Before attempting to run the script, be sure to modify the parameters at the beginning of the script to reflect YOUR workflow.</p>
+<p>I have kept the script as simple as I can, including the option to NOT Verify the SSL Certificate so that self-signed certs do not prevent the script from running.</p>
+<h2 id="the-json-file">The json file</h2>
+<p>While testing this, my example workflow was the &ldquo;Create a Record&rdquo; workflow as noted earlier. That workflow had a number of inputs so these were loaded into a json file. In order to learn more about how to get the correct input json for your workflow, please reference my article: <a href="/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html" >How to use the REST API to Start a Workflow</a>.</p>
+<p>Here&rsquo;s my example json file:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;parameters&#34;</span>: [
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ServerName&#34;</span>,
+            <span style="color:#f92672">&#34;value&#34;</span>: {
+                <span style="color:#f92672">&#34;string&#34;</span>: {
+                    <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;vcac-iaas-01c&#34;</span>
+                }
+            }
+        },
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ServerIP&#34;</span>,
+            <span style="color:#f92672">&#34;value&#34;</span>: {
+                <span style="color:#f92672">&#34;string&#34;</span>: {
+                    <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;192.168.110.89&#34;</span>
+                }
+            }
+        },
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ServerDNS&#34;</span>,
+            <span style="color:#f92672">&#34;value&#34;</span>: {
+                <span style="color:#f92672">&#34;string&#34;</span>: {
+                    <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;corp.local&#34;</span>
+                }
+            }
+        },
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ServerID&#34;</span>,
+            <span style="color:#f92672">&#34;value&#34;</span>: {
+                <span style="color:#f92672">&#34;string&#34;</span>: {
+                    <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;vcac-iaas-01d.corp.local&#34;</span>
+                }
+            }
+        },
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+            <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ServerOwner&#34;</span>,
+            <span style="color:#f92672">&#34;value&#34;</span>: {
+                <span style="color:#f92672">&#34;string&#34;</span>: {
+                    <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;administrator&#34;</span>
+                }
+            }
+        }
+    ]
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="example-run">Example Run</h2>
+<figure>
+    <img src="/images/scripts-start-workflow/python_example_run.png"
+         alt="python_example_run.png"/> 
+</figure>
+
+<p>I ran the following from my Windows desktop command prompt:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plain" data-lang="plain">C:\tools\python&gt;python e:\runWorkflow.py
+C:\tools\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:734: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+InsecureRequestWarning)
+</code></pre></td></tr></table>
+</div>
+</div><p>When I check the Orchestrator client, I can see that the workflow has run and completed successfully (See screenshot above!)</p>
+<h2 id="help-me-make-this-sample-better">Help Me Make This Sample Better!</h2>
+<p>As noted at the beginning of this article, I don&rsquo;t know Python but I managed to get a very simple example script working here. Please submit your comments and/or improvement suggestions to help increase the value and usefulness of this simple script.</p>
+<h3 id="improvements-needed">Improvements needed</h3>
+<ul>
+<li>Get credentials from a hidden config file</li>
+<li>Pass in all parameters as command line arguments</li>
+<li>Display/parse output</li>
+</ul>
+<p>Thanks!</p>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/rest/" rel="tag">REST</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/api/" rel="tag">API</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -219,7 +436,7 @@ data = open(jsonFile).read()</p>
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
@@ -228,7 +445,7 @@ data = open(jsonFile).read()</p>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (8)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
@@ -244,24 +461,28 @@ data = open(jsonFile).read()</p>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
 	</div>

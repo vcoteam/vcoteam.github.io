@@ -6,10 +6,68 @@
     <description>Recent content in vCO on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Jul 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/vco/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to use perl to start an Orchestrator Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</link>
+      <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</guid>
+      <description>In a previous article, I taught you how to explore and use the REST API to start a Workflow using a generic browser based REST Client. In this article, I will provide a perl based example of running the &amp;ldquo;Create a Record&amp;rdquo; workflow that was created in Part 2 of my SQL Plug-in Dynamic Types Simple CMDB for vCAC article. I have barely more experience with perl than Python so this will be another very short article!</description>
+    </item>
+    
+    <item>
+      <title>How to use Python to start an Orchestrator Workflow</title>
+      <link>http://localhost:1313/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</link>
+      <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</guid>
+      <description>In a previous article, I taught you how to explore and use the REST API to start a Workflow using a generic browser based REST Client. In this article, I will provide a Python based example of running the &amp;ldquo;Create a Record&amp;rdquo; workflow that was created in Part 2 of my SQL Plug-in Dynamic Types Simple CMDB for vCACarticle. Since I&amp;rsquo;m not even close to being proficient with Python, this will be a very short article!</description>
+    </item>
+    
+    <item>
+      <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 3</title>
+      <link>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</link>
+      <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</guid>
+      <description>Welcome back! This is the third article of a multi-part series that steps you through the process of exposing our workflows from the last article to vRealize Automation&amp;rsquo;s (vRA) Advanced Service Designer (ASD).
+Introduction This third article will cover the following topics:
+ How to add the simple CMDB to vRealize Automation&amp;rsquo;s Advanced Service Designer Add a Day 2 operation to delete an Asset from our table  Future article will cover the following topic:</description>
+    </item>
+    
+    <item>
+      <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 2</title>
+      <link>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</link>
+      <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</guid>
+      <description>Welcome back! This is the second article of a multi-part series that steps you through the process of mapping a SQL table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table, then exposing it to vRealize Automation&amp;rsquo;s Advanced Service Designer (ASD). In the first article, we got our database table mapped using the SQL Plug-in and generated some CRUD workflows.
+Introduction Let&amp;rsquo;s build a simple Dynamic Types plug-in around our SQL Table that we created in our previous article.</description>
+    </item>
+    
+    <item>
+      <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 1</title>
+      <link>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</link>
+      <pubDate>Fri, 05 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</guid>
+      <description>This multi-part series will step you through the process of mapping a Microsoft SQL Server table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table (using my workflow package), then exposing it to vRealize Automation&amp;rsquo;s Advanced Service Designer (ASD).
+Introduction vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Input Values Based on other Inputs</title>
+      <link>http://localhost:1313/articles/learn-vco/290-dynamic-input-values-based-on-other-inputs.html</link>
+      <pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/articles/learn-vco/290-dynamic-input-values-based-on-other-inputs.html</guid>
+      <description>A frequent requirement when performing orchestration tasks is to have input fields interdependent. For example, if I input XYZ into the first input, I want the second input to be relevant to XYZ. In the past, I have frequently done such workflows where you select a Datacenter for the first input, then the second input would present a list of Datastores (or VMs or Clusters or Hosts). In this tutorial, I&amp;rsquo;m going to do something a little different.</description>
+    </item>
     
     <item>
       <title>VMware released updated vCenter Configuration Manager vCenter Orchestrator Workflows</title>

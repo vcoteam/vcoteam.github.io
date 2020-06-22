@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 3 - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;Welcome back! This is the third article of a multi-part series that steps you through the process of exposing our workflows from the last article to vRealize Automation&#34;s (vRA) Advanced Service Designer (ASD).&lt;/p&gt;&lt;h2 class=&#34;StepTitle&#34;&gt;Introduction&lt;/h2&gt;&lt;p&gt;This third article will cover the following topics:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;How to add the simple CMDB to vRealize Automation&#34;s Advanced Service Designer&lt;/li&gt;&lt;li&gt;Add a Day 2 operation to delete an Asset from our table">
+	<meta name="description" content="This third article will cover how to add the simple CMDB to vRA&#39;s Advanced Service Designer and Add a Day 2 operation to delete an Asset from our table">
 		<meta property="og:title" content="SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 3" />
-<meta property="og:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;Welcome back! This is the third article of a multi-part series that steps you through the process of exposing our workflows from the last article to vRealize Automation&#34;s (vRA) Advanced Service Designer (ASD).&lt;/p&gt;&lt;h2 class=&#34;StepTitle&#34;&gt;Introduction&lt;/h2&gt;&lt;p&gt;This third article will cover the following topics:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;How to add the simple CMDB to vRealize Automation&#34;s Advanced Service Designer&lt;/li&gt;&lt;li&gt;Add a Day 2 operation to delete an Asset from our table" />
+<meta property="og:description" content="This third article will cover how to add the simple CMDB to vRA&#39;s Advanced Service Designer and Add a Day 2 operation to delete an Asset from our table" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html" />
 <meta property="article:published_time" content="2015-01-27T00:00:00+00:00" />
@@ -16,13 +16,13 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 3"/>
-<meta name="twitter:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;Welcome back! This is the third article of a multi-part series that steps you through the process of exposing our workflows from the last article to vRealize Automation&#34;s (vRA) Advanced Service Designer (ASD).&lt;/p&gt;&lt;h2 class=&#34;StepTitle&#34;&gt;Introduction&lt;/h2&gt;&lt;p&gt;This third article will cover the following topics:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;How to add the simple CMDB to vRealize Automation&#34;s Advanced Service Designer&lt;/li&gt;&lt;li&gt;Add a Day 2 operation to delete an Asset from our table"/>
+<meta name="twitter:description" content="This third article will cover how to add the simple CMDB to vRA&#39;s Advanced Service Designer and Add a Day 2 operation to delete an Asset from our table"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/customCSS">
+	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 <script type="application/javascript">
@@ -114,10 +114,294 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-01-27T00:00:00Z">January 27, 2015</time></div>
 </div>
 		</header><div class="content post__content clearfix">
-			<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+			<p>Welcome back! This is the third article of a multi-part series that steps you through the process of exposing our workflows from the last article to vRealize Automation&rsquo;s (vRA) Advanced Service Designer (ASD).</p>
+<h2 id="introduction">Introduction</h2>
+<p>This third article will cover the following topics:</p>
+<ul>
+<li>How to add the simple CMDB to vRealize Automation&rsquo;s Advanced Service Designer</li>
+<li>Add a Day 2 operation to delete an Asset from our table</li>
+</ul>
+<p>Future article will cover the following topic:</p>
+<ul>
+<li>How to add entries to the CMDB via vRealize Automation Infrastructure as a Service (IaaS) workflow</li>
+</ul>
+<p>Let&rsquo;s get started - Login to vRA with your Tenant Admin credentials. (<strong>NOTE:</strong> Be sure that your account has the &ldquo;Application Architect&rdquo; role assigned since you will need to have the &ldquo;Advanced Services&rdquo; tab available to you in vRA.)</p>
+<h2 id="advanced-services---custom-resource">Advanced Services - Custom Resource</h2>
+<p>Custom Resources map to vRealize Orchestrator Inventory Object types. In the previous articles of this series, we introduced a new Object Type named DynamicTypes:MyCMDB.Asset. We must add this to vRA so that the object is something that can be requested and, more importantly, managed. By managed, I mean that it will be a provisioned resource that is visible on your Items tab in vRA and can have Day 2 operations assigned to it.</p>
+<h2 id="add-resource">Add Resource</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/add_resource.png"
+         alt="add_resource.png"/> 
+</figure>
+
+<ul>
+<li>In vRA, navigate to <strong>Advanced Services</strong> -&gt; <strong>Custom Resources</strong></li>
+<li>Click on the <strong>Add</strong> button to add the new Custom Resource</li>
+<li>When the page loads, enter &ldquo;DynamicTypes&rdquo; in the Orchestrator Type field - you should see a number of object types populate</li>
+<li>Select the &ldquo;DynamicTypes:MyCMDB.Asset&rdquo; entry as shown in the screenshot above</li>
+<li>Provide a <strong>Name</strong> as you wish it to appear in vRA</li>
+<li>Optionally provide a <strong>Description</strong> and <strong>Version</strong></li>
+<li>Click <strong>Next</strong></li>
+</ul>
+<p><strong>NOTE:</strong> If you have just added new Dynamic Types to the Orchestrator server that vRA is using, they may not show here right away. If this is the case, you can force vRA to &ldquo;refresh&rdquo; its view of available DynamicType objects by:<!-- raw HTML omitted --></p>
+<ul>
+<li>Go to <strong>Administration</strong> -&gt; <strong>Advanced Services</strong> -&gt; <strong>Server Configuration</strong></li>
+<li>Change your server configuration from one option to the other (for example, if set as &ldquo;Use the default Orchestrator server,&rdquo; change to &ldquo;Use an external Orchestrator server&rdquo; and vice-versa. Even if you have a single Orchestrator, that is fine - just change between default/external or external/default) - Click Update</li>
+<li>Now change back to your original setting and click Update</li>
+<li>This process essentially reconnects vRA to the Orchestrator API and refreshes the list of available DynamicTypes Object Types</li>
+</ul>
+<h2 id="add-resource---details-form">Add Resource - Details Form</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/add_resource_-_details_form.png"
+         alt="add_resource_-_details_form.png"/> 
+</figure>
+
+<p>There is no need to change any fields here as they are not displayed to your users. Just click the <strong>Add</strong> button.</p>
+<p>Now that vRA understands what a MyCMDB.Asset is, we need to provide a means for the users to actually request it. This means we need a Service Blueprint.</p>
+<h2 id="service-blueprint---workflow">Service Blueprint - Workflow</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/service_blueprint_-_workflow.png"
+         alt="service_blueprint_-_workflow.png"/> 
+</figure>
+
+<ul>
+<li>Click on the <strong>Service Blueprints</strong> link on the left of your vRA page (still on the <strong>Advanced Services</strong> tab)</li>
+<li>Click the <strong>Add</strong> button to define a new Service Blueprint</li>
+<li>Expand out your Orchestrator server and locate your <strong>Create a Record</strong> workflow created in the previous article</li>
+<li>Select it and click <strong>Next</strong></li>
+</ul>
+<h2 id="service-blueprint---details">Service Blueprint - Details</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/service_blueprint_-_details.png"
+         alt="service_blueprint_-_details.png"/> 
+</figure>
+
+<p>The Name and Description on this page are what your users will see when viewing the Catalog so make these user-friendly.</p>
+<ul>
+<li>Change the <strong>Name</strong> field &ldquo;Create a Record&rdquo; to something like &ldquo;Add an Asset&rdquo; or &ldquo;Request an Asset&rdquo; or whatever is to your liking. For this tutorial, I will change it to &ldquo;Add an Asset&rdquo;</li>
+<li>If you wish to hide the catalog request information page (typically not needed), place a check in the box</li>
+<li>Optionally add <strong>Version</strong> info (<strong>NOTE</strong>: If adding Version, must be in format of <em>major.minor.micro[-revision]</em> for example <em>1.0.0</em> <strong>OR</strong> <em>1.0.1-1</em>)</li>
+<li>Click <strong>Next</strong></li>
+</ul>
+<h2 id="service-blueprint---blueprint-form">Service Blueprint - Blueprint Form</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/service_blueprint_-_blueprint_form.png"
+         alt="service_blueprint_-_blueprint_form.png"/> 
+</figure>
+
+<p>The Blueprint Form is the actual form your users will fill out after they click on the Request button of the Catalog entry.</p>
+<p>You may leave the form as-is or customize the Display name of the inputs and/or hide or set default values. At the very least, be sure to mark your required inputs as described in the &ldquo;NOTE&rdquo; below. Notice how the two &ldquo;Required&rdquo; fields are indicated with a red *.
+<strong>NOTE:</strong> VERY IMPORTANT - The fields you specified as ID and NAME (in my case, Serverid and Servername respectively) MUST be filled out in order for the DynamicTypes to work properly. Failure to enforce this will result in a broken inventory. During the workflow creation in vRO, we specified these two fields as being mandatory but this input property did not carry over to the form designer. It is highly recommended to:</p>
+<ul>
+<li>Mouse-over the Servername input field, then click the edit icon (pencil) that appears to the far right</li>
+<li>Click on the &ldquo;Constraints&rdquo; tab of the pop-up window, then change &ldquo;Required&rdquo; to &ldquo;Constant&rdquo; with a value of &ldquo;Yes&rdquo;, then click Submit</li>
+<li>Repeat the steps above for the Serverid input</li>
+</ul>
+<p>Click <strong>Next</strong> when done modifying the form</p>
+<h2 id="service-blueprint---provisioned-resource">Service Blueprint - Provisioned Resource</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/service_blueprint_-_provisioned_resource.png"
+         alt="service_blueprint_-_provisioned_resource.png"/> 
+</figure>
+
+<p>In some cases, you may want to allow vRA to present a request form that runs an Orchestrator workflow that does not result in a provisioned/manageable resource. However, this tutorial is not one of those cases. We want the result of a request to be visible in our Items tab so we must identify a Custom Resource that will be created when the workflow has been completed.</p>
+<ul>
+<li>Click the Drop-down box and select the &ldquo;assetOut[Asset]&rdquo; entry. This is the Output field of the workflow we selected. We can choose it here because it has the same type as a Custom Resource we defined earlier in this article.</li>
+<li>Click <strong>Add</strong></li>
+</ul>
+<h2 id="service-blueprints---publish">Service Blueprints - Publish</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/service_blueprints_-_publish.png"
+         alt="service_blueprints_-_publish.png"/> 
+</figure>
+
+<p>Once a Service Blueprint has been created, it is immediately placed in &ldquo;Draft&rdquo; status. This means it will not be available as a catalog item to be assigned to services. Before navigating away from this page:</p>
+<p>Select the &ldquo;Add an Asset&rdquo; row, then click the <strong>Publish</strong> button</p>
+<p>Confirm that the <strong>Status</strong> of that row changes to <em>Published</em></p>
+<p>We still need to Add this Service Blueprint/Catalog Item to a Service so that it may be entitled, but let&rsquo;s go ahead and add our Day 2 operation while we&rsquo;re still in the <strong>Advanced Services</strong> tab first.</p>
+<h2 id="day-2-operation---delete-record">Day 2 Operation - Delete Record</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/day_2_operation_-_delete_record.png"
+         alt="day_2_operation_-_delete_record.png"/> 
+</figure>
+
+<p>Click <strong>Resource Actions</strong>, then click the <strong>Add</strong> button to create a new one.</p>
+<p>This time for Select a Workflow, select your <strong>Delete a Record</strong> workflow and click <strong>Next</strong></p>
+<h2 id="day-2-operation---input-resource">Day 2 Operation - Input Resource</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/day_2_operation_-_input_resource.png"
+         alt="day_2_operation_-_input_resource.png"/> 
+</figure>
+
+<p>The <strong>Resource type</strong> and <strong>Input parameter</strong> should already be selected as &ldquo;Asset&rdquo; and &ldquo;asset&rdquo; respectively so click <strong>Next</strong></p>
+<h2 id="day-2-operation---details">Day 2 Operation - Details</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/day_2_operation_-_details.png"
+         alt="day_2_operation_-_details.png"/> 
+</figure>
+
+<p>The <strong>Name</strong> specified here is what users will see as an avaialble action for the selected resource.</p>
+<ul>
+<li>Change the value to something appropriate. For the purpose of this article, I will change mine to <strong>Delete Asset</strong></li>
+<li>You may optionally Hide the catalog request information page ( I will ) as well as set a Version</li>
+<li>For Type, be sure to tick the <strong>Disposal</strong> field so that vRA knows that the provisioned Item is being disposed</li>
+<li>Leave Target Criteria as the default</li>
+<li>Click <strong>Next</strong></li>
+</ul>
+<h2 id="day-2-operation---form">Day 2 Operation - Form</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/day_2_operation_-_form.png"
+         alt="day_2_operation_-_form.png"/> 
+</figure>
+
+<p>Although the workflow input is already set for the Asset, it may be a good idea to provide some text here as a warning.</p>
+<p>Scroll to the bottom of the left pane until you see the &ldquo;Form&rdquo; section.</p>
+<p>Drag a &ldquo;Text&rdquo; piece to the right pane where it says &ldquo;Drag an item from the palette&rdquo;</p>
+<p>Click the Edit (pencil) icon for the Text, change the Size to Large, and for text enter your warning text.</p>
+<p>Click <strong>Add</strong> when done (when prompted for the empty form action, click OK)</p>
+<h2 id="resource-action---publish">Resource Action - Publish</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/resource_action_-_publish.png"
+         alt="resource_action_-_publish.png"/> 
+</figure>
+
+<p>Like the Service Blueprint, the default status of a newly created Resource Action is <em>Draft</em> so select it and click <strong>Publish</strong>.</p>
+<h2 id="services--entitlements">Services / Entitlements</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/services__entitlements.png"
+         alt="services__entitlements.png"/> 
+</figure>
+
+<p>Okay, so we have a new Service Blueprint/Catalog Item and a Resource Action, and they&rsquo;re both published, but at this point nobody can request or do anything with the Asset. The final steps to get this functional are to:</p>
+<ul>
+<li>Add the Catalog Item to a Service</li>
+<li>Entitle the Service (if new) and Resource Action</li>
+</ul>
+<p>To keep this new offering separate from my existing services (IaaS, PaaS, and SaaS), I will create a new Service called <strong>CMDB</strong></p>
+<p>Under <strong>Administration</strong> -&gt; <strong>Catalog Management</strong> -&gt; <strong>Services</strong>, click <strong>Add</strong> to create a new service named CMDB and Activate it.</p>
+<p>Select your newly created Service (or an existing one if you already have one to use)</p>
+<p>Click the &ldquo;Manage Catalog Items&rdquo; button</p>
+<h2 id="services---manage-catalog-items">Services - Manage Catalog Items</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/services_-_manage_catalog_items.png"
+         alt="services_-_manage_catalog_items.png"/> 
+</figure>
+
+<p>Click the Green + to add Catalog Items to this service</p>
+<p>When the pop-up window appears, select the &ldquo;Add an Asset&rdquo; item we created earlier in this article (If it does not show, perhaps you forgot to <strong>Publish</strong> it)</p>
+<p>Click <strong>Add</strong> when done</p>
+<h2 id="entitlement">Entitlement</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/entitlement.png"
+         alt="entitlement.png"/> 
+</figure>
+
+<p>If you have an existing Entitlement you wish to use, go ahead and add the Catalog item and Resource action to that Entitlement.</p>
+<p>Navigate to <strong>Administration</strong> -&gt; <strong>Catalog Management</strong> -&gt; <strong>Entitlements</strong> , then click the Green +<strong>Add</strong> button to create a new Entitlement if not using an existing one.</p>
+<p>Give your new Entitlement a meaningful name, I&rsquo;ve chosen &ldquo;CMDB Entitlement&rdquo;</p>
+<p>Set the status <strong>Active</strong></p>
+<p>Select the <strong>Business Group</strong> you wish to entitle the CMDB services to, I&rsquo;ve chosen &ldquo;RP PreProd Group&rdquo;</p>
+<p>Finally, Select one or more <strong>Users &amp; Groups</strong> - you&rsquo;ll need to type a name and press Enter to see the selection list show</p>
+<p>Click <strong>Next</strong> when done</p>
+<h2 id="entitlement---items-amp-approvals">Entitlement - Items &amp; Approvals</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/entitlement_-_items___approvals.png"
+         alt="entitlement_-_items___approvals.png"/> 
+</figure>
+
+<p>On the Items &amp; Approvals tab, you can specify which Services, Catalog Items (if not assigned to a Service), and Actions to include in the Entitlement. You can optionally specify an approval policy for each as well.</p>
+<p>Next to &ldquo;Entitled Services&rdquo;, click the Green +, then select the recently created Service &ldquo;CMDB&rdquo;</p>
+<p>Next to &ldquo;Entitled Actions&rdquo;, click the Green +, then select the recently created action &ldquo;Delete Asset&rdquo;</p>
+<p>Click <strong>Add</strong></p>
+<h2 id="catalog---cmdb">Catalog - CMDB</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/catalog_-_cmdb.png"
+         alt="catalog_-_cmdb.png"/> 
+</figure>
+
+<p>You are now ready to test the solution!</p>
+<ul>
+<li>Be sure you are logged in with an account that has been entitled and click on the <strong>Catalog</strong> tab, then selct your <strong>CMDB</strong> services group</li>
+<li>Click <strong>Request</strong> on the <strong>Add an Asset</strong> Catalog Item</li>
+</ul>
+<h2 id="catalog---new-request">Catalog - New Request</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/catalog_-_new_request.png"
+         alt="catalog_-_new_request.png"/> 
+</figure>
+
+<p>Fill out the form as desired and click submit!</p>
+<h2 id="items---dynamic-types">Items - Dynamic Types</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/items_-_dynamic_types.png"
+         alt="items_-_dynamic_types.png"/> 
+</figure>
+
+<p>Click on the Items tab</p>
+<p>(If you don&rsquo;t immediately see your requested item, give it a moment, then cick the <em><strong>Refresh</strong></em> icon at the bottom of the window</p>
+<p>Select the row of your new item, then click the <strong>Actions</strong> button - a list of all your Day 2 operations/Resource Actions that have been entitled for you on this object type will be shown - Don&rsquo;t click Delete yet!</p>
+<p>Click the <strong>View Details</strong> button or the Name of your item to view the item details.</p>
+<h2 id="item-details">Item Details</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/item_details.png"
+         alt="item_details.png"/> 
+</figure>
+
+<p>On the details page, you can see more information on the request.</p>
+<p>On the right-side of the screen, all entitled Resource Actions for the object type provisioned will be shown.</p>
+<p>Go ahead and click on the <strong>Delete Asset</strong> link now.</p>
+<h2 id="delete-asset">Delete Asset</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/delete_asset.png"
+         alt="delete_asset.png"/> 
+</figure>
+
+<p>Notice how the warning text we provided earlier is now shown.</p>
+<p>Click Submit to delete the provisioned item.</p>
+<p>It will take a minute or so for the item to be gone from vRA. If desired, click the <strong>Refresh</strong> button at the bottom of the page to verify the item has been deleted.</p>
+<h2 id="vrealize-orchestrator---completed-workflows">vRealize Orchestrator - Completed Workflows</h2>
+<figure>
+    <img src="/images/sql-dynamictypes/vrealize_orchestrator_-_completed_workflows.png"
+         alt="vrealize_orchestrator_-_completed_workflows.png"/> 
+</figure>
+
+<p>During the course of this article, we Requested an Asset and later deleted it. The engine behind the Request/Delete operations was Orchestrator and the workflows we created in a previous article.</p>
+<p>If you log into your Orchestrator client and check your &ldquo;Create a Record&rdquo; and &ldquo;Delete a Record&rdquo; workflows, you will see completed workflows as shown above.</p>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>This concludes the third article in the series.</p>
+<p>Previous Articles in series:</p>
+<ol>
+<li><a href="/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html" >SQL Plug-in + DynamicTypes = Simple CMDB for vCAC - Part 1</a></li>
+<li><a href="/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html" >SQL Plug-in + DynamicTypes = Simple CMDB for vCAC - Part 2</a></li>
+</ol>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vro/" rel="tag">vRO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vra/" rel="tag">vRA</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcac/" rel="tag">vCAC</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/sql/" rel="tag">SQL</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/dynamictypes/" rel="tag">DynamicTypes</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -197,7 +481,7 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
@@ -206,7 +490,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (8)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
@@ -222,24 +506,28 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
 	</div>
