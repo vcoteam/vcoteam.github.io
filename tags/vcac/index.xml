@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vcac on </title>
-    <link>http://localhost:1313/tags/vcac.html</link>
+    <link>http://new.vcoteam.info/tags/vcac.html</link>
     <description>Recent content in vcac on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Feb 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/vcac/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://new.vcoteam.info/tags/vcac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Create a plug-in for a REST based web service in minutes - part 1</title>
-      <link>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</link>
       <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</guid>
       <description>In a previous article I have explained how Dynamic Types work and how these are very useful to create a vCO / vRO plugin that will enable the XaaS capabilitites of vCAC / vRA.
 Then explained how to build your own twitter plug-in using the plug-in generator package. I have now extended the capabilities of the plug-in generator and will attempt to demonstrate these in this new series of articles. This article use NSX as the orchestrated endpoint but following the explanation included on this tutorial you should be able to get it to work with many REST web service.</description>
     </item>
     
     <item>
       <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 3</title>
-      <link>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</link>
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</guid>
       <description>Welcome back! This is the third article of a multi-part series that steps you through the process of exposing our workflows from the last article to vRealize Automation&amp;rsquo;s (vRA) Advanced Service Designer (ASD).
 Introduction This third article will cover the following topics:
  How to add the simple CMDB to vRealize Automation&amp;rsquo;s Advanced Service Designer Add a Day 2 operation to delete an Asset from our table  Future article will cover the following topic:</description>
@@ -34,40 +34,40 @@ Introduction This third article will cover the following topics:
     
     <item>
       <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 2</title>
-      <link>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</link>
       <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</guid>
       <description>Welcome back! This is the second article of a multi-part series that steps you through the process of mapping a SQL table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table, then exposing it to vRealize Automation&amp;rsquo;s Advanced Service Designer (ASD). In the first article, we got our database table mapped using the SQL Plug-in and generated some CRUD workflows.
 Introduction Let&amp;rsquo;s build a simple Dynamic Types plug-in around our SQL Table that we created in our previous article.</description>
     </item>
     
     <item>
       <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 1</title>
-      <link>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</link>
       <pubDate>Fri, 05 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</guid>
       <description>This multi-part series will step you through the process of mapping a Microsoft SQL Server table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table (using my workflow package), then exposing it to vRealize Automation&amp;rsquo;s Advanced Service Designer (ASD).
 Introduction vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object.</description>
     </item>
     
     <item>
       <title>Extend Automation Center with F5 AFM using vCO &#43; Dynamic Types </title>
-      <link>http://localhost:1313/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</link>
       <pubDate>Mon, 13 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</guid>
       <description>My colleague, Chris Slater at defined by software has published an article on how to extend VMware Automation Center (vCAC) with F5 firewall functionality. I usually do not cross post articles but this one is worth mentioning since it is a real world example on how to leverage vCAC + vCO + Dynamic Types + third party API.
 The first part of the article explains the different options available to automate F5 including the F5 plug-in for vCO, PowerShell, the big IP CLI, the SOAP and REST APIs and give an overview of the solution.</description>
     </item>
     
     <item>
       <title>Extend vCAC 6 IaaS Lifecycle with vCO introduction video</title>
-      <link>http://localhost:1313/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</link>
       <pubDate>Mon, 05 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</guid>
       <description>Last year I have created an extensibility package to simplify and automate the steps necessary to extend the vCAC IaaS lifecycle process with calling out vCO workflows. While this was mainly aimed at accelerating Proof of Concepts it has been since then broadly adopted in production environments. Since vCAC 6.0 it is part of the product and available for vCAC 5.2 as a separate download.
 Since this is now becoming a very hot topic I am including here a very useful extensibility introduction video that was released by my colleagues from tech marketing almost three months ago.</description>
     </item>

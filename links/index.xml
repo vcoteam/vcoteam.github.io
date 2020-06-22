@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Links on </title>
-    <link>http://localhost:1313/links.html</link>
+    <link>http://new.vcoteam.info/links.html</link>
     <description>Recent content in Links on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 Jun 2010 15:53:08 -0400</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/links/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://new.vcoteam.info/links/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

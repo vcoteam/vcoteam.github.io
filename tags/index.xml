@@ -2,462 +2,462 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>http://localhost:1313/tags.html</link>
+    <link>http://new.vcoteam.info/tags.html</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://new.vcoteam.info/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blueprint</title>
-      <link>http://localhost:1313/tags/blueprint.html</link>
+      <link>http://new.vcoteam.info/tags/blueprint.html</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/blueprint.html</guid>
+      <guid>http://new.vcoteam.info/tags/blueprint.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kubernetes</title>
-      <link>http://localhost:1313/tags/kubernetes.html</link>
+      <link>http://new.vcoteam.info/tags/kubernetes.html</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/kubernetes.html</guid>
+      <guid>http://new.vcoteam.info/tags/kubernetes.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRA</title>
-      <link>http://localhost:1313/tags/vra.html</link>
+      <link>http://new.vcoteam.info/tags/vra.html</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vra.html</guid>
+      <guid>http://new.vcoteam.info/tags/vra.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Container</title>
-      <link>http://localhost:1313/tags/container.html</link>
+      <link>http://new.vcoteam.info/tags/container.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/container.html</guid>
+      <guid>http://new.vcoteam.info/tags/container.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>CoreDNS</title>
-      <link>http://localhost:1313/tags/coredns.html</link>
+      <link>http://new.vcoteam.info/tags/coredns.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/coredns.html</guid>
+      <guid>http://new.vcoteam.info/tags/coredns.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>DNS</title>
-      <link>http://localhost:1313/tags/dns.html</link>
+      <link>http://new.vcoteam.info/tags/dns.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/dns.html</guid>
+      <guid>http://new.vcoteam.info/tags/dns.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>http://localhost:1313/tags/docker.html</link>
+      <link>http://new.vcoteam.info/tags/docker.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/docker.html</guid>
+      <guid>http://new.vcoteam.info/tags/docker.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker-compose</title>
-      <link>http://localhost:1313/tags/docker-compose.html</link>
+      <link>http://new.vcoteam.info/tags/docker-compose.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/docker-compose.html</guid>
+      <guid>http://new.vcoteam.info/tags/docker-compose.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
-      <link>http://localhost:1313/tags/github.html</link>
+      <link>http://new.vcoteam.info/tags/github.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/github.html</guid>
+      <guid>http://new.vcoteam.info/tags/github.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lab</title>
-      <link>http://localhost:1313/tags/lab.html</link>
+      <link>http://new.vcoteam.info/tags/lab.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/lab.html</guid>
+      <guid>http://new.vcoteam.info/tags/lab.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microsoft</title>
-      <link>http://localhost:1313/tags/microsoft.html</link>
+      <link>http://new.vcoteam.info/tags/microsoft.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/microsoft.html</guid>
+      <guid>http://new.vcoteam.info/tags/microsoft.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>plug-in</title>
-      <link>http://localhost:1313/tags/plug-in.html</link>
+      <link>http://new.vcoteam.info/tags/plug-in.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/plug-in.html</guid>
+      <guid>http://new.vcoteam.info/tags/plug-in.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRA 7.x</title>
-      <link>http://localhost:1313/tags/vra-7.x.html</link>
+      <link>http://new.vcoteam.info/tags/vra-7.x.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vra-7.x.html</guid>
+      <guid>http://new.vcoteam.info/tags/vra-7.x.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRealize Automation</title>
-      <link>http://localhost:1313/tags/vrealize-automation.html</link>
+      <link>http://new.vcoteam.info/tags/vrealize-automation.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vrealize-automation.html</guid>
+      <guid>http://new.vcoteam.info/tags/vrealize-automation.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRealize Orchestrator</title>
-      <link>http://localhost:1313/tags/vrealize-orchestrator.html</link>
+      <link>http://new.vcoteam.info/tags/vrealize-orchestrator.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vrealize-orchestrator.html</guid>
+      <guid>http://new.vcoteam.info/tags/vrealize-orchestrator.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRO 7.x</title>
-      <link>http://localhost:1313/tags/vro-7.x.html</link>
+      <link>http://new.vcoteam.info/tags/vro-7.x.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vro-7.x.html</guid>
+      <guid>http://new.vcoteam.info/tags/vro-7.x.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>curl</title>
-      <link>http://localhost:1313/tags/curl.html</link>
+      <link>http://new.vcoteam.info/tags/curl.html</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/curl.html</guid>
+      <guid>http://new.vcoteam.info/tags/curl.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>homelab</title>
-      <link>http://localhost:1313/tags/homelab.html</link>
+      <link>http://new.vcoteam.info/tags/homelab.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/homelab.html</guid>
+      <guid>http://new.vcoteam.info/tags/homelab.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>NUC</title>
-      <link>http://localhost:1313/tags/nuc.html</link>
+      <link>http://new.vcoteam.info/tags/nuc.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/nuc.html</guid>
+      <guid>http://new.vcoteam.info/tags/nuc.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSAN</title>
-      <link>http://localhost:1313/tags/vsan.html</link>
+      <link>http://new.vcoteam.info/tags/vsan.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vsan.html</guid>
+      <guid>http://new.vcoteam.info/tags/vsan.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>PowerCLI</title>
-      <link>http://localhost:1313/tags/powercli.html</link>
+      <link>http://new.vcoteam.info/tags/powercli.html</link>
       <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/powercli.html</guid>
+      <guid>http://new.vcoteam.info/tags/powercli.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRO</title>
-      <link>http://localhost:1313/tags/vro.html</link>
+      <link>http://new.vcoteam.info/tags/vro.html</link>
       <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vro.html</guid>
+      <guid>http://new.vcoteam.info/tags/vro.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>bootable usb</title>
-      <link>http://localhost:1313/tags/bootable-usb.html</link>
+      <link>http://new.vcoteam.info/tags/bootable-usb.html</link>
       <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/bootable-usb.html</guid>
+      <guid>http://new.vcoteam.info/tags/bootable-usb.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hackathon</title>
-      <link>http://localhost:1313/tags/hackathon.html</link>
+      <link>http://new.vcoteam.info/tags/hackathon.html</link>
       <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/hackathon.html</guid>
+      <guid>http://new.vcoteam.info/tags/hackathon.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>VMworld</title>
-      <link>http://localhost:1313/tags/vmworld.html</link>
+      <link>http://new.vcoteam.info/tags/vmworld.html</link>
       <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vmworld.html</guid>
+      <guid>http://new.vcoteam.info/tags/vmworld.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>AD</title>
-      <link>http://localhost:1313/tags/ad.html</link>
+      <link>http://new.vcoteam.info/tags/ad.html</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/ad.html</guid>
+      <guid>http://new.vcoteam.info/tags/ad.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>API</title>
-      <link>http://localhost:1313/tags/api.html</link>
+      <link>http://new.vcoteam.info/tags/api.html</link>
       <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/api.html</guid>
+      <guid>http://new.vcoteam.info/tags/api.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>REST</title>
-      <link>http://localhost:1313/tags/rest.html</link>
+      <link>http://new.vcoteam.info/tags/rest.html</link>
       <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/rest.html</guid>
+      <guid>http://new.vcoteam.info/tags/rest.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swagger</title>
-      <link>http://localhost:1313/tags/swagger.html</link>
+      <link>http://new.vcoteam.info/tags/swagger.html</link>
       <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/swagger.html</guid>
+      <guid>http://new.vcoteam.info/tags/swagger.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>http://localhost:1313/tags/linux.html</link>
+      <link>http://new.vcoteam.info/tags/linux.html</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/linux.html</guid>
+      <guid>http://new.vcoteam.info/tags/linux.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>networkManager</title>
-      <link>http://localhost:1313/tags/networkmanager.html</link>
+      <link>http://new.vcoteam.info/tags/networkmanager.html</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/networkmanager.html</guid>
+      <guid>http://new.vcoteam.info/tags/networkmanager.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>nmcli</title>
-      <link>http://localhost:1313/tags/nmcli.html</link>
+      <link>http://new.vcoteam.info/tags/nmcli.html</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/nmcli.html</guid>
+      <guid>http://new.vcoteam.info/tags/nmcli.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vAPI</title>
-      <link>http://localhost:1313/tags/vapi.html</link>
+      <link>http://new.vcoteam.info/tags/vapi.html</link>
       <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vapi.html</guid>
+      <guid>http://new.vcoteam.info/tags/vapi.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>presentation</title>
-      <link>http://localhost:1313/tags/presentation.html</link>
+      <link>http://new.vcoteam.info/tags/presentation.html</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/presentation.html</guid>
+      <guid>http://new.vcoteam.info/tags/presentation.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>json</title>
-      <link>http://localhost:1313/tags/json.html</link>
+      <link>http://new.vcoteam.info/tags/json.html</link>
       <pubDate>Fri, 29 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/json.html</guid>
+      <guid>http://new.vcoteam.info/tags/json.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>http</title>
-      <link>http://localhost:1313/tags/http.html</link>
+      <link>http://new.vcoteam.info/tags/http.html</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/http.html</guid>
+      <guid>http://new.vcoteam.info/tags/http.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>log</title>
-      <link>http://localhost:1313/tags/log.html</link>
+      <link>http://new.vcoteam.info/tags/log.html</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/log.html</guid>
+      <guid>http://new.vcoteam.info/tags/log.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>DynamicTypes</title>
-      <link>http://localhost:1313/tags/dynamictypes.html</link>
+      <link>http://new.vcoteam.info/tags/dynamictypes.html</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/dynamictypes.html</guid>
+      <guid>http://new.vcoteam.info/tags/dynamictypes.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>NSX</title>
-      <link>http://localhost:1313/tags/nsx.html</link>
+      <link>http://new.vcoteam.info/tags/nsx.html</link>
       <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/nsx.html</guid>
+      <guid>http://new.vcoteam.info/tags/nsx.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vcac</title>
-      <link>http://localhost:1313/tags/vcac.html</link>
+      <link>http://new.vcoteam.info/tags/vcac.html</link>
       <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vcac.html</guid>
+      <guid>http://new.vcoteam.info/tags/vcac.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>PowerShell</title>
-      <link>http://localhost:1313/tags/powershell.html</link>
+      <link>http://new.vcoteam.info/tags/powershell.html</link>
       <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/powershell.html</guid>
+      <guid>http://new.vcoteam.info/tags/powershell.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>perl</title>
-      <link>http://localhost:1313/tags/perl.html</link>
+      <link>http://new.vcoteam.info/tags/perl.html</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/perl.html</guid>
+      <guid>http://new.vcoteam.info/tags/perl.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>http://localhost:1313/tags/python.html</link>
+      <link>http://new.vcoteam.info/tags/python.html</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/python.html</guid>
+      <guid>http://new.vcoteam.info/tags/python.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCO</title>
-      <link>http://localhost:1313/tags/vco.html</link>
+      <link>http://new.vcoteam.info/tags/vco.html</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vco.html</guid>
+      <guid>http://new.vcoteam.info/tags/vco.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
-      <link>http://localhost:1313/tags/sql.html</link>
+      <link>http://new.vcoteam.info/tags/sql.html</link>
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/sql.html</guid>
+      <guid>http://new.vcoteam.info/tags/sql.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>F5 Networks</title>
-      <link>http://localhost:1313/tags/f5-networks.html</link>
+      <link>http://new.vcoteam.info/tags/f5-networks.html</link>
       <pubDate>Mon, 13 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/f5-networks.html</guid>
+      <guid>http://new.vcoteam.info/tags/f5-networks.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCloud Director</title>
-      <link>http://localhost:1313/tags/vcloud-director.html</link>
+      <link>http://new.vcoteam.info/tags/vcloud-director.html</link>
       <pubDate>Mon, 28 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vcloud-director.html</guid>
+      <guid>http://new.vcoteam.info/tags/vcloud-director.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>plug-ins</title>
-      <link>http://localhost:1313/tags/plug-ins.html</link>
+      <link>http://new.vcoteam.info/tags/plug-ins.html</link>
       <pubDate>Wed, 19 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/plug-ins.html</guid>
+      <guid>http://new.vcoteam.info/tags/plug-ins.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCenter Orchestrator</title>
-      <link>http://localhost:1313/tags/vcenter-orchestrator.html</link>
+      <link>http://new.vcoteam.info/tags/vcenter-orchestrator.html</link>
       <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vcenter-orchestrator.html</guid>
+      <guid>http://new.vcoteam.info/tags/vcenter-orchestrator.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Storage I/O</title>
-      <link>http://localhost:1313/tags/storage-i/o.html</link>
+      <link>http://new.vcoteam.info/tags/storage-i/o.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/storage-i/o.html</guid>
+      <guid>http://new.vcoteam.info/tags/storage-i/o.html</guid>
       <description></description>
     </item>
     

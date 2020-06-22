@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vRO on </title>
-    <link>http://localhost:1313/tags/vro.html</link>
+    <link>http://new.vcoteam.info/tags/vro.html</link>
     <description>Recent content in vRO on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/vro/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://new.vcoteam.info/tags/vro/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to Disable Storage I/O Stats Collection with PowerCLI or vRO</title>
-      <link>http://localhost:1313/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html</link>
       <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html</guid>
       <description>I recently came across a thread asking about how to disable Storage I/O Statistics Collection using PowerCLI. The thread referenced this article by Michael Webster: Disable SIOC IO Metrics Collection For Auto Tiering Storage Systems. In one of the comments, someone asked about using PowerCLI.. Unfortunately there was no answer there so I thought - I might be able to figure this out! With regards to checking that box, I can&amp;rsquo;t say whether it&amp;rsquo;s a good idea or not, my purpose here was just to illustrate how to do it via PowerCLI and vRO.</description>
     </item>
     
     <item>
       <title>How to Configure vRA&#39;s Embedded vRO to Allow Domain Account Login</title>
-      <link>http://localhost:1313/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</guid>
       <description>Two years ago, I wrote a similar article around vCAC&amp;rsquo;s embedded vCO but a lot has changed since then so those older steps no longer apply. This brief article will quickly walk you through the steps required to allow vRealize Automation 7.0/7.1/7.2&amp;rsquo;s embedded vRealize Orchestrator to allow Active Directory Domain accounts login to the vRO Client.
 Pre-Requisites This article assumes the following:
  vRealize Automation 7.0-7.2 is installed and configured (NOTE: This has not been tested with 7.</description>
@@ -33,48 +33,48 @@ Pre-Requisites This article assumes the following:
     
     <item>
       <title>How to limit number of workflow tokens</title>
-      <link>http://localhost:1313/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html</link>
       <pubDate>Wed, 05 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html</guid>
       <description>Each time vRealize Orchestrator (vRO) runs a workflow, a token (workflow execution) is added beneath the workflow in the vRO client. By default vRO will keep up to 100 of these tokens! This may be a slight annoyance to people who are only interested in the last 5-20 runs. This article will shed some light on the configuration options you have available to you.
 Tired of seeing too many workflow tokens?</description>
     </item>
     
     <item>
       <title>Introducing Swagger UI on vRO 7.0.1</title>
-      <link>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</link>
+      <link>http://new.vcoteam.info/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</link>
       <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</guid>
+      <guid>http://new.vcoteam.info/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</guid>
       <description>Although vRealize Orchestrator (vRO) has provided API documentation built-in to the server, it was static content that could not be quickly used for tests or building queries. When a product provides a nice API explorer that not only tells you the available urls and basic docs, but also provides a web-based UI that allows you to quickly build up custom calls and shows you the generated content, the consumption and integration time for developers is reduced considerably.</description>
     </item>
     
     <item>
       <title>Synchronize Presentation Settings from embedded workflow</title>
-      <link>http://localhost:1313/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html</guid>
       <description>VMware&amp;rsquo;s vRealize Orchestrator (vRO) is all about modular, reusable components. Many times you wish to call an existing workflow from your own custom workflow but don&amp;rsquo;t want to manually re-create all the different presentation settings. It&amp;rsquo;s not such a big task if there are only one or two workflows, but how about when there are 10+ ? Good news is that you don&amp;rsquo;t have to! This quick little video demonstrates how to Synchronize the Presentation of an embedded workflow to your own.</description>
     </item>
     
     <item>
       <title>Creating json objects in Orchestrator</title>
-      <link>http://localhost:1313/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</link>
       <pubDate>Fri, 29 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</guid>
       <description>Recently I saw a pair of articles by @RoeyAzroel on vRO XML &amp;amp; JSON Gotcha! - Part 1 and Part 2. This reminded me that I had some sample code that I refer to when working with json as well so figured I would share here.
 Be sure you know about the JSON object and its .parse and .stringify methods since they do not appear anywhere in the Orchestrator&amp;rsquo;s API explorer or documentation.</description>
     </item>
     
     <item>
       <title>Create a plug-in for a REST based web service in minutes - Part 4</title>
-      <link>http://localhost:1313/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</guid>
       <description>In part 1 and part 2 we created the inventory objects, in part 3 we created methods for this objects and ran a generic workflow to run these methods.
 In this article we will create workflows for calling these methods, include them in a package with all the plug-in configuration to ship it to our end users.
 Creating the workflows The invoke workflows in the plug-in facilitate running REST operations. End users and or external system will expect simpler workflows.</description>
@@ -82,19 +82,19 @@ Creating the workflows The invoke workflows in the plug-in facilitate running RE
     
     <item>
       <title>Create a plug-in for a REST based web service in minutes - Part 3</title>
-      <link>http://localhost:1313/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</link>
       <pubDate>Wed, 25 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</guid>
       <description>Part 1 of the plug-in generator v2 series covered how to create new plug-in inventory types, part 2 how to create their child object types. This part will focus on how to define object methods and associated workflows. Having Orchestrator inventory types is a necessity to use with vRealize Automation (formerly vCAC) Advanced Service Designer. Once you have these inventory objects you may wonder how to use these in workflows. This is what this article covers.</description>
     </item>
     
     <item>
       <title>Create a plug-in for a REST based web service in minutes - Part 2</title>
-      <link>http://localhost:1313/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</link>
       <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</guid>
       <description>In the part 1 I walk through step by step to create a plug-in object type leveraging the Plug-in Generator version 2.
 In this article I will demonstrate one of the new feature of this version 2 : Create a child object type.
 Having the plug-in inventory organized in a tree view allows to represent most of the objects hierarchies found in applications APIs.
@@ -103,20 +103,20 @@ Resuming from part 1 I need to create a vNIC object.</description>
     
     <item>
       <title>How to use PowerShell to start an Orchestrator Workflow</title>
-      <link>http://localhost:1313/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</link>
       <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</guid>
       <description>Okay now I have provided Python and [perl](/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html&amp;rdquo; rel=&amp;quot;alternate) articles to start a vRealize Orchestrator (vRO / vCO) workflow via it&amp;rsquo;s REST API so now it&amp;rsquo;s time for a PowerShell script. For this article, I followed the same format as the previous two BUT provided the option to call the script with command line parameters! You may download the script in this article from my vroClientScripts Repository on GitHub.
 The Script The following code should be saved as something like runWorkflow.</description>
     </item>
     
     <item>
       <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 3</title>
-      <link>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</link>
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</guid>
       <description>Welcome back! This is the third article of a multi-part series that steps you through the process of exposing our workflows from the last article to vRealize Automation&amp;rsquo;s (vRA) Advanced Service Designer (ASD).
 Introduction This third article will cover the following topics:
  How to add the simple CMDB to vRealize Automation&amp;rsquo;s Advanced Service Designer Add a Day 2 operation to delete an Asset from our table  Future article will cover the following topic:</description>
@@ -124,29 +124,29 @@ Introduction This third article will cover the following topics:
     
     <item>
       <title>Get Addresses in Range</title>
-      <link>http://localhost:1313/articles/learn-vco/293-get-addresses-in-range.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/293-get-addresses-in-range.html</link>
       <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/293-get-addresses-in-range.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/293-get-addresses-in-range.html</guid>
       <description>vRealize Orchestrator (vRO) is frequently used with Network related automation which may involve working with IP Addresses. From an end user perspective, it is nice to specify a range of addresses such as 192.168.1.1-192.168.1.100 rather than having to specify all addresses. I found some simple Javascript in this Converting IP Addresses article that is easily adapted to vRO. You can use the code included in this article to either return an array of addresses in the range specified, or simplify it by returning the total number of addresses in the range.</description>
     </item>
     
     <item>
       <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 2</title>
-      <link>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</link>
       <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</guid>
       <description>Welcome back! This is the second article of a multi-part series that steps you through the process of mapping a SQL table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table, then exposing it to vRealize Automation&amp;rsquo;s Advanced Service Designer (ASD). In the first article, we got our database table mapped using the SQL Plug-in and generated some CRUD workflows.
 Introduction Let&amp;rsquo;s build a simple Dynamic Types plug-in around our SQL Table that we created in our previous article.</description>
     </item>
     
     <item>
       <title>SQL Plug-in &#43; DynamicTypes = Simple CMDB for vCAC - Part 1</title>
-      <link>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</link>
+      <link>http://new.vcoteam.info/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</link>
       <pubDate>Fri, 05 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</guid>
+      <guid>http://new.vcoteam.info/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</guid>
       <description>This multi-part series will step you through the process of mapping a Microsoft SQL Server table into vRealize Orchestrator, building out a DynamicTypes plug-in inventory based on that table (using my workflow package), then exposing it to vRealize Automation&amp;rsquo;s Advanced Service Designer (ASD).
 Introduction vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object.</description>
     </item>
