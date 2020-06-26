@@ -108,166 +108,176 @@ if (!doNotTrack) {
 			
 <main class="main list" role="main">
 	<article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/learn-vco/169-code-snippets-get-vms-that-triggered-vcenter-alarms.html" rel="bookmark">
-			Code snippets : Get VMs that triggered vCenter Alarms
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/learn-vco/169-code-snippets-get-vms-that-triggered-vcenter-alarms.html" rel="bookmark">
+        Code snippets : Get VMs that triggered vCenter Alarms
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-06-15T00:00:00Z">June 15, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		for each (var datacenter in allDatacenters); {
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    for each (var datacenter in allDatacenters); {
 var date1 = new Date(); triggeredAlarmStates = datacenter.triggeredAlarmState; var date2 = new Date(); System.log(&ldquo;Got alarms from datacenter &quot; + datacenter.name + &quot; in &quot; + (date2.getTime() - date1.getTime())/1000 + &quot; seconds&rdquo;);
 for each (var alarmState in triggeredAlarmStates) {
 if (filterOnName == true &amp;&amp; alarmState.alarm.info.name != name) { var foundName = false; //System.log(&ldquo;Alarm name &quot; + alarmState.alarm.info.name + &quot; is not matching&rdquo;); } else { var foundName = true; }
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/articles/learn-vco/169-code-snippets-get-vms-that-triggered-vcenter-alarms.html">Read more…</a>
-	</div>
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/169-code-snippets-get-vms-that-triggered-vcenter-alarms.html">Read more…</a>
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html" rel="bookmark">
-			Tutorial: Create your own Twitter Application with a vCO workflow in a few minutes
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html" rel="bookmark">
+        Tutorial: Create your own Twitter Application with a vCO workflow in a few minutes
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-06-15T00:00:00Z">June 15, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html" rel="bookmark">
-			VMware released the vCenter Orchestrator Plug-in for vCenter Update Manager
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html" rel="bookmark">
+        VMware released the vCenter Orchestrator Plug-in for vCenter Update Manager
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-06-15T00:00:00Z">June 15, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/learn-vco/164-force-a-vm-to-boot-from-several-devices.html" rel="bookmark">
-			Force a VM to boot from several devices
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/learn-vco/164-force-a-vm-to-boot-from-several-devices.html" rel="bookmark">
+        Force a VM to boot from several devices
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-06-10T00:00:00Z">June 10, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		changedValue.BootOrder = new Array(ethValue, hddValue); var ConfigSpec = new VcVirtualMachineConfigSpec(); ConfigSpec.BootOptions = changedValue; task = vm.reconfigVM_Task(ConfigSpec);for ( i in devices ) { if (devices[i] instanceof VcVirtualCdrom)
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    changedValue.BootOrder = new Array(ethValue, hddValue); var ConfigSpec = new VcVirtualMachineConfigSpec(); ConfigSpec.BootOptions = changedValue; task = vm.reconfigVM_Task(ConfigSpec);for ( i in devices ) { if (devices[i] instanceof VcVirtualCdrom)
 { var cdKey = devices[i].key; System.log(&ldquo;cdkey &ldquo;+cdKey);	} if (devices[i] instanceof VcVirtualDisk)
 { var hddKey = devices[i].key; var label = devices[i].deviceInfo.label; //looking for Festplatte 1 or Hard Disk 1, hopefully there is no 10th disk if(label.indexOf(&ldquo;1&rdquo;) != -1) { System.log(&ldquo;hddkey &ldquo;+hddKey);	} } if (devices[i] instanceof VcVirtualVmxnet || devices[i] instanceof VcVirtualVmxnet2 || devices[i] instanceof VcVirtualVmxnet3
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/articles/learn-vco/164-force-a-vm-to-boot-from-several-devices.html">Read more…</a>
-	</div>
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/164-force-a-vm-to-boot-from-several-devices.html">Read more…</a>
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html" rel="bookmark">
-			Monitoring solution has built-in support for vCO based Remediation!
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html" rel="bookmark">
+        Monitoring solution has built-in support for vCO based Remediation!
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-06-10T00:00:00Z">June 10, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/learn-vco/163-automatic-delivery-of-customized-vms-into-vcloud-director.html" rel="bookmark">
-			Automatic delivery of customized VMs into vCloud Director
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/learn-vco/163-automatic-delivery-of-customized-vms-into-vcloud-director.html" rel="bookmark">
+        Automatic delivery of customized VMs into vCloud Director
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-06-08T00:00:00Z">June 08, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html" rel="bookmark">
-			VMware press to release a book on automating vSphere with vCenter Orchestrator
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html" rel="bookmark">
+        VMware press to release a book on automating vSphere with vCenter Orchestrator
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-05-20T00:00:00Z">May 20, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html" rel="bookmark">
-			VMware Blog demonstrates an user accounts creation scenario with the Active Directory Plug-in for vCenter Orchestrator
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html" rel="bookmark">
+        VMware Blog demonstrates an user accounts creation scenario with the Active Directory Plug-in for vCenter Orchestrator
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-05-17T00:00:00Z">May 17, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html" rel="bookmark">
-			VMworld 2011 - Help to reveal VMware&#34;s best kept secret !
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html" rel="bookmark">
+        VMworld 2011 - Help to reveal VMware&#34;s best kept secret !
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-05-09T00:00:00Z">May 09, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    
+  </div>
 </article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/articles/newsflash/156-automate-the-cloud-or-die-.html" rel="bookmark">
-			Automate the cloud or die 
-			</a>
-		</h3>
-		<div class="list__meta meta">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/newsflash/156-automate-the-cloud-or-die-.html" rel="bookmark">
+        Automate the cloud or die 
+      </a>
+    </h3>
+    <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-05-04T00:00:00Z">May 04, 2011</time></div>
 </div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    
+  </div>
 </article>
 </main>
 

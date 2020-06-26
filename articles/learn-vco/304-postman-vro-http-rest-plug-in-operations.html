@@ -106,15 +106,15 @@ if (!doNotTrack) {
 			<div class="primary">
 			
 <main class="main" role="main">
-	<article class="post">
-		<header class="post__header">
-			<h1 class="post__title">Postman &#43; vRO = HTTP-REST Plug-in Operations</h1>
-			<div class="post__meta meta">
+  <article class="post">
+    <header class="post__header">
+      <h1 class="post__title">Postman &#43; vRO = HTTP-REST Plug-in Operations</h1>
+      <div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-05-20T00:00:00Z">May 20, 2015</time></div>
 </div>
-		</header><div class="content post__content clearfix">
-			<p>In a previous article, I stepped through the process of <a href="http://bit.ly/restvco"  target="_blank" rel="noreferrer noopener" >working with vRealize Orchestrator&rsquo;s (vRO) REST API</a> using the RestClient add-on for FireFox. This was before I was introduced to my new favorite REST client: <a href="http://www.getpostman.com"  target="_blank" rel="noreferrer noopener" >POSTMAN</a>! <a href="http://twitter.com/postmanclient"  target="_blank" rel="noreferrer noopener" >@postmanclient</a> In this article, I&rsquo;ll provide a little detail on an approach you can use to improve your work with REST APIs and consuming them with Orchestrator&rsquo;s REST plug-in. Throughout the article, I will use a FreeNAS 9.3.x Virtual Appliance as my target endpoint since it is <a href="http://www.freenas.org/"  target="_blank" rel="noreferrer noopener" >freely available</a>, quick to setup, and has <a href="http://api.freenas.org/index.html"  target="_blank" rel="noreferrer noopener" >nice API documentation</a>. Please note that the technique described here can be used for any API that Postman can access!</p>
+    </header><div class="content post__content clearfix">
+      <p>In a previous article, I stepped through the process of <a href="http://bit.ly/restvco"  target="_blank" rel="noreferrer noopener" >working with vRealize Orchestrator&rsquo;s (vRO) REST API</a> using the RestClient add-on for FireFox. This was before I was introduced to my new favorite REST client: <a href="http://www.getpostman.com"  target="_blank" rel="noreferrer noopener" >POSTMAN</a>! <a href="http://twitter.com/postmanclient"  target="_blank" rel="noreferrer noopener" >@postmanclient</a> In this article, I&rsquo;ll provide a little detail on an approach you can use to improve your work with REST APIs and consuming them with Orchestrator&rsquo;s REST plug-in. Throughout the article, I will use a FreeNAS 9.3.x Virtual Appliance as my target endpoint since it is <a href="http://www.freenas.org/"  target="_blank" rel="noreferrer noopener" >freely available</a>, quick to setup, and has <a href="http://api.freenas.org/index.html"  target="_blank" rel="noreferrer noopener" >nice API documentation</a>. Please note that the technique described here can be used for any API that Postman can access!</p>
 <h2 id="environments">Environments</h2>
 <figure>
     <img src="/images/postman-vro/environments.png"
@@ -247,8 +247,8 @@ Each operation may now be reviewed/tested or used via workflows/actions!</p>
 <p>In addition to the Process Postman Collection workflow, I have also attached a Clear Operations workflow that will allow you to quickly and easily DELETE all RESTOperations from a given RESTHost. This may be important if you are testing or made a mess. Of course you could always just delete the RESTHost and all attached Operations will be automatically deleted.</p>
 <p><strong>UPDATE:</strong> Be sure to take a look at <a href="http://twitter.com/grantorchard"  target="_blank" rel="noreferrer noopener" >Grant Orchard&lt;</a>&rsquo;s collection noted in his article here: <a href="http://grantorchard.com/vcac/postman-collection-for-the-vra7-api/"  target="_blank" rel="noreferrer noopener" >Postman Collection for the vRA7 API</a></p>
 
-		</div>
-	</article>
+    </div>
+  </article>
 </main>
 
   

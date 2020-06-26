@@ -106,15 +106,15 @@ if (!doNotTrack) {
 			<div class="primary">
 			
 <main class="main" role="main">
-	<article class="post">
-		<header class="post__header">
-			<h1 class="post__title">How to Disable Storage I/O Stats Collection with PowerCLI or vRO</h1>
-			<div class="post__meta meta">
+  <article class="post">
+    <header class="post__header">
+      <h1 class="post__title">How to Disable Storage I/O Stats Collection with PowerCLI or vRO</h1>
+      <div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-08T00:00:00Z">December 08, 2016</time></div>
 </div>
-		</header><div class="content post__content clearfix">
-			<p>I recently came across a thread asking about how to disable Storage I/O Statistics Collection using PowerCLI. The thread referenced this article by <a href="https://twitter.com/vcdxnz001"  target="_blank" rel="noreferrer noopener" >Michael Webster</a>: <a href="http://longwhiteclouds.com/2016/10/17/disable-sioc-io-metrics-collection-for-auto-tiering-storage-systems/"  target="_blank" rel="noreferrer noopener" >Disable SIOC IO Metrics Collection For Auto Tiering Storage Systems</a>. In one of the comments, someone asked about using PowerCLI.. Unfortunately there was no answer there so I thought - I might be able to figure this out! With regards to checking that box, I can&rsquo;t say whether it&rsquo;s a good idea or not, my purpose here was just to illustrate how to do it via PowerCLI and vRO.</p>
+    </header><div class="content post__content clearfix">
+      <p>I recently came across a thread asking about how to disable Storage I/O Statistics Collection using PowerCLI. The thread referenced this article by <a href="https://twitter.com/vcdxnz001"  target="_blank" rel="noreferrer noopener" >Michael Webster</a>: <a href="http://longwhiteclouds.com/2016/10/17/disable-sioc-io-metrics-collection-for-auto-tiering-storage-systems/"  target="_blank" rel="noreferrer noopener" >Disable SIOC IO Metrics Collection For Auto Tiering Storage Systems</a>. In one of the comments, someone asked about using PowerCLI.. Unfortunately there was no answer there so I thought - I might be able to figure this out! With regards to checking that box, I can&rsquo;t say whether it&rsquo;s a good idea or not, my purpose here was just to illustrate how to do it via PowerCLI and vRO.</p>
 <h2 id="goal">Goal</h2>
 <p>The overall goal of this post is to teach you how to Disable Storage I/O Statistics Collection using PowerCLI&hellip; more importantly, I will step you through my approach as a vRO guy trying to figure out how to create some PowerCLI code to accomplish the task. Once I&rsquo;m done, I&rsquo;ll also provide a simple vRO workflow to do the same&hellip;</p>
 <p>I&rsquo;m a vRO guy with MINIMAL PowerShell and PowerCLI experience. One thing I AM familiar with is the fact that the current version of <a href="https://labs.vmware.com/flings/onyx-for-the-web-client"  target="_blank" rel="noreferrer noopener" >Onyx works with the vSphere Web Client</a> and is able to produce PowerCLI code based on recorded actions in the client. I&rsquo;m still waiting for some developer-type people to get this tool updated to output vRO Javascript like the old version did&hellip;.ok.. enough babbling&hellip; let&rsquo;s get on with how to actually do this.</p>
@@ -456,9 +456,9 @@ Run the workflow, select the Datastore you wish to take action and and Submit.</
 <h2 id="summary">Summary</h2>
 <p>While this article focused on a specific use case, the approach taken here can be used for many other vCenter tasks as well. I sincerely hope you have gained a new appreciation for the Onyx client, PowerCLI, and vRealize Orchestrator (vRO).</p>
 
-		</div>
-		<footer class="post__footer">
-			
+    </div>
+    <footer class="post__footer">
+      
 <div class="post__tags tags clearfix">
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
@@ -473,8 +473,8 @@ Run the workflow, select the Datastore you wish to take action and and Submit.</
 		</li>
 	</ul>
 </div>
-		</footer>
-	</article>
+    </footer>
+  </article>
 </main>
 
   
