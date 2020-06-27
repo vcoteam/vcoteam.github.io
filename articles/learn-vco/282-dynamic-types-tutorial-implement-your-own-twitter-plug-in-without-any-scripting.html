@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Dynamic Types tutorial : Implement your own Twitter plug-in without any scripting - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="In a 1 I have explained how the vCO dynamic Types allow to simplify the development of vCO plug-ins and how these are leveraged by VMware vCloud Automation Center XaaS. It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.&lt;strong&gt;&lt;strong&gt; &lt;br /&gt;&lt;br /&gt;Warning : You can do it without Java development experience and without having to write a single line of scripting !&lt;br /&gt;&lt;/strong&gt;&lt;/strong&gt;">
+	<meta name="description" content="It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.">
 		<meta property="og:title" content="Dynamic Types tutorial : Implement your own Twitter plug-in without any scripting" />
-<meta property="og:description" content="In a 1 I have explained how the vCO dynamic Types allow to simplify the development of vCO plug-ins and how these are leveraged by VMware vCloud Automation Center XaaS. It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.&lt;strong&gt;&lt;strong&gt; &lt;br /&gt;&lt;br /&gt;Warning : You can do it without Java development experience and without having to write a single line of scripting !&lt;br /&gt;&lt;/strong&gt;&lt;/strong&gt;" />
+<meta property="og:description" content="It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/282-dynamic-types-tutorial-implement-your-own-twitter-plug-in-without-any-scripting.html" />
 <meta property="article:published_time" content="2014-04-16T00:00:00+00:00" />
@@ -16,7 +16,7 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dynamic Types tutorial : Implement your own Twitter plug-in without any scripting"/>
-<meta name="twitter:description" content="In a 1 I have explained how the vCO dynamic Types allow to simplify the development of vCO plug-ins and how these are leveraged by VMware vCloud Automation Center XaaS. It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.&lt;strong&gt;&lt;strong&gt; &lt;br /&gt;&lt;br /&gt;Warning : You can do it without Java development experience and without having to write a single line of scripting !&lt;br /&gt;&lt;/strong&gt;&lt;/strong&gt;"/>
+<meta name="twitter:description" content="It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -114,9 +114,73 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2014-04-16T00:00:00Z">April 16, 2014</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <p>In a <!-- raw HTML omitted -->previous article<!-- raw HTML omitted --> I have explained how the vCO dynamic Types allow to simplify the development of vCO plug-ins and how these are leveraged by VMware vCloud Automation Center XaaS. It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Warning : You can do it without Java development experience and without having to write a single line of scripting !<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->As a first step download the <!-- raw HTML omitted -->Dynamic Types plug-in generator package<!-- raw HTML omitted --> from VMware communities.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->The plug-in generator Tutorial: Twitter<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->In order to get familiar with building a plug-in we start using a service with a public API : Twitter.<!-- raw HTML omitted --><!-- raw HTML omitted -->Prerequisites:<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+      <p>In a <a href="/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html" >previous article</a> I have explained how the vCO dynamic Types allow to simplify the development of vCO plug-ins and how these are leveraged by VMware vCloud Automation Center XaaS. It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.</p>
+<p><strong>Warning:</strong> You can do it without Java development experience and without having to write a single line of scripting !</p>
+<p>As a first step download the <a href="https://communities.vmware.com/docs/DOC-26354"  target="_blank" rel="noreferrer noopener" >Dynamic Types plug-in generator package</a> from VMware communities.</p>
+<p>The plug-in generator Tutorial: Twitter</p>
+<p>In order to get familiar with building a plug-in we start using a service with a public API : Twitter.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>A Twitter account</li>
+<li>A Twitter application</li>
+</ul>
+<p>To create a Twitter Application login with your twitter account to <a href="https://apps.twitter.com/"  target="_blank" rel="noreferrer noopener" >apps.twitter.com</a></p>
+<p>Enter an application name, description and URL (I.E your site). Twitter will the API key, secret and access tokens. These will be needed for your application to authenticate on twitter API.</p>
+<p>Download the Dynamic Type plug-in generator package from here. Import it.</p>
+<h2 id="rest-host-and-namespace-creation">REST Host and namespace creation</h2>
+<p>Run the &ldquo;Create a plug-in (namespace and matching REST host)&rdquo; workflow</p>
+<ul>
+<li>For URL use : <code>https://api.twitter.com/1.1/</code></li>
+<li>Only enter the proxy settings is you must use a proxy.</li>
+<li>For Host authentication type select Oauth 1.0</li>
+</ul>
+<p>From apps.twitter.com copy and paste from the API keys tab:</p>
+<ul>
+<li>The API key in the Consumer key input field</li>
+<li>The API secret in the Consumer secret input field</li>
+<li>The Access token</li>
+<li>The Access token secret</li>
+<li>Enter Twitter for the namespace name</li>
+</ul>
+<h2 id="plug-in-type-creation">Plug-in type creation</h2>
+<p>The Twitter API (documented at <a href="https://dev.twitter.com/docs/api/1.1/"  target="_blank" rel="noreferrer noopener" >https://dev.twitter.com/docs/api/1.1/</a> ) allows to list different objects including Tweets. We will use the Mentions timeline as an example.</p>
+<p>Run the &ldquo;Create a new plug-in type&rdquo;</p>
+<p>Enter the fields as below (You can use any icon resource you have uploaded in your vCO server, here I have uploaded a mentions.png).</p>
+<figure>
+    <img src="./Dynamic-Types-Type-Settings.png"/> 
+</figure>
+
+<p>Submit.</p>
+<h3 id="findall">FindAll</h3>
+<p>The next screen requests to enter the URL to get all the mentions. According to the documentation it is statuses/mentions_timeline.json.The second field defines what is the action that will invoke the REST operation. Since there is no need to use specific headers or pass additional credentials as parameters leave the default executeRequest action.</p>
+<figure>
+    <img src="./Dynamic-Types-FindAll-URL.png"/> 
+</figure>
+
+<p>vCO will now attempt to invoke the REST operation and display its response content. If the REST host settings and findAll URL were entered correctly you should see a JSON string. Copy the full content of the response string and paste it in a JSON viewer or editor. Below is how this look. It shows the JSON object is an array[] containing objects {}0, {}1 and so on. Each object has a set of properties. We can notice there are two different ID properties and that the Tweet content is in the text property. There are also some properties that are objects such as user or entities.</p>
+<figure>
+    <img src="./Dynamic-Types-FindAll-JSON-response.png"/> 
+</figure>
+
+<p>If you have got similar valid response content set &ldquo;Valid response content&rdquo; to yes. Otherwise set it to no. In this case you will be asked to set the URL and invoke action again. In the case there is a problem with the REST host settings you can cancel the workflow, right click Run Workflow and start the &ldquo;Update a REST host&rdquo; workflow. Once updated you can get back to the &ldquo;Create a new plug-in type&rdquo; workflow run, right click / answer to resume it.</p>
+<figure>
+    <img src="./Dynamic-Types-FindAll-JSON-response2.png"/> 
+</figure>
+
+<p>vCO will now attempt to detect object properties. This will only work if the object format is standard (meaning an array of objects with each object having the same properties). This is the case for Twitter.</p>
+<p>To create an object vCO needs two mandatory properties : id and name. If there are properties matching these names they will be used. If not the workflow will pick other properties. It is important to check that the ID is unique and that the name is meaningful since it will be shown in the inventory. The property accessors are basically the way the object will populate its properties accessing the returned object properties. It can be customized using a JSON editor.</p>
+<figure>
+    <img src="./Dynamic-Types-FindAll-JSON-Deserialization.png"/> 
+</figure>
+
+<p>Copy and paste the content of the findAll object properties accessors in a JSON editor.
+We will focus out attention on the id and name properties:</p>
+<p>id: object[&quot;id&quot;]
+name: object.id</p>
+<p>We can see that the object and name will be set using the id property (object[&quot;id&quot;] and object.id both refer to the value of the id property, the first one escapes the property name in case there is a special character).</p>
+<p>Since we want to have something more meaningful for the Tweet name we will replace the name property value by:</p>
+<p><code>object.user.name + &quot; @&quot; + object.user.screen_name + &quot; &quot; + object.text</code></p>
+<p>And convert it back to a JSON String as follows:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -175,9 +239,200 @@ if (!doNotTrack) {
 }</code></pre></td></tr></table>
 </div>
 </div>
-<!-- raw HTML omitted -->
+<p>And paste it back to the findAll object properties accessors field in the workflow.</p>
+<p>Keep &ldquo;Get object properties using custom action&rdquo; to &ldquo;no&rdquo;. This option is used when the JSON format is not standard and requires to be decoded by a custom action.</p>
+<p>Submit.</p>
+<p>Now vCO will use the properties you have defined to get the property values and display them:</p>
+<figure>
+    <img src="./Dynamic-Types-FindAll-properties1.png"/> 
+</figure>
+
+<p>It is now important to check if these values are valid. Below is a sample I copied and pasted to a text editor. I am satisfied with the name property so I will keep it this way. You may notice that properties containing objects kept a JSON format. This is fine as well, these can easily be converted in the vCO scripting. What gets my attention is the fact that there are two id properties. Having the proper ID is very important. Not only it needs to be unique but it will be used by vCO to get the tweet by ID.</p>
+<figure>
+    <img src="./Dynamic-Types-FindAll-properties2.png"/> 
+</figure>
+
+<p>With expanding this particular tweet on the Twitter site I can notice that the URL of the tweet is <a href="https://twitter.com/CloudOps_Wayne/status/454657048286740480"  target="_blank" rel="noreferrer noopener" >twitter.com/CloudOps_Wayne/status/454657048286740480</a> which matches the id_str property, not the id one.</p>
+<p>Since I am not happy with the properties values I keep &ldquo;Valid object properties&rdquo; to &ldquo;No&rdquo; and submit.</p>
+<p>Back to the findAll object properties accessors I paste the JSON string from the JSON editor with taking care of updating the id property to id_str as follows:</p>
+<figure>
+    <img src="./Dynamic-Types-FindAll-JSON-Deserialization2.png"/> 
+</figure>
+
+<p>Submit.</p>
+<p>Now the object properties are showing the right id, right name. Set &ldquo;Valid Object properties&rdquo; to &ldquo;yes&rdquo;.</p>
+<h3 id="findbyid">findById</h3>
+<p>The workflow now expects the findById HTTP URL. It is statuses/show.json. The API documentation mentions the id parameter is mandatory.</p>
+<p>Since we cannot hardcode a particular ud in the URL we will use the {id} placeholder.</p>
+<p>We will keep using the executeRequest action as we did before and need to select a specific ID to test invoking the URL. The ID list is pulled from the previous findAll call.</p>
+<figure>
+    <img src="./Dynamic-Types-FindByIdUrl.png"/> 
+</figure>
+
+<p>Submit. We now get the JSON response. Copying / pasting in an editor shows that the result is as expected.</p>
+<figure>
+    <img src="./Dynamic-Types-FindById-JSON-RESPONSE.png"/> 
+</figure>
+
+<p>Set &ldquo;Valid response content&rdquo; to &ldquo;yes&rdquo;.</p>
+<p>As before the workflow pulled the object properties. We will want to do the same changes as before for the id and name properties. Update these as you did before.</p>
+<figure>
+    <img src="./Dynamic-Types-FindById-Deserialization.png"/> 
+</figure>
+
+<p>And as before you can check that the right properties values for the object with this particular ID were pulled. If so set &ldquo;Valid object properties&rdquo; to &ldquo;yes&rdquo;</p>
+<figure>
+    <img src="./Dynamic-Types-FindById-properties.png"/> 
+</figure>
+
+<p>Submit.</p>
+<h3 id="findrelation">findRelation</h3>
+<p>We can now define the findRelation URL. In the most simple use cases this will return in your inventory all the objects of a given type under a folder. The query will then be the same as for findAll.</p>
+<p>More complex use cases would be to use particular requests parameters or filtering returned results based on the parent objects and folders. Repeat the same sequence as for findAll</p>
+<figure>
+    <img src="./Dynamic-Types-FindRelationUrl.png"/> 
+</figure>
+
+<p>Submit</p>
+<figure>
+    <img src="./Dynamic-Types-FindRelation-JSON-Response.png"/> 
+</figure>
+
+<p>Set &ldquo;Valid response content&rdquo; to &ldquo;yes&rdquo;.</p>
+<p>Submit</p>
+<p>Paste the same changes as done before.</p>
+<figure>
+    <img src="./Dynamic-Types-FindRelation-Deserialization.png"/> 
+</figure>
+
+<p>Submit.</p>
+<figure>
+    <img src="./Dynamic-Types-FindRelation-Properties.png"/> 
+</figure>
+
+<p>Set &ldquo;Valid object properties&rdquo; to &ldquo;yes&rdquo;.</p>
+<p>Submit.</p>
+<p>For defining the final object properties you have two options : use the properties that are returned by all the previous queries or the ones returned by all of them. In the first case some properties may not be set for some queries, in the last one they should be set consistently. Set yes.</p>
+<figure>
+    <img src="./Dynamic-Types-Define-Object-Properties.png"/> 
+</figure>
+
+<p>Submit.</p>
+<h3 id="checking-the-new-object-type">Checking the new object type</h3>
+<p>Check in the Type Hierarchy in the inventory. The workflow created a MentionTimeline object under a Mentions one (the folder)</p>
+<figure>
+    <img src="./Dynamic-Types-Hierarchy.png"/> 
+</figure>
+
+<p>If you now unfold the Twitter namespace, then the Mentions folder you will get the mentions tweets returned by the Twitter API. This proves findRelation work as expected.</p>
+<figure>
+    <img src="./Dynamic-Types-Objects.png"/> 
+</figure>
+
+<p>You can then create a worflow with a mentionTimeline type as input and test running the workflow as below.</p>
+<figure>
+    <img src="./Dynamic-Types-Input.png"/> 
+</figure>
+
+<p>From a scriptable task you will get access to the object properties using <code>tweet.getProperty(propertyName);</code></p>
+<h2 id="define-a-custom-operation-method">Define a custom operation method</h2>
+<p>It is nice to have an inventory of object, it is even nicer to have workflows to operate these! To do this run the &ldquo;Define an object method&rdquo; workflow. Select a namespace and object type your operation will apply to.</p>
+<figure>
+    <img src="./DynamicType-AddMethod1.png"/> 
+</figure>
+
+<p>Enter the name of the operation / method. Below I want to be able to retweet</p>
+<figure>
+    <img src="./DynamicType-AddMethod2.png"/> 
+</figure>
+
+<p>Submit.</p>
+<p>On the next screen we need to provide the retweet HTTP method and URL as documented in the twitter APi doc.</p>
+<p>We will keep the default action to invoke the operation since it works well for twitter.</p>
+<p>To test the operation we need to provide an ID of the object this operation will apply to. Below I have selected an ID based on what I could see in the vCO inventory.</p>
+<figure>
+    <img src="./DynamicType-AddMethod3.png"/> 
+</figure>
+
+<p>vCO execute the operation and show the response content. If this seems right you can set &ldquo;Valid response content ?&rdquo; to &ldquo;yes&rdquo;.</p>
+<figure>
+    <img src="./DynamicType-AddMethod4.png"/> 
+</figure>
+
+<p>As before the workflow will get the object properties. To make sure the right properties are used you need as before in this tutorial to change the id to id_str and the name to the expression we had entered before.</p>
+<figure>
+    <img src="./DynamicType-AddMethod5.png"/> 
+</figure>
+
+<p>Submit. The resulting properties are shown. If these are correct. Set &ldquo;Valid object properties ?&rdquo; to &ldquo;yes&rdquo;</p>
+<figure>
+    <img src="./DynamicType-AddMethod6.png"/> 
+</figure>
+
+<p>Submit.</p>
+<p>Now that we have created the operation we need to create a workflow to call it. Create a new workflow and name it.</p>
+<figure>
+    <img src="./DynamicType-AddMethod7.png"/> 
+</figure>
+
+<p>Drag and drop on the schema the &ldquo;Invoke method template&rdquo; workflow.</p>
+<figure>
+    <img src="./DynamicType-AddMethod8.png"/> 
+</figure>
+
+<p>Use the setup button at the top of the schema to bind its inputs and outputs to your main workflow. Set these as following</p>
+<ul>
+<li>dynamicType as input.</li>
+<li>method as a value set to the name of your operation (below retweet)</li>
+<li>we will skip content as it is not needed for twitter. Other APIs requires passing content such as a JSON string)</li>
+<li>updatedObject as an output</li>
+</ul>
+<figure>
+    <img src="./DynamicType-AddMethod9.png"/> 
+</figure>
+
+<p>Click &ldquo;Promote&rdquo;</p>
+<p>There are two small things that have to be adjusted. In the attribute page change the dynamicTypeObject type to the type you need to operate.</p>
+<figure>
+    <img src="./DynamicType-AddMethod10.png"/> 
+</figure>
+
+<p>And do the same for the output parameter.</p>
+<figure>
+    <img src="./DynamicType-AddMethod11.png"/> 
+</figure>
+
+<p>For convenience set the dynamicTypeObject presentation properties to mandatory and &ldquo;show in inventory&rdquo; (which will make your workflow contextual)</p>
+<figure>
+    <img src="./DynamicType-AddMethod12.png"/> 
+</figure>
+
+<p>Save and close your workflow.</p>
+<p>You can now unfold your inventory, select an item, right click and run your workflow (edit the user preferences / inventory to have it shown as below).</p>
+<figure>
+    <img src="./DynamicType-AddMethod13.png"/> 
+</figure>
+
+<p>And VOILA !</p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/dynamictypes/" rel="tag">DynamicTypes</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/twitter/" rel="tag">Twitter</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/plug-in/" rel="tag">Plug-in</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -266,7 +521,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
@@ -283,7 +538,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="plug-in">plug-in (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
@@ -293,6 +548,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>

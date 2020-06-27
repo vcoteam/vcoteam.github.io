@@ -400,7 +400,9 @@ Introduction   As noted in the intro snippet, vCO now has the ability to let you
       <pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>http://new.vcoteam.info/articles/learn-vco/282-dynamic-types-tutorial-implement-your-own-twitter-plug-in-without-any-scripting.html</guid>
-      <description>In a previous articleI have explained how the vCO dynamic Types allow to simplify the development of vCO plug-ins and how these are leveraged by VMware vCloud Automation Center XaaS. It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.Warning : You can do it without Java development experience and without having to write a single line of scripting !As a first step download the Dynamic Types plug-in generator packagefrom VMware communities.</description>
+      <description>In a previous article I have explained how the vCO dynamic Types allow to simplify the development of vCO plug-ins and how these are leveraged by VMware vCloud Automation Center XaaS. It is now time to experiment with creating a plugin with leveraging the Dynamic Types plug-in generator package.
+Warning: You can do it without Java development experience and without having to write a single line of scripting !
+As a first step download the Dynamic Types plug-in generator package from VMware communities.</description>
     </item>
     
     <item>
