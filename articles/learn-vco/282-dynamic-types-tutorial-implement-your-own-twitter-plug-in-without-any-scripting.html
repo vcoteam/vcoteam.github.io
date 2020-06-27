@@ -147,30 +147,30 @@ if (!doNotTrack) {
 <p>Run the &ldquo;Create a new plug-in type&rdquo;</p>
 <p>Enter the fields as below (You can use any icon resource you have uploaded in your vCO server, here I have uploaded a mentions.png).</p>
 <figure>
-    <img src="./Dynamic-Types-Type-Settings.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-Type-Settings.png"/> 
 </figure>
 
 <p>Submit.</p>
 <h3 id="findall">FindAll</h3>
 <p>The next screen requests to enter the URL to get all the mentions. According to the documentation it is statuses/mentions_timeline.json.The second field defines what is the action that will invoke the REST operation. Since there is no need to use specific headers or pass additional credentials as parameters leave the default executeRequest action.</p>
 <figure>
-    <img src="./Dynamic-Types-FindAll-URL.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindAll-URL.png"/> 
 </figure>
 
 <p>vCO will now attempt to invoke the REST operation and display its response content. If the REST host settings and findAll URL were entered correctly you should see a JSON string. Copy the full content of the response string and paste it in a JSON viewer or editor. Below is how this look. It shows the JSON object is an array[] containing objects {}0, {}1 and so on. Each object has a set of properties. We can notice there are two different ID properties and that the Tweet content is in the text property. There are also some properties that are objects such as user or entities.</p>
 <figure>
-    <img src="./Dynamic-Types-FindAll-JSON-response.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindAll-JSON-response.png"/> 
 </figure>
 
 <p>If you have got similar valid response content set &ldquo;Valid response content&rdquo; to yes. Otherwise set it to no. In this case you will be asked to set the URL and invoke action again. In the case there is a problem with the REST host settings you can cancel the workflow, right click Run Workflow and start the &ldquo;Update a REST host&rdquo; workflow. Once updated you can get back to the &ldquo;Create a new plug-in type&rdquo; workflow run, right click / answer to resume it.</p>
 <figure>
-    <img src="./Dynamic-Types-FindAll-JSON-response2.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindAll-JSON-response2.png"/> 
 </figure>
 
 <p>vCO will now attempt to detect object properties. This will only work if the object format is standard (meaning an array of objects with each object having the same properties). This is the case for Twitter.</p>
 <p>To create an object vCO needs two mandatory properties : id and name. If there are properties matching these names they will be used. If not the workflow will pick other properties. It is important to check that the ID is unique and that the name is meaningful since it will be shown in the inventory. The property accessors are basically the way the object will populate its properties accessing the returned object properties. It can be customized using a JSON editor.</p>
 <figure>
-    <img src="./Dynamic-Types-FindAll-JSON-Deserialization.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindAll-JSON-Deserialization.png"/> 
 </figure>
 
 <p>Copy and paste the content of the findAll object properties accessors in a JSON editor.
@@ -244,19 +244,19 @@ name: object.id</p>
 <p>Submit.</p>
 <p>Now vCO will use the properties you have defined to get the property values and display them:</p>
 <figure>
-    <img src="./Dynamic-Types-FindAll-properties1.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindAll-properties1.png"/> 
 </figure>
 
 <p>It is now important to check if these values are valid. Below is a sample I copied and pasted to a text editor. I am satisfied with the name property so I will keep it this way. You may notice that properties containing objects kept a JSON format. This is fine as well, these can easily be converted in the vCO scripting. What gets my attention is the fact that there are two id properties. Having the proper ID is very important. Not only it needs to be unique but it will be used by vCO to get the tweet by ID.</p>
 <figure>
-    <img src="./Dynamic-Types-FindAll-properties2.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindAll-properties2.png"/> 
 </figure>
 
 <p>With expanding this particular tweet on the Twitter site I can notice that the URL of the tweet is <a href="https://twitter.com/CloudOps_Wayne/status/454657048286740480"  target="_blank" rel="noreferrer noopener" >twitter.com/CloudOps_Wayne/status/454657048286740480</a> which matches the id_str property, not the id one.</p>
 <p>Since I am not happy with the properties values I keep &ldquo;Valid object properties&rdquo; to &ldquo;No&rdquo; and submit.</p>
 <p>Back to the findAll object properties accessors I paste the JSON string from the JSON editor with taking care of updating the id property to id_str as follows:</p>
 <figure>
-    <img src="./Dynamic-Types-FindAll-JSON-Deserialization2.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindAll-JSON-Deserialization2.png"/> 
 </figure>
 
 <p>Submit.</p>
@@ -266,23 +266,23 @@ name: object.id</p>
 <p>Since we cannot hardcode a particular ud in the URL we will use the {id} placeholder.</p>
 <p>We will keep using the executeRequest action as we did before and need to select a specific ID to test invoking the URL. The ID list is pulled from the previous findAll call.</p>
 <figure>
-    <img src="./Dynamic-Types-FindByIdUrl.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindByIdUrl.png"/> 
 </figure>
 
 <p>Submit. We now get the JSON response. Copying / pasting in an editor shows that the result is as expected.</p>
 <figure>
-    <img src="./Dynamic-Types-FindById-JSON-RESPONSE.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindById-JSON-RESPONSE.png"/> 
 </figure>
 
 <p>Set &ldquo;Valid response content&rdquo; to &ldquo;yes&rdquo;.</p>
 <p>As before the workflow pulled the object properties. We will want to do the same changes as before for the id and name properties. Update these as you did before.</p>
 <figure>
-    <img src="./Dynamic-Types-FindById-Deserialization.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindById-Deserialization.png"/> 
 </figure>
 
 <p>And as before you can check that the right properties values for the object with this particular ID were pulled. If so set &ldquo;Valid object properties&rdquo; to &ldquo;yes&rdquo;</p>
 <figure>
-    <img src="./Dynamic-Types-FindById-properties.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindById-properties.png"/> 
 </figure>
 
 <p>Submit.</p>
@@ -290,60 +290,60 @@ name: object.id</p>
 <p>We can now define the findRelation URL. In the most simple use cases this will return in your inventory all the objects of a given type under a folder. The query will then be the same as for findAll.</p>
 <p>More complex use cases would be to use particular requests parameters or filtering returned results based on the parent objects and folders. Repeat the same sequence as for findAll</p>
 <figure>
-    <img src="./Dynamic-Types-FindRelationUrl.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindRelationUrl.png"/> 
 </figure>
 
 <p>Submit</p>
 <figure>
-    <img src="./Dynamic-Types-FindRelation-JSON-Response.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindRelation-JSON-Response.png"/> 
 </figure>
 
 <p>Set &ldquo;Valid response content&rdquo; to &ldquo;yes&rdquo;.</p>
 <p>Submit</p>
 <p>Paste the same changes as done before.</p>
 <figure>
-    <img src="./Dynamic-Types-FindRelation-Deserialization.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindRelation-Deserialization.png"/> 
 </figure>
 
 <p>Submit.</p>
 <figure>
-    <img src="./Dynamic-Types-FindRelation-Properties.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-FindRelation-Properties.png"/> 
 </figure>
 
 <p>Set &ldquo;Valid object properties&rdquo; to &ldquo;yes&rdquo;.</p>
 <p>Submit.</p>
 <p>For defining the final object properties you have two options : use the properties that are returned by all the previous queries or the ones returned by all of them. In the first case some properties may not be set for some queries, in the last one they should be set consistently. Set yes.</p>
 <figure>
-    <img src="./Dynamic-Types-Define-Object-Properties.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-Define-Object-Properties.png"/> 
 </figure>
 
 <p>Submit.</p>
 <h3 id="checking-the-new-object-type">Checking the new object type</h3>
 <p>Check in the Type Hierarchy in the inventory. The workflow created a MentionTimeline object under a Mentions one (the folder)</p>
 <figure>
-    <img src="./Dynamic-Types-Hierarchy.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-Hierarchy.png"/> 
 </figure>
 
 <p>If you now unfold the Twitter namespace, then the Mentions folder you will get the mentions tweets returned by the Twitter API. This proves findRelation work as expected.</p>
 <figure>
-    <img src="./Dynamic-Types-Objects.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-Objects.png"/> 
 </figure>
 
 <p>You can then create a worflow with a mentionTimeline type as input and test running the workflow as below.</p>
 <figure>
-    <img src="./Dynamic-Types-Input.png"/> 
+    <img src="/images/dt-twitter/Dynamic-Types-Input.png"/> 
 </figure>
 
 <p>From a scriptable task you will get access to the object properties using <code>tweet.getProperty(propertyName);</code></p>
 <h2 id="define-a-custom-operation-method">Define a custom operation method</h2>
 <p>It is nice to have an inventory of object, it is even nicer to have workflows to operate these! To do this run the &ldquo;Define an object method&rdquo; workflow. Select a namespace and object type your operation will apply to.</p>
 <figure>
-    <img src="./DynamicType-AddMethod1.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod1.png"/> 
 </figure>
 
 <p>Enter the name of the operation / method. Below I want to be able to retweet</p>
 <figure>
-    <img src="./DynamicType-AddMethod2.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod2.png"/> 
 </figure>
 
 <p>Submit.</p>
@@ -351,33 +351,33 @@ name: object.id</p>
 <p>We will keep the default action to invoke the operation since it works well for twitter.</p>
 <p>To test the operation we need to provide an ID of the object this operation will apply to. Below I have selected an ID based on what I could see in the vCO inventory.</p>
 <figure>
-    <img src="./DynamicType-AddMethod3.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod3.png"/> 
 </figure>
 
 <p>vCO execute the operation and show the response content. If this seems right you can set &ldquo;Valid response content ?&rdquo; to &ldquo;yes&rdquo;.</p>
 <figure>
-    <img src="./DynamicType-AddMethod4.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod4.png"/> 
 </figure>
 
 <p>As before the workflow will get the object properties. To make sure the right properties are used you need as before in this tutorial to change the id to id_str and the name to the expression we had entered before.</p>
 <figure>
-    <img src="./DynamicType-AddMethod5.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod5.png"/> 
 </figure>
 
 <p>Submit. The resulting properties are shown. If these are correct. Set &ldquo;Valid object properties ?&rdquo; to &ldquo;yes&rdquo;</p>
 <figure>
-    <img src="./DynamicType-AddMethod6.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod6.png"/> 
 </figure>
 
 <p>Submit.</p>
 <p>Now that we have created the operation we need to create a workflow to call it. Create a new workflow and name it.</p>
 <figure>
-    <img src="./DynamicType-AddMethod7.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod7.png"/> 
 </figure>
 
 <p>Drag and drop on the schema the &ldquo;Invoke method template&rdquo; workflow.</p>
 <figure>
-    <img src="./DynamicType-AddMethod8.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod8.png"/> 
 </figure>
 
 <p>Use the setup button at the top of the schema to bind its inputs and outputs to your main workflow. Set these as following</p>
@@ -388,29 +388,29 @@ name: object.id</p>
 <li>updatedObject as an output</li>
 </ul>
 <figure>
-    <img src="./DynamicType-AddMethod9.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod9.png"/> 
 </figure>
 
 <p>Click &ldquo;Promote&rdquo;</p>
 <p>There are two small things that have to be adjusted. In the attribute page change the dynamicTypeObject type to the type you need to operate.</p>
 <figure>
-    <img src="./DynamicType-AddMethod10.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod10.png"/> 
 </figure>
 
 <p>And do the same for the output parameter.</p>
 <figure>
-    <img src="./DynamicType-AddMethod11.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod11.png"/> 
 </figure>
 
 <p>For convenience set the dynamicTypeObject presentation properties to mandatory and &ldquo;show in inventory&rdquo; (which will make your workflow contextual)</p>
 <figure>
-    <img src="./DynamicType-AddMethod12.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod12.png"/> 
 </figure>
 
 <p>Save and close your workflow.</p>
 <p>You can now unfold your inventory, select an item, right click and run your workflow (edit the user preferences / inventory to have it shown as below).</p>
 <figure>
-    <img src="./DynamicType-AddMethod13.png"/> 
+    <img src="/images/dt-twitter/DynamicType-AddMethod13.png"/> 
 </figure>
 
 <p>And VOILA !</p>
