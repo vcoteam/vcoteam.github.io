@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Tutorial: Create your own Twitter Application with a vCO workflow in a few minutes - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;If you thought vCO was powerful, think again. The new SOAP and REST plug-in are taking it to new levels. With the following tutorial you can in as little as 30 minutes and &lt;span style=&#34;text-decoration: underline;&#34;&gt;without a single line of code&lt;/span&gt; (yes really !) create a workflow that will update your Twitter status. If you never had a chance to do a vCO Tutorial this one is really an easy one for starting.&lt;/p&gt;&lt;p&gt;Why Twitter ? Because this is a really popular application offering a public REST web service and today&#34;s tutorial is about leveraging the vCO REST plug-in. Going through this article will help you to understand how to orchestrate various REST web services.&lt;/p&gt;">
+	<meta name="description" content="With the following tutorial you can in as little as 30 minutes and without a single line of code (yes really !) create a workflow that will update your Twitter status. If you never had a chance to do a vCO Tutorial this one is really an easy one for starting.">
 		<meta property="og:title" content="Tutorial: Create your own Twitter Application with a vCO workflow in a few minutes" />
-<meta property="og:description" content="&lt;p&gt;If you thought vCO was powerful, think again. The new SOAP and REST plug-in are taking it to new levels. With the following tutorial you can in as little as 30 minutes and &lt;span style=&#34;text-decoration: underline;&#34;&gt;without a single line of code&lt;/span&gt; (yes really !) create a workflow that will update your Twitter status. If you never had a chance to do a vCO Tutorial this one is really an easy one for starting.&lt;/p&gt;&lt;p&gt;Why Twitter ? Because this is a really popular application offering a public REST web service and today&#34;s tutorial is about leveraging the vCO REST plug-in. Going through this article will help you to understand how to orchestrate various REST web services.&lt;/p&gt;" />
+<meta property="og:description" content="With the following tutorial you can in as little as 30 minutes and without a single line of code (yes really !) create a workflow that will update your Twitter status. If you never had a chance to do a vCO Tutorial this one is really an easy one for starting." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html" />
 <meta property="article:published_time" content="2011-06-15T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tutorial: Create your own Twitter Application with a vCO workflow in a few minutes"/>
-<meta name="twitter:description" content="&lt;p&gt;If you thought vCO was powerful, think again. The new SOAP and REST plug-in are taking it to new levels. With the following tutorial you can in as little as 30 minutes and &lt;span style=&#34;text-decoration: underline;&#34;&gt;without a single line of code&lt;/span&gt; (yes really !) create a workflow that will update your Twitter status. If you never had a chance to do a vCO Tutorial this one is really an easy one for starting.&lt;/p&gt;&lt;p&gt;Why Twitter ? Because this is a really popular application offering a public REST web service and today&#34;s tutorial is about leveraging the vCO REST plug-in. Going through this article will help you to understand how to orchestrate various REST web services.&lt;/p&gt;"/>
+<meta name="twitter:description" content="With the following tutorial you can in as little as 30 minutes and without a single line of code (yes really !) create a workflow that will update your Twitter status. If you never had a chance to do a vCO Tutorial this one is really an easy one for starting."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,103 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-06-15T00:00:00Z">June 15, 2011</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>If you thought vCO was powerful, think again. The new SOAP and REST plug-in are taking it to new levels. With the following tutorial you can in as little as 30 minutes and <span style="text-decoration: underline;">without a single line of code</span> (yes really !) create a workflow that will update your Twitter status. If you never had a chance to do a vCO Tutorial this one is really an easy one for starting.</p>
+<p>Why Twitter ? Because this is a really popular application offering a public REST web service and today's tutorial is about leveraging the vCO REST plug-in. Going through this article will help you to understand how to orchestrate various REST web services.</p>
+
+
+<p><span style="line-height: 1.3em;">Pre-requisite :</span></p>
+<p>Having a Twitter account. If you do not have one just create one for this tutorial, it only takes a couple of minutes.</p>
+<p>Download and install the <a href="https://solutionexchange.vmware.com/store/products/vmware-vcenter-orchestrator-http-rest-plug-in--2" target="_blank">REST plug-in</a></p>
+<p>When dealing with web services the first thing to do is to find how to authenticate. While some web services may allow to get information without authenticating updates requires it. For Twitter it is located here : https://dev.twitter.com/. If you have time to spend read it, otherwise skip that part to get going.</p>
+
+<p>Go to https://dev.twitter.com/apps. If you were not authenticated log in.</p>
+<p>Register a new App as follows (be inventive for the application name since these need to be unique and less than 32 characters).</p>
+<p><img src="/images/Twitter/000_register_a_new_app.png" alt="alt" /></p>
+
+<p><img src="/images/Twitter/001_register_Twitter_App.png" alt="alt" /></p>
+
+<p>Once done Copy / Paste the Consumer key and secret separately to a test file.</p>
+
+<p>Click on "my Access Token"</p>
+<p><img src="/images/Twitter/002_get_Access_Token.png" alt="alt" /></p>
+<p>Copy / Paste the Consumer key and secret separately to a test file.</p>
+
+<p>Make a little note of the actual time so you can have a record on how long you had to work. Open your vCO Client and start the following workflow.</p>
+<p><img src="/images/Twitter/003_add_a_REST_host.png" alt="alt" /></p>
+
+<p>Set a name for the host, the https://api.twitter.com/1.1 URL and OAuth 1.0 type of authentication (if you wonder what it is, it is because you did not read the Twitter API doc above).</p>
+<p>Copy and paste from your text file your consumer key, consumer secret, access token and access token secret. Submit.</p>
+<p><img src="/images/Twitter/004_add_a_REST_host.png" alt="alt" /></p>
+<p>(NB: this screenshot contains previous Twitter API)</p>
+<p>We have created the host connection, now we want to create a REST operation. Start the following workflow.</p>
+<p><img src="/images/Twitter/005_add_a_REST_operation.png" alt="alt" /></p>
+
+<p>Select the parent host. Give a name for the operation such as "Update my Twitter Status". In the Template URL enter : /statuses/update.json?status={status}.</p>
+<p>HTTP method is POST and content type is application/json. Submit. The URL is the operation to be taken, the curly brackets define the parameter to be passed (here a string indicating your status).</p>
+
+<p><img src="/images/Twitter/006_add_a_REST_operation.png" alt="alt" /></p>
+<p>(NB: this screenshot contains previous Twitter API)</p>
+<p>Now go in the inventory tab. Unfold it as below.</p>
+<p><img src="/images/Twitter/007_invoke_a_REST_operation.png" alt="alt" /></p>
+
+<p>Right click on Update Twitter Status (Your menu may only show the two first items, displaying the workflows in the menu is a tools manu / User preferences / Inventory Option). Select "invoke REST operation" or "Run workflow" and then "invoke REST operation".</p>
+<p><img src="/images/Twitter/008_invoke_a_REST_operation.png" alt="alt" /></p>
+
+<p>In Parameter 1 Enter your text message. For example "@vCOTeam Sending my first workflow powered tweet !". Make sure you keep this under 140 characters since this is Twitter limit.</p>
+<p>Content Type is application/xml and keep content blank. Submit.</p>
+
+<p><img src="/images/Twitter/009_invoke_a_REST_operation.png" alt="alt" /></p>
+<p>(NB: this screenshot contains previous Twitter API)</p>
+<p>Done ! If you go on twitter.com or any other twitter client you will see your message.</p>
+<p><img src="/images/Twitter/009A_invoke_a_REST_operation.png" alt="alt" /></p>
+<p>Note the time.</p>
+
+<p>Now we want a workflow doing the Update. Start the following workflow:</p>
+<p><img src="/images/Twitter/010_generate_a_REST_operation_workflow.png" alt="alt" /></p>
+
+<p>Select the update operation. Make sure you have the right content type. Give a name and a folder for the workflow. Submit.</p>
+<p><img src="/images/Twitter/011_generate_a_REST_operation_workflow.png" alt="alt" /></p>
+<p>(NB: this screenshot contains previous Twitter API)</p>
+<p>Check in the Folder you selected. A new workflow is here. You just ran a workflow that generated another workflow !!!</p>
+<p><img src="/images/Twitter/012_update_twitter_status_workflow.png" alt="alt" /></p>
+
+<p>If you start it you will notice that besides the status message it is expecting a content Twitter is not using. Lets fix that.</p>
+
+<p><img src="/images/Twitter/013_update_twitter_status_workflow.png" alt="alt" /></p>
+<p>Right Click / Edit the workflow. Look at the schema. This is what was generated automatically.</p>
+
+<p><img src="/images/Twitter/014_update_twitter_status_workflow.png" alt="alt" /></p>
+
+<p>Go in the input tab. Right click on the content input and select "Move as attribute". This converts the input we did not want into an attribute (a variable for the workflow).</p>
+
+<p><img src="/images/Twitter/015_update_twitter_status_workflow.png" alt="alt" /></p>
+
+<p>Click on the presentation tab, select the "Request Content group" and then the red cross to delete it. This was the "Request Content section" in the screenshot above.</p>
+
+<p><img src="/images/Twitter/016_update_twitter_status_workflow.png" alt="alt" /></p>
+
+<p>Save and quit. Now you have a workflow to update your twitter Status that you run or insert in your other workflows.</p>
+<p>Note your time.</p>
+
+<p>For example you can send twitter update on workflows failure as a way to alert all your followers something went bad (a bit silly but you get the idea of what you could do with the REST based applications in your environment.).</p>
+<p><img src="/images/Twitter/017_update_twitter_status_workflow.png" alt="alt" /></p>
+<p>Please comment on the article on how long it took you to complete this tutorial.</p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/twitter/" rel="tag">Twitter</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +296,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

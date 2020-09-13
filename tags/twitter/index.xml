@@ -22,5 +22,14 @@ Warning: You can do it without Java development experience and without having to
 As a first step download the Dynamic Types plug-in generator package from VMware communities.</description>
     </item>
     
+    <item>
+      <title>Tutorial: Create your own Twitter Application with a vCO workflow in a few minutes</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html</link>
+      <pubDate>Wed, 15 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html</guid>
+      <description>If you thought vCO was powerful, think again. The new SOAP and REST plug-in are taking it to new levels. With the following tutorial you can in as little as 30 minutes and without a single line of code (yes really !) create a workflow that will update your Twitter status. If you never had a chance to do a vCO Tutorial this one is really an easy one for starting.</description>
+    </item>
+    
   </channel>
 </rss>

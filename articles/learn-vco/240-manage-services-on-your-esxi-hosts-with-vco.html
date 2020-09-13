@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Manage Services on your ESXi Hosts with vCO - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;We&#34;ve all seen that vCenter Orchestrator (vCO) is quite powerful in automating many aspects of your Infrastructure through the variety of specific and generic plug-ins. While there are hundreds of workflows and actions for vCenter included in a clean install of vCO, they simply don&#34;t cover every single thing you may want to do. One such example has come up a few times in the VMware Communities: Managing Services. The following article will walk you through creating a simple workflow that allows you to manage services on a specified ESXi (VC:HostSystem) server.&lt;/p&gt;">
+	<meta name="description" content="The following article will walk you through creating a simple workflow that allows you to manage services on a specified ESXi (VC:HostSystem) server.">
 		<meta property="og:title" content="Manage Services on your ESXi Hosts with vCO" />
-<meta property="og:description" content="&lt;p&gt;We&#34;ve all seen that vCenter Orchestrator (vCO) is quite powerful in automating many aspects of your Infrastructure through the variety of specific and generic plug-ins. While there are hundreds of workflows and actions for vCenter included in a clean install of vCO, they simply don&#34;t cover every single thing you may want to do. One such example has come up a few times in the VMware Communities: Managing Services. The following article will walk you through creating a simple workflow that allows you to manage services on a specified ESXi (VC:HostSystem) server.&lt;/p&gt;" />
+<meta property="og:description" content="The following article will walk you through creating a simple workflow that allows you to manage services on a specified ESXi (VC:HostSystem) server." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/240-manage-services-on-your-esxi-hosts-with-vco.html" />
 <meta property="article:published_time" content="2012-04-24T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manage Services on your ESXi Hosts with vCO"/>
-<meta name="twitter:description" content="&lt;p&gt;We&#34;ve all seen that vCenter Orchestrator (vCO) is quite powerful in automating many aspects of your Infrastructure through the variety of specific and generic plug-ins. While there are hundreds of workflows and actions for vCenter included in a clean install of vCO, they simply don&#34;t cover every single thing you may want to do. One such example has come up a few times in the VMware Communities: Managing Services. The following article will walk you through creating a simple workflow that allows you to manage services on a specified ESXi (VC:HostSystem) server.&lt;/p&gt;"/>
+<meta name="twitter:description" content="The following article will walk you through creating a simple workflow that allows you to manage services on a specified ESXi (VC:HostSystem) server."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,38 +121,282 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2012-04-24T00:00:00Z">April 24, 2012</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>// refresh services info to make sure all properties are fresh:
-hostServiceSystem.refreshServices();<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<pre><code>case &quot;stop&quot;: // Only run the stopService method if the service is running
-    if (serviceObj.running == true){ 
-        hostServiceSystem.stopService(serviceObj.key); 
+      <p>We've all seen that vCenter Orchestrator (vCO) is quite powerful in automating many aspects of your Infrastructure through the variety of specific and generic plug-ins. While there are hundreds of workflows and actions for vCenter included in a clean install of vCO, they simply don't cover every single thing you may want to do. One such example has come up a few times in the VMware Communities: Managing Services. The following article will walk you through creating a simple workflow that allows you to manage services on a specified ESXi (VC:HostSystem) server.</p>
+
+
+<p>As referenced in the "Onyx Output Conversion" thread linked at the end of this article, one way to get started creating new workflows is to use Onyx to capture actions you perform in your vCenter client. This will help you identify the necessary objects and values for the various inputs of the methods you execute against those objects. Be sure to spend some time figuring out this tool and getting to know the API Explorer in vCO.</p>
+<p>In order to get things started, create a new workflow named something like "Update HostSystem Service" or whatever you like.</p>
+<p>Once you've created the workflow, place a single Scriptable task named "Apply Action" in there and make all your connections.</p>
+<p>Now, let's identify what we'll need for this workflow:</p>
+<ul>
+<li>ESXi server (VC:HostSystem) &lt;- very important input</li>
+<li>Service Name we wish to take action against</li>
+<li>Service action - what we want to do to the service</li>
+<li>Policy action - how we want the service to act when the ESXi server starts</li>
+</ul>
+<p><b>Let's get started with editing the Apply Action Scriptable Task!<br /><br />NOTE: </b><em>If using vCO 5.5.1, you will need to disable use of the Inventory service by the vCO Server. This will actually resolve a number of issues and is safe to do and recommended many times over in the Orchestrator Community. To disable vCO's use of the Inventory Service, add the following line to your vmo.properties file, save, then restart the vCO Server Service:</em><b><br /></b></p>
+<pre>com.vmware.o11n.vim.useInventoryService=false</pre>
+<p><i><b>INPUT PARAMETER</b></i>: First of all, add a new input to your scriptable task named "host". The type should be "VC:HostSystem". This will be the ESXi server that we will manage the service of.</p>
+<p>Now that we have our HostSystem object, let's start coding!</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript">  <span style="color:#75715e">// Get the hostServiceSystem object from the host:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hostServiceSystem</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">host</span>.<span style="color:#a6e22e">configManager</span>.<span style="color:#a6e22e">serviceSystem</span>;
+
+<span style="color:#75715e">// refresh services info to make sure all properties are fresh:
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">refreshServices</span>();
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>We now have our hostServiceSystem object. This object is the one that has the methods that allow us to start/stop/restart the services so we're off to a good start. Next up, we need to make sure we get the service object that we wish to manage.</p>
+<p><i><b>INPUT PARAMETER</b></i>: Add another input to your scriptable task named "serviceName" - this should be a String.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Get Service:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">serviceObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">services</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">serviceInfo</span>.<span style="color:#a6e22e">service</span>; <span style="color:#75715e">// Retrieve a list of available services on this host
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span> (<span style="color:#a6e22e">svc</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">services</span>){ <span style="color:#75715e">// now try to match the service key with the service name we&#39;re passing in
+</span><span style="color:#75715e"></span>     <span style="color:#75715e">//System.log(&#34;Checking &#34;+svc.key+&#34; / &#34;+serviceName); // Optionally uncomment the beginning of this line for additional logging
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">svc</span>.<span style="color:#a6e22e">key</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">serviceName</span>){
+        <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Service Found! &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">svc</span>.<span style="color:#a6e22e">label</span>);
+ <span style="color:#a6e22e">serviceObj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">svc</span>;
+        <span style="color:#66d9ef">break</span>;
+    }
+}
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">serviceObj</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){ <span style="color:#75715e">// Make sure we got the service object we are trying to manipulate - if null, throw exception
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;unable to locate service: &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">serviceName</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; on host: &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">host</span>.<span style="color:#a6e22e">name</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Okay, great. We found the service. Now let's do something with it.</p>
+<p>Use the API Explorer to look at the "VcHostServiceSystem" object. This is the object we obtained in the first script snippet above. Take a look at the methods available (indicated by solid block dots).</p>
+<p><img style="border-style: initial; border-color: initial;" src="/images/esxi-vco/vchostservicesystem.png" alt="VcHostServiceSystem properties and methods" /></p>
+<p>Based on the API, it looks like we can: restart, start, stop, or uninstall a service. We can also update the Service Policy.</p>
+<p>We'll need to account for each of these possible actions. As part of this, we'll need an input to prompt what we want to do. Additionally, we should pre-define our values so they cannot be mis-typed.</p>
+<p><i><b>INPUT PARAMETER</b></i>: Add another input to your scriptable task named "serviceAction" - this should be a String</p>
+<p><i><b>ATTRIBUTE</b></i>: Add a new attribute named "serviceActions" - this should be an Array of Strings with the following values:</p>
+<ul>
+<li>start</li>
+<li>stop</li>
+<li>restart</li>
+<li>uninstall</li>
+</ul>
+<p>We'll use this attribute in our presentation to present a dropdown list of service actions. This allows us to prevent a user from typing an invalid value.</p>
+<p>Now paste the following code at the bottom of the scriptable task.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript">  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">serviceAction</span>){ 
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">:</span> <span style="color:#75715e">// Only run the startService method if the service is not running
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// before trying to start, make sure running is not true 
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">running</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">true</span>){ 
+            <span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">startService</span>(<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span>); 
+        } 
+        <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;stop&#34;</span><span style="color:#f92672">:</span> <span style="color:#75715e">// Only run the stopService method if the service is running
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">running</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>){ 
+            <span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">stopService</span>(<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span>); 
+        } 
+        <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;restart&#34;</span><span style="color:#f92672">:</span> 
+        <span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">restartService</span>(<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span>); 
+        <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;uninstall&#34;</span><span style="color:#f92672">:</span> <span style="color:#75715e">// Not all services can be uninstalled so we use a try/catch here
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">try</span>{ 
+            <span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">uninstallService</span>(<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span>); 
+        }<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span>){ 
+            <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Error uninstalling service &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; (&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">err</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;)&#34;</span>); 
+            <span style="color:#a6e22e">Server</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Error uninstalling service &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span>,<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span>); 
+        } 
+        <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#75715e">// We should never get here so Provide some warning logging and optionally throw an exception if appropriate for your environment
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">&#34;Invalid service action selected&#34;</span>); 
+        <span style="color:#a6e22e">Server</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">&#34;Invalid service action selected&#34;</span>,<span style="color:#a6e22e">serviceAction</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Finally, we need to provide the ability to specify how the service starts up.<br /><i><b>INPUT PARAMETER</b></i>: Add a new input to your Scriptable Task named "policyAction" - this should be a String</p>
+<p>The updateServicePolicy takes two parameters - the id of our service object and the policy. It took a little playing with Onyx for me to find that the possible values for the policy are on, off, or automatic. We don't always want to take action on a policy so we'll be adding an extra value to our choice: No Change.</p>
+<p><i><b>ATTRIBUTE</b></i>: Add a new attribute named "policyActions" - this should be an Array of Strings with the following values:</p>
+<ul>
+<li>No Change</li>
+<li>on</li>
+<li>off</li>
+<li>automatic</li>
+</ul>
+<p>We'll use this attribute in our presentation to present a dropdown list of policy actions. This allows us to prevent a user from typing an invalid value.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">policyAction</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>; <span style="color:#a6e22e">policyAction</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>; <span style="color:#a6e22e">policyAction</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;No Change&#34;</span>){ 
+    <span style="color:#75715e">// only valid policy actions are: on, off, automatic 
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">try</span>{ 
+        <span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">updateServicePolicy</span>(<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span>,<span style="color:#a6e22e">policyAction</span>); 
+    }<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span>){ 
+        <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Error updating service policy &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; (&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">err</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;)&#34;</span>); 
+        <span style="color:#a6e22e">Server</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Error updating service policy &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; (&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">err</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;)&#34;</span>,<span style="color:#a6e22e">serviceObj</span>.<span style="color:#a6e22e">key</span>); 
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>At this point, the workflow has 1 object input and 3 string inputs. All of which are passed in to the Scriptable Task.</p>
+<p>Go ahead and try running your workflow right now...</p>
+<p>See a problem? Right, you could mis-type the service name and may not even know which actions are available. Earlier in the article, we created a pair of Attributes that we store an array of strings containing a static set of values. We don't want to do this for the services since the services available on one host may not be available on other hosts and we want this workflow to be very reusable. So, we'll create an Action that retrieves an array of Service Names running on the given HostSystem.</p>
+<p>Create a new Action named "getHostSystemServiceKeys". I will create this in a module named com.vmware.pso</p>
+<p>The action should have an input named "host" of type "VC:HostSystem". I have also added a "logging" input of type "boolean" to allow for some System.log entries to take place if I need them.</p>
+<p>For the Return Type, set that to "Array/string" since we'll be returning the names of all the services available to the HostSystem.</p>
+<p>Now, for the script:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hostServiceSystem</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">host</span>.<span style="color:#a6e22e">configManager</span>.<span style="color:#a6e22e">serviceSystem</span>;
+<span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">refreshServices</span>();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">services</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hostServiceSystem</span>.<span style="color:#a6e22e">serviceInfo</span>.<span style="color:#a6e22e">service</span>; <span style="color:#75715e">// Return the array of service objects
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">serviceKeys</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span> (<span style="color:#a6e22e">svc</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">services</span>){ 
+    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">logging</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>){ 
+        <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Key: &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">svc</span>.<span style="color:#a6e22e">key</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; -- Label: &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">svc</span>.<span style="color:#a6e22e">label</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; -- Policy: &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">svc</span>.<span style="color:#a6e22e">policy</span>); 
     } 
-    break;
-
-case &quot;restart&quot;: 
-    hostServiceSystem.restartService(serviceObj.key); 
-    break;
-
-case &quot;uninstall&quot;: // Not all services can be uninstalled so we use a try/catch here
-    try{ 
-        hostServiceSystem.uninstallService(serviceObj.key); 
-    }catch(err){ 
-        System.error(&quot;Error uninstalling service &quot;+serviceObj.key+&quot; (&quot;+err+&quot;)&quot;); 
-        Server.error(&quot;Error uninstalling service &quot;+serviceObj.key,serviceObj.key); 
-    } 
-    break;
-
-default: // We should never get here so Provide some warning logging and optionally throw an exception if appropriate for your environment
-    System.warn(&quot;Invalid service action selected&quot;); 
-    Server.warn(&quot;Invalid service action selected&quot;,serviceAction);
-</code></pre>
-<p>}<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-
+    <span style="color:#a6e22e">serviceKeys</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">svc</span>.<span style="color:#a6e22e">key</span>); <span style="color:#75715e">// Since this object type cannot be passed as an output/input, we&#39;ll just pass the names into the array
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">serviceKeys</span>;
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Okay, all of our code is in place. The only thing left is to cleanup our presentation so that our inputs are pre-populated with appropriate content after we have chosen our HostSystem.</p>
+<p>Click on the Presentation tab and arrange as shown in the following screenshot:</p>
+<p><img src="/images/esxi-vco/managehostservicespresentation.png" alt="Screenshot of Presentation Tab" /></p>
+<p>Make the following changes on the properties tab of each input:</p>
+<ul>
+<li>(VC:HostSystem) host
+<ul>
+<li>Mandatory Input: Yes</li>
+</ul>
+</li>
+<li>(string) serviceName (On General tab, under description, set value to "Service Name")
+<ul>
+<li>Predefined list of elements (Click the action icon, choose "getHostSystemServiceKeys". For first parameter, enter "#host". For second parameter, enter false)</li>
+</ul>
+</li>
+<li>(string) serviceAction (On General tab, under description, set value to "Service Action")
+<ul>
+<li>Predefined list of elements (Enter #serviceActions for the value)</li>
+</ul>
+</li>
+<li>(string) policyAction (On General tab, under description, set value to "Policy")
+<ul>
+<li>Predefined list of elements (Enter #policyNames for the value)</li>
+<li>Default value (Set to "No Change")</li>
+</ul>
+</li>
+</ul>
+<p>Save and Close! Now try it out!</p>
+<p><img src="/images/esxi-vco/managehostservicerun.png" alt="Screenshot of user Input for workflow run" /></p>
+<p><b>Solution/Package:</b></p>
+<p><img src="/images/filetypes/default.gif" alt="file icon package" /> <a title="Solution Package File - Download Here" href="/images/esxi-vco/com.vmware.pso.vc.hostsystem.services.package">Solution Package File - Download Here</a></p>
+<p><b>Reference/Inspiration:</b></p>
+<p><a href="http://communities.vmware.com/message/1984183" target="_blank">Onyx Output Converstion</a></p>
+<p><a title="Turning on SSH Service and Using SSH plug-in" href="http://communities.vmware.com/thread/399360?tstart=0" target="_blank">Turning on SSH Service and Using SSH plug-in</a></p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/esxi/" rel="tag">ESXi</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -224,57 +475,89 @@ default: // We should never get here so Provide some warning logging and optiona
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

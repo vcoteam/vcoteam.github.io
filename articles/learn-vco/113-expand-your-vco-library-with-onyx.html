@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Expand your vCO library with Onyx - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;vCO is shipped with a large library of actions and workflows for the most common vCenter operations. However since vCenter is extremely rich in terms of features and you may have been in the situation where there is no action or workflow for a given vCenter Operation. Thanks to vCO vCenter plug-in exposing the entire vCenter API as javascript objects and methods you can always explore its API documentation and craft your own actions and workflows. As of a few months ago there is a more efficient solution allowing to record vCenter operations and export them as scripts that can be copied and pasted in vCO actions and workflows. This solution is a free tool called Onyx available on 1. The following article is a tutorial covering:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Basic usage of Onyx to capture vCenter operations and export them as vCO scripts.&lt;/li&gt;&lt;li&gt;Creation of a workflow to test the captured script.&lt;/li&gt;&lt;li&gt;Usage of the API search&lt;br /&gt;&lt;/li&gt;&lt;li&gt;Usage of the vCO inventory to start the workflow.&lt;/li&gt;&lt;li&gt;Creation of an action to expand your vCO library&lt;br /&gt;&lt;/li&gt;&lt;/ul&gt;">
+	<meta name="description" content="vCO is shipped with a large library of actions and workflows for the most common vCenter operations. However since vCenter is extremely rich in terms of features and you may have been in the situation where there is no action or workflow for a given vCenter Operation.">
 		<meta property="og:title" content="Expand your vCO library with Onyx" />
-<meta property="og:description" content="&lt;p&gt;vCO is shipped with a large library of actions and workflows for the most common vCenter operations. However since vCenter is extremely rich in terms of features and you may have been in the situation where there is no action or workflow for a given vCenter Operation. Thanks to vCO vCenter plug-in exposing the entire vCenter API as javascript objects and methods you can always explore its API documentation and craft your own actions and workflows. As of a few months ago there is a more efficient solution allowing to record vCenter operations and export them as scripts that can be copied and pasted in vCO actions and workflows. This solution is a free tool called Onyx available on 1. The following article is a tutorial covering:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Basic usage of Onyx to capture vCenter operations and export them as vCO scripts.&lt;/li&gt;&lt;li&gt;Creation of a workflow to test the captured script.&lt;/li&gt;&lt;li&gt;Usage of the API search&lt;br /&gt;&lt;/li&gt;&lt;li&gt;Usage of the vCO inventory to start the workflow.&lt;/li&gt;&lt;li&gt;Creation of an action to expand your vCO library&lt;br /&gt;&lt;/li&gt;&lt;/ul&gt;" />
+<meta property="og:description" content="vCO is shipped with a large library of actions and workflows for the most common vCenter operations. However since vCenter is extremely rich in terms of features and you may have been in the situation where there is no action or workflow for a given vCenter Operation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/113-expand-your-vco-library-with-onyx.html" />
 <meta property="article:published_time" content="2010-10-29T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Expand your vCO library with Onyx"/>
-<meta name="twitter:description" content="&lt;p&gt;vCO is shipped with a large library of actions and workflows for the most common vCenter operations. However since vCenter is extremely rich in terms of features and you may have been in the situation where there is no action or workflow for a given vCenter Operation. Thanks to vCO vCenter plug-in exposing the entire vCenter API as javascript objects and methods you can always explore its API documentation and craft your own actions and workflows. As of a few months ago there is a more efficient solution allowing to record vCenter operations and export them as scripts that can be copied and pasted in vCO actions and workflows. This solution is a free tool called Onyx available on 1. The following article is a tutorial covering:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Basic usage of Onyx to capture vCenter operations and export them as vCO scripts.&lt;/li&gt;&lt;li&gt;Creation of a workflow to test the captured script.&lt;/li&gt;&lt;li&gt;Usage of the API search&lt;br /&gt;&lt;/li&gt;&lt;li&gt;Usage of the vCO inventory to start the workflow.&lt;/li&gt;&lt;li&gt;Creation of an action to expand your vCO library&lt;br /&gt;&lt;/li&gt;&lt;/ul&gt;"/>
+<meta name="twitter:description" content="vCO is shipped with a large library of actions and workflows for the most common vCenter operations. However since vCenter is extremely rich in terms of features and you may have been in the situation where there is no action or workflow for a given vCenter Operation."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,48 +121,102 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-10-29T00:00:00Z">October 29, 2010</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>vCO is shipped with a large library of actions and workflows for the most common vCenter operations. However since vCenter is extremely rich in terms of features and you may have been in the situation where there is no action or workflow for a given vCenter Operation. Thanks to vCO vCenter plug-in exposing the entire vCenter API as javascript objects and methods you can always explore its API documentation and craft your own actions and workflows. As of a few months ago there is a more efficient solution allowing to record vCenter operations and export them as scripts that can be copied and pasted in vCO actions and workflows. This solution is a free tool called Onyx available on <a target="_blank" href="http://labs.vmware.com/flings/onyx" mce_href="http://labs.vmware.com/flings/onyx">VMware labs</a>. The following article is a tutorial covering:</p><ul><li>Basic usage of Onyx to capture vCenter operations and export them as vCO scripts.</li><li>Creation of a workflow to test the captured script.</li><li>Usage of the API search<br /></li><li>Usage of the vCO inventory to start the workflow.</li><li>Creation of an action to expand your vCO library<br /></li></ul>
 
+
+<h2>Getting the script with Onyx</h2>
+
+<p>If you do not have it already you can download and install Onyx. You can install Onyx either on your vCenter server or a separate system. </p><p>Click on the following icon. </p>
+
+<p><img src="/images/Onyx/001_Connect_to_vc.png" alt="Onyx Connect to VC"></p><p>Enter the URL of your vCenter Server (if you are not sure copy and paste it from the vSphere Client). Click Start<br /></p>
+
+<p><img src="/images/Onyx/002_EnterVCServerUrl.png" alt="Enter vCenter URL"></p><p>Next select vCO Javascript for output<br /></p>
+
+<p><img src="/images/Onyx/003_Select_output.png" alt="Select Output"></p><p>Onyx will display the current status. The first hostname / IP address and port is your vCenter server, the second one is the Onyx server. To capture the vCenter Operations Onyx acts as an HTTP proxy server between your vSphere Client and the vCenter Server. These communicate with a web service protocol named SOAP. The SOAP messages can be captured and Onyx can translate them to different formats including vCO javascript as selected above.<br /></p>
+
+<p><img src="/images/Onyx/004_Check_Onyx_ports.png" alt="Check Onyx Ports"></p><p>Now you need to connect with your vSphere client. In the IP address / name field change your regular vCenter references by the ones of the Onyx as displayed on the Onyx status bar ("running at a.b.c.d:xyz"). You also need to provide your authentication credentials so Onyx can pass them to vCenter.<br /></p>
+
+<p><img src="/images/Onyx/005_Log_into_VC.png" alt="Log in to vCenter"></p><p>Once you are in vCenter and ready to run the operation you want to record press the play button below.<br /></p>
+
+<p><img src="/images/Onyx/006_Start_Onyx.png" alt="Start Onyx"></p><p>In my case I need to create an action or workflow to turn on Fault tolerance since it is not in the library. Looking for faultTolerance in the vCO API explorer did not get me any method that I could use. Run the operation to record.<br /></p>
+
+<p><img src="/images/Onyx/007_Start_VC_Operation.png" alt="Start vCenter Operation"></p><p>Onyx processes the capture and displays the script I have been looking for. The method is in fact called createSecondaryVM_Task called on a managedObject identified as being a virtualMachine object. Copy the script to the clipboard.<br /></p>
+
+<p><img src="/images/Onyx/008_Onyx_has_recorded.png" alt="Onyx has recorded"></p><h2>Create a test workflow for this script<br /></h2><p>In vCO create a new workflow. This will be our test base for the captured script. I have called it "Turn On Fault Tolerance". Edit the workflow. As a best practice set an initial version number and a description. From the palette drag and drop a scriptable box on the schema. Name it "createSecondaryVM". Before writing the script we are going to check on the method. Click on the Search API magnifier. <br /></p>
+
+<p><img src="/images/Onyx/010_Search_API.png" alt="Search API"></p><p>Type in "createSecondaryVM" as below.</p>
+
+<p><img src="/images/Onyx/011_Search_API2.png" alt="Search API -"></p><p>We can check here that the method applies to a Virtual Machine object and that it returns a VcTask Object.<br /></p>
+
+<p><img src="/images/Onyx/012_ReturnType.png" alt="Return Type"></p><p>Click on the scriptable box "IN" tab. Create a new <u>input parameter</u> named vm of type VC:VirtualMachine<br /></p>
+
+<p><img src="/images/Onyx/013_VM_input.png" alt="VM Input"></p><p>Click on the scriptable box "OUT" tab. Create a new <u>attribute</u> named task of type VC:Task</p>
+
+<p><img src="/images/Onyx/014_VC_Task.png" alt="vCenter Task"></p><p>Paste the code from Onyx and perform the following changes:</p><ul><li>Changing "managedObject" by "vm". </li><li>start the script with "task = ". This will allow us set our task attribute with the task returned by the createSecondaryVM_task method.</li></ul><p>You should get the following:<br /></p>
+
+<p><img src="/images/Onyx/015_Scripting_Box.png" alt="Scripting Box"></p><p>To make sure any other operation is started on this VM before HA is turned on we will wait for the task to complete. There is an action in the library for that. Drag and drop an action from the palette to the schema. Search for waitTask. Select vim3WaitTaskEnd (NB the vim3 name was kept to ease portability of workflows that were developed for older version of the vCenter plug-in).<br /></p>
+
+<p><img src="/images/Onyx/016_Adding_vim3_WaitTaskEndAction.png" alt="VIM3 WaitTaskEndAction"></p><p>This action need to be provided with some input parameters. Click on the "IN" tab and set the progress input by creating a boolean attribute set to "no"<br /></p>
+
+<p><img src="/images/Onyx/017_Create_progress_attribute.png" alt="Create progress attribute"></p><p>Set the pollRate with a number attribute set to "1".<br /></p>
+
+<p><img src="/images/Onyx/018_Create_pollrate_attribute.png" alt="Create pollrate attribute"></p><p>You should now have the following:<br /></p>
+
+<p><img src="/images/Onyx/019_Set_action_result.png" alt="Set action result"></p><p>Now we need to set the output of the action. Click on the "OUT" tab. Since we will not need the result of the action select "NULL". Selecting NULL allows to avoid out parameter not linked warnings during the workflow validation.<br /></p>
+
+<p><img src="/images/Onyx/020_vim3WaitTaskEnd_action_parameters.png" alt="VIM3WaitTaskEnd action parameters"></p><p>Adjust the process flow by linking boxes and adding and end as below.<br /></p>
+
+<p><img src="/images/Onyx/021_workflow.png" alt="Workflow"></p><p>The workflow is ready. Let's improve its usability ! In the Presentation tab click on the vm input. Then click on its properties tab. Add the property "Show in inventory".<br /></p>
+
+<p><img src="/images/Onyx/022_Set_show_in_inventory.png" alt="Set show in inventory"></p><p>Save and close the workflow.<br /></p><p>Go in the vCO preferences. Click on inventory and check the following option.<br /></p>
+<p><img src="/images/Onyx/024_Set_use_contextual_menu.png" alt="Set use contextual menu" border="0"></p><p>Click on the vCO inventory tab. Drill down from the vCenter icon to the VM you want and right click it. The following contextual menu will appear showing "Turn On Fault Tolerance".<br /></p><p><img src="/images/Onyx/turn_on_fault_tolerance.png" alt="Turn on fault tolerance"><br /></p>
+
+<p>Submit the workflow. That should set your VM in fault tolerance.</p><h2>Creating an action</h2>
+
+<p>Now that we have tested the functionality it is best practice to have small scripts returning a single object stored in the library as an action.<br /></p>
+
+<p>Create a new action module by right clicking on the action root and selecting "new Module".<br /></p>
+
+<p><img src="/images/Onyx/026_Create_new_module.png" alt="Create new module"></p><p>It is good practice to call it with your reverse company domain name followed by your department followed by subcategories. This category and the other one you will be creating will be a good way to sort your actions and to differentiate them from the vCO library actions.<br /></p>
+
+<p><img src="/images/Onyx/027_Name_new_module.png" alt="Name new module"></p><p>Click on the newly created category. Right click / add action.<br /></p>
+
+<p><img src="/images/Onyx/028_Add_action.png" alt="Add action"></p><p>Since we had a hard time finding createSecondaryVm let's call the action turnOnFaultTolerance<br /></p>
+
+<p><img src="/images/Onyx/029_Name_action.png" alt="Name action"></p><p>As done for the workflow add an input parameter of type "VC:VirtualMachine"<br /></p><p><br /></p>
+
+<p><img src="/images/Onyx/030_Create_action_input.png" alt="Create action input"></p><p>You can see that by default an action has a void return type. Click on the void to change the return type.<br /></p>
+
+<p><img src="/images/Onyx/031_Change_return_type.png" alt="Change return type"></p><p>Select VC:Task<br /></p><p><br /></p>
+
+<p><img src="/images/Onyx/032_Set_return_type.png" alt="Set return type"></p><p><br /></p><p>In the script type in the following:<br /></p>
+
+<p><img src="/images/Onyx/033_Edit_scripting.png" alt="Edit Scripting"></p><p>An action is a function and a function has a single output it returns. The <b>return</b> keyword needs to be used. I also have removed the "null" parameter we had in the workflow since when not passing a parameter empty brackets are a valid syntax. As a best practice set an initial version and a description. <br /></p>
+
+<p><img src="/images/Onyx/034_Set_Version.png" alt="Set version"></p><p>As a final test you can get back to your workflow. Delete the scriptable box. Drag and drop an action from the palette to the schema. Select turnOnFaultTolerance.<br /></p>
+
+<p><img src="/images/Onyx/035_Add_action_in_workflow.png" alt="Add action in workflow"></p><p>The action in parameter auto binding will have linked the input parameters to the existing one for you. This is not the case for the output parameter. Click on the OUT tab and set actionResult to the taks attribute.<br /></p>
+
+<p><img src="/images/Onyx/036_Set_action_result.png" alt="Set action result"><br /></p>
+
+<p><img src="/images/Onyx/037_Set_action_result_type.png" alt="Set action result type"></p><p>Validate your workflow.<br /></p>
+
+<p><img src="/images/Onyx/038_Validate_workflow.png" alt="Validate workflow"></p><p>Congratulations you have a working workflow using a newly created action.</p><p>Next time you will be using the API explorer for faultTolerance you will find the following:</p><p><img src="/images/Onyx/apisearch.png" alt="API Search"><br /></p><p>You have effectively expanded your vco library with a new action ready to be used in workflows.<br /></p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/onyx/" rel="tag">Onyx</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -234,57 +295,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

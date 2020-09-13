@@ -58,5 +58,24 @@ The Script The following code should be saved as something like runWorkflow.</de
 Introduction   As noted in the intro snippet, vCO now has the ability to let you resume a failed workflow.</description>
     </item>
     
+    <item>
+      <title>How to Enable vCO 5.1.x to log API requests</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/270-how-to-enable-vco-51x-to-log-api-requests.html</link>
+      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/270-how-to-enable-vco-51x-to-log-api-requests.html</guid>
+      <description>When working with new integrations that utilize the vCenter Orchestrator (vCO) REST API you may want additional logging on the vCO side to see what is happening. I came across this need on a recent project. By default, vCO is logging workflow and webview activities but not API calls. This short article walks you through the steps necessary to enable such logging.
+The following steps will enable additional logging on your vCO server.</description>
+    </item>
+    
+    <item>
+      <title>How to use the REST API to Start a Workflow</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</link>
+      <pubDate>Thu, 17 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</guid>
+      <description>It seems everyday the interest in vCenter Orchestrator (vCO) is growing. I love this because it brings more and more use cases to our attention. One such use case is the need to call vCO workflows via its REST API. In order to keep this article generic, but useful, I will work with the free RESTClient plug-in/add-on for Firefox as the client. The general process here will be similar to what you may need to do from your software or portal to integrate with vCO&amp;rsquo;s REST API.</description>
+    </item>
+    
   </channel>
 </rss>

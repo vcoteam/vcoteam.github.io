@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>How to create an all in one vCO dev server on Windows 2008 64-bit - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;The recently released vCenter Orchestrator 4.1 requires and takes advantage of a 64-bit OS. For development purposes, it can be desirable to have a single server to perform the following roles:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Windows Domain Controller (Active Directory)&lt;/li&gt;&lt;li&gt;E-mail Server (POP3/SMTP)&lt;/li&gt;&lt;li&gt;Database Server&lt;/li&gt;&lt;li&gt;vCenter Server&lt;/li&gt;&lt;li&gt;vCO Server&lt;/li&gt;&lt;li&gt;vCO Client&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This short article is intended to help you get all these services running on a single server. Setting up these features in an incorrect order may result in conflicting ports and/or the inability to get some of the software installed.&lt;/p&gt;">
+	<meta name="description" content="This short article is intended to help you setup a variety of services running on a single server. Setting up these features in an incorrect order may result in conflicting ports and/or the inability to get some of the software installed.">
 		<meta property="og:title" content="How to create an all in one vCO dev server on Windows 2008 64-bit" />
-<meta property="og:description" content="&lt;p&gt;The recently released vCenter Orchestrator 4.1 requires and takes advantage of a 64-bit OS. For development purposes, it can be desirable to have a single server to perform the following roles:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Windows Domain Controller (Active Directory)&lt;/li&gt;&lt;li&gt;E-mail Server (POP3/SMTP)&lt;/li&gt;&lt;li&gt;Database Server&lt;/li&gt;&lt;li&gt;vCenter Server&lt;/li&gt;&lt;li&gt;vCO Server&lt;/li&gt;&lt;li&gt;vCO Client&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This short article is intended to help you get all these services running on a single server. Setting up these features in an incorrect order may result in conflicting ports and/or the inability to get some of the software installed.&lt;/p&gt;" />
+<meta property="og:description" content="This short article is intended to help you setup a variety of services running on a single server. Setting up these features in an incorrect order may result in conflicting ports and/or the inability to get some of the software installed." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html" />
 <meta property="article:published_time" content="2010-08-28T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to create an all in one vCO dev server on Windows 2008 64-bit"/>
-<meta name="twitter:description" content="&lt;p&gt;The recently released vCenter Orchestrator 4.1 requires and takes advantage of a 64-bit OS. For development purposes, it can be desirable to have a single server to perform the following roles:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Windows Domain Controller (Active Directory)&lt;/li&gt;&lt;li&gt;E-mail Server (POP3/SMTP)&lt;/li&gt;&lt;li&gt;Database Server&lt;/li&gt;&lt;li&gt;vCenter Server&lt;/li&gt;&lt;li&gt;vCO Server&lt;/li&gt;&lt;li&gt;vCO Client&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This short article is intended to help you get all these services running on a single server. Setting up these features in an incorrect order may result in conflicting ports and/or the inability to get some of the software installed.&lt;/p&gt;"/>
+<meta name="twitter:description" content="This short article is intended to help you setup a variety of services running on a single server. Setting up these features in an incorrect order may result in conflicting ports and/or the inability to get some of the software installed."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,74 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-08-28T00:00:00Z">August 28, 2010</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>The recently released vCenter Orchestrator 4.1 requires and takes advantage of a 64-bit OS. For development purposes, it can be desirable to have a single server to perform the following roles:</p>
+<ul>
+<li>Windows Domain Controller (Active Directory)</li>
+<li>E-mail Server (POP3/SMTP)</li>
+<li>Database Server</li>
+<li>vCenter Server</li>
+<li>vCO Server</li>
+<li>vCO Client</li>
+</ul>
+<p>This short article is intended to help you get all these services running on a single server. Setting up these features in an incorrect order may result in conflicting ports and/or the inability to get some of the software installed.</p>
 
+
+<h2>Base Operating System</h2>
+<p>For simplicity, I have installed Windows 2008 Server Enterprise 64-bit edition in a Virtual Machine. After installation and activation, apply all current security patches and software updates.</p>
+<p><strong>NOTE: </strong><em>DO NOT MAKE THIS SERVER JOIN A DOMAIN OR BECOME A DOMAIN CONTROLLER YET.</em> This will be done at a later step.</p>
+<p>I have my dev machine configured with the following hardware:</p>
+<ul>
+<li>Single CPU</li>
+<li>3 GB Memory</li>
+<li>40 GB Disk</li>
+</ul>
+<h2>VMware vCenter Installation</h2>
+<p>After your base operating system has been installed, you should go ahead and get VMware vCenter 4.1.x installed next. When installing vCenter, an instance of LDAP and SQLExpress (DB Instance name will be "SQLEXP_VIM") will be used to manage local authentication and data.</p>
+<p><strong>IMPORTANT: </strong><em>During installation, on the "<strong>Configure Ports</strong>" screen, change the LDAP port from 389 to 3899 and the SSL port from 636 to 6369. These changes from the defaults are required to prevent port conflicts when the server is promoted to a Domain Controller.</em></p>
+<p>Microsoft SQL Server Management Studio Express for 2005</p>
+<p>During the vCenter 4.1.x installation, an instance of SQL Express 2005 was installed. We'll use this instance for the databases for vCO and the mail server coming up in the next steps... You'll need to get the SQL Server Management Studio Express for 2005 so that you can create the necessary databases. You can download it from here: <a title="Download SQL Server Management Studio Express for 2005" href="http://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en" target="_blank">Download SQL Server Management Studio Express for 2005</a>.</p>
+<p><strong>NOTE: </strong><em>You'll need to be logged in as the "administrator" account or run a command prompt as the "administrator" account, then execute the msi installer, otherwise the installation will fail at the end.</em></p>
+<p>Create a database for vCenter Orchestrator named "VCO" and a database for your e-mail server if you choose to use <a title="Download hMailServer" href="http://www.hmailserver.com/" target="_blank">hMailServer</a> for e-mail.</p>
+<h2>Install Active Directory</h2>
+<p>Now that vCenter is installed, you can run "dcpromo" on the server to create a domain controller! Perform this step before continuing on to the vCO and mail server installations.</p>
+<h2>Install an e-mail server capable of POP3 and SMTP</h2>
+<p>For an e-mail server, you'll want something capable of at least 5 accounts (possibly more depending on your test scenarios.) For my test/dev server, I chose <a title="Learn more about and download hMailServer" href="http://www.hmailserver.com/" target="_blank">hMailServer</a> and have it installed. The installation is pretty simple and straightforward.</p>
+<h2>VMware vCenter Orchestrator (vCO) installation</h2>
+<p>Your base requirements are all set for a dev vCenter Orchestrator server so it is now safe to install vCenter Orchestrator 4.1.</p>
+<p>The installation and configuration of vCenter 4.1 is nearly identical to that of vCenter 4.0. Please reference these articles for step-by-step instructions:</p>
+<ul>
+<li><a title="How to install vCenter Orchestrator (vCO)" href="/articles/learn-vco/47-how-to-install-vcenter-orchestrator-vco.html" target="_self">How to install vCenter Orchestrator (vCO)</a></li>
+<li><a title="How to configure vCenter Orchestrator (vCO)" href="/articles/learn-vco/89-how-to-configure-vcenter-orchestrator-vco.html" target="_self">How to configure vCenter Orchestrator (vCO)</a></li>
+</ul>
+<h2>Utilities and Other Programs</h2>
+<p>Your core dev server is ready, but you may want to grab a few other programs and tools to make your test/dev experience better. Some of my personal favorites are as follows:</p>
+<ul>
+<li>File/Directory comparison: <a title="WinMerge" href="http://www.winmerge.org" target="_blank">WinMerge</a></li>
+<li>SCP File Transfer: <a title="Download WinSCP" href="http://winscp.net/eng/download.php" target="_blank">WinSCP</a></li>
+<li>SSH Client: <a title="Download Putty" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">Putty</a></li>
+<li>Text Editor: <a title="Download PSPad" href="http://www.pspad.com/" target="_blank">PSPad</a></li>
+<li>Server Wallpaper Info: <a title="Download BGInfo" href="http://technet.microsoft.com/en-us/sysinternals/bb897557.aspx" target="_blank">BGInfo</a></li>
+<li>CVS Client: <a title="Download Tortoise CVS" href="http://www.tortoisecvs.org/" target="_blank">Tortois CVS</a></li>
+<li>SVN Client: <a title="Download Tortoise SVN" href="http://tortoisesvn.tigris.org/" target="_blank">Tortois SVN</a></li>
+<li>Log Tailing/following: <a title="Download BareTail" href="http://www.baremetalsoft.com/baretail/" target="_blank">Baretail</a></li>
+<li>All around development environment: <a title="Download SpringSource Tool Suite" href="http://www.springsource.com/developer/sts" target="_blank">SpringSource Tool Suite</a> / <a title="Download Eclipse" href="http://www.eclipse.org/downloads/" target="_blank">Eclipse</a></li>
+<li>E-mail Client: <a title="Download Zimbra Desktop" href="http://www.zimbra.com/products/desktop.html" target="_blank">Zimbra Desktop</a> / <a title="Download Mozilla Thunderbird" href="http://www.mozillamessaging.com/" target="_blank">Thunderbird</a> (Both clients are available for MAC OSX, Linux, and Windows!)</li>
+</ul>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/ad/" rel="tag">AD</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +267,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

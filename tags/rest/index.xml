@@ -99,5 +99,25 @@ The Script The following code should be saved as something like runWorkflow.</de
 Introduction   As noted in the intro snippet, vCO now has the ability to let you resume a failed workflow.</description>
     </item>
     
+    <item>
+      <title>How to use the REST API to Start a Workflow</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</link>
+      <pubDate>Thu, 17 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</guid>
+      <description>It seems everyday the interest in vCenter Orchestrator (vCO) is growing. I love this because it brings more and more use cases to our attention. One such use case is the need to call vCO workflows via its REST API. In order to keep this article generic, but useful, I will work with the free RESTClient plug-in/add-on for Firefox as the client. The general process here will be similar to what you may need to do from your software or portal to integrate with vCO&amp;rsquo;s REST API.</description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator SOAP and REST Plug-ins</title>
+      <link>http://new.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</link>
+      <pubDate>Thu, 16 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</guid>
+      <description>Today a major milestone has been achieved for vCenter Orchestrator.VMware released not one but two very useful plug-ins adapter:
+SOAP is a protocol used to implement a web service typically used over HTTP and in combination with a service catalog (Web Service Description Language - WSDL pronounced wisdel). Examples of applications using SOAP are vCenter, vCenter Orchestrator, Lab Manager
+REST is the technology behind the World Wide Web, leveraging HTTP verbs and URI to define resources and operations with stateless connections.</description>
+    </item>
+    
   </channel>
 </rss>

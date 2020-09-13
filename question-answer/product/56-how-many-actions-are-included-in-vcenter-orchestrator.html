@@ -1,0 +1,4331 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>How many actions are included in vCenter Orchestrator ? - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="How many actions are included in vCenter Orchestrator ?" />
+<meta property="og:description" content="There are a considerable number of pre-built actions that may be used to build your own workflows. The environment this table is taken from has the VC, VIM3, and Microsoft vmoapps installed:
+Module: com.vmware.basiccom.vmware.basiccreateDirectoryDescription:Create a directory structure on the VS-O server.com.vmware.basicgetFileNameDescription:Strip directory from filenames.Module: com.vmware.constantscom.vmware.constantsgetDefaultCompanyNameDescription:Returns the company name." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://new.vcoteam.info/question-answer/product/56-how-many-actions-are-included-in-vcenter-orchestrator.html" />
+<meta property="article:published_time" content="2010-06-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2010-06-11T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How many actions are included in vCenter Orchestrator ?"/>
+<meta name="twitter:description" content="There are a considerable number of pre-built actions that may be used to build your own workflows. The environment this table is taken from has the VC, VIM3, and Microsoft vmoapps installed:
+Module: com.vmware.basiccom.vmware.basiccreateDirectoryDescription:Create a directory structure on the VS-O server.com.vmware.basicgetFileNameDescription:Strip directory from filenames.Module: com.vmware.constantscom.vmware.constantsgetDefaultCompanyNameDescription:Returns the company name."/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-16400053-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn VCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+  <article class="post">
+    <header class="post__header">
+      <h1 class="post__title">How many actions are included in vCenter Orchestrator ?</h1>
+      <div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-06-11T00:00:00Z">June 11, 2010</time></div>
+</div>
+    </header><div class="content post__content clearfix">
+      <p>There are a considerable number of pre-built actions that may be used to build your own workflows. The environment this table is taken from has the VC, VIM3, and Microsoft vmoapps installed:</p>
+<table border="1" width="550">
+<tbody>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.basic</strong></td>
+</tr>
+<tr>
+<td>com.vmware.basic</td>
+<td colspan="2">createDirectory</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a directory structure on the VS-O server.</td>
+</tr>
+<tr>
+<td>com.vmware.basic</td>
+<td colspan="2">getFileName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Strip directory from filenames.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.constants</strong></td>
+</tr>
+<tr>
+<td>com.vmware.constants</td>
+<td colspan="2">getDefaultCompanyName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Returns the company name.</td>
+</tr>
+<tr>
+<td>com.vmware.constants</td>
+<td colspan="2">getDefaultSSHKeyPairPath</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Path on the VCO server where the Key Pair for SSH is stored.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.action</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.action</td>
+<td colspan="2">getAllActions</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the actions</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.authorization</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.authorization</td>
+<td colspan="2">addObjectToAuthorizationForGroup</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Add an object/relation to an authorization. If the authoriation does not exist, the action create it.</td>
+</tr>
+<tr>
+<td>com.vmware.library.authorization</td>
+<td colspan="2">addObjectToAuthorizationForUser</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Add an object/relation to an authorization. If the authoriation does not exist, the action create it.</td>
+</tr>
+<tr>
+<td>com.vmware.library.authorization</td>
+<td colspan="2">changeGroupAuthorization</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.authorization</td>
+<td colspan="2">changeUserAuthorization</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.authorization</td>
+<td colspan="2">getOrCreateAuthorizationForGroup</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.authorization</td>
+<td colspan="2">getOrCreateAuthorizationForUser</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.authorization</td>
+<td colspan="2">removeAuthorizationRelationToObjectForGroup</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.authorization</td>
+<td colspan="2">removeAuthorizationRelationToObjectForUser</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.configurations</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.configurations</td>
+<td colspan="2">addObjectInConfigurationElement</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Add any object into a configuration element of type "array of objects". Returns true if object is successfully added. Returns false if object already exists in the array.</td>
+</tr>
+<tr>
+<td>com.vmware.library.configurations</td>
+<td colspan="2">addResourceElementInConfigurationElement</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Add a resource element into a configuration element of type "array of resource elements" The resource is added only if it is not already placed into the array. Returns true if the resource is successfully added, otherwise returns false.</td>
+</tr>
+<tr>
+<td>com.vmware.library.configurations</td>
+<td colspan="2">getConfigurationAttributeDescriptionList</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Returns the list of Configuration Attribute Description as an Array of Strings</td>
+</tr>
+<tr>
+<td>com.vmware.library.configurations</td>
+<td colspan="2">getObjectFromConfigurationElementWithKey</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.configurations</td>
+<td colspan="2">removeObjectInConfigurationElement</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Remove an object from configuration element of type "array of objects" Returns true if object is successfully removed, otherwise returns false.</td>
+</tr>
+<tr>
+<td>com.vmware.library.configurations</td>
+<td colspan="2">removeResourceElementInConfigurationElement</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Remove a resource element within a configuration element of type "array of resource elements" Returns true if the resource is successfully removed, otherwise returns false.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.customProperties</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.customProperties</td>
+<td colspan="2">getCustomProperty</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get a custom property from an object</td>
+</tr>
+<tr>
+<td>com.vmware.library.customProperties</td>
+<td colspan="2">isPluginType</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Check if the object type is a plugin type Returns true if object type is a plugin type</td>
+</tr>
+<tr>
+<td>com.vmware.library.customProperties</td>
+<td colspan="2">setCustomProperty</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Set a custom property on an object</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.email</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.email</td>
+<td colspan="2">sendHtmlEmail</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.ldap</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.ldap</td>
+<td colspan="2">getCurrentLdapUser</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the current LDAP User</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.microsoft.activeDirectory</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">createComputer</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a computer in the Active Directory</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">createOrganizationalUnit</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create an OU in an existing OU</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">createUser</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a user</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">createUserGroup</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new Usergroup in the given container (OU or Group)</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">destroyElement</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Detroy an element of the Active Directory.</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">getComputerFromContainer</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get a computer by his name in the given OU or Group (container)</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">getOrganizationUnitFromOrganizationUnit</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get a computer by his name in the given OU or Group (container)</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">getUserFromContainer</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get a user by his name in the given OU or Group (container)</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">getUsergroupFromContainer</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get a usergroup by his name in the given OU or Group (container)</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">setComputerEnable</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Allow to enable or disable a computer in the Active Directory</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.activeDirectory</td>
+<td colspan="2">setUserEnable</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Allow to enable or disable a computer in the Active Directory</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.microsoft.wmi</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.wmi</td>
+<td colspan="2">executeWmiCommand</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Execute a WMI Method on a given WMI Class or WMI instance</td>
+</tr>
+<tr>
+<td>com.vmware.library.microsoft.wmi</td>
+<td colspan="2">getComputerWmiFromComputerAD</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return a WMI Computer from an AD Computer</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.networking</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.networking</td>
+<td colspan="2">createNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking</td>
+<td colspan="2">deleteNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking</td>
+<td colspan="2">editNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Edit a network domain</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking</td>
+<td colspan="2">freeIpAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>DEPRECATED</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking</td>
+<td colspan="2">getAllNetworkDomains</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking</td>
+<td colspan="2">getNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking</td>
+<td colspan="2">getOrCreateNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking</td>
+<td colspan="2">validateNetmaskField</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Validates a text field - ensures that the text field represents a valid netmask.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.networking.ip</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">createIpAddressForRange</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">createIpAddressForSubnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">createRange</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">createSubnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">deleteIpAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">deleteRange</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">deleteSubnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">editIpAddressForRange</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">editIpAddressForSubnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">freeIpAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">getAllRangesForNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">getAllSubnetsForNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">getEndIpAddressFromStartIpAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Helper that returns the appropriate number of byte from and IP adress depending on its class (1 for A class, 2 for B class, 3 for C class).</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">getIpAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">getOrCreateIpAddressForRange</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">getOrCreateIpAddressForSubnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">getOrCreateRange</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">getOrCreateSubnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">mustCreateRangeOrSubnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return true if the network domain uses fixed IP addresses and there is no range or subnet linked with this network domain.</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.ip</td>
+<td colspan="2">reserveIpAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.networking.mac</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.mac</td>
+<td colspan="2">deleteMacAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.mac</td>
+<td colspan="2">deleteMacAddressPool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.mac</td>
+<td colspan="2">freeMacAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.mac</td>
+<td colspan="2">getOrCreateMacAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.mac</td>
+<td colspan="2">getOrCreateMacAddressPool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.mac</td>
+<td colspan="2">reserveMacAddress</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.networking.vim3</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.vim3</td>
+<td colspan="2">getNetworkFromNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get esx network from a network domain.</td>
+</tr>
+<tr>
+<td>com.vmware.library.networking.vim3</td>
+<td colspan="2">getNetworksFromNetworkDomain</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get esx networks from a network domain.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.policy</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.policy</td>
+<td colspan="2">setPolicyCredential</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Allow to change a user credential running a policy  If the credential is not valid, exception is thrown.</td>
+</tr>
+<tr>
+<td>com.vmware.library.policy</td>
+<td colspan="2">startPolicy</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Start a policy. If policy is running, do nothing</td>
+</tr>
+<tr>
+<td>com.vmware.library.policy</td>
+<td colspan="2">stopPolicy</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Stop a policy. If policy is not running, do nothing</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.refactor</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.refactor</td>
+<td colspan="2">createXmlResource</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.refactor</td>
+<td colspan="2">createXmlResourceFromBeacon</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.refactor</td>
+<td colspan="2">executeRefactor</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.refactor</td>
+<td colspan="2">importExclusionListFromMapping</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.refactor</td>
+<td colspan="2">importMappingInDefinition</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.refactor</td>
+<td colspan="2">readXmlResource</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Read the given resource element and return it's xml content as a string. resource must be not null and it's mime-type must be 'text/xml'.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.refactor.presentation</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.refactor.presentation</td>
+<td colspan="2">getDefaultDestinationPath</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.refactor.presentation</td>
+<td colspan="2">getDefaultDestinationWebviewUrlFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.ssh</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.ssh</td>
+<td colspan="2">registerVSOonHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Upload and register the VS-O public key to the target user@host. This will enable future connections to use public key authentication instead of password authentication for this user.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.tasks</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.tasks</td>
+<td colspan="2">createRecurrentTask</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a recurrent Task. Return the newly created task  Valid values for recurrenceCycle: one-time: run the task only one time. The recurrencePattern is ignored, the start date is mandatory every-minutes: The pattern represents all the seconds on the minutes when the task start every-hours: The pattern represents all the minutes:seconds on the minutes when the task start every-days: The pattern represents all the hours:minutes:seconds on the minutes when the task start every-weeks: The pattern represents all the day hours:minutes:seconds on the minutes when the task start every-months: The pattern represents all the day of the month hours:minutes:seconds on the minutes when the task start  recurrencePattern sample: if cycle is one-time : ignored if cycle is every-minutes : "00" or "00, 30" if cycle is every-hours : "00:00" or "18:30:00" if cycle is every-days : "18:30:00, 19:30:00" if cycle is every-weeks : "Mon 00:00:00, Wed 18:00:00" if cycle is every-months: "14 00:00:00, 28 18:00:00"</td>
+</tr>
+<tr>
+<td>com.vmware.library.tasks</td>
+<td colspan="2">createTask</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a Task. Return the newly created task</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.basic</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.basic</td>
+<td colspan="2">cloneVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Creates a clone of this virtual machine. If the virtual machine is used as a template, this method corresponds to the deploy command.  Any % (percent) character used in this name parameter must be escaped, unless it is used to start an escape sequence. Clients may also escape any other characters in this name parameter.  The privilege required on the source virtual machine depends on the source and destination types:     - source is virtual machine, destination is virtual machine - VirtualMachine.Provisioning.Clone     - source is virtual machine, destination is template - VirtualMachine.Provisioning.CreateTemplateFromVM    - source is template, destination is virtual machine - VirtualMachine.Provisioning.DeployTemplate     - source is template, destination is template - VirtualMachine.Provisioning.CloneTemplate  If customization is requested in the CloneSpec, then the VirtualMachine.Provisioning.Customize privilege must also be held on the source virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.basic</td>
+<td colspan="2">getDatacenterForVimObject</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the Datacenter for any Vim object. Return null if not in a datacenter (Datacenter folder)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.basic</td>
+<td colspan="2">getVimHostForVimObject</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the VimHost (Virtual Center) for any Vim object</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.basic</td>
+<td colspan="2">vim3WaitTaskEnd</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait for a VC Task to end. When task ended, return the task result if any.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.basic</td>
+<td colspan="2">waitForCompletionForBatchWorkflow</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait that the workflows are terminated</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.basic</td>
+<td colspan="2">WaitTaskEndOrVMQuestion</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait for a VC Task to end or for the VM to ask a question. Return the task result or the question asked.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.cluster</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">drsEnabledCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return true if the specified cluster is DRS enabled. False if not.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">getAllClusterComputeResourceForVimHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all the ClusterComputeResource in a VimHost</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">getAllComputeResourceForVimHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all ComputeResource (Non cluster) in a VimHost</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">getAllHostSystemsOfCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the host system in a cluster</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">getAllVMsOfCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMs in a cluster</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">getAllVMsOfComputeResource</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all VMs of a ComputeResource (non cluster)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">getComputeResourceOfVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the ComputeResource or ClusterComputeResource of a VM</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">getNetworkForCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Actions for presentations Return a list of network for a cluster, computeResource or host</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.cluster</td>
+<td colspan="2">haEnabledCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return true if the specified cluster is HA enabled. False if not.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.customattribute</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.customattribute</td>
+<td colspan="2">getCustomField</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the custom field value</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.customattribute</td>
+<td colspan="2">setOrCreateCustomField</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Set a custom attribute for an object. If the custom attribute does not exist, the action create it</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.datacenter</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datacenter</td>
+<td colspan="2">getAllVMsOfDatacenter</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMs in a datacenter</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.datastore</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getAllAvaiblableHostForVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>[DEPRECATED] Return all hosts "viewing" the VM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getAllDatastoreOnVimHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all datastores on an ESX host</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getAllDatastores</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the datastores</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getAllDatastoresMatchingRegexp</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the datastores matching the given regexp</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getAllDatastoresOfVC</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the datastores in a VC</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getAllDatastoresOfVCExceptTheOneInParam</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the datastores in a VC (the VC of the datastore entered in parameter) except the datastore entered in parameter</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getAllVMsOfDatastore</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all VMs of a Datastore</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getDatacenterForDatastore</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get datacenter for a datastore</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getDatastoreForHostAndResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all available Datastore on host and pool (sum of each). If host and pool are null, return the available datastore to relocate the vm (in fact, all datastore in the same Virtual Center)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getDatastoreFreeSize</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the Available Size on a Datastore in MB.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getValidDatastoreForConversion</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the datastores valid for the conversion of thick provioned disk to thin provisioned</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getValidDatastoreForNetwork</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all valid datastores for a network.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore</td>
+<td colspan="2">getValidNetworkForDatastore</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.datastore.files</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore.files</td>
+<td colspan="2">deleteFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Deletes the specified files from the datastore. If a valid virtual disk file is specified, then all the components of the virtual disk are deleted.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore.files</td>
+<td colspan="2">getAllConfigFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMX files on a datastore (using API to browse the datastore directly)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore.files</td>
+<td colspan="2">getAllFloppyImageFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all Floppy image files (*.flp) on a datastore (using API to browse the datastore directly)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore.files</td>
+<td colspan="2">getAllTemplateConfigFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMTX files on a datastore (using API to browse the datastore directly)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.datastore.files</td>
+<td colspan="2">getAllVmdkFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMDK files on a datastore (using API to browse the datastore directly)</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.folder</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">createFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a folder in an existing folder Return the new folder</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">destroyFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Delete an existing folder. Return the deletion task.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">destroyFolderAndWait</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Delete a folder and wait the task's completion</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">getAllVirtualMachinesByFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMs in a folder without checking authorization</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">getAllVirtualMachinesByFolderIncludingSubFolders</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMs for the specified folder and all subfolders. No authorization checking.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">getRootVmFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the root VMfolder. Does not return anything if there are more than one datacenter</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">getVirtualMachineByFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMs in a folder that are authorized for the current user.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">renameFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rename a given folder. Return the rename task</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.folder</td>
+<td colspan="2">renameFolderAndWait</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rename a given workflow and wait the task's completion</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.host</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.host</td>
+<td colspan="2">getAllHostSystems</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the host system</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.host</td>
+<td colspan="2">getAllHostSystemsMatchingRegexp</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the host matching the given regexp</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.host</td>
+<td colspan="2">getAllHostSystemsWithFT</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the host system configured with Fault Tolerance</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.host</td>
+<td colspan="2">getAllVMsOfHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the virtual machine in a host system</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.host</td>
+<td colspan="2">rescanHostHBAs</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.network</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.network</td>
+<td colspan="2">getAllVSwitchesMatchingRegexp</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the virtual switch matching the given regexp</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.network</td>
+<td colspan="2">getDatacenterForNetwork</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return datacenter of a network</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.network</td>
+<td colspan="2">getNetworkForResourcePoolHostVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Retrun available network for a resource pool, a host (if cluster is null) or for a vm (if cluster and host are null). Used for the networks list in the clone presentations.  If called with a parameter of the wrong type (and not null), this action might return an "undefined" value.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.network</td>
+<td colspan="2">getNetworksForHostSystem</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.network</td>
+<td colspan="2">getNetworksForLabel</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Returns all networks with name specified by label</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.network</td>
+<td colspan="2">getNetworksForVimHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all existing networks in a VimHost</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.resourcePool</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">createResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new Rescource Pool with default CPU and momory allocation (disabled). Returns the new ResourcePool, null if any error.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">createResourcePoolForCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new Rescource Pool with default CPU and momory allocation (disabled). Returns the new ResourcePool, null if any error.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">destroyResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Destroy a resource pool. Return the task created by this action. Wait on the task to end to be sure the resource pool is well renamed</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">destroyResourcePoolAndWait</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Destroy a resource pool and wait on the task. Return true is the resource pool was destroyed, false if not.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">getAllChildResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all resource pool of the given resource pool</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">getAllResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the Resource Pools on all plugins</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">getAllVMsOfResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMs in a resource pool</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">getValidResourcePoolForDatastore</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get valid resourcePools for a datastore</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">getValidResourcePoolForNetwork</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get valid resourcePools for a network</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">renameResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rename a resource pool. Return the task created by this action. Wait on the task to end to be sure the resource pool is well renamed</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.resourcePool</td>
+<td colspan="2">renameResourcePoolAndWait</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rename a resource pool and wait on the task. return true is the resource pool was renamed, false if not.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.spec</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.spec</td>
+<td colspan="2">getDescription</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Static strings used for describing an object or property.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.spec</td>
+<td colspan="2">getResourceAllocationInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The ResourceAllocationInfo specifies the reserved resource requirement as well as the limit (maximum allowed usage) for a given kind of resource. This is specified for both memory allocation (specified in MB) and CPU allocation (specified in MHz).  For a resource pool, the reservation is specified as a value and a flag. The reservation is the guaranteed amount of a resource that the resource pool has. If expandableReservation is true, then the resource pool is allowed to grow its reservation dynamically by borrowing unreserved resources from its parent resource pool.  If the limit is configured, it must be greater than or equal to the reservation.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.spec</td>
+<td colspan="2">getResourceConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return a VimResourceConfigSpec</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.spec</td>
+<td colspan="2">getSharesInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specification of shares.  Shares are used to determine relative allocation between resource consumers. In general, a consumer with more shares gets proportionally more of the resource, subject to certain other constraints.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.storage</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.storage</td>
+<td colspan="2">rescanAll</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rescans all HBA, VMFS and StorageSystem of a HostSystem.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vapp</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vapp</td>
+<td colspan="2">getAllVMsOfVApp</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the virtual machine in a vapp</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm</td>
+<td colspan="2">cloneVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Try to clone a VM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm</td>
+<td colspan="2">customizeVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Try to customize a VM. (no clone operation done)  If any Exception appens, raise a "VMware3:CloneException" with no object attached.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm</td>
+<td colspan="2">describeVirtualMachine</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Returns a virtual machine description string for a VC2 VM. The string contains the virtual machine display name and it's power status.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm</td>
+<td colspan="2">destroyVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Destroy the Virtual Machine, removing it from the Inventory AND from the Datastore!</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm</td>
+<td colspan="2">getAllVMs</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the virtual machines</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm</td>
+<td colspan="2">getAllVMsMatchingRegexp</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm</td>
+<td colspan="2">linkedCloneVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Try to linked clone a VM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm</td>
+<td colspan="2">setDiskToNonPersitent</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Set all disk of the VM to the mode: independent non-persistent Return the task for reconfiguring the VM devices</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.network</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.network</td>
+<td colspan="2">getNetworkForGivenNic</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Retrun the network for a given VM nic</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.network</td>
+<td colspan="2">getNicByNumber</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return a Network card device (VimVirtualE1000, VimVirtualVmxnet, VimVirtualPCNet32). The network position let you choose if you want to get the 1st, 2nd... 5th network card.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.network</td>
+<td colspan="2">getNumberOfNic</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get total number of NIC (network interface card) of a VM</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.os</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.os</td>
+<td colspan="2">getAllLinuxVMs</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the virtual machine which have Windows as operating system</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.os</td>
+<td colspan="2">getAllWindowsVMs</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the virtual machine which have Windows as operating system</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.os</td>
+<td colspan="2">getVirtualMachinesByOs</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.os</td>
+<td colspan="2">isWindowsOsInVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return true if the OS is a Windows.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.power</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.power</td>
+<td colspan="2">forcePowerOff</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Force the power off of a VM</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.power</td>
+<td colspan="2">resetVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Resets power on this virtual machine. If the current state is poweredOn, then this method first performs powerOff(hard). Once the power state is poweredOff, then this method performs powerOn(option). Although this method functions as a powerOff followed by a powerOn, the two operations are atomic with respect to other clients, meaning that other power operations cannot be performed until the reset method completes.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.power</td>
+<td colspan="2">shutdownVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Shutdown the VM guest and wait for a given time before throwing an error if the VM is still not powered off. If timeout is set to 0, the action don't wait</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.power</td>
+<td colspan="2">shutdownVMAndForce</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Try to shutdown a VM guest. If still not power off after 5 minutes, force power off.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.power</td>
+<td colspan="2">standbyGuest</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Stand by the guest operating System. VMware tools have to be available.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.power</td>
+<td colspan="2">startVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Start / Resume a VM. Return the start task</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.power</td>
+<td colspan="2">suspendVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Suspend a VM. Return the suspend Task</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.snapshot</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.snapshot</td>
+<td colspan="2">createSnapshot</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Creates a new snapshot of this virtual machine. As a side effect, this updates the current snapshot.  Any % (percent) character used in this name parameter must be escaped, unless it is used to start an escape sequence. Clients may also escape any other characters in this name parameter.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.snapshot</td>
+<td colspan="2">getAllSnapshotResultInDatastoreBrowser</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.snapshot</td>
+<td colspan="2">getAllSnapshotsOfVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all snapshots for a vm</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.snapshot</td>
+<td colspan="2">getPropertiesForAllSnapshotTask</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return properties with the name of snapshot as key and vc object VirtualMachineSnapshot as value. It is used to get the snapshot VC Object when searching information on the snapshot from the datastorebrowser which return the name of the snapshot but not the object.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.snapshot</td>
+<td colspan="2">getPropertiesForSnapshotTask</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return properties with the name of snapshot as key and vc object VirtualMachineSnapshot as value. It is used to get the snapshot VC Object when searching information on the snapshot from the datastorebrowser which return the name of the snapshot but not the object.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.snapshot</td>
+<td colspan="2">removeAllSnapshot</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Remove all the snapshots associated with this virtual machine. If the virtual machine does not have any snapshots, then this operation simply returns successfully.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.snapshot</td>
+<td colspan="2">removeOldestSnapshotOfVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Remove the x oldest snapshots of a virtual machine</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.snapshot</td>
+<td colspan="2">revertToCurrentSnapshot</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Reverts the virtual machine to the current snapshot. This is equivalent to doing snapshot.currentSnapshot.revert. If no snapshot exists, then the operation does nothing, and the virtual machine state remains unchanged.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">checkVMwareInput</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Check that basics inputs parameters of a Clone workflows are all part of the same vimHost (Virutal Center)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getCloneSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specification for a virtual machine cloning operation.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The ConfigSpec data object type encapsulates configuration settings when creating or reconfiguring a virtual machine. To support incremental changes, these properties are all optional.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getConfigSpecSimple</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The ConfigSpec data object type encapsulates configuration settings when creating or reconfiguring a virtual machine. To support incremental changes, these properties are all optional.  Basic Version</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getCustomizationGlobalIPSettings</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>A collection of global IP settings for a virtual network adapter. In Linux, DNS server settings are global. The settings can either be statically set or supplied by a DHCP server.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getCustomizationGlobalIPSettingsWithDomainAsString</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>A collection of global IP settings for a virtual network adapter. In Linux, DNS server settings are global. The settings can either be statically set or supplied by a DHCP server.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getCustomizationSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The Specification data object type contains information required to customize a virtual machine when deploying it or migrating it to a new host.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getCustomizationSpecSysprepText</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getCustomizationWinOptions</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Optional operations supported by the customization process for Windows.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec</td>
+<td colspan="2">getRelocateSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specification for moving or copying a virtual machine to a different datastore or host.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec.config</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config</td>
+<td colspan="2">getVirtualDeviceConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDeviceSpec data object type encapsulates change specifications for an individual virtual device. The virtual device being added or modified must be fully specified.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config</td>
+<td colspan="2">getVirtualDeviceConnectInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualDevice is the base data object type for devices in a virtual machine. This type contains enough information about a virtual device to allow clients to display devices they do not recognize. For example, a client with an older version than the server to which it connects may see a device without knowing what it is.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config</td>
+<td colspan="2">getVirtualMachineAffinityInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Allow to create a VirtualMachineAffinityInfo Specification of scheduling affinity.  Scheduling affinity is used for explicitly specifying which processors or NUMA nodes may be used by a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config</td>
+<td colspan="2">getVirtualMachineConsolePreferences</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a VirtualMachineConsolePrefrences. Preferences for the legacy console application that affect the way it behaves during power operations on the virtual machine.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec.config.device</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">createVirtualDiskFlatVer2ConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualDiskFlatVer2BackingInfo. The VirtualDisk.FlatVer2BackingInfo data object type contains information about backing a virtual disk using a virtual disk file on the host, in the flat file format used by GSX Server 3.x, ESX Server 2.x, and ESX Server 3.x. Flat disks are allocated when created, unlike sparse disks, which grow as needed.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">createVirtualEthernetCardDvNetworkConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualEthernetCardNetworkBackingInfo The virtual Ethernet card backing class.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">createVirtualEthernetCardNetworkConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualEthernetCardNetworkBackingInfo The virtual Ethernet card backing class.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">createVirtualFloppyRemoteConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualFloppyRemoteDeviceBackingInfo The data object type for remote device backing of a virtual floppy drive.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">createVirtualScsiControllerConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualSCSIController The VirtualSCSIController data object type represents a SCSI controller in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getParaVirtualSCSIController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>ParaVirtualSCSIController is the data object that represents a paravirtualized SCSI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualBusLogicController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualBusLogicController is the data object that represents a BusLogic SCSI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualCdrom</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualCdrom data object type describes the configuration of a CD-ROM device in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualController is the base data object type for a device controller in a virtual machine. VirtualController extends VirtualDevice to inherit general information about a controller (such as name and description), and to allow controllers to appear in a generic list of virtual devices.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualDevice</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Set values common to all Virtual Device. Should not be called directly to create a VirtualDevice!!!  VirtualDevice is the base data object type for devices in a virtual machine. This type contains enough information about a virtual device to allow clients to display devices they do not recognize. For example, a client with an older version than the server to which it connects may see a device without knowing what it is.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualDisk</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDisk data object type contains information about a disk in a virtual machine.  The virtual disk backing object types in the VirtualDisk data object type describe the different virtual disk backings available. The disk format version in each case describes the version of the format that is used.   Supported virtual disk backings: Sparse disk format, version 1 and 2  The virtual disk backing grows when needed. Supported only for GSX Server.  Flat disk format, version 1 and 2  The virtual disk backing is preallocated. Version 1 is supported only for GSX Server.  Raw disk format, version 2  The virtual disk backing uses a full physical disk drive to back the virtual disk. Supported only for GSX Server.  Partitioned raw disk format, version 2  The virtual disk backing uses one or more partitions on a physical disk drive to back a virtual disk. Supported only for GSX Server.  Raw disk mapping, version 1  The virtual disk backing uses a raw device mapping to back the virtual disk. Supported for ESX Server</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualE1000</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualE1000 data object type represents an instance of the E1000 virtual Ethernet adapter attached to a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualEnsoniq1371</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualEnsoniq1371 data object type represents an Ensoniq 1371 sound card in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualEthernetCard</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualController is the base data object type for a device controller in a virtual machine. VirtualController extends VirtualDevice to inherit general information about a controller (such as name and description), and to allow controllers to appear in a generic list of virtual devices.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualFloppy</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualFloppy data object type contains information about a floppy drive in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualIDEController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualIDEController data object type specifies a virtual IDE controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualKeyboard</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type contains information about the keyboard on a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualLsiLogicController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualLsiLogicController is the data object that represents a LSI Logic SCSI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualLsiLogicSASController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualLsiLogicSASController is the data object that represents a LSI Logic SAS SCSI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualMachineVideoCard</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualVideoCard data object type represents a video card in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualParallelPort</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type represents a parallel port in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualPCIController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualPCIController data object type defines a virtual PCI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualPCNet32</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type defines the properties of an AMD Lance PCNet32 Ethernet card attached to a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualPointingDevice</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualPointingDevice data object type contains information about the mouse type on a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualPS2Controller</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualPCIController data object type defines a virtual PCI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualSCSIController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>May not be called directly. The VirtualSCSIController data object type represents a SCSI controller in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualSCSIPassthrough</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualSCSIPassthrough data object type contains information about a SCSI device on the virtual machine that is being backed by a generic SCSI device on the host via passthrough.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualSerialPort</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualSerialPort data object type represents a serial port in a virtual machine. The nested classes define the physical devices that can back the virtual serial port: a host file, a host serial port device, or a pipe.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualSIOController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type defines a Super IO Controller for floppy drives, parallel ports, and serial ports.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualSoundBlaster16</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualSoundBlaster16 data object type represents a Sound Blaster 16 sound card in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualUSB</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualUSB data object type contains information about a USB device attached to a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualUSBController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type defines a Super IO Controller for floppy drives, parallel ports, and serial ports.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device</td>
+<td colspan="2">getVirtualVmxnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualVmxnet data object type represents an instance of the Vmxnet virtual Ethernet adapter attached to a virtual machine.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec.config.device.backing.device</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualCdromAtapiBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualCdrom.AtapiBackingInfo data object type represents an ATAPI device backing for a virtual CD-ROM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualCdromPassthroughBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualCdrom.PassthroughBackingInfo data class represents a device pass-through backing for a virtual CD-ROM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualDiskRawDiskVer2BackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDisk.RawDiskVer2BackingInfo data object type contains information about backing a virtual disk by using a host device, as used by GSX Server 3.x.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualEthernetCardLegacyNetworkBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The virtual Ethernet card legacy backing class.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualEthernetCardNetworkBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The virtual Ethernet card backing class.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualFloppyDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for device backing of a virtual floppy drive.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualParallelPortDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for a device backing of a virtual parallel port.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualPointingDeviceDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualPointingDevice.DeviceBackingInfo provides information about the physical mouse backing the VirtualPointingDevice data object type.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualSCSIPassthroughDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualSCSIPassthrough.DeviceBackingInfo data object type contains information about the backing that maps the virtual device onto a physical device.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualSerialPortDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type provides information for backing a virtual serial port with a host serial port device.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualSoundCardDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The sound card device backing data class.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec.config.device.backing.file</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualCdromIsoBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualDevice.FileBackingInfo is a data object type for information about a file backing for a device in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualDiskFlatVer2BackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDisk.FlatVer2BackingInfo data object type contains information about backing a virtual disk using a virtual disk file on the host, in the flat file format used by GSX Server 3.x, ESX Server 2.x, and ESX Server 3.x. Flat disks are allocated when created, unlike sparse disks, which grow as needed.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualDiskRawDiskMappingVer1BackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDisk.FlatVer2BackingInfo data object type contains information about backing a virtual disk using a virtual disk file on the host, in the flat file format used by GSX Server 3.x, ESX Server 2.x, and ESX Server 3.x. Flat disks are allocated when created, unlike sparse disks, which grow as needed.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualFloppyImageBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for file image backing of a virtual floppy drive.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualParallelPortFileBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for a file backing of a virtual parallel port.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualSerialPortFileBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type provides information for backing a virtual serial port with a host file.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec.config.device.backing.pipe</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.pipe</td>
+<td colspan="2">getVirtualSerialPortPipeBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type provides information for backing a virtual serial port with a pipe. A pipe enables you to set up the virtual serial port to connect to an application on the host computer. This is useful, for example, if you want to use an application on the host to capture debugging information sent from the virtual machine's serial port.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec.config.device.backing.remote</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.remote</td>
+<td colspan="2">getVirtualCdromRemotePassthroughBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualCdrom.RemotePassthroughBackingInfo data object type contains the information to specify a remote pass-through device backing of a virtual CD-ROM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.remote</td>
+<td colspan="2">getVirtualDeviceRemoteDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualDevice.RemoteDeviceBackingInfo is a data object type for information about a remote device backing used by a device in a virtual machine. The primary difference between a remote device backing and a local device backing is that the VirtualCenter server cannot provide a list of remote host devices available for this virtual device backing.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.config.device.backing.remote</td>
+<td colspan="2">getVirtualFloppyRemoteDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for remote device backing of a virtual floppy drive.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec.identity</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationCustomName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specifies that the VirtualCenter server will launch an external application to generate the (hostname/IP). The command line for this application must be specified in the server configuration file (vpxd.cfg) in the vpxd/name-ip-generator key.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationFixedName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>A fixed name.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationGuiRunOnce</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The commands listed in the GuiRunOnce data object type are executed when a user logs on the first time after customization completes. The logon may be driven by the AutoLogon setting.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationGuiUnattended</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The GuiUnattended type maps to the GuiUnattended key in the sysprep.inf answer file. These values are plugged directly into the sysprep.inf file that VirtualCenter stores on the target virtual disk.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationIdentification</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The Identification data object type provides information needed to join a workgroup or domain</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationIdentificationFromCredential</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The Identification data object type provides information needed to join a workgroup or domain</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationLicenseFilePrintData</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The LicenseFilePrintData type maps directly to the LicenseFilePrintData key in the sysprep.inf answer file.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationLinuxPrep</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This is the Linux counterpart to the Windows Sysprep object. LinuxPrep contains machine-wide settings that identify a Linux machine in the same way that the Sysprep type identifies a Windows machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationPassword</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Contains a password string and a flag that specifies whether the string is in plain text or encrypted.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationPrefixName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specifies that a unique name should be generated by concatenating the base string with a number.  Virtual machine names are unique across the set of hosts and virtual machines known to the VirtualCenter instance. VirtualCenter tracks the network names of virtual machines as well as hosts. VMware Tools runs in a guest operating system and reports information to VirtualCenter, including the network name of the guest.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationSysprep</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>An object representation of a Windows sysprep.inf answer file. The sysprep type encloses all the individual keys listed in a sysprep.inf file. For more detailed information, see the document Windows 2000 Unattended Setup Guide.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationUnknownName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Indicates that the name is not specified in advance. The client should prompt the user for the value to complete the specification.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationUserData</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Personal data pertaining to the owner of the virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.identity</td>
+<td colspan="2">getCustomizationVirtualMachineName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specifies that VirtualCenter should generate a virtual machine name from a base prefix comprising the virtual machine entity name. A number is appended, if necessary, to make it unique. Virtual machine names are unique across the set of hosts and virtual machines known to the VirtualCenter instance. VMware Tools reports the names of existing virtual machines.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.spec.nic</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.nic</td>
+<td colspan="2">getCustomizationAdapterMapping</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Define Data object type to associate a virtual network adapter with its IP settings.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.nic</td>
+<td colspan="2">getCustomizationDhcpIpGenerator</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Use a DHCP server to configure the virtual network adapter.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.nic</td>
+<td colspan="2">getCustomizationFixedIp</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Use a static IP Address for the virtual network adapter.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.nic</td>
+<td colspan="2">getCustomizationIPSettings</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Define IP settings for a virtual network adapter.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.spec.nic</td>
+<td colspan="2">getCustomizationUnknownIpGenerator</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The IP address is left unspecified. The user must be prompted to supply an IP address.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vc.vm.tools</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.tools</td>
+<td colspan="2">upgradeToolsAtNextReboot</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Upgrade vm tools at next reboot</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.tools</td>
+<td colspan="2">vim3WaitDnsNameInTools</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait for a given name in the DNS guest informations (VMware tools).  Exception: - Timeout: When timeout is reached</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.tools</td>
+<td colspan="2">vim3WaitForPrincipalIP</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return IP if found. Else return empty string. Exception: - Timeout: timeout reached</td>
+</tr>
+<tr>
+<td>com.vmware.library.vc.vm.tools</td>
+<td colspan="2">vim3WaitToolsStarted</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait for the VMware tools to be up and the guest running  Exception: - Timeout: When timeout is reached - ReferenceError: When vm is not set correctly</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.basic</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.basic</td>
+<td colspan="2">cloneVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Creates a clone of this virtual machine. If the virtual machine is used as a template, this method corresponds to the deploy command.  Any % (percent) character used in this name parameter must be escaped, unless it is used to start an escape sequence. Clients may also escape any other characters in this name parameter.  The privilege required on the source virtual machine depends on the source and destination types:     - source is virtual machine, destination is virtual machine - VirtualMachine.Provisioning.Clone     - source is virtual machine, destination is template - VirtualMachine.Provisioning.CreateTemplateFromVM    - source is template, destination is virtual machine - VirtualMachine.Provisioning.DeployTemplate     - source is template, destination is template - VirtualMachine.Provisioning.CloneTemplate  If customization is requested in the CloneSpec, then the VirtualMachine.Provisioning.Customize privilege must also be held on the source virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.basic</td>
+<td colspan="2">getDatacenterForVimObject</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the Datacenter for any Vim object. Return null if not in a datacenter (Datacenter folder)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.basic</td>
+<td colspan="2">getVimHostForVimObject</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the VimHost (Virtual Center) for any Vim object</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.basic</td>
+<td colspan="2">getVimPathForVimObject</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.basic</td>
+<td colspan="2">vim3WaitTaskEnd</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait a VIM 3 Task to end. When task ended, return the task result if any.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.basic</td>
+<td colspan="2">WaitTaskEndOrVMQuestion</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait for a VIM 3 Task to end or for the VM to ask a question. Return the task result or the question asked.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.cluster</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.cluster</td>
+<td colspan="2">drsEnabledCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return true if the specified cluster is DRS enabled. False if not.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.cluster</td>
+<td colspan="2">getAllClusterComputeResourceForVimHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all the ClusterComputeResource in a VimHost</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.cluster</td>
+<td colspan="2">getAllComputeResourceForVimHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all ComputeResource (Non cluster) in a VimHost</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.cluster</td>
+<td colspan="2">getAllVMsOfCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMs in a cluster</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.cluster</td>
+<td colspan="2">getAllVMsOfComputeResource</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all VMs of a ComputeResource (non cluster)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.cluster</td>
+<td colspan="2">getComputeResourceOfVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the ComputeResource or ClusterComputeResource of a VM</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.cluster</td>
+<td colspan="2">getNetworkForCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Actions for presentations Return a list of network for a cluster, computeResource or host</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.customattribute</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.customattribute</td>
+<td colspan="2">getCustomField</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the custom field value</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.customattribute</td>
+<td colspan="2">setOrCreateCustomField</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Set a custom attribute for an object. If the custom attribute does not exist, the action create it</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.datastore</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore</td>
+<td colspan="2">getAllAvaiblableHostForVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>[DEPRECATED] Return all hosts "viewing" the VM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore</td>
+<td colspan="2">getAllDatastoreOnVimHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all datastores on an ESX host</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore</td>
+<td colspan="2">getDatacenterForDatastore</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get datacenter for a datastore</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore</td>
+<td colspan="2">getDatastoreForHostAndResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all available Datastore on host and pool (sum of each). If host and pool are null, return the available datastore to relocate the vm (in fact, all datastore in the same Virtual Center)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore</td>
+<td colspan="2">getDatastoreFreeSize</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the Available Size on a Datastore in MB.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore</td>
+<td colspan="2">getValidDatastoreForNetwork</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all valid datastores for a network.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore</td>
+<td colspan="2">getValidNetworkForDatastore</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.datastore.files</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore.files</td>
+<td colspan="2">getAllConfigFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMX files on a datastore (using API to browse the datastore directly)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore.files</td>
+<td colspan="2">getAllFloppyImageFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all Floppy image files (*.flp) on a datastore (using API to browse the datastore directly)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore.files</td>
+<td colspan="2">getAllTemplateConfigFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMTX files on a datastore (using API to browse the datastore directly)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.datastore.files</td>
+<td colspan="2">getAllVmdkFile</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get all VMDK files on a datastore (using API to browse the datastore directly)</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.folder</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.folder</td>
+<td colspan="2">createFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a folder in an existing folder Return the new folder</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.folder</td>
+<td colspan="2">destroyFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Delete an existing folder. Return the deletion task.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.folder</td>
+<td colspan="2">destroyFolderAndWait</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Delete a folder and wait the task's completion</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.folder</td>
+<td colspan="2">getRootVmFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the root VMfolder. Does not return anything if there are more than one datacenter</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.folder</td>
+<td colspan="2">getVirtualMachineByFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.folder</td>
+<td colspan="2">renameFolder</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rename a given folder. Return the rename task</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.folder</td>
+<td colspan="2">renameFolderAndWait</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rename a given workflow and wait the task's completion</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.network</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.network</td>
+<td colspan="2">getDatacenterForNetwork</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return datacenter of a network</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.network</td>
+<td colspan="2">getNetworkForResourcePoolHostVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return available network for a resource pool, a host (if cluster is null) or for a VM (if cluster and host are null). Used in the networks list in clone presentations.  If called with a (non-null) parameter of the wrong type, this action could possibly return an "undefined" value.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.network</td>
+<td colspan="2">getNetworksForLabel</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Returns all networks with name specified by label</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.network</td>
+<td colspan="2">getNetworksForVimHost</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all existing networks in a VimHost</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.resourcePool</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">createResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new Rescource Pool with default CPU and memory allocation (disabled). Returns the new ResourcePool, null if any error.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">createResourcePoolForCluster</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new Rescource Pool with default CPU and momory allocation (disabled). Returns the new ResourcePool, null if any error.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">destroyResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Destroy a resource pool. Return the task created by this action. Wait on the task to end to be sure the resource pool is well renamed</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">destroyResourcePoolAndWait</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Destroy a resource pool and wait on the task. Return true is the resource pool was destroyed, false if not.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">getAllChildResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all resource pool of the given resource pool</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">getAllResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the Resource Pools on all plugins</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">getValidResourcePoolForDatastore</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get valid resourcePools for a datastore</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">getValidResourcePoolForNetwork</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get valid resourcePools for a network</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">renameResourcePool</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rename a resource pool. Return the task created by this action. Wait on the task to end to be sure the resource pool is well renamed</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.resourcePool</td>
+<td colspan="2">renameResourcePoolAndWait</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Rename a resource pool and wait on the task. return true is the resource pool was renamed, false if not.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.spec</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.spec</td>
+<td colspan="2">getDescription</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Static strings used for describing an object or property.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.spec</td>
+<td colspan="2">getResourceAllocationInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The ResourceAllocationInfo specifies the reserved resource requirement as well as the limit (maximum allowed usage) for a given kind of resource. This is specified for both memory allocation (specified in MB) and CPU allocation (specified in MHz).  For a resource pool, the reservation is specified as a value and a flag. The reservation is the guaranteed amount of a resource that the resource pool has. If expandableReservation is true, then the resource pool is allowed to grow its reservation dynamically by borrowing unreserved resources from its parent resource pool.  If the limit is configured, it must be greater than or equal to the reservation.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.spec</td>
+<td colspan="2">getResourceConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return a VimResourceConfigSpec</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.spec</td>
+<td colspan="2">getSharesInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specification of shares.  Shares are used to determine relative allocation between resource consumers. In general, a consumer with more shares gets proportionally more of the resource, subject to certain other constraints.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm</td>
+<td colspan="2">cloneVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Try to clone a VM.   If any Exception appens, raise a "VMware3:CloneException" with no object attached.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm</td>
+<td colspan="2">customizeVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Try to customize a VM. (no clone operation done)  If any Exception appens, raise a "VMware3:CloneException" with no object attached.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm</td>
+<td colspan="2">describeVirtualMachine</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Returns a virtual machine description string for a VC2 VM. The string contains the virtual machine display name and it's power status.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm</td>
+<td colspan="2">destroyVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Destroy the Virtual Machine, removing it from the Inventory AND from the Datastore!</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm</td>
+<td colspan="2">getVMTotalSize</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm</td>
+<td colspan="2">setDiskToNonPersitent</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Set all disk of the VM to the mode: independent non-persistent Return the task for reconfiguring the VM devices</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.network</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.network</td>
+<td colspan="2">getNetworkForGivenNic</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Retrun the network for a given VM nic</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.network</td>
+<td colspan="2">getNicByNumber</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return a Network card device (VimVirtualE1000, VimVirtualVmxnet, VimVirtualVmxnet2, VimVirtualPCNet32). The network position let you choose if you want to get the 1st, 2nd... 5th network card.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.network</td>
+<td colspan="2">getNumberOfNic</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Get total number of NIC (network interface card) of a VM</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.os</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.os</td>
+<td colspan="2">isWindowsOsInVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return true if the OS is a Windows.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.power</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.power</td>
+<td colspan="2">forcePowerOff</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Force the power off of a VM</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.power</td>
+<td colspan="2">resetVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Resets power on this virtual machine. If the current state is poweredOn, then this method first performs powerOff(hard). Once the power state is poweredOff, then this method performs powerOn(option). Although this method functions as a powerOff followed by a powerOn, the two operations are atomic with respect to other clients, meaning that other power operations cannot be performed until the reset method completes.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.power</td>
+<td colspan="2">shutdownVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Shutdown the VM guest and wait for a given time before throwing an error if the VM is still not powered off. If timeout is set to 0, the action don't wait</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.power</td>
+<td colspan="2">shutdownVMAndForce</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Try to shutdown a VM guest. If still not power off after 5 minutes, force power off.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.power</td>
+<td colspan="2">standbyGuest</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Stand by the guest operating System. VMware tools have to be available.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.power</td>
+<td colspan="2">startVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Start / Resume a VM. Return the start task</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.power</td>
+<td colspan="2">suspendVM</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Suspend a VM. Return the suspend Task</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.snapshot</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.snapshot</td>
+<td colspan="2">createSnapshot</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Creates a new snapshot of this virtual machine. As a side effect, this updates the current snapshot.  Any % (percent) character used in this name parameter must be escaped, unless it is used to start an escape sequence. Clients may also escape any other characters in this name parameter.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.snapshot</td>
+<td colspan="2">removeAllSnapshot</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Remove all the snapshots associated with this virtual machine. If the virtual machine does not have any snapshots, then this operation simply returns successfully.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.snapshot</td>
+<td colspan="2">revertToCurrentSnapshot</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Reverts the virtual machine to the current snapshot. This is equivalent to doing snapshot.currentSnapshot.revert. If no snapshot exists, then the operation does nothing, and the virtual machine state remains unchanged.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">checkVMwareInput</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Check that basics inputs parameters of a Clone workflows are all part of the same vimHost (Virutal Center)</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getCloneSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specification for a virtual machine cloning operation.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The ConfigSpec data object type encapsulates configuration settings when creating or reconfiguring a virtual machine. To support incremental changes, these properties are all optional.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getConfigSpecSimple</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The ConfigSpec data object type encapsulates configuration settings when creating or reconfiguring a virtual machine. To support incremental changes, these properties are all optional.  Basic Version</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getCustomizationGlobalIPSettings</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>A collection of global IP settings for a virtual network adapter. In Linux, DNS server settings are global. The settings can either be statically set or supplied by a DHCP server.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getCustomizationGlobalIPSettingsWithDomainAsString</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>A collection of global IP settings for a virtual network adapter. In Linux, DNS server settings are global. The settings can either be statically set or supplied by a DHCP server.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getCustomizationSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The Specification data object type contains information required to customize a virtual machine when deploying it or migrating it to a new host.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getCustomizationSpecSysprepText</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getCustomizationWinOptions</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Optional operations supported by the customization process for Windows.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">getRelocateSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specification for moving or copying a virtual machine to a different datastore or host.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec</td>
+<td colspan="2">reconfigVm</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Start reconfiguring a VM, returning the Task</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec.config</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config</td>
+<td colspan="2">getVirtualDeviceConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDeviceSpec data object type encapsulates change specifications for an individual virtual device. The virtual device being added or modified must be fully specified.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config</td>
+<td colspan="2">getVirtualDeviceConnectInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualDevice is the base data object type for devices in a virtual machine. This type contains enough information about a virtual device to allow clients to display devices they do not recognize. For example, a client with an older version than the server to which it connects may see a device without knowing what it is.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config</td>
+<td colspan="2">getVirtualMachineAffinityInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Allow to create a VirtualMachineAffinityInfo Specification of scheduling affinity.  Scheduling affinity is used for explicitly specifying which processors or NUMA nodes may be used by a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config</td>
+<td colspan="2">getVirtualMachineConsolePreferences</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a VirtualMachineConsolePrefrences. Preferences for the legacy console application that affect the way it behaves during power operations on the virtual machine.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec.config.device</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">createVirtualDiskFlatVer2ConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualDiskFlatVer2BackingInfo. The VirtualDisk.FlatVer2BackingInfo data object type contains information about backing a virtual disk using a virtual disk file on the host, in the flat file format used by GSX Server 3.x, ESX Server 2.x, and ESX Server 3.x. Flat disks are allocated when created, unlike sparse disks, which grow as needed.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">createVirtualEthernetCardNetworkConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualEthernetCardNetworkBackingInfo The virtual Ethernet card backing class.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">createVirtualFloppyRemoteConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualFloppyRemoteDeviceBackingInfo The data object type for remote device backing of a virtual floppy drive.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">createVirtualScsiControllerConfigSpec</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Create a new VimVirtualDeviceConfigSpec for a VimVirtualSCSIController The VirtualSCSIController data object type represents a SCSI controller in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualBusLogicController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualBusLogicController is the data object that represents a BusLogic SCSI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualCdrom</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualCdrom data object type describes the configuration of a CD-ROM device in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualController is the base data object type for a device controller in a virtual machine. VirtualController extends VirtualDevice to inherit general information about a controller (such as name and description), and to allow controllers to appear in a generic list of virtual devices.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualDevice</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Set values common to all Virtual Device. Should not be called directly to create a VirtualDevice!!!  VirtualDevice is the base data object type for devices in a virtual machine. This type contains enough information about a virtual device to allow clients to display devices they do not recognize. For example, a client with an older version than the server to which it connects may see a device without knowing what it is.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualDisk</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDisk data object type contains information about a disk in a virtual machine.  The virtual disk backing object types in the VirtualDisk data object type describe the different virtual disk backings available. The disk format version in each case describes the version of the format that is used.   Supported virtual disk backings: Sparse disk format, version 1 and 2  The virtual disk backing grows when needed. Supported only for GSX Server.  Flat disk format, version 1 and 2  The virtual disk backing is preallocated. Version 1 is supported only for GSX Server.  Raw disk format, version 2  The virtual disk backing uses a full physical disk drive to back the virtual disk. Supported only for GSX Server.  Partitioned raw disk format, version 2  The virtual disk backing uses one or more partitions on a physical disk drive to back a virtual disk. Supported only for GSX Server.  Raw disk mapping, version 1  The virtual disk backing uses a raw device mapping to back the virtual disk. Supported for ESX Server</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualE1000</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualE1000 data object type represents an instance of the E1000 virtual Ethernet adapter attached to a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualEnsoniq1371</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualEnsoniq1371 data object type represents an Ensoniq 1371 sound card in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualEthernetCard</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualController is the base data object type for a device controller in a virtual machine. VirtualController extends VirtualDevice to inherit general information about a controller (such as name and description), and to allow controllers to appear in a generic list of virtual devices.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualFloppy</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualFloppy data object type contains information about a floppy drive in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualIDEController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualIDEController data object type specifies a virtual IDE controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualKeyboard</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type contains information about the keyboard on a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualLsiLogicController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualLsiLogicController is the data object that represents a LSI Logic SCSI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualMachineVideoCard</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualVideoCard data object type represents a video card in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualParallelPort</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type represents a parallel port in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualPCIController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualPCIController data object type defines a virtual PCI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualPCNet32</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type defines the properties of an AMD Lance PCNet32 Ethernet card attached to a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualPointingDevice</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualPointingDevice data object type contains information about the mouse type on a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualPS2Controller</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualPCIController data object type defines a virtual PCI controller.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualSCSIController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>May not be called directly. The VirtualSCSIController data object type represents a SCSI controller in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualSCSIPassthrough</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualSCSIPassthrough data object type contains information about a SCSI device on the virtual machine that is being backed by a generic SCSI device on the host via passthrough.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualSerialPort</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualSerialPort data object type represents a serial port in a virtual machine. The nested classes define the physical devices that can back the virtual serial port: a host file, a host serial port device, or a pipe.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualSIOController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type defines a Super IO Controller for floppy drives, parallel ports, and serial ports.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualSoundBlaster16</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualSoundBlaster16 data object type represents a Sound Blaster 16 sound card in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualUSB</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualUSB data object type contains information about a USB device attached to a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualUSBController</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type defines a Super IO Controller for floppy drives, parallel ports, and serial ports.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualVmxnet</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualVmxnet data object type represents an instance of the Vmxnet virtual Ethernet adapter attached to a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device</td>
+<td colspan="2">getVirtualVmxnet2</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualVmxnet data object type represents an instance of the Vmxnet virtual Ethernet adapter attached to a virtual machine.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec.config.device.backing.device</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualCdromAtapiBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualCdrom.AtapiBackingInfo data object type represents an ATAPI device backing for a virtual CD-ROM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualCdromPassthroughBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualCdrom.PassthroughBackingInfo data class represents a device pass-through backing for a virtual CD-ROM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualDiskRawDiskVer2BackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDisk.RawDiskVer2BackingInfo data object type contains information about backing a virtual disk by using a host device, as used by GSX Server 3.x.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualEthernetCardLegacyNetworkBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The virtual Ethernet card legacy backing class.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualEthernetCardNetworkBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The virtual Ethernet card backing class.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualFloppyDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for device backing of a virtual floppy drive.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualParallelPortDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for a device backing of a virtual parallel port.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualPointingDeviceDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualPointingDevice.DeviceBackingInfo provides information about the physical mouse backing the VirtualPointingDevice data object type.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualSCSIPassthroughDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualSCSIPassthrough.DeviceBackingInfo data object type contains information about the backing that maps the virtual device onto a physical device.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualSerialPortDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type provides information for backing a virtual serial port with a host serial port device.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.device</td>
+<td colspan="2">getVirtualSoundCardDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The sound card device backing data class.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec.config.device.backing.file</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualCdromIsoBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualDevice.FileBackingInfo is a data object type for information about a file backing for a device in a virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualDiskFlatVer2BackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDisk.FlatVer2BackingInfo data object type contains information about backing a virtual disk using a virtual disk file on the host, in the flat file format used by GSX Server 3.x, ESX Server 2.x, and ESX Server 3.x. Flat disks are allocated when created, unlike sparse disks, which grow as needed.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualDiskRawDiskMappingVer1BackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualDisk.FlatVer2BackingInfo data object type contains information about backing a virtual disk using a virtual disk file on the host, in the flat file format used by GSX Server 3.x, ESX Server 2.x, and ESX Server 3.x. Flat disks are allocated when created, unlike sparse disks, which grow as needed.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualFloppyImageBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for file image backing of a virtual floppy drive.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualParallelPortFileBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for a file backing of a virtual parallel port.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.file</td>
+<td colspan="2">getVirtualSerialPortFileBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type provides information for backing a virtual serial port with a host file.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec.config.device.backing.pipe</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.pipe</td>
+<td colspan="2">getVirtualSerialPortPipeBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This data object type provides information for backing a virtual serial port with a pipe. A pipe enables you to set up the virtual serial port to connect to an application on the host computer. This is useful, for example, if you want to use an application on the host to capture debugging information sent from the virtual machine's serial port.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec.config.device.backing.remote</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.remote</td>
+<td colspan="2">getVirtualCdromRemotePassthroughBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The VirtualCdrom.RemotePassthroughBackingInfo data object type contains the information to specify a remote pass-through device backing of a virtual CD-ROM.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.remote</td>
+<td colspan="2">getVirtualDeviceRemoteDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>VirtualDevice.RemoteDeviceBackingInfo is a data object type for information about a remote device backing used by a device in a virtual machine. The primary difference between a remote device backing and a local device backing is that the VirtualCenter server cannot provide a list of remote host devices available for this virtual device backing.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.config.device.backing.remote</td>
+<td colspan="2">getVirtualFloppyRemoteDeviceBackingInfo</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The data object type for remote device backing of a virtual floppy drive.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec.identity</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationCustomName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specifies that the VirtualCenter server will launch an external application to generate the (hostname/IP). The command line for this application must be specified in the server configuration file (vpxd.cfg) in the vpxd/name-ip-generator key.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationFixedName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>A fixed name.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationGuiRunOnce</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The commands listed in the GuiRunOnce data object type are executed when a user logs on the first time after customization completes. The logon may be driven by the AutoLogon setting.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationGuiUnattended</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The GuiUnattended type maps to the GuiUnattended key in the sysprep.inf answer file. These values are plugged directly into the sysprep.inf file that VirtualCenter stores on the target virtual disk.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationIdentification</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The Identification data object type provides information needed to join a workgroup or domain</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationIdentificationFromCredential</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The Identification data object type provides information needed to join a workgroup or domain</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationLicenseFilePrintData</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The LicenseFilePrintData type maps directly to the LicenseFilePrintData key in the sysprep.inf answer file.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationLinuxPrep</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>This is the Linux counterpart to the Windows Sysprep object. LinuxPrep contains machine-wide settings that identify a Linux machine in the same way that the Sysprep type identifies a Windows machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationPassword</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Contains a password string and a flag that specifies whether the string is in plain text or encrypted.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationPrefixName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specifies that a unique name should be generated by concatenating the base string with a number.  Virtual machine names are unique across the set of hosts and virtual machines known to the VirtualCenter instance. VirtualCenter tracks the network names of virtual machines as well as hosts. VMware Tools runs in a guest operating system and reports information to VirtualCenter, including the network name of the guest.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationSysprep</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>An object representation of a Windows sysprep.inf answer file. The sysprep type encloses all the individual keys listed in a sysprep.inf file. For more detailed information, see the document Windows 2000 Unattended Setup Guide.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationUnknownName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Indicates that the name is not specified in advance. The client should prompt the user for the value to complete the specification.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationUserData</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Personal data pertaining to the owner of the virtual machine.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.identity</td>
+<td colspan="2">getCustomizationVirtualMachineName</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Specifies that VirtualCenter should generate a virtual machine name from a base prefix comprising the virtual machine entity name. A number is appended, if necessary, to make it unique. Virtual machine names are unique across the set of hosts and virtual machines known to the VirtualCenter instance. VMware Tools reports the names of existing virtual machines.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.spec.nic</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.nic</td>
+<td colspan="2">getCustomizationAdapterMapping</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Define Data object type to associate a virtual network adapter with its IP settings.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.nic</td>
+<td colspan="2">getCustomizationDhcpIpGenerator</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Use a DHCP server to configure the virtual network adapter.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.nic</td>
+<td colspan="2">getCustomizationFixedIp</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Use a static IP Address for the virtual network adapter.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.nic</td>
+<td colspan="2">getCustomizationIPSettings</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Define IP settings for a virtual network adapter.</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.spec.nic</td>
+<td colspan="2">getCustomizationUnknownIpGenerator</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>The IP address is left unspecified. The user must be prompted to supply an IP address.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.vim3.vm.tools</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.tools</td>
+<td colspan="2">vim3WaitDnsNameInTools</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait for a given name in the DNS guest informations (VMware tools).  Exception: - Timeout: When timeout is reached</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.tools</td>
+<td colspan="2">vim3WaitForPrincipalIP</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return IP if found. Else return empty string. Exception: - Timeout: timeout reached</td>
+</tr>
+<tr>
+<td>com.vmware.library.vim3.vm.tools</td>
+<td colspan="2">vim3WaitToolsStarted</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait for the VMware tools to be up and the guest running  Exception: - Timeout: When timeout is reached - ReferenceError: When vm is not set correctly</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.library.workflow</strong></td>
+</tr>
+<tr>
+<td>com.vmware.library.workflow</td>
+<td colspan="2">getAllWorkflows</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return all the workflows</td>
+</tr>
+<tr>
+<td>com.vmware.library.workflow</td>
+<td colspan="2">getWorkflowById</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the workflow for the given ID.  Throw an exception if the workflow is not found</td>
+</tr>
+<tr>
+<td>com.vmware.library.workflow</td>
+<td colspan="2">waitAllWorkflowComplete</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.library.workflow</td>
+<td colspan="2">waitForCompletion</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Wait that the workflows are terminated</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.util</strong></td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">callActions</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Will call all actions in 'actions' parameter with args 'parameter, additionalParams'.  It is assumed that all callable actions have the same signature and return the modifiable object ('parameter'),  i.e : Any actionToCall(Any parameter, additionalParams[0], additionalParams[1], ...).</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllActionsToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all action modules (name, version, signature and fingerprint) in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllAuthorizationElementsToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all AuthorizationElements in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllConfigurationElementsToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all configuration elements (name, version, signature and fingerprint) in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllPoliciesToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all policies in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllPolicyTemplatesToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all policy templates (name, version, signature and fingerprint) in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllResourceElementsToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all resource elements (name, version, signature and fingerprint) in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllTasksToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all Tasks in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllWebviewsToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all webviews name, version, signature and fingerprint in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">exportAllWorkflowsToCsv</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Log all workflows (name, version, signature and fingerprint) in a CSV file</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">isActionParameterInstanceOfType</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.util</td>
+<td colspan="2">isWorkflowParameterInstanceOfType</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.web.webview</strong></td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getAllPolicy</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getAllTask</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getAllWaitingForInput</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getExecutionListForWorkflowInSameCategory</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getExecutionsForCurrentUser</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the workflow which where executed by the current User. If VS-O version  3.1.1, check the runningUserName property of the WorkflowToken Object.  Optionnaly, you can pass an array of workflow as first argument to look for  executions insteed of searching among all the workflow executions.</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getExecutionsForWorkflowCategory</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getExecutionsForWorkflowList</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getObjectFromParam</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the object from the parameter</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getSortedExecutionsForWorkflowList</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Returns executions of a workflow list. These execustions are sorted by start date.</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getTasksForWorkflowList</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getWorkflowByCategory</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getWorkflowListInSameCategory</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">getWorkflowOutput</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>workflowToken can be either a ParamString or an WorkflowTokenObject. Return a Properties object.</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">objectToJson</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">objectToParam</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Retrieve the UrlParameter from an object. UrlParameter is used to send an object through an URL.</td>
+</tr>
+<tr>
+<td>com.vmware.web.webview</td>
+<td colspan="2">paramToDunesUri</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>Return the dunesUri string from a param string. a param String is used in the webview and is the concatenation of the type and the uri.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: com.vmware.web.webview.workbench</strong></td>
+</tr>
+<tr>
+<td>com.vmware.web.webview.workbench</td>
+<td colspan="2">getWorkbenchDataFactory</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>return a WorkbenchDataFactory object with the following function:  This is an helper factory to build you data object for the WorkbenchNavigationPane component.  * addColumn(String name, String key, HashMap options) : void // set a new column where options could be: noShow[true], noSort[true], type[cssIcon | state], order[desc|asc]. * addRow(String id, String name, HashMap fields) : void // add a row with two mandatory field (id and name). Other fields are specified in fields hashmap where the key should match a column key. * getData() : Properties // return a complex Properties instance with all data and value.</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: org.dojotoolkit.dojo.json</strong></td>
+</tr>
+<tr>
+<td>org.dojotoolkit.dojo.json</td>
+<td colspan="2">serialize</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>summary:    Create a JSON serialization of an object, note that this    doesn't check for infinite recursion, so don't do that! o:    an object to be serialized. Objects may define their own    serialization via a special "__json__" or "json" function    property. If a specialized serializer has been defined, it will    be used as a fallback. return:    a String representing the serialized version of the passed    object</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>Module: org.dojotoolkit.dojo.string</strong></td>
+</tr>
+<tr>
+<td>org.dojotoolkit.dojo.string</td>
+<td colspan="2">escapeString</td>
+</tr>
+<tr>
+<td align="right"><em>Description:</em></td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+  </article>
+</main>
+
+  
+  
+  <div class="authorbox clearfix">
+    <p class="authorbox__warning">
+      <strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+    </p>
+  </div>
+  
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/question-answer/product/59-who-owns-vco-.html" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Who owns vCenter Orchestrator ?</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://new.vcoteam.info/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html">Please share your code at the Sample Exchange</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html">How to update a Resource Element Script&#39;s Contents using curl</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

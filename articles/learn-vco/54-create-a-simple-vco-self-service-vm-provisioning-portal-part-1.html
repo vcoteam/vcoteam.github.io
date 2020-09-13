@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Create a simple vCO self service VM Provisioning Portal - Part 1 - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p style=&#34;text-align: justify;&#34;&gt;This article is the first in a series of tutorials for developing a basic VM self service portal. It is meant to be educational rather than exhaustive. Other articles will follow up for supporting more advanced features and a less static configuration.&lt;/p&gt;&lt;p style=&#34;text-align: justify;&#34;&gt;Concepts covered in this article include:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;How to create a simple Workflow&lt;/li&gt;&lt;li&gt;How to map inputs, outputs, and attributes&lt;/li&gt;&lt;li&gt;How to launch a Workflow from a webview, using the vCenter Orchestrator Weboperator&lt;/li&gt;&lt;li&gt;How to launch a Workflow from the vCenter Orchestrator Client&lt;/li&gt;&lt;/ol&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;">
+	<meta name="description" content="This article is the first in a series of tutorials for developing a basic VM self service portal. It is meant to be educational rather than exhaustive. Other articles will follow up for supporting more advanced features and a less static configuration.">
 		<meta property="og:title" content="Create a simple vCO self service VM Provisioning Portal - Part 1" />
-<meta property="og:description" content="&lt;p style=&#34;text-align: justify;&#34;&gt;This article is the first in a series of tutorials for developing a basic VM self service portal. It is meant to be educational rather than exhaustive. Other articles will follow up for supporting more advanced features and a less static configuration.&lt;/p&gt;&lt;p style=&#34;text-align: justify;&#34;&gt;Concepts covered in this article include:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;How to create a simple Workflow&lt;/li&gt;&lt;li&gt;How to map inputs, outputs, and attributes&lt;/li&gt;&lt;li&gt;How to launch a Workflow from a webview, using the vCenter Orchestrator Weboperator&lt;/li&gt;&lt;li&gt;How to launch a Workflow from the vCenter Orchestrator Client&lt;/li&gt;&lt;/ol&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;" />
+<meta property="og:description" content="This article is the first in a series of tutorials for developing a basic VM self service portal. It is meant to be educational rather than exhaustive. Other articles will follow up for supporting more advanced features and a less static configuration." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/54-create-a-simple-vco-self-service-vm-provisioning-portal-part-1.html" />
 <meta property="article:published_time" content="2010-06-02T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create a simple vCO self service VM Provisioning Portal - Part 1"/>
-<meta name="twitter:description" content="&lt;p style=&#34;text-align: justify;&#34;&gt;This article is the first in a series of tutorials for developing a basic VM self service portal. It is meant to be educational rather than exhaustive. Other articles will follow up for supporting more advanced features and a less static configuration.&lt;/p&gt;&lt;p style=&#34;text-align: justify;&#34;&gt;Concepts covered in this article include:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;How to create a simple Workflow&lt;/li&gt;&lt;li&gt;How to map inputs, outputs, and attributes&lt;/li&gt;&lt;li&gt;How to launch a Workflow from a webview, using the vCenter Orchestrator Weboperator&lt;/li&gt;&lt;li&gt;How to launch a Workflow from the vCenter Orchestrator Client&lt;/li&gt;&lt;/ol&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;"/>
+<meta name="twitter:description" content="This article is the first in a series of tutorials for developing a basic VM self service portal. It is meant to be educational rather than exhaustive. Other articles will follow up for supporting more advanced features and a less static configuration."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,133 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-06-02T00:00:00Z">June 02, 2010</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p style="text-align: justify;">This article is the first in a series of tutorials for developing a basic VM self service portal. It is meant to be educational rather than exhaustive. Other articles will follow up for supporting more advanced features and a less static configuration.</p>
+<p style="text-align: justify;">Concepts covered in this article include:</p>
+<ol>
+<li>How to create a simple Workflow</li>
+<li>How to map inputs, outputs, and attributes</li>
+<li>How to launch a Workflow from a webview, using the vCenter Orchestrator Weboperator</li>
+<li>How to launch a Workflow from the vCenter Orchestrator Client</li>
+</ol>
+<span style="color: #ff0000;"><strong>NOTE:</strong></span> Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.<br />
 
+<h2>Developing the provisioning Workflow</h2>
+<p style="text-align: left;">First log in with the vCO Client, then Click on the Workflows tab and add a category (right Click / "Add Category..."). The Category helps organize your custom Workflows.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-001  Add category.png" alt="vCO create workflow category" border="0" /></p>
+<p style="text-align: center;"></p>
+<p style="text-align: left;">You can now name it.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/SSSP-002 Name category.png" alt="vCO Workflow category name" border="0" /><br /><br /></p>
+<p style="text-align: left;">Now create a new Workflow (right Click / "New Workflow").<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-003 New workflow.png" alt="vCenter Orchestrator create workflow" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">You can now name it.</p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/sssp-004 workflow name.png" alt="vCenter Orchestrator name workflow" border="0" /></p>
+<p style="text-align: left;"><br />Now that an empty Workflow has been created you can edit it (right click / Edit or Ctrl+E).</p>
+<p style="text-align: left;"></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-005 Edit workflow.png" alt="vCenter Orchestrator edit workflow" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">While not mandatory, it is recommended to edit the version of the Workflow every time you make a change. (Click on the last Version digit).</p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-006 Version workflow.png" alt="vCO Set workflow version" border="0" /></p>
+<p style="text-align: left;"><br />Now enter an initial comment and click OK.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-007 Enter your comment.png" alt="vCO Versioning comment" border="0" /></p>
+<p style="text-align: left;"><br />We are now ready to create the content of the Workflow. For doing so click on the Schema tab.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/sssp-008 click schema tab.png" alt="vCenter Orchestrator workflow versioning" border="0" /></p>
+<p style="text-align: left;"><br />To provide the provisioning functionality to our Workflow we will use one of the many building block Workflows available in the vCenter library. To do so click on "Action &amp; Wokflow" in the left pane.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/sssp-009 select action and workflow.png" alt="vCenter Orchestrator Provision VM" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">Now drag and drop the "Workflow element" palette item on the schema.</p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-010 Select Workflow element.png" alt="vCenter Orchestrator Workflow element" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">The chooser is now expecting you to provide the name of the Workflow you want to insert in this schema. In the search box type in "Clone virtual machine, no customization". There are several clone Workflows so you want to make sure you entered enough text to filter down to one single Workflow. Click on the Workflow and then on "Select".<br />Please note that the Workflows showing in this list depends on what version of vCO you are running and on what additional plug-ins you have installed. You may eventually have two Workflows with similar name in a different category such as vCenter and VIM 35.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-011 Choose workflow.png" alt="vCenter Orchestrator Workflow Chooser" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;"><br />Click on the "Visual Binding" tab. The visual binding will help you automating the data flow with the creation and linkage of the different inputs, outputs and variables.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-012 Visual Binding tab.png" alt="vCenter Orchestrator Visual Binding" border="0" /></p>
+<p style="text-align: left;"><br />The boxes in the middle represent the inputs and outputs of the library Workflow you have just inserted into your custom Workflow. This Workflow has nine inputs and one output.</p>
+<p style="text-align: left;">The boxes on the side represent your Workflow inputs, outputs and attributes. The inputs feed your Workflow with necessary or optional parameters. The inputs can either be manually entered (such as when the Workflow is started manually i.e the Workflow you are creating) or passed as parameters automatically (such as when started by another Workflow or another system. i.e the Clone VM Workflow). The outputs are the results that will be returned on completion. The attributes are your Workflow internal variables. These are not accessible outside of the Workflow as represented in the visual Binding view. As of now you do not have defined any inputs, outputs or variable.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-013 Blank Visual Binding.png" alt="Workflow Bindings" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">To create an input you can drag and drop the "Clone Virtual Machine" inputs in the top left "In Parameters" box.</p>
+<p style="text-align: left;">The <b>vm</b> input in this Workflow is representing the VM or template to clone from. Many library Workflows have comments indicating the usage of the parameters. To check parameter comments you can switch to the "IN" tab. Switch back to "Visual Binding" tab. Drag and drop the <b>vm</b> input in the top left in Parameters box. This will bring the following window. All the different fields have been pre-filled for you. Click OK.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-014 Create VM input parameter.png" alt="vCO Create VM Parameter" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;"><br />Now repeat the drag and drop operation for the <b>vmName</b> input.<br /><br />We will link the other "Clone Virtual Machine, ..." inputs on pre-defined attributes that will not be visible by the end user.</p>
+<p style="text-align: left;">To do so drag and drop the <b>vmFolder</b> input in the bottom left Attribute box. This will bring the following window.<br /><br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-015 Create VM folder attribute.png" alt="vCO Set vmFolder" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">The window gives you the option to set this attribute with a value. Click on the "Not set" link in the Value field.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-016 Select vmFolder.png" alt="vCO Select target VM Folder" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;"><br />You should now see a treeview containing the vCenter(s) configured for this vCO server and their underlying virtual infrastructure. Drill down until you find the desired vmFolder you wish to place provisioned VMs into and click on the Select link.<br /><br />Repeat the drag and drop operation with all the remaining IN parameters without forgetting to assign them values. Drag and drop the OUT parameter to the bottom right box to create a <b>NewVm</b> attribute. No need to set a value for this one, the Workflow will when completing.</p>
+<p style="text-align: left;">Once completed the Visual Binding should look like this:<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-017 Visual Binding completed.png" alt="vCO Workflow bindings" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">Now that the data flow is completed we need to complete the process flow. Select the link mode as follow (as an alternative you can ctrl click).</p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-018 Set link mode.png" alt="vCO Workflow link mode" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">Now link the Start symbol in the schema view to the first Workflow. We will now validate the Workflow as follows<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-019 Link start to workflow.png" alt="Validate Workflow" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">The validation will display a warning indicating we forgot to add the Workflow End symbol.<br /><br /></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-020 Workflow validation warning.png" alt="Workflow Validation with Warning" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">By clicking on "Create end ..." the Workflow will now validate.</p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-021 Workflow is valid.png" alt="Workflow Validation" border="0" /></p>
+<p style="text-align: center;"></p>
+<p style="text-align: left;">As you can see below the end symbol was added and linked automatically</p>
+<p style="text-align: center;"></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/SSSP-022 Workflow%20completed.png" alt="Workflow Completed" width="184" height="205" border="0" /><br /><br /><br /></p>
+<p style="text-align: left;">Click on save and close. Congratulations you have completed the workflow.</p>
+<h2>Testing the Workflow from the vCO Client</h2>
+<p style="text-align: left;">Right click on the Workflow and select "Execute workflow ..."</p>
+<p style="text-align: center;"><br /><br /><img style="border: 0;" src="/images/portal-part1/sssp-023 execute workflow.png" alt="vCenter Orchestrator Client execute workflow" border="0" /><br /><br /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">Select a template and name your new VM as wanted and submit.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/sssp-024 filling fields.png" alt="vCO Client workflow inputs" border="0" /></p>
+<p style="text-align: left;">You will now be able to see the Workflow progress. The schema will enlighten the current step with navigating within the different Workflows and with updating the Workflows attributes. Once the Workflow will have completed you will be able to check these.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/sssp-025 workflows variables.png" alt="vCenter Orchestrator Client workflow execution" border="0" /></p>
+<p style="text-align: center;"></p>
+<p style="text-align: left;">On the left pane you can see the Workflow status. If something wrong happened you can view the error message at the bottom of the Variables and in the Events tab.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/sssp-026 workflow success status.png" alt="vCO Client workflow results" border="0" /></p>
+<h2>Starting the provisioning Workflow through a web Browser</h2>
+<p>vCO has a build in web server able to deploy web pages called "Web views". The weboperator is installed with vCO. It is a basic web based Workflow operator client. Before closing your vCO client click on the Web views tab". If the web operator web view does not shows a Started status right click and Click publish.</p>
+
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/SSSP-027 Publish weboperator.png" alt="vCO Publish Webview" border="0" /><br /><br /></p>
+<p style="text-align: center;"></p>
+<p style="text-align: left;">To access the vCO web server type in your vCO server hostname or IP address (as shown in the vCO client title bar) on the 8280 port.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/SSSP-028 Webviews url.png" alt="vCO Web Server URL" border="0" /></p>
+<p style="text-align: left;">This is the vCO root level page. Click on the "Webview List" link.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/SSSP-029 vCO home.png" alt="vCO Root Level Page" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">The next screen will list all the published Webviews. My server is running Lifecycle Manager. It may not be the case for yours. Click on weboperator.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/SSSP-030 Webviews list.png" alt="vCO Webview List" border="0" /></p>
+<p style="text-align: center;"></p>
+<p style="text-align: left;">Now log in with a user that has rights to log in vCO.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/SSSP-031 Log in web operator.png" alt="vCO Weboperator Webview" border="0" /></p>
+<p style="text-align: left;">Now unfold the Workflow categories and select your Provision VM Workflow.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/sssp-032 request vm web status.png" alt="vCO Weboperator workflow execution" border="0" /></p>
+<p style="text-align: left;">In the right pane click on "Execute Workflow".</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/sssp-033 execute workflow.png" alt="vCenter Orchestrator Weboperator execute workflow" border="0" /></p>
+<p style="text-align: left;">Fill in the input fields (the first field support both typing in with completion and tree view using the magnifier). Click submit.</p>
+<p style="text-align: center;"><br /><img style="border: 0;" src="/images/portal-part1/sssp-034 filling web fields.png" alt="vCO Weboperator workflow inputs" border="0" /></p>
+<p style="text-align: left;">You will now see a new Workflow execution showing the Workflow is running. You can check the status with the schema tab. To update status and schema you may have to reload the page.</p>
+<p style="text-align: left;"></p>
+<p style="text-align: center;"><img style="border: 0;" src="/images/portal-part1/sssp-035 workflows executing.png" alt="vCO Weboperator executing workflow" border="0" /></p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">Congratulations you have started your Workflow through a web client !</p>
+<p style="text-align: left;"><img src="/images/filetypes/default.gif" alt="file icon package" border="0" /> <a title="Download the package if you ran into problems" href="/images/portal-part1/info.vcoteam.self.provisioning.portal.1.package">Download the package if you ran into problems</a><br />Next articles in Series:<br /><a href="/articles/learn-vco/87-create-a-simple-vco-self-service-vm-provisioning-portal-part-2.html">Part 2</a><br /><a href="/articles/learn-vco/107-create-a-simple-vco-self-service-vm-provisioning-portal-part-3.html">Part 3</a></p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +326,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

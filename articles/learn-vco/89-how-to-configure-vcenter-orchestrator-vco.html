@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>How to Configure vCenter Orchestrator (vCO) - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;In my previous article 1, I walked you through a screen-by-screen installation of vCO. The only major item lacking from that previous article is the ever-important configuration steps. In the past, many people have had troubles with getting the configuration of vCO correct. This article is an effort to help walk you through each of the screens to provide you insight and recommendations on how to get vCenter Orchestrator configured and working in your environment.&lt;/p&gt;">
+	<meta name="description" content="In my previous article 1, I walked you through a screen-by-screen installation of vCO. The only major item lacking from that previous article is the ever-important configuration steps. In the past, many people have had troubles with getting the configuration of vCO correct. This article is an effort to help walk you through each of the screens to provide you insight and recommendations on how to get vCenter Orchestrator configured and working in your environment.">
 		<meta property="og:title" content="How to Configure vCenter Orchestrator (vCO)" />
-<meta property="og:description" content="&lt;p&gt;In my previous article 1, I walked you through a screen-by-screen installation of vCO. The only major item lacking from that previous article is the ever-important configuration steps. In the past, many people have had troubles with getting the configuration of vCO correct. This article is an effort to help walk you through each of the screens to provide you insight and recommendations on how to get vCenter Orchestrator configured and working in your environment.&lt;/p&gt;" />
+<meta property="og:description" content="In my previous article 1, I walked you through a screen-by-screen installation of vCO. The only major item lacking from that previous article is the ever-important configuration steps. In the past, many people have had troubles with getting the configuration of vCO correct. This article is an effort to help walk you through each of the screens to provide you insight and recommendations on how to get vCenter Orchestrator configured and working in your environment." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/89-how-to-configure-vcenter-orchestrator-vco.html" />
 <meta property="article:published_time" content="2010-07-12T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to Configure vCenter Orchestrator (vCO)"/>
-<meta name="twitter:description" content="&lt;p&gt;In my previous article 1, I walked you through a screen-by-screen installation of vCO. The only major item lacking from that previous article is the ever-important configuration steps. In the past, many people have had troubles with getting the configuration of vCO correct. This article is an effort to help walk you through each of the screens to provide you insight and recommendations on how to get vCenter Orchestrator configured and working in your environment.&lt;/p&gt;"/>
+<meta name="twitter:description" content="In my previous article 1, I walked you through a screen-by-screen installation of vCO. The only major item lacking from that previous article is the ever-important configuration steps. In the past, many people have had troubles with getting the configuration of vCO correct. This article is an effort to help walk you through each of the screens to provide you insight and recommendations on how to get vCenter Orchestrator configured and working in your environment."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,51 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-07-12T00:00:00Z">July 12, 2010</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>In my previous article <a title="How to install vCenter Orchestrator (vCO)" href="/articles/learn-vco/47-how-to-install-vcenter-orchestrator-vco.html">How to install vCenter Orchestrator (vCO)</a>, I walked you through a screen-by-screen installation of vCO. The only major item lacking from that previous article is the ever-important configuration steps. In the past, many people have had troubles with getting the configuration of vCO correct. This article is an effort to help walk you through each of the screens to provide you insight and recommendations on how to get vCenter Orchestrator configured and working in your environment.</p>
 
+
+<h2>vCenter Orchestrator Configuration</h2>
+<p>Let's get started by clicking the "vCenter Orchestrator Configuration" link that was created in your menu, desktop, or quick-launch bar as selected during installation. Your default browser should launch to http://your-lcm-server:8282 . You'll need to login to that screen with the Default Username and Password for vCenter Orchestrator: vmware / vmware <br /><img title="vCO Configuration 1" src="/images/how-to-install-vco/vco-configuration-1.png" alt="vCO Configuration 1" border="0" /></p>
+<p>Once you have logged in, you'll be presented with the following screen:<br /><img title="vCO Configuration 2" src="/images/how-to-install-vco/vco-configuration-2.png" alt="vCO Configuration 2" border="0" /><br />You'll note that there are several red triangles down the left pane of the display. Each of these represent configuration items that must be set. A green circle indicates that the configuration item is either set or not required. We'll go through each of these screens and get them configured so that we get our green dots.</p>
+<h3>vCenter Orchestrator Network Configuration</h3>
+<p>Let's start by clicking on "Network" in the left pane.<br /><img title="vCO Network Configuration 3" src="/images/how-to-install-vco/vco-network-configuration-3.png" alt="vCO Network Configuration 3" border="0" /><br /><b>IP address: </b>You'll want to choose an IP Address here so that you can connect to the server. If you specify 127.0.0.1, then the only machine that will be able to connect to it is itself. So, choose the desired IP from the drop-down.. that way, you can connect to the vCO server from another workstation running the vCO Client software.<br /><b>DNS name: </b>This field will auto-populate based on the IP Address chosen. Please note that it is important to have reverse DNS working in your environment for optimal performance with vCO.<br /><b>Lookup port, Command port, Messaging port, and Data Port:</b> I recommend leaving all these as their default values.<br /><b>HTTP Port: </b>The default here is 8280 so in order to access any Webviews you create, or the weboperator, you'll need to enter http://your-lcm-server:8280 in your browser address bar. If you prefer not to have to specify the port in the address, you can safely change this value to 80 as long as you don't have any other web servers already using that port on the server.<br /><b>HTTPS Port: </b>The default here is 8281 so again, you'll have to specify a port for SSL communication to the vCO server. You can safely change this value to 443 if you prefer to not be required to specify the port as long as you don't have any other web servers already using that port.<br /><br />After you have adjusting the settings on this screen as desired, be sure to click the <b>Apply Changes</b> button in the bottom right corner. Please note that if you have a display resolution of less than 1024x768, this button may not be visible.</p>
+<h3>vCenter Orchestrator SSL Certificate Configuration</h3>
+<p>Now click on the "SSL Certificate" tab at the top of the right pane as shown here:<br /><img title="vCO SSL Configuration 4" src="/images/how-to-install-vco/vco-ssl-configuration-4.png" alt="vCO SSL Configuration 4" border="0" /><br />In order to maintain secure communications with vCenter, vCO requires that you import the SSL certificate from each of the vCenter servers you plan on automating with vCenter Orchestrator. To do so, simply enter the IP Address / Hostname / FQDN of each vCenter server in the box titled "URL from which to import a certificate" and then click the <b>Import</b> button. There is no need to enter HTTP or HTTPS in the box, simply the name or address will suffice.<br /><br />In addition to secure communications with the vCenter server, if you plan on enabling SSL for LDAP (IE: Active Directory), you should also import the SSL certificates from your LDAP server.<br /><br />After you have imported all the required SSL Certificates, you'll need to restart the vCO Configuration Server. Click on the "Startup Options" tab in the left pane, then click the "Restart the vCO configuration server" link as shown in the following screenshot:<br /><img title="vCO Restart Config 15" src="/images/how-to-install-vco/vco-restart-config-15.png" alt="vCO Restart Config 15" border="0" /><br />You'll need to log back into the vCenter Orchestrator Configuration interface after the restart has completed. You will then be able to complete the rest of the configuration.</p>
+<h3>vCenter Orchestrator LDAP Configuration</h3>
+<p>Click on the LDAP configuration item in the left pane. Next choose the LDAP that you'll be authenticating against. The environment I'm using in this tutorial is using Microsoft Active Directory (Windows 2003) so I'll choose the "Active Directory" option for my <b>LDAP Client</b>. You can choose a different client as needed by your environment(OpenLdap, eDirectory, Sun Java System Directory Server), but some of the syntax may vary slightly in the rest of this configuration page.<br />Specify your <b>Primary LDAP Host</b> and <b>Secondary LDAP Host</b>, if applicable. Ideally, you should try to use a local Global Catalog server - click on the checkbox to <b>Use Global Catalog</b> if desired. <br /><br />If using SSL, you'll need to specify the appropriate <b>Port</b>, place a check in the <b>Use SSL</b> checkbox, and be sure to import the SSL certificate from your LDAP server.<br /><br />For <b>Root</b>, you'll need to use Distinquished Name syntax for your the root of your LDAP tree where vCO should start looking. Many times, this can be the same as your domain name, or geo, depending on your LDAP schema. My environment is quite simple in that I just use "vmware.lan" as my domain. So, my setting here is "DC=vmware,DC=lan". However, if I were setting up a vCO server in each of my GEOs with a naming schema of AMER, APAC, EMEA for example; then being in the US, I would use "DC=amer,DC=vmware,DC=lan" as my Root.<br /><b>User name:</b> Specify the username that vCO will use to query your LDAP environment. I have found that user@domain.ext works the best here. So, I enter "administrator@vmware.lan" for this field and then specify the appropriate <b>Password</b> for that account.<br /><br /><b>User lookup base:</b> If all of your user accounts and groups are under a specific OU or CN (Container - Microsoft syntax), then you can use the Distinguished name to that location in both the <b>User lookup base</b> and <b>Group lookup base.</b> In my example domain, I am using the built-in "Users" location for all of my accounts and groups. So, since this is Microsoft's "CoNtainer", I specify "CN=users,DC=vmware,DC=lan" as my lookup base for each of these fields. If you have a regular Organizational Unit, "Accounts" for example, then you could specify as: "OU=accounts,DC=vmware,DC=lan". Repeat this process for your <b>Group lookup base.</b>.<br /><br /><b>vCO Admin group:</b> This field tells your vCenter Orchestrator server which group vCO Administrators should belong to. When a user authenticates, their group membership will be checked against this value and elevated rights will be granted when running workflows, browsing webviews, or using the vCenter Orchestrator Client. You can use the <b>Search</b> link to the right of the textbox to search for your group. The results of the search will be hyperlinks. Clicking on the correct hyperlink will use that Distinguished Name value to populate the vCO Admin group textbox for you! In my environment, the value comes up as "CN=lcmadmins,CN=Users,DC=vmware,DC=lan".<br /><img title="vCO LDAP Configuration 5" src="/images/how-to-install-vco/vco-ldap-configuration-5.png" alt="vCO LDAP Configuration 5" border="0" /><br /><br />Click <b>Apply Changes</b> when you are done with the LDAP settings. Next, you will want to Test Login with an admin account and a regular user account. Click on the <b>Test Login</b> tab at the top of the right pane, then enter the credentials for a member of your vCO Administration group, your screen should display a success message like the following:<br /><img title="vCO LDAP Test 6" src="/images/how-to-install-vco/vco-ldap-test-6.png" alt="vCO LDAP Test 6" border="0" /><br /><br />Now test login with credentials of a valid user that is NOT in the vCO administration group to get results like the following:<br /><img title="vCO LDAP Test 7" src="/images/how-to-install-vco/vco-ldap-test-7.png" alt="vCO LDAP Test 7" border="0" /></p>
+<h3>vCenter Orchestrator Database Configuration</h3>
+<p>We'll need to setup our database connection now to store our vCO data. For this environment, I'm using a SQL 2008 Express (Not supported for Production environments). Choose your database type and fill in the form as required.</p>
+<p><img title="vCO Database 8" src="/images/how-to-install-vco/vco-database-8.png" alt="vCO Database 8" border="0" /><br /><br />After specifying all the details, you need to click the <b>Apply Changes</b> button at the bottom right of the page. If the server details and credentials were specified correctly, you should get a screen similar to the screenshot shown below. Note that the text in RED is expected: "Database configuration saved successfully. Install the database by clicking the following link." This notice indicates that vCO has successfully connected to the Database Server and that the tables now must be installed.<br /><img title="vCO Database 9" src="/images/how-to-install-vco/vco-database-9.png" alt="vCO Database 9" border="0" /><br />On the line that says Install, there is a link called "<span style="text-decoration: underline;"><b>Install the database</b></span>", click on there to install all the tables. You should receive a success message as indicated in the following screenshot:<br /><br /><img title="vCO Database 10" src="/images/how-to-install-vco/vco-database-10.png" alt="vCO Database 10" border="0" /></p>
+<h3>vCenter Orchestrator Server Certificate Configuration</h3>
+<p>Next up you need to Create/Import your Server Certificate. If you don't already have one (most people won't), then just create one. This certificate is used to sign any packages you create to send to others.<br /><img title="vCO Certificate 11" src="/images/how-to-install-vco/vco-certificate-11.png" alt="vCO Certificate 11" border="0" /></p>
+<h3>vCenter Orchestrator License Configuration</h3>
+<p>You'll need to provide your license on the Licenses tab. vCO 4.0.x uses the same license number as your vCenter Server. Please note that if you wish to create/edit workflows you must have a valid license for vCenter Server Standard or above. Lower level versions of vCenter Server will result in Read Only of vCO workflows. You must provide your vCO license BEFORE installing licenses for other plugins/applications - IE: Lifecycle Manager.<br /><img title="vCO License 12" src="/images/how-to-install-vco/vco-license-12.png" alt="vCO License 12" border="0" /></p>
+<h3>vCenter Orchestrator Plugins Configuration</h3>
+<p>Click on the Plug-ins tab next and specify credentials for a vCO Admin member. This account will be used to install and execute the appropriate installation scripts and workflows to get the plugins fully installed. Apply Changes when done.<br /><img title="vCO Plugins 13" src="/images/how-to-install-vco/vco-plugins-13.png" alt="vCO Plugins 13" border="0" /></p>
+<h3>vCenter Orchestrator Mail Configuration</h3>
+<p>Many of the Mail workflows in vCO can use the Default Mail server values for sending e-mail notifications. If you wish to enable this feature, click on the Mail tab in the left pane, then click the <b>Define default values</b> checkbox and specify the appropriate details to your SMTP server and credentials if needed. Remember to allow the vCO server to send mail through your SMTP server if required.<br /><img title="vCO Mail 14" src="/images/how-to-install-vco/vco-mail-14.png" alt="vCO Mail 14" border="0" /></p>
+<h3>vCenter Orchestrator vCenter Configuration</h3>
+<p>Next, you should specify one or more vCenter Servers. Be sure to specify "Share a unique session" as that is the recommended best practice. This option keeps a single connection to the vCenter Server for the API calls instead of having each vCO user spawn a connection to the vCenter Server.<br /><img title="vCO vCenter 16" src="/images/how-to-install-vco/vco-vcenter-16.png" alt="vCO vCenter 16" border="0" /></p>
+<h3>vCenter Orchestrator Startup Options Configuration</h3>
+<p>By now, all of the little lights should be green so it is time to setup the Startup Options so click there.<br />Start off by clicking the link "<span style="text-decoration: underline;"><b>Install vCO server as service</b></span>"<br />Once that is completed, click on the "<b><span style="text-decoration: underline;">Start service</span></b>" link as shown in the following screenshot:<br /><img title="vCO Install Service 17" src="/images/how-to-install-vco/vco-install-service-17.png" alt="vCO Install Service 17" border="0" /></p>
+<h3>vCenter Orchestrator Export Configuration</h3>
+<p>After all that work getting things configured, it is a good idea to export your configuration.</p>
+<p>Go back to the <b>General</b> tab in the left pane, then click on the <b>Export Configuration</b> tab in the right pane. If you wish to password protect your configuration, enter one in the text box. Click <b>Export</b> when you're ready.<br /><img title="vCO Export Configuration 18" src="/images/how-to-install-vco/vco-export-configuaration-18.png" alt="vCO Export Configuration 18" border="0" /></p>
+<h3>vCenter Orchestrator Client Login</h3>
+<p>You should now be able to launch the vCenter Orchestrator Client and connect to your vCO server.<br /><img title="vCO Client Login 19" src="/images/how-to-install-vco/vco-client-login-19.png" alt="vCO Client Login 19" border="0" /><br /><br />After logging in, you should have a screen like this:<br /><img title="vCO Client 20" src="/images/how-to-install-vco/vco-client-20.png" alt="vCO Client 20" border="0" /><br /><br />Under <b>Workflows</b>, there is a library of many sample workflows that you may use to build your own solutions :)<br /><img title="vCO Library 21" src="/images/how-to-install-vco/vco-library-21.png" alt="vCO Library 21" border="0" /></p>
+<p>This completes the Configuration of vCenter Orchestrator.</p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +244,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

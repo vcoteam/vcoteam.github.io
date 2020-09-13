@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Enable vCenter Orchestrator (vCO) to read and write Excel files - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;The purpose of this article is to provide readers with instructions on how to give vCO the ability to read and write Microsoft Excel files (xls / xlsx). Yes, it is 2013 yet there are plenty of reasons why organizations might still be using an Excel spreadsheet instead of a database table.. We won&#34;t dwell on that here, instead we&#34;ll focus on providing those organizations with a step-by-step guide to provide such functionality to vCenter Orchestrator. We&#34;ll discuss two approaches here: JDBC library and PowerShell.&lt;/p&gt;">
+	<meta name="description" content="The purpose of this article is to provide readers with instructions on how to give vCO the ability to read and write Microsoft Excel files (xls / xlsx).">
 		<meta property="og:title" content="Enable vCenter Orchestrator (vCO) to read and write Excel files" />
-<meta property="og:description" content="&lt;p&gt;The purpose of this article is to provide readers with instructions on how to give vCO the ability to read and write Microsoft Excel files (xls / xlsx). Yes, it is 2013 yet there are plenty of reasons why organizations might still be using an Excel spreadsheet instead of a database table.. We won&#34;t dwell on that here, instead we&#34;ll focus on providing those organizations with a step-by-step guide to provide such functionality to vCenter Orchestrator. We&#34;ll discuss two approaches here: JDBC library and PowerShell.&lt;/p&gt;" />
+<meta property="og:description" content="The purpose of this article is to provide readers with instructions on how to give vCO the ability to read and write Microsoft Excel files (xls / xlsx)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/257-enable-vcenter-orchestrator-vco-to-read-and-write-excel-files.html" />
 <meta property="article:published_time" content="2013-03-22T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Enable vCenter Orchestrator (vCO) to read and write Excel files"/>
-<meta name="twitter:description" content="&lt;p&gt;The purpose of this article is to provide readers with instructions on how to give vCO the ability to read and write Microsoft Excel files (xls / xlsx). Yes, it is 2013 yet there are plenty of reasons why organizations might still be using an Excel spreadsheet instead of a database table.. We won&#34;t dwell on that here, instead we&#34;ll focus on providing those organizations with a step-by-step guide to provide such functionality to vCenter Orchestrator. We&#34;ll discuss two approaches here: JDBC library and PowerShell.&lt;/p&gt;"/>
+<meta name="twitter:description" content="The purpose of this article is to provide readers with instructions on how to give vCO the ability to read and write Microsoft Excel files (xls / xlsx)."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,17 +121,422 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-03-22T00:00:00Z">March 22, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>$DataTable = New-Object &ldquo;System.Data.DataTable&rdquo;</p>
-<p>$OleDbAdapter = New-Object System.Data.OleDb.OleDbDataAdapter $qry,$connString
-$RowsReturned = $OleDbAdapter.Fill($DataTable)</p>
-<p>ForEach ($DataRec in $DataTable) {
-Write-host &ldquo;Hostname=$($DataRec.Hostname) Domain=$($DataRec.Domain) FQDN=$($DataRec.fqdn) IP Address=$($DataRec.&lsquo;IP Address&rsquo;) Memory=$($DataRec.&lsquo;Memory (GB)') CPU Count=$($DataRec.cpu) Processed=$($DataRec.processed)&rdquo;
-}<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+      <p>The purpose of this article is to provide readers with instructions on how to give vCO the ability to read and write Microsoft Excel files (xls / xlsx). Yes, it is 2013 yet there are plenty of reasons why organizations might still be using an Excel spreadsheet instead of a database table.. We won't dwell on that here, instead we'll focus on providing those organizations with a step-by-step guide to provide such functionality to vCenter Orchestrator. We'll discuss two approaches here: JDBC library and PowerShell.</p>
 
+<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.3em;">Pre-requisites:</span></p>
+<ul>
+<li>vCO 5.x Server installed and configured (using separate DB from vCenter)
+<ul>
+<li>vCO may be installed on the same server as vCenter as long as it is not using the same database (IE: Simple Install of vCO 5.1) as this configuration has issues with the JDBC configuration we'll be working with</li>
+<li>vCO may be installed on a separate Windows server</li>
+<li>The vCO Appliance may be used</li>
+</ul>
+</li>
+<li>You must have the ability to download and install jar files to the vCO server (and set ownership/permissions)</li>
+<li>vCO must be configured for read/write access for a local directory (<a href="http://pubs.vmware.com/vsphere-51/topic/com.vmware.vsphere.vco_install_config.doc/GUID-7C2CFC22-519B-4D38-84F9-00380CEB15CF.html">http://pubs.vmware.com/vsphere-51/topic/com.vmware.vsphere.vco_install_config.doc/GUID-7C2CFC22-519B-4D38-84F9-00380CEB15CF.html</a> )</li>
+<li>Sample Excel Spreadsheet (attached at end of article) - place the excel-vco-demo.xls file in a folder readable by the vCO service account. If using appliance, be sure to set ownership and permissions as outlined below.</li>
+</ul>
+<h3>Sample Package and Excel Spreadsheet:</h3>
+<p>excel-vco-demo.xls - the second worksheet (Build Info) looks like this:</p>
+<table border="1" width="640" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" width="65"><b>Processed</b></td>
+<td align="center" width="65"><b>Hostname</b></td>
+<td align="center" width="65"><b>Domain</b></td>
+<td align="center" width="122"><b>FQDN</b></td>
+<td align="center" width="105"><b>IP Address</b></td>
+<td align="center" width="95"><b>Memory (GB)</b></td>
+<td align="center" width="45"><b>CPU</b></td>
+</tr>
+<tr>
+<td align="center">Y</td>
+<td align="center">VM-001</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-001.demo.lab</td>
+<td align="center">192.168.1.101</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">Y</td>
+<td align="center">VM-002</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-002.demo.lab</td>
+<td align="center">192.168.1.102</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">Y</td>
+<td align="center">VM-003</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-003.demo.lab</td>
+<td align="center">192.168.1.103</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">Y</td>
+<td align="center">VM-004</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-004.demo.lab</td>
+<td align="center">192.168.1.104</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">Y</td>
+<td align="center">VM-005</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-005.demo.lab</td>
+<td align="center">192.168.1.105</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-006</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-006.demo.lab</td>
+<td align="center">192.168.1.106</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-007</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-007.demo.lab</td>
+<td align="center">192.168.1.107</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-008</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-008.demo.lab</td>
+<td align="center">192.168.1.108</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-009</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-009.demo.lab</td>
+<td align="center">192.168.1.109</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-010</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-010.demo.lab</td>
+<td align="center">192.168.1.110</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-011</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-011.demo.lab</td>
+<td align="center">192.168.1.111</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-012</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-012.demo.lab</td>
+<td align="center">192.168.1.112</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-013</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-013.demo.lab</td>
+<td align="center">192.168.1.113</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-014</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-014.demo.lab</td>
+<td align="center">192.168.1.114</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-015</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-015.demo.lab</td>
+<td align="center">192.168.1.115</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-016</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-016.demo.lab</td>
+<td align="center">192.168.1.116</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-017</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-017.demo.lab</td>
+<td align="center">192.168.1.117</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-018</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-018.demo.lab</td>
+<td align="center">192.168.1.118</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-019</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-019.demo.lab</td>
+<td align="center">192.168.1.119</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">VM-020</td>
+<td align="center">demo.lab</td>
+<td align="center">VM-020.demo.lab</td>
+<td align="center">192.168.1.120</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+<p><br /> <b>com.vmware.coe.sqlsheet.package</b>:</p>
+<ul>
+<li><b>Workflows</b> (\PSO\Library\excel\)
+<ul>
+<li>Create Excel Example File</li>
+<li>Process Excel vCO demo xls</li>
+<li>Read complete worksheet from Excel file</li>
+<li>Read certain columns of a worksheet from Excel file</li>
+<li>Invoke Script readExcelVcoDemoXls</li>
+</ul>
+</li>
+<li><b>Actions</b>
+<ul>
+<li>com.vmware.coe.sqlsheet.getColumnNames</li>
+<li>com.vmware.coe.sqlsheet.readDataForColumns</li>
+<li>com.vmware.coe.demo.readExcelVcoDemoXls</li>
+</ul>
+</li>
+</ul>
+<h2>JDBC Instructions</h2>
+<p>In order to get started, be sure that you have met the configuration requirements mentioned above in the Pre-Requisites section. Before getting started down this path, you should be aware of its limitations. Then you'll need to get some files and put them on your vCO server. Special thanks to Joerg Lew for his assistance in getting all the syntax correct in the core workflows here.</p>
+<h3>Limitations</h3>
+<p>Brief description from the project page:<br /> <i>Simple, POI based JDBC driver for XLS/XLSX files. Currently supports basic SELECT ( 'select *' only, w/o where clause), CREATE, INSERT operations. The driver is pure Java - no native Windows components are required. From version 6.1 streaming implemented to process large files.</i></p>
+<p>Please refer to the documentation on <a title="sqlsheet issue page" href="http://code.google.com/p/sqlsheet/issues/" target="_blank">http://code.google.com/p/sqlsheet/issues/ </a></p>
+<ul>
+<li>The SQLSheet JDBC driver does not process WHERE clauses in SQL statements. Therefor you always get the complete table of a worksheet, and have to implement your own filter logic manually.<br /> The provided Action “com.vmware.coe.readDataForColumns” provides an example how to filter the result set of the SQL Select query only to return data for specified columns.</li>
+<li>It seems that the SQLSheet JDBC driver stops processing the Excel worksheet at the first empty row. So make sure all the data you want to read is stored in consecutive rows in the worksheet. (<i>Example spreadsheet has a blank line after the tenth record to demonstrate that records 11-20 are not processed in the workflow</i>)</li>
+<li>The SQLSheet JDBC driver expects the first rows containing the column names.</li>
+</ul>
+<h3>Download SQLSheet and Apache POI</h3>
+<p>This solution relies on the sqlSheet JDBC driver for MS Excel. The project page can be found here: <a title="sqlsheet project page" href="http://code.google.com/p/sqlsheet/" target="_blank">http://code.google.com/p/sqlsheet/</a></p>
+<p>The specific files to download are as follows:</p>
+<ul>
+<li>sqlsheet-6.3.jar and jsqlparser-0.7.1.jar from: <a href="http://code.google.com/p/sqlsheet/downloads/list" target="_blank">http://code.google.com/p/sqlsheet/downloads/list</a></li>
+<li>poi-bin-3.8-20120326.zip (or .tar.gz) from <a href="http://archive.apache.org/dist/poi/release/bin/" target="_blank">http://archive.apache.org/dist/poi/release/bin/</a></li>
+</ul>
+<p>Once the files have been downloaded, unzip the poi*.zip file. The archive file contains many different files. The only ones that are needed to support xls and xlsx file formats are:<br /> <b>NOTE</b>: some of the file names listed below will have build dates in their filename</p>
+<ul>
+<li>poi-3.8.jar</li>
+<li>poi-ooxml-3.8.jar</li>
+<li>poi-ooxml-schemas-3.8.jar</li>
+<li>ooxml-lib/dom4j-1.6.1.jar</li>
+<li>ooxml-lib/stax-api-1.0.1.jar</li>
+<li>ooxml-lib/xmlbeans-2.3.0.jar</li>
+</ul>
+<h3>Install files and restart service</h3>
+<p>Now that you have all the jar files (sqlsheet, jsqlparser, and the 6 poi/ooxml files), they need to be copied to the vCO server.</p>
+<p>All of these .jar files should be copied to the %vCO Install Directory%/app-server/server/vmo/lib/ext</p>
+<p>Assuming default folders, the specific path would be:</p>
+<ul>
+<li><b>vCO Installed as part of vCenter install: </b>c:\program files\vmware\infrastructure\orchestrator\app-server\server\vmo\lib\ext</li>
+<li><b>Standalone vCO Windows installation:</b> c:\program files\vmware\orchestrator\app-server\server\vmo\lib\ext</li>
+<li><b>vCO Virtual Appliance</b>: /opt/vmo/app-server/server/vmo/lib/ext</li>
+</ul>
+<p>When using the vCO Appliance, make sure the new .jar files have proper permission settings and is owned by the vco user/group:</p>
+<pre>-rw-r-----</pre>
+<p>This permission may be set by executing the following two command in the folder: /opt/vmo/app-server/server/vmo/lib/ext</p>
+<pre>
+chown vco.vco *.jar
+chmod 640 *.jar
+</pre>
+<p>Now that the files are in place with permissions set, restart the vCenter Orchestrator Server service (in some cases, WIndows based vCO servers may require a full reboot.</p>
+<h3>Install and use the example workflow package</h3>
+<p>Using the vCenter Orchestrator Client, import the provided package. The package will provide you with sample workflows and actions to help you get started reading/writing XLS files!</p>
+<p>NOTE: Always make sure that the vCO Service has the proper permissions to read &amp; write the Excel file - especially when using the vCO Appliance!</p>
+<h3>Example</h3>
+<p>Make sure the Excel file is in a location readable by the vco service account. For my test here, I have updated my js-io-rights.conf file to give permission to the /orchestrator/xls folder of my appliance and have placed the file there.</p>
+<p>Run the "Process excel vco demo xls" workflow:</p>
+<p><img src="/images/read-excel/process-excel-vco-demo-xls-input.png" alt="Process excel vco demo xls workflow inputs" /></p>
+<p>The expected results are shown in the "Logs" tab of the workflow execution and should look like this:</p>
+<pre><code>
+[2013-03-22 09:50:36.691] [I] Processed: null
+[2013-03-22 09:50:36.693] [I] Hostname: VM-005
+[2013-03-22 09:50:36.694] [I] Domain: demo.lab
+[2013-03-22 09:50:36.695] [I] FQDN: VM-005.demo.lab
+[2013-03-22 09:50:36.696] [I] IP Address: 192.168.1.105
+[2013-03-22 09:50:36.697] [I] Memory (GB): 4
+[2013-03-22 09:50:36.698] [I] CPU: 2
+[2013-03-22 09:50:36.798] [I] Processed: null
+[2013-03-22 09:50:36.799] [I] Hostname: VM-006
+[2013-03-22 09:50:36.800] [I] Domain: demo.lab
+[2013-03-22 09:50:36.802] [I] FQDN: VM-006.demo.lab
+[2013-03-22 09:50:36.804] [I] IP Address: 192.168.1.106
+[2013-03-22 09:50:36.805] [I] Memory (GB): 1
+[2013-03-22 09:50:36.806] [I] CPU: 1
+[2013-03-22 09:50:36.921] [I] Processed: null
+[2013-03-22 09:50:36.921] [I] Hostname: VM-007
+[2013-03-22 09:50:36.923] [I] Domain: demo.lab
+[2013-03-22 09:50:36.924] [I] FQDN: VM-007.demo.lab
+[2013-03-22 09:50:36.925] [I] IP Address: 192.168.1.107
+[2013-03-22 09:50:36.927] [I] Memory (GB): 4
+[2013-03-22 09:50:36.928] [I] CPU: 2
+[2013-03-22 09:50:37.102] [I] Processed: null
+[2013-03-22 09:50:37.104] [I] Hostname: VM-008
+[2013-03-22 09:50:37.105] [I] Domain: demo.lab
+[2013-03-22 09:50:37.106] [I] FQDN: VM-008.demo.lab
+[2013-03-22 09:50:37.107] [I] IP Address: 192.168.1.108
+[2013-03-22 09:50:37.109] [I] Memory (GB): 4
+[2013-03-22 09:50:37.111] [I] CPU: 2
+[2013-03-22 09:50:37.222] [I] Processed: null
+[2013-03-22 09:50:37.223] [I] Hostname: VM-009
+[2013-03-22 09:50:37.224] [I] Domain: demo.lab
+[2013-03-22 09:50:37.225] [I] FQDN: VM-009.demo.lab
+[2013-03-22 09:50:37.226] [I] IP Address: 192.168.1.109
+[2013-03-22 09:50:37.227] [I] Memory (GB): 1
+[2013-03-22 09:50:37.228] [I] CPU: 1
+[2013-03-22 09:50:37.348] [I] Processed: null
+[2013-03-22 09:50:37.349] [I] Hostname: VM-010
+[2013-03-22 09:50:37.350] [I] Domain: demo.lab
+[2013-03-22 09:50:37.352] [I] FQDN: VM-010.demo.lab
+[2013-03-22 09:50:37.354] [I] IP Address: 192.168.1.110
+[2013-03-22 09:50:37.355] [I] Memory (GB): 2
+[2013-03-22 09:50:37.357] [I] CPU: 1
+</code></pre>
+<h2>PowerShell Instructions</h2>
+<p>Please note that I have very limited experience with PowerShell so my guidance here will not be as detailed as the JDBC instructions above. I do want to include this information though as it looks like it would be a far better and more flexible approach to working with Microsoft's files.</p>
+<p>If choosing this approach, be sure to have the PowerShell plug-in installed and configured with a PowerShell Host. The following links can help provide with guidance on getting this setup</p>
+<p><a title="PowerShell Plug-in Documentation" href="http://pubs.vmware.com/orchestrator-plugins/topic/com.vmware.using.powershell.plugin.doc_10/GUID-5E6B3F18-2EBA-4FB5-950D-B61C41DD0CDC.html" target="_blank">PowerShell Plug-in documentation</a> / <a title="vCO PowerShell plug-in blog post" href="http://blogs.vmware.com/orchestrator/2011/12/vco-powershell-plug-in.html" target="_blank">vCO PowerShell plug-in blog post</a></p>
+<p>Special thanks to my colleague Bill Call for pointing me in this direction.</p>
+<p>For this solution, you'll need to install the Microsoft Access Database Engine 2010 Redistributable package on your PowerShell Host. Since I used my vCO Server also as the PowerShell host, I downloaded the 64-bit executable since my server is Windows 2008 R2 x64.<br /> <br /> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=13255" target="_blank">http://www.microsoft.com/en-us/download/details.aspx?id=13255</a><br /> <br /> That package will allow PowerShell to make calls to the needed Providers for the following code to work. An idea of the .ps1 script I tested with is below. It was modified after being imported as an action to allow the workflow to have an input that specifies the Excel version as 2003 (Excel 8) or 2007+ (Excel 12):</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e">#Change these settings as needed</span>
+$filepath = <span style="color:#e6db74">&#39;C:\orchestrator\excel-vco-demo.xlsx&#39;</span>
+<span style="color:#75715e">#Comment/Uncomment connection string based on version</span>
+<span style="color:#75715e">#Connection String for Excel 2007:</span>
+$connString = <span style="color:#e6db74">&#34;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=</span><span style="color:#ae81ff">`&#34;</span><span style="color:#e6db74">$filepath</span><span style="color:#ae81ff">`&#34;</span><span style="color:#e6db74">;Extended Properties=</span><span style="color:#ae81ff">`&#34;</span><span style="color:#e6db74">Excel 12.0 Xml;HDR=YES</span><span style="color:#ae81ff">`&#34;</span><span style="color:#e6db74">;&#34;</span>
+<span style="color:#75715e">#Connection String for Excel 2003:</span>
+<span style="color:#75715e">#$connString = &#34;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=`&#34;$filepath`&#34;;Extended Properties=`&#34;Excel 8.0;HDR=Yes;IMEX=1`&#34;;&#34;</span>
+$qry = <span style="color:#e6db74">&#39;select * from [Build Info$]&#39;</span>
+
+$DataTable = New-Object <span style="color:#e6db74">&#34;System.Data.DataTable&#34;</span>
+
+$OleDbAdapter = New-Object System.Data.OleDb.OleDbDataAdapter $qry,$connString
+$RowsReturned = $OleDbAdapter.Fill($DataTable)
+
+<span style="color:#66d9ef">ForEach</span> ($DataRec <span style="color:#66d9ef">in</span> $DataTable) {
+	Write-host <span style="color:#e6db74">&#34;Hostname=</span>$($DataRec.Hostname)<span style="color:#e6db74"> Domain=</span>$($DataRec.Domain)<span style="color:#e6db74"> FQDN=</span>$($DataRec.fqdn)<span style="color:#e6db74"> IP Address=</span>$($DataRec.<span style="color:#e6db74">&#39;IP Address&#39;</span>)<span style="color:#e6db74"> Memory=</span>$($DataRec.<span style="color:#e6db74">&#39;Memory (GB)&#39;</span>)<span style="color:#e6db74"> CPU Count=</span>$($DataRec.cpu)<span style="color:#e6db74"> Processed=</span>$($DataRec.processed)<span style="color:#e6db74">&#34;</span>
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h3>Example</h3>
+<p>Run the "Invoke Script readExcelVcoDemoXls" workflow, select your PowerShell Host and click Next.<br /> Fill in the form using the correct path to your copy of the excel-vco-demo.xlsx file</p>
+<p><img src="/images/read-excel/invoke-script-readexcelvcodemoxls.png" alt="Invoke Script readExcelVcoDemoXls" /></p>
+<p>Here's te expected output in the Logs tab of the workflow execution:</p>
+<pre class="brush:text">[2013-03-22 16:10:28.933] [D] Invoke command in session fa9092e4-137c-4435-a14a-7d80d4760f57
+[2013-03-22 16:10:30.460] [I] Hostname=VM-001 Domain=demo.lab FQDN=VM-001.demo.lab IP Address= Memory=2 CPU Count=1 Processed=Y
+Hostname=VM-002 Domain=demo.lab FQDN=VM-002.demo.lab IP Address= Memory=2 CPU Count=1 Processed=Y
+Hostname=VM-003 Domain=demo.lab FQDN=VM-003.demo.lab IP Address= Memory=2 CPU Count=1 Processed=Y
+Hostname=VM-004 Domain=demo.lab FQDN=VM-004.demo.lab IP Address= Memory=4 CPU Count=2 Processed=Y
+Hostname=VM-005 Domain=demo.lab FQDN=VM-005.demo.lab IP Address= Memory=4 CPU Count=2 Processed=Y
+Hostname=VM-006 Domain=demo.lab FQDN=VM-006.demo.lab IP Address= Memory=1 CPU Count=1 Processed=
+Hostname=VM-007 Domain=demo.lab FQDN=VM-007.demo.lab IP Address= Memory=4 CPU Count=2 Processed=
+Hostname=VM-008 Domain=demo.lab FQDN=VM-008.demo.lab IP Address= Memory=4 CPU Count=2 Processed=
+Hostname=VM-009 Domain=demo.lab FQDN=VM-009.demo.lab IP Address= Memory=1 CPU Count=1 Processed=
+Hostname=VM-010 Domain=demo.lab FQDN=VM-010.demo.lab IP Address= Memory=2 CPU Count=1 Processed=
+Hostname= Domain= FQDN= IP Address= Memory= CPU Count= Processed=
+Hostname=VM-011 Domain=demo.lab FQDN=VM-011.demo.lab IP Address= Memory=2 CPU Count=1 Processed=
+Hostname=VM-012 Domain=demo.lab FQDN=VM-012.demo.lab IP Address= Memory=2 CPU Count=1 Processed=
+Hostname=VM-013 Domain=demo.lab FQDN=VM-013.demo.lab IP Address= Memory=4 CPU Count=2 Processed=
+Hostname=VM-014 Domain=demo.lab FQDN=VM-014.demo.lab IP Address= Memory=4 CPU Count=2 Processed=
+Hostname=VM-015 Domain=demo.lab FQDN=VM-015.demo.lab IP Address= Memory=4 CPU Count=2 Processed=
+Hostname=VM-016 Domain=demo.lab FQDN=VM-016.demo.lab IP Address= Memory=1 CPU Count=1 Processed=
+Hostname=VM-017 Domain=demo.lab FQDN=VM-017.demo.lab IP Address= Memory=1 CPU Count=1 Processed=
+Hostname=VM-018 Domain=demo.lab FQDN=VM-018.demo.lab IP Address= Memory=1 CPU Count=1 Processed=
+Hostname=VM-019 Domain=demo.lab FQDN=VM-019.demo.lab IP Address= Memory=2 CPU Count=1 Processed=
+Hostname=VM-020 Domain=demo.lab FQDN=VM-020.demo.lab IP Address= Memory=4 CPU Count=2 Processed=</pre>
+<span style="font-family: Tahoma, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.3em;">Sample Files:
+  <p><a title="com.vmware.coe.excel.package" href="/images/read-excel/com.vmware.coe.excel.package"><img src="/images/filetypes/package.png" alt="Package Icon" width="16" height="16" /> com.vmware.coe.excel.package</a><br />
+  <a title="excel-vco-demo.xlsx" href="/images/read-excel/excel-vco-demo.xlsx"><img src="/images/filetypes/xls.gif" alt="Excel Icon" /> excel-vco-demo.xlsx</a>
+</span>
+</p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/excel/" rel="tag">Excel</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -158,9 +570,9 @@ Write-host &ldquo;Hostname=$($DataRec.Hostname) Domain=$($DataRec.Domain) FQDN=$
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/articles/learn-vco/258-free-vmware-vcenter-orchestrator-videos.html" rel="next">
+		<a class="pager__link" href="/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">FREE VMware vCenter Orchestrator Instructional Videos [Updated]</p>
+			<p class="pager__title">Remove computer from AD using vCO during vCAC Decommission</p>
 		</a>
 	</div>
 </nav>
@@ -203,57 +615,89 @@ Write-host &ldquo;Hostname=$($DataRec.Hostname) Domain=$($DataRec.Domain) FQDN=$
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

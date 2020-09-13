@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSL on </title>
+    <link>http://new.vcoteam.info/tags/ssl.html</link>
+    <description>Recent content in SSL on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Aug 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Work with vCO over SSL</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/181-work-with-vco-over-ssl.html</link>
+      <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/181-work-with-vco-over-ssl.html</guid>
+      <description>With the increasing popularity of VMware vCenter Orchestrator, there is a growing desire to use it over SSL connections. While vCO supports this type of connectivity out of the box, it is not necessarily pre-configured automatically to have a proper SSL certificate. Regardless of how or where you import the default certificate, you are unlikely to get away from warnings such as:
+Firefox Warning: Internet Explorer Warning:
+After clicking &#34;Continue to this website (not recommended).</description>
+    </item>
+    
+  </channel>
+</rss>

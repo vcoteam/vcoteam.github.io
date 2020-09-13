@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vCM on </title>
+    <link>http://new.vcoteam.info/tags/vcm.html</link>
+    <description>Recent content in vCM on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Mar 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/tags/vcm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VMware released vCenter Configuration Manager 5.5 with vCenter Orchestrator integration</title>
+      <link>http://new.vcoteam.info/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</link>
+      <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</guid>
+      <description>Quoting the product page
+VMware vCenter Configuration Manager, a key part of the VMware vCenter Operations Management Suite, automates configuration management across virtual, physical and cloud environments. Enterprises can use vCenter Configuration Manager to continuously audit the configurations of VMware Infrastructure (including VMware ESX, ESXi, vCenter, vCloud Director and vShield) as well as Windows, Linux and Unix operating systems. Easily maintain configuration compliance against internal standards, security best practices, vendor hardening guidelines and regulatory mandates.</description>
+    </item>
+    
+  </channel>
+</rss>

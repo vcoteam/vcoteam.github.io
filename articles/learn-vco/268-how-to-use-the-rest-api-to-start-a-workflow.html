@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>How to use the REST API to Start a Workflow - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;It seems everyday the interest in vCenter Orchestrator (vCO) is growing. I love this because it brings more and more use cases to our attention. One such use case is the need to call vCO workflows via its REST API. In order to keep this article generic, but useful, I will work with the free RESTClient plug-in/add-on for Firefox as the client. The general process here will be similar to what you may need to do from your software or portal to integrate with vCO&#34;s REST API.&lt;/p&gt;">
+	<meta name="description" content="Lear how to use a generic REST client to start an Orchestrator workflow">
 		<meta property="og:title" content="How to use the REST API to Start a Workflow" />
-<meta property="og:description" content="&lt;p&gt;It seems everyday the interest in vCenter Orchestrator (vCO) is growing. I love this because it brings more and more use cases to our attention. One such use case is the need to call vCO workflows via its REST API. In order to keep this article generic, but useful, I will work with the free RESTClient plug-in/add-on for Firefox as the client. The general process here will be similar to what you may need to do from your software or portal to integrate with vCO&#34;s REST API.&lt;/p&gt;" />
+<meta property="og:description" content="Lear how to use a generic REST client to start an Orchestrator workflow" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html" />
 <meta property="article:published_time" content="2013-10-17T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to use the REST API to Start a Workflow"/>
-<meta name="twitter:description" content="&lt;p&gt;It seems everyday the interest in vCenter Orchestrator (vCO) is growing. I love this because it brings more and more use cases to our attention. One such use case is the need to call vCO workflows via its REST API. In order to keep this article generic, but useful, I will work with the free RESTClient plug-in/add-on for Firefox as the client. The general process here will be similar to what you may need to do from your software or portal to integrate with vCO&#34;s REST API.&lt;/p&gt;"/>
+<meta name="twitter:description" content="Lear how to use a generic REST client to start an Orchestrator workflow"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,950 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-10-17T00:00:00Z">October 17, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>It seems everyday the interest in vCenter Orchestrator (vCO) is growing. I love this because it brings more and more use cases to our attention. One such use case is the need to call vCO workflows via its REST API. In order to keep this article generic, but useful, I will work with the free RESTClient plug-in/add-on for Firefox as the client. The general process here will be similar to what you may need to do from your software or portal to integrate with vCO&rsquo;s REST API.</p>
+<h2 id="tutorial-goal">Tutorial Goal</h2>
+<figure>
+    <img src="/images/rest-vco/RESTClient-vCO-LocalProcess.png"
+         alt="RESTClient-vCO-LocalProcess_2685ed0d4162e5e0887bc76a4b71d24d.png"/> 
+</figure>
+
+<p>So, with that in mind, the goal of this tutorial is to learn how to execute the &ldquo;Hello Perl&rdquo; workflow from this tutorial: <a href="learn-vco/how-to-run-a-perl-script-from-a-vcenter-orchestrator-workflow.htm" >How to run a Perl Script from a vCenter Orchestrator Workflow</a> via the REST API.</p>
+<p>In order to execute a workflow via the REST API, you must:</p>
+<ul>
+<li>Identify the format you wish to work in: REST/JSON</li>
+<li>Locate the Workflow ID you want to run</li>
+<li>Understand the proper body format to submit the workflow inputs in</li>
+<li>Understand how to check the status/results of the workflow</li>
+</ul>
+<p>We&rsquo;ll step through these various concepts, providing step-by-step instructions on what needs to be done for each.</p>
+<h2 id="concepts-covered-in-this-tutorial">Concepts Covered In this tutorial</h2>
+<p>The following concepts will be covered:</p>
+<ul>
+<li>Accessing the REST API and Documentation</li>
+<li>Setting headers to force JSON vs. XML</li>
+<li>How to filter GET results</li>
+<li>Finding a Workflow ID</li>
+<li>How to get proper XML/JSON format for input parameters via REST</li>
+<li>Executing a Workflow</li>
+<li>Checking Workflow results</li>
+</ul>
+<h2 id="tools-used">Tools Used</h2>
+<p>The following tools are used for this tutorial:</p>
+<ul>
+<li>vCenter Orchestrator 5.5 Appliance (Important to use the 5.1.1 or newer version as there is a json issue in prior 5.x releases)</li>
+<li><a href="http://www.getfirefox.com"  target="_blank" rel="noreferrer noopener" >Mozilla Firefox</a> with the <a href="http://restclient.net"  target="_blank" rel="noreferrer noopener" >RESTClient</a> installed</li>
+<li>Simple PERL Script from previous article</li>
+</ul>
+<h2 id="accessing-the-vco-rest-api-and-documentation">Accessing the vCO REST API and Documentation</h2>
+<figure>
+    <img src="/images/rest-vco/Accessing_the_vCO_REST_API_and_Documentation.png"
+         alt="Accessing_the_vCO_REST_API_and_Documentation.png"/> 
+</figure>
+
+<p>If you have a vCO 5.x server and newer (Windows or appliance) running then you have the REST API and its documentation readily available.</p>
+<p>5.0 -&gt; 5.1.x : The root url for the API is: <code>https://:8281/api/</code>
+5.5 and newer : The root url for the API is: <code>https://:8281/vco/api/</code></p>
+<p>The root page for the documentation is found on your vCO server at <code>https://:8281/vco/api/docs</code></p>
+<p>Of particular interest for this article are the &ldquo;Workflow Service&rdquo; and &ldquo;Workflow Presentation Service&rdquo; links shown on that page. Those two pages provide considerable detail on how to get and execute workflows via REST. Take a moment to explore those two pages before continuing with this tutorial as I will not be re-documenting those pages here.</p>
+<p>The goal of the process detailed in the next several steps is to identify the correct URL for the workflow we wish to run&hellip; but in order to do that, we must first locate the workflow in the api. This whole process is only needed when you are discovering the ID of a workflow for the first time. Once identified, your only concern will be around getting the inputs correct for a successful launch of the workflow.</p>
+<h2 id="setting-headers-to-force-json-vs-xml">Setting headers to force JSON vs. XML</h2>
+<p>The vCO REST API defaults to using XML. If you are more comfortable with, or your system uses, JSON then you can provide a header that tells vCO to expect and reply using JSON instead of XML. Let&rsquo;s do that now with Firefox and the RESTClient plug-in (feel free to use the REST client of your choice - for the purposes of this article, the RESTClient will be used.)</p>
+<h2 id="set-custom-header-in-restclient">Set Custom Header in RESTClient</h2>
+<figure>
+    <img src="/images/rest-vco/Set_Custom_Header_in_RESTClient.png"
+         alt="Set_Custom_Header_in_RESTClient.png"/> 
+</figure>
+
+<p>Click &ldquo;Headers&rdquo;, then click Custom Header</p>
+<h2 id="accept-applicationjson">Accept: application/json</h2>
+<figure>
+    <img src="/images/rest-vco/Accept_applicationjson.png"
+         alt="Accept_applicationjson.png"/> 
+</figure>
+
+<p>As shown in the screenshot above, set an &ldquo;Accept&rdquo; header with a value of &ldquo;application/json&rdquo; and click Okay for vCO 5.5. Now, whenever responses come back from the API they will be in JSON format.</p>
+<p>**NOTE: <em>If you are using vCO 5.1.1 there is a slight bug in the header. In order to get json responses, you must set the &ldquo;<strong>Accept</strong>&rdquo; header to a value of &ldquo;<strong>application/json;v=5.1.1</strong>&quot;</em></p>
+<h2 id="how-to-filter-get-results">How to filter GET results</h2>
+<p>When accessing the /vco/api/workflows url of the REST API, the API will return XML (or JSON) results of ALL workflows on the server. Depending on the number of workflows (Several hundred on a clean install of vCO), it could take a while to get the results and perhaps longer to locate the workflow you wish to run. If you really want to see those results, go ahead and submit a GET to your vCO server - <code>https://:8281/vco/api/workflows</code></p>
+<p>In order to filter the results and likely find your exact workflow, adjust your GET url to include /?condition=name=</p>
+<p><strong>Note:</strong> <em>If the workflow name has spaces, replace the spaces with %20</em></p>
+<p>In this tutorial, we need to get the &ldquo;Hello PERL&rdquo; workflow so our api url will be:
+<code>https://:8281/vco/api/workflows/?conditions=name=hello%20perl</code></p>
+<p><strong>Note:</strong> <em>The name of the workflow in the query is NOT case sensitive</em></p>
+<p>Once you have run the workflow in the format of your choice (JSON/XML), you will need to identify the &ldquo;id&rdquo; of the workflow so that you can get the correct url to view the workflow and eventually run it. The best property in the results will actually be the &ldquo;itemHref&rdquo; as it provides the full URL (id included) to view the workflow. In my case, my <strong>id</strong> is <strong>885edab8-4b31-466c-bfd4-9e2cd6db3b95</strong> and the <strong>itemHref</strong> is <code>https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/</code>.</p>
+<h2 id="json-get-workflow-example">JSON Get Workflow Example</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;link&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;attributes&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;itemHref&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;885edab8-4b31-466c-bfd4-9e2cd6db3b95&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;id&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Hello Perl July 2013&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;categoryName&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;true&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;canExecute&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/catalog/System/WorkflowCategory/ff808081417e9cd901417eb52141158a/&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;categoryHref&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;This workflow provides an example of using the command object to run a PERL script that resides on the local vCO filesystem. &#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;description&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Hello PERL&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;name&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;customIcon&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Workflow&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;type&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;true&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;canEdit&#34;</span>
+        },
+        {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;0.0.1&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;version&#34;</span>
+        }
+      ],
+      <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/&#34;</span>,
+      <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;down&#34;</span>
+    }
+  ],
+  <span style="color:#f92672">&#34;total&#34;</span>: <span style="color:#ae81ff">1</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="xml-get-workflow-example">XML Get Workflow Example</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+<span style="color:#f92672">&lt;inventory-items</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span> <span style="color:#a6e22e">total=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;down&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;attributes&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;itemHref&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;885edab8-4b31-466c-bfd4-9e2cd6db3b95&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;Hello Perl July 2013&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;categoryName&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;canExecute&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/catalog/System/WorkflowCategory/ff808081417e9cd901417eb52141158a/&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;categoryHref&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;This workflow provides an example of using the command object to run a PERL script that resides on the local vCO filesystem.&amp;amp;#xA;&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;Hello PERL&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;customIcon&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;Workflow&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;canEdit&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;0.0.1&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/attributes&gt;</span>
+    <span style="color:#f92672">&lt;/link&gt;</span>
+<span style="color:#f92672">&lt;/inventory-items&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="preparing-to-run-a-workflow">Preparing to Run a Workflow</h2>
+<p>Once you have identified the execution URL, you are ready to prepare the Body of your REST message. As noted in the API Documentation for the Workflow Run Service, the endpoint url to POST to for running a workflow is: <code>https://host:port/vco/api/workflows/{workflowId}/executions/</code></p>
+<p>Additionally, pay close attention to the XML sample provided for the Body - it differs from what is received from the GET request we received earlier. In particular, your body must follow this format:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;execution-context</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;parameters&gt;</span>
+        <span style="color:#75715e">&lt;!-- Your parameter entries here even if workflow does not require inputs, your REST POST requires a body! --&gt;</span>
+    <span style="color:#f92672">&lt;/parameters&gt;</span>
+<span style="color:#f92672">&lt;/execution-context&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>So that means, for my workflow that would be:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;execution-context</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptName&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>/orchestrator/helloperl.pl<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>Burke<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+    <span style="color:#f92672">&lt;/parameters&gt;</span>
+<span style="color:#f92672">&lt;/execution-context&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Depending on the object type of the inputs, the value will appear a little differently. You can see an example of this in the Workflow Run Service API documentation.</p>
+<p>The above code prepares your inputs parameters if you&rsquo;re using XML - but what about JSON? Ah, that is very simple:<!-- raw HTML omitted --></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;parameters&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;value&#34;</span>: {
+        <span style="color:#f92672">&#34;string&#34;</span>: {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;/orchestrator/helloperl.pl&#34;</span>
+        }
+      },
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptName&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;value&#34;</span>: {
+        <span style="color:#f92672">&#34;string&#34;</span>: {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Burke&#34;</span>
+        }
+      },
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;name&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    }
+  ]
+}
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>NOTE:</strong> If you workflow does not require any inputs, then you must still provide a body of empty curly-braces:
+{}</p>
+<h2 id="thats-nice-but-how-did-you-figure-that-out">That&rsquo;s nice, but HOW did you figure that out?</h2>
+<p>Oh, right - you&rsquo;ll need to figure out what YOUR inputs should look like. In order to do that most effectively:</p>
+<ol>
+<li>Run your workflow once using the vCO client - this way, you can put in all your inputs and have a workflow execution available with those inputs stored</li>
+<li>Now, do a GET request to your workflow executions: <a href="https://vco55.vcoteam.lab">https://vco55.vcoteam.lab</a>:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/</li>
+<li>You should have one or more &quot;</li>
+<li>Perform a GET request to one of your executions to see what the inputs look like</li>
+</ol>
+<p>Here is the resulting XML and JSON results for the execution I noted above:</p>
+<h3 id="xml">XML</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+<span style="color:#f92672">&lt;workflow-execution</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c1e22f2a0012/&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;relations&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;up&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c1e22f2a0012/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;remove&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c1e22f2a0012/logs/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;logs&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c1e22f2a0012/state/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;state&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/relations&gt;</span>
+    <span style="color:#f92672">&lt;id&gt;</span>ff80808141c183890141c1e22f2a0012<span style="color:#f92672">&lt;/id&gt;</span>
+    <span style="color:#f92672">&lt;state&gt;</span>completed<span style="color:#f92672">&lt;/state&gt;</span>
+    <span style="color:#f92672">&lt;input-parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptName&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>/orchestrator/helloperl.pl<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptParams&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>Burke<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+    <span style="color:#f92672">&lt;/input-parameters&gt;</span>
+    <span style="color:#f92672">&lt;output-parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptOutput&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>Hello, Burke<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptResult&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;number&gt;</span>0.0<span style="color:#f92672">&lt;/number&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+    <span style="color:#f92672">&lt;/output-parameters&gt;</span>
+    <span style="color:#f92672">&lt;start-date&gt;</span>2013-10-16T11:28:47.914-04:00<span style="color:#f92672">&lt;/start-date&gt;</span>
+    <span style="color:#f92672">&lt;end-date&gt;</span>2013-10-16T11:28:49.038-04:00<span style="color:#f92672">&lt;/end-date&gt;</span>
+    <span style="color:#f92672">&lt;started-by&gt;</span>bazbill<span style="color:#f92672">&lt;/started-by&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>Hello PERL<span style="color:#f92672">&lt;/name&gt;</span>
+<span style="color:#f92672">&lt;/workflow-execution&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="json">JSON</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;relations&#34;</span>: {
+    <span style="color:#f92672">&#34;link&#34;</span>: [
+      {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/&#34;</span>,
+        <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;up&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c1e22f2a0012/&#34;</span>,
+        <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;remove&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c1e22f2a0012/logs/&#34;</span>,
+        <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;logs&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c1e22f2a0012/state/&#34;</span>,
+        <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;state&#34;</span>
+      }
+    ]
+  },
+  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;ff80808141c183890141c1e22f2a0012&#34;</span>,
+  <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#e6db74">&#34;completed&#34;</span>,
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Hello PERL&#34;</span>,
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c1e22f2a0012/&#34;</span>,
+  <span style="color:#f92672">&#34;input-parameters&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;value&#34;</span>: {
+        <span style="color:#f92672">&#34;string&#34;</span>: {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;/orchestrator/helloperl.pl&#34;</span>
+        }
+      },
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptName&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;value&#34;</span>: {
+        <span style="color:#f92672">&#34;string&#34;</span>: {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Burke&#34;</span>
+        }
+      },
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptParams&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    }
+  ],
+  <span style="color:#f92672">&#34;output-parameters&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;value&#34;</span>: {
+        <span style="color:#f92672">&#34;string&#34;</span>: {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Hello, Burke&#34;</span>
+        }
+      },
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptOutput&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;value&#34;</span>: {
+        <span style="color:#f92672">&#34;number&#34;</span>: {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#ae81ff">0</span>
+        }
+      },
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptResult&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    }
+  ],
+  <span style="color:#f92672">&#34;start-date&#34;</span>: <span style="color:#ae81ff">1381937327914</span>,
+  <span style="color:#f92672">&#34;end-date&#34;</span>: <span style="color:#ae81ff">1381937329038</span>,
+  <span style="color:#f92672">&#34;started-by&#34;</span>: <span style="color:#e6db74">&#34;bazbill&#34;</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>The important code in the above code is in the &ldquo;input-parameters&rdquo; section of each example. You can see there the format of each of the input parameters.</p>
+<p>NOTE: When building the body of your POST, be sure to use &ldquo;parameters&rdquo;, NOT &ldquo;input-parameters&rdquo;. Also, when using XML - be sure to use the &ldquo;execution-context&rdquo; tag as shown here and in the API documentation.</p>
+<p>You now have:</p>
+<ul>
+<li>Header for receiving back JSON content</li>
+<li>Execution URL (endpoint address to POST)</li>
+<li>Format of body in XML or JSON</li>
+</ul>
+<p>The final piece, IF using JSON, is to tell the vCO API that you are sending JSON content in your POST. This is pretty simple, just add another custom header:</p>
+<p>Content-Type: application/json</p>
+<h2 id="ready-to-run---json">Ready to Run! - JSON</h2>
+<figure>
+    <img src="/images/rest-vco/Ready_to_Run__-_JSON.png"
+         alt="Ready_to_Run__-_JSON.png"/> 
+</figure>
+
+<p>This screenshot shows what my RESTClient looks like when all of this has been brought together to run the workflow using JSON.</p>
+<p>Required HEADERs to post using JSON:
+<strong>Accept:</strong> application/json
+<strong>Content-Type:</strong> application/json</p>
+<h2 id="ready-to-run---xml">Ready to Run! - XML</h2>
+<figure>
+    <img src="/images/rest-vco/Ready_to_Run__-_XML.png"
+         alt="Ready_to_Run__-_XML.png"/> 
+</figure>
+
+<p>This screenshot shows what my RESTClient looks like when all of this has been brought together to run the workflow using XML.</p>
+<p>Required HEADERs to post using XML:
+<strong>Content-Type:</strong> application/xml<!-- raw HTML omitted --></p>
+<p>NOTE: Accept is not required since the default response type is already XML.</p>
+<h2 id="expected-results-from-post">Expected Results From POST</h2>
+<figure>
+    <img src="/images/rest-vco/Expected_Results_From_POST.png"
+         alt="Expected_Results_From_POST.png"/> 
+</figure>
+
+<p>Regardless of which format you use for the body of your POST, the expected result is an EMPTY BODY and a set of response headers as shown in the image above.</p>
+<p>The <strong>Status Code</strong> of 202 means that you successfully started a workflow - NOT that the workflow was successful. There is a big difference there. In order to determine whether or not a workflow run was successful, you need to perfrom a GET request on the URL in the <strong>Location</strong> header + &ldquo;state&rdquo; &hellip; so, for example, To see whether or not my run was successful, I would perform my GET against this url:</p>
+<p><code>https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c5110d50002d/state</code></p>
+<p><strong>Possible State Values</strong></p>
+<ul>
+<li>waiting</li>
+<li>failed</li>
+<li>completed</li>
+<li>canceled</li>
+<li>running</li>
+</ul>
+<h2 id="successful-json-state-example">Successful JSON State Example</h2>
+<figure>
+    <img src="/images/rest-vco/Successful_JSON_State_Example.png"
+         alt="Successful_JSON_State_Example.png"/> 
+</figure>
+
+<p>And for the Body:</p>
+<p><code>{&quot;value&quot;:&quot;completed&quot;}</code></p>
+<h2 id="successful-xml-state-example">Successful XML State Example</h2>
+<figure>
+    <img src="/images/rest-vco/Successful_XML_State_Example.png"
+         alt="Successful_XML_State_Example.png"/> 
+</figure>
+
+<p>And for the Body:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+<span style="color:#f92672">&lt;state</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span><span style="color:#f92672">&gt;</span>completed<span style="color:#f92672">&lt;/state&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="failure-example">Failure Example</h2>
+<p>The Response Headers for the <strong>state</strong> url will be the same for Success and failure - the difference will be in the body. A failed body looks like this:</p>
+<h3 id="json-1">JSON</h3>
+<p><code>{&quot;value&quot;:&quot;failed&quot;}</code></p>
+<h3 id="xml-1">XML</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+<span style="color:#f92672">&lt;state</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span><span style="color:#f92672">&gt;</span>failed<span style="color:#f92672">&lt;/state&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="failure-details">Failure Details</h2>
+<p>In the event of a failure, more details can be obtained by performing a GET request against the workflow execution. Earlier, I had you just do the get request against the workflow executiion url + /state since there is less parsing involved. Here&rsquo;s what a workflow execution looks like:</p>
+<h3 id="json-2">JSON</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;relations&#34;</span>: {
+    <span style="color:#f92672">&#34;link&#34;</span>: [
+      {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/&#34;</span>,
+        <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;up&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c53582eb0039/&#34;</span>,
+        <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;remove&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c53582eb0039/logs/&#34;</span>,
+        <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;logs&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c53582eb0039/state/&#34;</span>,
+        <span style="color:#f92672">&#34;rel&#34;</span>: <span style="color:#e6db74">&#34;state&#34;</span>
+      }
+    ]
+  },
+  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;ff80808141c183890141c53582eb0039&#34;</span>,
+  <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#e6db74">&#34;failed&#34;</span>,
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Hello PERL&#34;</span>,
+  <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c53582eb0039/&#34;</span>,
+  <span style="color:#f92672">&#34;input-parameters&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;value&#34;</span>: {
+        <span style="color:#f92672">&#34;string&#34;</span>: {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;/orchestrator/helloperl.pl&#34;</span>
+        }
+      },
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptName&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;value&#34;</span>: {
+        <span style="color:#f92672">&#34;string&#34;</span>: {
+          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Burke&#34;</span>
+        }
+      },
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptParams&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    }
+  ],
+  <span style="color:#f92672">&#34;output-parameters&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptOutput&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>,
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;scriptResult&#34;</span>,
+      <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;local&#34;</span>
+    }
+  ],
+  <span style="color:#f92672">&#34;start-date&#34;</span>: <span style="color:#ae81ff">1381993120491</span>,
+  <span style="color:#f92672">&#34;end-date&#34;</span>: <span style="color:#ae81ff">1381993121574</span>,
+  <span style="color:#f92672">&#34;started-by&#34;</span>: <span style="color:#e6db74">&#34;bazbill&#34;</span>,
+  <span style="color:#f92672">&#34;content-exception&#34;</span>: <span style="color:#e6db74">&#34;Example failure - something went horribly wrong!!! (Workflow:Hello PERL / Run Script (item1)#11)&#34;</span>,
+  <span style="color:#f92672">&#34;current-item-display-name&#34;</span>: <span style="color:#e6db74">&#34;Run Script&#34;</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="xml-2">XML</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+<span style="color:#f92672">&lt;workflow-execution</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c53582eb0039/&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;relations&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;up&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c53582eb0039/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;remove&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c53582eb0039/logs/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;logs&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;link</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://vco55.vcoteam.lab:8281/vco/api/workflows/885edab8-4b31-466c-bfd4-9e2cd6db3b95/executions/ff80808141c183890141c53582eb0039/state/&#34;</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;state&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/relations&gt;</span>
+    <span style="color:#f92672">&lt;id&gt;</span>ff80808141c183890141c53582eb0039<span style="color:#f92672">&lt;/id&gt;</span>
+    <span style="color:#f92672">&lt;state&gt;</span>failed<span style="color:#f92672">&lt;/state&gt;</span>
+    <span style="color:#f92672">&lt;input-parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptName&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>/orchestrator/helloperl.pl<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptParams&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>Burke<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;/parameter&gt;</span>
+    <span style="color:#f92672">&lt;/input-parameters&gt;</span>
+    <span style="color:#f92672">&lt;output-parameters&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptOutput&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;parameter</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;scriptResult&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/output-parameters&gt;</span>
+    <span style="color:#f92672">&lt;start-date&gt;</span>2013-10-17T02:58:40.491-04:00<span style="color:#f92672">&lt;/start-date&gt;</span>
+    <span style="color:#f92672">&lt;end-date&gt;</span>2013-10-17T02:58:41.574-04:00<span style="color:#f92672">&lt;/end-date&gt;</span>
+    <span style="color:#f92672">&lt;started-by&gt;</span>bazbill<span style="color:#f92672">&lt;/started-by&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>Hello PERL<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;content-exception&gt;</span>Example failure - something went horribly wrong!!! (Workflow:Hello PERL / Run Script (item1)#11)<span style="color:#f92672">&lt;/content-exception&gt;</span>
+    <span style="color:#f92672">&lt;current-item-display-name&gt;</span>Run Script<span style="color:#f92672">&lt;/current-item-display-name&gt;</span>
+<span style="color:#f92672">&lt;/workflow-execution&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>As you can see, there is quite a bit more content here.. In any case, to get the exception details, retrieve the value of the &ldquo;content-exception&rdquo;.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Throughout this tutorial, you have been provided details on:</p>
+<ul>
+<li>Locating a specific workflow&rsquo;s ID using a filtered GET query against the REST API</li>
+<li>Identifying the correct Input parameters and the proper formatting to use (by looking at a past execution)</li>
+<li>Executing a workflow</li>
+<li>Retrieving workflow results</li>
+<li>Working with XML or JSON</li>
+</ul>
+<p>You should now be able to execute workflows via the REST api.</p>
+<h2 id="how-about-securestring-inputs">How About SecureString Inputs</h2>
+<p>This topic was added on May 18th, 2015 after having numerous requests on the topic&hellip;.
+Here&rsquo;s a JSON example of passing a SecureString input type:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{<span style="color:#f92672">&#34;parameters&#34;</span>:[{
+    <span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;secInput&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;SecureString&#34;</span>,
+    <span style="color:#f92672">&#34;scope&#34;</span>:<span style="color:#e6db74">&#34;local&#34;</span>,
+    <span style="color:#f92672">&#34;value&#34;</span>:{
+        <span style="color:#f92672">&#34;string&#34;</span>:{<span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;test&#34;</span>}
+    }
+}]}
+
+<span style="color:#960050;background-color:#1e0010">And</span> <span style="color:#960050;background-color:#1e0010">an</span> <span style="color:#960050;background-color:#1e0010">XML</span> <span style="color:#960050;background-color:#1e0010">example:</span>
+
+<span style="color:#960050;background-color:#1e0010">```xml</span>
+<span style="color:#960050;background-color:#1e0010">&lt;execution-context</span> <span style="color:#960050;background-color:#1e0010">xmlns=</span><span style="color:#e6db74">&#34;http://www.vmware.com/vco&#34;</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+    <span style="color:#960050;background-color:#1e0010">&lt;parameters&gt;</span>
+        <span style="color:#960050;background-color:#1e0010">&lt;parameter</span> <span style="color:#960050;background-color:#1e0010">type=</span><span style="color:#e6db74">&#34;SecureString&#34;</span> <span style="color:#960050;background-color:#1e0010">name=</span><span style="color:#e6db74">&#34;secInput&#34;</span> <span style="color:#960050;background-color:#1e0010">scope=</span><span style="color:#e6db74">&#34;local&#34;</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+            <span style="color:#960050;background-color:#1e0010">&lt;string&gt;My</span> <span style="color:#960050;background-color:#1e0010">Secure</span> <span style="color:#960050;background-color:#1e0010">String</span> <span style="color:#960050;background-color:#1e0010">Here&lt;/string&gt;</span>
+        <span style="color:#960050;background-color:#1e0010">&lt;/parameter&gt;</span>
+    <span style="color:#960050;background-color:#1e0010">&lt;/parameters&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&lt;/execution-context&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Note that the parameter type is <strong>SecureString</strong>, but the actual value is designated as a <strong>string</strong>.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>This article walked through the basics of getting a simple STRING Input based workflow to run. The next step would be to figure out how to get and provide complex objects as inputs to workflows via the REST API.
+Different approaches may be used here:</p>
+<ol>
+<li>Use the REST API Inventory: <code>https://[YOURVCOSERVER]:8281/vco/api/inventory</code> &ndash; then drill down into the appropriate plug-in to find the object you need</li>
+<li>Create a vCO workflow that you can run easily (string inputs or no inputs for example) that returns an array of the objects you need</li>
+</ol>
+<p>When dealing with any input parameters, remember to execute a workflow first using the vCO client and then view that execution as described in the article above to see how the REST API formats the inputs for various object types. Note, however, that the value for SecureString inputs will <strong>not</strong> be displayed here as the values are not stored in the workflow token.</p>
+<p>Good Luck!</p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/rest/" rel="tag">REST</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/api/" rel="tag">API</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +1143,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

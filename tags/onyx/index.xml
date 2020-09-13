@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Onyx on </title>
+    <link>http://new.vcoteam.info/tags/onyx.html</link>
+    <description>Recent content in Onyx on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Oct 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/tags/onyx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Expand your vCO library with Onyx</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/113-expand-your-vco-library-with-onyx.html</link>
+      <pubDate>Fri, 29 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/113-expand-your-vco-library-with-onyx.html</guid>
+      <description>vCO is shipped with a large library of actions and workflows for the most common vCenter operations. However since vCenter is extremely rich in terms of features and you may have been in the situation where there is no action or workflow for a given vCenter Operation. Thanks to vCO vCenter plug-in exposing the entire vCenter API as javascript objects and methods you can always explore its API documentation and craft your own actions and workflows.</description>
+    </item>
+    
+  </channel>
+</rss>

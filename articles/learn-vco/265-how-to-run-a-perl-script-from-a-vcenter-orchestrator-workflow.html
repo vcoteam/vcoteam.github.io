@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>How to run a Perl Script from a vCenter Orchestrator Workflow - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;&lt;img style=&#34;float: left;&#34; title=&#34;PERL Logo&#34; src=&#34;images/perl-logo.jpg&#34; alt=&#34;PERL Logo&#34; /&gt;The goal of this tutorial is to create a simple workflow with a single string input that will be passed to a locally hosted Perl script for execution. The results of the script will be returned to vCO and stored in the workflow output. This could come in handy if you have existing systems that already have Perl based management scripts and you wish to incorporate their automation into your Orchestration policies.&lt;/p&gt;">
+	<meta name="description" content="The goal of this tutorial is to create a simple workflow with a single string input that will be passed to a locally hosted Perl script for execution. The results of the script will be returned to vCO and stored in the workflow output. This could come in handy if you have existing systems that already have Perl based management scripts and you wish to incorporate their automation into your Orchestration policies.">
 		<meta property="og:title" content="How to run a Perl Script from a vCenter Orchestrator Workflow" />
-<meta property="og:description" content="&lt;p&gt;&lt;img style=&#34;float: left;&#34; title=&#34;PERL Logo&#34; src=&#34;images/perl-logo.jpg&#34; alt=&#34;PERL Logo&#34; /&gt;The goal of this tutorial is to create a simple workflow with a single string input that will be passed to a locally hosted Perl script for execution. The results of the script will be returned to vCO and stored in the workflow output. This could come in handy if you have existing systems that already have Perl based management scripts and you wish to incorporate their automation into your Orchestration policies.&lt;/p&gt;" />
+<meta property="og:description" content="The goal of this tutorial is to create a simple workflow with a single string input that will be passed to a locally hosted Perl script for execution. The results of the script will be returned to vCO and stored in the workflow output. This could come in handy if you have existing systems that already have Perl based management scripts and you wish to incorporate their automation into your Orchestration policies." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/265-how-to-run-a-perl-script-from-a-vcenter-orchestrator-workflow.html" />
 <meta property="article:published_time" content="2013-07-22T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to run a Perl Script from a vCenter Orchestrator Workflow"/>
-<meta name="twitter:description" content="&lt;p&gt;&lt;img style=&#34;float: left;&#34; title=&#34;PERL Logo&#34; src=&#34;images/perl-logo.jpg&#34; alt=&#34;PERL Logo&#34; /&gt;The goal of this tutorial is to create a simple workflow with a single string input that will be passed to a locally hosted Perl script for execution. The results of the script will be returned to vCO and stored in the workflow output. This could come in handy if you have existing systems that already have Perl based management scripts and you wish to incorporate their automation into your Orchestration policies.&lt;/p&gt;"/>
+<meta name="twitter:description" content="The goal of this tutorial is to create a simple workflow with a single string input that will be passed to a locally hosted Perl script for execution. The results of the script will be returned to vCO and stored in the workflow output. This could come in handy if you have existing systems that already have Perl based management scripts and you wish to incorporate their automation into your Orchestration policies."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,19 +121,230 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-07-22T00:00:00Z">July 22, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>// Create and execute the command:
-var command = new Command(cmd);
-command.execute(true);</p>
-<p>// Display command results and output 
-var scriptResult = command.result;
-System.debug(&ldquo;Script Result: &quot; + scriptResult);</p>
-<p>var scriptOutput = command.output;
-System.debug(&ldquo;Script Output: &quot; + scriptOutput);<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+      <p><figure class="floatleft">
+    <img src="/images/run-perl-script/perl-logo.jpg"
+         alt="PERL Logo"/> <figcaption>
+            <h4>PERL Logo</h4>
+        </figcaption>
+</figure>
+The goal of this tutorial is to create a simple workflow with a single string input that will be passed to a locally hosted Perl script for execution. The results of the script will be returned to vCO and stored in the workflow output. This could come in handy if you have existing systems that already have Perl based management scripts and you wish to incorporate their automation into your Orchestration policies.</p>
+<h2 id="concepts-covered-in-this-tutorial">Concepts Covered In this tutorial</h2>
+<p>The following concepts will be covered:</p>
+<ul>
+<li>Enabling Local Process execution</li>
+<li>Filesystem rights configuration</li>
+<li>Use of the &ldquo;command&rdquo; object to execute a locally hosted PERL script</li>
+</ul>
+<h2 id="tools-used">Tools Used</h2>
+<p>The following tools are used for this tutorial:</p>
+<ul>
+<li>vCenter Orchestrator 5.1.1 Appliance (Perl is pre-installed in the appliance)</li>
+<li>Simple Perl Script configured with at least 1 input parameter</li>
+</ul>
+<h2 id="vcenter-orchestrator-configuration">vCenter Orchestrator Configuration</h2>
+<p>vCO requires special configuration considerations when dealing with local commands and filesystem access. The default settings of a vCO server limit access to specific local folders and prevents the execution of local processes. Local processes include scripts and commands hosted on the vCO Server.</p>
+<h3 id="configure-vco-to-allow-execution-of-local-processes">Configure vCO to allow execution of local processes</h3>
+<ul>
+<li>Go to /app-server/server/vmo/conf</li>
+<li>Edit the vmo.properties file and add (if not already done) the following line to enable</li>
+</ul>
+<p><code>com.vmware.js.allow-local-process=true</code></p>
+<h3 id="configure-vco-to-allow-filesystem-access-to-scripts-folder">Configure vCO to allow filesystem access to scripts folder</h3>
+<ul>
+<li>Go to /app-server/server/vmo/conf</li>
+<li>Edit (or create if it does not yet exist) the js-io-rights.conf file</li>
+<li>Assuming a folder name of &ldquo;orchestrator&rdquo; on an appliance, enter the following (adjust as desired for Windows):</li>
+</ul>
+<p><code>+rwx /orchestrator</code></p>
+<ul>
+<li>Add additional folders as desired. The line above adds (r)ead (w)rite e(x)ecute access to the /orchestrator folder to the vCenter Orchestrator Server service.</li>
+</ul>
+<p>Once the two files have been edited as described above, restart the vCenter Orchestrator Server service.</p>
+<h2 id="script-preparation">Script Preparation</h2>
+<figure>
+    <img src="/images/run-perl-script/Script_Preparation.png"
+         alt="Script_Preparation.png"/> 
+</figure>
+
+<p>Prepare a simple script as an initial test to confirm things are setup properly. Once a simple script such as the example here is working, you can then try out more complex scripts/programs.</p>
+<ul>
+<li>Create a new file named helloperl.pl in the <strong>/orchestrator</strong> folder</li>
+<li>If using the appliance, be sure to set ownership on the file to the vco user/group: <strong>chown vco.vco /orchestrator/helloperl.pl</strong></li>
+<li>Also make the file executable: <strong>chmod 755 /orchestrator/helloperl.pl</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/perl</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Hello, &#34;</span>, $ARGV[<span style="color:#ae81ff">0</span>];
+</code></pre></td></tr></table>
+</div>
+</div><p>You now have a simple script and vCO configured with the ability to access and execute that script so it is time to create a workflow to do just that.</p>
+<h2 id="create-workflow">Create Workflow</h2>
+<figure>
+    <img src="/images/run-perl-script/Create_Workflow.png"
+         alt="Create_Workflow.png"/> 
+</figure>
+
+<p>Open the vCenter Orchestrator Client and create a new workflow called &ldquo;Hello Perl&rdquo;</p>
+<p>Please use this exact name as it will be the subject of my next tutorial (described in the Summary and Next Steps section at the bottom of this tutorial.)</p>
+<h2 id="add-scriptable-task">Add Scriptable Task</h2>
+<figure>
+    <img src="/images/run-perl-script/Add_Scriptable_Task.png"
+         alt="Add_Scriptable_Task.png"/> 
+</figure>
+
+<ol>
+<li>Add a single scriptable task to the workflow</li>
+<li>Rename it from &ldquo;Scriptable task&rdquo; to something like &ldquo;Run Script&rdquo; if desired for better appearance</li>
+</ol>
+<p>When complete, it should look like the screenshot above.</p>
+<h2 id="createbind-inputs-and-outputs">Create/Bind Inputs and Outputs</h2>
+<figure>
+    <img src="/images/run-perl-script/CreateBind_Inputs_and_Outputs.png"
+         alt="CreateBind_Inputs_and_Outputs.png"/> 
+</figure>
+
+<p>Since this is a simple test workflow, it will take two inputs and produce two outputs. We&rsquo;ll prompt for the name of a script and another input for the parameters. For this example we will have a single paramter. For a more complex script, you could dynamically build up a number of parameters in elements in earlier parts of a custom workflow, storing them in a workflow attribute and then bind that attribute as an input to the &ldquo;run script&rdquo; scriptable task.</p>
+<p><strong>Click on the Scriptable task and add the following inputs:</strong></p>
+<ul>
+<li>scriptName (string) - Create New Workflow Input Parameter</li>
+<li>scriptParams (string) - Create New Workflow Input Parameter</li>
+</ul>
+<p><strong>Add the following Output:</strong></p>
+<ul>
+<li>scriptOutput (string) - Create New Workflow Output</li>
+<li>scriptResult (number) - Create New Workflow Output</li>
+</ul>
+<h2 id="confirm-bindings">Confirm Bindings</h2>
+<figure>
+    <img src="/images/run-perl-script/Confirm_Bindings.png"
+         alt="Confirm_Bindings.png"/> 
+</figure>
+
+<p>Click on the &ldquo;Visual Binding&rdquo; tab of the &ldquo;Run Script&rdquo; to confirm the bindings are as shown in the above screenshot.</p>
+<h2 id="set-presentation">Set Presentation</h2>
+<figure>
+    <img src="/images/run-perl-script/Set_Presentation.png"
+         alt="Set_Presentation.png"/> 
+</figure>
+
+<ol>
+<li>Click on the &ldquo;Presentation&rdquo; tab, then choose the &ldquo;scriptName&rdquo; input</li>
+<li>Add a new property to the input for default value</li>
+<li>Set the default value to &ldquo;/orchestrator/helloperl.pl&rdquo;</li>
+<li>Add a new property to the input for &ldquo;Mandatory&rdquo; and set to &ldquo;Yes&rdquo;</li>
+<li>Click &ldquo;Save&rdquo;</li>
+</ol>
+<h2 id="code-the-scriptable-task">Code the Scriptable Task</h2>
+<p>Insert the following code into the scriptable task:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Prepare Command line and parameters to execute:
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">cmd</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scriptName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">scriptParams</span>;
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">debug</span>(<span style="color:#e6db74">&#34;executing cmd: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cmd</span>);
+
+<span style="color:#75715e">// Create and execute the command:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">command</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Command</span>(<span style="color:#a6e22e">cmd</span>);
+<span style="color:#a6e22e">command</span>.<span style="color:#a6e22e">execute</span>(<span style="color:#66d9ef">true</span>);
+
+<span style="color:#75715e">// Display command results and output
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">command</span>.<span style="color:#a6e22e">result</span>;
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">debug</span>(<span style="color:#e6db74">&#34;Script Result: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">scriptResult</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptOutput</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">command</span>.<span style="color:#a6e22e">output</span>;
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">debug</span>(<span style="color:#e6db74">&#34;Script Output: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">scriptOutput</span>);
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="how-to-use-the-output">How to use the output</h2>
+<p>The results and output could be passed to another scriptable task for parsing and additional actions if desired. In that case, you would need to move the &ldquo;scriptOutput&rdquo; and &ldquo;scriptResult&rdquo; Output Parameters to Attributes.</p>
+<h2 id="save-description-version">Save, Description, Version</h2>
+<figure>
+    <img src="/images/run-perl-script/Save__Description__Version.png"
+         alt="Save__Description__Version.png"/> 
+</figure>
+
+<p>This completes the creation of the workflow so it should be saved.</p>
+<p>When saving a workflow, be sure to provide a nice description (1) so that it is obvious what the workflow is designed to perform. Here, we&rsquo;ll add the following:</p>
+<p><em>This workflow will execute a simple Perl script that takes a single parameter. The output of the workflow should be the result code and any script output generated.</em></p>
+<p>In addition to a description, you should version your work (and increment the version each time you update the workflow.) Go ahead and do that now (2). When you set the version, you&rsquo;ll be prompted for a version comment. I typically start with something like: Initial Version.</p>
+<p>Save and Close the workflow now, we&rsquo;re ready to run it.</p>
+<h2 id="execute-the-workflow-using-vco-client">Execute the Workflow using vCO Client</h2>
+<figure>
+    <img src="/images/run-perl-script/Execute_the_Workflow_using_vCO_Client.png"
+         alt="Execute_the_Workflow_using_vCO_Client.png"/> 
+</figure>
+
+<p>At this point, you should still have the vCO Client open and the &ldquo;Hello Perl&rdquo; workflow selected.</p>
+<ul>
+<li>Right-Click on your workflow and select &ldquo;Execute&rdquo; (or use one of the other methods to start the workflow)</li>
+<li>The &ldquo;Script Name&rdquo; should have the default value that was specified at design time</li>
+<li>Enter your first name in the &ldquo;Script Parameters&rdquo; box</li>
+<li>Click &ldquo;Submit&rdquo;</li>
+</ul>
+<h2 id="view-results-variables">View Results: Variables</h2>
+<figure>
+    <img src="/images/run-perl-script/View_Results_Variables.png"
+         alt="View_Results_Variables.png"/> 
+</figure>
+
+<p>After a successful run of the workflow, your results should appear similar to the above screenshot.</p>
+<h2 id="view-results-logs">View Results: Logs</h2>
+<figure>
+    <img src="/images/run-perl-script/View_Results_Logs.png"
+         alt="View_Results_Logs.png"/> 
+</figure>
+
+<p>After a successful run of the workflow, your results should appear similar to the above screenshot.</p>
+<h2 id="summary-and-next-steps">Summary and Next Steps</h2>
+<p>This tutorial has provided you with a foundation for utilizing existing scripts and programs that may reside on your vCO server. Although this example was done on a vCO appliance, the same principals and steps apply to the Windows version of vCO. Leveraging existing Command Line utilities within workflows is an excellent integration example for systems that may not have a proper API available.</p>
+<p><strong>For example:</strong></p>
+<p>Windows systems have .exe files such as the Active Directory tools dsadd.exe, dsmove.exe, dsquery.exe, etc&hellip;
+Some IPAM software, portals, or other misc systems may ship with a set of Perl, Python, or other management scripts</p>
+<p>Any of the above may be utilized in the same way we have run the sample Perl script in this tutorial.
+In my <a href="/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html" >next tutorial</a>, you&rsquo;ll learn how to access and run this &ldquo;Hello Perl&rdquo; workflow via the REST API !</p>
+<ul>
+<li>Locate the api documentation found on your vCO server</li>
+<li>Find the workflow</li>
+<li>Identify inputs, outputs, and the proper format</li>
+<li>Work with XML based REST</li>
+<li>Learn to force JSON for the input/output of REST Queries</li>
+</ul>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/perl/" rel="tag">perl</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -205,57 +423,89 @@ System.debug(&ldquo;Script Output: &quot; + scriptOutput);<!-- raw HTML omitted 
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

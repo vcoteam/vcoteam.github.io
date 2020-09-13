@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,18 +121,72 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-02-28T00:00:00Z">February 28, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Blog articles written by Christopher Knowles:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Introduction to vCloud API extensions<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>In a previous <a href="/learn-vco/extend-vcloud-director-with-vcenter-orchestrator.html" target="_blank">article</a> I explained how we could extend vCloud Director with vCenter Orchestrator and then provided a full <a href="/learn-vco/vcloud-director-blocking-tasks-and-notifications-integration-with-vco-implementation.html" target="_blank">implementation</a>. This was using the vCloud Director blocking tasks and notifications feature which allow to extend existing vCoud Director operations.</p>
+<p>vCloud Director 5.1 introduced a new feature called API extensions which basically allows a cloud provider to extend the vCloud Director API with custom services with leveraging VMware or third party applications. In this article I discuss why someone would want to leverage this feature and explain the "service builder" solution I have created around it.</p>
 
+<h2>The first question you may ask is "Why would you want to extend vCloud Director API ?"</h2>
+<p style="padding-left: 30px;" >As the vCloud Director Administrator I need to provide a feature not   available in the vCloud API to cloud API consumers (i.e. the portal development team)</p>
+<ul style="padding-left: 30px;" >
+</ul><ul><li>It is a combination of several vCloud API calls, and or API calls with predetermined parameters I can define</li><li>It is included in another VMware or third party API</li><li>It is a mix of both</li></ul>
+
+<h2>OK, but then why not use the existing APIs instead of extending vCloud Director's one ?</h2>
+<p style="padding-left: 30px;" >Lets see some of the common portal / cloud implementations.</p>
+<p style="padding-left: 30px;" >The first one is the old fashioned portal calling the vCloud and other APIs. Here are two variations exposing or not the vCloud API. Exposing the vCloud API allows to leverage all the applications consuming the vCloud API. For example a service provider will want his tenants to use vCloud Connector to copy back & forth vApps from / to vSphere / vCloud. This design is IMHO flawed in several aspects:</p>
+<p style="padding-left: 30px;" >The portal must include all the automation you would typically put in an orchestration solution. This means re-inventing the wheel to re-create a lot of facilities offered by an orchestration engine, making these operation only usable by the portal or creating a custom web service when thousands of customers already used standard orchestration APIs. This will be a solution difficult to support that will be tied with the scripting language used to consume the underlying cloud and third parties APIs. These APIs will support different types of web services, different type of authentications.</p>
+<p>- Please note - I have used a vCloud Automation Center picture to represent the portal. This could be any portal. vCloud Automation Center is not only a portal but also a workflow engine.</p>
+<p><br /></p>
+<ul style="padding-left: 30px;" >
+</ul>
+<p style="padding-left: 30px;" ><img style="display: block; margin-left: auto; margin-right: auto; border: 1px solid #000000;" mce_style="display: block; margin-left: auto; margin-right: auto; border: 1px solid #000000;" src="/images/extend-vcd-servicebuilder/portal_no_orchestration.png" alt="alt" /></p>
+
+<p style="padding-left: 30px;" >The second approach is that orchestration rules them all ! The portal calls in the orchestrator calling the underlying systems. The two designs below are using this approach with keeping the orchestration API private and either exposing the vCloud REST API or not. The Orchestrator APi could ahve been made public to expose the additional services but there are some serious workflows / resources access control considerations required.</p>
+<p style="padding-left: 30px;" >This approach was a good one when there was no cloud API and that the target system was vSphere / vCenter. The Orchestrator would expose a subset of the functionality with using several API calls chained together to perform the desired automation. Using orchestration has several benefits including supportability, modularity, use of hundreds of supported workflows, API abstraction, caching, high availability and many other things I detail in this <a href="/learn-vco/take-cloud-automation-scripting-to-another-level-with-cloud-orchestration.html"  target="_blank">article</a>.</p>
+<p style="padding-left: 30px;" >However this has a few flaws as well. An orchestration engine is meant to automate complex operations. A lot of the API calls started from the portal will be about almost real time operations such as refreshing a list of vApps, presenting information in a panel and so on. I have written about this in details in this article : <a href="/learn-vco/building-your-custom-cloud-when-to-use-the-vcloud-api-or-the-vcenter-orchestrator-web-service.html" >Building your custom cloud portal - Knowing when to use the vCloud API and the vCenter Orchestrator web service</a><br mce_bogus="1" /></p>
+
+<p style="padding-left: 30px;" ><img style="display: block; margin-left: auto; margin-right: auto; border: 1px solid #000000;" mce_style="display: block; margin-left: auto; margin-right: auto; border: 1px solid #000000;" src="/images/extend-vcd-servicebuilder/portal_orchestration_based.png" alt="alt" /></p>
+
+<p style="padding-left: 30px;" >Several successful cloud implementation involving using custom services I have seen have implemented the Cloud & orchestration design below in the left. While this resolve some of the issues mentioned previously it still make the custom services only available to the portal. With vCloud Director 1.5 blocking tasks and notifications allowed to customize existing vCloud Director operations, hence diminishing the number of calls to be made from the portal to the orchestration engine but direct calls to orchestration are most often required for operations required that cannot be started by vCloud blocking tasks and notifications. With vCloud Director 5.1 you can use the bottom right design.</p>
+<p style="padding-left: 30px;" ><img style="display: block; margin-left: auto; margin-right: auto; border: 1px solid #000000;" src="/images/extend-vcd-servicebuilder/portal_cloud_based2.png" alt="alt" /></p>
+
+<p style="padding-left: 30px;" >The reasons for prefering this design on the right are the following: As a cloud administrator I do not want to give direct access to my cloud backend applications:</p>
+<ul style="padding-left: 30px;" >
+</ul><ul><li>Access:  I provide only one single point of access : the vCloud Director API and  I want to publish as a service only a given operation, not give access  to all the API of any of my cloud back-end components.</li><li>Security: The only authentication, session management is the vCloud one.</li><li>Consistency  : My customers only use the vCloud API which reduces their development  effort (avoid using different web services and different  authentications)</li></ul>
+
+<p style="padding-left: 30px;" >Giving API access for the functionality exposed in the portal is also an important differentiator between different cloud providers. This provides ways to develop client applications for specific uses, build automation. At VMware API parity with functionality exposed in the UI is an important goal for engineering for these reasons.</p>
+<p style="padding-left: 30px;" ><br /></p>
+<h2>OK but what for ?</h2>
+<p style="padding-left: 30px;" >There are several use cases for providing functionality that is not out of the box for example:</p><ul><li>vApp custom provisioning or decommissioning</li><li>vApp backup</li><li>vApp load balancing</li><li>vApp fault tolerance</li><li>vApp updates</li><li>vApp VMs security hardening</li><li>vApp VMs affinity / anti-affinity rules</li><li>vShield security groups</li><li>Install agents, inject parameters in vApp VMs</li><li>Database as a service</li><li>Update user password in Active Directory</li><li>iSCSI target for MSCS Clusters</li></ul><ul style="padding-left: 30px;" >
+</ul>
+<p style="padding-left: 30px;" >A lot of these are achievable with the components of the vCloud Suite. There are a lot more use cases with integrating third party systems such as management systems. You can "cloudify" the whole datacenter if needed.</p>
+<h2>How ?</h2>
+<p><span style="color: black; letter-spacing: 0pt; font-weight: normal; font-style: normal;" > </span></p>
+<p style="padding-left: 30px;" >My colleagues at VMware have done an excellent job exploring the API documentation and explaining vCloud API extensions. Here are some references I have used to create "service builder". If you are not affraid of going deep technical I definitely recommend going through these:</p><p>
+
+<br /></p><ul><li> <span style="color: black; letter-spacing: 0pt; font-weight: normal; font-style: normal;" >Blog articles written by Christopher Knowles:</span></li></ul><ul style="padding-left: 30px;" ><ul><li><a href="http://www.theclouds.ca/6-introduction-to-vcloud-api-extensions" >Introduction to vCloud API extensions</a><br mce_bogus="1" /></li>
+
+<li><a href="http://www.theclouds.ca/7-building-an-api-extension-service">Registering an API extension service</a><br mce_bogus="1" /></li>
+<li><a href="http://www.theclouds.ca/10-registering-api-service-links" >Registering API Service Links</a><br mce_bogus="1" /></li>
+<li><a href="http://www.theclouds.ca/13-storage-as-a-service-extension-overview" >Storage as a Service Extension Overview</a><br mce_bogus="1" /></li></ul></ul>
+
+<ul>
+</ul><ul><li>Blog articles written by Thomas Kraus:<a href="http://www.cloudactual.com/2012/09/vcloud-director-51-api-extensions-part.html" >vCloud Director API Extensions</a> (implementation example)</li></ul><ul><li>VMworld 2013 session OPS-CSM1379</li>
+</ul>
+
+<h2>I do not have the time to invest a lot of time in these articles and create my services manually. How can I get started quickly ?</h2>
+<p style="padding-left: 30px;" >With using service builder. Service Builder is:</p>
+<ul style="padding-left: 30px;" >
+</ul><ul><li>A wizard based workflow to create a custom service and service operations (called service links in the vCloud extensibility API)</li><li>Expose workflow as service operations (/api/myservice/myOperation)</li><li>Expose this workflow as well in the "Workflow run service" so they can be managed (/api/workflow/workflowID/executionId)</li></ul>
+<p style="padding-left: 30px;" >In addition service builder creates a "workflow run service" that allows vCloud Director API to manage vCenter Orchestrator workflows.</p>
+<p style="padding-left: 30px;" >And I forgot to mention it is <u>free</u>.</p>
+<p><br /></p>
+<h2>How do I get started with service builder ?</h2>
+<p style="padding-left: 30px;" >I have put together an online presentation explaining in details :</p>
+<ul style="padding-left: 30px;" >
+</ul><ul><li>What is "vCloud service builder" and "vCloud workflow run service"</li><li>Pre-requisites</li><li>How it works animations</li><li>Installation</li><li>Usage</li><li>Examples for calling the newly created APIs</li><li>Custom operations monitoring with vCloud Director UI</li><li>Troubleshooting</li><li>Download link</li></ul><p>Note : The presentation requires your Email and organization. This  is solely for me to better understand who has interest in this tool and  eventually to contact you in case I need further information on your  submitted comments. This information will not be used for anything else  and not be transmitted.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/extend-vcd-servicebuilder/servicebuilderpresentation.png" alt="Presentation has been removed" /><br />Unfortunately, the presentation has been removed</p>
+<p><br /></p>
+<p>If you want to go directly to the download page you can find it <a href="http://communities.vmware.com/docs/DOC-21726"  target="_blank">here</a>.</p>
+<p><br /></p>
     </div>
   </article>
 </main>
@@ -205,57 +266,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

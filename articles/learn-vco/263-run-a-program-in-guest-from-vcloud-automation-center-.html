@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Run a program in guest from vCloud Automation Center - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;vCloud Automation Center is the VMware hybrid cloud self-service provisioning portal. It can be customized to extend its OOTB functionality. The following tutorial shows how from the vSphere web client create a menu operation to run a program in a guest or how to do it automatically once the VM has been provisioned. This does not involve any scripting !&lt;/p&gt;">
+	<meta name="description" content="vCloud Automation Center is the VMware hybrid cloud self-service provisioning portal. It can be customized to extend its OOTB functionality. The following tutorial shows how from the vSphere web client create a menu operation to run a program in a guest or how to do it automatically once the VM has been provisioned. This does not involve any scripting !">
 		<meta property="og:title" content="Run a program in guest from vCloud Automation Center" />
-<meta property="og:description" content="&lt;p&gt;vCloud Automation Center is the VMware hybrid cloud self-service provisioning portal. It can be customized to extend its OOTB functionality. The following tutorial shows how from the vSphere web client create a menu operation to run a program in a guest or how to do it automatically once the VM has been provisioned. This does not involve any scripting !&lt;/p&gt;" />
+<meta property="og:description" content="vCloud Automation Center is the VMware hybrid cloud self-service provisioning portal. It can be customized to extend its OOTB functionality. The following tutorial shows how from the vSphere web client create a menu operation to run a program in a guest or how to do it automatically once the VM has been provisioned. This does not involve any scripting !" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/263-run-a-program-in-guest-from-vcloud-automation-center-.html" />
 <meta property="article:published_time" content="2013-11-13T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Run a program in guest from vCloud Automation Center"/>
-<meta name="twitter:description" content="&lt;p&gt;vCloud Automation Center is the VMware hybrid cloud self-service provisioning portal. It can be customized to extend its OOTB functionality. The following tutorial shows how from the vSphere web client create a menu operation to run a program in a guest or how to do it automatically once the VM has been provisioned. This does not involve any scripting !&lt;/p&gt;"/>
+<meta name="twitter:description" content="vCloud Automation Center is the VMware hybrid cloud self-service provisioning portal. It can be customized to extend its OOTB functionality. The following tutorial shows how from the vSphere web client create a menu operation to run a program in a guest or how to do it automatically once the VM has been provisioned. This does not involve any scripting !"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,181 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-11-13T00:00:00Z">November 13, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>vCloud Automation Center is the VMware hybrid cloud self-service provisioning portal. It can be customized to extend its OOTB functionality. The following tutorial shows how from the vSphere web client create a menu operation to run a program in a guest or how to do it automatically once the VM has been provisioned. This does not involve any scripting !</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>vCenter Orchestrator configured with:</p>
+<ul>
+<li>vCenter plug-in (with the same host used in vCAC)</li>
+<li><a href="https://my.vmware.com/group/vmware/details?downloadGroup=VCO_VCAC_PLUGIN_520&amp;productId=351"  target="_blank" rel="noreferrer noopener" >vCAC plug-in 5.2</a> (with the vCAC host)</li>
+<li>vCloud Director plug-in (no host needed for this use case)</li>
+</ul>
+<p>vCloud Automation Center configured with:</p>
+<ul>
+<li>vCO endpoint</li>
+</ul>
+<p><strong>Optional:</strong></p>
+<p>vCO integration with vSphere web client (out of the box with windows installation of vCenter, follow this <a href="http://communities.vmware.com/docs/DOC-20368"  target="_blank" rel="noreferrer noopener" >guide</a> to do it with the vCO appliance). If you do not have the integration you can still do this tutorial using the vCO client.</p>
+<h2 id="running-a-program-in-a-guest-vm">Running a program in a guest VM</h2>
+<p>There are countless use cases for running a program within a guest VM. For example post provisioning scripts / software installation. With the following guest operation method you do not need to have the VM accessible remotely through the network, you just need to have appropriate VM credentials.</p>
+<p>In the vSphere web client type as below in the search field.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_01.png"/> 
+</figure>
+</p>
+<p>Right click / Run a workflow.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_07.png"/> 
+</figure>
+</p>
+<p>Enter the VM credential, select the VM.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_03.png"/> 
+</figure>
+</p>
+<p>Enter the program you want to run with its full path.Here it is a Windows VM but it could be a Linux host as well. Starting notepad remotely is not really useful but you get the idea.</p>
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_04.png"/> 
+</figure>
+
+<p>Make sure it ran successfully since we will need this for the rest of the tutorial.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_05.png"/> 
+</figure>
+</p>
+<p>This step was not mandatory but we needed to make sure you have the settings right and it will also make our life easier later.</p>
+<h2 id="installation-of-the-vcac-extensibility-package-for-vco">Installation of the vCAC extensibility package for vCO</h2>
+<p>The package is now part of the 5.2 plug-in.
+If not done already install it with searching and running the following workflow. If you did this already you can skip to the next section.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_02.png"/> 
+</figure>
+</p>
+<p>Select your vCAC host.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_08.png"/> 
+</figure>
+</p>
+<p>You can leave the defaults on this screen.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_09.png"/> 
+</figure>
+</p>
+<p>And on this one as well. You can create up to 16 vCO menus.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_10.png"/> 
+</figure>
+
+You can run this workflow again any time if you need to change any of the settings.</p>
+<h2 id="customize-the-menu-operation">Customize the menu operation</h2>
+<p>Now that we have done the basic installation we are going to customize a menu operation for our needs.
+Search and run the following workflow.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_15.png"/> 
+</figure>
+</p>
+<p>Select the host, the menu operation you want to customize, Enter a menu operation label
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_16.png"/> 
+</figure>
+</p>
+<p>On the next page you can pick up an icon. If you use the vCO client you will see the icon but not in the vSphere client. You can customize the default authorizations (basically anyone). For display state remove &ldquo;Off&rdquo; since we do not want to start the workflow running the program in guest when the VM is powered off.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_17.png"/> 
+</figure>
+</p>
+<h2 id="assign-a-menu-operation-to-blueprints-and-their-vms">Assign a menu operation to blueprints and their VMs</h2>
+<p>The menu operation we customized is not yet avalable since it has not been assigned to any blueprint or VM. This is what is done in this step.</p>
+<p>Search and run the following workflow.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_11.png"/> 
+</figure>
+</p>
+<p>Select a menu operation (the one below if this is the first you create).
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_12.png"/> 
+</figure>
+</p>
+<p>Select on which blueprints you want to apply this menu. For this tutorial this must be a vCenter VM. If you need the menu to be available on existing machines provisioned from the blueprints you selected use the check mark &ldquo;Apply &hellip;&rdquo;
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_13.png"/> 
+</figure>
+</p>
+<p>We are going to select the same workflow as we ran in the vSphere web client : &ldquo;Run program in guest&rdquo;</p>
+<p>The next two check marks are important. The workflow &ldquo;Run program in guest&rdquo; has multiple inputs. The menu operation will pass the contextual VM to the workflow but cannot guess the other input parameters and their values. The first checkmark allows storing the inputs of the vCO workflow as properties of the blueprint so you can set their values. The second one does it for you based on the last input parameters entered when running the workflow.</p>
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_14.png"/> 
+</figure>
+
+<p>If you go in vCAC, provision a VM from one of the blueprints you assigned a menu operation to (or use an existing one if you had chosen the option to apply the menu to existing VMs) you will see the &ldquo;Start notepad&rdquo; menu operation. You are almost ready to test it.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_18.png"/> 
+</figure>
+</p>
+<h2 id="one-extra-step-to-set-the-password">One extra step to set the password</h2>
+<p>With a vCO workflow that does not have a secureString input parameter you would be finished but since the &ldquo;Run in guest&rdquo; as a secureString password input parameter there is one additional step before you can use the menu.</p>
+<p>Right click / edit the blueprints and / or VMs that have been assigned a menu operation.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_19.png"/> 
+</figure>
+</p>
+<p>Go on the properties tab. You will see listed several properties starting with ExternalWFStubs.WFvCOMachineMenu1 and finishing with the input parameters of the workflow you selected. The values are also set except for the password one. This is a security feature of vCO. Edit the vmPassword property and set the password for the guest OS credential vmUsername. Note that this password will be displayed in clear to vCAC accounts that can list these properties (obviously not the end users). Using the vCAC encrypt check mark is not an option since vCO will receive an encrypted password. If you want the password not to be listed at all you can simply create a new vCO workflow, add the &ldquo;run program in guest&rdquo; library workflow to it, right click / synchronize presentation and then move the password input as attribute and assign your password there. You can then use your created workflow in the &ldquo;customize a menu operation&rdquo; section.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_20.png"/> 
+</figure>
+</p>
+<p>You can now use the menu.</p>
+<p>Great but what if you need this program to start automatically in the guest OS when the VM is provisioned ?</p>
+<h2 id="assign-a-state-change-workflow-to-blueprints-and-their-vms">Assign a state change workflow to blueprints and their VMs</h2>
+<p>Search and run the following workflow.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_21.png"/> 
+</figure>
+</p>
+<p>There are six vCAC workflow stubs allowing to run external processes. In our case we need to run the workflow once the machine has been provisioned. Select the vCAC host.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_22.png"/> 
+</figure>
+</p>
+<p>Add which blueprints need to run the vCO workflow once the VM has been provisioned. &ldquo;Apply machine operation &hellip;&rdquo; is unnecessary since the machines already provisioned will not be any more in the &ldquo;MachineProvisioned&rdquo; state.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_23.png"/> 
+</figure>
+</p>
+<p>Select the &ldquo;Run program in guest&rdquo; workflow. Use both checkmark options to create the additional vCO inputs as properties.
+<figure>
+    <img src="/images/vcac-run-guest/vcac_run_a_program_in_guest_24.png"/> 
+</figure>
+</p>
+<p>Do not forget to set the password as described in the &ldquo;One extra step to set the password&rdquo; section.</p>
+<p>Now wehn a VM will be provisioned from the selected blueprint, it will automatically start the &ldquo;Run program in guest&rdquo; workflow.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>With this tutorial you should be able to extend vCAC to run <strong>any</strong> vCO workflow (existing in the vCO library, partners plug-ins, communities workflows or one you create).</p>
+<p>This is really powerful and add a new way to consume vCO workflows:</p>
+<ul>
+<li>vSphere web client -&gt; vCO workflow</li>
+<li>vSphere vCenter -&gt; SNMP -&gt; vCO workflow</li>
+<li>vCloud Director notifications and blocking tasks -&gt; rabbitMQ -&gt; vCO workflow</li>
+<li>vCloud Director extensions -&gt; rabbitMQ -&gt; vCO worflow</li>
+<li>vCenter Operations -&gt; SNMP -&gt; vCO workflow</li>
+<li>Service Manager -&gt; vCO workflow</li>
+<li>vCloud Automation Center -&gt; vCO workflow</li>
+<li>Your custom portal -&gt; REST API -&gt; vCO workflow</li>
+<li>Your vendor application -&gt; SNMP -&gt; vCO workflow</li>
+</ul>
+<p>All integrations lead to vCO !</p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcac/" rel="tag">vCAC</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +374,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

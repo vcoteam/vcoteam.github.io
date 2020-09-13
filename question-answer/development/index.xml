@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on </title>
+    <link>http://new.vcoteam.info/question-answer/development.html</link>
+    <description>Recent content in Development on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Nov 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/question-answer/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vCO data refresh from vCD weirdness</title>
+      <link>http://new.vcoteam.info/question-answer/development/232-vco-data-refresh-from-vcd.html</link>
+      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/232-vco-data-refresh-from-vcd.html</guid>
+      <description>Question:Just curious if you have ever experienced a lag in what VMware vCenter Orchestrator (vCO) sees in vCloud Director(vCD)? I discovered that the workflows are failing because it seems like the data gets stale. Sometimes the new vAppshows up to vCO and other times it takes time... sometimes it seems like things are completely stale. I waited about30 minutes and it still wasn&#39;t showing up when I queried the vApps available.</description>
+    </item>
+    
+    <item>
+      <title>How to Deploy VM&#39;s form template in Orchestrator</title>
+      <link>http://new.vcoteam.info/question-answer/development/143-how-to-deploy-vms-form-template-in-orchestrator.html</link>
+      <pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/143-how-to-deploy-vms-form-template-in-orchestrator.html</guid>
+      <description>This topic is under discussion at the VMware Communities thread here. In addition to the comments currently there....
+You would get started with this task by using one of the &#34;Clone&#34; workflows found in the vCO Workflow Library. There are several to choose from depending on how you wish to do your clone:
+Clone virtual machine from propertiesClone virtual machine, no customizationetc...There are also specific workflows for doing Windows Clones with Customization, Linux Clones with Customization, and even Linked Clones.</description>
+    </item>
+    
+    <item>
+      <title>How can I write to files?</title>
+      <link>http://new.vcoteam.info/question-answer/development/108-how-can-i-write-to-files.html</link>
+      <pubDate>Thu, 21 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/108-how-can-i-write-to-files.html</guid>
+      <description>When scripting workflows in VMware vCenter Orchestrator (vCO) it is often desirable to read or write to local files on the vCO server whether this is a .conf, .txt, .cmd, .bat, .xml, or any other text file. In order to do so, you must be sure to either work with files in a pre-approved folder or add your custom folder to a configuration file.
+For full details on the following information, please see page 64 of the vCenter Orchestrator Administration guide, section &#34;</description>
+    </item>
+    
+    <item>
+      <title>How do I create a webview?</title>
+      <link>http://new.vcoteam.info/question-answer/development/100-how-do-i-create-a-webview.html</link>
+      <pubDate>Thu, 09 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/100-how-do-i-create-a-webview.html</guid>
+      <description>Creating webviews can be a daunting task. Your best bet to get started is by downloading the vCenter Orchestrator Developer&#39;s guide and going to page 298. Then, follow the step-by-step instructions on how to Create a Simple Web View Using the Default Template. The guide provides a wealth of information around the technology used in vCO webviews as well as sample usage and syntax.
+In addition to the resource mentioned above, we recently published part 3 in our series on a self service provisioning portal that includes step by step details on creating a webview.</description>
+    </item>
+    
+    <item>
+      <title>How can vCO orchestrate an application exposing a Web service ?</title>
+      <link>http://new.vcoteam.info/question-answer/development/77-how-can-vco-orchestrate-an-application-exposing-a-web-service-.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/77-how-can-vco-orchestrate-an-application-exposing-a-web-service-.html</guid>
+      <description>By using the vCO SOAP or REST plug-in.
+By writing a vCO plug-in and a Web service client to consume it.</description>
+    </item>
+    
+    <item>
+      <title>How do I develop vCO workflows, actions and plug-ins ?</title>
+      <link>http://new.vcoteam.info/question-answer/development/74-how-do-i-develop-workflows-actions-and-plug-ins-.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/74-how-do-i-develop-workflows-actions-and-plug-ins-.html</guid>
+      <description>Please start to read the vCO Developer&#39;s Guide and download the example applications. We also have tutorials on vCO Team.</description>
+    </item>
+    
+    <item>
+      <title>How do I implement the xyz functionality ?</title>
+      <link>http://new.vcoteam.info/question-answer/development/83-how-do-i-implement-the-xyz-functionality-.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/83-how-do-i-implement-the-xyz-functionality-.html</guid>
+      <description>Please use VMware vCO API community forum for development questions.</description>
+    </item>
+    
+    <item>
+      <title>What features does a plug-in typically provide ?</title>
+      <link>http://new.vcoteam.info/question-answer/development/78-what-features-does-a-plug-in-typically-provide-.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/78-what-features-does-a-plug-in-typically-provide-.html</guid>
+      <description>This is a list of what a plug-in can provide, not all the features are mandatory.
+Objects and methods on the orchestrated technology.A hierarchical inventory of these objects.Choosers and pickers to be able to select these objects.Events on object states and gauges.An API documentation for using these.Scripts for function level functionality.Workflows for higher level operations.Transparent session management.Object caching.Object persistence.</description>
+    </item>
+    
+    <item>
+      <title>What programming language is used ?</title>
+      <link>http://new.vcoteam.info/question-answer/development/76-what-programming-language-is-used-.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/76-what-programming-language-is-used-.html</guid>
+      <description>Java is the language used to develop plug-ins. You can bridge Java to other technologies using standard communication interfaces and bridge technologies.</description>
+    </item>
+    
+    <item>
+      <title>What scripting language is used ?</title>
+      <link>http://new.vcoteam.info/question-answer/development/75-what-scripting-language-is-used-.html</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/question-answer/development/75-what-scripting-language-is-used-.html</guid>
+      <description>Javascript. Specifically, vCO provides a Mozilla Rhino implementation. Jacascript is used for vCO actions and within vCO scriptable boxes.</description>
+    </item>
+    
+  </channel>
+</rss>

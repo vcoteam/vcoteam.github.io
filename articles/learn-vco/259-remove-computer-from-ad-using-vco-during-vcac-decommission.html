@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Remove computer from AD using vCO during vCAC Decommission - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;As vCloud Automation Center (vCAC) gains traction, so too does the need for details on how to extend it using vCenter Orchestrator (vCO). I have kept an eye out for good articles on vCAC and just saw a 1 blog around Adding a computer account to Active Directory OU. This is something that we had done for LifeCycleManager (LCM) quite some time back and feel it is a good candidate for a vCO-centeric article. So a quick thanks to Sid Smith for his article. Our focus will be on deleting the Computer Object from Active Directory when the Machine gets decommissioned. The techniques described here will help understand the steps needed for other integrations as well. This task can obviously be performed by PowerShell, dsrem.exe, and any other number of methods, but this article will provide you with a vCO way to do it. It should also be noted that vCAC has an AD Clean-Up wizard that will remove the machine record form AD when configured, but it may not have the logging capabilities that are used in this vCO example.&lt;/p&gt;">
+	<meta name="description" content="How to remove a computer from Active Directory using vCenter Orchestrator during vCAC Decommision">
 		<meta property="og:title" content="Remove computer from AD using vCO during vCAC Decommission" />
-<meta property="og:description" content="&lt;p&gt;As vCloud Automation Center (vCAC) gains traction, so too does the need for details on how to extend it using vCenter Orchestrator (vCO). I have kept an eye out for good articles on vCAC and just saw a 1 blog around Adding a computer account to Active Directory OU. This is something that we had done for LifeCycleManager (LCM) quite some time back and feel it is a good candidate for a vCO-centeric article. So a quick thanks to Sid Smith for his article. Our focus will be on deleting the Computer Object from Active Directory when the Machine gets decommissioned. The techniques described here will help understand the steps needed for other integrations as well. This task can obviously be performed by PowerShell, dsrem.exe, and any other number of methods, but this article will provide you with a vCO way to do it. It should also be noted that vCAC has an AD Clean-Up wizard that will remove the machine record form AD when configured, but it may not have the logging capabilities that are used in this vCO example.&lt;/p&gt;" />
+<meta property="og:description" content="How to remove a computer from Active Directory using vCenter Orchestrator during vCAC Decommision" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html" />
 <meta property="article:published_time" content="2013-04-17T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Remove computer from AD using vCO during vCAC Decommission"/>
-<meta name="twitter:description" content="&lt;p&gt;As vCloud Automation Center (vCAC) gains traction, so too does the need for details on how to extend it using vCenter Orchestrator (vCO). I have kept an eye out for good articles on vCAC and just saw a 1 blog around Adding a computer account to Active Directory OU. This is something that we had done for LifeCycleManager (LCM) quite some time back and feel it is a good candidate for a vCO-centeric article. So a quick thanks to Sid Smith for his article. Our focus will be on deleting the Computer Object from Active Directory when the Machine gets decommissioned. The techniques described here will help understand the steps needed for other integrations as well. This task can obviously be performed by PowerShell, dsrem.exe, and any other number of methods, but this article will provide you with a vCO way to do it. It should also be noted that vCAC has an AD Clean-Up wizard that will remove the machine record form AD when configured, but it may not have the logging capabilities that are used in this vCO example.&lt;/p&gt;"/>
+<meta name="twitter:description" content="How to remove a computer from Active Directory using vCenter Orchestrator during vCAC Decommision"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,13 +121,185 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-04-17T00:00:00Z">April 17, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>// Nothing found so throw exception:
-throw &ldquo;No matching Computer found: &quot; + computerName;<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+      <p>As vCloud Automation Center (vCAC) gains traction, so too does the need for details on how to extend it using vCenter Orchestrator (vCO). I have kept an eye out for good articles on vCAC and just saw a <a href="http://dailyhypervisor.com/vcloud-automation-center-vcac-5-1-workflow-designer-walk-through-add-computer-account-to-active-directory-ou/"  target="_blank" rel="noreferrer noopener" >great one at the DailyHypervisor.com</a> blog around Adding a computer account to Active Directory OU. This is something that we had done for LifeCycleManager (LCM) quite some time back and feel it is a good candidate for a vCO-centeric article. So a quick thanks to Sid Smith for his article. Our focus will be on deleting the Computer Object from Active Directory when the Machine gets decommissioned. The techniques described here will help understand the steps needed for other integrations as well. This task can obviously be performed by PowerShell, dsrem.exe, and any other number of methods, but this article will provide you with a vCO way to do it. It should also be noted that vCAC has an AD Clean-Up wizard that will remove the machine record form AD when configured, but it may not have the logging capabilities that are used in this vCO example.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>vCloud Automation Center (vCAC)</p>
+<ul>
+<li>Configured with at least one vCO Endpoint</li>
+<li>Configured with at least one Windows Template</li>
+<li>Design Center installed/configured</li>
+</ul>
+<p>vCenter Orchestrator (vCO)</p>
+<ul>
+<li>Active Directory Plug-in for vCenter Orchestrator (tested with version 1.0.2 and 1.0.3 of the plug-in) <a href="https://www.vmware.com/support/orchestrator/doc/ad-plugin-103-release-notes.html"  target="_blank" rel="noreferrer noopener" >Release Notes</a></li>
+<li>vCO Package file imported FILE: <a href="/images/com.vmware.coe.ad.deletedisablecomputer.package" >com.vmware.coe.ad.deletedisablecomputer.package</a></li>
+</ul>
+<p>Before getting started, we&rsquo;ll need to create a vCO workflow that gets triggered by vCAC. For the input, we&rsquo;ll just want the name and a true/false to indicate whether the computer account should be deleted or just disabled (default).</p>
+<h2 id="vco-workflow---delete-or-disable-computerad-by-name">vCO Workflow - Delete or Disable ComputerAD by Name</h2>
+<figure>
+    <img src="/images/remove-from-ad/vCO_Workflow_-_Delete_or_Disable_ComputerAD_by_Name.png"
+         alt="vCO_Workflow_-_Delete_or_Disable_ComputerAD_by_Name"/> 
+</figure>
+
+<p>The workflow shown above is contained in the attached package file. It consists of a custom action that gets an AD:ComputerAD object from the computer name string that is passed into it. It then, checks the &ldquo;deleteComputer&rdquo; input variable to see whether the workflow should Delete or simply Disable the computer account. Once the action is determined, it is logged and performed. In the case of an error during the action, System and Server logging takes place and an exception is thrown.</p>
+<p>Here&rsquo;s a look at the content of the getComputerADbyName action:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">computers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ActiveDirectory</span>.<span style="color:#a6e22e">getComputerADRecursively</span>(<span style="color:#a6e22e">computerName</span>);
+<span style="color:#75715e">//System.log(&#34;Computer count: &#34;+computers.length);
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span> (<span style="color:#a6e22e">pc</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">computers</span>){
+    <span style="color:#75715e">//System.log(&#34;Checking computer: &#34;+pc.name);
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">computerName</span>.<span style="color:#a6e22e">toLowerCase</span>() <span style="color:#f92672">==</span> <span style="color:#a6e22e">pc</span>.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">toLowerCase</span>()){
+        <span style="color:#75715e">//System.log(&#34;Found Computer: &#34;+pc.name);
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pc</span>;
+    }
+}
+
+<span style="color:#75715e">// Nothing found so throw exception:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;No matching Computer found: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">computerName</span>;
+</code></pre></td></tr></table>
+</div>
+</div><p>As you can see, the script performs a recursive search of Active Directory to locate the computer account. It then checks each result&rsquo;s lowercase value to against the input computerName&rsquo;s lowercase value to ensure a match. Once the match is found, it is returned to the calling workflow. If no match is found, an exception is thrown and logged.</p>
+<h2 id="modify-vcac-workflow-stub-to-execute-vco-workflow">Modify vCAC Workflow Stub to execute vCO Workflow</h2>
+<p>You&rsquo;ll now need to open the vCAC Designer (Start -&gt; Programs -&gt; VMware -&gt; vCAC Designer) so that the workflow stub can be modified. Since we want this particular workflow to execute upon decommission, we&rsquo;ll need to modify the WFStubMachineDisposing workflow. (You could optionally use the WFStubUnprovisionMachine instead of WFStubMachineDisposing)</p>
+<p>After you Open the vCAC Designer:</p>
+<ol>
+<li>Click on <strong>Load</strong> in the Menu bar</li>
+<li>Select the <strong>WFStubMachineDisposing</strong> workflow.</li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<figure>
+    <img src="/images/remove-from-ad/media_1.png"/> 
+</figure>
+
+<p>Double-Click &ldquo;Machine Disposing&rdquo;
+<figure>
+    <img src="/images/remove-from-ad/media_2.png"/> 
+</figure>
+</p>
+<p>Double-Click &ldquo;Custom Code&rdquo;
+<figure>
+    <img src="/images/remove-from-ad/media_3.png"/> 
+</figure>
+</p>
+<p>The first thing you&rsquo;ll need to get before you can call the vCO workflow is the Machine information. We&rsquo;ll need a variable to store the computerName we extract from the workflow:</p>
+<p>At the bottom of the <strong>Custom Code</strong> Window:</p>
+<ol>
+<li>Click <strong>Variables</strong></li>
+<li>Now Click the <strong>Create Variable</strong> line directly under the <strong>mgmtContext</strong> variable, and name the new variable <strong>computerName</strong> (This variable will be used later and it IS Case sensitive). Leave the <em>Variable type</em> as <strong>String</strong> and <em>Scope</em> as <strong>Custom Code</strong></li>
+</ol>
+<figure>
+    <img src="/images/remove-from-ad/media_4.png"/> 
+</figure>
+
+<p>So, Drag the <strong>GetMachineName</strong> activity and position it below the <strong>Start</strong>
+<figure>
+    <img src="/images/remove-from-ad/media_5.png"/> 
+</figure>
+</p>
+<ol>
+<li>Now connect <strong>Start</strong> to <strong>GetMachineName</strong> by hovering over <strong>start</strong> until you see the little connectors show up, then click and drag down to <strong>GetMachineName</strong></li>
+<li>Double-click the GetMachineName activity and fill in the <strong>Machine Id</strong> and <strong>Machine Name</strong> as follows.</li>
+</ol>
+<figure>
+    <img src="/images/remove-from-ad/media_6.png"/> 
+</figure>
+
+<p>Fill in the boxes as follows:
+<strong>Note</strong>: Case Sensitive</p>
+<ol>
+<li>Machine Id to &ldquo;virtualMachineId&rdquo;</li>
+<li>Machine Name = computerName</li>
+<li>Now Click <strong>Custom Code</strong> at the top of the screen to return to the custom part of the workflow</li>
+</ol>
+<figure>
+    <img src="/images/remove-from-ad/media_7.png"/> 
+</figure>
+
+<ol>
+<li>Click and Drag the <strong>Invoke vCO Workflow activity</strong> onto the workflow and connect it to the <strong>GetMachineName</strong> activity</li>
+<li>Click the elipsis button to select the Workflow</li>
+</ol>
+<figure>
+    <img src="/images/remove-from-ad/media_8.png"/> 
+</figure>
+
+<ol>
+<li>Start typing &ldquo;Delete or Disable&rdquo; in the top filter box</li>
+<li>Select the <strong>Delete or Disable ComputerAD by Name</strong> workflow</li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<figure>
+    <img src="/images/remove-from-ad/media_9.png"/> 
+</figure>
+
+<ol>
+<li>Enter the variable we created earlier into the computerName field&hellip; note that our variable name is also &ldquo;computerName&rdquo; and is case sensitive</li>
+<li>Enter &ldquo;True&rdquo; for the delete Computer field. If you prefer to simply Disable the computer account in AD instead of Delete, then enter False in this box</li>
+<li>Enter <strong>virtualMachineId</strong> in the VirtualMachineId proprties field in the right pane</li>
+</ol>
+<figure>
+    <img src="/images/remove-from-ad/media_10.png"/> 
+</figure>
+
+<p>Confirm that there are no Errors in the workflow. Errors will be indicated by a red exclamation point icon in the top right of workflow activities. Once you have confirmed there are no errors, click the <strong>Send</strong> button in the toolbar.</p>
+<figure>
+    <img src="/images/remove-from-ad/media_11.png"/> 
+</figure>
+
+<p>Enter a brief description in the box provided and click OK
+<figure>
+    <img src="/images/remove-from-ad/media_12.png"/> 
+</figure>
+</p>
+<p>Click OK on the Success message window
+<figure>
+    <img src="/images/remove-from-ad/Configure_vCAC_to_use_the_call-out_to_vCO_1.png"/> 
+</figure>
+</p>
+<h2 id="configure-vcac-to-use-the-call-out-to-vco">Configure vCAC to use the call-out to vCO</h2>
+<p>In order for the custom work to actually be used by vCAC we need to configure a custom property that tells it to enable one of the stubs. In our case, this is the MachineDisposing stub. You may refer to page 18 of the vCAC 5.1 Extensibility guide for a table listing each of the stubs and the corresponding property.</p>
+<p>To enable this particular call-out, add the following property to a blueprint that is to be added to a domain:</p>
+<h3 id="externalwfstubsmachinedisposing">ExternalWFStubs.MachineDisposing</h3>
+<p><strong>Note:</strong> no value is required for the property above, the property simply has to exist and be bound to the blueprint in order for it to be used.
+<figure>
+    <img src="/images/remove-from-ad/media_13.png"/> 
+</figure>
+</p>
+<p>Now, go ahead and provision a VM using that blueprint and confirm that a domain account was created in the Computers container or whatever OU it was configured to be placed in. Once you have confirmed that an account exists, Use the vCAC interface to Destroy the computer. This should trigger the MachineDisposing stub that we have created, resulting in the AD account beling deleted (or disabled) depending on how you configured your workflow.</p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcac/" rel="tag">vCAC</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/ad/" rel="tag">AD</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -148,9 +327,9 @@ throw &ldquo;No matching Computer found: &quot; + computerName;<!-- raw HTML omi
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/articles/learn-vco/258-free-vmware-vcenter-orchestrator-videos.html" rel="prev">
+		<a class="pager__link" href="/articles/learn-vco/257-enable-vcenter-orchestrator-vco-to-read-and-write-excel-files.html" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">FREE VMware vCenter Orchestrator Instructional Videos [Updated]</p>
+			<p class="pager__title">Enable vCenter Orchestrator (vCO) to read and write Excel files</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
@@ -199,57 +378,89 @@ throw &ldquo;No matching Computer found: &quot; + computerName;<!-- raw HTML omi
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Tutorial: Create your own vCloud Director vApp hot clone in less than one hour - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p style=&#34;text-align: justify;&#34;&gt;&lt;span style=&#34;line-height: 1.3em;&#34;&gt;This article is the first tutorial covering a practical use of the recently released VMware vCloud Director plug-in. It is meant to be educational rather than exhaustive.&lt;/span&gt;&lt;/p&gt;">
+	<meta name="description" content="This article is the first tutorial covering a practical use of the recently released VMware vCloud Director plug-in. It is meant to be educational rather than exhaustive.">
 		<meta property="og:title" content="Tutorial: Create your own vCloud Director vApp hot clone in less than one hour" />
-<meta property="og:description" content="&lt;p style=&#34;text-align: justify;&#34;&gt;&lt;span style=&#34;line-height: 1.3em;&#34;&gt;This article is the first tutorial covering a practical use of the recently released VMware vCloud Director plug-in. It is meant to be educational rather than exhaustive.&lt;/span&gt;&lt;/p&gt;" />
+<meta property="og:description" content="This article is the first tutorial covering a practical use of the recently released VMware vCloud Director plug-in. It is meant to be educational rather than exhaustive." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/140-vcloud-director-vapp-hot-clone.html" />
 <meta property="article:published_time" content="2011-03-15T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tutorial: Create your own vCloud Director vApp hot clone in less than one hour"/>
-<meta name="twitter:description" content="&lt;p style=&#34;text-align: justify;&#34;&gt;&lt;span style=&#34;line-height: 1.3em;&#34;&gt;This article is the first tutorial covering a practical use of the recently released VMware vCloud Director plug-in. It is meant to be educational rather than exhaustive.&lt;/span&gt;&lt;/p&gt;"/>
+<meta name="twitter:description" content="This article is the first tutorial covering a practical use of the recently released VMware vCloud Director plug-in. It is meant to be educational rather than exhaustive."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,168 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-03-15T00:00:00Z">March 15, 2011</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p style="text-align: justify;"><span style="line-height: 1.3em;">This article is the first tutorial covering a practical use of the recently released VMware vCloud Director plug-in. It is meant to be educational rather than exhaustive.</span></p>
 
+<p style="text-align: justify;">A while ago I wanted to make a copy of a running vCloud director vApp. When you use the vCloud Director user interface as an Organization Administrator you have the following options:</p>
+<p style="text-align: justify;"><img src="/images/vAppHotClone/vapphotclone-00.png" alt="alt" border="0" /></p>
+<p style="text-align: justify;">Copy operations are grayed out.</p>
+<p style="text-align: justify;">While there is certainly a very good reason for not supporting copy of running vApps I wanted to explore this further with leveraging the vCloud API through the vCenter Orchestrator plug-in for vCD.</p>
+<p style="text-align: justify;">By completing the following tutorial you will be able as an organization admin (or user granted with rights to copy vApps) to make a copy of a <b><span style="text-decoration: underline;">running</span></b> vApp to any of this organization virtual Data Center (vDC).</p>
+<p style="text-align: justify;">If you do not have the time or resources to do this or want a more sophisticated or different vCD Orchestration solution being implemented for you, please <a href="/question-answer/service/82-how-can-i-engage-vco-professional-services-.html" target="_blank">check here</a>.</p>
+<p style="text-align: justify;">Pre-requisites:</p>
+<ul>
+<li><a href="articles/learn-vco/89-how-to-configure-vcenter-orchestrator-vco.html" target="_blank">vCenter Orchestrator configured</a></li>
+<li><a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1026381" target="_blank">vCloud Director</a> and <a href="/articles/learn-vco/133-vmware-kb-tv-how-to-install-and-configure-vmware-vcenter-orchestrator-plug-in-for-vcloud-director.html" target="_blank">vCloud plug-in configured</a></li>
+</ul>
+<p style="text-align: justify;">Concepts covered in this article include:</p>
+<ol>
+<li>How to use the vCloud Director library workflows to create your own workflow</li>
+<li>How to map inputs, outputs, and attributes</li>
+<li>How to write custom scripts and actions using the vCloud API (4 simple lines)</li>
+</ol>
+<p>This tutorial should be suited for vCenter Orchestrator beginners.</p>
+<h2>Creating the hot clone vApp workflow</h2>
+<p>Log in the vCO Client.</p>
+<p>Click on the workflow tab, right Click on an existing category (or create yours) and click on new Workflow.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-01.png" alt="alt" border="0" /></p>
+
+<p>Name it "vApp hot clone". Click Ok</p>
+<p><img src="/images/vAppHotClone/vapphotclone-02.png" alt="alt" border="0" /></p>
+
+<p>Right Click on it / Edit.</p>
+<p>Set an initial version if desired, then click the Schema tab.</p>
+<p>In Action &amp; Workflow Select "Workflow Element" and drag and drop it on the schema.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-03.png" alt="alt" border="0" /></p>
+
+<p><img src="/images/vAppHotClone/vapphotclone-04.png" alt="alt" border="0" /></p>
+
+<p>Use the search filter with typing "clone vapp" and select Clone vApp, select Ok.</p>
+<p>Right Click on the Workflow and select "Synchronize Presentation". This will automatically create the input parameters and their presentation.</p>
+<p>Click "Save" in the bottom right corner. Get back to the schema and link the elements together.</p>
+<p>Click on the Clone vApp workflow in the schema.</p>
+<p>Click in the "Visual Binding" tab. Link the vAppOut Out parameter of Clone vApp to the "Out Attributes" box in the bottom right. Select OK to have the attribute created. You should obtain the following:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-05.png" alt="alt" border="0" /></p>
+<p>Get back to the schema and click on validate.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-06a.png" alt="alt" border="0" /></p>
+<p>If you forgot the end element click on the link to create it. if you did everything as described above you should have something like this:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-08.png" alt="alt" border="0" /></p>
+<p>What you have done is called "wrapping" : inserting an existing workflow into your own workflow and linking their input / outputs.</p>
+<p>You can now save and close and run your workflow (right click / Start). Make sure you pick up a vApp name different than the ones existing in all the organization. These must be unique across the organization.</p>
+<p>If your vApp is powered off or if it is powered on and you clone it to the same VDC: Success !</p>
+<p>If you want to clone the vApp to a different vDC it is not going to work:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-09.png" alt="alt" border="0" /></p>
+<p>If you select the failed workflow run and the variable tab on the right pane you will see at the bottom of the screen the following Exception message:</p>
+<p><span style="color: #ff0000;">"The requested operation could not be executed on vApp "XP2". Stop the vApp and try again."<br /></span></p>
+<p>While this is still an improvement over the vCD UI that does not allow copying running vApps you can have good reasons for wanting to clone vApps another vDC. For example you may want to make a copy of your vApp to a backup / test / dev VDC being backed with low cost storage / servers.</p>
+<p>Since at first, my tests were focusing on cloning a running vApp to another vDC any of my attempts to clone, compose (adding a new App from existing vApp or vApp template VMs), recomposing (updating an existing vApp) lead to this error message.</p>
+<p>To work around this I had implemented a complex vCenter + vCD workflow. While I had some success with it, this was not something VMware could support since using vCenter to operate differently than how vCloud director does could lead to possible compatibilities issues with current or in later vCD / vCenter versions. After some more trial and errors I finally found out that the error can be avoided if the destination vDC is the same as the source and imagined a simple solution !</p>
+<p><img src="/images/idea.png" alt="alt" /></p>
+<p>This can be implemented with making the clone in two steps. At first a hot clone in the same vDC and then moving the powered off cloned vApp from one vDC to another with a second clone and deleting the intermediary copy .</p>
+<p>For this we need first to modify the "Clone vApp" bindings to enforce cloning to the same vDC and not powering on / deploying the vApp to allow for the second clone:</p>
+<p>Click on the Clone vApp workflow on the schema / "Visual Binding" tab. Link the Clone vApp vdc input to the left bottom box. A dialog box will open to create a new attribute. Rename it "tempVdc" and click Ok. Repeat this operation for creating a tempPowerOn, tempDeploy and tempLinkedClone attributes. These will be defaulted to "false". Link clones are not enabled yet in vCloud Director so there is no need to keep this as an input parameter. You should get this.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-10.png" alt="alt" border="0" /></p>
+<p>Now we need to set the tempVdc attribute. In the Generic palette select "Scriptable task" and drop it on the schema above the vApp Clone workflow.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-11.png" alt="alt" border="0" /></p>
+<p>Click on the Scriptable task "OUT" tab, click on the + to choose an output attribute. Select tempVdc. You should get this:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-12.png" alt="alt" border="0" /></p>
+<p>Click on the Scriptable task "IN" tab, click on the + to choose an output attribute. Select vApp. You should get this:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-13.png" alt="alt" border="0" /></p>
+<p>Now, click on the Scriptable task "Scripting" tab. You are going to type"</p>
+<pre class="brush:javascript">"tempVdc = vApp.parent;"</pre>
+<p>For doing this rapidly without typo you click in the script box and then click on the tempVdc OUT link, press space, press "=", press space, click on the vApp IN link, press ".", press ctrl-space.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-13a.png" alt="alt" border="0" /></p>
+<p>This will open a completion list with all methods (green) and all attributes (red) available for an object of type vApp. Select Parent and finish your line with a ";"</p>
+<p><img src="/images/vAppHotClone/vapphotclone-14.png" alt="alt" border="0" /></p>
+<p>If you look at the vCO inventory you will see that all the vApps are under a given vDC. The parent attribute will set the tempVdc attribute with the vDC hosting the vApp we want to clone. Rename the scriptable box and link it as below:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-15.png" alt="alt" border="0" /></p>
+
+<p>Before performing the second clone we need to check if the input parameter destination vDC is different than the parent of the vApp. If not there is no need to continue the workflow. For this we are going to use a Custom Decision box from the Generic Palette.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-17.png" alt="alt" border="0" /></p>
+<p>Drag and drop it on the schema below the first clone. Rename it "Need relocation ?"</p>
+<p><img src="/images/vAppHotClone/vapphotclone-18.png" alt="alt" border="0" /></p>
+<p>Click on the Decision "IN" tab, click on the + to choose an input attribute. Select vdc and then tempVdc. You should get this:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-19.png" alt="alt" border="0" /></p>
+<p>Now, click on the Scripting" tab. You are going to type: {code}return (vdc.getReference().href != tempVdc.getReference().href);{/code}</p>
+<p><img src="/images/vAppHotClone/vapphotclone-20.png" alt="alt" border="0" /></p>
+<p>Why not write the following ? :</p>
+<pre class="brush:javascript">return (vdc != tempVdc);</pre>
+<p class="error">The vCD plug-in relies on the Java SDK, relying on the vCloud REST API. The Java SDK does HTTP GET, PUT, POST, DELETE of XML files and convert these back and forth to Java object. The vCD plug-in present these objects in JavaScript so you do not need to be a Java developer to write workflows. When converting twice a same REST object from XML to the Java object (process called deserialization, inflating or unmarshalling) it is possible that it creates two different Java objects and their Javascript representation. While future version of the plug-in may make sure this does not happen by re-implementing "==" it is best practice when comparing vCD objects to compare them by their unique ID. In REST case this is the HREF of the object that is a property that can be obtained by calling the getReference method. When objects have unique name within their parent it is also possible to compare the name property but this does not work for all objects. For example vApp Templates can have several time the same name within a vDC.</p>
+<p>Next we will need to rename the Cloned vApp before cloning it a second time (remember: vApp names are unique per Organizations). In the Generic palette select "Scriptable task" and drop it on the schema below the Decision box. Rename it "Rename vApp".</p>
+<p><img src="/images/vAppHotClone/vapphotclone-11.png" alt="alt" border="0" /></p>
+<p>Renaming a vApp generates a task in vCloud Director. Before getting to the next step we need to wait for the task to complete. For this we will use the "Wait for task" workflow. In Action &amp; Workflow Select "Workflow Element" and drag and drop it on the schema.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-03.png" alt="alt" border="0" /></p>
+
+<p>Use the search filter with typing "wait for task" and select as below.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-22.png" alt="alt" border="0" /></p>
+
+<p>Click in the "Visual Binding" tab. Link the task IN parameter of Wait For Task to the "IN" Attributes box in the bottom left. Select OK to have the attribute created. You should obtain the following:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-23.png" alt="alt" border="0" /></p>
+
+<p>Click on the IN tab of the "Rename vApp" Scriptable Task. Click on the + to choose an input attribute. Select vAppOut. vAppOut is the output of the first clone.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-21.png" alt="alt" border="0" /></p>
+<p>Click on the OUT tab . Click on the + to choose an output attribute. Select task. You should get this:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-24.png" alt="alt" border="0" /></p>
+
+<p>Now, click on the Scripting" tab. Type:</p>
+<pre class="brush:javascript">
+vAppOut.name = vAppOut.name + "-cloning";
+task = vAppOut.update();
+</pre>
+<p>We are appending "-cloning" to our temporary vApp before cloning it to its final name. The update method perform the update on the vCD server. Update returns a task that will be monitored by the "wait for task workflow"</p>
+<p><img src="/images/vAppHotClone/vapphotclone-25.png" alt="alt" border="0" /></p>
+
+<p>Now we need to add the second clone and the delete workflows. For the first one we can copy and paste the one we already have. Right click / Copy.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-26.png" alt="alt" border="0" /></p>
+<p>And Paste on the schema.</p>
+<p>In Action &amp; Workflow Select "Workflow Element" and drag and drop it on the schema.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-27.png" alt="alt" border="0" /></p>
+
+<p>Use the search filter with typing "delete vApp" and select as below.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-28.png" alt="alt" border="0" /></p>
+
+<p>Click in the "Visual Binding" tab. The autobinding feature may have already linked the vApp input parameter of our workflow to the one of the Delete vApp. Make sure you change this with linking the task IN parameter of Delete vApp to the vAppOut "IN" Attribute in the bottom left box. You should obtain the following:</p>
+
+<p><img src="/images/vAppHotClone/vapphotclone-29.png" alt="alt" border="0" /></p>
+
+<p>Since we copied and pasted the first clone we need to adjust the second clone Visual Bindings:</p>
+<ul>
+<li>Click on the second Clone vApp workflow in the schema</li>
+<li>Click the Visual Binding tab</li>
+<li>Relink "Clone vApp" vApp to "in Attribute" vApp Out: We need to clone the result of the first clone, not a second time the original vApp.</li>
+<li>Relink "Clone vApp" vdc to "in Parameter" vdc : We now need to clone to the vDC that was provided as input of our workflow.</li>
+<li>Relink "Clone vApp" powerOn and deploy to their "in Parameter" counterpart : We want to observe these settings as well.</li>
+<li>Relink vAppOut to the top right out parameter box. This will open a window to create a out parameter. Name it clonedVApp: it is best practice to output the result of your workflow (here the cloned vApp). This will allow to insert this workflow in other workflows that will be able to use the returned vApp.</li>
+</ul>
+
+<p>Now make sure all the boxes are linked. Once done you can use the validation to help you.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-06a.png" alt="alt" border="0" /></p>
+<p>Here the former linked clone input parameter generates a warning since we replaced it with an attribute with a fixed value. You can Click on the Quick fix action "Delete parameter link" to get rid of it.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-30.png" alt="alt" border="0" /></p>
+<p>Your workflow should look like this:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-31.png" alt="alt" border="0" /></p>
+<p>Increment your version number with an appropriate comment.</p>
+<p>Save and close. Run your workflow again. This time it will last more time but should be successful at hot cloning a vApp from one vDC to another one.</p>
+<p><img src="/images/vAppHotClone/vapphotclone-16.png" alt="alt" border="0" /></p>
+
+<p>In the Tools menu / User Preferences / Inventory there is a "Use contextual menus in inventory" check box. You can check it if not already done.</p>
+<p>Now From the Inventory tab you can start your hot vApp Clone with right clicking on a selected vApp:</p>
+<p><img src="/images/vAppHotClone/vapphotclone-32.png" alt="alt" /></p>
+<p>Congratulations, you should now have a workflow capable of performing a hot clone of a vApp in your vCloud Director environment.</p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcd/" rel="tag">vCD</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +361,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

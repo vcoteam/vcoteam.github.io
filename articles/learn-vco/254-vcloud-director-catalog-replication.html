@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,141 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-03-05T00:00:00Z">March 05, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>vCloud Director has a nice feature allowing to organize vApps into catalogs. If like me you need to replicate these catalog across organization or even different vCloud hosts you may find your solution here.</p>
 
+
+<p>I have written a solution to do it a long time ago but never had the time to release it publicly. It is now done and here are the features.</p>
+<h1>Features</h1>
+<p>This package comes with a rich set of features.</p>
+<h2>Catalog comparison and replication</h2>
+<p>Replicate a catalog from one source catalog to a destination organization. If a catalog with the same name exists in the destination it will be modified to have the same content as in the source catalog. If not a new catalog with the same name will be created. The replication is one way (source to destination).<br /> The actions taken are:</p>
+<ul>
+<li>Delete catalog items in destination not present in source</li>
+<li>Update name and description of previously copied catalog items that would have been changed in the destination</li>
+<li>Copy new source catalog item to destination (download once to vCO, upload to one or more vCD)</li>
+</ul>
+<p>Each of these are optional. Destination VDC is also optional. If provided all the elements to be copied will have for destination the provided vDC. If not the workflow will find destination VDCs with matching names. If not the workflow will raise an exception.</p>
+<h2>Connected replication</h2>
+<p>When using the "Replicate catalog" workflow a single vCO server is used to download the vApp Templates from the vCloud Director hosting the source vApp Templates and upload these to the other vCloud Director. This requires to have the two vCloud hosts configured in vCO.</p>
+<p>vCloud Director source -----------&gt; vCO -----------&gt; vCloud Director Destination</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/22733/Catalog+replication.png" alt="Catalog replication.png" /></p>
+<p>While the vCO server could be located on any network having access to both vCloud servers the vCO server should be located to optimize the network speed for example if the upload speed between the source and destination is a lot slower then the download speed the vCO server should be on the same network as the destination.</p>
+<p>Several instances of the same workflow can run on the same vCO server with different destinations (there is a locking system to avoid uploading a file being downloaded). Below an example of a vCO server replicating a catalog from one cloud source to two cloud destinations.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/22772/multiple_replications.png" alt="multiple_replications.png" /></p>
+<h2>Replication from filesystem</h2>
+<p>When using the "Export catalog to filesystem" a first vCO server is used to download the vApp Templates from the vCloud Director hosting the source vApp Templates. XML files describing the catalog and the catalog items are also downloaded.</p>
+<p>You can then use the "Replicate catalog from filesystem" workflow to compare the file based catalog to the one on the destination server.</p>
+<p>The main idea behind this two steps replication is to optimize the replication process by using a third party replication using deduplication, compression, safe transfers.</p>
+<p>vCloud Director source -&gt; vCO 1 -&gt; Third party replication system source -----------&gt; Third party replication system destination -&gt; vCO 2 -&gt; vCloud Director Destination</p>
+<p>A first vCO server is located on the same network as the source vCloud Director to download the vAppTemplates as fast as possible to a filesystem hosted on a replication system (this requires having this filesystem accessible from vCO) . The replication system copies the changed blocks to the destination replication system. Once the replication finished the destination vCO upload the new files to the vCloud DIrector on the same network.</p>
+<h2>Parallel operations</h2>
+<p>The workflows use and abuse asynchronous sub workflows to make several operations running at the same time. and also copies the VMDK files within a vApp Templates in parallel. The level of parallelism is configurable.</p>
+<p>The "Replicate catalog" workflow ran.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/22729/-1-+Replicate+catalog.png" alt="-1- Replicate catalog.png" /></p>
+<p>It started one to many "Copy catalog item" workflows in parallel</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/22730/-2-+Copy+catalog+item.png" alt="-2- Copy catalog item.png" /></p>
+<p>The "Copy catalog item" ran a single "Copy vApp Template multithreade" workflow</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/22731/-3-+Copy+vApp+Template+multithreaded.png" alt="-3- Copy vApp Template multithreaded.png" /></p>
+<p>Which in turn ran one to many "Copy file across vAppTemplates" workflows in parallel</p>
+<h2><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/22732/-4-+Copy+file+across+vApp+Templates.png" alt="-4- Copy file across vApp Templates.png" /></h2>
+<p>Which in turn runs:</p>
+<ul>
+<li>"Download single file from vApp Template" workflow (not shown on the picture since in this case it was already downloaded previously and the workflow optimize the process with not downloading the vApp Template again)</li>
+<li>Upload single file to vApp Template which will run several "Upload File chink to vAppTemplate" in serial (parallel upload of the chunks is not supported, they need to arrive in the right order).</li>
+</ul>
+<h2>Safer uploads</h2>
+<p>Sending over a multi GB file over http may cause reliability issues. If the upload fails you have to restart again. To avoid this the workflows uploads the files in chunks of a configurable size. If a chunk fails to be uploaded the workflow retries to upload it hence avoiding the need to restart completely. The chunk size is configurable.</p>
+<p>Here I have run the same replication as before. At 14:35 I have unpluged my vCO server network connection to make the file chunk being uploaded failed. I have then plugged it again to simulate a temporary network issue. As you can see below the upload was resumed. The file chunk that was uploaded starting at 14:36:32 seconds was the same as the previous one (this can be checked by clicking on the workflow run and check the variables tab) . This is why we had 11 chunks uploaded in the previous replication and 12 in this one.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/22752/Safe-upload.png" alt="Safe-upload.png" /></p>
+<p>The other advantage is since vCO is an orchestration engine supporting checkpointing if the replication workflow would be stopped because of vCO server maintenance (i.e Windows update rebooting) the workflow would resume from the point where it uploaded the last chunk (as long as the maintenance time is not longer then the timeout vCloud Director has for waiting on the vApp Template update which is one hour according to my observation).</p>
+<h2>vApp Template Metadata</h2>
+<p>The vApp Templates metadatas are copied as part of the catalog replication (connected or from filesystem). If the metadatas are copied from a vCloud Host using a System admin organization and credentials to a host connection using a specific organization then the hidden and read only metadata will be created as read / write (this is the only option when connecting as org admin).</p>
+<h2>Not included</h2>
+<p>There are a lot of things that are doable and other that were not because of lack of API support in vCLoud Director or lack of time to add more features:</p>
+<ul>
+<li>Does not replicate medias : There is no API yet to download a media so no replication possible.</li>
+<li>Does not reconnect the vApp Template to the networks of the target cloud. This requires deploying the template, delete it from the catalog match the network to the ones in th e new environment, capture the modified vApp as a vApp Template. You can do this manually (one time operation) or create your workflow to do it (there is something similar already implemented in the mass VM import workflow in communities). The updated vAppTemplate will not be considered as a new one and will not be deleted / overwritten by the replication mechanism.</li>
+<li>Does not clean up the downloaded files. A separate workflow (scheduled or run by policy) could do this.</li>
+<li>The update of the catalog item does not update metadatas. I will consider adding it if this is something people ask for.</li>
+</ul>
+<h1>Documentation</h1>
+<p>Import the replication package using the vCO client.</p>
+<p>The "Catalog Replication Settings" saves all the configuration in a configuration element. Open either the vSphere Web client or the vCO client and search for the "Catalog Replication Settings" workflow.</p>
+<h2>Catalog Replication Settings</h2>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23451/Screen+Shot+2012-10-15+at+3.32.36+PM.png" alt="Screen Shot 2012-10-15 at 3.32.36 PM.png" /></p>
+<p>Click on it, then right click / "Run a workflow".</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23452/Screen+Shot+2012-10-15+at+3.33.07+PM.png" alt="Screen Shot 2012-10-15 at 3.33.07 PM.png" /></p>
+<h3>General configuration</h3>
+<p>The first step is to define a path where vCO will download the vApp Templates. The pre-requesites are:</p>
+<ul>
+<li>There is enough disk space in this path (if you use the appliance you will have to mount an NFS share or create an additional drive)</li>
+<li>You have set proper share / file permissions</li>
+<li>The user running the vCO service has access to this path (by default this is not the case if this is a network share)</li>
+<li>You have changed the vCO access rights as documented <a href="http://pubs.vmware.com/vsphere-51/topic/com.vmware.vsphere.vco_install_config.doc/GUID-19E74C8D-4256-4ECC-AF5E-FC0241B37450.html">here</a>.</li>
+</ul>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23461/Screen+Shot+2012-10-15+at+5.19.49+PM.png" alt="Screen Shot 2012-10-15 at 5.19.49 PM.png" /></p>
+<h3>Replicate a catalog settings</h3>
+<p>The next step is for configuring the vApp Template transfer. This are the settings used when running the "Replicate a Catalog" workflow. You can set the number of parallel copies (one copy = 1 download + 1 upload) and a time out. When timing out the copy will be canceled. This is to avoid a catalog replication to ait forever on a copy that would be stalled.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23454/Screen+Shot+2012-10-15+at+3.35.25+PM.png" alt="Screen Shot 2012-10-15 at 3.35.25 PM.png" /></p>
+<p>The next setting is to set the number of parallel copies within a single vApp Template. For example if a vApp Template has several VMs with several disks these can be copied concurently.</p>
+<h2><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23456/Screen+Shot+2012-10-15+at+3.36.05+PM.png" alt="Screen Shot 2012-10-15 at 3.36.05 PM.png" /></h2>
+<h2>Export a catalog to a filesystem</h2>
+<p>These settings apply for the "Export a catalog to a filesystem" workflow. These are similar settings as above except it has an option to keep some vApp Template settings during the (lossless) download. If this option is selected it is not possible to download files concurently within a vApp Template.</p>
+<h2><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23457/Screen+Shot+2012-10-15+at+3.36.29+PM.png" alt="Screen Shot 2012-10-15 at 3.36.29 PM.png" /></h2>
+<p>If the lossless option was not selected it is possible as before to provide the number of concurent downloads.</p>
+<h2><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23458/Screen+Shot+2012-10-15+at+3.36.56+PM.png" alt="Screen Shot 2012-10-15 at 3.36.56 PM.png" /></h2>
+<h2>Replicate a catalog from the filesystem</h2>
+<p>The same settings as above but this time when uploading the vApp Templates.</p>
+<h2><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23459/Screen+Shot+2012-10-15+at+3.37.18+PM.png" alt="Screen Shot 2012-10-15 at 3.37.18 PM.png" /></h2>
+<p>And the same settings for the the vApp template file. The last one is for specifying the size of each chunk when uploading. This allows to have safer uploads that can be resumed in case of a network issue or vCO host maintenance.</p>
+<h2><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23460/Screen+Shot+2012-10-15+at+3.37.30+PM.png" alt="Screen Shot 2012-10-15 at 3.37.30 PM.png" /></h2>
+<h1>Operations</h1>
+<p>Now that the replication configuration is done it is possible to start the replication workflows.</p>
+<h2>Replicating a catalog using a single vCO server</h2>
+<p>To replicate a catalog using a single vCO orchestrating a source and destination cloud run the "Replicate a catalog" workflow.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23551/Screen+Shot+2012-10-17+at+2.10.33+PM.png" alt="Screen Shot 2012-10-17 at 2.10.33 PM.png" /></p>
+<p>The first parameter is the source catalog.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23555/Screen+Shot+2012-10-17+at+2.13.59+PM.png" alt="Screen Shot 2012-10-17 at 2.13.59 PM.png" /></p>
+<p>The next step is to provide a destination organization and a destination VDC. If the catalog does not exist in the destination organization it is created. If it exists it will be updated. A one time full copy will be required before the workflow can snychronize the changes.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23556/Screen+Shot+2012-10-17+at+2.14.57+PM.png" alt="Screen Shot 2012-10-17 at 2.14.57 PM.png" /></p>
+<p>The next step defines what are the changes to apply. Beware that if you already have catalog items in the destination catalog the workflow will delete these on the first run and then copying the ones from the source catalog if the copy and delete options are selected.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23557/Screen+Shot+2012-10-17+at+2.16.14+PM.png" alt="Screen Shot 2012-10-17 at 2.16.14 PM.png" /></p>
+<p>You have the option to run the synchronization now or to Schedule it. Scheduling a recurrent task is a good way to automate the synchronization. Another way is to trigger the workflow using the vCloud Director notification on catalog changes.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23558/Screen+Shot+2012-10-17+at+2.16.43+PM.png" alt="Screen Shot 2012-10-17 at 2.16.43 PM.png" /></p>
+
+<p>The workflow will synchronize the catalog.</p>
+<h2>Replicating a catalog to and from the filesystem</h2>
+<p>To optimize the replication speed / bandwith usage you may want to use a third party system leveraging deduplication, compression and other mechanisms. To do this you need to run the "Export a catalog to a filesystem" workflow on the vCO server local to your source vCloud Director. You need to provide the catalog that you want to replicate.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23559/Screen+Shot+2012-10-17+at+3.04.06+PM.png" alt="Screen Shot 2012-10-17 at 3.04.06 PM.png" /></p>
+<p>Then you need to provide the export path. As a default it will use the one you have configured previously.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23560/Screen+Shot+2012-10-17+at+3.04.49+PM.png" alt="Screen Shot 2012-10-17 at 3.04.49 PM.png" /></p>
+<p>As before you can run the workflow immediately or schedule it.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23561/Screen+Shot+2012-10-17+at+3.05.03+PM.png" alt="Screen Shot 2012-10-17 at 3.05.03 PM.png" /></p>
+<p>Once the export completed and your third party replication is completed.</p>
+
+<p>Run "Replicate a catalog from the filesystem" on the vCO server local to your destination cloud. This vCO server must have access to a copy of the files that were exported. Provide the full path to the catalog file (The catalog file name is the catalog name + ".xml").</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23562/Screen+Shot+2012-10-17+at+3.24.28+PM.png" alt="Screen Shot 2012-10-17 at 3.24.28 PM.png" /></p>
+<p>Select the destination organization and VDC.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23563/Screen+Shot+2012-10-17+at+3.25.28+PM.png" alt="Screen Shot 2012-10-17 at 3.25.28 PM.png" /></p>
+<p>Select the synchronization options.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23564/Screen+Shot+2012-10-17+at+3.25.48+PM.png" alt="Screen Shot 2012-10-17 at 3.25.48 PM.png" /></p>
+<p>And as always you can run it right away or schedule it.</p>
+<p><img class="jive-image" src="http://communities.vmware.com/servlet/JiveServlet/downloadImage/23566/Screen+Shot+2012-10-17+at+3.26.08+PM.png" alt="Screen Shot 2012-10-17 at 3.26.08 PM.png" /></p>
+
+<h1>Download</h1>
+<p>You can find the package on the <a href="http://communities.vmware.com/docs/DOC-20591" target="_blank">vCenter Orchestrator Communities</a></p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcd/" rel="tag">vCD</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +334,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

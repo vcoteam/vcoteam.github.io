@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Making vCO Workflow Wrappers - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;A vCO workflow wrapper is a set of workflow tasks that are added at the beginning of a workflow in order to take string values and look up a more complex data type or pre-defining inputs using attributes. You may have done these in the past already in vCO. Some examples would be finding a virtual machine by name or finding an Active Directory user by email address.&lt;/p&gt;&lt;p&gt;If you&#34;re running the vCO workflow from within the vCO client or vSphere web client, you probably don&#34;t need to worry about this as both of those tools understand the complex data types that come with plugins. On the other hand, if you&#34;re calling the vCO workflow from a tool like vCAC, it becomes extremely important to make it so that the vCO workflows only require strings as inputs--meaning that you need to add a vCO workflow wrapper to convert these string values to their more complex data types.&lt;/p&gt;">
+	<meta name="description" content="A vCO workflow wrapper is a set of workflow tasks that are added at the beginning of a workflow in order to take string values and look up a more complex data type or pre-defining inputs using attributes.">
 		<meta property="og:title" content="Making vCO Workflow Wrappers" />
-<meta property="og:description" content="&lt;p&gt;A vCO workflow wrapper is a set of workflow tasks that are added at the beginning of a workflow in order to take string values and look up a more complex data type or pre-defining inputs using attributes. You may have done these in the past already in vCO. Some examples would be finding a virtual machine by name or finding an Active Directory user by email address.&lt;/p&gt;&lt;p&gt;If you&#34;re running the vCO workflow from within the vCO client or vSphere web client, you probably don&#34;t need to worry about this as both of those tools understand the complex data types that come with plugins. On the other hand, if you&#34;re calling the vCO workflow from a tool like vCAC, it becomes extremely important to make it so that the vCO workflows only require strings as inputs--meaning that you need to add a vCO workflow wrapper to convert these string values to their more complex data types.&lt;/p&gt;" />
+<meta property="og:description" content="A vCO workflow wrapper is a set of workflow tasks that are added at the beginning of a workflow in order to take string values and look up a more complex data type or pre-defining inputs using attributes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/266-making-vco-workflow-wrappers.html" />
 <meta property="article:published_time" content="2013-09-11T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Making vCO Workflow Wrappers"/>
-<meta name="twitter:description" content="&lt;p&gt;A vCO workflow wrapper is a set of workflow tasks that are added at the beginning of a workflow in order to take string values and look up a more complex data type or pre-defining inputs using attributes. You may have done these in the past already in vCO. Some examples would be finding a virtual machine by name or finding an Active Directory user by email address.&lt;/p&gt;&lt;p&gt;If you&#34;re running the vCO workflow from within the vCO client or vSphere web client, you probably don&#34;t need to worry about this as both of those tools understand the complex data types that come with plugins. On the other hand, if you&#34;re calling the vCO workflow from a tool like vCAC, it becomes extremely important to make it so that the vCO workflows only require strings as inputs--meaning that you need to add a vCO workflow wrapper to convert these string values to their more complex data types.&lt;/p&gt;"/>
+<meta name="twitter:description" content="A vCO workflow wrapper is a set of workflow tasks that are added at the beginning of a workflow in order to take string values and look up a more complex data type or pre-defining inputs using attributes."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,204 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-09-11T00:00:00Z">September 11, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>A vCO workflow wrapper is a set of workflow tasks that are added at the beginning of a workflow in order to take string values and look up a more complex data type or pre-defining inputs using attributes. You may have done these in the past already in vCO. Some examples would be finding a virtual machine by name or finding an Active Directory user by email address.</p>
+<p>If you&rsquo;re running the vCO workflow from within the vCO client or vSphere web client, you probably don&rsquo;t need to worry about this as both of those tools understand the complex data types that come with plugins. On the other hand, if you&rsquo;re calling the vCO workflow from a tool like vCAC, it becomes extremely important to make it so that the vCO workflows only require strings as inputs&ndash;meaning that you need to add a vCO workflow wrapper to convert these string values to their more complex data types.</p>
+<p>There are two ways to create this wrapper functionality: add a pre-built task or workflow that came with the plugin, or to pull back all objects of that type and then pick through the array where some conditions match.</p>
+<p>Let&rsquo;s take a look at this further.</p>
+<p>A typical use case might be that you want to tell vCO to clone a virtual machine. To do this, we can use the vCenter plug in and the built in workflow called &ldquo;Clone Virtual Machine, No Customization&rdquo;. Below is a look at all the inputs and data types that this workflow is expecting to be provided with:</p>
+<p>You&rsquo;ll note that we have some complex data types. One of which is the field called &ldquo;vm&rdquo; which is a type of VC:VirutalMachine. This is a complex data type for the vCenter plugin (as denoted by the VC) for the object of virtual machines.</p>
+<p>First we should figure out if there&rsquo;s something already built to help us find a virtual machine by its name with the output being a VC:VirtualMachine:</p>
+<ol>
+<li>
+<p>Open the workflow you want to change and press edit. If you&rsquo;re using an out of the box one, it&rsquo;s very recommended (and often required) to make a duplicate of the workflow in order to edit it.
+<figure>
+    <img src="/images/wrapper/wrapper1_1.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Go into the schema tab and at the top left corner of the workflow you&rsquo;ll see a search field</p>
+</li>
+<li>
+<p>I usually enter in what kind of object it is I&rsquo;m looking for. Here I searched for &ldquo;virtual machine&rdquo;. There is no science to this part. I simply know that I want a workflow that find the complex VC:VirtualMachine type by a string that I provide to it&ndash;probably the machine name
+<figure>
+    <img src="/images/wrapper/wrapper1_2a.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>After some perusing the list of results, I find a workflow called &ldquo;Get Virtual Machine by Name&rdquo;. Hey, that sounds about right!
+<figure>
+    <img src="/images/wrapper/wrapper1_3.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Drag and drop that task into the beginning of your workflow</p>
+</li>
+<li>
+<p>Go to the inputs tab, select the &ldquo;vm&rdquo; parameter and click the button that says &ldquo;Move as attribute&rdquo;.
+<figure>
+    <img src="/images/wrapper/wrapper1_5.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Still in the inputs screen, click the &ldquo;Add Parameter&rdquo; button. Rename the new parameter something descriptive like &ldquo;vmName&rdquo; and leave it as a string type.
+<figure>
+    <img src="/images/wrapper/wrapper1_6.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Switch over to the General tab and find the &ldquo;vm&rdquo; parameter that we just moved to be an attribute. Because the &ldquo;Get Virtual Machine from name&rdquo; task outputs the virtual machine into an array of virtual machines (for potential multiple results), we need to tweak the type of our attribute so that it will be able to match up to the output of the &ldquo;Get Virtual Machine from name&rdquo; task. Click on the VC:VirtualMachine type associated to the &ldquo;vm&rdquo; parameter and a box will pop up. At the top left of the box, use the radio button to set the type to &ldquo;Array of&rdquo; and click &ldquo;Accept&rdquo;.
+<figure>
+    <img src="/images/wrapper/wrapper1_7.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Go back to the schema tab, and click the edit button on the &ldquo;Get Virtual Machine&rdquo; task.</p>
+</li>
+<li>
+<p>Go to the Visual Binding tab and link the input of &ldquo;vmName&rdquo; to the search criteria in the task, and the output of &ldquo;vms&rdquo; to the &ldquo;vm&rdquo; attribute.
+<figure>
+    <img src="/images/wrapper/wrapper1_8.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Close that task screen. Congrats! you have just created a vCO workflow wrapper for the VC:VirtualMachine type. Your vCO workflow will now accept a string name of the virtual machine, find the complex object of VC:VirtualMachine, and pass it to the later &ldquo;CloneVM&rdquo; task, where it&rsquo;s needed.</p>
+</li>
+</ol>
+<p>OK, so now let&rsquo;s take a more complex issue of creating a wrapper for a object type that doesn&rsquo;t have a handy piece of code already built for you. We can still use this copy of the &ldquo;Clone Virtual Machine, no customization&rdquo; workflow from the above instructions to demonstrate how we do this.</p>
+<p>The rough process is that we&rsquo;re going to create a scriptable task, have it pull all of the objects of that type into an array, and then compare the sting input from the user with a value on the object (usually input string = object name).</p>
+<ol>
+<li>
+<p>You should still be in the workflow from above if you&rsquo;re following along, if not open the workflow you want to change and press edit. If you&rsquo;re using an out of the box one, it&rsquo;s very recommended (and often required) to make a duplicate of the workflow in order to edit it.</p>
+</li>
+<li>
+<p>We&rsquo;re going to now create a wrapper for the datastore input value. We&rsquo;ll start in the inputs tab, because we know that there&rsquo;s no helpful bits for looking up. Select the &ldquo;datastore&rdquo; parameter and press the button to &ldquo;Move as Attribute&rdquo;
+<figure>
+    <img src="/images/wrapper/wrapper2_1.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Create a new string input parameter in this screen and name it something descriptive. I named mine &ldquo;stringDatastore&rdquo;
+<figure>
+    <img src="/images/wrapper/wrapper2_2.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Go into the schema tab and at the top left corner of the workflow and, if you&rsquo;re not already, go to the Generic tab in the toolbar to the right.</p>
+</li>
+<li>
+<p>Drag a &ldquo;Scriptable Task&rdquo; task into the workflow. It doesn&rsquo;t really matter where it goes as long as it&rsquo;s before the task that needs it&ndash;so anywhere before the &ldquo;Clone VM&rdquo; activity.
+<figure>
+    <img src="/images/wrapper/wrapper2_3.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Press edit on the Scriptable Task and do some housekeeping by giving it a descriptive task name in the Info tab&rsquo;s &ldquo;Name&rdquo; field
+<figure>
+    <img src="/images/wrapper/wrapper2_4.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Go to the &ldquo;In&rdquo; tab, and press the &ldquo;Bind to workflow parameter/attribute&rdquo;. Select your string input that we&rsquo;ll be using as our lookup criteria.
+<figure>
+    <img src="/images/wrapper/wrapper2_5.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Go to the &ldquo;Out&rdquo; tab, and press the &ldquo;Bind to workflow parameter/attribute&rdquo;. Select your complex data type that you want to end up with and store in an attribute to be used later in the workflow.
+<figure>
+    <img src="/images/wrapper/wrapper2_6.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Here comes the fun part. Go to the &ldquo;Scripting&rdquo; tab and click on the &ldquo;Search API&rdquo; button. In the resulting search field, put in what you&rsquo;re looking for&ndash;in this case, it&rsquo;s &ldquo;datastore&rdquo;. Make it easier on yourself by filtering to only show attributes and methods. Immediately I see a few methods that say they return all datastores in the description. <em>TIP</em> I find it easiest to call the VcPlugin methods. Use these ones when you can. We&rsquo;re in luck, there&rsquo;s a VcPlugin method to &ldquo;getAllDatastores&rdquo;.
+<figure>
+    <img src="/images/wrapper/wrapper2_7.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Click the &ldquo;Go to selection&rdquo; button, and then the &ldquo;Close&rdquo; button. It will land you back on the scripting screen with the method highlighted. You call call it using standard JavaScript addressing. This would be &ldquo;VcPlugin.getAllDatastores()&rdquo;.
+<figure>
+    <img src="/images/wrapper/wrapper2_8.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Now we have to confirm the field on the datastore object that we&rsquo;ll be comparing our input string against. Again, click the &ldquo;Search API&rdquo; button. Search for &ldquo;datastore&rdquo; again, but this time filter on &ldquo;Types &amp; enumerations&rdquo;. You&rsquo;ll see &ldquo;VC/VC:Datastores&rdquo; so click &ldquo;Go to selection&rdquo; then &ldquo;Close&rdquo; to get back to the scripting screen.
+<figure>
+    <img src="/images/wrapper/wrapper2_9a.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>On the left side of the screen, it now gives me details about the object type. It tells me that there is a &ldquo;name&rdquo; field on this object, so I will be able to compare my input string to the object&rsquo;s &ldquo;name&rdquo; property.
+<figure>
+    <img src="/images/wrapper/wrapper2_10.jpg"/> 
+</figure>
+</p>
+</li>
+<li>
+<p>Here comes the JavaScript. Basically all we&rsquo;re doing here is creating a variable array to catch all the datastores. We then count how many there are in the array, then compare each one&rsquo;s name, one at a time, to the string until we get a match. When we get a match, we&rsquo;re going to assign it to our output variable. This code snippet comes in handy:</p>
+</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">datastores</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">VcPlugin</span>.<span style="color:#a6e22e">getAllDatastores</span>();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arraylength</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">datastores</span>.<span style="color:#a6e22e">length</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>; <span style="color:#a6e22e">arraylength</span>){
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">datastores</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">stringDatastore</span>){
+    <span style="color:#a6e22e">datastore</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">datastores</span>[<span style="color:#a6e22e">i</span>];
+    }
+<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+    <img src="/images/wrapper/wrapper2_11.jpg"/> 
+</figure>
+
+<ol start="14">
+<li>Close this scripting task. Congratulations! You have now created a wrapper to lookup a complex object type from its name without any help from pre-created workflows.</li>
+</ol>
+<p>Now that you know how to build a wrapper for your workflows you can call them from tools like VMware&rsquo;s vCloud Automation Center (vCAC). For more information on how to make calls to vCO from vCAC, please visit <a href="http://vcacteam.info/index.php/articles/vcac-extensibility/advanced-extensibility/62-extend-vcac-workflow-to-call-vco-workflow"  target="_blank" rel="noreferrer noopener" >How to call vCO workflows from vCAC</a></p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -184,57 +385,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

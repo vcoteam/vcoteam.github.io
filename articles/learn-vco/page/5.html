@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -122,7 +129,12 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    vCloud Automation Center has several constructs such as blueprints, business groups, reservations to manage the virtual machines lifecycle and governance policies.
+While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture.
+The vCloud Automation Center Infrastructure as a service data model (vCAC IaaS) vCAC IaaS has an extensible model consisting of different metamodels.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -138,7 +150,10 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    It seems everyday the interest in vCenter Orchestrator (vCO) is growing. I love this because it brings more and more use cases to our attention. One such use case is the need to call vCO workflows via its REST API. In order to keep this article generic, but useful, I will work with the free RESTClient plug-in/add-on for Firefox as the client. The general process here will be similar to what you may need to do from your software or portal to integrate with vCO&rsquo;s REST API.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -154,7 +169,11 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    On a recent project, I was having trouble figuring out why invoking a SOAP operation kept failing with the vCO SOAP plug-in. The inputs I was providing appeared to be correct and worked just fine with soapUI. This short tutorial will teach you how to use the SOAPInterceptor to display the Header and Body that the SOAP plug-in is sending.
+SOAP Operation Auto-Generated Workflow   A typical Invoke Operation workflow looks similar to the above image.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/267-how-to-use-the-soapinterceptor-to-see-the-soap-header-and-body.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -170,7 +189,11 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    A vCO workflow wrapper is a set of workflow tasks that are added at the beginning of a workflow in order to take string values and look up a more complex data type or pre-defining inputs using attributes. You may have done these in the past already in vCO. Some examples would be finding a virtual machine by name or finding an Active Directory user by email address.
+If you&rsquo;re running the vCO workflow from within the vCO client or vSphere web client, you probably don&rsquo;t need to worry about this as both of those tools understand the complex data types that come with plugins.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/266-making-vco-workflow-wrappers.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -186,9 +209,10 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    // Create and execute the command: var command = new Command(cmd); command.execute(true);
-// Display command results and output var scriptResult = command.result; System.debug(&ldquo;Script Result: &quot; + scriptResult);
-var scriptOutput = command.output; System.debug(&ldquo;Script Output: &quot; + scriptOutput);
+    PERL Logo   The goal of this tutorial is to create a simple workflow with a single string input that will be passed to a locally hosted Perl script for execution. The results of the script will be returned to vCO and stored in the workflow output. This could come in handy if you have existing systems that already have Perl based management scripts and you wish to incorporate their automation into your Orchestration policies.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/265-how-to-run-a-perl-script-from-a-vcenter-orchestrator-workflow.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -204,7 +228,11 @@ var scriptOutput = command.output; System.debug(&ldquo;Script Output: &quot; + s
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    Get Supported Hardware Schema   Quite some time ago I had the need to retrieve the supported HW versions for an environment.. I don&rsquo;t remember what the project was, but it wasn&rsquo;t terribly important so I didn&rsquo;t bother digging deeper to figure things out - I just worked around the issue. Last month William Lam posted an article on how to do this with PERL.
+In this article Which Virtual Hardware Versions (VM Compatibility) Are Supported In vSphere?
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/261-get-supported-hardware-versions-from-cluster.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -220,23 +248,10 @@ var scriptOutput = command.output; System.debug(&ldquo;Script Output: &quot; + s
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    // Nothing found so throw exception: throw &ldquo;No matching Computer found: &quot; + computerName;
+    As vCloud Automation Center (vCAC) gains traction, so too does the need for details on how to extend it using vCenter Orchestrator (vCO). I have kept an eye out for good articles on vCAC and just saw a great one at the DailyHypervisor.com blog around Adding a computer account to Active Directory OU. This is something that we had done for LifeCycleManager (LCM) quite some time back and feel it is a good candidate for a vCO-centeric article.
   </div>
-</article><article class="list__item post">
-
-  <header class="list__header">
-    <h3 class="list__title post__title ">
-      <a href="/articles/learn-vco/258-free-vmware-vcenter-orchestrator-videos.html" rel="bookmark">
-        FREE VMware vCenter Orchestrator Instructional Videos [Updated]
-      </a>
-    </h3>
-    <div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-04-08T00:00:00Z">April 08, 2013</time></div>
-</div>
-  </header>
-  <div class="content list__excerpt post__content clearfix">
-    
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -252,9 +267,10 @@ var scriptOutput = command.output; System.debug(&ldquo;Script Output: &quot; + s
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    $DataTable = New-Object &ldquo;System.Data.DataTable&rdquo;
-$OleDbAdapter = New-Object System.Data.OleDb.OleDbDataAdapter $qry,$connString $RowsReturned = $OleDbAdapter.Fill($DataTable)
-ForEach ($DataRec in $DataTable) { Write-host &ldquo;Hostname=$($DataRec.Hostname) Domain=$($DataRec.Domain) FQDN=$($DataRec.fqdn) IP Address=$($DataRec.&lsquo;IP Address&rsquo;) Memory=$($DataRec.&lsquo;Memory (GB)') CPU Count=$($DataRec.cpu) Processed=$($DataRec.processed)&rdquo; }
+    The purpose of this article is to provide readers with instructions on how to give vCO the ability to read and write Microsoft Excel files (xls / xlsx). Yes, it is 2013 yet there are plenty of reasons why organizations might still be using an Excel spreadsheet instead of a database table.. We won't dwell on that here, instead we'll focus on providing those organizations with a step-by-step guide to provide such functionality to vCenter Orchestrator.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/257-enable-vcenter-orchestrator-vco-to-read-and-write-excel-files.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -270,7 +286,32 @@ ForEach ($DataRec in $DataTable) { Write-host &ldquo;Hostname=$($DataRec.Hostnam
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    vCloud Director has a nice feature allowing to organize vApps into catalogs. If like me you need to replicate these catalog across organization or even different vCloud hosts you may find your solution here.
+I have written a solution to do it a long time ago but never had the time to release it publicly. It is now done and here are the features.
+FeaturesThis package comes with a rich set of features.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/254-vcloud-director-catalog-replication.html">Read more…</a>
+  </div>
+</article><article class="list__item post">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/articles/learn-vco/253-extend-vcloud-director-with-service-builder.html" rel="bookmark">
+        Extend vCloud Director with service builder
+      </a>
+    </h3>
+    <div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-02-28T00:00:00Z">February 28, 2013</time></div>
+</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    In a previous article I explained how we could extend vCloud Director with vCenter Orchestrator and then provided a full implementation. This was using the vCloud Director blocking tasks and notifications feature which allow to extend existing vCoud Director operations.
+vCloud Director 5.1 introduced a new feature called API extensions which basically allows a cloud provider to extend the vCloud Director API with custom services with leveraging VMware or third party applications.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/253-extend-vcloud-director-with-service-builder.html">Read more…</a>
   </div>
 </article>
 </main>
@@ -318,57 +359,89 @@ ForEach ($DataRec in $DataTable) { Write-host &ldquo;Hostname=$($DataRec.Hostnam
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

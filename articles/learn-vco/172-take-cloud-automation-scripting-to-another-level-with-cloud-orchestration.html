@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Take cloud automation scripting to another level with cloud orchestration - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;&lt;img src=&#34;images/phocagallery/hidden_treasure.png&#34; alt=&#34;alt&#34; /&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;p&gt;I am always asked why choose orchestration over scripting. The short answer is that orchestration has a lot more to offer; the long answer is below.&lt;/p&gt;">
+	<meta name="description" content="I am always asked why choose orchestration over scripting. The short answer is that orchestration has a lot more to offer; the long answer is below.">
 		<meta property="og:title" content="Take cloud automation scripting to another level with cloud orchestration" />
-<meta property="og:description" content="&lt;p&gt;&lt;img src=&#34;images/phocagallery/hidden_treasure.png&#34; alt=&#34;alt&#34; /&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;p&gt;I am always asked why choose orchestration over scripting. The short answer is that orchestration has a lot more to offer; the long answer is below.&lt;/p&gt;" />
+<meta property="og:description" content="I am always asked why choose orchestration over scripting. The short answer is that orchestration has a lot more to offer; the long answer is below." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/172-take-cloud-automation-scripting-to-another-level-with-cloud-orchestration.html" />
 <meta property="article:published_time" content="2011-09-12T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Take cloud automation scripting to another level with cloud orchestration"/>
-<meta name="twitter:description" content="&lt;p&gt;&lt;img src=&#34;images/phocagallery/hidden_treasure.png&#34; alt=&#34;alt&#34; /&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;p&gt;I am always asked why choose orchestration over scripting. The short answer is that orchestration has a lot more to offer; the long answer is below.&lt;/p&gt;"/>
+<meta name="twitter:description" content="I am always asked why choose orchestration over scripting. The short answer is that orchestration has a lot more to offer; the long answer is below."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,178 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-09-12T00:00:00Z">September 12, 2011</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p><img src="/images/cloud-automation-scripting/hidden_treasure.png" alt="alt" /></p>
 
+<p>I am always asked why choose orchestration over scripting. The short answer is that orchestration has a lot more to offer; the long answer is below.</p>
+
+<p>I started to work in IT in 1995 after getting my analyst-programmer degree. Naturally I used scripted automation right away and never stopped since then. I have used batch, shell, vbscript, kix, perl and various other scripting languages to automate desktop and server automated provisioning and operations in physical and then virtual environments in the early 2000s. With such a profile I joined a Swiss orchestration start-up on a Wednesday and delivered my first workflows the week after ... I have provided such workflows to large service providers and enterprise customers that are running them in production. Orchestration became my most important tool and I can not imagine automation anymore without it.</p>
+<p>Scripting people have preferences for different scripting languages such as JavaScript, Perl, PowerShell, Python. Each of these have advantages and drawbacks. All of these are used in one way or another at VMware and we provide SDKs supporting these. vCenter Orchestrator uses JavaScript for his scripting engine. Javascript has a simplistic syntax and is widely used for web pages interaction and web apps (HTML5 and Flash).</p>
+<p>The specific value of a scripting language versus another is, in my opinion, irrelevant as long as you can get to the same result with a similar effort. It took me a few days to go from Perl to a JavaScript level good enough to do what I needed.</p>
+<p>What is making a big difference is the orchestration platform around the scripting engine and how it will help the different actors in the business including the different actors developing, operating and using the solution.</p>
+<p><b><span style="text-decoration: underline;">For the end Users</span></b></p>
+<p>vCenter Orchestrator workflows span across IT departments and can delegate operational procedures to the end user.</p>
+<ul>
+<li>To do this the workflow engine implements security access control with setting permissions on different workflows or even different parts of the same workflow. Some operations can be run as the user while others can run as service accounts.</li>
+</ul>
+<p>The end user can use workflows with a web front-end either directly through the web views or indirectly through the web service which includes:</p>
+<ul>
+<li>Presentation forms with content validation. This allows to run scripts to control inputs as they are typed, manage dependencies between fields, calculate defaults.</li>
+</ul>
+<ul>
+<li>A real time inventory of all orchestrated objects providing single sign on capabilities, a cache mechanism and automatic updates. <br /> This provides a single pane of glass across all the systems allowing the end user to select object and check their main characteristics before submitting a workflow.</li>
+</ul>
+<table border="0">
+<tbody>
+<tr>
+<td><i><img src="/images/cloud-automation-scripting/vco_inventory.png" alt="vCO Inventory" border="0" /> <br /></i></td>
+<td><img src="/images/cloud-automation-scripting/vsm_inventory.png" alt="VSM Inventory" border="0" /> </td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>vCenter Orchestrator <br /> Webview inventory<br /></i></td>
+<td style="text-align: center;"><i>Service Manager CMDB linking diagram <br /> leveraging Orchestrator Inventory</i></td>
+</tr>
+</tbody>
+</table>
+
+<p><span style="text-decoration: underline;"><b>For the system administrators</b></span></p>
+<p>High availability:</p>
+<ul>
+<li>A workflow can resumes where it stopped if the vCenter Orchestrator host fails</li>
+<li>vCO can fail over to another vCO server and fail back</li>
+</ul>
+<p>vCenter Orchestrator is a stateless workflow engine server. All the process flows and data flows are stored in a database.</p>
+<p>Compliance:</p>
+<ul>
+<li>Each workflow has a life record containing start, end time, state, inputs, outputs, variables that can be used during or after execution</li>
+<li>All workflows have events that can trace all the operations information, warnings, errors</li>
+<li>The Log4J facility allows fine grained monitoring configuration</li>
+<li>All the workflows are centralized and versioned. No scripts scattered across all the orchestrated entities.</li>
+</ul>
+<p>Ease of understanding / development / maintenance:</p>
+<ul>
+<li><b>Out of the box <span style="text-decoration: underline;">VMware supported </span>workflows</b>: vCenter Orchestrator plug-in library contains several hundreds supported open source workflows.</li>
+<li>No need to have script experience to understand what the sequencing, the logic and operations in a workflow. A workflow can be understood by management.</li>
+</ul>
+<table border="0">
+<tbody>
+<tr>
+<td><img src="/images/cloud-automation-scripting/wfexample.png" alt="Workflow Example" width="389" height="324" border="0" /></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>vCenter Orchestrator Workflow example<br /></i></td>
+</tr>
+</tbody>
+</table>
+<p><span style="text-decoration: underline;"><b>For the workflow developer<br /></b></span></p>
+<ul>
+<li>It is much easier to troubleshoot / maintain / modularize - reuse workflows than scripting: As an example: Before using vCenter Orchestrator I had spent a large effort on a very long script to handle site disaster recovery. It was difficult for me to troubleshoot and maintain it particularly when I had to do it a few months after the first time I put it in production . With vCenter Orchestrator I delivered something similar to the Perl script, except I did it in one week and it was multithreaded and load balancing the VM copy operations on different ESX servers. I reused part of this workflow in several occasions and I have met with the customer years after delivery: he was still running it and had done his own changes / improvement on it).</li>
+</ul>
+
+<ul>
+<li>Workflow development studio: <br />
+<ul>
+<li>vCenter Orchestrator drag and drop workflow development environment with its library of modular, re-usable workflows</li>
+</ul>
+<ul>
+<li>API explorer: A single interface to check all orchestrated objects and methods.</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>Content life cycle management: vCenter orchestrator provides -<br />
+<ul>
+<li><b><i>A packager managing dependencies:</i></b> This allows simple distribution of a set of functionality you need to deliver to your customer.</li>
+<li><b><i>Version history: </i></b>This allows to manage workflow versions when shared across different packages or synchronized across vCenter Orchestrator servers.</li>
+<li><b><i>Signed Certificates and Digital Right Management:</i></b> This allows you to protect the workflows you have developed against changes, redistribution or copy of the source code.</li>
+<li><b><i>Synchronization: </i></b>Synchronize the workflows, packages across vCO servers. Need to move workflows from dev to test or test to pre-prod. Synchronization do it automatically for you.</li>
+</ul>
+</li>
+</ul>
+<table border="0">
+<tbody>
+<tr>
+<td>
+<p><img src="/images/cloud-automation-scripting/vco_synchronization.png" alt="vCO Synchronization" width="500" height="415" border="0" /></p>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" width="500">
+<tbody>
+<tr>
+<td style="text-align: center;"><em>Content synchronization between vCenter Orchestrator servers<br /></em></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><b><i>Environment abstraction:</i></b> server specific configurations elements allows to copy a workflow from a vCenter Orchestrator server (i.e Development / test environment) to another one (i.e customer prod) and it automatically uses the specific environment it performs operations on or use specific settings for this environment.</li>
+</ul>
+<table class="mceItemTable" border="0">
+<tbody>
+<tr>
+<td><img src="/images/cloud-automation-scripting/config_element.png" alt="Config Element" width="500" border="0" /></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>vCenter Orchestrator Server specific configurations example</i></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><b><i>Resources centralization:</i></b> File resources can be loaded in vCenter Orchestrator and be used from there making them highly available (vs having them in a filesystem somewhere). For example a registry file can be stored for being applied to a VM post installation.</li>
+</ul>
+<ul>
+<li><b><i>Custom properties: </i></b>Attach key, value pairs to any orchestrated object. This allows to extend each object with custom properties allowing their lifecycle management.</li>
+</ul>
+
+<p><b><span style="text-decoration: underline;">Superior Cloud Orchestration</span></b></p>
+<ul>
+<li>vCenter Orchestrator has the most complete cloud integration (vCenter, <a href="/newsflash/vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html" target="_blank">VMware vCloud Director</a>, <a href="/newsflash/vmware-released-the-amqp-plug-in.html" target="_blank">AMQP</a>, <a href="/newsflash/vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html" target="_blank">Update Manager</a>)</li>
+<li>Third party APIs support through the use of generic <a href="/newsflash/vmware-released-the-generic-soap-and-rest-plug-ins.html" target="_blank">SOAP and REST plug-ins</a>. Integration is <a href="http://blogs.vmware.com/orchestrator/2011/07/vcloud-director-twitter-yahoo-and-foursquarecom-http-rest-plug-in-use-case-examples.html" target="_blank">easy</a>.</li>
+<li>Specific third parties integration (<a href="/newsflash/vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html" target="_blank">Microsoft Active Directory</a>, <a href="/newsflash/vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html" target="_blank">CISCO UCS</a>) as seen at VMworld (<a href="/newsflash/vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-storage-service-catalog.html">NetApp</a>, <a href="/newsflash/infoblox-announced-a-vcenter-orchestrator-plug-in.html">Infoblox</a>, <a href="vco-features/radware-adc-virtualization-a-vmware-orchestrator-an-integration-demo.html" target="_blank">Radware</a>). More will come as the <a href="/newsflash/vmware-released-the-vcenter-orchestrator-plug-in-sdk.html" target="_blank">plug-in SDK has now been released</a>.</li>
+<li>Cached inventory supporting automatic object updates.</li>
+<li>2 ways communication: workflows can start operations on orchestrated systems or workflows can be triggered based on policy events received form the orchestrated systems such as inventory object updates.</li>
+</ul>
+
+<p><span style="text-decoration: underline;"><b>Designed for the cloud</b></span></p>
+<ul>
+<li>vCenter Orchestrator is java based and as a "natural" integration with Java / Spring. vCenter Orchestrator Customers build their own plug-in leveraging their java code.</li>
+<li>vCO is platform independent, it can run on its own in a virtual appliance.</li>
+</ul>
+
+<p><span style="text-decoration: underline;"><b>A clear choice for the most demanding customers</b></span></p>
+<ul>
+<li>Large service providers use vCenter Orchestrator as their cloud workflow engine (i.e T-Systems presentation at VMworld and I know at least two others do).</li>
+<li>Enterprise customers use it for their private cloud, integrations, virtual infrastructure and cloud lifecycle and operation automation.</li>
+</ul>
+
+<p><b><span style="text-decoration: underline;">Already installed</span></b></p>
+<p>vCenter Orchestrator was installed as part of the vCenter Installation. It is waiting for you to take advantage of it for free with <a href="/articles/learn-vco/89-how-to-configure-vcenter-orchestrator-vco.html" target="_blank">configuring it</a> as did thousands of VMware customers.</p>
+
+<p><span style="text-decoration: underline;"><b>Does not prevent you from using other scripts</b></span></p>
+<p>vCenter Orchestrator can start external command lines, SSH or use SOAP / REST. The scripts can be centralized as resource files in vCenter Orchestrator to benefit from high availability.</p>
+
+<p><b><span style="text-decoration: underline;">OK, great but how much ?</span></b></p>
+<p>An advanced orchestration engine, plug-in adapters, library of workflows cost a fortune compared to a scripting engine. vCenter Orchestrator is coming <a href="/question-answer/product/69-how-is-it-licensed-.html" target="_blank">free</a> with vCenter.</p>
+
+<p><img src="/images/cloud-automation-scripting/zero_dollar_bill.png" alt="alt" /></p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +371,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

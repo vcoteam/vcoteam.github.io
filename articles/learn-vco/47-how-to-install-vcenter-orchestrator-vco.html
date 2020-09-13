@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>How to install vCenter Orchestrator (vCO) - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;This article will describe the steps necessary to install and configure VMware vCenter Orchestrator (VCO). Parts of the configuration are often a challenge even for experienced administrators. My goal here is to help you get a functional VCO server up and running.&lt;/p&gt;&lt;p&gt;I&#34;ve even put together a step-by-step video on How to Install vCenter Orchestrator here on vCOTeam.info ! Take a look &amp;amp; tell your colleagues!&lt;/p&gt;">
+	<meta name="description" content="This article will describe the steps necessary to install and configure VMware vCenter Orchestrator (VCO). Parts of the configuration are often a challenge even for experienced administrators. My goal here is to help you get a functional VCO server up and running.">
 		<meta property="og:title" content="How to install vCenter Orchestrator (vCO)" />
-<meta property="og:description" content="&lt;p&gt;This article will describe the steps necessary to install and configure VMware vCenter Orchestrator (VCO). Parts of the configuration are often a challenge even for experienced administrators. My goal here is to help you get a functional VCO server up and running.&lt;/p&gt;&lt;p&gt;I&#34;ve even put together a step-by-step video on How to Install vCenter Orchestrator here on vCOTeam.info ! Take a look &amp;amp; tell your colleagues!&lt;/p&gt;" />
+<meta property="og:description" content="This article will describe the steps necessary to install and configure VMware vCenter Orchestrator (VCO). Parts of the configuration are often a challenge even for experienced administrators. My goal here is to help you get a functional VCO server up and running." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/47-how-to-install-vcenter-orchestrator-vco.html" />
 <meta property="article:published_time" content="2010-05-11T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to install vCenter Orchestrator (vCO)"/>
-<meta name="twitter:description" content="&lt;p&gt;This article will describe the steps necessary to install and configure VMware vCenter Orchestrator (VCO). Parts of the configuration are often a challenge even for experienced administrators. My goal here is to help you get a functional VCO server up and running.&lt;/p&gt;&lt;p&gt;I&#34;ve even put together a step-by-step video on How to Install vCenter Orchestrator here on vCOTeam.info ! Take a look &amp;amp; tell your colleagues!&lt;/p&gt;"/>
+<meta name="twitter:description" content="This article will describe the steps necessary to install and configure VMware vCenter Orchestrator (VCO). Parts of the configuration are often a challenge even for experienced administrators. My goal here is to help you get a functional VCO server up and running."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,121 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-05-11T00:00:00Z">May 11, 2010</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>This article will describe the steps necessary to install and configure VMware vCenter Orchestrator (VCO). Parts of the configuration are often a challenge even for experienced administrators. My goal here is to help you get a functional VCO server up and running.</p>
+<p>I've even put together a step-by-step video on How to Install vCenter Orchestrator here on vCOTeam.info ! Take a look &amp; tell your colleagues!</p>
 
+
+<h2>Updated comments for vCO 4.1 and newer</h2>
+<p><em>This section updated Feburary, 2011 to note differences in vCO 4.1 and newer</em></p>
+<p>The article below was written for vCenter Orchestrator 4.0. As such, the requirements listed are applicable to versions of vCO lower than the currently available release.</p>
+<h3>vCO 4.1.x Deployment Best Practices</h3>
+<p>vCenter Orchestrator can be a powerful tool for your environment provided you follow some simple guidelines to get the best performance possible.</p>
+<p>First off, you should make sure that your DNS is current and includes forward/reverse lookup entries for your vCenter Server(s), vCO Server, and any other systems you intend to interact with.</p>
+<p>Although vCO supports connecting up to 10 vCenter Servers, it is best to limit this based on your vCenter usage... meaning, if you have maxed the capacity of a vCenter Server you have connected to vCO, then use another vCO server for other vCenter Servers.</p>
+<p>It is also a good idea to place a vCO server in each geographic location of your vCenter Servers to minimize WAN traffic and keep API access optimal.</p>
+<p><strong>Hardware: </strong>(<a title="VMware vCenter Orchestrator (vCO) Documentation" href="http://www.vmware.com/support/pubs/orchestrator_pubs.html" target="_blank">VMware vCenter Orchestrator (vCO) Documentation</a>)</p>
+<ul>
+<li>Dual CPU and 4 GB of memory</li>
+<li>2 GB drive space</li>
+<li>Virtual or Physical server</li>
+<li>1 GB NIC</li>
+</ul>
+
+<p><strong>OS: </strong>(<a title="vSphere Compatibility Matrix" href="http://www.vmware.com/pdf/vsphere4/r40/vsp_compatibility_matrix.pdf" target="_blank">vSphere Compatibility Matrix</a>)</p>
+<ul>
+<li>Windows 2003 - 64-bit</li>
+<li>Windows 2008 - 64-bit (Enterprise, Standard, Datacenter)</li>
+<li>Windows 2008 R2 - 64-bit</li>
+</ul>
+
+<p><strong>DB: </strong>(<a title="vSphere Compatibility Matrix" href="http://www.vmware.com/pdf/vsphere4/r40/vsp_compatibility_matrix.pdf" target="_blank">vSphere Compatibility Matrix</a>) <br /> The vCO Database should be on a separate server with at least 10 GB of free space available. The DB server should also be in the same DataCenter as the vCO Server. As of vCO 4.1.1, the following Databases are supported:</p>
+<ul>
+<li>SQL Server 2005 Express</li>
+<li>SQL Server 2005 Standard/Enterprise (SP3) 32 or 64 bit</li>
+<li>SQL Server 2008 Standard/Enterprise (SP1/SP2) 32 or 64 bit</li>
+<li>Oracle 10g Standard/Enterprise (Release 2) 32 or 64 bit</li>
+<li>Oracle 11g Standard/Enterprise (Release 1) 32 0r 64 bit</li>
+</ul>
+
+<hr width="90%" />
+<h2>Getting Started with vCenter Orchestrator 4.0</h2>
+<p>Things I recommend to get started:</p>
+<ol>
+<li>Domain (Windows 2003/2008)</li>
+<li>SQL Server with DB created</li>
+<li>vSphere vCenter Server</li>
+<li>1 or more ESX/ESXi hosts</li>
+<li>License !!!</li>
+<li>Windows 2003/2008 Server (can be 32-bit or 64-bit for vCO 4.0 and under, 64-bit is required as of vCO 4.1)</li>
+</ol>
+<p>You'll need to start off by preparing the following:</p>
+<ol>
+<li>Prepare a Database</li>
+<li>Download Installation media</li>
+<li>Prepare a Server for the vCO installation</li>
+<li>Install vCO software</li>
+<li>Configure vCO software</li>
+</ol>
+<h2>Preparing VCO Database</h2>
+<p>For ease of use and simplicity, this how-to will describe the steps necessary to prepare a Microsoft SQL Server database for use with vCenter Orchestrator. There is no official support for SQL Server Express, and this is certainly NOT recommended or supported in a production environment... but, for a POC/Learning/Demo environment, you should be okay with using SQL Express 2005 or 2008. My personal recommendation for a test environment would be <a title="SQL Server 2008 Express with Advanced Tools" href="http://www.microsoft.com/downloads/details.aspx?FamilyId=B5D1B8C3-FDA5-4508-B0D0-1311D670E336&amp;displaylang=en" target="_blank">SQL Server 2008 Express edition with advanced tools</a> (Includes SQL Server Management Studio).</p>
+<p>Officially, you should use SQL Server 2005 or Oracle 10.</p>
+<p>When using SQL Server, the following points should be observed:</p>
+<ul>
+<li>Ensure that you ENABLE TCP<br /><img title="Database Setup 1" src="/images/how-to-install-vco/vco-setup-db1.png" alt="Database Setup 1" border="0" /></li>
+<li>Confirm the Port is set to 1433 (you may have to make a note of the dynamic port if you have troubles)<br /><img title="Database Setup 2" src="/images/how-to-install-vco/vco-setup-db2.png" alt="Database Setup 2" border="0" /></li>
+<li>Create a database (I suggest "VCO") and grant appropriate rights to a service account to be used by vCO<br /><img title="Database Setup 3" src="/images/how-to-install-vco/vco-setup-db3.png" alt="Database Setup 3" border="0" /></li>
+<li>Make note of the DB Server machine name and the domain it belongs to (if applicable)</li>
+</ul>
+<p>We'll go into more detail in the Configure vCO software section.</p>
+<h2>Download Installation Media</h2>
+<p>vCenter Orchestrator is shipped with vCenter Server for vSphere. So you'll need a valid license (or trial license) in order to obtain the software. I should note that Essential and Essential Plus are not sufficient if you wish to create your own workflows. You should have a Standard license as a minimum.</p>
+<p>Visit the <a title="VMware Support" href="http://www.vmware.com/support/" target="_blank">VMware website</a> to access your downloads.</p>
+<p>Download the appropriate files to a place that will be easily accessible to your vCO server.</p>
+<h2>Prepare a Server for the vCO installation</h2>
+<p>I do recommend a Windows 2008 64-bit server for the vCenter Orchestrator server even though a 32-bit server is acceptable for vCO 4.0.1 (build 4502)... Ideally, this server should be a member server in your domain and you should have administrative rights to it. The server should meet the following minimum requirements (either Physical or Virtual, but Virtual is recommended):</p>
+<ul>
+<li>2 GB of Memory ( vCO 4.0 and under, 4GB for vCO 4.1 and newer)</li>
+<li>2 CPU/vCPU</li>
+<li>10+ GB free disk space</li>
+<li>Minimum of 1 NIC</li>
+</ul>
+<p>It is critical that you not skimp on memory for your vCO server - especially if you're in a demo/dev environment where you've decided to run vCO on the same server as vCenter and your DB !!! - if this is the case, it may be advisable to bump up the memory to 4GB. Please note that this configuration is NOT RECOMMENDED for production use!</p>
+<p>Copy/upload the vCenter Orchestrator installer file to your vCO server or map a drive to the share that holds the files.</p>
+<h2>Install vCO Software</h2>
+<p>Login to your vCO server via Remote Desktop or using the Console (via vSphere vCenter Server if VM).</p>
+<p>Execute the installer file: vCenterOrchestrator_4_0_1_4502.exe</p>
+
+<ol>
+<li><img title="vCO Setup 1" src="/images/how-to-install-vco/vco-setup-1.png" alt="vCO Setup 1" border="0" /></li>
+<li><img title="vCO Setup 2" src="/images/how-to-install-vco/vco-setup-2.png" alt="vCO Setup 2" border="0" /></li>
+<li><img title="vCO Setup 3" src="/images/how-to-install-vco/vco-setup-3.png" alt="vCO Setup 3" border="0" /><br />Review and accept the License, Click <strong>Next</strong></li>
+<li><img title="vCO Setup 4" src="/images/how-to-install-vco/vco-setup-4.png" alt="vCO Setup 4" border="0" /><br />Click <strong>Next</strong></li>
+<li><img title="vCO Setup 5" src="/images/how-to-install-vco/vco-setup-5.png" alt="vCO Setup 5" border="0" /><br />Set the installation path and Click <strong>Next</strong></li>
+<li><img title="vCO Setup 6" src="/images/how-to-install-vco/vco-setup-6.png" alt="vCO Setup 6" border="0" /><br />Choose Client - Server and then Click <strong>Next</strong></li>
+<li><img title="vCO Setup 7" src="/images/how-to-install-vco/vco-setup-7.png" alt="vCO Setup 7" border="0" /><br />Specify where you want the icons created and Click <strong>Next</strong></li>
+<li><img title="vCO Setup 8" src="/images/how-to-install-vco/vco-setup-8.png" alt="vCO Setup 8" border="0" /><br />Review the summary and Click <strong>Install</strong></li>
+<li><img title="vCO Setup 9" src="/images/how-to-install-vco/vco-setup-9.png" alt="vCO Setup 9" border="0" /><br /><br /></li>
+<li><img title="vCO Setup 10" src="/images/how-to-install-vco/vco-setup-10.png" alt="vCO Setup 10" border="0" /><br />Click <strong>Done</strong></li>
+</ol>
+
+<p>That completes the installation of vCenter Orchestrator 4.0.1 (4502)! Congratulations! Now you'll need to configure vCO before you can use it. To see vCenter Orchestrator get installed and configured, follow along in the step-by-step video - the video is more complete than this article!<br />
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/YGs8nIn5p_4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+ </p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -190,57 +308,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

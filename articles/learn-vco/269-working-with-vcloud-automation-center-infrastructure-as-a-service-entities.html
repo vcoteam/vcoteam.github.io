@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Working with vCloud Automation Center IaaS entities - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;vCloud Automation Center has several constructs such as blueprints, business groups, reservations to manage the virtual machines lifecycle and governance policies.&lt;/p&gt;&lt;p&gt;While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture.&lt;/p&gt;">
+	<meta name="description" content="While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture.">
 		<meta property="og:title" content="Working with vCloud Automation Center IaaS entities" />
-<meta property="og:description" content="&lt;p&gt;vCloud Automation Center has several constructs such as blueprints, business groups, reservations to manage the virtual machines lifecycle and governance policies.&lt;/p&gt;&lt;p&gt;While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture.&lt;/p&gt;" />
+<meta property="og:description" content="While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html" />
 <meta property="article:published_time" content="2013-11-12T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Working with vCloud Automation Center IaaS entities"/>
-<meta name="twitter:description" content="&lt;p&gt;vCloud Automation Center has several constructs such as blueprints, business groups, reservations to manage the virtual machines lifecycle and governance policies.&lt;/p&gt;&lt;p&gt;While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture.&lt;/p&gt;"/>
+<meta name="twitter:description" content="While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,311 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-11-12T00:00:00Z">November 12, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>vCloud Automation Center has several constructs such as blueprints, business groups, reservations to manage the virtual machines lifecycle and governance policies.</p>
+<p>While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture.</p>
+<h2 id="the-vcloud-automation-center-infrastructure-as-a-service-data-model-vcac-iaas">The vCloud Automation Center Infrastructure as a service data model (vCAC IaaS)</h2>
+<p>vCAC IaaS has an extensible model consisting of different metamodels. Here are some of the meta models:</p>
+<ul>
+<li>ManagementModelEntities.svc: Generic model providing an abstraction layer to different vendor endpoints.</li>
+</ul>
+<p>Which is extended by specific models:</p>
+<ul>
+<li>AmazonWSModelEntities.svc : To manage Amazon Web service</li>
+<li>ScvmmModelEntities.svc : To manage Microsoft System Center Virtual Machine Manager</li>
+<li>UcsModelEntities.svc :To manage Cisco UCS Manager</li>
+</ul>
+<p>A new model can be created to extend the management capabilities.
+Each model has a number of entity sets. Here are a few of the ManagementModelEntities model entity sets:</p>
+<ul>
+<li>VirtualMachineTemplates : The vCAC blueprints (abstracting several vendors virtual machine / vApp templates).</li>
+<li>VirtualMachineTemplateProperties: The vCAC blueprint custom properties</li>
+<li>VirtualMachines : The vCAC VMs deployed from the blueprints</li>
+<li>VirtualMachineProperties : The vCAC blueprint custom properties</li>
+</ul>
+<p>Each entity set contains a list of entities, For example the list of all the blueprints that have been created (VirtualMachineTemplates).
+Each entity has a list a properties (i.e ID, name and so on) and a list of linked entities. The image below shows some entities, their properties and how they are linked together:</p>
+<figure>
+    <img src="/images/vcac-iaas/vcacvm-relationships.png"/> 
+</figure>
+
+<h2 id="accessing-to-the-data-model-through-the-api">Accessing to the data model through the API</h2>
+<p>Since IaaS is build using Microsoft .net it leverages the Open Data Protocol (also called OData). You can find more about OData <a href="http://msdn.microsoft.com/en-us/data/hh237663.aspx"  target="_blank" rel="noreferrer noopener" >here</a>.</p>
+<p>Odata basically exposes the data model as a REST API. If you use the URL of one of the management model you can browse the entities as XML atom files. JSON is also supported.</p>
+<p>The good think about using the OData API is that you can access all entities in the data model, it is quite powerfull. The issue may be that with great power comes great responsibility. The data model changed between vCAC IaaS versions. These changes may break your API usage. Also if you do unexpected changes in the data model you may break some of the IaaS functionality and loose product support. For example information panels on the IaaS web site do break when some entities are missing links to other entities that are expected. The OData API is not a public API and will eventually be abstracted by a higher level service catalog API and provide the functionality required for most of the automation / integration use cases.</p>
+<h2 id="automation-and-integration-use-cases">Automation and integration use cases</h2>
+<p>There are quite a few reasons you may need the vCAC IaaS API such as:</p>
+<ul>
+<li>Having your own custom portal to leverage the vCAC capabilities</li>
+<li>Automating some of the tasks that would require a vCAC admin to do several times the same operation in the user interface. For example creating hundreds of provisioning groups.</li>
+<li>In some cases when vCAC is calling out to a sub system, the sub system may need to call back vCAC to get further information or to update some vCAC entities. For example adding a custom property on a vCAC VM with an external ticketing system request ID.</li>
+</ul>
+<h2 id="automating-and-integrating-vcac-iaas-using-the-vcac-iaas-plug-in-for-vcenter-orchestrator">Automating and integrating vCAC IaaS using the vCAC Iaas plug-in for vCenter Orchestrator</h2>
+<p>Combine vCAC IaaS and vCenter Orchestrator and you have the best combination of policy based lifecycle management and technical orchestration. vCAC IaaS has a vCO endpoint allowing to run vCO workflows either as part of the IaaS lifecycle steps or with extending second day operations on VMs.</p>
+<p>vCenter Orchestrator has a vCAC IaaS plug-in allowing to automate vCAC. You can find this plug-in <a href="https://my.vmware.com/group/vmware/details?downloadGroup=VCO_VCAC_PLUGIN_520&amp;amp;productId=351"  target="_blank" rel="noreferrer noopener" >here</a>. The plug-in includes the &ldquo;vCAC extensibility package&rdquo; which allows to extend vCAC IaaS in a few clicks with vCenter Orchestrator workflows. You can find more information about the) extensibility package <a href="http://portal.sliderocket.com/vmware/vCAC-extensibility-package"  target="_blank" rel="noreferrer noopener" >here</a>. The plug-in is providing several facilities including :</p>
+<ul>
+<li>An inventory of objects allowing end users to select items as a tree view or list:</li>
+</ul>
+<figure>
+    <img src="/images/vcac-iaas/vcacinventory.png"/> 
+</figure>
+
+<ul>
+<li>
+<p>A set of workflows for:</p>
+</li>
+<li>
+<p>Configuring vCAC hosts</p>
+</li>
+<li>
+<p>Performing CRUD operations on credential, endpoints, enterprise groups, machine prefixes and provisioning groups</p>
+</li>
+<li>
+<p>Register VMs to be managed by vCAC IaaS</p>
+</li>
+<li>
+<p>Use a vCO workflow as a vCAC IaaS menu operation or to extend the IaaS VM lifecycle</p>
+</li>
+</ul>
+<figure>
+    <img src="/images/vcac-iaas/vcaclibraryworkflows.png"/> 
+</figure>
+
+<p>The rest of the workflow listed above is mainly to get, create, update delete model entities.</p>
+<h2 id="working-with-model-entities">Working with model entities</h2>
+<p>If you want to do anything on the entities that are not managed by the workflows in the administration folder then you will need to work with the entity object.</p>
+<h3 id="getting-a-model-entity-using-an-inventory-object">Getting a model entity using an inventory object</h3>
+<p>You may wonder how do you start. If the entity you are looking for has an object listed in the vCO inventory you can just use an input parameter of the given type. For example I have created a workflow with an input of vCAC:BluePrint type. Once I run the workflow, as an end user I can select a blueprint by name but also based on several other properties of the blueprint.</p>
+<figure>
+    <img src="/images/vcac-iaas/vcacblueprintproperties.png"/> 
+</figure>
+
+<p>You can access to the properties displayed in the inventory and additional ones by scripting.</p>
+<p>The API Explorer lists the following properties and methods:</p>
+<figure>
+    <img src="/images/vcac-iaas/vcacblueprintapiexplorer.png"/> 
+</figure>
+
+<p>So for example blueprint.memoryMB will return 2048.</p>
+<p>This allows to read the blueprint properties. To modifiy the blueprint properties or to get the blueprint linked entities requires to get the entity object backing up this inventory object.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">blueprintEntity</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">blueprint</span>.<span style="color:#a6e22e">getEntity</span>();
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">blueprintEntity</span>.<span style="color:#a6e22e">entitySetName</span>);
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bluePrintEntity</span>.<span style="color:#a6e22e">getProperties</span>().<span style="color:#a6e22e">keys</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>In a few cases the inventory object is not the same as the entity set name. For example the code above will first print &ldquo;VirtualMachineTemplates&rdquo; for a blueprint. VirtualMachineTemplate is how blueprints are called in the data model, &ldquo;blueprint&rdquo; is the name used in the end user interface and documentation. Since the inventory objects are aimed at end users it matches the user interface one.</p>
+<p>The last line will print all the available properties of the entity. This is useful whan you want to filter on a particular property to get an entity.</p>
+<h3 id="getting-a-model-entity-object-using-filtering">Getting a model entity object using filtering</h3>
+<p>You may want to get a particular entity without user intervention. For this you can use the vCACEntityManager.readModelEntitiesByCustomFilter(); For this you need to specifiy as parameters:</p>
+<ul>
+<li>The vCAC IaaS host id in which to make the search</li>
+<li>The model name: Here we use ManagementModelEntities.svc which contains the virtualMachineTemplates entity set.</li>
+<li>The entity set: Here virtualMachineTemplates.</li>
+<li>The properties used for filtering : Here the only property we want to filter on is the blueprint name.</li>
+<li>VirtualMachineTemplateName : We could have filtered on any other of the properties.</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ManagementModelEntities.svc&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entitySetName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;VirtualMachineTemplates&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">property</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Properties</span>();
+<span style="color:#a6e22e">property</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;VirtualMachineTemplateName&#34;</span>,<span style="color:#a6e22e">name</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entities</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vCACEntityManager</span>.<span style="color:#a6e22e">readModelEntitiesByCustomFilter</span>(<span style="color:#a6e22e">vcacHost</span>.<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">model</span>, <span style="color:#a6e22e">entitySetName</span>, <span style="color:#a6e22e">property</span>, <span style="color:#66d9ef">null</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>The method above will run a query on the server side. This is a lot more performant than for example pulling all the blueprints in the scripting and iterating through their properties.</p>
+<p>Note that readModelEntitiesByCustomFilter will always return an array of elements assuming there will be 0 to n entities matching the supplied property.</p>
+<p>Another example is to get the virtualMachine entity from a virtualMachineId. This is typically what is needed when calling a vCO workflow from a vCAC workflow stub.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">properties</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Properties</span>();
+<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;VirtualMachineID&#34;</span>, <span style="color:#a6e22e">virtualMachineId</span>);
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">vCACEntityManager</span>.<span style="color:#a6e22e">readModelEntity</span>(<span style="color:#a6e22e">host</span>.<span style="color:#a6e22e">id</span>, <span style="color:#e6db74">&#34;ManagementModelEntities.svc&#34;</span>, <span style="color:#e6db74">&#34;VirtualMachines&#34;</span>, <span style="color:#a6e22e">properties</span>, <span style="color:#66d9ef">null</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>You can also perform more complex queries. The code below return the top ten results of all virtual machines, filtered by the machine state and component flag</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">modelName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ManagementModelEntities.svc&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entitySetName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;VirtualMachines&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">filter</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;VirtualMachineState eq &#39;Off&#39; and IsComponent eq true&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orderBy</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;VirtualMachineName asc&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">top</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; {
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">skip</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;,
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">headers</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">select</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entities</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vCACEntityManager</span>
+<span style="color:#a6e22e">readModelEntitiesBySystemQuery</span>(<span style="color:#a6e22e">host</span>.<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">modelName</span>, <span style="color:#a6e22e">entitySetName</span>, <span style="color:#a6e22e">filter</span>, <span style="color:#a6e22e">orderBy</span>, <span style="color:#a6e22e">select</span>,
+<span style="color:#a6e22e">top</span>, <span style="color:#a6e22e">skip</span>, <span style="color:#a6e22e">headers</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="using-the-entities">Using the entities</h3>
+<p>You will need to use the entities to get to its linked entities. For example the code below gets the virtualMachineTemplateProperties entity which matches the propertyName.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">virtualMachineTemplatePropertiesEntities</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">virtualMachineTemplateEntity</span>.<span style="color:#a6e22e">getLink</span>(<span style="color:#a6e22e">host</span>, <span style="color:#e6db74">&#34;VirtualMachineTemplateProperties&#34;</span>);
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">virtualMachineTemplatePropertiesEntity</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">virtualMachineTemplatePropertiesEntities</span>) {
+ <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">virtualMachineTemplatePropertiesEntity</span>.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;PropertyName&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#a6e22e">propertyName</span>) {
+ <span style="color:#75715e">//System.log(&#34;Found existing property &#34; + propertyName);
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">break</span>;
+ }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>For updating this property entity you would use:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ManagementModelEntities.svc&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entitySet</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;VirtualMachineTemplateProperties&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">properties</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Properties</span>();
+<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;PropertyName&#34;</span>, <span style="color:#a6e22e">propertyName</span>);
+<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;PropertyValue&#34;</span>, <span style="color:#a6e22e">propertyValue</span>);
+<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;IsHidden&#34;</span>, <span style="color:#a6e22e">propertyIsHidden</span>);
+<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;IsRuntime&#34;</span>, <span style="color:#66d9ef">false</span>);
+<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;IsEncrypted&#34;</span>, <span style="color:#66d9ef">false</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">links</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Properties</span>();
+<span style="color:#a6e22e">links</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;VirtualMachineTemplate&#34;</span>,<span style="color:#a6e22e">virtualMachineTemplateEntity</span>); <span style="color:#75715e">//The property needs to link back to the blueprint
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entityKey</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">virtualMachineTemplatePropertiesEntity</span>.<span style="color:#a6e22e">entityKey</span>;
+ <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entityKeyId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">entityKey</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;Id&#34;</span>);
+ <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Update entity id &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">entityKeyId</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; with property &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">propertyName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">propertyValue</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; on virtualMachineTemplate entity &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">blueprint</span>.<span style="color:#a6e22e">displayName</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">updatedEntity</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vCACEntityManager</span>.<span style="color:#a6e22e">updateModelEntityBySerializedKey</span>(<span style="color:#a6e22e">host</span>.<span style="color:#a6e22e">id</span> , <span style="color:#a6e22e">model</span> , <span style="color:#a6e22e">entitySet</span> , <span style="color:#a6e22e">entityKeyId</span> , <span style="color:#a6e22e">properties</span>, <span style="color:#a6e22e">links</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>For creating a new entity property you would replace the last paragraph by:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Create property &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">propertyName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">propertyValue</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; on virtualMachineTemplate entity &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">blueprint</span>.<span style="color:#a6e22e">displayName</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">createdEntity</span><span style="color:#f92672">=</span> <span style="color:#a6e22e">vCACEntityManager</span>.<span style="color:#a6e22e">createModelEntity</span>(<span style="color:#a6e22e">host</span>.<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">model</span>, <span style="color:#a6e22e">entitySet</span>, <span style="color:#a6e22e">properties</span>, <span style="color:#a6e22e">links</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>The code above is an extract of the addUpdatePropertyFromBlueprint action that is included in the 5.2 version of the vCAC plug-in for vCO. There is a similar action called addUpdatePropertyFromVirtualMachineEntity for handling virtual machine properties.</p>
+<h3 id="converting-the-entities-back-to-an-inventory-object">Converting the entities back to an inventory object</h3>
+<p>If you found a particular entity usng the scripting you may want to get the inventory object it matches. In this case you can use the following method:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">inventoryObject</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">entity</span>.<span style="color:#a6e22e">getInventoryObject</span>();
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>This of course only works for entities having a matching inventory object.</p>
+<p>For example here is an action returning blueprints with a given name:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">vcacHost</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#f92672">==&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#66d9ef">null</span>)<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">model</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#f92672">=&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#e6db74">&#34;ManagementModelEntities.svc&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entitySetName</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#f92672">=&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#e6db74">&#34;VirtualMachineTemplates&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#f92672">=&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Properties</span>();
+<span style="color:#a6e22e">property</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;VirtualMachineTemplateName&#34;</span>,<span style="color:#a6e22e">name</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entities</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#f92672">=&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#a6e22e">vCACEntityManager</span>.<span style="color:#a6e22e">readModelEntitiesByCustomFilter</span>(<span style="color:#a6e22e">vcacHost</span>.<span style="color:#a6e22e">id</span>,<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#a6e22e">model</span>,<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#a6e22e">entitySetName</span>,<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#a6e22e">property</span>,<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#66d9ef">null</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">blueprints</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#f92672">=&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#66d9ef">new</span> Array();
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entity</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;<span style="color:#66d9ef">in</span> <span style="color:#a6e22e">entities</span>)<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">nbsp</span>;{
+ <span style="color:#a6e22e">blueprints</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">entity</span>.<span style="color:#a6e22e">getInventoryObject</span>());
+}
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">blueprints</span>;
+</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="more-information">More information</h3>
+<p>The <a href="http://pubs.vmware.com/orchestrator-plugins/index.jsp#com.vmware.using.vcac.plugin.doc_52/GUID-E3B05F90-0619-4264-A84C-9934119A67EC.html"  target="_blank" rel="noreferrer noopener" >Using the vCenter Orchestrator plug-in for vCloud Automation Center 5.2</a> guide from VMware technical publications provides additional information and scripting examples.</p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcac/" rel="tag">vCAC</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/iaas/" rel="tag">IaaS</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +504,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

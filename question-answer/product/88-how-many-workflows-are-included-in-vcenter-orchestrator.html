@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>How many workflows are included in vCenter Orchestrator? - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="There are a considerable number of pre-built workflows that may be used to build your own orchestrator solutions. ">
+		<meta property="og:title" content="How many workflows are included in vCenter Orchestrator?" />
+<meta property="og:description" content="There are a considerable number of pre-built workflows that may be used to build your own orchestrator solutions. " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://new.vcoteam.info/question-answer/product/88-how-many-workflows-are-included-in-vcenter-orchestrator.html" />
+<meta property="article:published_time" content="2010-06-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2010-06-18T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How many workflows are included in vCenter Orchestrator?"/>
+<meta name="twitter:description" content="There are a considerable number of pre-built workflows that may be used to build your own orchestrator solutions. "/>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-16400053-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://www.vcoteam.info/images/logo.png">
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/home-lab.html">
+				
+				<span class="menu__text">Home Lab</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/learn-vco.html">
+				
+				<span class="menu__text">Learn VCO</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links.html">
+				
+				<span class="menu__text">Links</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/newsflash.html">
+				
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/vco-features.html">
+				
+				<span class="menu__text">vCO Features</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+  <article class="post">
+    <header class="post__header">
+      <h1 class="post__title">How many workflows are included in vCenter Orchestrator?</h1>
+      <div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-06-18T00:00:00Z">June 18, 2010</time></div>
+</div>
+    </header><div class="content post__content clearfix">
+      <p>There are a considerable number of pre-built workflows that may be used to build your own orchestrator solutions. The environment this table is taken from has the VC, VIM3 (OPTIONAL), and Microsoft (OPTIONAL) vmoapps installed:</p>
+<table border="1" width="600">
+<tbody>
+<tr>
+<th> </th><th>Workflow</th><th>Description</th>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\JDBC</em></strong></td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>JDBC URL generator</td>
+<td>Sollicits information to generate a connection URL for JDBC database connections. The workflow emits the connection string it generates as output via the system log, and confirms the string can create a connection to the specified database.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\JDBC\\JDBC Examples</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Full JDBC cycle example</td>
+<td>Tests the full JDBC cycle, namely: - Tests the connection - Creates the table - Inserts and logs entries - Deletes and logs entries - Empties table - Drops table</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>JDBC connection example</td>
+<td>Tests JDBC connections</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>JDBC create table example</td>
+<td>Tests table creation using JDBC.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>JDBC delete all from table example</td>
+<td>Tests the deletion of all entries in a table</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>JDBC delete entry from table example</td>
+<td>Tests the deletion of an entry from a table.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>JDBC drop table example</td>
+<td>Tests dropping a table</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>JDBC insert into table example</td>
+<td>Tests insertion of rows into a JDBC table.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>JDBC select from table example</td>
+<td>Test JDBC table select rows</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Locking</em></strong></td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Display all locks</td>
+<td>Shows all locks</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Locking test</td>
+<td>Test workflow that creates a lock</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Locking test (x5)</td>
+<td>Test workflow that creates 5 locks</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Release all locks</td>
+<td>Releases all locks</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Mail</em></strong></td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Example interaction with email</td>
+<td>Simple example to illustrate how to send an email to respond to a query, known as a user interaction.    NOTE: This workflow uses the default mail server configuration that you can set in the Orchestrator configuration interface. For information about setting the mail server configuration, see 'Define the Default SMTP Connection' in the Orchestrator Installation and Configuration Guide.</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Retrieve messages</td>
+<td>Retrieves the messages of a given email account, without deleting them, using the POP3 protocol.</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Send interaction</td>
+<td>Sends an email to answer a user interaction.  The email body contains both the direct answer URL, and an interaction URL to process this request.  Uses the default settings from the Orchestrator Configuration interface for the following optional input parameters: SMTP host, SMTP port, username, password, from Address and from Name. You can override these values by providing input parameters.</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Send notification</td>
+<td>Sends an email with specified content to given email address.  Uses the default settings from the Orchestrator Configuration interface for the following optional input parameters: SMTP host, SMTP port, username, password, from Address and from Name. You can override these values by providing input parameters.</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Send notification to mailing list</td>
+<td>Sends an email with specified content to a given email address list, CC list, and BCC list.  Uses the default settings from the Orchestrator Configuration interface for the following optional input parameters: SMTP host, SMTP port, username, password, from Address and from Name. You can override these values by providing input parameters.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Active Directory</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Active Directory\\Computer</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create computer in group</td>
+<td>Create an AD computer in a group</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create computer in organizational unit</td>
+<td>Create an AD computer in an Organization Unit</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Destroy Computer</td>
+<td>Destroy a computer in the Active Directory</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Disable computer</td>
+<td>Disable a computer in the Active Directory</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Enable computer</td>
+<td>Enable a computer</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Active Directory\\Organizational Unit - Container</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create Organizational Unit</td>
+<td>Create OU in OU</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Destroy Organizational Unit</td>
+<td>Destroy OU</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Active Directory\\User</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add user to usergroup</td>
+<td>Add one user as member of a usergroup</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create user in Group</td>
+<td>Create a user without specifing a password (Set password must change at next logon). Domain policies must allow users to have empty passwords!</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create user in Organizational Unit</td>
+<td>Create a new user in an Organization Unit. Without SSL connection, you cannot specify the password. The domain passwords policy must let you create user without password.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Destroy user</td>
+<td>Destroy an existing user</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Disable user</td>
+<td>Disable a user</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Enable user</td>
+<td>Enable a user</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove user from user group</td>
+<td>Remove a user from a usergroup</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Active Directory\\Usergroup</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add computers to group members</td>
+<td>Add one or more computers as members of a usergroup</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add groups to group members</td>
+<td>Add one or more usergroups as member of a usergroup.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add users to group members</td>
+<td>Add one or more users as members of a usergroup</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create usergroup in Group</td>
+<td>Create a new usergroup in an existing container (group)</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create usergroup in OrganizationUnit (OU)</td>
+<td>Create a new usergroup in an existing container (ou)</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Destroy usergroup</td>
+<td>Destroy a usergroup</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove computers from group members</td>
+<td>Remove one or more computer from a usergroups</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove groups from group members</td>
+<td>Remove one or more groups from group members</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove users from group members</td>
+<td>Remove one or more users from usergroup members</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Computer</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Shutdown a computer</td>
+<td>Shutdown or restart a computer</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Shutdown a computer from AD</td>
+<td>Shutdown or restart a computer</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Computer\\Devices</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add Printer Connection</td>
+<td>Adds a printer to an existing Windows machine (needs to be an OS greater than Windows 2000/ NT4.0 and have WMI active) Return code: 0 - success 5 - access denied 1801 - invalid printer name 1930 - incompatible printer driver</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Computer\\Processes</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Start a process</td>
+<td>Start a new process on the remote host. Return the process ID Exception: - ConnectionError: Error when connecting to the computer - ProcessError: Errors returned by Win32_Process WMI Class</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Start a process from AD</td>
+<td>Start a new process on the remote host. Return the process ID Exception: - ConnectionError: Error when connecting to the computer - ProcessError: Errors returned by Win32_Process WMI Class</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Terminate process</td>
+<td>Terminate an existing process on the remote host.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Terminate process from AD</td>
+<td>Terminate an existing process on the remote host.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Computer\\Services</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Change service start mode</td>
+<td>Change the starting mode of a Windows Service. Most common options are: Automatic (automatically start when windows start), Manual and Disabled (Service cannot start)  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Change service start mode from AD</td>
+<td>Change the starting mode of a Windows Service. Most common options are: Automatic (automatically start when windows start), Manual and Disabled (Service cannot start)  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Pause a service</td>
+<td>Pause a running service, if applicable to the service.  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Pause a service from AD</td>
+<td>Pause a running service, if applicable to the service.  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Resume a service</td>
+<td>Resume a paused service, if applicable to the service.  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Resume a service from AD</td>
+<td>Resume a paused service, if applicable to the service.  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Start a service</td>
+<td>Start a stopped service, if applicable to the service. To be able to start, the service must be setted as Automatic or Manual  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Start a service from AD</td>
+<td>Start a stopped service, if applicable to the service. To be able to start, the service must be setted as Automatic or Manual  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Stop a service</td>
+<td>Stop a running service, if applicable. Take care that depending the service you stop, the remote Windows could shutdown or not respond  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Stop a service from AD</td>
+<td>Stop a running service, if applicable. Take care that depending the service you stop, the remote Windows could shutdown or not respond  Exception: - ConnectionError: Error when connecting to the computer</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Microsoft\\Favorites Management</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Add Favorite Computer</td>
+<td>Add a favorit computer</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Add Favorite Group</td>
+<td>Add a favortie group</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Add Favorite OU</td>
+<td>Add a favorite OU</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Remove Favorite Computer</td>
+<td>Remove a favorite</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Remove Favorite Group</td>
+<td>Remove a favorite</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Remove Favorite OU</td>
+<td>Remove a favorite</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Orchestrator</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Orchestrator\\Tasks</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create recurrent task</td>
+<td>Creates a recurrent task. Returns the newly created task. Possible recurrenceCycle attribute values: - one-time: Task runs once only. - every-minutes: Task runs every minute - every-hours: Task runs hourly - every-days: Task runs daily - every-weeks: Task runs weekly - every-months: Task runs monthly   Possible recurrencePattern attribute values depend on the recurrenceCycle attribute value: - one-time: Ignores the recurrencePattern attribute - every-minutes: Seconds into each minute at which the task starts, for example, "00" or "00, 30"  - every-hours: Minutes and seconds into each hour at which the task starts, for example, "00:00" or "00:00, 30:00" - every-days: Time at which the task starts each day, for example, "18:30:00" or "12:00:00, 19:30:00" - every-weeks: Day and time at which the task starts each week, for example, "Mon 00:00:00" or "Mon 00:00:00, Wed 18:00:00" - every-months: Date and time at which the task starts each month, for example, "14 00:00:00" or "14 00:00:00, 28 18:00:00"</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create task</td>
+<td>Schedules a workflow to run at a later time and date, as a task.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Orchestrator\\Workflows</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Start workflows in a series</td>
+<td>Runs a workflow multiple times in a series, one instance after the other. You provide workflow parameters in an array, providing a property list (with one property per workflow input) for each instance of the workflow that starts.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Start workflows in parallel</td>
+<td>Starts the provided workflow multiple times, with different parameters. You provide workflow parameters in an array, providing a property list (with one property per workflow input) for each instance of the workflow that starts.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Refactoring</em></strong></td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Migrate package to vCenter Server 4</td>
+<td>Refactors legacy applications that use the VMware Infrastructure 3 plug-in to use the vCenter Server 4 plug-in. The new vCenter plug-in contains some changes in its class names and API, so you need to refactor legacy applications.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Refactoring\\Advanced</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Copy VMware Infrastructure 3 application and migrate to vCenter Server 4</td>
+<td>Migrates VMware Infrastructure 3 applications to vCenter Server 4. The Migrate package to vCenter Server 4 workflow calls this workflow.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Copy VMware Infrastructure 3 application and migrate to vCenter Server 4, with a String input</td>
+<td>Migrates VMware Infrastructure 3 applications to vCenter Server 4. The Migrate package to vCenter Server 4 workflow calls this workflow.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create refactoring description XML file</td>
+<td>Creates a refactoring description in XML format. The Migrate package to vCenter Server 4 workflow calls this workflow.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Refactor using resources</td>
+<td>Runs the refactoring using an external resource. The Migrate package to vCenter Server 4 workflow calls this workflow.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Run refactoring</td>
+<td>Runs the refactoring. The Migrate package to vCenter Server 4 workflow calls this workflow.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\SSH</em></strong></td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Change key pair passphrase</td>
+<td>Changes a key pair pass-phrase</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Generate key pair</td>
+<td>Generate key pair to connect to an SSH host without a password</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Register vCO public key on host</td>
+<td>Register the vCO public key (must be generated before) to a target host.</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Run SSH command</td>
+<td>Runs an SSH command.</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>SCP get command</td>
+<td>Copies a file from a host to the vCO server using SSH/SCP.</td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>SCP put command</td>
+<td>Copies a file from the vCO server to a target host using SSH/SCP.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\Troubleshooting</em></strong></td>
+</tr>
+<tr>
+<td align="right">---</td>
+<td>Export logs and application settings</td>
+<td>Generates a ZIP archive of troubleshooting information that contains the following files:  - Configuration files - Server, configuration, wrapper and installation log files - Workflow, action, Web view, configuration element, resource element, policy template, policy, authorization element and task information</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Batch</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Fill batch configuration elements</td>
+<td>Populates the configuration elements that the Run workflow on a selection of objects workflow uses. Performs the following tasks: - Resets the BatchObject and BatchAction configuration elements - Fills the BatchObject configuration element with all the workflows that have only one input parameter - Fills the BatchAction configuration element with all the actions that have only one parameter and have an array as the returnType</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Run a workflow on a selection of objects</td>
+<td>Runs a workflow on a selection of objects. You must have run the Fill batch configuration elements workflow before running this workflow.   You can run this workflow in simulation mode, in which case the workflow will not modify any of the objects on which it runs.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Cluster and Compute resource</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create cluster</td>
+<td>Creates a new cluster in a given host folder.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Delete cluster</td>
+<td>Deletes a given cluster.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Disable HA on cluster</td>
+<td>Disables HA on a given cluster.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Enable HA on cluster</td>
+<td>Enables HA on a given cluster</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Rename cluster</td>
+<td>Renames a given cluster.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Custom attributes</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Add custom attribute to a virtual machine</td>
+<td>Adds a custom attribute  for a virtual machine in vCenter Server</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Add custom attribute to multiple virtual machines</td>
+<td>Adds a custom attribute to multiple virtual machines in vCenter Server</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Get custom attribute</td>
+<td>Gets a custom attribute for a given virtual machine, in vCenter Server.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Datacenter</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create datacenter</td>
+<td>Creates a new datacenter in a given datacenter folder. Returns the new datacenter.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Delete datacenter</td>
+<td>Deletes a given datacenter.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Reload datacenter</td>
+<td>Force vCenter Server to reload data from a datacenter.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Rename datacenter</td>
+<td>Renames a given datacenter and waits the process to complete.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Rescan datacenter HBAs</td>
+<td>Scans the hosts in a datacenter and initiates a re-scan on the hosts' HBAs to discover new storage.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Datastore and files</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Delete all files</td>
+<td>Deletes a list of files.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Delete all unused datastore files</td>
+<td>Introspects all datastores in the vCenter Server and deletes all unused files.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Export unused datastore files</td>
+<td>Introspects all datastores and lists all unused files in an XML descriptor file.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Find unused files in datastores</td>
+<td>Searches vCenter Server for all unused disks (*.vmdk), virtual machines (*.vmx), and template (*.vmtx) files that are not associated to any vCenter Server instances that are registered with Orchestrator.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Get all configuration, template, and disk files from virtual machines</td>
+<td>Returns a list of all virtual machine descriptor files and a list of all virtual machine disk files, for all datastores.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Log all datastores files</td>
+<td>Prints a log for every virtual machine configuration file and every virtual machine disk file found in all datastores.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Log unused datastore files</td>
+<td>Searches vCenter Server for all unused files that are registered on virtual machines and logs the files. Exports the files in a text file</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Folder management</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Folder management\\Datacenter folder</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create datacenter folder</td>
+<td>Creates a new datacenter folder and returns it.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Delete datacenter folder</td>
+<td>Deletes a datacenter folder and waits for the task to complete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Rename datacenter folder</td>
+<td>Renames a datacenter folder and waits for the task to complete.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Folder management\\Host folder</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create host folder</td>
+<td>Creates a new host folder and returns it.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Delete host folder</td>
+<td>Deletes a host folder and waits for the task to complete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Rename host folder</td>
+<td>Renames a host folder and waits for the task to complete.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Folder management\\VM folder</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create virtual machine folder</td>
+<td>Creates a new virtual machine folder.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Delete virtual machine folder</td>
+<td>Deletes a virtual machine folder and waits for the task to complete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Rename virtual machine folder</td>
+<td>Renames a virtual machine folder and waits for the task to complete.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Host management</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Host management\\Basic</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Enter maintenance mode</td>
+<td>Puts the host in maintenance mode. While this task is running and when the host is in maintenance mode,  virtual machines cannot be powered on and provisioning operations cannot be performed on the host. Once the call completes, it is safe to turn off a host without disrupting any virtual machines.  The task completes once there are no powered-on virtual machines on the host and no provisioning operations in progress on the host. The operation does not directly initiate any operations to evacuate or power-down virtual machines. However, if the host is part of a cluster with VMware DRS enabled, DRS provides migration recommendations to evacuate the virtual machines. If DRS is in fully-automatic mode, it automatically schedules virtual machine evacuation.   The task is cancellable.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Exit maintenance mode</td>
+<td>Exits maintenance mode.   The task can be canceled.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move host into cluster</td>
+<td>Moves an existing host into a cluster. The host must be part of the same datacenter, and if the host is part of a cluster, the host must be in maintenance mode.  If the host is a stand-alone host, the stand-alone ComputeResource is removed as part of this operation.  All virtual machines associated with the host, regardless of whether or not they are running, are moved with the host into the cluster. If there are virtual machines that should not be moved, then migrate those virtual machines off the host before initiating this operation.  If the host is a stand-alone host, the cluster supports nested resource pools, and the user specifies the optional resourcePool argument, then the stand-alone host's root resource pool becomes the specified resource pool and the stand-alone host resource hierarchy is imported into the new nested resource pool. If the cluster does not support nested resource pools or the resourcePool argument is not specified, then the stand-alone host resource hierarchy is ignored.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move host to folder</td>
+<td>Moves a host into a folder as a standalone host (ComputeResource). The host must be part of a ClusterComputeResource in the same datacenter and the host must be in maintenance mode. Otherwise, the operation fails.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reload host</td>
+<td>Forces vCenter Server to reload data from an ESX host.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Host management\\Power</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reboot host</td>
+<td>Reboots a host. If the Orchestrator client is connected directly to the host, it does not receive any indication of success in the returned task, but rather loses the connection to the host if the command succeeds.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Shut down host</td>
+<td>Shuts down a host. If the Orchestrator client is connected directly to the host, it does not receive any indication of success in the returned task, but rather loses the connection to the host if the command succeeds.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Host management\\Registration</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add host to cluster</td>
+<td>Adds a host to the cluster. If the cluster supports nested resource pools and the user specifies the optional ResourcePool argument, then the host's root resource pool becomes the specified resource pool. The stand-alone host resource hierarchy is imported into the new nested resource pool.  If the cluster does not support nested resource pools, then the stand-alone host resource hierarchy is discarded and all virtual machines on the host are put under the cluster's root resource pool.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add standalone host</td>
+<td>Registers an ESX host as a standalone host, namely, as a ComputeResource.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Disconnect host</td>
+<td>Disconnects an ESX host from vCenter Server.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reconnect host</td>
+<td>Reconnects a disconnected host by providing only the host information.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reconnect host with all information</td>
+<td>Reconnects a host by providing all information about the ESX host.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove host</td>
+<td>Removes an ESX host and unregisters it from vCenter Server.  If the ESX host is part of a cluster, you must put it in maintenance mode before attempting to remove it.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Resource Pool</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create resource pool</td>
+<td>Creates a new resource pool with the default CPU and memory allocation values.  To create a resource pool in a cluster, the cluster must be with VMware DRS enabled.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create resource pool with specified values</td>
+<td>Creates a resource pool with the specified CPU and memory allocation values.   To create a resource pool in a cluster, the cluster must be with VMware DRS enabled.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Delete resource pool</td>
+<td>Deletes a resource pool and waits for the task to complete.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Get resource pool information</td>
+<td>Returns CPU and memory allocation infromation about a given resource pool.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Reconfigure resource pool</td>
+<td>Reconfigures CPU and memory allocation configuration for a given resource pool.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Rename resource pool</td>
+<td>Renames a resource pool and waits for the task to complete.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Storage</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create VMFS for all available disks</td>
+<td>Creates a VMFS volume for all available disks of a given host.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Display all datastores and disks</td>
+<td>Displays the existing datastores and available disks.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Basic</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create custom virtual machine</td>
+<td>Creates a virtual machine with the specified configuration options and additional devices.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create simple dvPortGroup virtual machine</td>
+<td>Creates a simple virtual machine. The network used is a Distributed Virtual Port Group.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create simple virtual machine</td>
+<td>Creates a virtual machine with the most common devices and configuration options.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Delete virtual machine</td>
+<td>Removes a virtual machine from the Inventory and Datastore.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Mark as template</td>
+<td>Converts an existing virtual machine to a template, not allowing it to start. Templates can be used to create new virtual machines.  Warning: The workflow may finish before the virtual machine status is refreshed.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Mark as virtual machine</td>
+<td>Converts an existing template to a virtual machine, allowing it to start.  Warning: The workflow may finish before the VM status is refreshed</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move virtual machine to folder</td>
+<td>Moves a virutal machine to the specified virtual machine folder.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move virtual machine to resource pool</td>
+<td>Moves a virtual machine to a resource pool. If the target resource pool is not in the same cluster, use the Migrate/Relocate workflows.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move virtual machines to folder</td>
+<td>Moves several virutal machines to the specified virtual machine folder.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move virtual machines to resource pool</td>
+<td>Moves several virtual machines to a resource pool.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Register virtual machine</td>
+<td>Registers a virtual machine. The virtual machine files must be stored in an existing datastore and must not be already registered.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reload virtual machine</td>
+<td>Forces vCenter Server reload a virtual machine.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Rename virtual machine</td>
+<td>Renames an existing virtual machine on vCenter Server or ESX host and not on the datastore.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Set virtual machine performance</td>
+<td>Changes performance settings such as shares, min/max values, shaping for network, and disks access of a virtual machine.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Unregister virtual machine</td>
+<td>Removes an existing virtual machine from the Inventory.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Upgrade virtual machine</td>
+<td>Upgrades the virtual hardware to the latest revision that is supported by the virtual machine's current host. An input parameter allows a forced upgrade even if VMware Tools are out of date.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Upgrade VM Hardware (force if required)</td>
+<td>Upgrades this virtual machine's virtual hardware to the latest revision that is supported by the virtual machine's current host. This workflow forces the upgrade to continue, even if the VMware Tools are out of date. If the VMware Tools are out of date, forcing the upgrade to continue will revert the guest network settings to the default settings. To avoid this first upgrade the VMware Tools before running this workflow.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Wait for task and answer virtual machine question</td>
+<td>Waits for a vCenter task to complete or for the virtual machine to ask a question. If the virtual machine requires an answer, accepts user input and answers the question.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Clone virtual machine from properties</td>
+<td>Clones virtual machines by using properties as input parameters. Properties of different types have the following prefixes: - VMware properties start with vm - Windows properties start with win - Linux properties with lin - Networks properties start with nic1, nic2, nic3 or nic4 - Other properties are ignored  See the workflow attributes for the key name and object types.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Clone virtual machine, no customization</td>
+<td>Clones a virtual machine without changing anything except the virtual machine UUID.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Customize virtual machines from properties</td>
+<td>Clones virtual machines by using properties as input parameters. Properties of different types have the following prefixes: - VMware properties start with vm - Windows properties start with win - Linux properties with lin - Networks properties start with nic1, nic2, nic3 or nic4 - Other properties are ignored  See the workflow attributes for the key name and object types.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone\\Linked Clone</em></strong></td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Linked clone, no customization</td>
+<td>Creates a linked clone of a given virtual machine.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone\\Linked Clone\\Helper</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----------</td>
+<td>Restore virtual machine from linked clone</td>
+<td>Removes a virtual machine from a linked clone setup.</td>
+</tr>
+<tr>
+<td align="right">-----------</td>
+<td>Set up virtual machine for linked clone</td>
+<td>Prepares the virtual machine to be link cloned.      A linked clone is a copy of a virtual machine that shares virtual disks with the parent virtual machine.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone\\Linked Clone\\Linux Customization</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----------</td>
+<td>Linked clone, Linux with multiple NICs</td>
+<td>Creates a linked clone of a Linux virtual machine, performs the guest OS customization, and configures up to four virtual network cards.</td>
+</tr>
+<tr>
+<td align="right">-----------</td>
+<td>Linked clone, Linux with single NIC</td>
+<td>Creates a linked clone of a Linux virtual machine, performs the guest OS customization, and configures one virtual network card.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone\\Linked Clone\\Windows Customization</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----------</td>
+<td>Linked clone, Windows with multiple NICs and credential</td>
+<td>Creates a linked clone of a Windows virtual machine, performing the guest OS customization. Configures up to four virtual network cards and a local administrator user account.  Sysprep tools must be available on vCenter server.</td>
+</tr>
+<tr>
+<td align="right">-----------</td>
+<td>Linked clone, Windows with single NIC and credential</td>
+<td>Creates a linked clone of a Windows virtual machine performing the guest OS customization. Configures one virtual network card and a local administrator user account.  Sysprep tools must be available on vCenter server.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone\\Linux Customization</em></strong></td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone, Linux with multiple NICs</td>
+<td>Clones a Linux virtual machine, performs guest OS customization and configures up to four virtual network cards.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone, Linux with single NIC</td>
+<td>Clones a Linux virtual machine, performs guest OS customization and configures one virtual network card.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone\\Tools</em></strong></td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get a VirtualEthernetCard to change the network</td>
+<td>Returns a new ethernet card to update a virtual device. Contains only the device key of the given virtual device and the new network.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Linux customization</td>
+<td>Returns the Linux customization preparation.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get multiple VirtualEthernetCard device changes</td>
+<td>Returns an array of VirtualDeviceConfigSpec objects for add and remove operations on VirtualEthernetCard objects.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get NIC setting map</td>
+<td>Returns the setting map for virtual network card by using VimAdapterMapping.  Changes NIC information for workflows that clone and reconfigure virtual machines. Other clone workflows call this workflow.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Windows customization, Sysprep with credentials</td>
+<td>Returns the customization information for Microsoft Sysprep process, with credentials. The different workflows for cloning Windows virtual machines use this workflow.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Windows customization, Sysprep with Unattended.txt</td>
+<td>Returns the customization information for the Microsoft Sysprep process using an Unattended.txt file. The different workflows for cloning Windows virtual machines use this workflow.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Windows customizations for Sysprep</td>
+<td>Returns the customization information for the Microsoft Sysprep process. The different workflows for cloning Windows virtual machines use this workflow.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone\\Windows Customization</em></strong></td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone thin provisioned, Windows with single NIC and credential</td>
+<td>Clones a Windows virtual machine, performing the guest OS customization. Specifies virtual disk thin provisioning policy and configures one network card and a local administrator user account.  Sysprep tools must be available on vCenter server.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone, Windows Sysprep with single NIC and credential</td>
+<td>Clones a Windows virtual machine performing the guest OS customization. Configures one virtual network card and a local administrator user account.     Sysprep tools must be available on vCenter server.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone, Windows with multiple NICs and credential</td>
+<td>Clones a Windows virtual machine, performing guest OS customization. Configures the local administrator user account and up to four virtual network cards.  Sysprep tools must be available on vCenter server.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone, Windows with single NIC</td>
+<td>Clones a Windows virtual machine, performs guest OS customization and configures one virtual network card.  Sysprep tools must be available on vCenter server.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone, Windows with single NIC and credential</td>
+<td>Clones a Windows virtual machine, performing guest OS customization. Configures one network card and a local administrator user account.     Sysprep tools must be available on vCenter server.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Clone\\Windows Customization\\Only Customize</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----------</td>
+<td>Customize, Windows with single NIC and credential</td>
+<td>Performs guest OS customization, configures one virtual network card and a local administrator user account on a Windows virtual machine.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Device Management</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add CD-ROM</td>
+<td>Adds a virtual CD-ROM to a virtual machine. If the virtual machine has no IDE controller, the workflow creates one.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add disk</td>
+<td>Adds a virtual disk to a virtual machine.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Change RAM</td>
+<td>Changes the amount of RAM of a virtual machine.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Convert disks to thin provisioning</td>
+<td>Converts thick-provisioned disks of virtual machines to thin-provisioned disks. Converting from thick to thin provisioning involves moving the virtual machine, as disks cannot change from thick to thin provisioning in situ. To perform the conversion, you must first choose the datastore from which to select virtual machines. When the workflow runs, you must choose a temporary datastore in which to host the virtual machines during the conversion process. You cannot convert virtual machines in the powered on state that have snapshots. However, you can convert powered on virtual machines that do not have snapshots, and you can convert virtual machines that have snapshots if they are powered off.  NOTE: If a virtual machine is in datastore1, and this virtual machine has one thick-provisioned disk on datastore1 and another thick-provisioned disk on datastore2, you must move the virtual machine to a third datastore, datastore3. If you do not move the virtual machine to datastore3, only one disk will convert.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Convert independent disks</td>
+<td>Converts all independent virtual machine disks to normal disks by removing the independent flag from the disks.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Disconnect all detachable devices from a running virtual machine</td>
+<td>Disconnects all detachable devices, such as floppy disk and CD-ROM drives from a running virtual machine. The virtual machine must be running.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Mount floppy disk drive</td>
+<td>Mounts a floppy disk drive FLP file from the ESX datastore.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Move and Migrate</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Migrate virtual machine</td>
+<td>Migrates a virtual machine from one host to another. Uses MigrateVM_Task from the vSphere API.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Migrate virtual machines using vMotion/Storage vMotion</td>
+<td>Uses vMotion, storage vMotion, or both vMotion and Storage vMotion to migrate a single virtual machine, a selection of virtual machines, or all available virtual machines.  NOTE: vCenter Server does not allow storage vMotion and vMotion in the same pass for a powered on virtual machine. You must power off the virtual machine to use storage vMotion and vMotion in the same pass.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move VMs to another VC</td>
+<td>Migrate a list of virtual machine to another VCenter</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Quick virtual machine migration</td>
+<td>Suspends a virtual machine and migrates it to another host.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Relocate virtual machine disks</td>
+<td>Relocates a virtual machine's disks to another host or datastore while the virtual machine is in the powered off state. Uses the RelocateVM_Task from the vSphere API.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Storage vMotion</td>
+<td>Perform storage vMotion for a virtual machine, all virtual machines that this plug-in knows, or a selection of virtual machines.  To use "Select by action", you must run the 'Library &gt; vCenter &gt; Batch &gt; Fill batch configuration elements' workflow before running this workflow.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Others</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Extract virtual machine information</td>
+<td>Returns the virtual machine folder, host system, resource pool, compute resource, datastore, hard drives sizes, CPU and memory, network, and IP address for a given virtual machine. Note: VMware Tools may need to be installed.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Find orphaned virtual machines</td>
+<td>Lists all virtual machines in an orphaned state in the Orchestrator inventory. Lists the VMDK and VMTX files for all datastores in the Orchestrator inventory that have no association with any virtual machines in the Orchestrator inventory. Sends the lists by email (optional).</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Power Management</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Power off virtual machine and wait</td>
+<td>Powers off a Virtual Machine and waits for the process to complete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reboot guest OS</td>
+<td>Reboots the virtual machines's guest OS. Does not reset non-peristent virtual machines. VMware Tools must be running.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reset virtual machine and wait</td>
+<td>Resets a virtual machine and waits for the process to complete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Resume virtual machine and wait</td>
+<td>Resumes a suspended virtual machine and waits for the process to complete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Set guest OS to standby</td>
+<td>Sets the guest OS to standby. VMware tools must be running.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Shut down and delete virtual machine</td>
+<td>Shuts down a virtual machine and deletes it from the inventory and disk.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Shut down guest OS and wait</td>
+<td>Shuts down a guest OS and waits for the process to complete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Start virtual machine and wait</td>
+<td>Starts a virtual machine and waits for VMware Tools to start.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Suspend virtual machine and wait</td>
+<td>Suspends a virtual machine and waits for the task to complete.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\Snapshot</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create a snapshot</td>
+<td>Creates a snapshot and returns it.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create snapshots of all virtual machines in a resource pool</td>
+<td>Creates a snapshot of each virtual machine in a resource pool.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove all snapshots</td>
+<td>Removes all existing snapshots without reverting to a previous snapshot.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove excess snapshots</td>
+<td>Finds virtual machines with more than a given number of snapshots and optionally deletes the oldest snapshots. Sends the results by email.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove old snapshots</td>
+<td>Gets all snapshots that are older than a given number of days and prompts the user to select which ones to delete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove snapshots of a given size</td>
+<td>Gets all snapshots that are larger than a given size and prompts the user to select which ones to delete.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Revert to current snapshot</td>
+<td>Reverts to the current snapshot.  If the snapshot to which to revert was taken while the virtual machine was powered on, and if you run the Revert to current snapshot workflow when the virtual machine is powered off, the workflow powers on the virtual machine so as to emulate state of the snapshot.  Use the host optional input parameter to specify a host on which to power on the virtual machine. If you do not set the host parameter and vBalance is set, a host is automatically selected. Otherwise, the virtual machine keeps its existing host affiliation.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Revert to snapshot and wait</td>
+<td>Reverts to a specific snapshot. Does not delete the snapshot</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\vCenter\\Virtual Machine management\\VMware Tools</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Mount tools installer</td>
+<td>Mounts the tools installer on the virtual CD-ROM.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Set console screen resolution</td>
+<td>Sets the console window's resolution. The virtual machine must be in the powered on state.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Turn on time synchronization</td>
+<td>Turns on time synchronization between the virtual machine and the ESX server in VMware Tools.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Unmount tools installer</td>
+<td>Unmounts the VMware Tools CD-ROM.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Upgrade tools</td>
+<td>Upgrades VMware Tools on a virutal machine</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Upgrade tools at next reboot</td>
+<td>Upgrades VMware Tools on a virutal machine at the next reboot.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Cluster and Compute resource</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create cluster</td>
+<td>Create a cluster in a given folder</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Destroy cluster</td>
+<td>Destroy a cluster.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Rename cluster</td>
+<td>Rename a given cluster</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Custom attributes</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Add custom attribute</td>
+<td>Add a custom attribute (in Virtual Center) for multiple VMs</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Get custom attribute</td>
+<td>Get a custom attribute (in Virtual Center) for a given VM</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Datacenter</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create datacenter</td>
+<td>Create a new datacenter in a given datacenter folder; return the new datacenter</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Destroy datacenter</td>
+<td>Destroy a given datacenter.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Reload datacenter</td>
+<td>Force Virtual center to reload data from a datacenter.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Rename datacenter</td>
+<td>Rename a given datacenter and wait the process to complete</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Folder management</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Folder management\\Datacenter folder</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create Datacenter folder</td>
+<td>Create a new Datacenter folder and return it.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Destroy Datacenter folder</td>
+<td>Destroy a Datacenter folder and wait for the task completion.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Rename Datacenter folder</td>
+<td>Rename a Datacenter folder and wait for the task completion.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Folder management\\Host folder</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create Host folder</td>
+<td>Create a new host folder and return it.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Destroy Host folder</td>
+<td>Destroy a VM folder and wait the task completion.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Rename Host folder</td>
+<td>Rename a Host folder and wait the task completion.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Folder management\\VM folder</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create VM folder</td>
+<td>Create a new Folder.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Destroy VM folder</td>
+<td>Destroy a VM folder and wait the task completion.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Rename VM folder</td>
+<td>Rename a VM folder and wait the task completion.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Host management</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Host management\\Basic</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Enter maintenance mode</td>
+<td>Puts the host in maintenance mode. While this task is running and when the host is in maintenance mode, no virtual machines can be powered on and no provisioning operations can be performed on the host. Once the call completes, it is safe to turn off a host without disrupting any virtual machines.  The task completes once there are no powered-on virtual machines on the host and no provisioning operations in progress on the host. The operation does not directly initiate any operations to evacuate or power-down virtual machines. However, if the host is part of a cluster with VMware DRS enabled, DRS provides migration recommendations to evacuate the virtual machines. If DRS is in fully-automatic mode, these are automatically scheduled.   The task is cancellable.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Exit maintenance mode</td>
+<td>Puts the host in maintenance mode. While this task is running and when the host is in maintenance mode, no virtual machines can be powered on and no provisioning operations can be performed on the host. Once the call completes, it is safe to turn off a host without disrupting any virtual machines.  The task completes once there are no powered-on virtual machines on the host and no provisioning operations in progress on the host. The operation does not directly initiate any operations to evacuate or power-down virtual machines. However, if the host is part of a cluster with VMware DRS enabled, DRS provides migration recommendations to evacuate the virtual machines. If DRS is in fully-automatic mode, these are automatically scheduled.   The task is cancellable.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move Host into Cluster</td>
+<td>Put a host into a cluster. All discovered VMs are automatically put in the given resource pool</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move host to folder</td>
+<td>Move host into a folder. Create a stand-alone host (ComputeResource).</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reload host</td>
+<td>Force Virtual Center to reload data from an ESX host</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Host management\\Power</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reboot host</td>
+<td>Reboots a host. If the command is successful, then the host has been rebooted. If connected directly to the host, the client never receives an indicator of success in the returned task but simply loses connection to the host, upon success.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Shutdown host</td>
+<td>Shuts down a host. If the command is successful, then the host has been shut down. Thus, the client never receives an indicator of success in the returned task if connected directly to the host.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Host management\\Registration</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add host to cluster</td>
+<td>Resgister an ESX Host and add it to a cluster</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add standalone host</td>
+<td>Register an ESX host as a Stand alone host (ComputeResource)</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Disconnect host</td>
+<td>Disconnect an ESX host from Virutal Center</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reconnect host (simple)</td>
+<td>Reconnect a disconnected host, providing only the Host information</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reconnect host (with all info)</td>
+<td>Reconnect a host, providing all information about the ESX host</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove host</td>
+<td>Remove an ESX host, unregistering it from Virtual Center  If the ESX is part of a cluster, it must be put in maintenance mode before attempting the operation</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Resource Pool</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create resource pool</td>
+<td>Create a resource pool.  To be able to create Resource Pool in a Cluster, the cluster must be DRS enabled.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create resource pool (with default values)</td>
+<td>Create a new resource pool. All allocation values are set to default.  To be able to create Resource Pool in a Cluster, the cluster must be DRS enabled.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Destroy resource pool</td>
+<td>Destroy a resource pool and wait the task completion.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Reconfig resource pool</td>
+<td>Reconfigure allocation configuration for a resource pool</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Rename resource pool</td>
+<td>Rename a resource pool and wait the task completion.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\SSH</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>(VIM3) Register vCO public key on host</td>
+<td>This workflow will register the vCO public key (must be generated before) to a target host.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>(VIM3) SCP Get</td>
+<td>Copies a file from a host to the VS-O server using SSH/SCP.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>(VIM3) SCP Put</td>
+<td>Copies a file from the VS-O server to a target host using SSH/SCP.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>(VIM3) SSH Execute command</td>
+<td>Execute SSH command</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Basic</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create VM (Full)</td>
+<td>Allow to create a new VM by specifing a lot of parameters</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create VM (Simple)</td>
+<td>Allow to create a simple, basic VM.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Destroy VM</td>
+<td>Destroy the Virtual Machine, removing it from the Inventory AND from the Datastore.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Mark as Template</td>
+<td>Mark an existing VM as a template, preventing it to start</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Mark as Virtual Machine</td>
+<td>Mark an existing template as a Virutal Machine, allowing it to start</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move VM to folder</td>
+<td>Move a Virutal Machine to a VM folder</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move VM to Resource pool</td>
+<td>Move one VM to a resource pool. The target must be in the same cluster. Otherwise use Migrate / Relocate</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move VMs to Folder</td>
+<td>Move multiple VMs in a vm folder.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Move VMs to Resource pool</td>
+<td>Move multiple VMs to a resource pool</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Register Virtual machine</td>
+<td>Register a virtual machine. The VM must be stored on an existing datastore and must not be already registered.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reload VM</td>
+<td>Force Virtual Center to reload a VM</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Rename VM</td>
+<td>Rename an existing VM. This will only rename the VM in Virtual Center / ESX host, not on the datastore</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Set VM Performance</td>
+<td>Change a VM's performance settings (shares, min/max values, shaping for network, disks access)</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Unregister VM</td>
+<td>Unregister an existing Virtual Machine</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Upgrade VM</td>
+<td>Upgrades this virtual machine's virtual hardware to the latest revision that is supported by the virtual machine's current host. An input parameter allows a forced upgrade even if the VMware Tools are out of date.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Clone</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Clone VM (No customization at all)</td>
+<td>Clone a VM, without changing anything (except VM UUID)</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Clone VM from Properties</td>
+<td>This workflow clones VM using Properties as input:    - Properties about VMware start by vm    - Properties about Windows start by win    - Properties about Linux start by lin    - Properties about network starts by nic1, nic2, nic3 or nic4 Other properties are ignored  See workflow attributes for key name / object type.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Clone\\Linux Customization</em></strong></td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone VM (Linux customization, 1 Nic)</td>
+<td>Clones a windows VM, doing customization of the guest (Sysprep) and configures one network card.  Sysprep tools must be available on the Virtual Center.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone VM (Linux customization, Multiple Nic)</td>
+<td>Clones a windows VM, doing customization of the guest (Sysprep) and configures 0 to 4 network card.  Sysprep tools must be available on the Virtual Center.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Clone\\Tools</em></strong></td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get 1 Nic Setting Map</td>
+<td>Return a NIC setting (VimAdapterMapping).  Allow to change Nic information for Clone and Reconfigure VMs workflows</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get a VirtualEthernetCard to change the network</td>
+<td>Return a "new" ethernet card for updating a virtual device. Contains only the Device key of the given virtual device and the new network</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Linux Customization</td>
+<td>null</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Multiple VirtualEthernetCard devices change (add/remove)</td>
+<td>Returns an array of VirtualDeviceConfigSpec for change operations on VirtualEthernetCard objects.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Windows Customization (Sysprep)</td>
+<td>Return the Customization information for Windows Sysprep process. This workflow is used by the Clone VM * workflows</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Windows Customization (Sysprep, Credential)</td>
+<td>Return the Customization information for Windows Sysprep process. This workflow is used by the Clone VM * workflows</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Get Windows Customization (Unattended.txt)</td>
+<td>Return the Customization information for Windows Sysprep process. This workflow is used by the Clone VM * workflows</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Clone\\Windows Customization</em></strong></td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone VM (Windows customization (Sysprep.inf), 1 Nic, Credential)</td>
+<td>Clones a windows VM, doing customization of the guest (Sysprep) and configures one network card.  Sysprep tools must be available on the Virtual Center.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone VM (Windows customization, 1 Nic)</td>
+<td>Clones a windows VM, doing customization of the guest (Sysprep) and configures one network card.  Sysprep tools must be available on the Virtual Center.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone VM (Windows customization, 1 Nic, Credential)</td>
+<td>Clones a windows VM, doing customization of the guest (Sysprep) and configures one network card.  Sysprep tools must be available on the Virtual Center.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone VM (Windows customization, 1 Nic, Credential, Thin provisionned)</td>
+<td>Clones a windows VM, doing customization of the guest (Sysprep) and configures one network card.  Sysprep tools must be available on the Virtual Center.</td>
+</tr>
+<tr>
+<td align="right">---------</td>
+<td>Clone VM (Windows customization, Multiple Nic, Credential)</td>
+<td>Clones a windows VM, doing customization of the guest (Sysprep) and configures one network card.  Sysprep tools must be available on the Virtual Center.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Clone\\Windows Customization\\Only Customize</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----------</td>
+<td>Customize VM (Windows customization, 1 Nic, Credential)</td>
+<td>Customize a windows VM.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Device Management</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add CD-ROM</td>
+<td>Add a new Virtual CD-ROM on a VM. if no IDE controller present, the workflow create one.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Add Disk</td>
+<td>Add a virtual disk to a VM.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Change RAM</td>
+<td>Change RAM size.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Mount floppy</td>
+<td>Mount a .flp file that is on ESX datastore</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Move and Migrate</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Migrate VM</td>
+<td>Migrate a VM from a host to another</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Relocate VM</td>
+<td>Relocate a Virtual machine to another host or datastore (While VM is power off)</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Others</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Extract VM informations</td>
+<td>null</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Power Management</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Power off VM and wait</td>
+<td>Power off a Virtual Machine.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reboot guest OS</td>
+<td>Send information to the VM guest OS to reboot. Don't reset VM not peristent. VMware Tools must be running.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Reset VM and wait</td>
+<td>Resets the virtual machine.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Resume VM and wait</td>
+<td>Resume a suspended Virtual Machine</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Shutdown &amp; Destroy VM</td>
+<td>Shutdown a VM and delete it.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Shutdown guest OS and wait</td>
+<td>Shutdown guest OS and wait.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Standby OS</td>
+<td>Stand by the guest os. VMware tools must be running.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Start VM and wait</td>
+<td>Starts a virtual machine and waits for the tools to be up and running.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Suspend VM and wait</td>
+<td>Suspends a virtual machine and wait for the task to complete.</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\\Snapshot</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Create a Snapshot</td>
+<td>Create a snapshot and return it.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Remove all Snapshots</td>
+<td>Remove all existing snapshot (without reverting)</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Revert to current snapshot</td>
+<td>Revert to the current snapshot. In the snapshot contains power on informations, and VM is not in a DRS cluster, the workflow provide the host for the operation.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Revert to snapshot and wait</td>
+<td>Revert to a specific snapshot. This will not delete the snapshot</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\VIM 3\\Virtual Machine management\VMware Tools</em></strong></td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Mount tools installer</td>
+<td>Mount tools installer on the Virtual CD-ROM.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Set console screen resolution</td>
+<td>Sets the console window's resolution as specified. The power state must be poweredOn.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Unmount tools installer</td>
+<td>Unmount the VMware tools CD.</td>
+</tr>
+<tr>
+<td align="right">-------</td>
+<td>Upgrade tools</td>
+<td>Upgrade VMware tools on a Virutal Machine</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\XML</em></strong></td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\XML\\Samples XML (Address Book)</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Append address book stylesheet information</td>
+<td>Appends stylesheet information for the address book example.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create address book CSS</td>
+<td>Creates CSS for the address book example</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create address book DTD</td>
+<td>Creates a DTD for the address book example</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create address book XML</td>
+<td>Creates XML for the address book example</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Full address book test</td>
+<td>Tests full address book cycle. Namely: - creates a directory - creates address book DTD, XML, and CSS - appends the stylesheet</td>
+</tr>
+<tr>
+<td colspan="3" align="left"><strong><em>\\Library\\XML\\Samples XML (Simple)</em></strong></td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Create a simple XML document</td>
+<td>Creates a simple XML document for testing purposes.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Find element in document</td>
+<td>Finds an element in an XML file and logs it.</td>
+</tr>
+<tr>
+<td align="right">-----</td>
+<td>Modify XML document</td>
+<td>Modifies an XML file by writing a new XML document in a new file.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+  </article>
+</main>
+
+  
+  
+  <div class="authorbox clearfix">
+    <figure class="authorbox__avatar">
+      <img alt="Burke Azbill avatar" src="/images/authors/burke.jpg" class="avatar" height="150" width="150">
+    </figure>
+    <div class="authorbox__header">
+      <span class="authorbox__name">About Burke Azbill:</span>
+    </div>
+    <div class="authorbox__description">
+      Burke has been a technology professional since 1996 and has held certifications from the CNCF, Cisco, Citrix, ITIL, Linux Professional Institute, Microsoft, Novell, and VMware.  He joined VMware in 2007 as part of the <a href="http://ir.vmware.com/overview/press-releases/press-release-details/2007/VMware-Acquires-Dunes-Technologies/default.aspx">acquisition of Dunes Technologies from Lausanne, Switzerland</a> where he had begun his work with Orchestrator.  Burke is founder and contributor of the <a href="https://VCOTeam.info">vCOTeam.info</a> blog as well as a leading contributor to the <a href="https://communities.vmware.com/community/vmtn/vrealize/orchestrator">VMTN Communities for Orchestrator</a>.  He has been recognized by the community as a <a href="https://vexpert.vmware.com/">vExpert</a> since 2010. During his tenure at VMware, Burke co-created the Orchestrator Masters Training program, has trained hundreds of employees on Orchestrator, built many integrations for customers and partners, and has worked various roles in the VMworld Hands On Labs.  He has also been a member, and technical lead, of the <a href="https://www.livefire.solutions">SDDC Livefire program</a>, building content, labs, and vPods for the program. Publications include contributing author for &lsquo;VMware vCloud Architecture Toolkit (vCAT)&rsquo; (VMware Press 2013) and technical resource for <a href="http://bit.ly/vroCookbook2">&lsquo;VMware vRealize Orchestrator Cookbook - Second Edition&rsquo;</a>, <a href="http://bit.ly/vroCookbook">&lsquo;VMware vRealize Orchestrator Cookbook</a>, and <a href="http://bit.ly/vroEssentials">VMware vRealize Orchestrator Essentials (Packt Publishing 2015)</a>, Automating vSphere with VMware vCenter Orchestrator (VMware Press 2012), and VMware vSphere for Dummies (For Dummies 2011).
+    </div>
+    <div class="widget-social__item widget__item">
+      <a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer"
+        href="https://twitter.com/TechnicalValues" target="_blank">
+        <svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+      </a>
+    </div>
+  </div>
+  
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/question-answer/product/80-how-can-you-start-workflows-.html" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">How can you start vCenter Orchestrator workflows ?</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/question-answer/product/130-how-many-workflows-come-with-the-vcloud-plug-in.html" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">How many workflows come with the vCloud Plug-in?</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://new.vcoteam.info/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html">Building a Kubernetes Blueprint for vRealize Automation - Intro</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html">Lightweight DNS Server for Home or Test Lab</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html">Please share your code at the Sample Exchange</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html">How to create a Microsoft DNS Dynamic Types plug-in ?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html">How to update a Resource Element Script&#39;s Contents using curl</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/vcoteam" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

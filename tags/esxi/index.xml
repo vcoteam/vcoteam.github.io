@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESXi on </title>
+    <link>http://new.vcoteam.info/tags/esxi.html</link>
+    <description>Recent content in ESXi on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Apr 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manage Services on your ESXi Hosts with vCO</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/240-manage-services-on-your-esxi-hosts-with-vco.html</link>
+      <pubDate>Tue, 24 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/240-manage-services-on-your-esxi-hosts-with-vco.html</guid>
+      <description>We&#39;ve all seen that vCenter Orchestrator (vCO) is quite powerful in automating many aspects of your Infrastructure through the variety of specific and generic plug-ins. While there are hundreds of workflows and actions for vCenter included in a clean install of vCO, they simply don&#39;t cover every single thing you may want to do. One such example has come up a few times in the VMware Communities: Managing Services. The following article will walk you through creating a simple workflow that allows you to manage services on a specified ESXi (VC:HostSystem) server.</description>
+    </item>
+    
+  </channel>
+</rss>

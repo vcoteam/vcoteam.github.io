@@ -42,5 +42,15 @@ Introduction Let&amp;rsquo;s build a simple Dynamic Types plug-in around our SQL
 Introduction vRealize Automation (vRA) features an Advanced Service Designer (ASD) that allows for you to offer nearly anything as a service (XaaS). In order to take advantage of that feature, it requires a vRealize Orchestrator (vRO) Inventory object.</description>
     </item>
     
+    <item>
+      <title>VMware released the vCenter Orchestrator SQL Plug-in</title>
+      <link>http://new.vcoteam.info/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</guid>
+      <description>If you ever wanted to integrate your workflows with a database with having your database records available as part of the inventory then this plug-in will help you to do so.
+Chances are that at some point you will need to read or write information from an SQL database as part of your workflows. vCenter Orchestrator provides some scripter / developper capabilities such as the JDBC plug-in and the integration with the hybernate framework.</description>
+    </item>
+    
   </channel>
 </rss>

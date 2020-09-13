@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Pimp my vCenter Orchestrator Virtual Appliance - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;&lt;img src=&#34;images/vcova.png&#34; alt=&#34;alt&#34; /&gt;&lt;/p&gt;&lt;p&gt;If you like the VMware vCenter Orchestrator (vCO) Appliance because it is easy to deploy, configure and use then you may want to improve it with enabling additional features.&lt;/p&gt;">
+	<meta name="description" content="If you like the VMware vCenter Orchestrator (vCO) Appliance because it is easy to deploy, configure and use then you may want to improve it with enabling additional features.">
 		<meta property="og:title" content="Pimp my vCenter Orchestrator Virtual Appliance" />
-<meta property="og:description" content="&lt;p&gt;&lt;img src=&#34;images/vcova.png&#34; alt=&#34;alt&#34; /&gt;&lt;/p&gt;&lt;p&gt;If you like the VMware vCenter Orchestrator (vCO) Appliance because it is easy to deploy, configure and use then you may want to improve it with enabling additional features.&lt;/p&gt;" />
+<meta property="og:description" content="If you like the VMware vCenter Orchestrator (vCO) Appliance because it is easy to deploy, configure and use then you may want to improve it with enabling additional features." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/234-pimp-my-vcenter-orchestrator-virtual-appliance.html" />
 <meta property="article:published_time" content="2012-03-13T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pimp my vCenter Orchestrator Virtual Appliance"/>
-<meta name="twitter:description" content="&lt;p&gt;&lt;img src=&#34;images/vcova.png&#34; alt=&#34;alt&#34; /&gt;&lt;/p&gt;&lt;p&gt;If you like the VMware vCenter Orchestrator (vCO) Appliance because it is easy to deploy, configure and use then you may want to improve it with enabling additional features.&lt;/p&gt;"/>
+<meta name="twitter:description" content="If you like the VMware vCenter Orchestrator (vCO) Appliance because it is easy to deploy, configure and use then you may want to improve it with enabling additional features."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,89 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2012-03-13T00:00:00Z">March 13, 2012</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p><img src="/images/pimp-vcova/vcova.png" alt="alt" /></p>
+<p>If you like the VMware vCenter Orchestrator (vCO) Appliance because it is easy to deploy, configure and use then you may want to improve it with enabling additional features.</p>
 
+
+<p>I like very much the vCO appliance but I recognize it has a few shortcomings:</p>
+<ul>
+<li>The vCO web start client does not work well on Mac since it does not preserve the client preferences.</li>
+<li>I am missing local shell control and live logs.</li>
+<li>I do not like to author my workflows as one of the hundreds "vcoadmin" out there. The appliance is missing user management.</li>
+</ul>
+<p>Let's address these. <span style="color: #ff0000;">Warning: The following is not documented, not supported and may not work in future vCO versions. It is intended for lab / educational usage.</span></p>
+<p>First make sure your appliance is started. Note the appliance IP / hostname and remember the password you set to login as root from the console.</p>
+
+<h2>Installing the vCO client from the appliance</h2>
+<p>The appliance is not exposing all its gems. It is hiding a collection of vCenter Orchestrator clients for windows, Linux and MacOS.</p>
+<p>If you open a browser and type in <pre>http://appliance/vco-client-install/</pre> you will end ip on this page:</p>
+<p><img src="/images/pimp-vcova/vco-client-install.png" alt="alt" width="336" height="118" /></p>
+<p>You can download and install the client for Windows (exe), Linux (bin). Or MacOS (zip).</p>
+<p>Make sure you install it on a system that will only need to connect to the vCO server of the appliance and not any other version of vCO (i.e any Windows base version). The system it is going to be installed on may not support any upgrade when installing a newer version of vCO.</p>
+
+<h2>Remote shell and remote logs</h2>
+<p>If like me you are not a fan of using the VM local console for administration purposes and find the web access to be too limited you may want to have a remote shell.</p>
+<p>A simple way to enable remote shell is to permit the root login for ssh. To do so on the appliance command line type:</p>
+<pre>sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config</pre>
+<p>And then:</p>
+<pre>service sshd restart</pre>
+<p>Now you can use your favorite ssh client to connect to the appliance (ssh root@appliance)</p>
+<p>There are several interesting things to do in command line on the vCO server but one is very important when developping / testing workflows : have a live view of the vCO server log file. To do so type:</p>
+<pre>tail /opt/vmo/app-server/server/vmo/log/server.log -f</pre>
+<p>You will see the last lines of the log file. If you try to run a workflow you will see it scrolling live.</p>
+<h2>Basic user management</h2>
+<p>The appliance has a simplified configuration using a built-in database and directory service. The directory service has a vcoadmins and vcousers group to allow to author and run workflows. In each of these groups there is a single member (vcoadmin and vco user). There are two issues with that. The first one is security. Someone may use the vcoadmin user name with the default vcoadmin password. The second one is that if everyone use the vcoadmin account to create content they loose the benefit of knowing or letting know who really created the workflows.</p>
+<p>For the first issue Jörg Lew wrote a detailed article <a href="http://www.vcoportal.de/2012/03/change-the-password-for-vcoadmin-on-vco-appliance/" target="_blank">here</a>. Changing the vCO Admin password is nice, adding new vCO admin would be better. It would even be better if you could do it with a workflow. This is what I did with providing this package. You can find the package in the VMware communities <a title="vCenter Orchestrator Virtual Appliance user management package" href="http://communities.vmware.com/docs/DOC-18712" target="_blank">HERE</a>.</p>
+<p>Once imported you have a few options to manage your users:</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_001.png" alt="alt" /></p>
+<p>These workflows use SSH to connect remotely. Make sure you enable remote shell.</p>
+<p>First run the configuration workflow.</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_002.png" alt="alt" /></p>
+<p>Enter the hostname or IP of the appliance, the user to SSH remotely (default = root), the password (the one you set for the appliance), the LDAP Admin user (default = vcoadmin) and its password (default = vcoadmin).</p>
+<p>Make sure you have the credentials to access to the vCO web configuration since you will need to change the password there as well.</p>
+<p>Run the "change user password" workflow.</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_003.png" alt="alt" /></p>
+<p>Select the vcoadmin (use the filter) and pick up a password (do not mistype since I did not use password check). Remember it !</p>
+<p>Once submitted and successful (if not you have certainly wrongly entered the configuration in the previous step) you can close the client and open the vCO web configure (htps://appliance:8283).</p>
+<p>You will notice some red warnings.</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_004.png" alt="alt" /></p>
+<p>Requiring to update the password in this tab:</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_005.png" alt="alt" /></p>
+<p>Apply the change. The LDAP tab should go back to green.</p>
+
+<p>Now the Plug-in tab has still a warning.</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_006.png" alt="alt" /></p>
+
+<p>Update the password there as well:</p>
+
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_007.png" alt="alt" /></p>
+
+<p>Since your vCO server may still be authenticating in LDAP using the previous credentials you need to restart the service.</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_008.png" alt="alt" /></p>
+
+<p>Now that your vCO server is secure you can authenticate as vcoadmin / your new password using the client. Now it is time to create a new user for you.</p>
+<p>Run the "Create a new user" workflow.</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_009.png" alt="alt" /></p>
+<p>Fill with your username and display name, pick up a password. Submit.</p>
+<p>The last step is to run the workflow "Add user to group".</p>
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_010.png" alt="alt" /></p>
+<p>Select your new user and the vcoadmins group. Submit. Now close the client and log back in with your newly created user.</p>
+
+<p><img src="/images/pimp-vcova/vco_appliance_user_management_011.png" alt="alt" /></p>
+
+<p>You can now create your workflows using your user.</p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +282,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

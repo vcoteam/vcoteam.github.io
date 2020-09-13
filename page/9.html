@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.72.0" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -87,7 +87,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -111,6 +118,29 @@ if (!doNotTrack) {
 
   <header class="list__header">
     <h3 class="list__title post__title ">
+      <a href="/articles/learn-vco/239-leveraging-the-vmware-vcloud-director-query-service.html" rel="bookmark">
+        Leveraging the VMware vCloud Director query service
+      </a>
+    </h3>
+    <div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2012-04-16T00:00:00Z">April 16, 2012</time></div>
+</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    With the release of vCloud director 1.5 a new important API feature was introduced : the query service. Quoting the "What's new" whitepaper:
+VMware vCloud Director 1.5 also introduces a VMware vCloud API query service,
+which can significantly improve developer efficiency, by minimizing the number of API requests and the amount
+of data transferred for an API client to obtain needed information. Example query parameters include sorting
+and ordering, pagination, filtering, projection, and expressions.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/239-leveraging-the-vmware-vcloud-director-query-service.html">Read more…</a>
+  </div>
+</article><article class="list__item post">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
       <a href="/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html" rel="bookmark">
         VMware released vCenter Configuration Manager 5.5 with vCenter Orchestrator integration
       </a>
@@ -121,7 +151,11 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    Quoting the product page
+VMware vCenter Configuration Manager, a key part of the VMware vCenter Operations Management Suite, automates configuration management across virtual, physical and cloud environments. Enterprises can use vCenter Configuration Manager to continuously audit the configurations of VMware Infrastructure (including VMware ESX, ESXi, vCenter, vCloud Director and vShield) as well as Windows, Linux and Unix operating systems. Easily maintain configuration compliance against internal standards, security best practices, vendor hardening guidelines and regulatory mandates.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -137,7 +171,14 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    vCenter Orchestrator 4.2.1 has been released as part of the vCenter Server 5.0 update 1.
+This is the first common release for the Windows (Build 555) and Appliance (Build 612841) version.
+This release contains several improvements and bug fixes such as:
+The app-server/server/vmo/log/script-logs.log now automatically include the workflow the log is coming from using the format:
+{code}&lt;Date&gt; &lt;Severity&gt; [SCRIPTING_LOG] [&lt;Workflow&gt; (&lt;Execution start date&gt;)] &lt;Message&gt;{/code}SSH plug-in does not fail anymore transfering files.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -153,7 +194,12 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    If you like the VMware vCenter Orchestrator (vCO) Appliance because it is easy to deploy, configure and use then you may want to improve it with enabling additional features.
+I like very much the vCO appliance but I recognize it has a few shortcomings:
+The vCO web start client does not work well on Mac since it does not preserve the client preferences.I am missing local shell control and live logs.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/234-pimp-my-vcenter-orchestrator-virtual-appliance.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -169,7 +215,32 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    Another new VMware plug-in release for vCenter Orchestrator, this time for vCenter Chargeback Manager.
+You can use the plug-in to run Orchestrator workflows that automate vCenter Chargeback processes. In this release, the plug-in contains sample workflows.
+You can also create custom workflows that implement the plug-in API to automate tasks in your vCenter Chargeback Manager environment.
+The vCenter Chargeback Manager plug-in API provides various Javascript objects such as cost models, fixed costs, and hierarchies, that are created in you vCenter Chargeback Manager instance.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html">Read more…</a>
+  </div>
+</article><article class="list__item post">
+
+  <header class="list__header">
+    <h3 class="list__title post__title ">
+      <a href="/question-answer/development/232-vco-data-refresh-from-vcd.html" rel="bookmark">
+        vCO data refresh from vCD weirdness
+      </a>
+    </h3>
+    <div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2012-03-09T00:00:00Z">March 09, 2012</time></div>
+</div>
+  </header>
+  <div class="content list__excerpt post__content clearfix">
+    Question:Just curious if you have ever experienced a lag in what VMware vCenter Orchestrator (vCO) sees in vCloud Director(vCD)? I discovered that the workflows are failing because it seems like the data gets stale. Sometimes the new vAppshows up to vCO and other times it takes time... sometimes it seems like things are completely stale. I waited about30 minutes and it still wasn't showing up when I queried the vApps available.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/question-answer/development/232-vco-data-refresh-from-vcd.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -185,7 +256,10 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    The overall goal of the Custom Deploy vApp workflow is to provide a single call workflow that is capable of instantiating a vApp Template from vCloud Director (vCD) and performing a number of operations on the resulting vApp before actually deploying and powering it on. The workflow is intended to be an example and starting point for deployments that require any or all of these features. It can also be called via 3rd party connectors using the vCenter Orchestrator SOAP API.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/learn-vco/230-vcloud-director-custom-deploy-vapp-workflow.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -201,7 +275,9 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    The article explains what is the vCL and how it works. A part of the solution involves a vCO powered request / approval portal. Read more about it here.
+    The virtual Insanity blog has a good article describing the VMware virtual Customer Lab (vCL) consisting in a fully automated cloud solution where users can checkout VMware software solutions for 14 days of testing and training/education.
+
+The article explains what is the vCL and how it works. A part of the solution involves a vCO powered request / approval portal. Read more about it here.
   </div>
 </article><article class="list__item post">
 
@@ -217,7 +293,11 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    VMware Solution Exchange (VSX) Enables Customers to Discover, Evaluate and Expedite Buying Process for Joint Solutions through Direct Engagement with Partners and Developers. This are important news for vCenter Orchestrator. Here is what these involve:
+vSphere customers will now find all the vCenter Orchestrator plug-ins in a single location. vCenter Orchestrator is bundled with some plug-ins but VMware and partners have provided several additional ones. The solution exchange will feature the latest version of all VMware and all VMware partners vCenter Orchestrator plug-ins.
+  </div>
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html">Read more…</a>
   </div>
 </article><article class="list__item post">
 
@@ -233,46 +313,22 @@ if (!doNotTrack) {
 </div>
   </header>
   <div class="content list__excerpt post__content clearfix">
-    
+    Did you miss the @PowerScripting folks as they interviewed the vCO Management Team?
+If so, don't worry - the session was recorded! See below for details:
+Thomas Corfmat - vCO Product ManagerHemant Gaidhani - vCO Product Marketing Managerwith bonus commentary from one of VMware's PowerShell gurus: Alan Renouf
+Learn more about vCO and the new support/integrations with PowerShell.
+Links/Resources:
+PowerScripting Blog Article: http://powerscripting.wordpress.com/2012/01/16/episode-172-vcenter-orchestrator/Video: http://static.bambuser.com/r/player.swf?username=PowerScriptingPodCast: http://feeds.
   </div>
-</article><article class="list__item post">
-
-  <header class="list__header">
-    <h3 class="list__title post__title ">
-      <a href="/articles/learn-vco/224-vcloud-director-blocking-tasks-and-notifications-integration-with-vco-implementation.html" rel="bookmark">
-        vCloud Director blocking tasks and notifications integration with vCO implementation
-      </a>
-    </h3>
-    <div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2012-01-12T00:00:00Z">January 12, 2012</time></div>
-</div>
-  </header>
-  <div class="content list__excerpt post__content clearfix">
-    
-  </div>
-</article><article class="list__item post">
-
-  <header class="list__header">
-    <h3 class="list__title post__title ">
-      <a href="/articles/newsflash/226-vmware-is-hiring-integration-orchestration-development-engineers-and-practice-managers.html" rel="bookmark">
-        VMware is hiring Integration Orchestration Development Engineers and Practice Managers
-      </a>
-    </h3>
-    <div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2012-01-12T00:00:00Z">January 12, 2012</time></div>
-</div>
-  </header>
-  <div class="content list__excerpt post__content clearfix">
-    
+  <div class="list__footer clearfix">
+    <a class="list__footer-readmore btn" href="/articles/newsflash/227-powerscripting-chat-with-vco-managers.html">Read more…</a>
   </div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/page/8.html">«</a>
-	<span class="pagination__item pagination__item--current">9/21</span>
+	<span class="pagination__item pagination__item--current">9/24</span>
 	<a class="pagination__item pagination__item--next btn" href="/page/10.html">»</a>
 </div>
 
@@ -312,57 +368,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

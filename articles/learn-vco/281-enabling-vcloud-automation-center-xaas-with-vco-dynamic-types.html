@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Enabling VMware vCloud Automation Center XaaS with vCO dynamic types - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;You may have noticed that the vCO 5.5.1 1 are listing a new feature called &#34;Dynamic Types&#34;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;blockquote&gt;&#34;Workflow developers are now able to explore the new Dynamic Types which currently is being shipped with &lt;b&gt;Beta quality&lt;/b&gt;. They can easily extend vCenter Orchestrator plug-ins by adding their custom types accessible from the scripting API. New types become available in the inventory right after creation and they could be directly leveraged from the vCAC ASD context as part of the cloud provisioning process and XaaS definition.&#34; &lt;br /&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;p&gt; This article explores how the Dynamic Types can be leveraged to create your own mini vCO plug-ins &lt;span style=&#34;text-decoration: underline;&#34;&gt;without having any Java development skills&lt;/span&gt;.&lt;/p&gt;">
+	<meta name="description" content="Explores how the Dynamic Types can be leveraged to create your own mini vCO plug-ins without having any Java development skills.">
 		<meta property="og:title" content="Enabling VMware vCloud Automation Center XaaS with vCO dynamic types" />
-<meta property="og:description" content="&lt;p&gt;You may have noticed that the vCO 5.5.1 1 are listing a new feature called &#34;Dynamic Types&#34;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;blockquote&gt;&#34;Workflow developers are now able to explore the new Dynamic Types which currently is being shipped with &lt;b&gt;Beta quality&lt;/b&gt;. They can easily extend vCenter Orchestrator plug-ins by adding their custom types accessible from the scripting API. New types become available in the inventory right after creation and they could be directly leveraged from the vCAC ASD context as part of the cloud provisioning process and XaaS definition.&#34; &lt;br /&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;p&gt; This article explores how the Dynamic Types can be leveraged to create your own mini vCO plug-ins &lt;span style=&#34;text-decoration: underline;&#34;&gt;without having any Java development skills&lt;/span&gt;.&lt;/p&gt;" />
+<meta property="og:description" content="Explores how the Dynamic Types can be leveraged to create your own mini vCO plug-ins without having any Java development skills." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html" />
 <meta property="article:published_time" content="2014-04-14T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Enabling VMware vCloud Automation Center XaaS with vCO dynamic types"/>
-<meta name="twitter:description" content="&lt;p&gt;You may have noticed that the vCO 5.5.1 1 are listing a new feature called &#34;Dynamic Types&#34;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;blockquote&gt;&#34;Workflow developers are now able to explore the new Dynamic Types which currently is being shipped with &lt;b&gt;Beta quality&lt;/b&gt;. They can easily extend vCenter Orchestrator plug-ins by adding their custom types accessible from the scripting API. New types become available in the inventory right after creation and they could be directly leveraged from the vCAC ASD context as part of the cloud provisioning process and XaaS definition.&#34; &lt;br /&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;p&gt; This article explores how the Dynamic Types can be leveraged to create your own mini vCO plug-ins &lt;span style=&#34;text-decoration: underline;&#34;&gt;without having any Java development skills&lt;/span&gt;.&lt;/p&gt;"/>
+<meta name="twitter:description" content="Explores how the Dynamic Types can be leveraged to create your own mini vCO plug-ins without having any Java development skills."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,169 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2014-04-14T00:00:00Z">April 14, 2014</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>You may have noticed that the <a href="https://www.vmware.com/support/orchestrator/doc/vcenter-orchestrator-551-release-notes.html"  target="_blank" rel="noreferrer noopener" >vCO 5.5.1 release notes</a> are listing a new feature called &ldquo;Dynamic Types&rdquo;</p>
+<p>&ldquo;Workflow developers are now able to explore the new Dynamic Types which currently is being shipped with <strong>Beta quality</strong>. They can easily extend vCenter Orchestrator plug-ins by adding their custom types accessible from the scripting API. New types become available in the inventory right after creation and they could be directly leveraged from the vCAC ASD context as part of the cloud provisioning process and XaaS definition.&rdquo;</p>
+<p>This article explores how the Dynamic Types can be leveraged to create your own mini vCO plug-ins without having any Java development skills.</p>
+<h2 id="vcloud-automation-xaas-anything-as-a-service">vCloud Automation XaaS (Anything as a Service)</h2>
+<p>One of the most powerful vCloud Automation Center feature is XaaS (Anything as a Service). It gives the ability to request, approve, provision, operate, and decommission any type of catalog items (I.E storage, applications, accounts, anything you can provide as a service).</p>
+<p>The vCloud Automation Service Architect designs a service blueprint calling a provisioning workflow outputting a custom resource. This custom resource is mapped to a vCO inventory object item referencing the orchestrated system entity. It can then been used as an input of the workflows defining the operations available for this item and for the decommissioning workflow.</p>
+<p>When not used contextually an inventory item is presented to the end user as an input field with a tree view or a list view selection.</p>
+<p>An inventory item type is statically defined with a type name (I.E VirtualMachine), a list of properties (I.E name, state) and is prefixed with the vCO plug-in name (I.E VC:VirtualMachine). This definition is contained in the plug-in description file (VSO.XML). The more vCO plug-ins are installed the more inventory type vCO will be able to manage.</p>
+<p>It is possible to get additional plug-ins from VMware and partners with using the <a href="https://solutionexchange.vmware.com/store/category_groups/cloud-management?category=cloud-automation&amp;amp;nanosite_id=1&amp;amp;cloud_automation_ids[]=21&amp;amp;q="  target="_blank" rel="noreferrer noopener" >VMware solution exchange</a> or by creating a plug-in with the <a href="https://developercenter.vmware.com/fr/web/sdk/55/vco"  target="_blank" rel="noreferrer noopener" >Java based plug-in SDK</a>.</p>
+<p>If there is not out of the box vendor plug-in and if resources / Java development skills are not available to develop a plug-in it is still possible to rapidly design workflows to orchestrate systems exposing a web service using the SOAP or REST plug-in. These will allow pulling remote systems entities information and operating them as part of the vCloud Automation Center Infrastructure as a Service lifecycle. It is great but then it is missing the inventory object required by vCAC XaaS catalog items and day two operations.</p>
+<p>Dynamic Types is a new vCO feature shipped starting with vCO 5.5.1 (experimental) allowing creating inventory types dynamically without doing any Java development. It brings together the quick implementation of the REST / SOAP plug-ins with the convenience of using inventory objects leveraged by vCAC XaaS.</p>
+<h2 id="this-article">This article</h2>
+<ul>
+<li>Describe the Dynamic Types toolbox provided by VMware</li>
+<li>Explains the concepts involved in creating a plug-in using the DynamicTypes</li>
+<li>Step you through the plug-in generator package I created to accelerate dynamic types plug-ins development time.</li>
+</ul>
+<h3 id="the-dynamic-types-toolbox">The Dynamic Types toolbox</h3>
+<p>A set of workflows are provided as part of the Dynamic Types plug-in to help design a plug-in:</p>
+<ul>
+<li>Define / Update / Remove Namespace</li>
+<li>Define / Update / Remove Type</li>
+<li>Define / Remove Relation</li>
+<li>Export / Import configuration / type definitions</li>
+</ul>
+<p>Here us the complete list of these workflows :</p>
+<figure>
+    <img src="/images/dt-itop/DynamicTypes-Workflows.png"/> 
+</figure>
+
+<p>The sequence is to create a namespace in which types are created and relations between these types are established.</p>
+<p>Using these workflows will update the Type Hierarchy shown in the vCO inventory under &ldquo;Dynamic Types&rdquo; and also the namespace inventory of the objects if there are any. Below is an example of a Type Hierarchy:</p>
+<figure>
+    <img src="/images/dt-itop/DynamicTypes-Hierarchy.png"/> 
+</figure>
+
+<p>The plug-in configuration is written in the config resource element in the Library/Dynamic Types folder. A JSON editor can be used to edit the exported config resource. It is then possible to create / update / delete namespaces, types and relations by updating the resource element. It is recommended to make a copy of this file every time the resource file is exported to be able to roll back to the last working version in case of an unwanted configuration change.
+Below is an example of a plug-in configuration file displayed in a JSON editor. There are several JSON viewers editors available online.</p>
+<figure>
+    <img src="/images/dt-itop/DynamicTypes-Config.png"/> 
+</figure>
+
+<p>The export / import functionality is a convenient way to save the plug-in configuration in a resource file that can be included in a package so the plug-in configuration can be loaded on another vCO server.</p>
+<h3 id="the-concepts-for-building-a-dynamic-type-plug-in">The concepts for building a Dynamic Type plug-in</h3>
+<p>Building a Dynamic Type plug-ins requires understanding the vCO elements that have to be created and the back and forth communication between vCO and the remote system.</p>
+<h4 id="namespace">Namespace</h4>
+<p>The first and very simple step is to create a namespace. It is the root element of the plug-in and defines the prefix of the inventory objects. You can run the &ldquo;Define namespace&rdquo; workflow. For example I created an iTop namespace to manage the Combodo iTop application.</p>
+<h4 id="a-rest-or-soap-host">A REST or SOAP host</h4>
+<p>While it is possible to integrate with a remote system in different ways most applications offer a REST or SOAP web service. Running the &ldquo;Add a new host&rdquo; (SOAP or REST) workflow with selecting the right authentication method and the credentials. Refer to the API documentation to do this configuration and use a test operation to make sure the connection and authentication work as expected.</p>
+<h4 id="findall-findbyid-findrelation">findAll, findById, findRelation</h4>
+<p>Each of the plug-in object type of the plug-in requires creating REST or SOAP operations to:</p>
+<ul>
+<li>List all objects for a given type (findAll) : This is used by the list view drop down</li>
+<li>Get an object for a specific id (findById) : This is used to resolve and display the object in an input field and between each step of a worklow. This operation requires having an id parameter that is represented as {id} in the operation string</li>
+<li>List child objects of a specific parent object: This is used in the inventory tree view and is invoked when an inventory item is unfolded</li>
+</ul>
+<p>To create these operations it is required to find the target system SOAP / REST API URL and use the workflows &ldquo;Create a new operation&rdquo; (REST / SOAP).</p>
+<p>To invoke these operations and as a result create new inventory dynamic types objects it is required to create three vCO actions:</p>
+<ul>
+<li>
+<p><strong>findAll:</strong></p>
+</li>
+<li>
+<p>Input = object type</p>
+</li>
+<li>
+<p>Output = array of Dynamic objects</p>
+</li>
+<li>
+<p><strong>findById:</strong></p>
+</li>
+<li>
+<p>Input = object type and Id</p>
+</li>
+<li>
+<p>Output = Dynamic object</p>
+</li>
+<li>
+<p><strong>findRelation:</strong></p>
+</li>
+<li>
+<p>Input = object type and Id</p>
+</li>
+<li>
+<p>Output = array of Dynamic objects</p>
+</li>
+</ul>
+<p>Invoking the operations above will result on a string based HTTP response content. Typically this will be an XML or JSON (JavaScript Object Notation) string representation of the object including its properties.</p>
+<p>These properties need to be extracted and passed as parameter of a makeObject() method.</p>
+<p>vCO supports a programming language extension called E4X (ECMAScript for XML) that adds native XML support to JavaScript AND also does natively convert JSON to JavaScript object. This makes it convenient to extract the object properties without complex parsing.</p>
+<p>The makeObject method has 2 mandatory parameters (ID and name) and optional object properties (using a vCO Properties() object).</p>
+<p>Note that the properties of a DynamicTypes are of simple type. You cannot set a property with a javascript object.</p>
+<p>There is one extra action that is needed as well : hasChildrenInRelation is used to define if an inventory object has children or not (represented in the tree view by a &gt;) and calls findRelation when returning true. A simple implementation of hasChildrenInRelation can be to test if findRelation returns more than 0 objects.</p>
+<p>It is also possible to use workflows instead of actions during development time to see if the workflows are called and run as expected. However it should not be considered for production for performance and reliability reasons. An action is several times faster to run than a workflow and a workflow needs to resolve the objects requiring calling the findById workflow. This may start endless loops.</p>
+<p>Once the four actions for a given object type have been successfully tested it is possible to create the Dynamic Type object definition using the provided &ldquo;Define Type&rdquo; workflow. This consists in setting a type name, an icon, the object properties and the mapping to the four actions.</p>
+<p>For presenting properly in the inventory you need to create objects that will show a folder type and create a relation where this folder object is the parent of the object you created. For this the findRelation action will return an array with a single object.</p>
+<p>Once completed you should be able to:</p>
+<ul>
+<li>Unfold the dynamic Types inventory and see under the namespace the folder object, unfold it and see a list of objects.</li>
+<li>Use this type as an input / output parameter of a workflow. When dealing with an input seeing a list view with all the objects.</li>
+</ul>
+<p>If findAll and findRelation are too network intensive and result in slow inventory updates it is possible to use the putInCache() / GetFromCache() methods provided as part of the plug-in to cache the array of objects to be returned. A cache expiration policy can be designed to avoid not updating the inventory for too long.</p>
+<h4 id="crud-operations">CRUD operations</h4>
+<p>Having an inventory object makes it easy to select and get properties. Creating, updating, deleting, calling a method on the object requires some additional work.</p>
+<p>For each of this operation it is necessary to create the SOAP/REST matching operation. Updating, deleting, calling a method will require passing the object ID.</p>
+<p>Once you have created one of this operation you need to create an action that:</p>
+<ul>
+<li>Get the ID from the object that is an input parameter of the action (except for create)</li>
+<li>Invoke the SOAP / REST operation with passing the ID</li>
+<li>Getting the result / do error checking</li>
+<li>Return the created / updated object</li>
+<li>Invalidate the inventory when necessary (on update / delete)</li>
+</ul>
+<p>The created actions should be provided as part of library workflows going with the plug-in.</p>
+<p>After some time depending on the number of object that need to be implemented and the number of crud operations you can expect a result like this Combodo Itop plug-in implementation:</p>
+<figure>
+    <img src="/images/dt-itop/DynamicTypes-iTop-Inventory.png"/> 
+</figure>
+
+<h3 id="the-plug-in-generator-package">The plug-in generator package</h3>
+<p>This is my attempt to make the Dynamic type plug-in development as simple and as quick as possible. Depending on the orchestrated technology it is possible to create a plug-in without writing a single line of JavaScript code. Here is how it happened:</p>
+<ul>
+<li>I implemented a first plug-in (iTop Combodo) including a lot of objects (close to 90) in an inventory including multiple levels of cached objects with using a single set of findAll, findById, findRelation, hasChildrenInRelation.</li>
+<li>I have isolated all the re-usable scripting, replaced all the specific scripting by generic scripting plus configuration files.</li>
+<li>From these building blocks I have created a plug-in generator workflow and tested it successfully with the Twitter API without having to write any specific scripting.</li>
+<li>I improved it to make it more interactive, adding several steps to check on the data returned and tested it against the vCO API. This was less straight forward since some queries did not return the objects in the format I was expecting. Knowing this would be a common issue (there is not such thing as API consistency) I have implemented placeholders to replace the default actions I provide to invoke a request and to deserialize the objects returned by the queries.</li>
+</ul>
+<p>At this moment it is designed to handle HTTP REST hosts returning JSON strings. Using XML is certainly possible using custom actions. Using SOAP requires more work but a lot of the scripting included should provide a good basis to someone willing to adapt this solution to SOAP.</p>
+<p>You can find the Dynamic Types <a href="https://communities.vmware.com/docs/DOC-26354"  target="_blank" rel="noreferrer noopener" >plug-in generator package</a> from the VMware communities.</p>
+<h3 id="why-is-it-beta">Why is it beta?</h3>
+<p><strong>You should use this technology in your labs and / or for developing and not in a productive environment yet.</strong></p>
+<p>Here are some of the known issue to be fixed in next releases:</p>
+<ul>
+<li>vCAC 6.0.X cannot yet request a catalog item linked to a dynamicType via a resource action</li>
+</ul>
+<p>On the DynamicType plug-in &amp; vCO:</p>
+<ul>
+<li>No way to refresh the inventory view when objects are updated / deleted</li>
+<li>Duplicate objects when using more than a single namespace</li>
+<li>Performance &amp; stability to be improved</li>
+</ul>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcac/" rel="tag">vCAC</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/xaas/" rel="tag">XaaS</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/dynamictypes/" rel="tag">DynamicTypes</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -147,7 +313,7 @@ if (!doNotTrack) {
 	<div class="pager__item pager__item--prev">
 		<a class="pager__link" href="/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">How To Configure vCAC&#34;s Embedded vCO To Allow Domain Account Login</p>
+			<p class="pager__title">How To Configure vCAC&#39;s Embedded vCO To Allow Domain Account Login</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
@@ -196,57 +362,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

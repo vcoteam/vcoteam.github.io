@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vCD on </title>
+    <link>http://new.vcoteam.info/tags/vcd.html</link>
+    <description>Recent content in vCD on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Mar 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/tags/vcd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vCloud Director catalog replication</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/254-vcloud-director-catalog-replication.html</link>
+      <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/254-vcloud-director-catalog-replication.html</guid>
+      <description>vCloud Director has a nice feature allowing to organize vApps into catalogs. If like me you need to replicate these catalog across organization or even different vCloud hosts you may find your solution here.
+I have written a solution to do it a long time ago but never had the time to release it publicly. It is now done and here are the features.
+FeaturesThis package comes with a rich set of features.</description>
+    </item>
+    
+    <item>
+      <title>Code snippets : Using vCloud Director object metadata</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/249-code-snippets-using-vcloud-director-object-metadata.html</link>
+      <pubDate>Thu, 20 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/249-code-snippets-using-vcloud-director-object-metadata.html</guid>
+      <description>Setting metadata on vCloud Director objects is a convenient way to extend their properties with whatever information you need to attach to these. This is very useful to include information on the object lifecycle or to reference other objects. For example I like to reference the vApp Template a vApp was issued from with adding a &#34;vAppTemplateReference&#34; metadata. Another use of the metadata is that you can search for these using the query service.</description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCloud Director 5.1</title>
+      <link>http://new.vcoteam.info/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</link>
+      <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</guid>
+      <description>VMware has just made available its Orchestration plug-in leveraging vCloud Director 5.1 latest and greatest features. This is the most complete automation solution for vCloud Director and is a free download !
+To put things in perspective the 1.0 version of the plug-in was released months after vCloud Director 1.0, the 1.5 release weeks after vCloud Director 1.5, the 5.1 version is released together with vCloud Director 5.1. Kudos to the VMware engineering team who have automated the plug-in build process so much that the plug-in could accomodate the changes in pre-release vCloud Director version so quickly.</description>
+    </item>
+    
+    <item>
+      <title>Leveraging the VMware vCloud Director query service</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/239-leveraging-the-vmware-vcloud-director-query-service.html</link>
+      <pubDate>Mon, 16 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/239-leveraging-the-vmware-vcloud-director-query-service.html</guid>
+      <description>With the release of vCloud director 1.5 a new important API feature was introduced : the query service. Quoting the &#34;What&#39;s new&#34; whitepaper:
+VMware vCloud Director 1.5 also introduces a VMware vCloud API query service,
+which can significantly improve developer efficiency, by minimizing the number of API requests and the amount
+of data transferred for an API client to obtain needed information. Example query parameters include sorting
+and ordering, pagination, filtering, projection, and expressions.</description>
+    </item>
+    
+    <item>
+      <title>vCloud Director Custom Deploy vApp Workflow</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/230-vcloud-director-custom-deploy-vapp-workflow.html</link>
+      <pubDate>Fri, 02 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/230-vcloud-director-custom-deploy-vapp-workflow.html</guid>
+      <description>The overall goal of the Custom Deploy vApp workflow is to provide a single call workflow that is capable of instantiating a vApp Template from vCloud Director (vCD) and performing a number of operations on the resulting vApp before actually deploying and powering it on. The workflow is intended to be an example and starting point for deployments that require any or all of these features. It can also be called via 3rd party connectors using the vCenter Orchestrator SOAP API.</description>
+    </item>
+    
+    <item>
+      <title>vCloud Director blocking tasks and notifications integration with vCO implementation</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/224-vcloud-director-blocking-tasks-and-notifications-integration-with-vco-implementation.html</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/224-vcloud-director-blocking-tasks-and-notifications-integration-with-vco-implementation.html</guid>
+      <description>You may already have seen the theory on how to extend vCloud Director capabilities with vCenter Orchestrator, you may even have completed the first steps to do it following this tutorial. What about having a complete real use case implementation example such as a vApp Approval, adding Windows VM in Active Directory ? It is now available.
+The goal of publishing this package is to give a good starting point implementation with working examples that can be adapted for other requirements.</description>
+    </item>
+    
+    <item>
+      <title>vCloud Director orchestrated infrastructure provisioning featuring VCE UIM vCO plug-in preview</title>
+      <link>http://new.vcoteam.info/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</link>
+      <pubDate>Mon, 05 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</guid>
+      <description>VCE, the company formed by Cisco and EMC with investments from VMware and Intel is showing a demonstration of their vCenter Orchestrator powered infrastructure provisioning for vCloud Director. This is done with using EMC Unified Infrastructure Manager (UIM) which is the single pane of glass managing the stand alone Vblock Element Management applications.
+If you followed the vCenter Orchestrator plug-in releases you must have noticed the UCS Manager release. So, how is a UIM plug-in different ?</description>
+    </item>
+    
+    <item>
+      <title>Building your custom cloud portal - Knowing when to use the vCloud API and the vCenter Orchestrator web service</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/198-building-your-custom-cloud-when-to-use-the-vcloud-api-or-the-vcenter-orchestrator-web-service.html</link>
+      <pubDate>Wed, 30 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/198-building-your-custom-cloud-when-to-use-the-vcloud-api-or-the-vcenter-orchestrator-web-service.html</guid>
+      <description>My team and I have helped customers to build private and public clouds using vCenter Orchestrator for the last 5 years. Adding vCloud Director in the picture tremendously helps with providing customers a scalable standardized cloud solution. Most people will think at orchestration as a single entry point on top of the cloud when in fact for several use cases it is recommended to have vCloud Director and vCenter Orchestrator running side by side.</description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in update for vCloud Director 1.5</title>
+      <link>http://new.vcoteam.info/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</guid>
+      <description>I will re-iterate what I have said about nine months ago : Today VMware released the most complete automation solution for vCloud Director as a free download ! This is a plug-in for vCenter Orchestrator allowing to orchestrate vCloud Director 1.5 with a large collection of out of the box workflows. The previous version of this plug-in (1.02) is used at several service providers and enterprise customers.
+As before in terms of functionality the plug-in allows:</description>
+    </item>
+    
+    <item>
+      <title>Code snippets : Change the name of a vCloud Director organization</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/208-code-snippets-change-the-name-of-a-vcloud-director-organization.html</link>
+      <pubDate>Wed, 02 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/208-code-snippets-change-the-name-of-a-vcloud-director-organization.html</guid>
+      <description>Sometimes the user interfaces are limiting you by design. The APIs are often more permissive and if you know what you are doing you can do great things.
+Previously we showed you how to hot clone vCloud Director vApps. We even did a video tutorial for it. Now it is time to do something else the vCloud Director User Interface will not let you do : rename an organization.
+My test org has my name so my colleagues know it is mine.</description>
+    </item>
+    
+    <item>
+      <title>EMC VMAX, VNX, VMware vSphere, vCloud Director integration powered by vCenter Orchestrator </title>
+      <link>http://new.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</link>
+      <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</guid>
+      <description>EMC released a Compute as a Service white paper documenting design considerations leveraging vCenter Orchestrator and its vCloud Director, AMQP and REST plug-in
+With these components EMC created a workflow running the following operations:
+Provision storage from EMC Symmetrix VMAX or EMC VNX based on the vCenter High Availability cluster.Create the datastore.Create the provider virtual datacenter.Create the organization virtual datacenter within the provider virtual datacenter.Create the catalog on the organization datacenterThe whitepaper shows the workflow design, a simple custom web portal to start it and the workflow execution record.</description>
+    </item>
+    
+    <item>
+      <title>VMware released an update for the vCenter Orchestrator for vCloud Director 1.01</title>
+      <link>http://new.vcoteam.info/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</link>
+      <pubDate>Sat, 17 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</guid>
+      <description>VMware release a version 1.02 of the vCenter Orchestrator Plug-in for vCloud Director (1.0 or 1.01).
+This is a maintenance release.
+Quoting the release notes :
+Version 1.0.2 of the vCloud Director plug-in improves the performance, addresses a number of issues, and includes the sample workflow package. To upgrade the plug-in, you must install version 1.0.2 on top of your existing installation.
+It is recommended to update to this version since it corrects a problem happening when workflows waiting for a vCloud Director task are running concurrently and other issues.</description>
+    </item>
+    
+    <item>
+      <title>Configure the AMQP plug-in to monitor vCloud Director</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/179-configure-the-amqp-plug-in.html</link>
+      <pubDate>Fri, 09 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/179-configure-the-amqp-plug-in.html</guid>
+      <description>OK, so we told you about the great new plug-in that VMware has made available for vCO to work with AMQP, but now what? You&#39;ll need a couple things to get started before you can run off and code a bunch of cool workflows so let&#39;s step through this initial process...
+Get and Install AMQP Server (RabbitMQ)Configure Publisher (vCloud Director 1.5)Configure Consumer (vCenter Orchestrator)Apply Policy Template to create new PolicyHow to create new Policy manuallyStarting the PolicyGet and install an AMQP server.</description>
+    </item>
+    
+    <item>
+      <title>Extend vCloud Director with vCenter Orchestrator</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/180-extend-vcloud-director-with-vcenter-orchestrator.html</link>
+      <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/180-extend-vcloud-director-with-vcenter-orchestrator.html</guid>
+      <description>In a previous article we demonstrated how vCenter Orchestrator can leverage the vCloud Director plug-in to automate tasks or create new functionality by combining them. These workflows are initiated by vCenter Orchestrator.
+Now if you would like to have vCO triggering workflows based on vCloud Director events (For example an end user task started from the vCloud Director UI, a system event or a task started from the vCloud API) you will be able to leverage the vCloud Director 1.</description>
+    </item>
+    
+    <item>
+      <title>Automatic delivery of customized VMs into vCloud Director</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/163-automatic-delivery-of-customized-vms-into-vcloud-director.html</link>
+      <pubDate>Wed, 08 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/163-automatic-delivery-of-customized-vms-into-vcloud-director.html</guid>
+      <description>One of our colleagues, Christian Johannsen has posted a new article on the VMware vCenter Orchestrator blog onhow to automatically create a customized VM in Virtual Center and import it in vCloud director.</description>
+    </item>
+    
+    <item>
+      <title>vCloud Director vApp hot clone in less than one hour Solution Video</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/147-vcloud-director-vapp-hot-clone-in-less-than-one-hour-solution-video.html</link>
+      <pubDate>Sun, 24 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/147-vcloud-director-vapp-hot-clone-in-less-than-one-hour-solution-video.html</guid>
+      <description>Did you have trouble getting things &#34;just right&#34; in our previous tutorial &#34;Create your own vCloud Director vApp hot clone in less than one hour&#34;? No worries, we&#39;ve just added our solution video to YouTube!!  </description>
+    </item>
+    
+    <item>
+      <title>Need an analogy around vCO and vCloud Director?</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/145-need-an-analogy-around-vco-and-vcloud-director.html</link>
+      <pubDate>Mon, 11 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/145-need-an-analogy-around-vco-and-vcloud-director.html</guid>
+      <description>We recently came across a nice little analogy around vCloud Director (vCD) and vCenter Orchestrator (vCO) from one of the folks over at NetApp on their blog. The article &#34;What is vCloud Director, really?&#34; cleverly equates vCD to the manager of an apartment complex and vCO to the maintenance man who does work for the manager and other managers (products). Please take a moment to learn more about vCO through this analogy and see what NetApp has to offer with their plugin for vCO!</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Create your own vCloud Director vApp hot clone in less than one hour</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/140-vcloud-director-vapp-hot-clone.html</link>
+      <pubDate>Tue, 15 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/140-vcloud-director-vapp-hot-clone.html</guid>
+      <description>This article is the first tutorial covering a practical use of the recently released VMware vCloud Director plug-in. It is meant to be educational rather than exhaustive.
+A while ago I wanted to make a copy of a running vCloud director vApp. When you use the vCloud Director user interface as an Organization Administrator you have the following options:
+Copy operations are grayed out.
+While there is certainly a very good reason for not supporting copy of running vApps I wanted to explore this further with leveraging the vCloud API through the vCenter Orchestrator plug-in for vCD.</description>
+    </item>
+    
+    <item>
+      <title>VMware KB TV - How to install and configure VMware vCenter Orchestrator Plug-in for vCloud Director</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/133-vmware-kb-tv-how-to-install-and-configure-vmware-vcenter-orchestrator-plug-in-for-vcloud-director.html</link>
+      <pubDate>Sat, 26 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/133-vmware-kb-tv-how-to-install-and-configure-vmware-vcenter-orchestrator-plug-in-for-vcloud-director.html</guid>
+      <description>We are proud to announce that vCO Team members and VMware KB TV have released the &#34;How to install and configure VMware vCenter Orchestrator Plug-in for vCloud Director&#34; video. This video is published on the excellent VMware KB blog and the VMwareKB channel on youtube. We definitely recommend you to subscribe to these and to follow VMware KB on twitter.
+Thousands of visitors have consulted our installation and configuration articles in the last few months and these are the only articles getting more and more traffic week after week.</description>
+    </item>
+    
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for vCloud Director</title>
+      <link>http://new.vcoteam.info/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</link>
+      <pubDate>Mon, 21 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</guid>
+      <description>Today VMware released the most complete automation solution for vCloud Director as a free download !
+This is a plug-in for vCenter Orchestrator allowing to orchestrate vCloud Director (and not the other way around, vCD 1.01 does not have the ability to start an external process).
+In terms of functionality the plug-in allows:
+ Tenants to automate catalogs and vApp provisioning and decommissioning operations within their organization.Service providers to automate the configuration and management of the tenant organizations, their virtual data centers and their resources.</description>
+    </item>
+    
+    <item>
+      <title>VMware vCloud Director vCO plug-in preview</title>
+      <link>http://new.vcoteam.info/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</link>
+      <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</guid>
+      <description>The following videos are a preview of the upcoming VMware vCloud Director vCO plug-in. Since its release with vCenter 4, the main vCO plug-in has been for vCenter by fully supporting its API and providing several technical workflows. vCloud Director is already becoming VMware&#39;s next major API and as such will be fully supported by a vCO plug-in. The demonstration below shows examples on how to take advantage of this new plug-in and benefit from vCO powered automation.</description>
+    </item>
+    
+  </channel>
+</rss>

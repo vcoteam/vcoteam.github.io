@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSM on </title>
+    <link>http://new.vcoteam.info/tags/vsm.html</link>
+    <description>Recent content in VSM on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jun 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://new.vcoteam.info/tags/vsm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VMware released Service Manager 9.0 vCenter Orchestrator connector</title>
+      <link>http://new.vcoteam.info/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</link>
+      <pubDate>Mon, 20 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</guid>
+      <description>VMware has released a Service Manager Integration Platform connector allowing Service Manager to leverage vCenter Orchestrator.
+First a little product introduction:
+VMware Service Manager is a configurable ITIL platform featuring service desk, automated configuration and change management, IT asset management, self-service and request fulfillment. As part of the service request it supports a configurable portal using high-level business workflow modeling for approvals, notifications and tasks integration.VMware vCenter Orchestrator is a technical Orchestration authoring platform part of vCenter Server allowing System Engineers to automate repetitive tasks requiring little to no human intervention by creating workflows leveraging extensive integrations with VMware and third parties cloud components.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>VMware released vCenter Orchestrator 5.5.1 - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="This week VMware released vCenter Orchestrator 5.5.1. While this is not a major new release it contains a lot of new features focusing on making vCO content development easier. Also important is a list of deprecated features.&lt;br /&gt;&lt;br /&gt;">
+	<meta name="description" content="This week VMware released vCenter Orchestrator 5.5.1. ">
 		<meta property="og:title" content="VMware released vCenter Orchestrator 5.5.1" />
-<meta property="og:description" content="This week VMware released vCenter Orchestrator 5.5.1. While this is not a major new release it contains a lot of new features focusing on making vCO content development easier. Also important is a list of deprecated features.&lt;br /&gt;&lt;br /&gt;" />
+<meta property="og:description" content="This week VMware released vCenter Orchestrator 5.5.1. " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/279-vmware-released-vcenter-orchestrator-5-5-1.html" />
 <meta property="article:published_time" content="2014-03-13T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VMware released vCenter Orchestrator 5.5.1"/>
-<meta name="twitter:description" content="This week VMware released vCenter Orchestrator 5.5.1. While this is not a major new release it contains a lot of new features focusing on making vCO content development easier. Also important is a list of deprecated features.&lt;br /&gt;&lt;br /&gt;"/>
+<meta name="twitter:description" content="This week VMware released vCenter Orchestrator 5.5.1. "/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,124 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2014-03-13T00:00:00Z">March 13, 2014</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <p>This week VMware released vCenter Orchestrator 5.5.1. While this is not a major new release it contains a lot of new features focusing on making vCO content development easier. Also important is a list of deprecated features.<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+      <p>This week VMware released vCenter Orchestrator 5.5.1. While this is not a major new release it contains a lot of new features focusing on making vCO content development easier. Also important is a list of deprecated features.</p>
+<h2 id="protocol-plug-ins-are-now-included">Protocol plug-ins are now included</h2>
+<p>The days where vCO was mainly used to automate vCenter are over. vCO integrates with many third party applications using generic protocol based plug-ins. In previous releases you had to find the latest release, download the plug-ins and install these. You will not have to worry about this anymore.</p>
+<p>The main plug-ins that are shipped with the vCO platform are SSH, SQL, mail, vCenter. Starting with vCO 5.5.1 they all have been bumped to version 5.5.1[plug-in build number]</p>
+<p>Plug-Ins included with vCenter Orchestrator 5.5.1 (that were not in 5.5.0)</p>
+<ul>
+<li>vCenter Orchestrator SOAP Plug-In 1.0.3</li>
+<li>vCenter Orchestrator HTTP-REST Plug-In 1.0.3</li>
+<li>vCenter Orchestrator Plug-In for Microsoft Active Directory 1.0.4</li>
+<li>vCenter Orchestrator AMQP Plug-In 1.0.3</li>
+<li>vCenter Orchestrator SNMP Plug-In 1.0.2</li>
+<li>Dynamic Types 1.0.0 (experimental – requires 5.5.1 U1 build)</li>
+</ul>
+<p>NB: vCloud Automation Center uses an older build of vCO 5.5.1 that also include the same protocol plug-ins but also the PowerShell and vCAC IaaS plug-ins.
+The Dynamic Types plug-in requires the at least the build that was released this week (and likely will require a newer build when released as final).</p>
+<h2 id="tagging">Tagging</h2>
+<p>You may already be familiar with tags in vSphere. It is a convenient way to set a key / value property on an object so query can be used to list the objects with specific tags.</p>
+<p>vCO 5.5.1 supports at the javaScript and REST API level methods to tag any vCO object with a string from 3 to 64 characters. If you look for &ldquo;tag&rdquo; in the API explorer you will notice 16 methods to create, find, query tags.</p>
+<p>Tags can be &lsquo;global&rsquo; or &lsquo;private&rsquo;:</p>
+<ul>
+<li>Global tags - visible by all users.</li>
+<li>Private tags - visible only by the user created the tag.</li>
+</ul>
+<p>Use case example : Find workflows by tag (i.e &ldquo;remediation&rdquo;, &ldquo;presentation&rdquo;). This is the first step of the implementation. It is likely that newer version of vCO will allow to perform queries from the vCO client but also from the vCO worklfow consumers such as the vSphere web client and vCAC.</p>
+<p>Tags set on objects in packages can be exported &amp; imported to another vCO server.</p>
+<h2 id="dynamic-types">Dynamic Types</h2>
+<p>The objects you see in the vCO inventory (such as VM, datastores) are the one you can use as inputs of your workflows. These are coming from the vCO plug-ins. They are statically defined by a plug-in developer using the <a href="https://developercenter.vmware.com/web/sdk/55/vco"  target="_blank" rel="noreferrer noopener" >freely available Plug-in SDK</a>. The plug-in developer is typically a software engineer with java / eclipse / web services skills.</p>
+<p>The Dynamic Types allow to define new types without installing a new plug-in. Basically the plug-in can be implemented by a System engineer with scripting experience by creating workflows that are creating objects from making calls to the API of the system to orchestrate.</p>
+<p>vCloud Automation Center allows you to provision and run day two operations on any service (XaaS) as long as you have a vCO inventory object that you can associate to a service blueprint. With leveraging the Dynamic Types it is possible to create service blueprints for any service that can be orchestrated via an API.</p>
+<p>Technically the plug-ins provides workflows to help you author the plug-in:</p>
+<figure>
+    <img src="/images/dt-itop/DynamicTypes-Workflows.png"/> 
+</figure>
+
+<p>Once completed creating objects and their relations the inventory will list the types hierarchy:</p>
+<figure>
+    <img src="/images/dt-itop/DynamicTypes-Hierarchy.png"/> 
+</figure>
+
+<p>For each object you define you will need to implement 4 workflows (FindById, FindAll, FindRelation, HasChildrenInRelation). Once completed you will be able to browse your inventory.</p>
+<figure>
+    <img src="/images/dt-itop/DynamicTypes-iTop-Inventory.png"/> 
+</figure>
+
+<p>Then you will need to implement Create, Update, Delete workflows on each of this objects.
+The effort for creating such a plug-in is proportional to the number of objects you need to handle.
+NB: DynamicTypes plug-in released in 5.5.1 this week is in beta quality so developers can start to get familiar with it but is not supported yet for production use.</p>
+<h2 id="rest-api">REST API</h2>
+<p>There are a few REST API new calls in 5.5.1
+One noticeable new features is that you can start a vCO action through the REST API:</p>
+<ul>
+<li>POST <code>/actions/{actionId}/executions</code> Runs an action with given ID</li>
+<li>POST <code>/actions/{categoryName}/{actionName}/executions</code> Runs an action with given category and name</li>
+</ul>
+<p>You can now delete a folder / category using the REST API:</p>
+<ul>
+<li>DELETE <code>/categories/{id}</code> Deletes a category with a given ID</li>
+</ul>
+<p>And of course the new tagging functionality also provides a REST API so the feature can be leveraged from an external application :</p>
+<ul>
+<li>GET <code>/tags</code> Retrieves list of tag owners.</li>
+<li>GET <code>/tags/{owner}</code> Retrieves list of tag created by specific user.</li>
+<li>DELETE <code>/tags/{owner}</code> Removes all tags created by specified owner.</li>
+<li>GET <code>/tags/{owner}/{tagName}</code> Retrieves list of tag instance created by specific user.</li>
+</ul>
+<h2 id="expand-to-folder">Expand to folder</h2>
+<p>If, as a vCO developer, you need to put in a version control tool the content of your package you now have an option to expand a package to a folder.</p>
+<figure>
+    <img src="/images/vco-551-release/expand-to-folder.png"/> 
+</figure>
+
+<p>When you do this all the elements included in a package will be unarchived in their raw XML format so they can be checked in in the versioning system.</p>
+<figure>
+    <img src="/images/vco-551-release/expanded-folder.png"/> 
+</figure>
+
+<h2 id="plug-in-configuration-api">Plug-in Configuration API</h2>
+<p>If you use the plug-in SDK you have now access to facilities that will store the plug-in configuration for you. In previous releases you had to implement saving the plug-in configuration in a file or a resource or a database, use a given format such as XML or JSON.</p>
+<p>With using these facilities the configuration will be stored in a vCO configuration element stored in the vCO database making it available to all the vCO nodes. This eliminates the requirement of replicating file based plug-in configuration files across all the vCO nodes.</p>
+<figure>
+    <img src="/images/vco-551-release/plug-in-config-API.png"/> 
+</figure>
+
+<h2 id="sdk-in-appliance">SDK in Appliance</h2>
+<p>If you are using the plug-in SDK you now have the ability to leverage a maven repository from the appliance.
+This repository contains project files and dependencies required to build a vCO plug-in.
+The instructions are included on the vCO appliance page:</p>
+<figure>
+    <img src="/images/vco-551-release/SDK-in-Appliance.png"/> 
+</figure>
+
+<h2 id="deprecated-features">Deprecated features</h2>
+<p>These features are still available in vCO but will be removed in upcoming releases.</p>
+<ul>
+<li><strong>vCenter Orchestrator 32-bit client</strong>: XP days are over. You will have to use a 64 bit client.</li>
+<li><strong>vCenter Orchestrator Web Views:</strong> You should use the REST API for your custom web design requirements or the vSphere web client for infrastructure operators or the vCloud Automation Center portal for end users.</li>
+<li><strong>vCenter Orchestrator Simple Object Access Protocol (SOAP) service API</strong>: The REST API is the way to go, much more powerful than the SOAP one.</li>
+<li><strong>vCenter Orchestrator Configuration Interface</strong>: This is aimed for the plug-in developers: new plug-ins configuration should be driven by workflows as it is now the case for the VMware authored plug-ins. This allows for example to be able to configure a plug-in from the vCloud Automation Center interface. vCO configuration is now possible through the vCO configuration plug-in.</li>
+</ul>
+<h2 id="how-to-get-it">How to get it</h2>
+<ul>
+<li>You can check the release notes <a href="https://www.vmware.com/support/orchestrator/doc/vcenter-orchestrator-551-release-notes.html"  target="_blank" rel="noreferrer noopener" >here</a>.</li>
+<li>You can download vCO <a href="https://my.vmware.com/group/vmware/details?downloadGroup=VCL-VCOVA_551&amp;amp;productId=353"  target="_blank" rel="noreferrer noopener" >here</a>.</li>
+<li>You can get the vCO documentation <a href="https://www.vmware.com/support/pubs/orchestrator_pubs.html"  target="_blank" rel="noreferrer noopener" >here</a>.</li>
+</ul>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +317,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

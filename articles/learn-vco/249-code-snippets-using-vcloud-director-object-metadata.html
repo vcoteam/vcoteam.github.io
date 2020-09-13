@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Code snippets : Using vCloud Director object metadata - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;Setting metadata on vCloud Director objects is a convenient way to extend their properties with whatever information you need to attach to these. This is very useful to include information on the object lifecycle or to reference other objects. For example I like to reference the vApp Template a vApp was issued from with adding a &#34;vAppTemplateReference&#34; metadata. Another use of the metadata is that you can search for these using the query service.&lt;/p&gt;&lt;p&gt;The vCloud DIrector plug-in has built in workflows for managing custom properties on vApp and VMs (storing these in the productSection if the OVF) but these are not the same as the metadatas. The metadatas can be applied to a lot more objects such as VDC, storage profile, catalog, catalog item, disk, Org VDC network, media, external network).&lt;/p&gt;&lt;p&gt;This article shows how to use these in vCloud Director 1.5 and in 5.1.&lt;/p&gt;">
+	<meta name="description" content="Create an action to set a metadata string entry on an objet and one to get it back.">
 		<meta property="og:title" content="Code snippets : Using vCloud Director object metadata" />
-<meta property="og:description" content="&lt;p&gt;Setting metadata on vCloud Director objects is a convenient way to extend their properties with whatever information you need to attach to these. This is very useful to include information on the object lifecycle or to reference other objects. For example I like to reference the vApp Template a vApp was issued from with adding a &#34;vAppTemplateReference&#34; metadata. Another use of the metadata is that you can search for these using the query service.&lt;/p&gt;&lt;p&gt;The vCloud DIrector plug-in has built in workflows for managing custom properties on vApp and VMs (storing these in the productSection if the OVF) but these are not the same as the metadatas. The metadatas can be applied to a lot more objects such as VDC, storage profile, catalog, catalog item, disk, Org VDC network, media, external network).&lt;/p&gt;&lt;p&gt;This article shows how to use these in vCloud Director 1.5 and in 5.1.&lt;/p&gt;" />
+<meta property="og:description" content="Create an action to set a metadata string entry on an objet and one to get it back." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/249-code-snippets-using-vcloud-director-object-metadata.html" />
 <meta property="article:published_time" content="2012-09-20T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Code snippets : Using vCloud Director object metadata"/>
-<meta name="twitter:description" content="&lt;p&gt;Setting metadata on vCloud Director objects is a convenient way to extend their properties with whatever information you need to attach to these. This is very useful to include information on the object lifecycle or to reference other objects. For example I like to reference the vApp Template a vApp was issued from with adding a &#34;vAppTemplateReference&#34; metadata. Another use of the metadata is that you can search for these using the query service.&lt;/p&gt;&lt;p&gt;The vCloud DIrector plug-in has built in workflows for managing custom properties on vApp and VMs (storing these in the productSection if the OVF) but these are not the same as the metadatas. The metadatas can be applied to a lot more objects such as VDC, storage profile, catalog, catalog item, disk, Org VDC network, media, external network).&lt;/p&gt;&lt;p&gt;This article shows how to use these in vCloud Director 1.5 and in 5.1.&lt;/p&gt;"/>
+<meta name="twitter:description" content="Create an action to set a metadata string entry on an objet and one to get it back."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,31 +121,140 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2012-09-20T00:00:00Z">September 20, 2012</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>var vclMetadataStringValue = new VclMetadataStringValue() ;
-vclMetadataStringValue.value = value;</p>
-<p>var vclAbstractValueObject = new VclAbstractValueObject();
-vclAbstractValueObject.setValue(vclMetadataStringValue);</p>
-<p>var vclMetadataEntry = new VclMetadataEntry();
-vclMetadataEntry.key = key;
-vclMetadataEntry.typedValue = vclAbstractValueObject;</p>
-<p>System.log(&ldquo;Setting key &quot; + key + &quot; with value &quot; + value);
-return metadata.updateTypedEntry(vclMetadataEntry);<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<p>var metadataEntries = metadata.getTypedEntries().enumerate();
-var value = null;
-for each (var metadataEntry in metadataEntries) {
-if (metadataEntry.key == key) {
-value = metadataEntry.typedValue.getValue(new VclMetadataStringValue).value;
-System.log(&ldquo;Got key : &quot; + key + &quot; with value : &quot; + value);
-break;
-} <br>
-}</p>
-<p>return value;<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+      <p>Setting metadata on vCloud Director objects is a convenient way to extend their properties with whatever information you need to attach to these. This is very useful to include information on the object lifecycle or to reference other objects. For example I like to reference the vApp Template a vApp was issued from with adding a "vAppTemplateReference" metadata. Another use of the metadata is that you can search for these using the query service.</p>
+<p>The vCloud DIrector plug-in has built in workflows for managing custom properties on vApp and VMs (storing these in the productSection if the OVF) but these are not the same as the metadatas. The metadatas can be applied to a lot more objects such as VDC, storage profile, catalog, catalog item, disk, Org VDC network, media, external network).</p>
+<p>This article shows how to use these in vCloud Director 1.5 and in 5.1.</p>
 
+<p>The functionality we will be looking for is simple: an action to set a metadata string entry on an objet and one to get it back.</p>
+<p>Inputs for the setMetadataStringEntry action:</p>
+<ul>
+<li>object of type "any"</li>
+<li>key "string"</li>
+<li>value "string"</li>
+</ul>
+<p>Inputs for the getMetadataStringEntry action:</p>
+<ul>
+<li>object of type "any"</li>
+<li>key "string"</li>
+</ul>
+<h2>vCloud Director 1.5.</h2>
+<p>vCloud Director 1.5 has a very simple metadata API limited to string values</p>
+<h3>setMetadataEntry action</h3>
+
+<p>Which returns a vCloud task.</p>
+<h3>getMetadataEntry action</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">metadata</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">getMetadata</span>();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entries</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">metadata</span>.<span style="color:#a6e22e">getEntries</span>();
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">entries</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">key</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Which returns the value if present.</p>
+<h2>vCloud Director 5.1</h2>
+<p>vCloud Director has extended the metada with typed entries (number, string, boolean, date) and also with access control. You can read all the details in the <a href="http://pubs.vmware.com/vcd-51/index.jsp?topic=%2Fcom.vmware.vcloud.api.doc_51%2FGUID-8D8C68F0-AC63-4134-A57E-326E510FC690.html" target="_blank">vCloud API programming guide</a>.</p>
+<p>All these new features come with a drawback : the API has changed and the code above will not work. This is what happened to me and I thought it would be worth sharing how I adapted it to work with vCloud Director 5.1.</p>
+<p>We will assume we still want to use a string as the value. If you need one of the other type it will be easy to adapt.</p>
+<h3>setMetadataStringEntry action</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">metadata</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">getMetadata</span>();
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vclMetadataStringValue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">VclMetadataStringValue</span>() ;
+<span style="color:#a6e22e">vclMetadataStringValue</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vclAbstractValueObject</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">VclAbstractValueObject</span>();
+<span style="color:#a6e22e">vclAbstractValueObject</span>.<span style="color:#a6e22e">setValue</span>(<span style="color:#a6e22e">vclMetadataStringValue</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vclMetadataEntry</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">VclMetadataEntry</span>();
+<span style="color:#a6e22e">vclMetadataEntry</span>.<span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">key</span>;
+<span style="color:#a6e22e">vclMetadataEntry</span>.<span style="color:#a6e22e">typedValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vclAbstractValueObject</span>;
+
+<span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Setting key &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; with value &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">value</span>);
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">metadata</span>.<span style="color:#a6e22e">updateTypedEntry</span>(<span style="color:#a6e22e">vclMetadataEntry</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Which returns a vCloud task.</p>
+<h3>getMetadataStringEntry action</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">metadata</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">getMetadata</span>(); <span style="color:#75715e">//All objects that support metadata return something, even if there are no metada yet
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">metadataEntries</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">metadata</span>.<span style="color:#a6e22e">getTypedEntries</span>().<span style="color:#a6e22e">enumerate</span>();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">metadataEntry</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">metadataEntries</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">metadataEntry</span>.<span style="color:#a6e22e">key</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">key</span>) {
+        <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">metadataEntry</span>.<span style="color:#a6e22e">typedValue</span>.<span style="color:#a6e22e">getValue</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">VclMetadataStringValue</span>).<span style="color:#a6e22e">value</span>;
+        <span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Got key : &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; with value : &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">value</span>);
+        <span style="color:#66d9ef">break</span>;
+    }    
+}
+
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span>;
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Which returns the value if present.</p>
+<h2>Testing the actions</h2>
+<p>To test these actions you can create a workflow with as input an object (for example a vAppTemplate), a key and a value. You can either drag and drop the two actions or create a workflow per action. As long as you set the metadata before you get it it should work. Do not forget to link the inputs and create the attributes. Also do not forget to add a "Wait for a task" workflow right after setting the metadata. It should look like this:</p>
+<p><img src="/images/vcd-metadata/metadata_workflow.png" alt="alt" /></p>
+<p>The output of the getMetadata action should of course return the same of what you entered in the workflow input.</p>
+<h2>Package</h2>
+<p>The actions above are available as an instllable package:</p>
+<ul>
+<li><a href="http://communities.vmware.com/docs/DOC-20474" target="_blank">Package containing the two actions for vCloud Director 1.5</a></li>
+<li><a href="http://communities.vmware.com/docs/DOC-20475" target="_blank">Package containing the two actions for vCloud Director 5.1</a></li>
+</ul>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vcd/" rel="tag">vCD</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -217,57 +333,89 @@ break;
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Create a Simple vCO Self Service VM Provisioning Portal - Part 3 - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;In part two of this series, you learned how to use a user interaction workflow element to allow for an approver to approve a server request. You also learned that a number of permissions are required throughout vCO in order for the approval to actually perform the server request. It is likely that you would have to modify permissions on several other workflows and actions throughout vCO in order for tutorial 2 to fully work for a non-admin account. In this tutorial, we&#34;ll focus on creating a custom Webview that will limit the number of actions a user may perform by presenting to them only what they need. Topics of this article will include:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Setting permissions in vCO&lt;/li&gt;&lt;li&gt;Creating a custom webview from the default webview template&lt;/li&gt;&lt;li&gt;Exporting and Importing webview elements&lt;/li&gt;&lt;li&gt;Developer Mode&lt;/li&gt;&lt;li&gt;Customizing the webview&lt;/li&gt;&lt;li&gt;Launching workflows from a webview&lt;/li&gt;&lt;li&gt;Customize the Send Notification workflow&lt;/li&gt;&lt;/ul&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;">
+	<meta name="description" content="In this tutorial, we&#39;ll focus on creating a custom Webview that will limit the number of actions a user may perform by presenting to them only what they need. ">
 		<meta property="og:title" content="Create a Simple vCO Self Service VM Provisioning Portal - Part 3" />
-<meta property="og:description" content="&lt;p&gt;In part two of this series, you learned how to use a user interaction workflow element to allow for an approver to approve a server request. You also learned that a number of permissions are required throughout vCO in order for the approval to actually perform the server request. It is likely that you would have to modify permissions on several other workflows and actions throughout vCO in order for tutorial 2 to fully work for a non-admin account. In this tutorial, we&#34;ll focus on creating a custom Webview that will limit the number of actions a user may perform by presenting to them only what they need. Topics of this article will include:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Setting permissions in vCO&lt;/li&gt;&lt;li&gt;Creating a custom webview from the default webview template&lt;/li&gt;&lt;li&gt;Exporting and Importing webview elements&lt;/li&gt;&lt;li&gt;Developer Mode&lt;/li&gt;&lt;li&gt;Customizing the webview&lt;/li&gt;&lt;li&gt;Launching workflows from a webview&lt;/li&gt;&lt;li&gt;Customize the Send Notification workflow&lt;/li&gt;&lt;/ul&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;" />
+<meta property="og:description" content="In this tutorial, we&#39;ll focus on creating a custom Webview that will limit the number of actions a user may perform by presenting to them only what they need. " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/107-create-a-simple-vco-self-service-vm-provisioning-portal-part-3.html" />
 <meta property="article:published_time" content="2010-10-10T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create a Simple vCO Self Service VM Provisioning Portal - Part 3"/>
-<meta name="twitter:description" content="&lt;p&gt;In part two of this series, you learned how to use a user interaction workflow element to allow for an approver to approve a server request. You also learned that a number of permissions are required throughout vCO in order for the approval to actually perform the server request. It is likely that you would have to modify permissions on several other workflows and actions throughout vCO in order for tutorial 2 to fully work for a non-admin account. In this tutorial, we&#34;ll focus on creating a custom Webview that will limit the number of actions a user may perform by presenting to them only what they need. Topics of this article will include:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Setting permissions in vCO&lt;/li&gt;&lt;li&gt;Creating a custom webview from the default webview template&lt;/li&gt;&lt;li&gt;Exporting and Importing webview elements&lt;/li&gt;&lt;li&gt;Developer Mode&lt;/li&gt;&lt;li&gt;Customizing the webview&lt;/li&gt;&lt;li&gt;Launching workflows from a webview&lt;/li&gt;&lt;li&gt;Customize the Send Notification workflow&lt;/li&gt;&lt;/ul&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;"/>
+<meta name="twitter:description" content="In this tutorial, we&#39;ll focus on creating a custom Webview that will limit the number of actions a user may perform by presenting to them only what they need. "/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,268 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-10-10T00:00:00Z">October 10, 2010</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>In part two of this series, you learned how to use a user interaction workflow element to allow for an approver to approve a server request. You also learned that a number of permissions are required throughout vCO in order for the approval to actually perform the server request. It is likely that you would have to modify permissions on several other workflows and actions throughout vCO in order for tutorial 2 to fully work for a non-admin account. In this tutorial, we'll focus on creating a custom Webview that will limit the number of actions a user may perform by presenting to them only what they need. Topics of this article will include:</p>
+<ul>
+<li>Setting permissions in vCO</li>
+<li>Creating a custom webview from the default webview template</li>
+<li>Exporting and Importing webview elements</li>
+<li>Developer Mode</li>
+<li>Customizing the webview</li>
+<li>Launching workflows from a webview</li>
+<li>Customize the Send Notification workflow</li>
+</ul>
+<span style="color: #ff0000;"><strong>NOTE:</strong></span> Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.<br />
 
+<h2>Setting Permissions</h2>
+<p>In most circumstances, you will not want to allow users to access your vCO server using the vCO client. Instead, they should be accessing the server via their web browser. You can prevent users from accessing the vCO server with the client by using firewall rules (simplest way to restrict.) Allow only the ports necessary for your users to access via http and https. We need to go ahead and grant your requesters group View and Execute permissions to everything in vCO so that all actions and workflows called by any of your custom workflows can be executed.</p>
+<p>In the workflows tab select the root item</p>
+<p><img src="/images/portal-part3-webview/SSPP-2-rootItem.png" alt="Workflows Root Element" border="0" /></p>
+<p>Right Click, and click<img src="/images/portal-part3-webview/SSPP-2-editAccessRights.png" alt="Edit access rights..." border="0" /></p>
+<p>Click on <img src="/images/portal-part3-webview/SSPP-2-addAccessRights.png" alt="Set permissions" border="0" /></p>
+<p>Check View and Execute. All the sub elements will inherit with the same rights.</p>
+<p><img src="/images/portal-part3-webview/set-perms.png" alt="Set Permissions" border="0" /></p>
+<h2>Create a Custom Webview from Template</h2>
+<p>Rather than starting a webview from scratch, we'll use the default template that comes with vCO to get things rolling.</p>
+<ol>
+<li>Click "Webviews"</li>
+<li>Right-click in the white-space below Weboperator, then click "New from" and then select "File template..."<br /><img src="/images/portal-part3-webview/new-webview-from-template.png" alt="New Webview from Template" border="0" /></li>
+<li>You'll need to browse to one of the following locations:
+<ol type="a">
+<li>c:\program files\vmware\orchestrator\apps\webviewTemplates\ <- this location if a standalone vCO installation</li>
+<li>c:\program files\vmware\infrastructure\orchestrator\apps\webviewTemplates\ <- this location if a vCenter installed vCO</li>
+</ol>
+</li>
+<li>Once you have browsed to the webviewTemplates folder, select the default_webview.zip file and click "Open"<br /><img src="/images/portal-part3-webview/select-template.png" alt="Select Template" border="0" /></li>
+<li>When prompted, change the default text "default_webview_FromTemplate" to something more appropriate like "Request Portal" and click "Ok"<br /><img src="/images/portal-part3-webview/create-webview.png" alt="Create Webview" border="0" /></li>
+<li>You now have a "Request Portal" webview listed!<br /><img src="/images/portal-part3-webview/request-portal-webview.png" alt="New Request Portal Webview" width="640px" border="0" /></li>
+<li>Click the Green Play button to Publish the webview, or right-click and select "Publish" so we can see what the default webview looks like.</li>
+<li>While we're here, let's unpublish the weboperator since we won't be using that anymore. Select "weboperator", then click the Red stop button to Unpublish, or right-click and select "Unpublish"<br /><img src="/images/portal-part3-webview/webviews-list.png" alt="Webviews List" border="0" /></li>
+<li>Now open your browser to http://your-lcm-server:8280/vmo/request_portal and login<br /><img src="/images/portal-part3-webview/default-request-portal-login.png" alt="Default Request Portal Login" width="640" border="0" /></li>
+<li>As you can see, once you are logged in the default layout appears quite simple: Logo in top-left of window, logged in user name and Logout link in top-right of window powered-by details at the bottom of the page, a "Home" menu tab across the top of a content area:<br /><img src="/images/portal-part3-webview/default-request-portal-loggedin.png" alt="Default Request Portal Logged in" width="640" border="0" /></li>
+</ol>
+<p>In the next section, we'll export the files that make up this webview and begin</p>
+<h2>Working with Webview Files</h2>
+<p>Webviews consist of many different html files, css, images, etc that are all packed into the "Webview" we see in the vCO client or browse to. There are two options for doing webview development:</p>
+<ul>
+<li>Non-Development Mode:
+<ol>
+<li>Export Files</li>
+<li>Modify the files</li>
+<li>Unpublish the webview</li>
+<li>Right-click the webview and click "Edit"</li>
+<li>Import Files</li>
+<li>Publish the webview</li>
+<li>Check webview in browser</li>
+<li>REPEAT steps 2-6 as you make changes</li>
+</ol>
+</li>
+<li>Development Mode:
+<ol>
+<li>Configure vCO to run in Development Mode and restart service</li>
+<li>Export Files to development mode specified folder</li>
+<li>Modify the files</li>
+<li>Check webview in browser</li>
+<li>REPEAT steps 3-4 as needed until development is complete</li>
+<li>Unpublish the webview</li>
+<li>Right-click the webview and click "Edit"</li>
+<li>Import Files</li>
+<li>Publish the webview</li>
+</ol>
+</li>
+</ul>
+<p>As you can see, the Development mode allows immediate view of your changes and you only have to unpublish/publish once. Be warned though: Development Mode is NOT suitable for a production server. Extended use of Development mode may result in undesired results. If strange behavior is encountered, try restarting the vCenter Orchestrator Server service to clear memory.</p>
+<p>We'll opt for Development mode since we do have a number of changes that we will be implementing and we will need to check our work on a regular basis throughout development.</p>
+<h3>Setting up Development Mode</h3>
+<p>Setting up Development mode is a three step process: Create a folder on the vCO server that can host the webview development folder. Enable Development mode, specifying the folder that was setup. Export webview to the development folder.</p>
+<h4>Webview Development Folder</h4>
+<p>The webview development folder will be where you work on the webview as you begin customizing it. vCO will use this folder as the source for displaying files to a browser while in Development mode so it must be a local folder to the vCO server. When specifying the folder, you must have a general webview root folder, then a subfolder for each webview that must be displayed. In this case, the subfolder name needs to be "request_portal".</p>
+<p>For your root folder, create something like: c:\webviews</p>
+<p>Next, create your subfolder "request_portal" so that your structure is c:\webviews\request_portal</p>
+<h4>Enable Development Mode</h4>
+<p>Enabling development mode is done through the vCenter Orchestrator Configuration so start off by loggin in to that at http://yourVCOserver:8282.</p>
+<ol>
+<li>Click on the "Advanced Configuration" tab in the right pane</li>
+<li>Tick the checkbox "Enable web view development mode"</li>
+<li>Specify the "Web view directory" as "C:\webviews" (or whatever you chose in the previous section)</li>
+<li>Click the "Apply Changes" button</li>
+<li>Next, click "Startup Options" in the left pane</li>
+<li>Now click "Restart Service" in the right pane</li>
+</ol>
+<p>We are now ready to export our webview to the development folder. To confirm that you are now in development mode, attempt to browse to your Request Portal URL: http://yourVCOserver:8280/vmo/request_portal . You should receive the following message:<br /> <b>No default page defined </b></p>
+<hr />
+<p><b> The webview 'Request Portal' has no default page defined. A default page is a page located at the root of the webview and named default.html or index.html. </b></p>
+<h4>Export Webview to Development Folder</h4>
+<p>After your vCenter Orchestrator Server service has completed the restart, launch your vCenter Orchestrator Client and login with admin rights. (Detailed information on valid code syntax may be found in the vCenter Orchestrator Developers guide - <a href="links/orchestrator-specific-links/vmware-vcenter-orchestrator-vco-documentation.html" target="_new">Visit the official VMware vCO Documentation page</a>)</p>
+<ol>
+<li>Click on "Web Views" in the left pane</li>
+<li>Select the "Request Portal" Web View</li>
+<li>In the right pane, click on the "Elements" tab</li>
+<li>Now, click the "Export to directory" link</li>
+<li>Browse to the "c:\webviews\request_portal" folder that you created earlier and click the "Export" link in the bottom right corner of the window. (Remember that the specific webview "request_portal" folder must be a subdirectory of the folder specified as the Web view directory in the advanced configuration)</li>
+<li>Now confirm that you can once again browse to the Request Portal at http://yourVCOserver:8280/vmo/request_portal . You should see:<br /> <img src="/images/portal-part3-webview/default-request-portal-login.png" alt="Default Request Portal Login" width="640" border="0" /></li>
+<li>Go ahead and login to the webview as a user (member of your requester group)<br /> <img src="/images/portal-part3-webview/default-request-portal-loggedin.png" alt="Default Request Portal Logged in" width="640" border="0" /></li>
+</ol>
+<h3>Adding a link to launch a workflow</h3>
+<ol>
+<li>The first file we'll look at here is the c:\webviews\request_portal\default.html<br />
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;vco</span> <span style="color:#a6e22e">jwcid=</span><span style="color:#e6db74">&#34;@layout/MyBorder&#34;</span> <span style="color:#a6e22e">section=</span><span style="color:#e6db74">&#34;literal: home&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;Home&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;h2</span> <span style="color:#a6e22e">style=</span><span style="color:#e6db74">&#34;margin-left: 16px; margin-top: 0px; padding-top:18px;&#34;</span><span style="color:#f92672">&gt;</span>Welcome to Default Webview Template<span style="color:#f92672">&lt;/h2&gt;</span>
+    <span style="color:#f92672">&lt;p</span> <span style="color:#a6e22e">style=</span><span style="color:#e6db74">&#34;margin-left: 16px;&#34;</span><span style="color:#f92672">&gt;</span>This webview is a base for your own webview development.<span style="color:#f92672">&lt;/p&gt;</span>
+<span style="color:#f92672">&lt;/vco&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+</li>
+<li>The first line in the code loads a layout file called "MyBorder". This file sets up the general layout and appearance of the page we are looking at. The remaining content here is what we actually see in our browser inside the box. Let's get started by creating a "Request Server" link that will launch our workflow! We'll be useing the "vco:WorkflowLink" component (see page 295 of the Developer's guide.)</li>
+<li>Replace the content of the default.html file with the following:<br />
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;vco</span> <span style="color:#a6e22e">jwcid=</span><span style="color:#e6db74">&#34;@layout/MyBorder&#34;</span> <span style="color:#a6e22e">section=</span><span style="color:#e6db74">&#34;literal: home&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;Home&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;h2</span> <span style="color:#a6e22e">style=</span><span style="color:#e6db74">&#34;margin-left: 16px; margin-top: 0px; padding-top:18px;&#34;</span><span style="color:#f92672">&gt;</span>Welcome to the Server Request Portal<span style="color:#f92672">&lt;/h2&gt;</span>
+    <span style="color:#f92672">&lt;p</span> <span style="color:#a6e22e">style=</span><span style="color:#e6db74">&#34;margin-left: 16px&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;span</span> <span style="color:#a6e22e">jwcid=</span><span style="color:#e6db74">&#34;@vco:WorkflowLink&#34;</span> <span style="color:#a6e22e">workflow=</span><span style="color:#e6db74">&#34;RequestVM&#34;</span> <span style="color:#a6e22e">isDialog=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">isSync=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">webformPage=</span><span style="color:#e6db74">&#34;/vmo/request_portal/form.html&#34;</span> <span style="color:#a6e22e">returnUrl=</span><span style="color:#e6db74">&#34;/vmo/request_portal/submitted.html&#34;</span> <span style="color:#a6e22e">cancelUrl=</span><span style="color:#e6db74">&#34;/vmo/request_portal/default.html&#34;</span><span style="color:#f92672">&gt;</span>Request Server<span style="color:#f92672">&lt;/span&gt;</span>
+    <span style="color:#f92672">&lt;/p&gt;</span>
+<span style="color:#f92672">&lt;/vco&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+The new line will launch the workflow that is mapped to the "RequestVM" attribute of your webview (we'll do that next). As you can see, we reference a couple html files that do not yet exist so we'll also need to create those so that the workflow execution and submission result pages will have a consistent look and feel to your portal. We are setting "isSync" to false because we want the workflow to just go ahead and execute in the background - especially since we have a user-interaction that the requester may not have access to respond to. The "isDialog" is set to a value of "false" so that the dialog doesn't attempt to present the requester with the user interaction for approval. By setting to false, we process the user interaction within the "form.html" file that we will be making. After the workflow has been submitted, we will present the requester with the "submitted.html" file, and if the requester cancels, the'll be sent back to the default.html.</li>
+</ol>
+<h3>Mapping a workflow to a Webview attribute</h3>
+<ol>
+<li>Now we must actually define the "RequestVM" attribute on the Web View so that it knows which workflow to actually execute when the link is clicked.</li>
+<li>In your vCO client, select your "Request Portal" webview, and then enter Edit mode by
+<ol type="a">
+<li>Unpublish the webview</li>
+<li>Edit the webview</li>
+<li>Click the "Attributes" tab<br /> <img src="/images/portal-part3-webview/add-webview-attribute.png" alt="Add Webview Attribute" width="640" border="0" /></li>
+<li>Add a new Attribute of type "Workflow" and name it "RequestVM" - NOTE that this attribute name is case sensitive.</li>
+<li>Click the empty space in the Value column, then find and select your "Request VM" workflow<br /> <img src="/images/portal-part3-webview/webview-attribute-set.png" alt="Webview Attribute Set" width="640" border="0" /></li>
+<li>Click "Save and Close" when done, then publish the webview.</li>
+<li>Browse to your Request Portal and confirm you have the link present:<br /> <img src="/images/portal-part3-webview/webview-with-link.png" alt="Webview With Link" width="640" border="0" /></li>
+</ol>
+</li>
+</ol>
+<p>Now, before we can proceed with clicking the link, we need to add the missing submitted.html and form.html files to the webview.</p>
+<h3>Adding Files to a Webview</h3>
+<p>In the earlier step where we added a link to the default.html page, we referenced two pages that had yet to be created: submitted.html and form.html. We'll create those here.</p>
+<ul>
+<li>submitted.html
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;vco</span> <span style="color:#a6e22e">jwcid=</span><span style="color:#e6db74">&#34;@layout/MyBorder&#34;</span> <span style="color:#a6e22e">section=</span><span style="color:#e6db74">&#34;literal: home&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;Request Accepted&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;h2&gt;</span>Virtual Machine Request Accepted!<span style="color:#f92672">&lt;/h2&gt;</span>
+<span style="color:#f92672">&lt;/vco&gt;</span> </code></pre></td></tr></table>
+</div>
+</div>
+As you can see above, the content of the submitted.html file is quite simple. We start off by loading our border file, then we provide a little bit of content - a message to the requester that the request has been accepted.</li>
+<li>form.html
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;vco</span> <span style="color:#a6e22e">jwcid=</span><span style="color:#e6db74">&#34;@layout/MyBorder&#34;</span> <span style="color:#a6e22e">section=</span><span style="color:#e6db74">&#34;literal: home&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;Request VM&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;vco</span> <span style="color:#a6e22e">jwcid=</span><span style="color:#e6db74">&#34;@vco:WebformContainer&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/vco&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+In the form.html file, we start off by loading our border file and then we use a special component called vco:WebformContainer to execute the workflow in.</li>
+<li>Once you have saved both of these files to your folder, go ahead and browse to the Request Portal and click the link to Request Server:<br /> <img src="/images/portal-part3-webview/webview-request-vm.png" alt="Webview Reqeust VM" width="640" border="0" /></li>
+</ul>
+<h3>Customize the Send Interaction workflow</h3>
+<p>If you have attempted to run the request process up to this point, you have probably noticed that the URL that is generated for the interaction notification email message points to the "weboperator" webview. Since we have gone through the effort of creating a custom webview, and are likely NOT to keep the weboperator published, we need to fix this behavoir. This section of the tutorial will walk you through the changes necessary to accomplish this task.</p>
+<ol>
+<li>Create a new Workflow Category under the "10 Min Self Service Provisioning Portal" Workflow Category</li>
+<li>Duplicate the "Send interaction" workflow, placing your duplicate copy in the "Helpers" workflow category you just created</li>
+<li>Next, Edit your "Custom Send Interaction" workflow, setting your initial version number and then go to the "Scripting" tab of the Scriptable Task element in the workflow:<br /> <img src="/images/portal-part3-webview/send-interaction.png" alt="Send Interactions" width="640" border="0" /></li>
+<li>As shown above, highlight the first several lines of content and delete them. The last line deleted should be the "// Override default settings if and only if input parameter is set" line (or you may leave this line, but delete everything above it.</li>
+<li>Now, paste in the following code at the top:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EmailMessage</span>(); <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">urlAnswer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">workflow</span>.<span style="color:#a6e22e">getAnswerUrl</span>().<span style="color:#a6e22e">url</span> ;
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">webviewName</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>; <span style="color:#a6e22e">webviewName</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>){
+<span style="color:#a6e22e">urlAnswer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlAnswer</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">&#34;weboperator&#34;</span>, <span style="color:#e6db74">&#34;g&#34;</span>),<span style="color:#a6e22e">webviewName</span>);
+}
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">formFile</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>; <span style="color:#a6e22e">formFile</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>){
+<span style="color:#a6e22e">urlAnswer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlAnswer</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">&#34;webform.html&#34;</span>, <span style="color:#e6db74">&#34;g&#34;</span>),<span style="color:#a6e22e">formFile</span>);
+} <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;p&gt;You may respond to the request via the web interface by clicking the link below: &lt;a href=&#39;&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">urlAnswer</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&#39;&gt;CLICK HERE TO RESPOND VIA WEB&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">content</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&lt;/p&gt;&#34;</span>;
+</code></pre></td></tr></table>
+</div>
+</div>
+</li>
+<li>Next, add two new inputs to the scriptable task:
+<ul>
+<li>Click on the In tab of the bottom pane <img src="/images/portal-part3-webview/in-tab-bottom-pane.png" alt="In Tab Bottom Pane" border="0" /></li>
+<li>Click the Add Input link <img src="/images/portal-part3-webview/add-input.png" alt="Add Input" border="0" /><br /><img src="/images/portal-part3-webview/add-input-chooser.png" alt="Add Input Chooser" width="640" border="0" /></li>
+<li>Now click the "Create parameter/attribute in workflow, add a new INPUT PARAMETER for "webviewName" of type "string"<br /><img src="/images/portal-part3-webview/add-input-webviewName.png" alt="Add Input webviewName" border="0" /></li>
+<li>And repeat these steps to add a new INPUT PARAMETER for "formFile" of type "string"<br /><img src="/images/portal-part3-webview/add-input-formFile.png" alt="Add Input formFile" border="0" /></li>
+<li>Now, click Save and Close in the bottom right-corner</li>
+<li>Your Custom Send Interaction workflow is now ready for use so we need to update the Request VM workflow to use this one instead of the core vCO "Send Interaction" workflow.</li>
+<li>Edit your "Request VM" workflow and go to the Schema tab</li>
+<li>Now click on the "Send Interaction" workflow element and choose the "Info" tab in the bottom pane<br /> <img src="/images/portal-part3-webview/request-vm-send-interaction-old.png" alt="Request VM Send Interaction" width="640" border="0" /></li>
+<li>Now click the "Change workflow" link in the bottom of the info tab and choose your "Helpers\Custom Send Interaction" workflow:<br /> <img src="/images/portal-part3-webview/choose-workflow-custom-send-interaction.png" alt="Choose Workflow - Custom Send Interaction" width="640" border="0" /></li>
+<li>And then acknowledge the confirmation prompts</li>
+<li>Click on the "IN" tab and notice that the two new inputs are not yet mapped:<br /><img src="/images/portal-part3-webview/in-tab-custom-send-interaction.png" alt="Choose Workflow - Custom Send Interaction" width="640" border="0" /></li>
+<li>Click on the "not set" link for "formFile" and add an Attribute with a pre-defined value as follows:<br /><img src="/images/portal-part3-webview/form-file-attribute.png" alt="Form File Attribute" border="0" /></li>
+<li>Now click the "not set" link for the "webviewName" and add an Attribute with a pre-defined value as follows:<br /><img src="/images/portal-part3-webview/webviewName-attribute.png" alt="webviewName Attribute" border="0" /></li>
+<li>After adding these two new attributes, click Save, then click the "General" tab of the workflow and increment the version with an appropriate note then click "Save and close":<br /><img src="/images/portal-part3-webview/increment-version.png" alt="Increment Version" border="0" /></li>
+</ul>
+</li>
+</ol>
+
+<p>You may now login to the "Request Portal" webview as a requester and place a request. As a requester, you should receive a confirmation page stating that your request has been accepted and an e-mail should be sent to your approver with a valid link directly to your "request_portal" . <img src="/images/portal-part3-webview/approve-request.png" alt="Approve Request" border="0" />Test the process and confirm that it is working as expected.</p>
+<p>Potential topics for future article(s) in this series could include:</p>
+<ul>
+<li>Adding a new tab to the tab-menu of the webview</li>
+<li>Restricting access to tabs of the menu to group members</li>
+<li>Adding a list of Requests waiting for user interaction (approval)</li>
+<li>Enabling e-mail response/approvals for waiting requests</li>
+</ul>
+<p>Please submit your comments and feedback on this series here. We read ALL submissions and take them into consideration for future topics. Thank you!</p>
+<p><img src="/images/filetypes/package.png" alt="file icon package" /> <a title="Download Package containing solution!" href="/images/portal-part3-webview/info.vcoteam.self.provisioning.portal.3.package">Download Package containing solution!</a></p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +461,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

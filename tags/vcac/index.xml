@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vcac on </title>
+    <title>vCAC on </title>
     <link>http://new.vcoteam.info/tags/vcac.html</link>
-    <description>Recent content in vcac on </description>
+    <description>Recent content in vCAC on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Feb 2015 00:00:00 +0000</lastBuildDate>
@@ -70,6 +70,56 @@ The first part of the article explains the different options available to automa
       <guid>http://new.vcoteam.info/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</guid>
       <description>Last year I have created an extensibility package to simplify and automate the steps necessary to extend the vCAC IaaS lifecycle process with calling out vCO workflows. While this was mainly aimed at accelerating Proof of Concepts it has been since then broadly adopted in production environments. Since vCAC 6.0 it is part of the product and available for vCAC 5.2 as a separate download.
 Since this is now becoming a very hot topic I am including here a very useful extensibility introduction video that was released by my colleagues from tech marketing almost three months ago.</description>
+    </item>
+    
+    <item>
+      <title>Enabling VMware vCloud Automation Center XaaS with vCO dynamic types</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</link>
+      <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</guid>
+      <description>You may have noticed that the vCO 5.5.1 release notes are listing a new feature called &amp;ldquo;Dynamic Types&amp;rdquo;
+&amp;ldquo;Workflow developers are now able to explore the new Dynamic Types which currently is being shipped with Beta quality. They can easily extend vCenter Orchestrator plug-ins by adding their custom types accessible from the scripting API. New types become available in the inventory right after creation and they could be directly leveraged from the vCAC ASD context as part of the cloud provisioning process and XaaS definition.</description>
+    </item>
+    
+    <item>
+      <title>How To Configure vCAC&#39;s Embedded vCO To Allow Domain Account Login</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</link>
+      <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</guid>
+      <description>If you&amp;rsquo;re reading this article, it may be because you have installed vCloud Automation Center (vCAC) and are interested in using an account other than administrator@vsphere.local to login to the embedded vCenter Orchestrator (vCO) server. By default, the vCO Server uses a &amp;ldquo;vcoadmins&amp;rdquo; group in the &amp;ldquo;vsphere.local&amp;rdquo; domain provided by the SSO server that vCAC was configured to use. This short tutorial will step you through a pretty basic configuration where I have just deployed a vCAC 6.</description>
+    </item>
+    
+    <item>
+      <title>Run a program in guest from vCloud Automation Center</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/263-run-a-program-in-guest-from-vcloud-automation-center-.html</link>
+      <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/263-run-a-program-in-guest-from-vcloud-automation-center-.html</guid>
+      <description>vCloud Automation Center is the VMware hybrid cloud self-service provisioning portal. It can be customized to extend its OOTB functionality. The following tutorial shows how from the vSphere web client create a menu operation to run a program in a guest or how to do it automatically once the VM has been provisioned. This does not involve any scripting !
+Prerequisites vCenter Orchestrator configured with:
+ vCenter plug-in (with the same host used in vCAC) vCAC plug-in 5.</description>
+    </item>
+    
+    <item>
+      <title>Working with vCloud Automation Center IaaS entities</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</link>
+      <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</guid>
+      <description>vCloud Automation Center has several constructs such as blueprints, business groups, reservations to manage the virtual machines lifecycle and governance policies.
+While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture.
+The vCloud Automation Center Infrastructure as a service data model (vCAC IaaS) vCAC IaaS has an extensible model consisting of different metamodels.</description>
+    </item>
+    
+    <item>
+      <title>Remove computer from AD using vCO during vCAC Decommission</title>
+      <link>http://new.vcoteam.info/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</link>
+      <pubDate>Wed, 17 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</guid>
+      <description>As vCloud Automation Center (vCAC) gains traction, so too does the need for details on how to extend it using vCenter Orchestrator (vCO). I have kept an eye out for good articles on vCAC and just saw a great one at the DailyHypervisor.com blog around Adding a computer account to Active Directory OU. This is something that we had done for LifeCycleManager (LCM) quite some time back and feel it is a good candidate for a vCO-centeric article.</description>
     </item>
     
   </channel>

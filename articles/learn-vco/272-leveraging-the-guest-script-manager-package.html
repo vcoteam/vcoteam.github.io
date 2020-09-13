@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Leveraging the Guest Script Manager package - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms. A popular way was to use the 1. This plug-in is not needed anymore since the VIX functionality is part of the vCenter API since vCenter 5.0 and there are guest operations workflows to copy a script and run it into a VM guest OS since vCO 5.1&lt;br /&gt;&lt;br /&gt;Using these library workflows requires to copy scripts from the vCO filesystem or include the scripts in your workflows. Getting the script output can be tricky and if part of the script include parameters that need to be replaced with your custom workflows inputs it requires a bit more coding.&lt;br /&gt;&lt;br /&gt;The 1 handles all of this for you so you do not have to reinvent the wheel. You can even create specific workflows to run existing scripts without having to do any vCO scripting !&lt;br /&gt;">
+	<meta name="description" content="Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms.">
 		<meta property="og:title" content="Leveraging the Guest Script Manager package" />
-<meta property="og:description" content="Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms. A popular way was to use the 1. This plug-in is not needed anymore since the VIX functionality is part of the vCenter API since vCenter 5.0 and there are guest operations workflows to copy a script and run it into a VM guest OS since vCO 5.1&lt;br /&gt;&lt;br /&gt;Using these library workflows requires to copy scripts from the vCO filesystem or include the scripts in your workflows. Getting the script output can be tricky and if part of the script include parameters that need to be replaced with your custom workflows inputs it requires a bit more coding.&lt;br /&gt;&lt;br /&gt;The 1 handles all of this for you so you do not have to reinvent the wheel. You can even create specific workflows to run existing scripts without having to do any vCO scripting !&lt;br /&gt;" />
+<meta property="og:description" content="Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/272-leveraging-the-guest-script-manager-package.html" />
 <meta property="article:published_time" content="2013-11-26T00:00:00+00:00" />
@@ -16,14 +16,14 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Leveraging the Guest Script Manager package"/>
-<meta name="twitter:description" content="Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms. A popular way was to use the 1. This plug-in is not needed anymore since the VIX functionality is part of the vCenter API since vCenter 5.0 and there are guest operations workflows to copy a script and run it into a VM guest OS since vCO 5.1&lt;br /&gt;&lt;br /&gt;Using these library workflows requires to copy scripts from the vCO filesystem or include the scripts in your workflows. Getting the script output can be tricky and if part of the script include parameters that need to be replaced with your custom workflows inputs it requires a bit more coding.&lt;br /&gt;&lt;br /&gt;The 1 handles all of this for you so you do not have to reinvent the wheel. You can even create specific workflows to run existing scripts without having to do any vCO scripting !&lt;br /&gt;"/>
+<meta name="twitter:description" content="Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +86,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +121,146 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2013-11-26T00:00:00Z">November 26, 2013</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <p>Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms. A popular way was to use the <!-- raw HTML omitted -->VIX plug-in for vCO<!-- raw HTML omitted -->. This plug-in is not needed anymore since the VIX functionality is part of the vCenter API since vCenter 5.0 and there are guest operations workflows to copy a script and run it into a VM guest OS since vCO 5.1<!-- raw HTML omitted --><!-- raw HTML omitted -->Using these library workflows requires to copy scripts from the vCO filesystem or include the scripts in your workflows. Getting the script output can be tricky and if part of the script include parameters that need to be replaced with your custom workflows inputs it requires a bit more coding.<!-- raw HTML omitted --><!-- raw HTML omitted -->The <!-- raw HTML omitted -->Guest Script Manager package<!-- raw HTML omitted --> handles all of this for you so you do not have to reinvent the wheel. You can even create specific workflows to run existing scripts without having to do any vCO scripting !<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+      <p>Running commands or scripts in VM guest is something that has been done with vCO for quite a while using different mechanisms. A popular way was to use the <a href="http://labs.vmware.com/flings/vix-vco"  target="_blank" rel="noreferrer noopener" >VIX plug-in for vCO</a>. This plug-in is not needed anymore since the VIX functionality is part of the vCenter API since vCenter 5.0 and there are guest operations workflows to copy a script and run it into a VM guest OS since vCO 5.1</p>
+<p>Using these library workflows requires to copy scripts from the vCO filesystem or include the scripts in your workflows. Getting the script output can be tricky and if part of the script include parameters that need to be replaced with your custom workflows inputs it requires a bit more coding.</p>
+<p>The <a href="https://communities.vmware.com/docs/DOC-25474"  target="_blank" rel="noreferrer noopener" >Guest Script Manager package</a> handles all of this for you so you do not have to reinvent the wheel. You can even create specific workflows to run existing scripts without having to do any vCO scripting !</p>
+<h2 id="features">Features</h2>
+<p>Script management : Add, edit, delete a script configuration. A script configuration contains:</p>
+<ul>
+<li>Script type (bash, batch, Powershell) : Each type involve a different way of starting the script and getting the output.</li>
+<li>Script content: The script itself. May contain parameters that will be replaced right before running the script.</li>
+<li>Timeout: The time after the script execution is</li>
+<li>Script interactivity: In case the script open a window that requires user interaction.</li>
+<li>Script working directory: Where the script will run. Where the optional file will be copied.</li>
+<li>File to copy: A file to be copied in addition to the script. For example a response file needed for the script.</li>
+</ul>
+<p>The script configurations are stored as resource elements in the vCO database. This means :</p>
+<ul>
+<li>Updating a script does not require updating a workflow</li>
+<li>The scripts are in a much safer location compared to the filesystem</li>
+<li>If you run a vCO cluster, the scripts are available for every vCO nodes</li>
+<li>That you can export / import the script configurations in a package</li>
+</ul>
+<p>The script configuration runner : &ldquo;Run script in VM guest&rdquo;</p>
+<ul>
+<li>Search replace specified strings in the additional file, copy it to the guest (optional).</li>
+<li>Search replace specified strings in the script, run it in the guest.</li>
+<li>Get output code and output result, display these (including special characters supported by ANSI), fails the workflow if script failed.</li>
+</ul>
+<p>There is also a workflow to run multiple scripts one after the other and a workflow to upload your files as resource elements.</p>
+<h2 id="tutorial">Tutorial</h2>
+<p>First let&rsquo;s run the &ldquo;Add a script configuration&rdquo; workflow. For the configuration name enter something descriptive like below. This will need to be a unique name.</p>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Create-Script-01.png"/> 
+</figure>
+
+<p>Then set the type of script. If it is anything that can be started from cmd.exe use batch. Use bash for Linux scripts.</p>
+<p>Script content is the actual script to run in the guest. In the script below [domain] and [userName] are parameter that we will pass at run time. You should be able to use any kind of characters to delimit your parameters.</p>
+<p>Set a time out for the script.</p>
+<p>Since this script does not require user interactivity, a specific working directory, an additional file we can skip the next inputs.</p>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Create-Script-02.png"/> 
+</figure>
+
+<p>Submit the workflow. The script configuration has been saved. You can use &ldquo;edit script configuration&rdquo; if you need to apply any change</p>
+<p>Now we can test our script. For this use the &ldquo;Run script in VM guest&rdquo; workflow.</p>
+<ul>
+<li>Select a powered on VM.</li>
+<li>Enter the credential for this VM.</li>
+<li>Select the script you created.</li>
+<li>Click on the &ldquo;Not set&rdquo; to set variable scripts.</li>
+</ul>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Run-Script-01.png"/> 
+</figure>
+
+<p>Click on insert value. Enter the string you want to replace and the replacing string.</p>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Run-Script-02.png"/> 
+</figure>
+
+<p>Submit.</p>
+<p>If you look at the log you will see which variable are replaced, the content of the script and the output of the command.</p>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Run-Script-03.png"/> 
+</figure>
+
+<p>If you right click on the workflow run and select &ldquo;run again&rdquo;, enter the password again and submit. This time the workflow fails and indicate the following error in the logs.</p>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Run-Script-04.png"/> 
+</figure>
+
+<h2 id="create-a-dedicated-workflow-to-run-the-script">Create a dedicated workflow to run the script</h2>
+<p>Having a generic workflow to run your script is nice but you may want to create a workflow for each script so you can map the required parameter on specific workflow inputs.</p>
+<ul>
+<li>Create a new workflow,</li>
+<li>Drag and drop a workflow element &ldquo;Run script in VM guest&rdquo; on the line. Make sure this is &ldquo;Run script&rdquo; and not &ldquo;Run scripts&rdquo;</li>
+<li>Click on &ldquo;Setup&rdquo; button at the top right to set the workflow parameters</li>
+<li>Set scriptConfiguration as &ldquo;Value&rdquo;, click on input value and type in the filter the name of your script (in my case &ldquo;Add domain user to administrator local group&rdquo;). Select it.</li>
+<li>Set scriptVariables as &ldquo;Value&rdquo;. Do not set any input value.</li>
+<li>Click &ldquo;promote&rdquo;</li>
+</ul>
+<p><figure>
+    <img src="/images/script-manager/ScriptManager-Create-Workflow-01.png"/> 
+</figure>
+
+If we would not have any script variables we would be done. Since we have some we need a couple extra steps.</p>
+<h3 id="map-the-workflow-inputs-to-the-script-parameters">Map the workflow inputs to the script parameters</h3>
+<ul>
+<li>Drag and drop an Action element before the &ldquo;Run script in VM guest&rdquo;. Choose the &ldquo;addScriptVariableToArrayOfScriptVariables&rdquo; action.</li>
+<li>Click &ldquo;Promote&rdquo;</li>
+<li>Rename &ldquo;stringToReplace&rdquo; with &ldquo;domainVar&rdquo; and set it to &ldquo;Value&rdquo;. Click on &ldquo;Input value&rdquo; and set it to [domain]</li>
+<li>Rename &ldquo;replacingString&rdquo; with &ldquo;domain&rdquo;</li>
+<li>Set the output to &ldquo;scriptVariables&rdquo;</li>
+<li>Click &ldquo;Promote&rdquo;</li>
+</ul>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Create-Workflow-02.png"/> 
+</figure>
+
+<p>We need to do this one more time for the username input:</p>
+<ul>
+<li>Drag and drop an Action element before the &ldquo;Run script in VM guest&rdquo;. Choose the &ldquo;addScriptVariableToArrayOfScriptVariables&rdquo; action.</li>
+<li>Click &ldquo;Promote&rdquo;</li>
+<li>Rename &ldquo;stringToReplace&rdquo; with &ldquo;usernameVar&rdquo; and set it to &ldquo;Value&rdquo;. Click on &ldquo;Input value&rdquo; and set it to [userName]</li>
+<li>Rename &ldquo;replacingString&rdquo; with &ldquo;username&rdquo;</li>
+<li>Set the output to &ldquo;scriptVariables&rdquo;</li>
+<li>Click &ldquo;Promote&rdquo;</li>
+</ul>
+<p>Save your workflow, run it and voila !
+<figure>
+    <img src="/images/script-manager/ScriptManager-Create-Workflow-03.png"/> 
+</figure>
+</p>
+<h2 id="package-your-workflow">Package your workflow</h2>
+<p>Now you may want to use your workflow on another vCO system or make your workflow available to other vCO users from your blog or with posting it in <a href="https://communities.vmware.com/community/vmtn/vcenter/orchestrator/content?filterID=contentstatus[published]~objecttype~objecttype[document]"  target="_blank" rel="noreferrer noopener" >vCO communities</a>.</p>
+<p>For this create a new package. Name it according to your company name, department, and a meaningful name</p>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Package-Workflow-01.png"/> 
+</figure>
+
+<p>Click on the + to add your workflow. It will add all the workflows, actions, resource elements dependencies.</p>
+<figure>
+    <img src="/images/script-manager/ScriptManager-Package-Workflow-02.png"/> 
+</figure>
+
+<p>To make your package leaner you can sort by folder and remove all the workflows in Library / vCenter : these are already part of the vCenter plug-in so no need to redistribute them.</p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vix/" rel="tag">VIX</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +339,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>

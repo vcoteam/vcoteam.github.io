@@ -21,5 +21,18 @@
 The Script The following code should be saved as something like runWorkflow.</description>
     </item>
     
+    <item>
+      <title>VMware released the vCenter Orchestrator Plug-in for Microsoft Windows PowerShell</title>
+      <link>http://new.vcoteam.info/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</link>
+      <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://new.vcoteam.info/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</guid>
+      <description>If you have an investment in PowerShell cmdlets such as VMware vSphere PowerCLI but also snapins from other vendors the VMware vCenter Orchestrator plug-in for Microsoft Windows PowerShell can help you to integrate these as part of workflows steps in vCenter Orchestrator.
+Citing the release notes:
+The plug-in offers many capabilities to workflow developers, such as:
+
+Invoking unmodified scripts by copying and pasting them into workflowsInvoking external scripts and passing workflow parameters as script inputsGenerating a new Orchestrator action from a PowerShell scriptGenerating a new Orchestrator action for a PowerCLI cmdletBrowsing snap-ins and their associated cmdlets in the Orchestrator workflow editorInvoking scripts from the Orchestrator JavaScript APIConverting vCenter Server objects in Orchestrator workflows to PowerShell objects and the reverseThe VMware vCenter Orchestrator plug-in for Microsoft Windows PowerShell 1.</description>
+    </item>
+    
   </channel>
 </rss>

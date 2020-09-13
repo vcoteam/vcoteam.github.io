@@ -6,9 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Create a simple vCO self service VM Provisioning Portal - Part 2 - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="&lt;p&gt;This second tutorial assumes you have completed 1 and use the Provision VM workflow.&lt;/p&gt;&lt;p style=&#34;text-align: justify;&#34;&gt;Concepts covered in this article include:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;How to create a Workflow using subworkflows&lt;/li&gt;&lt;li&gt;How to map inputs, outputs, and attributes&lt;/li&gt;&lt;li&gt;How to use user interactions&lt;/li&gt;&lt;li&gt;How to do basic presentations&lt;/li&gt;&lt;li&gt;How to use validation presentation properties&lt;/li&gt;&lt;li&gt;How to handle exception and write to the event log&lt;/li&gt;&lt;li&gt;How to use vCO Server and System objects in scriptable boxes&lt;/li&gt;&lt;li&gt;How to use the API search&lt;/li&gt;&lt;li&gt;How to launch a Workflow from the vCenter Orchestrator Client&lt;/li&gt;&lt;li&gt;How to launch a Workflow from a webview, using the vCenter Orchestrator Weboperator&lt;/li&gt;&lt;li&gt;How to set rights on workflows&lt;/li&gt;&lt;li&gt;How to set up the vCO mail plug-in&lt;/li&gt;&lt;/ul&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;">
+	<meta name="description" content="">
 		<meta property="og:title" content="Create a simple vCO self service VM Provisioning Portal - Part 2" />
-<meta property="og:description" content="&lt;p&gt;This second tutorial assumes you have completed 1 and use the Provision VM workflow.&lt;/p&gt;&lt;p style=&#34;text-align: justify;&#34;&gt;Concepts covered in this article include:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;How to create a Workflow using subworkflows&lt;/li&gt;&lt;li&gt;How to map inputs, outputs, and attributes&lt;/li&gt;&lt;li&gt;How to use user interactions&lt;/li&gt;&lt;li&gt;How to do basic presentations&lt;/li&gt;&lt;li&gt;How to use validation presentation properties&lt;/li&gt;&lt;li&gt;How to handle exception and write to the event log&lt;/li&gt;&lt;li&gt;How to use vCO Server and System objects in scriptable boxes&lt;/li&gt;&lt;li&gt;How to use the API search&lt;/li&gt;&lt;li&gt;How to launch a Workflow from the vCenter Orchestrator Client&lt;/li&gt;&lt;li&gt;How to launch a Workflow from a webview, using the vCenter Orchestrator Weboperator&lt;/li&gt;&lt;li&gt;How to set rights on workflows&lt;/li&gt;&lt;li&gt;How to set up the vCO mail plug-in&lt;/li&gt;&lt;/ul&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;" />
+<meta property="og:description" content="This second tutorial assumes you have completed part 1 and use the Provision VM workflow.
+Concepts covered in this article include:
+How to create a Workflow using subworkflowsHow to map inputs, outputs, and attributesHow to use user interactionsHow to do basic presentationsHow to use validation presentation propertiesHow to handle exception and write to the event logHow to use vCO Server and System objects in scriptable boxesHow to use the API searchHow to launch a Workflow from the vCenter Orchestrator ClientHow to launch a Workflow from a webview, using the vCenter Orchestrator WeboperatorHow to set rights on workflowsHow to set up the vCO mail plug-inNOTE: Webviews were deprecated and removed in vRealize Orchestrator 7." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://new.vcoteam.info/articles/learn-vco/87-create-a-simple-vco-self-service-vm-provisioning-portal-part-2.html" />
 <meta property="article:published_time" content="2010-06-17T00:00:00+00:00" />
@@ -16,14 +18,16 @@
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create a simple vCO self service VM Provisioning Portal - Part 2"/>
-<meta name="twitter:description" content="&lt;p&gt;This second tutorial assumes you have completed 1 and use the Provision VM workflow.&lt;/p&gt;&lt;p style=&#34;text-align: justify;&#34;&gt;Concepts covered in this article include:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;How to create a Workflow using subworkflows&lt;/li&gt;&lt;li&gt;How to map inputs, outputs, and attributes&lt;/li&gt;&lt;li&gt;How to use user interactions&lt;/li&gt;&lt;li&gt;How to do basic presentations&lt;/li&gt;&lt;li&gt;How to use validation presentation properties&lt;/li&gt;&lt;li&gt;How to handle exception and write to the event log&lt;/li&gt;&lt;li&gt;How to use vCO Server and System objects in scriptable boxes&lt;/li&gt;&lt;li&gt;How to use the API search&lt;/li&gt;&lt;li&gt;How to launch a Workflow from the vCenter Orchestrator Client&lt;/li&gt;&lt;li&gt;How to launch a Workflow from a webview, using the vCenter Orchestrator Weboperator&lt;/li&gt;&lt;li&gt;How to set rights on workflows&lt;/li&gt;&lt;li&gt;How to set up the vCO mail plug-in&lt;/li&gt;&lt;/ul&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/span&gt; Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.&lt;br /&gt;"/>
+<meta name="twitter:description" content="This second tutorial assumes you have completed part 1 and use the Provision VM workflow.
+Concepts covered in this article include:
+How to create a Workflow using subworkflowsHow to map inputs, outputs, and attributesHow to use user interactionsHow to do basic presentationsHow to use validation presentation propertiesHow to handle exception and write to the event logHow to use vCO Server and System objects in scriptable boxesHow to use the API searchHow to launch a Workflow from the vCenter Orchestrator ClientHow to launch a Workflow from a webview, using the vCenter Orchestrator WeboperatorHow to set rights on workflowsHow to set up the vCO mail plug-inNOTE: Webviews were deprecated and removed in vRealize Orchestrator 7."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/images/vco-logo.png">
 		
 <script type="application/javascript">
 var doNotTrack = false;
@@ -86,7 +90,14 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/articles/newsflash.html">
 				
-				<span class="menu__text">Newsflash</span>
+				<span class="menu__text">newsflash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/question-answer.html">
+				
+				<span class="menu__text">Q&amp;A</span>
 				
 			</a>
 		</li>
@@ -114,10 +125,276 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-06-17T00:00:00Z">June 17, 2010</time></div>
 </div>
     </header><div class="content post__content clearfix">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <p>This second tutorial assumes you have completed <a href="/articles/learn-vco/54-create-a-simple-vco-self-service-vm-provisioning-portal-part-1.html" target="_blank">part 1</a> and use the Provision VM workflow.</p>
+<p style="text-align: justify;">Concepts covered in this article include:</p>
+<ul>
+<li>How to create a Workflow using subworkflows</li>
+<li>How to map inputs, outputs, and attributes</li>
+<li>How to use user interactions</li>
+<li>How to do basic presentations</li>
+<li>How to use validation presentation properties</li>
+<li>How to handle exception and write to the event log</li>
+<li>How to use vCO Server and System objects in scriptable boxes</li>
+<li>How to use the API search</li>
+<li>How to launch a Workflow from the vCenter Orchestrator Client</li>
+<li>How to launch a Workflow from a webview, using the vCenter Orchestrator Weboperator</li>
+<li>How to set rights on workflows</li>
+<li>How to set up the vCO mail plug-in</li>
+</ul>
+<span style="color: #ff0000;"><strong>NOTE:</strong></span> Webviews were deprecated and removed in vRealize Orchestrator 7.0 - this article only applies to earlier versions of Orchestrator.<br />
 
+<h1>Development of the "Request VM" workflow - building blocks</h1>
+<p><br />In the vCO client, select the Workflows tab. Select your workflow category.</p>
+<p><img src="/images/portal-part2/SSPP-2-001-SelectCategory.png" alt="" border="0" /></p>
+
+<p>Right click / New workflow / Name it "Request VM".</p>
+<p><img src="/images/portal-part2/SSPP-2-002-SetWorkflowName.png" alt="" border="0" /></p>
+
+<p>Edit the selected workflow (Right Click / Edit or Ctrl E).</p>
+<p>As a best practice, click on the last digit of the version to and provide an initial comment, Click OK.</p>
+<p><img src="/images/portal-part2/SSPP-2-003-setVersion.png" alt="" border="0" /></p>
+<p><img src="/images/portal-part2/SSPP-2-004-EnterVersionComment.png" alt="" border="0" /></p>
+
+<p>Provide a description for the workflow such as "Request, approve, provision a VM".</p>
+
+<p>Click on the Schema tab. In the "Action &amp; Workflow" tab select workflow and drag and drop on the schema.</p>
+<p><img src="/images/portal-part2/SSPP-2-005-SelectWorkflowElementInPalette.png" alt="" border="0" /></p>
+
+<p>In the search box type in "provision VM". This will be one of the workflow building block for our new workflow. Double click on it (or Click to select and use the Select link).</p>
+<p><img src="/images/portal-part2/SSPP-2-006-searchProvisionVmWorkflow.png" alt="" border="0" /></p>
+
+<p><img src="/images/portal-part2/SSPP-2-007-SelectProvisionVm001.png" alt="" border="0" /></p>
+
+<p>We are now going to create our Request VM workflow input so the requester can select a template to provision from. To do so go in the "Inputs" tab.</p>
+<p><img src="/images/portal-part2/SSPP-2-008-AddInputParameter.png" alt="" border="0" /></p>
+
+<p>Click on the yellow arrow to create a new input. A name will be provided by default.</p>
+<p><img src="/images/portal-part2/SSPP-2-009-AddInputParameter-2.png" alt="" border="0" /></p>
+<p>Click on it to rename it "template".</p>
+<p><img src="/images/portal-part2/SSPP-2-011-AddInputParameter-4.png" alt="" border="0" /></p>
+
+<p>Click on the Type "string" link. Use the filter with entering "VC:virtualMachine" and select it (you may have to use the scroll bar to get to it since there are a lot of types starting with the same string). Double click on the type or use the "Accept" link.</p>
+<p><img src="/images/portal-part2/SSPP-2-012-AddInputParameter-5.png" alt="" border="0" /></p>
+
+<p>Double click in the description tab for the template input. Set it to "Operating System".</p>
+<p><img src="/images/portal-part2/SSPP-2-013-AddInputParameter-6-setDescription.png" alt="" border="0" /></p>
+<p>We have the basics for requesting a VM and provisioning it, now we need to include an approval process.</p>
+
+<p>Get back to the Schema tab and then on the "Action &amp; workflow tab, drag and drop "Workflow element" on the schema. Type "Send interaction" in the search filter. Double Click on the workflow.</p>
+<p><img src="/images/portal-part2/SSPP-2-014-searchSendInteraction.png" alt="" border="0" /></p>
+
+<p>Back to the schema, now the Send interaction box should be selected. On the bottom pane, info tab you will see the description of this workflow.<br /><br /></p>
+<p><img src="/images/portal-part2/SSPP-2-015-searchSendInteraction.png" alt="" border="0" /></p>
+
+<p>Click on the visual binding tab. Drag and drop each "Send Interaction" inputs in the "in Attributes" (bottom left) and click the "Ok" link. Do not set the values of these. We will default some of these inputs with our Request VM attributes. Once done you should have all the Send interaction IN elements linked (depending on which order you drag and dropped them the links may appear differently)</p>
+<p><img src="/images/portal-part2/SSPP-2-016-createSendInteractionAttributes.png" alt="" border="0" /></p>
+
+<p>Click on the General tab. The Send interaction workflow need either most of these inputs to be filled or only part of them if you have pre-configured the vCO email plug-in. We will go for the second solution. Double click in the following string attributes Values and set the approver address, the subject and the content of the notification.</p>
+<p><img src="/images/portal-part2/SSPP-2-016b-createSendInteractionAttributes.png" alt="" border="0" /></p>
+
+<p>Click on the "Save link". It is good practice to save changes regularly since the Workflow is edited in memory and committed to the server when saving. If for any reason you would loose your network link to the server you would loose the changes since the last save.</p>
+<p>We are now going to check your vCO mail plug-in configuration.</p>
+<h1>Mail plug-in configuration</h1>
+<p>If you have already setup the mail plug-in you can skip this section</p>
+<p>For this open a browser, type in the url for the configuration (default is http://server:8282), authenticate (default is vmware / vmware).Click on the Mail tab. (you can also access this page by clicking your vCenter Orchestrator Configuration icon)</p>
+<p><img src="/images/portal-part2/SSPP-2-0XX-mailPluginConfig-1.png" alt="" border="0" /><br /><br /></p>
+<p>Make sure the "Define default values" checkbox is checked. Enter the right SMTP host and port for your environment.</p>
+<p><img src="/images/portal-part2/SSPP-2-0XX-mailPluginConfig-2.png" alt="" border="0" /></p>
+<p><br /> Click apply changes. You can log out and get back to the vCO client.</p>
+
+<h1>Development of the "Request VM" workflow - building blocks continued</h1>
+<p>We now have what is needed to send the user interaction notification. We now need the interaction element. Click on the Schema tab, Generic tab, select "User Interaction", drag and drop it on the schema.</p>
+<p><img src="/images/portal-part2/SSPP-2-017-selectUserInteractionInPalette.png" alt="" border="0" /></p>
+
+<p>At this point your schema should look similar to this. If you do not have the same order move the boxes around.</p>
+<p><img src="/images/portal-part2/SSPP-2-018-schema-1.png" alt="" border="0" /></p>
+
+<p>Click on the Attributes tab of the user interaction. Click on the "not set" link of the security group.</p>
+<p><img src="/images/portal-part2/SSPP-2-019-setUserInteractionSecuritygroup-1.png" alt="" border="0" /></p>
+
+<p>Click on the "Create parameter / attribute in workflow".</p>
+<p><img src="/images/portal-part2/SSPP-2-020-setUserInteractionSecuritygroup-2.png" alt="" border="0" /></p>
+
+<p>Name it "approverGroup". Click on the "not set" link of the Value field.</p>
+<p><img src="/images/portal-part2/SSPP-2-021-setUserInteractionSecuritygroup-3.png" alt="" border="0" /></p>
+
+<p>Use the search field to find the LDAP group in which the request approvers have to belong to. Double click it, Click the Ok link.</p>
+<p><img src="/images/portal-part2/SSPP-2-022-setUserInteractionSecuritygroup-4.png" alt="" border="0" /></p>
+
+<p>Back on the user interaction. Click on the "not set" link of the timeout.date.</p>
+<p><img src="/images/portal-part2/SSPP-2-023-setUserInteractionTimeoutDate-1.png" alt="" border="0" /></p>
+
+<p>Create an attribute and call it timeoutDate. Do not set a value. We will handle this later on. Click on the Ok link.</p>
+<p><img src="/images/portal-part2/SSPP-2-024-setUserInteractionTimeoutDate-2.png" alt="" border="0" /></p>
+
+<p>Click on the "External inputs".</p>
+<p><img src="/images/portal-part2/SSPP-2-025-setUserInteractionExternalInputs-1.png" alt="" border="0" /></p>
+
+<p>Click on the left link icon to create an External Input.</p>
+<p><img src="/images/portal-part2/SSPP-2-026-setUserInteractionExternalInputs-2.png" alt="" border="0" /></p>
+
+<p>Call it "vmName" of type String (default). Click the Ok link.</p>
+<p><img src="/images/portal-part2/SSPP-2-027-setUserInteractionExternalInputs-3-vmName.png" alt="" border="0" /></p>
+
+<p>Create another attribute and call it "approverTemplate" of type VC:virtualMachine.</p>
+<p>We have created the attributes that will be presented in the user interaction.</p>
+<p>To have more descriptive labels than the attribute names you can click on each of these and change the description in the General tab.</p>
+<p><img src="/images/portal-part2/SSPP-2-userInteractionPres.png" alt="" border="0" /></p>
+<p><br />Now we need to work on the data flows.<br />Click on the provision VM workflow. We need to define which inputs will be used for provisioning the VM.</p>
+<p>Link the <strong>vm</strong> from the Provision VM IN pane of the middle left box to the approverTemplate in the bottom left box.</p>
+<p>Link the <strong>name</strong> from the Provision VM IN to the vmName attribute in the bottom left box.</p>
+<p><img src="/images/portal-part2/SSPP-2-028-linkProvisionVM-1.png" alt="" border="0" /></p>
+
+<p>We just defined that Provision VM will use the attributes part of the approver user interaction.</p>
+<p><br />The user interaction is using attributes. It cannot use the Request VM input parameters since input parameters are read-only. We need to set the user interaction attributes with the requester input parameters. To do this in the Schema Tab / Generic tab Click on "Scriptable task" and drag and drop it on the schema. You can double Click on the scriptable box to rename it to something more descriptive like "Set approver template"</p>
+<p><img src="/images/portal-part2/SSPP-2-029-selectScriptableTaskinPalette.png" alt="" border="0" /></p>
+<p><br />Click on the "IN" tab (bottom pane), click on the link icon (with plus sign) to add a local parameter. Double Click on "template".</p>
+<p><img src="/images/portal-part2/SSPP-2-030-setScriptableTaskInput.png" alt="" border="0" /></p>
+<p>Click on the "OUT" tab (bottom pane), click on the link icon (with plus sign) to add a local parameter. Double Click on "approverTemplate".</p>
+
+<p><img src="/images/portal-part2/SSPP-2-031-setScriptableTaskOutput.png" alt="" border="0" /></p>
+<p>The template will be the input used by the requester, the approverTemplate will be a copy of the template input the approver will be able to change in the user interaction. We have defined the local parameters linked to the outside of the scripting box, now we need to define what happens in the box.<br />Click on the Scripting tab. Click in the text area, click on the approverTemplate link press "space", "=", "space" ,click on the template link. You have just set the approverTemplate attribute with the template input parameter.</p>
+<p><img src="/images/portal-part2/SSPP-2-032-setScriptableTaskScripting.png" alt="" border="0" /></p>
+<p><br /><br />Now we need to build the work flow. Link the different boxes in the following order (use the link icon or ctrl click between the boxes). Drag and drop an "End workflow" element from the Generic tab.<br /><br /></p>
+<p><img src="/images/portal-part2/SSPP-2-033-linkBoxes.png" alt="" border="0" /></p>
+
+<p>Validate the workflow.</p>
+<p><img src="/images/portal-part2/SSPP-2-034-validate.png" alt="" border="0" /></p>
+<p>If you completed all the previous steps successfully the workflow should be valid.</p>
+
+<h1>Development of the "Request VM" workflow - Presentation</h1>
+<p>Since this workflow will be targeted at end user we are now going to improve the presentation.</p>
+<p>Go in the presentation tab. You will see that the template input you have created previously is there. By default the label of the input is the description you defined for the input description. If we would not have provided a description it would have been defaulted to the input name "template" and would require being renamed for having a better label.</p>
+<p><img src="/images/portal-part2/SSPP-2-0XX-RequestVmPresentation-1.png" alt="" border="0" /></p>
+<p><br />Click on the "Presentation" root element.</p>
+<p>Click on<img src="/images/portal-part2/SSPP-2-addStep.png" alt="" border="0" /> to add a new Step. Name it "Request VM" and press Enter.</p>
+<p>Click on <img src="/images/portal-part2/SSPP-2-addSection.png" alt="" border="0" /> to add a new section. Name it "VM details" and press Enter.</p>
+<p>Now drag and drop your template input under the VM details section.</p>
+<p>Click on the properties tab. Click on<img src="/images/portal-part2/SSPP-2-addProperty.png" alt="" border="0" /> to add a property, double click on "Select value as". The default value for this property is "list". This will make the template input selection appear as a searchable field instead of the default tree view.</p>
+<p>The step and the section also have a general tab to include their respective descriptions / instructions in the presentation. You can add text in these so you can for example provide specific instructions to the user.</p>
+<p>We are now done with the presentation. Save and close the workflow.</p>
+
+<h1>Development of the "Request VM" workflow - Test from the vCO client</h1>
+<p>We can now test the workflow. Right Click Execute Workflow.</p>
+<p><img src="/images/portal-part2/SSPP-2-startWfInClient-1.png" alt="" border="0" /></p>
+
+<p>Select a VM or template and submit. The workflow will progress trough the different boxes and stop in a Waiting state on the User Interaction.</p>
+<p><img src="/images/portal-part2/SSPP-2-startWfInClient-2.png" alt="" border="0" /></p>
+
+<p>Right click on the workflow execution and select answer.</p>
+
+<p><img src="/images/portal-part2/SSPP-2-userInteraction-1.png" alt="" border="0" /></p>
+
+<p>Fill in the VM name. Change the requested template if required. Submit. This will be your approval as approver.</p>
+<p><img src="/images/portal-part2/SSPP-2-userInteraction-2.png" alt="" border="0" /></p>
+
+<p>You can check that the VM is cloning successfully in vCenter.</p>
+<p><img src="/images/portal-part2/SSPP-2-cloneVm.png" alt="" border="0" /></p>
+<p>And that your workflow completed successfully.</p>
+<p><img src="/images/portal-part2/SSPP-2-wfSuccessful.png" alt="" border="0" /></p>
+
+<p>The Request / Approval / Provisioning basic functionality is working. We can now polish this with improving user experience and preventing errors.</p>
+
+<h3><span style="text-decoration: underline;">Provide a specific template list for the requester to choose from</span></h3>
+<p>Click on the general tab and create the following attribute. Set a value for the templateRoot attribute (this is going to be the VM folder from which the user will be able to select VM templates).</p>
+<p><img src="/images/portal-part2/SSPP-2-templateRootAttribute.png" alt="" border="0" /></p>
+
+<p>Now we need to tell the presentation to use this root for the presentation. Click on the Presentation tab / Properties. Change the "Select value as" to "tree". Add a new "Specify a root object" property. Click on the pencil icon on the right to set it to your templateRoot.</p>
+<p><img src="/images/portal-part2/SSPP-2-setRootProperty.png" alt="" border="0" /></p>
+
+<h3><span style="text-decoration: underline;">Provide the requester user name to the approver and make some of the inputs mandatory to prevent errors</span></h3>
+<p>Get back to The schema tab and click on the scriptable box. Click on the "OUT" tab (bottom pane). Create an attribute called requester (no need to set a value).</p>
+<p><img src="/images/portal-part2/SSPP-2-getCurrentLdapUser-1.png" alt="" border="0" /></p>
+
+<p>Click on the Script tab. Click in it after the existing text. Click on the "requester" link above the scriptable box to insert the requester string. Type " = Server."</p>
+<p>The vCO server hold the current workflow user. The Server object will allow us to call the appropriate method to retrieve the current user. After the point press Ctrl Space. This will list the list of properties and methods available for the server object. Select getCurrentLdapUser. Ctrl space is a convenient way to get properties or methods for an object that has been declared as an input or output of a scriptable box.</p>
+<p><img src="/images/portal-part2/SSPP-2-getCurrentLdapUser-2.png" alt="" border="0" /></p>
+
+<p>On the left side of the screen there is an API search. Unfold the Server Object and click on the getCurrentLdapUser(). This will display the following information.</p>
+<p><img src="/images/portal-part2/SSPP-2-getCurrentLdapUser-3.png" alt="" border="0" /></p>
+<p>This method returns an LdapUser Object. Click on the LdapUser link to get to its properties.</p>
+
+<p><img src="/images/portal-part2/SSPP-2-getCurrentLdapUser-4.png" alt="" border="0" /></p>
+<p>We will be interested by the displayName property. We will complete the scriptable box as follows:</p>
+<p><img src="/images/portal-part2/SSPP-2-getCurrentLdapUser-5.png" alt="" border="0" /></p>
+<p>We now have the code to store the requester name in an attribute, we need to make it available to the requester.</p>
+<p>In the schema click on the User interaction / Presentation tab (bottom pane), for each of the inputs use the properties tab to add a new property "Mandatory input". This will avoid to submit without filling one of the inputs.</p>
+<p>Click on the Presentation root element of the presentation. Click on General and write "Please approve VM from ${requester}". The ${attribute} syntax allows to insert the value of the attribute parameter in the presentation.</p>
+<p><img src="/images/portal-part2/SSPP-2-displayAttributeInPresentation.png" alt="" border="0" /></p>
+
+<h3><span style="text-decoration: underline;"><span style="text-decoration: underline;">Handle exception remediation on user interaction timeout<br /></span></span></h3>
+<p>Click on the Exception tab. Click on the "not set" link. Create an attribute (use the default errorCode name).</p>
+<p><img src="/images/portal-part2/SSPP-2-userInteractionExceptionBinding.png" alt="" border="0" /></p>
+<p>This errorCode will be set with an exception error string if the user interaction fails. Previously we set the user interaction with a timeout attribute. We are now going to set it with the time we want the user interaction to stop and throw an exception.</p>
+<p>Go back to the scriptable box, click on the OUT tab and add the timeoutDate attribute. Click at the end of the script box and add " = System.getDate("in one day");". This time we used the System object to get a date. You can browse the API search to check how the getDate method works.</p>
+<p><img src="/images/portal-part2/SSPP-2-setInteractionTimeout.png" alt="" border="0" /></p>
+
+<p>Now that we have a time set for the timeout the user interaction will throw an exception one day after the request is done if nobody approve the request. We will need to catch the error and define a remediation flow. Drag and drop a new scriptable box on the schema. Call it "Timeout". In the scriptable box add errorCode as input parameter. Write the script "Server.log("Request VM", "User Interaction reached timeout: " + errorCode);". This will write an entry in the vCO database event log.</p>
+<p>Link the User Interaction to this box. The red doted line represents the exception handler. Link the timeout back to the send interaction. Our simple remediation is to send back the request until the approver answer !</p>
+<p><img src="/images/portal-part2/SSPP-2-serverLogBox.png" alt="" border="0" /></p>
+
+<p>In the "Request VM" Presentation, select the template input. In the properties tab add a new property "Mandatory input". This will avoid request to be made without providing a template.</p>
+
+<p>Validate the workflow. If you did everything right you should have the following:</p>
+<p><img src="/images/portal-part2/SSPP-2-validationWarning.png" alt="" border="0" /></p>
+<p>There is a warning because the validation mechanism does not detect attributes used in the presentation. Do <span style="text-decoration: underline;">not</span> delete the attribute, close the window.</p>
+
+<h1>Development of the "Request VM" workflow - Setting up workflow rights</h1>
+<p>You want the users from the requester group to be able to run the request workflow but certainly do not want your requesters to run all the workflows on the vCO server !</p>
+<p>Assumption: As an approver you are already in an LDAP group having part of the vCO Admin group defined in the configuration. We will focus on setting permissions so a requester can log in the web operator and only run the Request VM workflow.</p>
+<p>In the workflows tab select the root item</p>
+<p><img src="/images/portal-part2/SSPP-2-rootItem.png" alt="" border="0" /></p>
+<p>Right Click, and click<img src="/images/portal-part2/SSPP-2-editAccessRights.png" alt="" border="0" /></p>
+<p>Click on <img src="/images/portal-part2/SSPP-2-addAccessRights.png" alt="" border="0" /></p>
+<p>Check view. All the sub element will inherit with the same rights</p>
+<p><img src="/images/portal-part2/SSPP-2-rootItemViewRight.png" alt="" border="0" /></p>
+
+<p>In my case the requester group is called BuildTeam</p>
+<p><img src="/images/portal-part2/SSPP-2-setRootRights.png" alt="" border="0" /></p>
+<p>Save the changes. It is necessary to have view rights to be able to reach the Request VM workflow.</p>
+
+<p>Now edit access rights on the Request VM workflow. Add Rights, Check View, Inspect, Execute.</p>
+<p><img src="/images/portal-part2/SSPP-2-setRequestVmRights-1.png" alt="" border="0" /></p>
+<p>Save the changes.</p>
+<p>BuildTeam is now listed for both the inherited rights and the one I have specifically set on this workflow.</p>
+<p><img src="/images/portal-part2/SSPP-2-setRequestVmRights-2.png" alt="" border="0" /></p>
+<p>Save the changes.</p>
+
+<h1>Development of the "Request VM" workflow - Test from the weboperator webview</h1>
+<p>Log in the web operator webview (http://hostname:8280/vmo/weboperator/default.html) as a requester (the requester must be a member of the group you have just set rights to Execute the workflow).</p>
+<p>Try to execute "Provision VM". If you are not member of another group granting you rights on vCO workflows you should see the following:</p>
+<p><img src="/images/portal-part2/SSPP-2-noaccess.png" alt="" border="0" /></p>
+
+<p>Execute the "Request VM" workflow. Select a template. Submit the workflow.<br /><br />UPDATE NOTE: You will see in your environment that if you follow exactly the steps in this article that you still get an error when attempting to request a VM. This is doe to other components of the workflow you are calling not having permission granted to your user. See <a href="/articles/learn-vco/107-create-a-simple-vco-self-service-vm-provisioning-portal-part-3.html">Part 3 of this series</a> for additional detail and required steps.</p>
+<p><img src="/images/portal-part2/SSPP-2-WebOperator-1.png" alt="" border="0" /></p>
+
+<p>In the approver email box a new email is received. Click on the answer link.</p>
+<p><img src="/images/portal-part2/SSPP-2-approveEmail-1.png" alt="" border="0" /></p>
+<p>With the following Content</p>
+<p><img src="/images/portal-part2/SSPP-2-approveEmail-2.png" alt="" border="0" /></p>
+<p>If you were still log in as the requester you will get the following</p>
+<p><img src="/images/portal-part2/SSPP-2-WebOperator-2.png" alt="" border="0" /></p>
+
+<p>If so log off and log back in as the approver. Set a VM name and submit.</p>
+
+<p><img src="/images/portal-part2/SSPP-2-WebOperator-4.png" alt="" border="0" /></p>
+
+<p>Once the workflow will have completed you will see the following after refreshing the page.</p>
+<p><img src="/images/portal-part2/SSPP-2-WebOperator-5.png" alt="" border="0" /></p>
+
+<p>Congratulations you have completed a simple self service provisioning portal !<br />Other articles in Series:<br /><a href="/articles/learn-vco/54-create-a-simple-vco-self-service-vm-provisioning-portal-part-1.html"> Part 1</a><br /><a href="/articles/learn-vco/107-create-a-simple-vco-self-service-vm-provisioning-portal-part-3.html"> Part 3</a></p>
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vco/" rel="tag">vCO</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -196,57 +473,89 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ad.html" title="AD">AD (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/amqp.html" title="AMQP">AMQP (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/api.html" title="API">API (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/blueprint.html" title="Blueprint">Blueprint (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/book.html" title="Book">Book (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bootable-usb.html" title="bootable usb">bootable usb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cifs.html" title="CIFS">CIFS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cim.html" title="CIM">CIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/container.html" title="Container">Container (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/coredns.html" title="CoreDNS">CoreDNS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/curl.html" title="curl">curl (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dns.html" title="DNS">DNS (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker.html" title="docker">docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker-compose.html" title="docker-compose">docker-compose (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/domain.html" title="Domain">Domain (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dynamictypes.html" title="DynamicTypes">DynamicTypes (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esxi.html" title="ESXi">ESXi (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/excel.html" title="Excel">Excel (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/f5-networks.html" title="F5 Networks">F5 Networks (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github.html" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hackathon.html" title="Hackathon">Hackathon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/homelab.html" title="homelab">homelab (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/horizon.html" title="Horizon">Horizon (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/http.html" title="http">http (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iaas.html" title="IaaS">IaaS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infoblox.html" title="Infoblox">Infoblox (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/json.html" title="json">json (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes.html" title="Kubernetes">Kubernetes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lab.html" title="Lab">Lab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/labmanager.html" title="LabManager">LabManager (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lcm.html" title="LCM">LCM (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux.html" title="linux">linux (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/log.html" title="log">log (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microsoft.html" title="Microsoft">Microsoft (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/netapp.html" title="NetApp">NetApp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/networkmanager.html" title="networkManager">networkManager (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nmcli.html" title="nmcli">nmcli (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nsx.html" title="NSX">NSX (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nuc.html" title="NUC">NUC (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/onyx.html" title="Onyx">Onyx (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/perl.html" title="perl">perl (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python.html" title="python">python (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (9)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rest.html" title="REST">REST (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/snmp.html" title="SNMP">SNMP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/soap.html" title="SOAP">SOAP (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql.html" title="SQL">SQL (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssl.html" title="SSL">SSL (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/storage-i/o.html" title="Storage I/O">Storage I/O (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swagger.html" title="Swagger">Swagger (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/twitter.html" title="Twitter">Twitter (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ucs.html" title="UCS">UCS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uim.html" title="UIM">UIM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vapi.html" title="vAPI">vAPI (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vcac">vcac (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcac.html" title="vCAC">vCAC (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcap.html" title="vCAP">vCAP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcat.html" title="vCAT">vCAT (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcd.html" title="vCD">vCD (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter.html" title="vCenter">vCenter (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcenter-orchestrator.html" title="vCenter Orchestrator">vCenter Orchestrator (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vchs.html" title="vCHS">vCHS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vcloud-director.html" title="vCloud Director">vCloud Director (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vcm.html" title="vCM">vCM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vco.html" title="vCO">vCO (139)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vix.html" title="VIX">VIX (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vmworld.html" title="VMworld">VMworld (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra.html" title="vRA">vRA (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vra-7.x.html" title="vRA 7.x">vRA 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-automation.html" title="vRealize Automation">vRealize Automation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vrealize-orchestrator.html" title="vRealize Orchestrator">vRealize Orchestrator (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vro.html" title="vRO">vRO (17)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vro-7.x.html" title="vRO 7.x">vRO 7.x (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsan.html" title="vSAN">vSAN (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vshield.html" title="vShield">vShield (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
 </aside>
