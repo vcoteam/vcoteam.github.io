@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>How can I write to files? - </title>
+	<title>How can I write to files? - vCO Team</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="&lt;p&gt;When scripting workflows in VMware vCenter Orchestrator (vCO) it is often desirable to read or write to local files on the vCO server whether this is a .conf, .txt, .cmd, .bat, .xml, or any other text file. In order to do so, you must be sure to either work with files in a pre-approved folder or add your custom folder to a configuration file.&lt;/p&gt;&lt;p&gt;For full details on the following information, please see page 64 of the &lt;strong&gt;1&lt;/strong&gt;, section &#34;&lt;strong&gt;&lt;em&gt;Setting Server File System Access from Workflows and JavaScript&lt;/em&gt;&lt;/strong&gt;&#34;. In order to read/write to files on your server, you must edit the js-io-rights.conf file and restart your vCO service. Otherwise, you must read/write to the temp folder or a folder that already has rights assigned. You can get the temp folder using the following:&lt;/p&gt;&lt;pre&gt;var tempFolder = System.getTempDirectory();&lt;/pre&gt;&lt;p&gt;The default contents of the js-io-rights.conf file are as follows:&lt;/p&gt;&lt;pre&gt;-rwx C:/&#43;rwx C:/orchestrator&#43;rx ../../configuration/jetty/logs/&#43;rx ../server/vmo/log/&#43;rx ../bin/&#43;rx ./boot.properties&#43;rx ../server/vmo/conf/&#43;rx ../server/vmo/conf/plugins/&#43;rx ../server/vmo/deploy/vmo-server/vmo-ds.xml&#43;rx ../../apps/&#43;r ../../version.txt&lt;/pre&gt;&lt;p&gt;So, based on the file contents above, without editing or restarting the service, if you update your script to write your text file to the c:\orchestrator folder (you will need to create this folder on your vCO server, the script should work.&lt;/p&gt;&lt;p&gt;Now, as a quick example, create a new workflow with a single scriptable task in it. Inside the scriptable task, insert the following code (I&#34;m assuming a WINDOWS based vCO server here):&lt;/p&gt;&lt;pre class=&#34;brush:javascript&#34;&gt;var fw = new FileWriter(&#34;c:/orchestrator/test.txt&#34;);fw.open();fw.write(&#34;Hello there, is this working?&#34;);fw.close();&lt;/pre&gt;&lt;p&gt;Save and close your worklow after validating.&lt;/p&gt;&lt;p&gt;Now try running it.&lt;/p&gt;&lt;p&gt;Check the C:/orchestrator folder and confirm there is now a test.txt file with the content specified in the script.&lt;/p&gt;&lt;p&gt;Hope this helps :)&lt;/p&gt;">
 		<meta property="og:title" content="How can I write to files?" />
@@ -42,10 +42,13 @@ if (!doNotTrack) {
 		<header class="header">
 	<div class="container header__container">
 		
-	<div class="logo">
-		<a class="logo__link" href="/" rel="home">
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="vCO Team" rel="home">
 			<div class="logo__item logo__imagebox">
 					<img class="logo__img" src="https://www.vcoteam.info/images/vco-logo.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">vCO Team</div>
+					
 				</div>
 		</a>
 	</div>
@@ -308,7 +311,7 @@ fw.close();</pre>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 .
+			&copy; 2020 vCO Team.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
