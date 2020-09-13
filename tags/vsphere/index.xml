@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vSphere on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/vsphere.html</link>
+    <link>http://www.vcoteam.info/tags/vsphere.html</link>
     <description>Recent content in vSphere on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Sep 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vSphere 5.1 Web client - The single pane of glass I always wanted</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</link>
       <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</guid>
       <description>If you were at VMworld, during Steve Herrod (VMware CTO) session you could answer in real time to some questions. One of them was Over the next 3 years, how do you plan to manage your hardware infrastructure for your VMware environment ? Primarily from:
 vCenter : 62%A converged hardware management tool: 32 %Existing element management tools: 6%It is a good thing most of you want to, it is even better that the vSphere 5.</description>
     </item>
     
     <item>
       <title>VMware has demonstrated a major upgrade of vCenter Orchestrator as part of its vCloud Suite</title>
-      <link>http://new.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</link>
       <pubDate>Fri, 20 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</guid>
       <description>VMware released the most important upgrade of vCenter Orchestrator. vCenter Orchestrator 5.1 is providing important enhancements geared towards the end user.
 vCenter Orchestrator, formely VMO (VMware Orchestrator) and (VS-O) Dunes Virtual Service Orchestrator) was packaged as part of vCenter Server since vSphere4.
 As part of this was a rebranding effort and an exhaustive vCenter plug-in synched with the vCenter server release. A year later the 4.1 version brought in scalability with moving to a 64 Bits JVM, performance improvements and reliabilty improvements.</description>
@@ -34,10 +34,10 @@ As part of this was a rebranding effort and an exhaustive vCenter plug-in synche
     
     <item>
       <title>vCO Plugin for vSphere Client</title>
-      <link>http://new.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</link>
       <pubDate>Thu, 27 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</guid>
       <description>To increase usability and acceptance of vCO we - mightycare solution - created a vCO Plugin for vSphere Client. So admins and users has a direct access to the big world of vCO workflows. Actual our Beta comes up with following features:
 customizable context menu for virtual machinesstate and parameter values for running workflowsoptional prompt for finished workflows with values and state (can be checked for each flow)customizable input for input parameters - predefined or prompt for input (for each parameter in each flow)all settings per user, saved in registry - roaming user friendlyTo make a round tool we need your input - what do you think about it - what functions do you need in a tool like this.</description>
     </item>

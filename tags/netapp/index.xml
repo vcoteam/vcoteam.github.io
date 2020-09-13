@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NetApp on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/netapp.html</link>
+    <link>http://www.vcoteam.info/tags/netapp.html</link>
     <description>Recent content in NetApp on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 May 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/netapp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/netapp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Orchestrate NetApp OnCommand Workflow Automation (WFA)</title>
-      <link>http://new.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</link>
       <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</guid>
       <description>Jeremy Goodrum from NetApp has released the NetApp OnCommand Workflow Automation (WFA) package for vCenter Orchestrator.
 Also included are a How-to video for using the OnCommand Workflow Automation package for vCenter Orchestrator and a solution video for creating new Multi-Tenant vCloud Director environment using WFA and vCenter Orchestrator.
 Find more about this here.</description>
@@ -24,10 +24,10 @@ Find more about this here.</description>
     
     <item>
       <title>vCloud Director orchestrated infrastructure provisioning featuring NetApp vCO plug-in preview</title>
-      <link>http://new.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</link>
       <pubDate>Mon, 04 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</guid>
       <description>Abhinav Joshi from NetApp has written a detailed article on what the orchestration demonstrations showcased during VMworld 2010 San Francisco. These were featuring vCenter Orchestrator 4.1 with the addition of:
 VMware vCloud Director vCO plug-in technical previewNetApp Provisioning Manager vCO plug-in technical previewNetApp FlexClone vCO plug-in technical previewAnd matching applications.
 Quoting the original article with the vCO demos:

@@ -2,213 +2,213 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Product on vCO Team</title>
-    <link>http://new.vcoteam.info/question-answer/product.html</link>
+    <link>http://www.vcoteam.info/question-answer/product.html</link>
     <description>Recent content in Product on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Nov 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/question-answer/product/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/question-answer/product/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vCO 5.5.1 Appliance with VMware Produced Content</title>
-      <link>http://new.vcoteam.info/question-answer/product/287-vco-5-5-1-appliance-with-vmware-produced-content.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/287-vco-5-5-1-appliance-with-vmware-produced-content.html</link>
       <pubDate>Mon, 05 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/287-vco-5-5-1-appliance-with-vmware-produced-content.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/287-vco-5-5-1-appliance-with-vmware-produced-content.html</guid>
       <description>As noted in a previous article, this page shows how many workflows and actions become available on a vCO 5.5.1 server after installing only the officially released Plug-ins, Flings, and Packages (Note that there are hundreds of packages containing thousands of workflows onvarious blogs and in the Orchestrator Communities.)The target vCO 5.5.1 (5.5.1.1617127) Server has: 1083 Workflows and 2069 Actions.Workflows (1083)categoryNamenameversiondescriptionAddressesAllocate Address0.0.1Acquires an Elastic IP address.</description>
     </item>
     
     <item>
       <title>How many workflows and actions are included with vCO 5.5.1 GA?</title>
-      <link>http://new.vcoteam.info/question-answer/product/285-how-many-workflow-and-actions-are-included-with-vco-5-5-1-ga.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/285-how-many-workflow-and-actions-are-included-with-vco-5-5-1-ga.html</link>
       <pubDate>Fri, 02 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/285-how-many-workflow-and-actions-are-included-with-vco-5-5-1-ga.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/285-how-many-workflow-and-actions-are-included-with-vco-5-5-1-ga.html</guid>
       <description>This page was generated using a workflow to access the REST API of a freshly deployed VMware vCenter Orchestrator (vCO) 5.5.1 GA Virtual Appliance. The results indicate a total of:
 394 Workflows and 388 Actions. Please note that for each Plug-in you install, additional Library Workflows and Actions will be available. I&#39;ve provided ahandy link page for the plug-ins that I&#39;m aware of here on this blog.. as noted on that page, the official repository where VMware and Partners should be submitting their plug-ins is the VMware Solution Exchange.</description>
     </item>
     
     <item>
       <title>How many actions come with the vCloud 1.5 Plug-in?</title>
-      <link>http://new.vcoteam.info/question-answer/product/216-how-many-actions-come-with-the-vcloud-15-plug-in.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/216-how-many-actions-come-with-the-vcloud-15-plug-in.html</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/216-how-many-actions-come-with-the-vcloud-15-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/216-how-many-actions-come-with-the-vcloud-15-plug-in.html</guid>
       <description>Action Name (Action Count: 250)Action DescriptionReturn TypeModule NameupdateAdminCatalogvCloud:AdminCatalogcom.vmware.library.vCloud.Admin.CatalogcreateAdminCatalogvCloud:AdminCatalogcom.vmware.library.vCloud.Admin.CatalogpublishAdminCatalogvCloud:AdminCatalogcom.vmware.library.vCloud.Admin.CatalogdeleteAdminCatalogvoidcom.vmware.library.vCloud.Admin.CatalogcomposeRoutingKeystringcom.vmware.library.vCloud.Admin.Extension.NotificationsconfigureBlockingTasksvoidcom.vmware.library.vCloud.Admin.Extension.NotificationssetupAmqpBrokervoidcom.vmware.library.vCloud.Admin.Extension.NotificationsenableNotificationsvoidcom.vmware.library.vCloud.Admin.Extension.NotificationscreateImportVmIntoExistingVAppParamsAnycom.vmware.library.vCloud.Admin.Extension.VIM ServerupdateVimServervCloud:Taskcom.</description>
     </item>
     
     <item>
       <title>How many workflows come with the vCloud 1.5 Plug-in?</title>
-      <link>http://new.vcoteam.info/question-answer/product/215-how-many-workflows-come-with-the-vcloud-15-plug-in.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/215-how-many-workflows-come-with-the-vcloud-15-plug-in.html</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/215-how-many-workflows-come-with-the-vcloud-15-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/215-how-many-workflows-come-with-the-vcloud-15-plug-in.html</guid>
       <description>Workflow Name (Workflow Count: 138)Workflow DescriptionWorkflow CategoryChange the number of CPUsCPUAdd a catalogAdds a catalog to an organization.CatalogUpdate a catalogUpdates a catalog.CatalogDelete a catalogDeletes a catalog.CatalogShare a catalogUpdates the sharing configuration of a catalog.CatalogPublish a catalogPublishes or unpublishes a catalog to all organizations external to the catalog&#39;s organization.</description>
     </item>
     
     <item>
       <title>Why can&#39;t I re-install vCenter Orchestrator?</title>
-      <link>http://new.vcoteam.info/question-answer/product/161-why-cant-i-re-install-vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/161-why-cant-i-re-install-vcenter-orchestrator.html</link>
       <pubDate>Fri, 03 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/161-why-cant-i-re-install-vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/161-why-cant-i-re-install-vcenter-orchestrator.html</guid>
       <description>When trying to re-install vCenter Orchestrator (vCO), there is occasion when a file prevents the re-installation of the product. The following error may be experienced:
 Found the same version of vCenter Orchestrator (x.x.x.xxx). To reinstall this version of the product, first uninstall the current version and run this installer again. You can export the current configuration from the Web Configuration interface and import it back into the product after you have completed the new installation</description>
     </item>
     
     <item>
       <title>How many workflows come with the Microsoft Active Directory Plug-in?</title>
-      <link>http://new.vcoteam.info/question-answer/product/155-how-many-workflows-come-with-the-microsoft-active-directory-plug-in.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/155-how-many-workflows-come-with-the-microsoft-active-directory-plug-in.html</link>
       <pubDate>Wed, 04 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/155-how-many-workflows-come-with-the-microsoft-active-directory-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/155-how-many-workflows-come-with-the-microsoft-active-directory-plug-in.html</guid>
       <description>There are a total of 34 workflows delivered as part of the VMware vCenter Orchestrator Plug-in for Microsoft Active Directory Director. The table below provides their names and descriptions
 Workflow NameDescriptionCreate a computer in a groupCreates an Active Directory computer in a group.Create a computer in an organizational unitCreates an Active Directory computer in an organizational unit.Destroy a computerDeletes a computer from an Active Directory instance.</description>
     </item>
     
     <item>
       <title>How many javaScript objects come with the vCloud Plug-in?</title>
-      <link>http://new.vcoteam.info/question-answer/product/132-how-many-javascript-objects-come-with-the-vcloud-plug-in.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/132-how-many-javascript-objects-come-with-the-vcloud-plug-in.html</link>
       <pubDate>Wed, 23 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/132-how-many-javascript-objects-come-with-the-vcloud-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/132-how-many-javascript-objects-come-with-the-vcloud-plug-in.html</guid>
       <description>A total of 163 new javaScript objects are delivered as part of the VMware vCenter Orchestrator Plug-in for vCloud Director. The table below provides their names and descriptions
 Object NameObject DescriptionVclAccessLevelAccessLevelTypeVclAccessSettingAn AccessSetting element defines the level of access granted to the User or Group referenced in the Subject element.VclAccessSettingsThe AccessSettings element is a container for AccessSetting elements.</description>
     </item>
     
     <item>
       <title>How many actions come with the vCloud Plug-in?</title>
-      <link>http://new.vcoteam.info/question-answer/product/131-how-many-actions-come-with-the-vcloud-plug-in.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/131-how-many-actions-come-with-the-vcloud-plug-in.html</link>
       <pubDate>Tue, 22 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/131-how-many-actions-come-with-the-vcloud-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/131-how-many-actions-come-with-the-vcloud-plug-in.html</guid>
       <description>A total of 158 new actions are delivered as part of the VMware vCenter Orchestrator Plug-in for vCloud Director. The table below provides their names and descriptions
 Action NameAction DescriptionupdateCatalogItemnulldisableAdminVdcnulldiscardSuspendedStatenullcreateOrgLeaseSettingsnullpublishAdminCatalognullupdateUsernulldeleteAdminCatalognullupdateAdminCatalognulluploadMedianullcreateOrgSmtpSettingsnullcreateEndOfTaskTriggerForTasknullgetAdminOrganizationFromVAppnulldeleteVAppTemplatenullcreateAdminVdcParamsnullupdateMedianulldeleteUsernullinsertMedianullcreateAdminOrganizationnulluploadFilesnullgetAdminExtensionFromVdcnulldeleteAdminOrganizationnullcreateLdapUserAttributesnulldeleteAdminVdcnullgetVdcFromVAppnullenableVMWHostnullupdateRolenullgetNumberOfNicnullshutdownnulldeleteRolenullcreateIpRangesnulldownloadVAppTemplatenullundeploynullupdateVimServernullunregisterVimServernullimportGroupnullcreateImportVmAsVAppParamsnullimportVmAsVAppnullupdateAdminVdcnullcreateAccessSettingnullgetAdminOrganizationFromCatalognullgetOrganizationFromVMnullcreateUsernullvalidateVlanIdRangesnullgetAdminHostFromOrganizationnullcreateLdapGroupAttributesnullcreateVMWProviderVdcParamsnullcreateVMWProviderVdcnullcreateShieldManagerParamsnullcreateRolenullerasenullgetVmsFromVAppnullcreateVMWProviderNetworknullcreateLeaseSettingsSectionnullcreateVMWNetworkPoolnullgetAdminHostFromRolenullenableVMWProviderVdcnulldeleteCatalogItemnullgetAdminExtensionFromOrganizationnulldeploynullcreateIpScopenullcreateNetworkConfigurationnullcreateVAppNetworkConfigurationnullvim3WaitTaskEndWait for a VC Task to end.</description>
     </item>
     
     <item>
       <title>How many workflows come with the vCloud Plug-in?</title>
-      <link>http://new.vcoteam.info/question-answer/product/130-how-many-workflows-come-with-the-vcloud-plug-in.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/130-how-many-workflows-come-with-the-vcloud-plug-in.html</link>
       <pubDate>Tue, 22 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/130-how-many-workflows-come-with-the-vcloud-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/130-how-many-workflows-come-with-the-vcloud-plug-in.html</guid>
       <description>There are a total of 91 new workflows delivered as part of the VMware vCenter Orchestrator Plug-in for vCloud Director. The table below provides their names and descriptions
 Workflow NameDescriptionUnregister VIM ServerUnregisters a vCenter Server.Import VM as vAppImports a virtual machine from an available vCenter Server as a vApp.Power Off VMPowers off a virtual machine. Does not free the resources reserved for the virtual machine.</description>
     </item>
     
     <item>
       <title>How many workflows are included in vCenter Orchestrator?</title>
-      <link>http://new.vcoteam.info/question-answer/product/88-how-many-workflows-are-included-in-vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/88-how-many-workflows-are-included-in-vcenter-orchestrator.html</link>
       <pubDate>Fri, 18 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/88-how-many-workflows-are-included-in-vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/88-how-many-workflows-are-included-in-vcenter-orchestrator.html</guid>
       <description>There are a considerable number of pre-built workflows that may be used to build your own orchestrator solutions. The environment this table is taken from has the VC, VIM3 (OPTIONAL), and Microsoft (OPTIONAL) vmoapps installed:
  WorkflowDescription\\Library\\Library\\JDBC---JDBC URL generatorSollicits information to generate a connection URL for JDBC database connections. The workflow emits the connection string it generates as output via the system log, and confirms the string can create a connection to the specified database.</description>
     </item>
     
     <item>
       <title>How can you start vCenter Orchestrator workflows ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/80-how-can-you-start-workflows-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/80-how-can-you-start-workflows-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/80-how-can-you-start-workflows-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/80-how-can-you-start-workflows-.html</guid>
       <description>Workflows can be started as follows:
 By the vCO system service using the vCO schedulerBy the vCO Administrator using the vCenter Orchestrator Client By an external application using the vCO SOAP Web service API By an end user using a Web browser: Using an existing Web portal through a URLUsing the standard vCO Weboperator Web viewUsing a custom Web view that you create using the vCO Web toolkit</description>
     </item>
     
     <item>
       <title>How does vCenter Orchestrator ship ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/68-how-does-it-ship-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/68-how-does-it-ship-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/68-how-does-it-ship-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/68-how-does-it-ship-.html</guid>
       <description>vCO is installed (but not configured or started) as part of the vCenter server installation (since vCenter 4.0). It is also available available as a separate download for Lifecycle Manager (LCM) customers.</description>
     </item>
     
     <item>
       <title>How is vCenter Orchestrator licensed ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/69-how-is-it-licensed-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/69-how-is-it-licensed-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/69-how-is-it-licensed-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/69-how-is-it-licensed-.html</guid>
       <description>It is licensed with vCenter. Technically it requires you to have a valid vCenter license key. Depending on the vCenter License Edition, vCO will run in Player mode allowing you to run but not edit workflows, or in Server mode, allowing you to run and edit workflows. vCO runs in Player mode with the vCenter Essential and vCenter Foundation licenses, and runs in Server mode with the Standard and higher licenses.</description>
     </item>
     
     <item>
       <title>How much does vCenter Orchestrator cost ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/67-how-much-does-it-cost-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/67-how-much-does-it-cost-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/67-how-much-does-it-cost-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/67-how-much-does-it-cost-.html</guid>
       <description>vCO is not sold as a standalone product, it is part of vCenter. If you have purchased vCenter you are entitled to use vCO.</description>
     </item>
     
     <item>
       <title>In what way is vCenter Orchestrator different to other orchestration engines / RBA solutions ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/66-in-what-way-is-vco-different-to-other-orchestration-engines-run-book-automation-solutions-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/66-in-what-way-is-vco-different-to-other-orchestration-engines-run-book-automation-solutions-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/66-in-what-way-is-vco-different-to-other-orchestration-engines-run-book-automation-solutions-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/66-in-what-way-is-vco-different-to-other-orchestration-engines-run-book-automation-solutions-.html</guid>
       <description>vCO is specialized in vCenter, giving you 100% control of the vCenter API.</description>
     </item>
     
     <item>
       <title>Is vCenter Orchestrator a new product ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/71-is-this-a-new-product-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/71-is-this-a-new-product-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/71-is-this-a-new-product-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/71-is-this-a-new-product-.html</guid>
       <description>Not really. vCO has been around for several years and has been re-branded a few times. It has been known as:
 VMware vRealize Orchestrator (vRO) - a component of the vRealize SuiteVMware vCO - a component of vCenter that has been available since VMware vCenter 4 (released March, 30 2009) VMO - VMware Orchestrator. (until version 3.2). VMO was underlying platform of VMware Lifecycle Manager (released March, 30 2008)Dunes VS-O - Virtual Service Orchestrator (until version 3.</description>
     </item>
     
     <item>
       <title>What customers do with vCenter Orchestrator ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/65-what-customers-do-with-vco-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/65-what-customers-do-with-vco-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/65-what-customers-do-with-vco-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/65-what-customers-do-with-vco-.html</guid>
       <description>They do a combination of the following:
 The run some of the library high level workflows.Automate vCenter tasks, such as chaining repetitive operations in workflows. For example, automating the VM provisioning process.Integrate VMware operations with their databases, change management and ticketing systems.Create high-level workflows that involve different approvals and operations from different teams.Provision the virtual infrastructure. For example adding hosts, creating and configuring clusters and resource pools.</description>
     </item>
     
     <item>
       <title>What does vCenter Orchestrator do ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/60-what-does-vco-do-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/60-what-does-vco-do-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/60-what-does-vco-do-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/60-what-does-vco-do-.html</guid>
       <description>vCO allows you to design and run IT process automation workflows. For example, you can run high-level process workflows, such as a complex provisioning process that includes several technical sub-workflows, such as a workflow to clone a vCenter virtual machine.
 Some basic ideas include:Get all VMs for a specified Folder/ResourcePool/Datacenter and then:Cleanup all the old snapshotsDisconnect all removable mediaMigrate VM Templates from host that is going to be put into Maintenance modeThe possibilities are endless.</description>
     </item>
     
     <item>
       <title>What does vCO stand for ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/58-what-does-vco-stand-for-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/58-what-does-vco-stand-for-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/58-what-does-vco-stand-for-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/58-what-does-vco-stand-for-.html</guid>
       <description>vCenter Orchestrator.</description>
     </item>
     
     <item>
       <title>What is the advantage of using vCenter Orchestrator over scripting or programing ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/79-what-is-the-advantage-of-orchestration-over-scripting-or-programing-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/79-what-is-the-advantage-of-orchestration-over-scripting-or-programing-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/79-what-is-the-advantage-of-orchestration-over-scripting-or-programing-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/79-what-is-the-advantage-of-orchestration-over-scripting-or-programing-.html</guid>
       <description>vCO provides an orchestration platform that runs on top of scripted operations (vCO actions) and programs (vCO plug-ins). This platform provides the following facilities:
 A stateless workflow engine server. All the process flows and data flows are stored in a database.Centralization. No scripts scattered across all the orchestrated entities.Checkpointing. The ability to resume a workflow from the point at which it stopped in case of system maintenance or failure.</description>
     </item>
     
     <item>
       <title>What is the current vCenter Orchestrator release ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/70-what-is-the-current-release.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/70-what-is-the-current-release.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/70-what-is-the-current-release.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/70-what-is-the-current-release.html</guid>
       <description>This page is unlikely to be kept up-to-date. At the time of this update, the following vCO Documentation page provides documentation on the current release:
 http://www.vmware.com/support/pubs/orchestrator_pubs.html
 Current Release: vCenter Orchestrator 5.5.</description>
@@ -216,46 +216,46 @@ Current Release: vCenter Orchestrator 5.5.</description>
     
     <item>
       <title>What vCenter Orchestrator plug-ins and features will be available next ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/73-what-plug-ins-and-features-will-be-available-next-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/73-what-plug-ins-and-features-will-be-available-next-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/73-what-plug-ins-and-features-will-be-available-next-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/73-what-plug-ins-and-features-will-be-available-next-.html</guid>
       <description>VMware roadmaps are only communicated to customers / partners under NDA by VMware employees accredited to do so. This is not the case of the vCO Team members.</description>
     </item>
     
     <item>
       <title>Which products can be orchestrated with vCenter Orchestrator ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/72-which-products-can-be-orchestrated-with-vco-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/72-which-products-can-be-orchestrated-with-vco-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/72-which-products-can-be-orchestrated-with-vco-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/72-which-products-can-be-orchestrated-with-vco-.html</guid>
       <description>As of version 4.0.2, vCO has out-of-the-box support for the entire vCenter Server 4 API, as well as generic plug-ins that provide email, SSH, database, and XML APIs, allowing you to integrate with a large number of products. Also, vCO supports other plug-ins that are available as separate downloads, for example the Microsoft (Active Directory and WMI), and VMware Infrastructure 3.5 (vCenter 2.5) plug-ins.VMware partners are also developing vCO plug-ins.</description>
     </item>
     
     <item>
       <title>Who is using vCenter Orchestrator ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/64-who-is-using-vco-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/64-who-is-using-vco-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/64-who-is-using-vco-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/64-who-is-using-vco-.html</guid>
       <description>Initially, most customers who used vCO in production were running large datacenters. These are typically Service Providers, Financial and Industrial enterprise-level companies. With the increase in recent years of server capacity and of virtualization the user base has broadened within all sectors and company sizes.</description>
     </item>
     
     <item>
       <title>Who owns vCenter Orchestrator ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/59-who-owns-vco-.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/59-who-owns-vco-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/59-who-owns-vco-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/59-who-owns-vco-.html</guid>
       <description>vCO is owned by VMware. It is trademarked as &#34;VMware vCenter Orchestrator&#34;.</description>
     </item>
     
     <item>
       <title>How many actions are included in vCenter Orchestrator ?</title>
-      <link>http://new.vcoteam.info/question-answer/product/56-how-many-actions-are-included-in-vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/question-answer/product/56-how-many-actions-are-included-in-vcenter-orchestrator.html</link>
       <pubDate>Fri, 11 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/product/56-how-many-actions-are-included-in-vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/product/56-how-many-actions-are-included-in-vcenter-orchestrator.html</guid>
       <description>There are a considerable number of pre-built actions that may be used to build your own workflows. The environment this table is taken from has the VC, VIM3, and Microsoft vmoapps installed:
 Module: com.vmware.basiccom.vmware.basiccreateDirectoryDescription:Create a directory structure on the VS-O server.com.vmware.basicgetFileNameDescription:Strip directory from filenames.Module: com.vmware.constantscom.vmware.constantsgetDefaultCompanyNameDescription:Returns the company name.</description>
     </item>

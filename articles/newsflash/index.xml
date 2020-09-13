@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Newsflash on vCO Team</title>
-    <link>http://new.vcoteam.info/articles/newsflash.html</link>
+    <link>http://www.vcoteam.info/articles/newsflash.html</link>
     <description>Recent content in Newsflash on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 Jun 2010 15:54:00 -0400</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/articles/newsflash/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/articles/newsflash/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Please share your code at the Sample Exchange</title>
-      <link>http://new.vcoteam.info/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</link>
       <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</guid>
       <description>Last week, I was leading discussions at a Technical session for VMware&#39;s internal TechSummit event in Toronto, Canada. During one of the discussions, we ended up on the topic of where and how we were storing workflows and packages we had developed. I was a bit surprised that people in the room had workflows and packages in GitHubreposbut weren&#39;t aware of some aspects of the Sample Exchange at the VMware Code site!</description>
     </item>
     
     <item>
       <title>vRO Essentials Book Update for 7.x</title>
-      <link>http://new.vcoteam.info/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</link>
       <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</guid>
       <description>Hello everyone!
 I&#39;ve recently received news that there is some Errata update for the VMware vRealize Orchestrator Essentials book. The author has provided some updated material to reflect changes as a result of the GA of VMware vRealize Orchestrator 7.0. You can learn more about the updates here: http://langenhan.info/publications.html.</description>
     </item>
     
     <item>
       <title>VMware Horizon vCenter Orchestrator Plug-in Released</title>
-      <link>http://new.vcoteam.info/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</link>
       <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</guid>
       <description>Hello all you end user compute admins! If you&#39;ve been waiting for a vCO plug-in for your Horizon environment, your wait is over. Join Aaron Black in this &#34;Getting Started with vCenter Orchestrator Horizon Plug In&#34; video.  In order to get the plug-in, you must be licensed for Horizon 6.0 Enterprise. For a quick link to the download (login required at VMware&#39;s site), click Links -&amp;gt; Plug Ins, then scroll down to the &#34;</description>
     </item>
     
     <item>
       <title>VMware released new and updated vCO plug-ins</title>
-      <link>http://new.vcoteam.info/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</link>
       <pubDate>Wed, 23 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</guid>
       <description>vCO has again been extended with a new plug-in an updates of existing plug-ins.
 VMware vCenter Orchestrator AWS 1.0 Plug-in (New)VMware vCenter Orchestrator Auto-Deploy 5.5.1 Plug-in (Updated)VMware vCenter Orchestrator Multi-Node 5.5.1 Plug-in (Updated)VMware vCenter Orchestrator AMQP 1.0.3 Plug-in (Updated)VMware vCenter Orchestrator PowerShell 1.0.4 Plug-in (Updated)VMware vCloud Automation Center 6.0.1 Plug-in (Updated) - released date April 25, 2014 (article updated to include this entry)</description>
     </item>
     
     <item>
       <title>VMware announced vCenter Orchestrator 5.5</title>
-      <link>http://new.vcoteam.info/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</link>
       <pubDate>Mon, 26 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</guid>
       <description>VMware announced vCenter Orchestrator 5.5 : a major release including a lot of important new features. No more excuses to not orchestrate !
 And here is the list !
 
@@ -64,10 +64,10 @@ vCO &amp; vCenter are integrated using Single Sign On. In the vSphere 5.</descri
     
     <item>
       <title>Orchestrate NetApp OnCommand Workflow Automation (WFA)</title>
-      <link>http://new.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</link>
       <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</guid>
       <description>Jeremy Goodrum from NetApp has released the NetApp OnCommand Workflow Automation (WFA) package for vCenter Orchestrator.
 Also included are a How-to video for using the OnCommand Workflow Automation package for vCenter Orchestrator and a solution video for creating new Multi-Tenant vCloud Director environment using WFA and vCenter Orchestrator.
 Find more about this here.</description>
@@ -75,59 +75,59 @@ Find more about this here.</description>
     
     <item>
       <title>vCO on Facebook</title>
-      <link>http://new.vcoteam.info/articles/newsflash/251-vco-on-facebook.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/251-vco-on-facebook.html</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/251-vco-on-facebook.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/251-vco-on-facebook.html</guid>
       <description>The people working on vCenter Orchestrator have created a page for it on Facebook. If you have a facebook account you can visit the page and click on like.</description>
     </item>
     
     <item>
       <title>VMware released vCenter Orchestrator 5.1 Update 1</title>
-      <link>http://new.vcoteam.info/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</guid>
       <description>VMware released vCenter Orchestrator 5.1.1 As part of the vCenter 5.1 update 1. I rarely cover these updates on the blog since they are mostly bug fixes. This one is different since it includes some long due functionalities. I did ask for some of these and the dev team did an awesome job implementing them !
 vCenter Orchestrator 5.1 provided a lot of new great features at the workflow designer level and integration with the vSphere web client I have detailed in this article.</description>
     </item>
     
     <item>
       <title>VMware vCenter Orchestrator 5.1 Quick Reference</title>
-      <link>http://new.vcoteam.info/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</link>
       <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</guid>
       <description>Have you ever read the official vCenter Orchestrator documentation? If not, I strongly recommend you to check it out. On this page (http://www.vmware.com/support/pubs/orchestrator_pubs.html), there is an information treasure of 7 (yes, seven!) guides, which are available in different formats, including mobi and epub, and contain information about every aspect of the Orchestrator configuration and interface.
 The only disadvantage of this amazing documentation set is the large number of pages, more than 500, which is the average size of a popular novel.</description>
     </item>
     
     <item>
       <title>Time to get your hands on the most complete cloud orchestration</title>
-      <link>http://new.vcoteam.info/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</link>
       <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</guid>
       <description>The VMware vCloud suite was made available a few hours ago. While most of its components have been bumped only by a dot one it supports a LOT of new features including two major items :
 The new vSphere Web client : The single pane of glass user interface on which you can extend functionality on your own by running your own custom workflows automating and integrating VMware and third party applications.</description>
     </item>
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for vCloud Director 5.1</title>
-      <link>http://new.vcoteam.info/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</link>
       <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</guid>
       <description>VMware has just made available its Orchestration plug-in leveraging vCloud Director 5.1 latest and greatest features. This is the most complete automation solution for vCloud Director and is a free download !
 To put things in perspective the 1.0 version of the plug-in was released months after vCloud Director 1.0, the 1.5 release weeks after vCloud Director 1.5, the 5.1 version is released together with vCloud Director 5.1. Kudos to the VMware engineering team who have automated the plug-in build process so much that the plug-in could accomodate the changes in pre-release vCloud Director version so quickly.</description>
     </item>
     
     <item>
       <title>VMware released vCloud Architecture Toolkit (vCAT) version 3.0</title>
-      <link>http://new.vcoteam.info/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</link>
       <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</guid>
       <description>As part of the Cloud Infrastructure and Management Center of Excellence Team who worked on this project we are glad to announce the release of the new vCloud Architecture Toolkit. Amongst many enhancements, this version covers vCenter Orchestrator best practices that have been proven in real-world enterprise and service provider cloud deployments. It also includes a Workflow examples implementation guide and its workflows.
 Quoting the vCAT page:
 The VMware vCloud Architecture Toolkit (vCAT) is a set of reference documents designed to help you construct a superior working cloud solution leveraging current technologies, recommended practices and innovative tools that have been proven in real-world enterprises.</description>
@@ -135,10 +135,10 @@ The VMware vCloud Architecture Toolkit (vCAT) is a set of reference documents de
     
     <item>
       <title>VMware has demonstrated a major upgrade of vCenter Orchestrator as part of its vCloud Suite</title>
-      <link>http://new.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</link>
       <pubDate>Fri, 20 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</guid>
       <description>VMware released the most important upgrade of vCenter Orchestrator. vCenter Orchestrator 5.1 is providing important enhancements geared towards the end user.
 vCenter Orchestrator, formely VMO (VMware Orchestrator) and (VS-O) Dunes Virtual Service Orchestrator) was packaged as part of vCenter Server since vSphere4.
 As part of this was a rebranding effort and an exhaustive vCenter plug-in synched with the vCenter server release. A year later the 4.1 version brought in scalability with moving to a 64 Bits JVM, performance improvements and reliabilty improvements.</description>
@@ -146,10 +146,10 @@ As part of this was a rebranding effort and an exhaustive vCenter plug-in synche
     
     <item>
       <title>Several vCenter Orchestrator plug-ins updates</title>
-      <link>http://new.vcoteam.info/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</link>
       <pubDate>Tue, 19 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</guid>
       <description>It has just been announced on the VMware Orchestrator communities, several plug-ins have been updated with some critical updates, some new requested features and some minor fixes.
 Quoting the communities post:
  vCO-Powershell-Plug-in -1.0.1 - kerberos support added vCO-SQL-Plug-in -1.1.0 - two related plugins combined with auto-generation as well as advanced SQL scripts. A few important issues fixed.  vCO-vCenter-Plug-in - 5.0.1.1 - Critical update. Fixes a major issue with performance and losing attributes value.</description>
@@ -157,30 +157,30 @@ Quoting the communities post:
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for vShield 5.0</title>
-      <link>http://new.vcoteam.info/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</guid>
       <description>Quoting the release notes:
 The VMware vCenter Orchestrator plug-in for vShield allows vShield administrators to simplify the management of their vShield infrastructure by extending the robust workflow automation platform of VMware to the vShield environment. These workflows are built using the drag-and-drop capability of the workflow editor in the Orchestrator client. vCenter Orchestrator uses the plug-in to access the functionality of vShield and the vShield APIs. The included, pre-built workflows simplify the process to get you started with custom workflow creation.</description>
     </item>
     
     <item>
       <title>VMware released vCenter Configuration Manager 5.5 with vCenter Orchestrator integration</title>
-      <link>http://new.vcoteam.info/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</link>
       <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</guid>
       <description>Quoting the product page
 VMware vCenter Configuration Manager, a key part of the VMware vCenter Operations Management Suite, automates configuration management across virtual, physical and cloud environments. Enterprises can use vCenter Configuration Manager to continuously audit the configurations of VMware Infrastructure (including VMware ESX, ESXi, vCenter, vCloud Director and vShield) as well as Windows, Linux and Unix operating systems. Easily maintain configuration compliance against internal standards, security best practices, vendor hardening guidelines and regulatory mandates.</description>
     </item>
     
     <item>
       <title>VMware released vCenter Orchestrator 4.2.1</title>
-      <link>http://new.vcoteam.info/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</link>
       <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</guid>
       <description>vCenter Orchestrator 4.2.1 has been released as part of the vCenter Server 5.0 update 1.
 This is the first common release for the Windows (Build 555) and Appliance (Build 612841) version.
 This release contains several improvements and bug fixes such as:
@@ -190,10 +190,10 @@ This release contains several improvements and bug fixes such as:
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for VMware vCenter Chargeback Manager 2.0</title>
-      <link>http://new.vcoteam.info/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</link>
       <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</guid>
       <description>Another new VMware plug-in release for vCenter Orchestrator, this time for vCenter Chargeback Manager.
 You can use the plug-in to run Orchestrator workflows that automate vCenter Chargeback processes. In this release, the plug-in contains sample workflows.
 You can also create custom workflows that implement the plug-in API to automate tasks in your vCenter Chargeback Manager environment.
@@ -202,10 +202,10 @@ The vCenter Chargeback Manager plug-in API provides various Javascript objects s
     
     <item>
       <title>VMware Virtual Customer Labs Automated with vCenter Orchestrator</title>
-      <link>http://new.vcoteam.info/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</link>
       <pubDate>Sun, 05 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</guid>
       <description>The virtual Insanity blog has a good article describing the VMware virtual Customer Lab (vCL) consisting in a fully automated cloud solution where users can checkout VMware software solutions for 14 days of testing and training/education.
 
 The article explains what is the vCL and how it works. A part of the solution involves a vCO powered request / approval portal. Read more about it here.</description>
@@ -213,20 +213,20 @@ The article explains what is the vCL and how it works. A part of the solution in
     
     <item>
       <title>VMware Opens Online Virtualization and Cloud Solutions Marketplace featuring vCenter Orchestrator  </title>
-      <link>http://new.vcoteam.info/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</link>
       <pubDate>Wed, 25 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</guid>
       <description>VMware Solution Exchange (VSX) Enables Customers to Discover, Evaluate and Expedite Buying Process for Joint Solutions through Direct Engagement with Partners and Developers. This are important news for vCenter Orchestrator. Here is what these involve:
 vSphere customers will now find all the vCenter Orchestrator plug-ins in a single location. vCenter Orchestrator is bundled with some plug-ins but VMware and partners have provided several additional ones. The solution exchange will feature the latest version of all VMware and all VMware partners vCenter Orchestrator plug-ins.</description>
     </item>
     
     <item>
       <title>@PowerScripting chat with vCO Managers</title>
-      <link>http://new.vcoteam.info/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</link>
       <pubDate>Tue, 17 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</guid>
       <description>Did you miss the @PowerScripting folks as they interviewed the vCO Management Team?
 If so, don&#39;t worry - the session was recorded! See below for details:
 Thomas Corfmat - vCO Product ManagerHemant Gaidhani - vCO Product Marketing Managerwith bonus commentary from one of VMware&#39;s PowerShell gurus: Alan Renouf
@@ -237,10 +237,10 @@ Links/Resources:
     
     <item>
       <title>VMware released the vCenter Orchestrator Multi-Node Plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</link>
       <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</guid>
       <description>If you are designing enterprise wide Orchestration you may need to consider more than a single instance of vCenter Orchestrator. The vCenter Orchestrator Multi-Node Plug-in can help you doing so with offering the ability of a vCenter Orchestrator server to remote control other vCenter Orchestrator servers.
 What this plug-in provides is:
 Publish the remote vCenter Orchestrator library elements (Configurations, Packgaesm Workflows, Actions and Resources) in the master vCenter Orchestrator inventoryPublish the remote vCenter Orchestrator inventory elements (vCenter, vCloud Director, Microsoft AD, Cisco UCS, .</description>
@@ -248,10 +248,10 @@ What this plug-in provides is:
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for Microsoft Windows PowerShell</title>
-      <link>http://new.vcoteam.info/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</link>
       <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</guid>
       <description>If you have an investment in PowerShell cmdlets such as VMware vSphere PowerCLI but also snapins from other vendors the VMware vCenter Orchestrator plug-in for Microsoft Windows PowerShell can help you to integrate these as part of workflows steps in vCenter Orchestrator.
 Citing the release notes:
 The plug-in offers many capabilities to workflow developers, such as:
@@ -261,10 +261,10 @@ The plug-in offers many capabilities to workflow developers, such as:
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for vSphere Auto Deploy</title>
-      <link>http://new.vcoteam.info/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</link>
       <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</guid>
       <description>If you are booting your ESXi servers from the network using vSphere Auto Deploy then this plug-in allows you to automate tasks for configuring and provisioning stateless ESXi hosts.
 The plug-in exposes an inventory and CRUD opratons for:
 ESXi depotsHost profilesRule setsThere are workflows to manage answer files and to reprovision a host using answer files, host profiles, new image.
@@ -273,40 +273,40 @@ For more information check the VMware vCenter Orchestrator Plug-In for vSphere A
     
     <item>
       <title>VMware released the vCenter Orchestrator SQL Plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</link>
       <pubDate>Fri, 09 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</guid>
       <description>If you ever wanted to integrate your workflows with a database with having your database records available as part of the inventory then this plug-in will help you to do so.
 Chances are that at some point you will need to read or write information from an SQL database as part of your workflows. vCenter Orchestrator provides some scripter / developper capabilities such as the JDBC plug-in and the integration with the hybernate framework.</description>
     </item>
     
     <item>
       <title>vCloud Director orchestrated infrastructure provisioning featuring VCE UIM vCO plug-in preview</title>
-      <link>http://new.vcoteam.info/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</link>
       <pubDate>Mon, 05 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</guid>
       <description>VCE, the company formed by Cisco and EMC with investments from VMware and Intel is showing a demonstration of their vCenter Orchestrator powered infrastructure provisioning for vCloud Director. This is done with using EMC Unified Infrastructure Manager (UIM) which is the single pane of glass managing the stand alone Vblock Element Management applications.
 If you followed the vCenter Orchestrator plug-in releases you must have noticed the UCS Manager release. So, how is a UIM plug-in different ?</description>
     </item>
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in update for vCloud Director 1.5</title>
-      <link>http://new.vcoteam.info/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</guid>
       <description>I will re-iterate what I have said about nine months ago : Today VMware released the most complete automation solution for vCloud Director as a free download ! This is a plug-in for vCenter Orchestrator allowing to orchestrate vCloud Director 1.5 with a large collection of out of the box workflows. The previous version of this plug-in (1.02) is used at several service providers and enterprise customers.
 As before in terms of functionality the plug-in allows:</description>
     </item>
     
     <item>
       <title>Get trained on vCenter Orchestrator: 10 classes planned in EMEA </title>
-      <link>http://new.vcoteam.info/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</link>
       <pubDate>Wed, 09 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</guid>
       <description>If you are in EMEA and would like to be trained on using vCenter Orchestrator to create custom workflows here is your chance.
 VMware is providing not one but 10 instructor lead training classes in EMEA in the next months !
 I can attest the training content is really good since I have given this training recently. Also the EMEA trainer is the person who developped the content and has several years of experience with implementing vCO solutions at enterprise customers.</description>
@@ -314,10 +314,10 @@ I can attest the training content is really good since I have given this trainin
     
     <item>
       <title>VMware released vFabric Application Performance Manager featuring vCenter Orchestrator integration</title>
-      <link>http://new.vcoteam.info/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</link>
       <pubDate>Wed, 02 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</guid>
       <description>vFabric Application Performance Manager is VMware solution for cloud applications performance monitoring and remediation.
 This is a nice solution for monitoring throughput, latency, hit rate and error rates, it provides code level diagnostics and a nice user interface to fix problems quickly.The automation expert reading here certainly expect more and will be pleased to know it also offer built-in automation and policy-based alerting and remediation.
 If you go on the product page features you can see that this is the kind of flexible remediation we want to see in such a product:</description>
@@ -325,10 +325,10 @@ If you go on the product page features you can see that this is the kind of flex
     
     <item>
       <title>EMC VMAX, VNX, VMware vSphere, vCloud Director integration powered by vCenter Orchestrator </title>
-      <link>http://new.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</link>
       <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</guid>
       <description>EMC released a Compute as a Service white paper documenting design considerations leveraging vCenter Orchestrator and its vCloud Director, AMQP and REST plug-in
 With these components EMC created a workflow running the following operations:
 Provision storage from EMC Symmetrix VMAX or EMC VNX based on the vCenter High Availability cluster.Create the datastore.Create the provider virtual datacenter.Create the organization virtual datacenter within the provider virtual datacenter.Create the catalog on the organization datacenterThe whitepaper shows the workflow design, a simple custom web portal to start it and the workflow execution record.</description>
@@ -336,10 +336,10 @@ With these components EMC created a workflow running the following operations:
     
     <item>
       <title>VMware released the vCenter Orchestrator Virtual Appliance</title>
-      <link>http://new.vcoteam.info/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</link>
       <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</guid>
       <description>You have now no more excuses for not using vCenter Orchestrator: you can now have it up and running in a few minutes.
 With the vCenter Orchestrator Virtual Appliance the configuration is now reduced to the bare minimum (on the Windows version there is quite a lot of configuration to do and important pre-requisites including a directory service and database).
 This is ideal for loading a vCO dev / test environment (including a mobile lab on your laptop) either by importing the provided OVF in vCenter or in Workstation or Fusion (For fusion you will need to use ovftool in command line).</description>
@@ -347,10 +347,10 @@ This is ideal for loading a vCO dev / test environment (including a mobile lab o
     
     <item>
       <title>VMware Labs released the vCenter Orchestrator CIM Plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</link>
       <pubDate>Tue, 18 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</guid>
       <description>&amp;nbsp;
 Here is yet another vCenter Orchestrator (vCO) plug-in. This time to enable a set of discovery and monitoring features.
 Citing the CIM plug-in summary page:
@@ -361,10 +361,10 @@ ESX includes a CIM Object Manager (CIMOM) that implements a set of server discov
     
     <item>
       <title>VMware Labs released the Perspectives Plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</link>
       <pubDate>Tue, 04 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</guid>
       <description>&amp;nbsp;
 You may wonder what &#34;Perspectives&#34; application this may be orchestrating. In fact this plug-in offers a simple way for the VI administrator to give the vCO users access to specific workflows through a web interface.
 Citing the official documentation:
@@ -373,19 +373,19 @@ Citing the official documentation:
     
     <item>
       <title>No Code Required For Functional Workflows</title>
-      <link>http://new.vcoteam.info/articles/newsflash/200-no-code-required-for-functional-workflows.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/200-no-code-required-for-functional-workflows.html</link>
       <pubDate>Mon, 03 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/200-no-code-required-for-functional-workflows.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/200-no-code-required-for-functional-workflows.html</guid>
       <description>If you think you have to be a development guru that knows programming languages in order to create functional workflows with vCenter Orchestrator (vCO) then think again! With hundreds of worfklows and actions to use as building blocks with a vanilla install of vCO, you can be on your way to creating workflows in no time. While it is true that JavaScript is used for the scriptable tasks within Orchestrator, you don&#39;t actually have to write any code for some simple, but functional, workflows.</description>
     </item>
     
     <item>
       <title>VMware published the vCenter Orchestrator Plug-ins Documentation Center</title>
-      <link>http://new.vcoteam.info/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</link>
       <pubDate>Sat, 17 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</guid>
       <description>VMware released nine plug-ins for vCenter Orchestrator this year (and there is more than a quarter left !) and decided that it would be best for customers to have all of the docs gathered in one place in a more user friendly and searchable format.
 vCenter Orchestrator Plug-ins Documentation Center allows from one single page to browse the different plug-ins documentation.
 
@@ -394,10 +394,10 @@ Also these documentation guides are also made available in .</description>
     
     <item>
       <title>VMware released an update for the vCenter Orchestrator for vCloud Director 1.01</title>
-      <link>http://new.vcoteam.info/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</link>
       <pubDate>Sat, 17 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</guid>
       <description>VMware release a version 1.02 of the vCenter Orchestrator Plug-in for vCloud Director (1.0 or 1.01).
 This is a maintenance release.
 Quoting the release notes :
@@ -407,10 +407,10 @@ It is recommended to update to this version since it corrects a problem happenin
     
     <item>
       <title>Infoblox released a Tech Note on their vCenter Orchestrator plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</link>
       <pubDate>Fri, 16 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</guid>
       <description>Following their press-release and VMworld 2011 presentation Infoblox has now published a technical note which can help you to learn how the Infoblox VMware vCenter Orchestrator Plug-in alleviates the challenges of IP Address Management within rapidly expanding virtualized environments.
 Quoting a part of the Tech Note:
 The plug-in was developed for and is delivered with the VMware vCenter Orchestrator (vCO), which works in tandem with the VMware vCloud Director (vCD). The vCD provides automated IP addressing and related management capabilities in real time as virtual machines are created and destroyed.</description>
@@ -418,20 +418,20 @@ The plug-in was developed for and is delivered with the VMware vCenter Orchestra
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for vCenter Server 5.0</title>
-      <link>http://new.vcoteam.info/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</link>
       <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</guid>
       <description>vCenter Orchestrator 4.2 shipped with vCenter 5 including a vCenter 4.1 plug-in. While being usable with vCenter 5 it does not leverage the new functionality of vCenter 5. This has now being taken care of with the release of the vCenter 5 plug-in. Not only the plug-in exposes 100% of the vCenter 5 API it also provides a lot of additional workflows for networking and host configuration.
 Some of these workflows include:</description>
     </item>
     
     <item>
       <title>VMware released the vCenter Orchestrator SNMP Plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</link>
       <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</guid>
       <description>This SNMP plug-in allows vCenter Orchestrator to connect and receive information from Simple Network Management Protocol enabled systems.
 In terms of capabilities the plug-ins allows to:
 Register SNMP hosts, Add SNMP GET, GETNEXT and GETBULK queries to retrieve device from host MIBs (Management Information Base) using OIDs (Object Identifier): Running these workflows will add new items to the inventory.
@@ -440,10 +440,10 @@ Set policies to listen to trap events coming from SNMP hosts and to start remedi
     
     <item>
       <title>VMware released a vCenter Orchestrator Training course</title>
-      <link>http://new.vcoteam.info/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</link>
       <pubDate>Tue, 06 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</guid>
       <description>Growing interest in vCenter and vCloud Orchestration has led to the creation of a new training course for vCenter Orchestrator.
 This three days hands on training is available in classroom, onsite or online. It is aimed at vCenter Orchestrator beginners and requires vSphere administrators and basic scripting skills. Areas covered are installation and configuration, architecture, use of the library workflows and development of custom workflows interacting with external systems.
 For knowing some of the folks involved in designing and giving the course (Brian and J&amp;ouml;rg) we heartily recommend it.</description>
@@ -451,10 +451,10 @@ For knowing some of the folks involved in designing and giving the course (Brian
     
     <item>
       <title>Free preview of &#39;Automating vSphere: With VMware vCenter Orchestrator&#39; by Cody Bunch</title>
-      <link>http://new.vcoteam.info/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</link>
       <pubDate>Tue, 30 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</guid>
       <description>Download the VMware Press FREE Preview sampler. Containing advance chapters from upcoming VMware Press books and from author Cody Bunch, Mike Laverick, and Mostafa Khalil.
 Automating vSphere: With VMware vCenter Orchestrator by Cody Bunch, ISBN: 9780321799913, December 2011
 CHAPTER 6: Introduction to Workflow-FuAdministering VMware Site Recovery Manager 5.0 by Mike Laverick, ISBN: 9780321799920, December, 2011 CHAPTER 9: Configuring the Protected SiteCHAPTER 16: Upgrading from SRM 4.1 to SRM 5.</description>
@@ -462,10 +462,10 @@ Automating vSphere: With VMware vCenter Orchestrator by Cody Bunch, ISBN: 978032
     
     <item>
       <title>Infoblox announced a vCenter Orchestrator plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</link>
       <pubDate>Tue, 30 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</guid>
       <description>Quoting the Infoblox press-release:
 Today at VMworld® 2011, Infoblox Inc. announced it is delivering a fully integrated plug-in for the VMware vCloud® Orchestrator community. Working with VMware vCloud Director™, the integrated solution provides automated IP addressing and related management capabilities in real-time as virtual machines are created.
 As a result, the Infoblox plug-in accelerates private and public cloud deployment, simplifies management and bridges network and virtual IT team silos by enabling automated assignment of IP addresses to virtual machines.</description>
@@ -473,20 +473,20 @@ As a result, the Infoblox plug-in accelerates private and public cloud deploymen
     
     <item>
       <title>vCenter Orchestrator at VMworld 2011</title>
-      <link>http://new.vcoteam.info/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</link>
       <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</guid>
       <description>An article listing the vCenter Orchestrator sessions, demos and hands on labs has been posted on the vCO blog. This year Orchestrator is present and used in the background in a lot more places than in the past.Sessions:
 Go to CIM3235 to hear about how customers use vCenter Orchestrator as an automation and integration platform for vCloud Director and how VMware IT did it. Go to TEX2923 to learn about workflow development techniques from one of the most experienced vCenter Orchestrator partner / trainer and from VMware engineering.</description>
     </item>
     
     <item>
       <title>VMware released vCenter Orchestrator 4.2</title>
-      <link>http://new.vcoteam.info/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</link>
       <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</guid>
       <description>A few days ago vCenter Orchestrator 4.2 was released as part of vSphere 5 and as previous releases for no extra cost.
 This release focus is on bug fixing and improving documentation and providing it in different formats. 2011 effort was mostly on orchestrating more technologies with releasing a lot more plug-ins (7 listed as of now).
 Resources:
@@ -495,10 +495,10 @@ vCenter Orchestrator 4.2 release notesvCenter Orchestrator 4.2 documentationvCen
     
     <item>
       <title>VMware releases vCloud Architecture Toolkit (vCAT) version 2.0</title>
-      <link>http://new.vcoteam.info/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</link>
       <pubDate>Mon, 29 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</guid>
       <description>As part of the Cloud Infrastructure and Management Center of Excellence Team who worked on this project we are glad to announce the release of the new vCloud Architecture Toolkit. Amongst many enhancements, this version covers vCenter Orchestrator best practices that have been proven in real-world enterprise and service provider cloud deployments.
 Official announcement:
 On Monday August 29, 2011 VMware is releasing version 2.0 of the VMware vCloud Architecture Tookit (vCAT).</description>
@@ -506,10 +506,10 @@ On Monday August 29, 2011 VMware is releasing version 2.0 of the VMware vCloud A
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in SDK</title>
-      <link>http://new.vcoteam.info/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</link>
       <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</guid>
       <description>VMware released a software development kit allowing the creation of plug-in adapters for vCenter Orchestrator.&amp;nbsp;
  For the company having development resources it means that they can develop plug-ins for their private usage or for the 200.000+ vCenter customers. For end users this translates into the future availability of a lot more plug-ins.
 Quoting the SDK page:
@@ -518,10 +518,10 @@ The VMware vCenter Orchestrator Plug-in SDK 4.2 is designed to jumpstart develop
     
     <item>
       <title>VMware released the AMQP plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</link>
       <pubDate>Wed, 17 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</guid>
       <description>VMware just released another new vCenter Orchestrator plug-in. The AMQP plug-in.
 Quoting part of the release notes:
 The VMware vCenter Orchestrator AMQP plug-in allows organizations to automatically trigger workflows based on AMQP messages. Advanced Message Queuing Protocol (AMQP) is a highly-scalable publish and subscribe message protocol that is increasingly used in cloud architectures. It is the default messaging protocol for vCloud Director 1.5. With the AMQP plug-in, organizations can define policies that automatically trigger specific workflows based on certain AMQP messages.</description>
@@ -529,29 +529,29 @@ The VMware vCenter Orchestrator AMQP plug-in allows organizations to automatical
     
     <item>
       <title>vCenter Orchestrator new plug-ins covered in &#34;This week in virtualization&#34;</title>
-      <link>http://new.vcoteam.info/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</link>
       <pubDate>Thu, 30 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</guid>
       <description>Brian Knudtson (@bknudtson) talks about new VMware vCenter Orchestrator plug-ins and the vCenter Converter 5.0 beta.
 Listen to the podcast here.</description>
     </item>
     
     <item>
       <title>VMware is seeking for vCenter Orchestrator Plug-ins documentation feedback</title>
-      <link>http://new.vcoteam.info/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</link>
       <pubDate>Tue, 28 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</guid>
       <description>If you develop workflows chances are that the plug-ins documentation is a very valuable resource for you. The VMware documentation team has written a short questionnaire about what is helpful or not in the existing guides and what you would like to see covered further. Please take a few minutes to answer here.</description>
     </item>
     
     <item>
       <title>VMware released Service Manager 9.0 vCenter Orchestrator connector</title>
-      <link>http://new.vcoteam.info/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</link>
       <pubDate>Mon, 20 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</guid>
       <description>VMware has released a Service Manager Integration Platform connector allowing Service Manager to leverage vCenter Orchestrator.
 First a little product introduction:
 VMware Service Manager is a configurable ITIL platform featuring service desk, automated configuration and change management, IT asset management, self-service and request fulfillment. As part of the service request it supports a configurable portal using high-level business workflow modeling for approvals, notifications and tasks integration.VMware vCenter Orchestrator is a technical Orchestration authoring platform part of vCenter Server allowing System Engineers to automate repetitive tasks requiring little to no human intervention by creating workflows leveraging extensive integrations with VMware and third parties cloud components.</description>
@@ -559,10 +559,10 @@ First a little product introduction:
     
     <item>
       <title>VMware released the vCenter Orchestrator SOAP and REST Plug-ins</title>
-      <link>http://new.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</link>
       <pubDate>Thu, 16 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</guid>
       <description>Today a major milestone has been achieved for vCenter Orchestrator.VMware released not one but two very useful plug-ins adapter:
 SOAP is a protocol used to implement a web service typically used over HTTP and in combination with a service catalog (Web Service Description Language - WSDL pronounced wisdel). Examples of applications using SOAP are vCenter, vCenter Orchestrator, Lab Manager
 REST is the technology behind the World Wide Web, leveraging HTTP verbs and URI to define resources and operations with stateless connections.</description>
@@ -570,30 +570,30 @@ REST is the technology behind the World Wide Web, leveraging HTTP verbs and URI 
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for vCenter Update Manager</title>
-      <link>http://new.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</link>
       <pubDate>Wed, 15 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</guid>
       <description>VMware just released another new vCenter Orchestrator plug-in. this time it is the turn to vCenter Update Manager to be orchestrated.
 The main operations supported by this plug-in are:Creating a patch baseline: This is a patch repository containing the ESX host and VM patches attached to a vCenter. You can filter which patch to get from provider sites based on vendor, product, severity, update type, date.Attach a baseline to a set of vCenter objects.</description>
     </item>
     
     <item>
       <title>Monitoring solution has built-in support for vCO based Remediation!</title>
-      <link>http://new.vcoteam.info/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</link>
       <pubDate>Fri, 10 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</guid>
       <description>Uptime software realized early on that many orchestration solutions could involve very expensive software suites and services. They chose to extend their product by plugging it into VMware&#39;s vCenter Orchestrator (vCO) to allow for automated remediation of issues discovered by their monitoring solution. The following video provides an overview of up.time&#39;s capabilities:
   UpTime&#39;s integration with vCO is not a bolt-on solution; they have the integration as a core feature of their product.</description>
     </item>
     
     <item>
       <title>VMware press to release a book on automating vSphere with vCenter Orchestrator</title>
-      <link>http://new.vcoteam.info/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</link>
       <pubDate>Fri, 20 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</guid>
       <description>Pearsons and VMware are joining forces. They have announced VMware Press and three upcoming book for the fall 2011 including one covering vCenter Orchestrator named &#34;Automating Day-to-Day Administration of VMware vSphere 5.x&#34;.
 Quoting the summary:
 This hands-on technical guide to automating vSphere with Orchestrator teaches administrators how to save time and resources by automating their virtual infrastructure. Automation expert Cody Bunch teaches valuable practices and tool use through a combination of real world automation examples and case studies.</description>
@@ -601,10 +601,10 @@ This hands-on technical guide to automating vSphere with Orchestrator teaches ad
     
     <item>
       <title>VMworld 2011 - Help to reveal VMware&#39;s best kept secret !</title>
-      <link>http://new.vcoteam.info/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</guid>
       <description>Do you want to know more about vCenter Orchestrator ? Do you like vCenter Orchestrator and think it should deserve more attention ?
 VMworld 2011 Session Voting is now open (May 9 - May 18) and there are nine sessions listed for vCO:
 1222Orchestration - From Infrastructure to Cloud1440 vCenter Orchestrator - The Missing &#34;Getting Started&#34; Session1441 Developing Workflows for vCenter Orchestrator (vCO)1622vSphere Automation 1012049 How OCLC Used vCenter Orchestrator to Automate the Disk Alignment of 1500 + Virtual Machines2302 Reducing Opex and Accelerating IT Service Delivery with vCenter Orchestrator2923vCenter Orchestrator Workflow Development Best Practices2982 Creating a vCenter Orchestrator Plugin – Lessons Learned3235Leveraging vCenter Orchestrator for your Cloud Deployment and OperationsSession details and links to vote below.</description>
@@ -612,47 +612,47 @@ VMworld 2011 Session Voting is now open (May 9 - May 18) and there are nine sess
     
     <item>
       <title>Automate the cloud or die </title>
-      <link>http://new.vcoteam.info/articles/newsflash/156-automate-the-cloud-or-die-.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/156-automate-the-cloud-or-die-.html</link>
       <pubDate>Wed, 04 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/156-automate-the-cloud-or-die-.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/156-automate-the-cloud-or-die-.html</guid>
       <description>Thomas Corfmat, the vCenter Orchestrator Product Manager released his first blog article.
 Thomas has been with VMware for a few months only but it seems to me this was much longer since he has been very active pushing the product capabilities (i.e vCloud, Cisco UCS, Microsoft AD Plug-ins releases and a lot more to come this year), leading the marketing activities (vCO Achilles&#39;s heal) and with reaching out to customers and partners to make sure we have the best cloud orchestration platform.</description>
     </item>
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for Microsoft Active Directory</title>
-      <link>http://new.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</link>
       <pubDate>Wed, 04 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</guid>
       <description>Quoting the release notes : The VMware vCenter Orchestrator plug-in for Microsoft Active Directory allows organizations to automate the management of directory services tasks, particularly as they pertain to cloud provisioning use cases. For instance, the plug-in enables the automatic provisioning of vCloud Director organizations based on data retrieved from Active Directory. The plug-in also includes many administrative actions related to computers, organizations, user groups, and users, such as resetting passwords or adding users to a user group.</description>
     </item>
     
     <item>
       <title>VMware Blog posts a Sample scenario for the Cisco UCS Manager plug-in!</title>
-      <link>http://new.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</link>
       <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</guid>
       <description>As some of you may know, VMware recently launched an official vCenter Orchestrator blog! The team at VMware has put together a nice sample scenario post that walks you through the use of the Cisco UCS Manager plug-in. Be sure to stop by and check it out! To keep up on the posts there, feel free to follow their RSS Feed.</description>
     </item>
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for the Cisco UCS Manager</title>
-      <link>http://new.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</link>
       <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</guid>
       <description>With this release vCenter Orchestrator is extending his reach in the automation of the cloud infrastructure with managing the physical infrastructure supporting it. For those that do not know yet it is installed as part of vCenter (starting with version 4.0) and usable at no additional cost. It is the only Orchestrator platform supporting full functionality of vCenter and vCloud Director. With the release of the Cisco UCS Manager the end to end provisioning of physical resources - virtual infrastructure - multi-tenant cloud Organizations, virtual Datacenters, vApps is now possible.</description>
     </item>
     
     <item>
       <title>VMware vCenter Orchestrator Blog now live</title>
-      <link>http://new.vcoteam.info/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</link>
       <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</guid>
       <description>VMware now has a formal home at VMware blogosphere to communicate about vCenter Orchestrator.
 You can expect upcoming posts from the vCO product, engineering and professional services teams.
 Check the welcome article and make sure to subscribe to the RSS feed.</description>
@@ -660,10 +660,10 @@ Check the welcome article and make sure to subscribe to the RSS feed.</descripti
     
     <item>
       <title>vCloud Connector and other delights on VMware Communities Roundtable</title>
-      <link>http://new.vcoteam.info/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</link>
       <pubDate>Wed, 02 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</guid>
       <description>No worries if you missed the live broadcast. It is available below. We had a very active session for just under an hour. Hope you enjoy(ed) the show :)
 For the vCO portion of the discussion, we had Burke Azbill and John Stanford from VMware&#39;s Cloud Services team!
 VMware Communities RoundtableTitle:#130 - vCloud Connector and other delights
@@ -672,10 +672,10 @@ VMware Communities RoundtableTitle:#130 - vCloud Connector and other delights
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for vCloud Director</title>
-      <link>http://new.vcoteam.info/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</link>
       <pubDate>Mon, 21 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</guid>
       <description>Today VMware released the most complete automation solution for vCloud Director as a free download !
 This is a plug-in for vCenter Orchestrator allowing to orchestrate vCloud Director (and not the other way around, vCD 1.01 does not have the ability to start an external process).
 In terms of functionality the plug-in allows:
@@ -684,10 +684,10 @@ In terms of functionality the plug-in allows:
     
     <item>
       <title>VMware vCenter Orchestrator 4.1.1 released !</title>
-      <link>http://new.vcoteam.info/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</link>
       <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</guid>
       <description>Yesterday, vCenter Orchestrator 4.1.1 was released as part of vCenter 4.1 Update 1. This is mainly a bug fix release.
 According to the release notes the resolved issues are:
 Parent permissions are not propagated to a child objectOrchestrator Configuration might not export or import the license configuration&#34;Remove Snapshot&#34; and &#34;Add host to cluster&#34; workflow incorrect behaviorInconsistencies in library workflow names
@@ -696,20 +696,20 @@ According to the release notes the resolved issues are:
     
     <item>
       <title>Did you miss the roundtable podcast?</title>
-      <link>http://new.vcoteam.info/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</link>
       <pubDate>Thu, 28 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</guid>
       <description>No worries if you missed the live broadcast. It is available below. We had a very active session for just under an hour. Hope you enjoy(ed) the show :)
 VMware Communities RoundtableTitle:#115 - VMware Orchestrator - Orchestrating the Cloud</description>
     </item>
     
     <item>
       <title>See and Hear vCOTeam Burke Azbill on Upcoming PodCasts</title>
-      <link>http://new.vcoteam.info/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</link>
       <pubDate>Wed, 27 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</guid>
       <description>Hello everyone! I just had a great interview with @Mike_Laverick of RTFM Education where we talked at length about VMware&#39;s vCenter Orchestrator! Keep an eye out for a new episode of &#34;Chinwag with Mike&#34; in a few weeks :)
 And even sooner, I&#39;ve just been requested to participate in today&#39;s VMware Communities Roundtable Podcast by @jtroyer. Be sure to stop by!
 One final note: we have setup a Twitter account as you may have noticed here on our page.</description>
@@ -717,19 +717,19 @@ One final note: we have setup a Twitter account as you may have noticed here on 
     
     <item>
       <title>vCO simple example &amp; hints</title>
-      <link>http://new.vcoteam.info/articles/newsflash/106-vco-simple-example-and-hints.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/106-vco-simple-example-and-hints.html</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/106-vco-simple-example-and-hints.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/106-vco-simple-example-and-hints.html</guid>
       <description>My friend Christian and I want to support vCO starter with basic examples and features in vCO. We often read in community and blogs &#34;how can I do this...&#34;. So here are the first posts.Sorting arrayFunctionsSecure LDAPMount a NFS datastoreSetting DRS modeJust come back here to see the list continued and / or follow our blog.Regards, Andreas</description>
     </item>
     
     <item>
       <title>vCloud Director orchestrated infrastructure provisioning featuring NetApp vCO plug-in preview</title>
-      <link>http://new.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</link>
       <pubDate>Mon, 04 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</guid>
       <description>Abhinav Joshi from NetApp has written a detailed article on what the orchestration demonstrations showcased during VMworld 2010 San Francisco. These were featuring vCenter Orchestrator 4.1 with the addition of:
 VMware vCloud Director vCO plug-in technical previewNetApp Provisioning Manager vCO plug-in technical previewNetApp FlexClone vCO plug-in technical previewAnd matching applications.
 Quoting the original article with the vCO demos:
@@ -738,88 +738,88 @@ Demo 1: Automated and orchestrated provisioning of infrastructure resources and 
     
     <item>
       <title>VMware vCloud Director vCO plug-in preview</title>
-      <link>http://new.vcoteam.info/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</link>
       <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</guid>
       <description>The following videos are a preview of the upcoming VMware vCloud Director vCO plug-in. Since its release with vCenter 4, the main vCO plug-in has been for vCenter by fully supporting its API and providing several technical workflows. vCloud Director is already becoming VMware&#39;s next major API and as such will be fully supported by a vCO plug-in. The demonstration below shows examples on how to take advantage of this new plug-in and benefit from vCO powered automation.</description>
     </item>
     
     <item>
       <title>vCO VIX plug-in released !</title>
-      <link>http://new.vcoteam.info/articles/newsflash/103-vco-vix-plug-in-released.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/103-vco-vix-plug-in-released.html</link>
       <pubDate>Fri, 24 Sep 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/103-vco-vix-plug-in-released.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/103-vco-vix-plug-in-released.html</guid>
       <description>We are proud to announce that vCO Team members and VMware labs today released a vCO (4.1) VIX plug-in for the VIX API version 1.10. If you wonder what VIX is here is an extract of the VIX landing page:
 &#34;The VIX API allows you to write programs and scripts that automate virtual machine operations, as well as the guests within virtual machines. This API is high-level, easy to use, and practical for both script writers and application programmers.</description>
     </item>
     
     <item>
       <title>Lifecycle Manager End of Availability</title>
-      <link>http://new.vcoteam.info/articles/newsflash/98-lifecycle-manager-end-of-availability.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/98-lifecycle-manager-end-of-availability.html</link>
       <pubDate>Tue, 07 Sep 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/98-lifecycle-manager-end-of-availability.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/98-lifecycle-manager-end-of-availability.html</guid>
       <description>VMware has announced a few days ago that LCM is End of Life. Please check the FAQ for more details.
 For those of you not familiar with it, VMware Lifecycle Manager is a workflow based application running on top of vCenter Orchestrator. vCenter Orchestrator is not impacted by the LCM EOA.</description>
     </item>
     
     <item>
       <title>vCO web views not deprecated anymore</title>
-      <link>http://new.vcoteam.info/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</link>
       <pubDate>Tue, 07 Sep 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</guid>
       <description>We have been communicated today that there was a change in the vCO 4.1 release notes since our original vCenter Orchestrator 4.1 release article.
 The web-views, while still being supported in vCO 4.1 were listed as deprecated. The release notes have been updated and the web views are not in the deprecated features list anymore. We can now assume this functionality will still be supported in the next major release of vCO.</description>
     </item>
     
     <item>
       <title>VMworld 2010 session on Orchestrating the Cloud</title>
-      <link>http://new.vcoteam.info/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</link>
       <pubDate>Tue, 31 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</guid>
       <description>Hey everyone I just got back to the hotel after a nice 13 hour day at VMworld! I&#39;m working labs 11-15 and am Co-Presenting the Orchestrating the Cloud session Monday, Tuesday, and Wednesday. Today&#39;s session from 3pm-4pm had over 130 people checked in and felt like it went pretty well. The session was intended to be discussion heavy around using VMware vCenter Orchestrator (vCO) to to perform cloud automation. As such, we presented a short series of 3 videos that highlight the usage of an upcoming vCO plug-in for VMware vCloud Director!</description>
     </item>
     
     <item>
       <title>VMware releases vCenter Lifecycle Manager 1.2</title>
-      <link>http://new.vcoteam.info/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</link>
       <pubDate>Fri, 13 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</guid>
       <description>Lifecycle Manager 1.2 has just been posted on VMware&#39;s website. This release requires the new vCenter Orchestrator 4.1 so it runs on a 64-bit Operating system. Additionally, there is finally support for some of the new vSphere features that were not previously available for Lifecycle Manager users including:
 Thin ProvisioningVMXNET3 Network AdaptersvNetwork Distributed SwitchCisco Nexus 1000V supportWindows 7 Guest OS CustomizationIE8 and Firefox 3.6.x supportIf you&#39;re Lifecycle Manager (LCM) deployment has been customized, you&#39;ll most likely need to re-implement the customization if you wish to migrate to the new 1.</description>
     </item>
     
     <item>
       <title>vCenter Orchestrator (vCO) at VMworld 2010</title>
-      <link>http://new.vcoteam.info/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</link>
       <pubDate>Mon, 02 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</guid>
       <description>Yes, it is that time of year again. VMworld 2010 is nearly upon us! And, yes, Orchestrator will have a few sessions available for your education :) Currently listed are 3 sessions:
 VMware vCenter Orchestrator - Orchestrating the Cloud (Advanced Lab Tutorials)Lab: VMware vCenter Orchestrator (Hands-on Lab)Saving Time with vCenter Orchestrator (Breakout Session)Lab: VMware vCenter OrchestratorThis 1 hour hands-on lab will provide you with an introduction to vCO 4.</description>
     </item>
     
     <item>
       <title>vCenter Orchestrator 4.1 released !</title>
-      <link>http://new.vcoteam.info/articles/newsflash/93-vcenter-orchestrator-41-released-.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/93-vcenter-orchestrator-41-released-.html</link>
       <pubDate>Mon, 12 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/93-vcenter-orchestrator-41-released-.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/93-vcenter-orchestrator-41-released-.html</guid>
       <description>vCenter Orchestrator 4.1 has been just released as part of vSphere 4.1.
 Here is a summary of the main changes since version 4.0, along with our analysis.ImprovementsPerformance and scalability: 5 to 10 times faster than vCO 4.0. 10,000 managed VMs per vCenter Orchestrator Server instead of 3,000 in 4.0!vCO Workflow engine and scripting engine code base has been optimized. Workflows are now processed faster, using fewer resources.</description>
     </item>
     
     <item>
       <title>Q and A Section Added</title>
-      <link>http://new.vcoteam.info/articles/newsflash/86-q-and-a-section-added.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/86-q-and-a-section-added.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/86-q-and-a-section-added.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/86-q-and-a-section-added.html</guid>
       <description>Attention vCO users, developers and Administrators!
 We have just added a new section to the vCO Team Website for Frequently Asked Questions in the format of Q &amp;amp; A. We&#39;ve broken the section out into multiple Categories and begun populating the categories with some common Questions we have encountered over the last few years.
 If you&#39;re on an RSS reader, the Q &amp;amp; A section is separate .
@@ -828,10 +828,10 @@ Stop in and take a look.</description>
     
     <item>
       <title>vCO Plugin for vSphere Client</title>
-      <link>http://new.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</link>
       <pubDate>Thu, 27 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</guid>
       <description>To increase usability and acceptance of vCO we - mightycare solution - created a vCO Plugin for vSphere Client. So admins and users has a direct access to the big world of vCO workflows. Actual our Beta comes up with following features:
 customizable context menu for virtual machinesstate and parameter values for running workflowsoptional prompt for finished workflows with values and state (can be checked for each flow)customizable input for input parameters - predefined or prompt for input (for each parameter in each flow)all settings per user, saved in registry - roaming user friendlyTo make a round tool we need your input - what do you think about it - what functions do you need in a tool like this.</description>
     </item>

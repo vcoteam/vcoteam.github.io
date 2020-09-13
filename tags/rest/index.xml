@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>REST on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/rest.html</link>
+    <link>http://www.vcoteam.info/tags/rest.html</link>
     <description>Recent content in REST on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/rest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Introducing Swagger UI on vRO 7.0.1</title>
-      <link>http://new.vcoteam.info/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</link>
+      <link>http://www.vcoteam.info/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</link>
       <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</guid>
+      <guid>http://www.vcoteam.info/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</guid>
       <description>Although vRealize Orchestrator (vRO) has provided API documentation built-in to the server, it was static content that could not be quickly used for tests or building queries. When a product provides a nice API explorer that not only tells you the available urls and basic docs, but also provides a web-based UI that allows you to quickly build up custom calls and shows you the generated content, the consumption and integration time for developers is reduced considerably.</description>
     </item>
     
     <item>
       <title>Leveraging vCenter 6 vAPI REST endpoint</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</link>
       <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</guid>
       <description>vCenter 6 has introduced an important new feature for anyone interested in Automation and integration : a REST based endpoint providing access to some of the recent functionality such as the tagging service, the content library and transfer service : It is called &amp;ldquo;VMware vCloud Suite SDK&amp;rdquo; and codenamed vAPI. In addition to the REST API it provides language bindings for Java, Python, .NET, Perl and Ruby. If you want to know more about vAPI you can read the blog article I wrote on the VMware CTO Ambassadors blog.</description>
     </item>
     
     <item>
       <title>Create a plug-in for a REST based web service in minutes - Part 4</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</guid>
       <description>In part 1 and part 2 we created the inventory objects, in part 3 we created methods for this objects and ran a generic workflow to run these methods.
 In this article we will create workflows for calling these methods, include them in a package with all the plug-in configuration to ship it to our end users.
 Creating the workflows The invoke workflows in the plug-in facilitate running REST operations. End users and or external system will expect simpler workflows.</description>
@@ -42,19 +42,19 @@ Creating the workflows The invoke workflows in the plug-in facilitate running RE
     
     <item>
       <title>Create a plug-in for a REST based web service in minutes - Part 3</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</link>
       <pubDate>Wed, 25 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</guid>
       <description>Part 1 of the plug-in generator v2 series covered how to create new plug-in inventory types, part 2 how to create their child object types. This part will focus on how to define object methods and associated workflows. Having Orchestrator inventory types is a necessity to use with vRealize Automation (formerly vCAC) Advanced Service Designer. Once you have these inventory objects you may wonder how to use these in workflows. This is what this article covers.</description>
     </item>
     
     <item>
       <title>Create a plug-in for a REST based web service in minutes - Part 2</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</link>
       <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</guid>
       <description>In the part 1 I walk through step by step to create a plug-in object type leveraging the Plug-in Generator version 2.
 In this article I will demonstrate one of the new feature of this version 2 : Create a child object type.
 Having the plug-in inventory organized in a tree view allows to represent most of the objects hierarchies found in applications APIs.
@@ -63,57 +63,57 @@ Resuming from part 1 I need to create a vNIC object.</description>
     
     <item>
       <title>How to use PowerShell to start an Orchestrator Workflow</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</link>
       <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</guid>
       <description>Okay now I have provided Python and [perl](/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html&amp;rdquo; rel=&amp;quot;alternate) articles to start a vRealize Orchestrator (vRO / vCO) workflow via it&amp;rsquo;s REST API so now it&amp;rsquo;s time for a PowerShell script. For this article, I followed the same format as the previous two BUT provided the option to call the script with command line parameters! You may download the script in this article from my vroClientScripts Repository on GitHub.
 The Script The following code should be saved as something like runWorkflow.</description>
     </item>
     
     <item>
       <title>How to use perl to start an Orchestrator Workflow</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</guid>
       <description>In a previous article, I taught you how to explore and use the REST API to start a Workflow using a generic browser based REST Client. In this article, I will provide a perl based example of running the &amp;ldquo;Create a Record&amp;rdquo; workflow that was created in Part 2 of my SQL Plug-in Dynamic Types Simple CMDB for vCAC article. I have barely more experience with perl than Python so this will be another very short article!</description>
     </item>
     
     <item>
       <title>How to use Python to start an Orchestrator Workflow</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</guid>
       <description>In a previous article, I taught you how to explore and use the REST API to start a Workflow using a generic browser based REST Client. In this article, I will provide a Python based example of running the &amp;ldquo;Create a Record&amp;rdquo; workflow that was created in Part 2 of my SQL Plug-in Dynamic Types Simple CMDB for vCACarticle. Since I&amp;rsquo;m not even close to being proficient with Python, this will be a very short article!</description>
     </item>
     
     <item>
       <title>How to use the REST API to Resume a Failed Workflow</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</link>
       <pubDate>Fri, 25 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</guid>
       <description>One of the relatively new 5.x features of vCenter Orchestrator (vCO) is the ability to Enable a workflow to resume on failure. Essentially, this means that a workflow could fail 1/2 or 3/4 the way through and you could go and tell vCO to resume that workflow, perhaps after fixing whatever issue caused it to fail in the first place, rather than start a fresh instance of the workflow.
 Introduction   As noted in the intro snippet, vCO now has the ability to let you resume a failed workflow.</description>
     </item>
     
     <item>
       <title>How to use the REST API to Start a Workflow</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</link>
       <pubDate>Thu, 17 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</guid>
       <description>It seems everyday the interest in vCenter Orchestrator (vCO) is growing. I love this because it brings more and more use cases to our attention. One such use case is the need to call vCO workflows via its REST API. In order to keep this article generic, but useful, I will work with the free RESTClient plug-in/add-on for Firefox as the client. The general process here will be similar to what you may need to do from your software or portal to integrate with vCO&amp;rsquo;s REST API.</description>
     </item>
     
     <item>
       <title>VMware released the vCenter Orchestrator SOAP and REST Plug-ins</title>
-      <link>http://new.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</link>
       <pubDate>Thu, 16 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</guid>
       <description>Today a major milestone has been achieved for vCenter Orchestrator.VMware released not one but two very useful plug-ins adapter:
 SOAP is a protocol used to implement a web service typically used over HTTP and in combination with a service catalog (Web Service Description Language - WSDL pronounced wisdel). Examples of applications using SOAP are vCenter, vCenter Orchestrator, Lab Manager
 REST is the technology behind the World Wide Web, leveraging HTTP verbs and URI to define resources and operations with stateless connections.</description>

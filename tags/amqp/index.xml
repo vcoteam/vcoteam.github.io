@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AMQP on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/amqp.html</link>
+    <link>http://www.vcoteam.info/tags/amqp.html</link>
     <description>Recent content in AMQP on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Oct 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/amqp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/amqp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>EMC VMAX, VNX, VMware vSphere, vCloud Director integration powered by vCenter Orchestrator </title>
-      <link>http://new.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</link>
       <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</guid>
       <description>EMC released a Compute as a Service white paper documenting design considerations leveraging vCenter Orchestrator and its vCloud Director, AMQP and REST plug-in
 With these components EMC created a workflow running the following operations:
 Provision storage from EMC Symmetrix VMAX or EMC VNX based on the vCenter High Availability cluster.Create the datastore.Create the provider virtual datacenter.Create the organization virtual datacenter within the provider virtual datacenter.Create the catalog on the organization datacenterThe whitepaper shows the workflow design, a simple custom web portal to start it and the workflow execution record.</description>
@@ -24,20 +24,20 @@ With these components EMC created a workflow running the following operations:
     
     <item>
       <title>Configure the AMQP plug-in to monitor vCloud Director</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/179-configure-the-amqp-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/179-configure-the-amqp-plug-in.html</link>
       <pubDate>Fri, 09 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/179-configure-the-amqp-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/179-configure-the-amqp-plug-in.html</guid>
       <description>OK, so we told you about the great new plug-in that VMware has made available for vCO to work with AMQP, but now what? You&#39;ll need a couple things to get started before you can run off and code a bunch of cool workflows so let&#39;s step through this initial process...
 Get and Install AMQP Server (RabbitMQ)Configure Publisher (vCloud Director 1.5)Configure Consumer (vCenter Orchestrator)Apply Policy Template to create new PolicyHow to create new Policy manuallyStarting the PolicyGet and install an AMQP server.</description>
     </item>
     
     <item>
       <title>VMware released the AMQP plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</link>
       <pubDate>Wed, 17 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</guid>
       <description>VMware just released another new vCenter Orchestrator plug-in. The AMQP plug-in.
 Quoting part of the release notes:
 The VMware vCenter Orchestrator AMQP plug-in allows organizations to automatically trigger workflows based on AMQP messages. Advanced Message Queuing Protocol (AMQP) is a highly-scalable publish and subscribe message protocol that is increasingly used in cloud architectures. It is the default messaging protocol for vCloud Director 1.5. With the AMQP plug-in, organizations can define policies that automatically trigger specific workflows based on certain AMQP messages.</description>

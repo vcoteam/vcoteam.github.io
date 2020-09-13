@@ -2,759 +2,759 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on vCO Team</title>
-    <link>http://new.vcoteam.info/tags.html</link>
+    <link>http://www.vcoteam.info/tags.html</link>
     <description>Recent content in Tags on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blueprint</title>
-      <link>http://new.vcoteam.info/tags/blueprint.html</link>
+      <link>http://www.vcoteam.info/tags/blueprint.html</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/blueprint.html</guid>
+      <guid>http://www.vcoteam.info/tags/blueprint.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kubernetes</title>
-      <link>http://new.vcoteam.info/tags/kubernetes.html</link>
+      <link>http://www.vcoteam.info/tags/kubernetes.html</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/kubernetes.html</guid>
+      <guid>http://www.vcoteam.info/tags/kubernetes.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRA</title>
-      <link>http://new.vcoteam.info/tags/vra.html</link>
+      <link>http://www.vcoteam.info/tags/vra.html</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vra.html</guid>
+      <guid>http://www.vcoteam.info/tags/vra.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Container</title>
-      <link>http://new.vcoteam.info/tags/container.html</link>
+      <link>http://www.vcoteam.info/tags/container.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/container.html</guid>
+      <guid>http://www.vcoteam.info/tags/container.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>CoreDNS</title>
-      <link>http://new.vcoteam.info/tags/coredns.html</link>
+      <link>http://www.vcoteam.info/tags/coredns.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/coredns.html</guid>
+      <guid>http://www.vcoteam.info/tags/coredns.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>DNS</title>
-      <link>http://new.vcoteam.info/tags/dns.html</link>
+      <link>http://www.vcoteam.info/tags/dns.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/dns.html</guid>
+      <guid>http://www.vcoteam.info/tags/dns.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>http://new.vcoteam.info/tags/docker.html</link>
+      <link>http://www.vcoteam.info/tags/docker.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/docker.html</guid>
+      <guid>http://www.vcoteam.info/tags/docker.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker-compose</title>
-      <link>http://new.vcoteam.info/tags/docker-compose.html</link>
+      <link>http://www.vcoteam.info/tags/docker-compose.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/docker-compose.html</guid>
+      <guid>http://www.vcoteam.info/tags/docker-compose.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
-      <link>http://new.vcoteam.info/tags/github.html</link>
+      <link>http://www.vcoteam.info/tags/github.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/github.html</guid>
+      <guid>http://www.vcoteam.info/tags/github.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lab</title>
-      <link>http://new.vcoteam.info/tags/lab.html</link>
+      <link>http://www.vcoteam.info/tags/lab.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/lab.html</guid>
+      <guid>http://www.vcoteam.info/tags/lab.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRO</title>
-      <link>http://new.vcoteam.info/tags/vro.html</link>
+      <link>http://www.vcoteam.info/tags/vro.html</link>
       <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vro.html</guid>
+      <guid>http://www.vcoteam.info/tags/vro.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microsoft</title>
-      <link>http://new.vcoteam.info/tags/microsoft.html</link>
+      <link>http://www.vcoteam.info/tags/microsoft.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/microsoft.html</guid>
+      <guid>http://www.vcoteam.info/tags/microsoft.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Plug-in</title>
-      <link>http://new.vcoteam.info/tags/plug-in.html</link>
+      <link>http://www.vcoteam.info/tags/plug-in.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/plug-in.html</guid>
+      <guid>http://www.vcoteam.info/tags/plug-in.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRA 7.x</title>
-      <link>http://new.vcoteam.info/tags/vra-7.x.html</link>
+      <link>http://www.vcoteam.info/tags/vra-7.x.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vra-7.x.html</guid>
+      <guid>http://www.vcoteam.info/tags/vra-7.x.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRealize Automation</title>
-      <link>http://new.vcoteam.info/tags/vrealize-automation.html</link>
+      <link>http://www.vcoteam.info/tags/vrealize-automation.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vrealize-automation.html</guid>
+      <guid>http://www.vcoteam.info/tags/vrealize-automation.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRealize Orchestrator</title>
-      <link>http://new.vcoteam.info/tags/vrealize-orchestrator.html</link>
+      <link>http://www.vcoteam.info/tags/vrealize-orchestrator.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vrealize-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/tags/vrealize-orchestrator.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRO 7.x</title>
-      <link>http://new.vcoteam.info/tags/vro-7.x.html</link>
+      <link>http://www.vcoteam.info/tags/vro-7.x.html</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vro-7.x.html</guid>
+      <guid>http://www.vcoteam.info/tags/vro-7.x.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>curl</title>
-      <link>http://new.vcoteam.info/tags/curl.html</link>
+      <link>http://www.vcoteam.info/tags/curl.html</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/curl.html</guid>
+      <guid>http://www.vcoteam.info/tags/curl.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>homelab</title>
-      <link>http://new.vcoteam.info/tags/homelab.html</link>
+      <link>http://www.vcoteam.info/tags/homelab.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/homelab.html</guid>
+      <guid>http://www.vcoteam.info/tags/homelab.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>NUC</title>
-      <link>http://new.vcoteam.info/tags/nuc.html</link>
+      <link>http://www.vcoteam.info/tags/nuc.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/nuc.html</guid>
+      <guid>http://www.vcoteam.info/tags/nuc.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSAN</title>
-      <link>http://new.vcoteam.info/tags/vsan.html</link>
+      <link>http://www.vcoteam.info/tags/vsan.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vsan.html</guid>
+      <guid>http://www.vcoteam.info/tags/vsan.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>PowerCLI</title>
-      <link>http://new.vcoteam.info/tags/powercli.html</link>
+      <link>http://www.vcoteam.info/tags/powercli.html</link>
       <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/powercli.html</guid>
+      <guid>http://www.vcoteam.info/tags/powercli.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>bootable usb</title>
-      <link>http://new.vcoteam.info/tags/bootable-usb.html</link>
+      <link>http://www.vcoteam.info/tags/bootable-usb.html</link>
       <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/bootable-usb.html</guid>
+      <guid>http://www.vcoteam.info/tags/bootable-usb.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hackathon</title>
-      <link>http://new.vcoteam.info/tags/hackathon.html</link>
+      <link>http://www.vcoteam.info/tags/hackathon.html</link>
       <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/hackathon.html</guid>
+      <guid>http://www.vcoteam.info/tags/hackathon.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>VMworld</title>
-      <link>http://new.vcoteam.info/tags/vmworld.html</link>
+      <link>http://www.vcoteam.info/tags/vmworld.html</link>
       <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vmworld.html</guid>
+      <guid>http://www.vcoteam.info/tags/vmworld.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>AD</title>
-      <link>http://new.vcoteam.info/tags/ad.html</link>
+      <link>http://www.vcoteam.info/tags/ad.html</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/ad.html</guid>
+      <guid>http://www.vcoteam.info/tags/ad.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>API</title>
-      <link>http://new.vcoteam.info/tags/api.html</link>
+      <link>http://www.vcoteam.info/tags/api.html</link>
       <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/api.html</guid>
+      <guid>http://www.vcoteam.info/tags/api.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>REST</title>
-      <link>http://new.vcoteam.info/tags/rest.html</link>
+      <link>http://www.vcoteam.info/tags/rest.html</link>
       <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/rest.html</guid>
+      <guid>http://www.vcoteam.info/tags/rest.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swagger</title>
-      <link>http://new.vcoteam.info/tags/swagger.html</link>
+      <link>http://www.vcoteam.info/tags/swagger.html</link>
       <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/swagger.html</guid>
+      <guid>http://www.vcoteam.info/tags/swagger.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Book</title>
-      <link>http://new.vcoteam.info/tags/book.html</link>
+      <link>http://www.vcoteam.info/tags/book.html</link>
       <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/book.html</guid>
+      <guid>http://www.vcoteam.info/tags/book.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>http://new.vcoteam.info/tags/linux.html</link>
+      <link>http://www.vcoteam.info/tags/linux.html</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/linux.html</guid>
+      <guid>http://www.vcoteam.info/tags/linux.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>networkManager</title>
-      <link>http://new.vcoteam.info/tags/networkmanager.html</link>
+      <link>http://www.vcoteam.info/tags/networkmanager.html</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/networkmanager.html</guid>
+      <guid>http://www.vcoteam.info/tags/networkmanager.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>nmcli</title>
-      <link>http://new.vcoteam.info/tags/nmcli.html</link>
+      <link>http://www.vcoteam.info/tags/nmcli.html</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/nmcli.html</guid>
+      <guid>http://www.vcoteam.info/tags/nmcli.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vAPI</title>
-      <link>http://new.vcoteam.info/tags/vapi.html</link>
+      <link>http://www.vcoteam.info/tags/vapi.html</link>
       <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vapi.html</guid>
+      <guid>http://www.vcoteam.info/tags/vapi.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>presentation</title>
-      <link>http://new.vcoteam.info/tags/presentation.html</link>
+      <link>http://www.vcoteam.info/tags/presentation.html</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/presentation.html</guid>
+      <guid>http://www.vcoteam.info/tags/presentation.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>json</title>
-      <link>http://new.vcoteam.info/tags/json.html</link>
+      <link>http://www.vcoteam.info/tags/json.html</link>
       <pubDate>Fri, 29 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/json.html</guid>
+      <guid>http://www.vcoteam.info/tags/json.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>http</title>
-      <link>http://new.vcoteam.info/tags/http.html</link>
+      <link>http://www.vcoteam.info/tags/http.html</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/http.html</guid>
+      <guid>http://www.vcoteam.info/tags/http.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>log</title>
-      <link>http://new.vcoteam.info/tags/log.html</link>
+      <link>http://www.vcoteam.info/tags/log.html</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/log.html</guid>
+      <guid>http://www.vcoteam.info/tags/log.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>DynamicTypes</title>
-      <link>http://new.vcoteam.info/tags/dynamictypes.html</link>
+      <link>http://www.vcoteam.info/tags/dynamictypes.html</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/dynamictypes.html</guid>
+      <guid>http://www.vcoteam.info/tags/dynamictypes.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>NSX</title>
-      <link>http://new.vcoteam.info/tags/nsx.html</link>
+      <link>http://www.vcoteam.info/tags/nsx.html</link>
       <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/nsx.html</guid>
+      <guid>http://www.vcoteam.info/tags/nsx.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCAC</title>
-      <link>http://new.vcoteam.info/tags/vcac.html</link>
+      <link>http://www.vcoteam.info/tags/vcac.html</link>
       <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vcac.html</guid>
+      <guid>http://www.vcoteam.info/tags/vcac.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>PowerShell</title>
-      <link>http://new.vcoteam.info/tags/powershell.html</link>
+      <link>http://www.vcoteam.info/tags/powershell.html</link>
       <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/powershell.html</guid>
+      <guid>http://www.vcoteam.info/tags/powershell.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>perl</title>
-      <link>http://new.vcoteam.info/tags/perl.html</link>
+      <link>http://www.vcoteam.info/tags/perl.html</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/perl.html</guid>
+      <guid>http://www.vcoteam.info/tags/perl.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>http://new.vcoteam.info/tags/python.html</link>
+      <link>http://www.vcoteam.info/tags/python.html</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/python.html</guid>
+      <guid>http://www.vcoteam.info/tags/python.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCO</title>
-      <link>http://new.vcoteam.info/tags/vco.html</link>
+      <link>http://www.vcoteam.info/tags/vco.html</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vco.html</guid>
+      <guid>http://www.vcoteam.info/tags/vco.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
-      <link>http://new.vcoteam.info/tags/sql.html</link>
+      <link>http://www.vcoteam.info/tags/sql.html</link>
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/sql.html</guid>
+      <guid>http://www.vcoteam.info/tags/sql.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>F5 Networks</title>
-      <link>http://new.vcoteam.info/tags/f5-networks.html</link>
+      <link>http://www.vcoteam.info/tags/f5-networks.html</link>
       <pubDate>Mon, 13 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/f5-networks.html</guid>
+      <guid>http://www.vcoteam.info/tags/f5-networks.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Horizon</title>
-      <link>http://new.vcoteam.info/tags/horizon.html</link>
+      <link>http://www.vcoteam.info/tags/horizon.html</link>
       <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/horizon.html</guid>
+      <guid>http://www.vcoteam.info/tags/horizon.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Twitter</title>
-      <link>http://new.vcoteam.info/tags/twitter.html</link>
+      <link>http://www.vcoteam.info/tags/twitter.html</link>
       <pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/twitter.html</guid>
+      <guid>http://www.vcoteam.info/tags/twitter.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>XaaS</title>
-      <link>http://new.vcoteam.info/tags/xaas.html</link>
+      <link>http://www.vcoteam.info/tags/xaas.html</link>
       <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/xaas.html</guid>
+      <guid>http://www.vcoteam.info/tags/xaas.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Domain</title>
-      <link>http://new.vcoteam.info/tags/domain.html</link>
+      <link>http://www.vcoteam.info/tags/domain.html</link>
       <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/domain.html</guid>
+      <guid>http://www.vcoteam.info/tags/domain.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>CIFS</title>
-      <link>http://new.vcoteam.info/tags/cifs.html</link>
+      <link>http://www.vcoteam.info/tags/cifs.html</link>
       <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/cifs.html</guid>
+      <guid>http://www.vcoteam.info/tags/cifs.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCHS</title>
-      <link>http://new.vcoteam.info/tags/vchs.html</link>
+      <link>http://www.vcoteam.info/tags/vchs.html</link>
       <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vchs.html</guid>
+      <guid>http://www.vcoteam.info/tags/vchs.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>VIX</title>
-      <link>http://new.vcoteam.info/tags/vix.html</link>
+      <link>http://www.vcoteam.info/tags/vix.html</link>
       <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vix.html</guid>
+      <guid>http://www.vcoteam.info/tags/vix.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>IaaS</title>
-      <link>http://new.vcoteam.info/tags/iaas.html</link>
+      <link>http://www.vcoteam.info/tags/iaas.html</link>
       <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/iaas.html</guid>
+      <guid>http://www.vcoteam.info/tags/iaas.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>SOAP</title>
-      <link>http://new.vcoteam.info/tags/soap.html</link>
+      <link>http://www.vcoteam.info/tags/soap.html</link>
       <pubDate>Mon, 07 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/soap.html</guid>
+      <guid>http://www.vcoteam.info/tags/soap.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>NetApp</title>
-      <link>http://new.vcoteam.info/tags/netapp.html</link>
+      <link>http://www.vcoteam.info/tags/netapp.html</link>
       <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/netapp.html</guid>
+      <guid>http://www.vcoteam.info/tags/netapp.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Excel</title>
-      <link>http://new.vcoteam.info/tags/excel.html</link>
+      <link>http://www.vcoteam.info/tags/excel.html</link>
       <pubDate>Fri, 22 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/excel.html</guid>
+      <guid>http://www.vcoteam.info/tags/excel.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCD</title>
-      <link>http://new.vcoteam.info/tags/vcd.html</link>
+      <link>http://www.vcoteam.info/tags/vcd.html</link>
       <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vcd.html</guid>
+      <guid>http://www.vcoteam.info/tags/vcd.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSphere</title>
-      <link>http://new.vcoteam.info/tags/vsphere.html</link>
+      <link>http://www.vcoteam.info/tags/vsphere.html</link>
       <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vsphere.html</guid>
+      <guid>http://www.vcoteam.info/tags/vsphere.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCAT</title>
-      <link>http://new.vcoteam.info/tags/vcat.html</link>
+      <link>http://www.vcoteam.info/tags/vcat.html</link>
       <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vcat.html</guid>
+      <guid>http://www.vcoteam.info/tags/vcat.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vShield</title>
-      <link>http://new.vcoteam.info/tags/vshield.html</link>
+      <link>http://www.vcoteam.info/tags/vshield.html</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vshield.html</guid>
+      <guid>http://www.vcoteam.info/tags/vshield.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>ESXi</title>
-      <link>http://new.vcoteam.info/tags/esxi.html</link>
+      <link>http://www.vcoteam.info/tags/esxi.html</link>
       <pubDate>Tue, 24 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/esxi.html</guid>
+      <guid>http://www.vcoteam.info/tags/esxi.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCM</title>
-      <link>http://new.vcoteam.info/tags/vcm.html</link>
+      <link>http://www.vcoteam.info/tags/vcm.html</link>
       <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vcm.html</guid>
+      <guid>http://www.vcoteam.info/tags/vcm.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>UIM</title>
-      <link>http://new.vcoteam.info/tags/uim.html</link>
+      <link>http://www.vcoteam.info/tags/uim.html</link>
       <pubDate>Mon, 05 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/uim.html</guid>
+      <guid>http://www.vcoteam.info/tags/uim.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>AMQP</title>
-      <link>http://new.vcoteam.info/tags/amqp.html</link>
+      <link>http://www.vcoteam.info/tags/amqp.html</link>
       <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/amqp.html</guid>
+      <guid>http://www.vcoteam.info/tags/amqp.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>CIM</title>
-      <link>http://new.vcoteam.info/tags/cim.html</link>
+      <link>http://www.vcoteam.info/tags/cim.html</link>
       <pubDate>Tue, 18 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/cim.html</guid>
+      <guid>http://www.vcoteam.info/tags/cim.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Persepctives</title>
-      <link>http://new.vcoteam.info/tags/persepctives.html</link>
+      <link>http://www.vcoteam.info/tags/persepctives.html</link>
       <pubDate>Tue, 04 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/persepctives.html</guid>
+      <guid>http://www.vcoteam.info/tags/persepctives.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Infoblox</title>
-      <link>http://new.vcoteam.info/tags/infoblox.html</link>
+      <link>http://www.vcoteam.info/tags/infoblox.html</link>
       <pubDate>Fri, 16 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/infoblox.html</guid>
+      <guid>http://www.vcoteam.info/tags/infoblox.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>SNMP</title>
-      <link>http://new.vcoteam.info/tags/snmp.html</link>
+      <link>http://www.vcoteam.info/tags/snmp.html</link>
       <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/snmp.html</guid>
+      <guid>http://www.vcoteam.info/tags/snmp.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCenter</title>
-      <link>http://new.vcoteam.info/tags/vcenter.html</link>
+      <link>http://www.vcoteam.info/tags/vcenter.html</link>
       <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vcenter.html</guid>
+      <guid>http://www.vcoteam.info/tags/vcenter.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>SSL</title>
-      <link>http://new.vcoteam.info/tags/ssl.html</link>
+      <link>http://www.vcoteam.info/tags/ssl.html</link>
       <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/ssl.html</guid>
+      <guid>http://www.vcoteam.info/tags/ssl.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>LabManager</title>
-      <link>http://new.vcoteam.info/tags/labmanager.html</link>
+      <link>http://www.vcoteam.info/tags/labmanager.html</link>
       <pubDate>Fri, 24 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/labmanager.html</guid>
+      <guid>http://www.vcoteam.info/tags/labmanager.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>VSM</title>
-      <link>http://new.vcoteam.info/tags/vsm.html</link>
+      <link>http://www.vcoteam.info/tags/vsm.html</link>
       <pubDate>Mon, 20 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vsm.html</guid>
+      <guid>http://www.vcoteam.info/tags/vsm.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>VUM</title>
-      <link>http://new.vcoteam.info/tags/vum.html</link>
+      <link>http://www.vcoteam.info/tags/vum.html</link>
       <pubDate>Wed, 15 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vum.html</guid>
+      <guid>http://www.vcoteam.info/tags/vum.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>UCS</title>
-      <link>http://new.vcoteam.info/tags/ucs.html</link>
+      <link>http://www.vcoteam.info/tags/ucs.html</link>
       <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/ucs.html</guid>
+      <guid>http://www.vcoteam.info/tags/ucs.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCloud Director</title>
-      <link>http://new.vcoteam.info/tags/vcloud-director.html</link>
+      <link>http://www.vcoteam.info/tags/vcloud-director.html</link>
       <pubDate>Mon, 28 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vcloud-director.html</guid>
+      <guid>http://www.vcoteam.info/tags/vcloud-director.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCAP</title>
-      <link>http://new.vcoteam.info/tags/vcap.html</link>
+      <link>http://www.vcoteam.info/tags/vcap.html</link>
       <pubDate>Wed, 26 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vcap.html</guid>
+      <guid>http://www.vcoteam.info/tags/vcap.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>plug-ins</title>
-      <link>http://new.vcoteam.info/tags/plug-ins.html</link>
+      <link>http://www.vcoteam.info/tags/plug-ins.html</link>
       <pubDate>Wed, 19 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/plug-ins.html</guid>
+      <guid>http://www.vcoteam.info/tags/plug-ins.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Onyx</title>
-      <link>http://new.vcoteam.info/tags/onyx.html</link>
+      <link>http://www.vcoteam.info/tags/onyx.html</link>
       <pubDate>Fri, 29 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/onyx.html</guid>
+      <guid>http://www.vcoteam.info/tags/onyx.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>LCM</title>
-      <link>http://new.vcoteam.info/tags/lcm.html</link>
+      <link>http://www.vcoteam.info/tags/lcm.html</link>
       <pubDate>Tue, 07 Sep 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/lcm.html</guid>
+      <guid>http://www.vcoteam.info/tags/lcm.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCenter Orchestrator</title>
-      <link>http://new.vcoteam.info/tags/vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/tags/vcenter-orchestrator.html</link>
       <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/tags/vcenter-orchestrator.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Storage I/O</title>
-      <link>http://new.vcoteam.info/tags/storage-i/o.html</link>
+      <link>http://www.vcoteam.info/tags/storage-i/o.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/tags/storage-i/o.html</guid>
+      <guid>http://www.vcoteam.info/tags/storage-i/o.html</guid>
       <description></description>
     </item>
     

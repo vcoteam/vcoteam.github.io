@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vCO Team</title>
-    <link>http://new.vcoteam.info/authors/burke-azbill.html</link>
+    <link>http://www.vcoteam.info/authors/burke-azbill.html</link>
     <description>Recent content on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://new.vcoteam.info/authors/burke-azbill/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/authors/burke-azbill/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

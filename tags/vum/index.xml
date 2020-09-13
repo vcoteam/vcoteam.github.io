@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VUM on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/vum.html</link>
+    <link>http://www.vcoteam.info/tags/vum.html</link>
     <description>Recent content in VUM on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jun 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/vum/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/vum/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for vCenter Update Manager</title>
-      <link>http://new.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</link>
       <pubDate>Wed, 15 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</guid>
       <description>VMware just released another new vCenter Orchestrator plug-in. this time it is the turn to vCenter Update Manager to be orchestrated.
 The main operations supported by this plug-in are:Creating a patch baseline: This is a patch repository containing the ESX host and VM patches attached to a vCenter. You can filter which patch to get from provider sites based on vendor, product, severity, update type, date.Attach a baseline to a set of vCenter objects.</description>
     </item>

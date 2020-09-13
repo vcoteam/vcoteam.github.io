@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Installation and Configuration on vCO Team</title>
-    <link>http://new.vcoteam.info/question-answer/installation-and-configuration.html</link>
+    <link>http://www.vcoteam.info/question-answer/installation-and-configuration.html</link>
     <description>Recent content in Installation and Configuration on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Nov 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/question-answer/installation-and-configuration/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/question-answer/installation-and-configuration/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to configure vCenter Orchestrator 4.1 with PostgreSQL</title>
-      <link>http://new.vcoteam.info/question-answer/installation-and-configuration/91-how-to-configure-vcenter-orchestrator-41-with-postgresql.html</link>
+      <link>http://www.vcoteam.info/question-answer/installation-and-configuration/91-how-to-configure-vcenter-orchestrator-41-with-postgresql.html</link>
       <pubDate>Mon, 12 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/installation-and-configuration/91-how-to-configure-vcenter-orchestrator-41-with-postgresql.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/installation-and-configuration/91-how-to-configure-vcenter-orchestrator-41-with-postgresql.html</guid>
       <description>Since vCenter Orchestrator 4.1 PostgreSQL is not listed in the vCO configuration database tab drop down databases list.
 To enable it back:
 Edit vmo.properties in C:\\Program Files\\VMware\\Orchestrator\\app-server\\server\\vmo\\confAdd this line: ch.dunes.config.enable-unsupported-db-providers=truePlease note that this is an unsupported configuration - Do not do this on production servers !</description>
@@ -24,10 +24,10 @@ To enable it back:
     
     <item>
       <title>How to select OpenLDAP as directory service in vCenter Orchestrator 4.1</title>
-      <link>http://new.vcoteam.info/question-answer/installation-and-configuration/92-how-to-select-openldap-as-directory-service-in-vcenter-orchestrator-41.html</link>
+      <link>http://www.vcoteam.info/question-answer/installation-and-configuration/92-how-to-select-openldap-as-directory-service-in-vcenter-orchestrator-41.html</link>
       <pubDate>Mon, 12 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/installation-and-configuration/92-how-to-select-openldap-as-directory-service-in-vcenter-orchestrator-41.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/installation-and-configuration/92-how-to-select-openldap-as-directory-service-in-vcenter-orchestrator-41.html</guid>
       <description>Since vCenter Orchestrator 4.1 OpenLDAP is not listed in the vCO configuration LDAP tab drop down directory services list.
 To enable it back:
 Edit vmo.properties in C:\\Program Files\\VMware\\Orchestrator\\app-server\\server\\vmo\\confAdd this line: ch.dunes.config.enable-unsupported-ldap-providers=truePlease note that this is an unsupported configuration - Do not do this on production servers !</description>
@@ -35,29 +35,29 @@ Edit vmo.properties in C:\\Program Files\\VMware\\Orchestrator\\app-server\\serv
     
     <item>
       <title>Does vCenter Orchestrator support Oracle Real Application Clusters (RAC) ?</title>
-      <link>http://new.vcoteam.info/question-answer/installation-and-configuration/90-does-vcenter-orchestrator-support-oracle-real-application-clusters-rac-.html</link>
+      <link>http://www.vcoteam.info/question-answer/installation-and-configuration/90-does-vcenter-orchestrator-support-oracle-real-application-clusters-rac-.html</link>
       <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/installation-and-configuration/90-does-vcenter-orchestrator-support-oracle-real-application-clusters-rac-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/installation-and-configuration/90-does-vcenter-orchestrator-support-oracle-real-application-clusters-rac-.html</guid>
       <description>Not out of the box but it can with following these directions.</description>
     </item>
     
     <item>
       <title>How do I install / configure / enable vCO ?</title>
-      <link>http://new.vcoteam.info/question-answer/installation-and-configuration/85-how-do-i-install-configure-enable-vco.html</link>
+      <link>http://www.vcoteam.info/question-answer/installation-and-configuration/85-how-do-i-install-configure-enable-vco.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/installation-and-configuration/85-how-do-i-install-configure-enable-vco.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/installation-and-configuration/85-how-do-i-install-configure-enable-vco.html</guid>
       <description>Please read the vCO Installation and Configuration Guide and / or follow our installation tutorial
 .</description>
     </item>
     
     <item>
       <title>I have a configuration problem in vCO with xyz. How do I solve it ?</title>
-      <link>http://new.vcoteam.info/question-answer/installation-and-configuration/84-i-have-a-configuration-problem-with-xyz-how-do-i-solve-it-.html</link>
+      <link>http://www.vcoteam.info/question-answer/installation-and-configuration/84-i-have-a-configuration-problem-with-xyz-how-do-i-solve-it-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/installation-and-configuration/84-i-have-a-configuration-problem-with-xyz-how-do-i-solve-it-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/installation-and-configuration/84-i-have-a-configuration-problem-with-xyz-how-do-i-solve-it-.html</guid>
       <description>Please use VMware vCO Admin community forum for any specific technical implementation questions.</description>
     </item>
     

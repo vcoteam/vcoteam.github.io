@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IaaS on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/iaas.html</link>
+    <link>http://www.vcoteam.info/tags/iaas.html</link>
     <description>Recent content in IaaS on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Nov 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/iaas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/iaas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Working with vCloud Automation Center IaaS entities</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</link>
       <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</guid>
       <description>vCloud Automation Center has several constructs such as blueprints, business groups, reservations to manage the virtual machines lifecycle and governance policies.
 While most customers will use vCloud Automation Center out of the box some have several use cases for automation and integration. This is where vCenter Orchestrator comes into the picture.
 The vCloud Automation Center Infrastructure as a service data model (vCAC IaaS) vCAC IaaS has an extensible model consisting of different metamodels.</description>

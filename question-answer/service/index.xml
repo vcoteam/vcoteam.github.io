@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Service on vCO Team</title>
-    <link>http://new.vcoteam.info/question-answer/service.html</link>
+    <link>http://www.vcoteam.info/question-answer/service.html</link>
     <description>Recent content in Service on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Nov 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/question-answer/service/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/question-answer/service/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Are there any professional services available for vCO ?</title>
-      <link>http://new.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</link>
+      <link>http://www.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</guid>
       <description>There are VMware and VMware partner services such as:
  Consulting services (VMware and partners) - Requirement analysis, implementation workshops Orchestration Solution Centers (VMware and partners) - Design, develop vCO workflows. vCO Instructor Lead Training (VMware) - 5 days  </description>
     </item>
     
     <item>
       <title>How can I engage vCO professional services ?</title>
-      <link>http://new.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</link>
+      <link>http://www.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</link>
       <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</guid>
+      <guid>http://www.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</guid>
       <description>Please contact your VMware sales representative to engage VMware or partners Professional Services. VMware has vCenter Orchestrator Subject Matter Experts in different regions and a development team delivering engagements worldwide.</description>
     </item>
     

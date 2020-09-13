@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Infoblox on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/infoblox.html</link>
+    <link>http://www.vcoteam.info/tags/infoblox.html</link>
     <description>Recent content in Infoblox on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Sep 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/infoblox/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/infoblox/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Infoblox released a Tech Note on their vCenter Orchestrator plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</link>
       <pubDate>Fri, 16 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</guid>
       <description>Following their press-release and VMworld 2011 presentation Infoblox has now published a technical note which can help you to learn how the Infoblox VMware vCenter Orchestrator Plug-in alleviates the challenges of IP Address Management within rapidly expanding virtualized environments.
 Quoting a part of the Tech Note:
 The plug-in was developed for and is delivered with the VMware vCenter Orchestrator (vCO), which works in tandem with the VMware vCloud Director (vCD). The vCD provides automated IP addressing and related management capabilities in real time as virtual machines are created and destroyed.</description>
@@ -24,10 +24,10 @@ The plug-in was developed for and is delivered with the VMware vCenter Orchestra
     
     <item>
       <title>Infoblox announced a vCenter Orchestrator plug-in</title>
-      <link>http://new.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</link>
       <pubDate>Tue, 30 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</guid>
       <description>Quoting the Infoblox press-release:
 Today at VMworld® 2011, Infoblox Inc. announced it is delivering a fully integrated plug-in for the VMware vCloud® Orchestrator community. Working with VMware vCloud Director™, the integrated solution provides automated IP addressing and related management capabilities in real-time as virtual machines are created.
 As a result, the Infoblox plug-in accelerates private and public cloud deployment, simplifies management and bridges network and virtual IT team silos by enabling automated assignment of IP addresses to virtual machines.</description>

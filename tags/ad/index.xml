@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AD on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/ad.html</link>
+    <link>http://www.vcoteam.info/tags/ad.html</link>
     <description>Recent content in AD on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Oct 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/ad/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/ad/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to Configure vRA&#39;s Embedded vRO to Allow Domain Account Login</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</guid>
       <description>Two years ago, I wrote a similar article around vCAC&amp;rsquo;s embedded vCO but a lot has changed since then so those older steps no longer apply. This brief article will quickly walk you through the steps required to allow vRealize Automation 7.0/7.1/7.2&amp;rsquo;s embedded vRealize Orchestrator to allow Active Directory Domain accounts login to the vRO Client.
 Pre-Requisites This article assumes the following:
  vRealize Automation 7.0-7.2 is installed and configured (NOTE: This has not been tested with 7.</description>
@@ -24,66 +24,66 @@ Pre-Requisites This article assumes the following:
     
     <item>
       <title>How To Configure vCAC&#39;s Embedded vCO To Allow Domain Account Login</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</link>
       <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</guid>
       <description>If you&amp;rsquo;re reading this article, it may be because you have installed vCloud Automation Center (vCAC) and are interested in using an account other than administrator@vsphere.local to login to the embedded vCenter Orchestrator (vCO) server. By default, the vCO Server uses a &amp;ldquo;vcoadmins&amp;rdquo; group in the &amp;ldquo;vsphere.local&amp;rdquo; domain provided by the SSO server that vCAC was configured to use. This short tutorial will step you through a pretty basic configuration where I have just deployed a vCAC 6.</description>
     </item>
     
     <item>
       <title>How to Change AD:UserGroup Scope and Type</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/277-how-to-change-ad-usergroup-scope-and-type.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/277-how-to-change-ad-usergroup-scope-and-type.html</link>
       <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/277-how-to-change-ad-usergroup-scope-and-type.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/277-how-to-change-ad-usergroup-scope-and-type.html</guid>
       <description>The AD plug-in for vCenter Orchestrator (vCO) allows for the creation of AD:UserGroup objects as well as the management of its members. A missing option though is to define the type of Group to create. Read on to learn how I came up with a workflow that allows you to change the group to any group type and scope you like.
 Research The first thing I did is use the workflow from the How to get Active Directory User Attributes article to create a simlar workflow for UserGroups.</description>
     </item>
     
     <item>
       <title>How to get Active Directory User Attributes</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/273-how-to-get-active-directory-user-properties.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/273-how-to-get-active-directory-user-properties.html</link>
       <pubDate>Wed, 15 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/273-how-to-get-active-directory-user-properties.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/273-how-to-get-active-directory-user-properties.html</guid>
       <description>Have you ever had the need to get some attributes of your Active Directory user account? Perhaps Manager for an approval, maybe direct reports, etc&amp;hellip; but not sure how to work with the AD:User object in vCO&amp;hellip; Well here&amp;rsquo;s a great little snippet that can help you quickly identify the available information attached to the AD:User account you specify.
 Show AD User Info  Simply place the following script into a scriptable task in a new workflow.</description>
     </item>
     
     <item>
       <title>Remove computer from AD using vCO during vCAC Decommission</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</link>
       <pubDate>Wed, 17 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</guid>
       <description>As vCloud Automation Center (vCAC) gains traction, so too does the need for details on how to extend it using vCenter Orchestrator (vCO). I have kept an eye out for good articles on vCAC and just saw a great one at the DailyHypervisor.com blog around Adding a computer account to Active Directory OU. This is something that we had done for LifeCycleManager (LCM) quite some time back and feel it is a good candidate for a vCO-centeric article.</description>
     </item>
     
     <item>
       <title>VMware Blog demonstrates an user accounts creation scenario with the Active Directory Plug-in for vCenter Orchestrator</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html</link>
       <pubDate>Tue, 17 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html</guid>
       <description>Following the release of the Microsoft Active Directory plug-in VMware demonstrates how to combine building block workflows into a custom one.</description>
     </item>
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for Microsoft Active Directory</title>
-      <link>http://new.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</link>
       <pubDate>Wed, 04 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</guid>
       <description>Quoting the release notes : The VMware vCenter Orchestrator plug-in for Microsoft Active Directory allows organizations to automate the management of directory services tasks, particularly as they pertain to cloud provisioning use cases. For instance, the plug-in enables the automatic provisioning of vCloud Director organizations based on data retrieved from Active Directory. The plug-in also includes many administrative actions related to computers, organizations, user groups, and users, such as resetting passwords or adding users to a user group.</description>
     </item>
     
     <item>
       <title>How to create an all in one vCO dev server on Windows 2008 64-bit</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html</link>
       <pubDate>Sat, 28 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html</guid>
       <description>The recently released vCenter Orchestrator 4.1 requires and takes advantage of a 64-bit OS. For development purposes, it can be desirable to have a single server to perform the following roles:
 Windows Domain Controller (Active Directory)E-mail Server (POP3/SMTP)Database ServervCenter ServervCO ServervCO ClientThis short article is intended to help you get all these services running on a single server. Setting up these features in an incorrect order may result in conflicting ports and/or the inability to get some of the software installed.</description>
     </item>

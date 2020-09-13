@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>XaaS on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/xaas.html</link>
+    <link>http://www.vcoteam.info/tags/xaas.html</link>
     <description>Recent content in XaaS on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Apr 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/xaas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/xaas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Enabling VMware vCloud Automation Center XaaS with vCO dynamic types</title>
-      <link>http://new.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</link>
+      <link>http://www.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</link>
       <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</guid>
+      <guid>http://www.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</guid>
       <description>You may have noticed that the vCO 5.5.1 release notes are listing a new feature called &amp;ldquo;Dynamic Types&amp;rdquo;
 &amp;ldquo;Workflow developers are now able to explore the new Dynamic Types which currently is being shipped with Beta quality. They can easily extend vCenter Orchestrator plug-ins by adding their custom types accessible from the scripting API. New types become available in the inventory right after creation and they could be directly leveraged from the vCAC ASD context as part of the cloud provisioning process and XaaS definition.</description>
     </item>

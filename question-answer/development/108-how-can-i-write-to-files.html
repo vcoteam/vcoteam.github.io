@@ -10,7 +10,7 @@
 		<meta property="og:title" content="How can I write to files?" />
 <meta property="og:description" content="&lt;p&gt;When scripting workflows in VMware vCenter Orchestrator (vCO) it is often desirable to read or write to local files on the vCO server whether this is a .conf, .txt, .cmd, .bat, .xml, or any other text file. In order to do so, you must be sure to either work with files in a pre-approved folder or add your custom folder to a configuration file.&lt;/p&gt;&lt;p&gt;For full details on the following information, please see page 64 of the &lt;strong&gt;1&lt;/strong&gt;, section &#34;&lt;strong&gt;&lt;em&gt;Setting Server File System Access from Workflows and JavaScript&lt;/em&gt;&lt;/strong&gt;&#34;. In order to read/write to files on your server, you must edit the js-io-rights.conf file and restart your vCO service. Otherwise, you must read/write to the temp folder or a folder that already has rights assigned. You can get the temp folder using the following:&lt;/p&gt;&lt;pre&gt;var tempFolder = System.getTempDirectory();&lt;/pre&gt;&lt;p&gt;The default contents of the js-io-rights.conf file are as follows:&lt;/p&gt;&lt;pre&gt;-rwx C:/&#43;rwx C:/orchestrator&#43;rx ../../configuration/jetty/logs/&#43;rx ../server/vmo/log/&#43;rx ../bin/&#43;rx ./boot.properties&#43;rx ../server/vmo/conf/&#43;rx ../server/vmo/conf/plugins/&#43;rx ../server/vmo/deploy/vmo-server/vmo-ds.xml&#43;rx ../../apps/&#43;r ../../version.txt&lt;/pre&gt;&lt;p&gt;So, based on the file contents above, without editing or restarting the service, if you update your script to write your text file to the c:\orchestrator folder (you will need to create this folder on your vCO server, the script should work.&lt;/p&gt;&lt;p&gt;Now, as a quick example, create a new workflow with a single scriptable task in it. Inside the scriptable task, insert the following code (I&#34;m assuming a WINDOWS based vCO server here):&lt;/p&gt;&lt;pre class=&#34;brush:javascript&#34;&gt;var fw = new FileWriter(&#34;c:/orchestrator/test.txt&#34;);fw.open();fw.write(&#34;Hello there, is this working?&#34;);fw.close();&lt;/pre&gt;&lt;p&gt;Save and close your worklow after validating.&lt;/p&gt;&lt;p&gt;Now try running it.&lt;/p&gt;&lt;p&gt;Check the C:/orchestrator folder and confirm there is now a test.txt file with the content specified in the script.&lt;/p&gt;&lt;p&gt;Hope this helps :)&lt;/p&gt;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://new.vcoteam.info/question-answer/development/108-how-can-i-write-to-files.html" />
+<meta property="og:url" content="http://www.vcoteam.info/question-answer/development/108-how-can-i-write-to-files.html" />
 <meta property="article:published_time" content="2010-10-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2010-10-21T00:00:00+00:00" />
 
@@ -191,7 +191,7 @@ fw.close();</pre>
 			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="http://new.vcoteam.info/" />
+		<input type="hidden" name="sitesearch" value="http://www.vcoteam.info/" />
 	</form>
 </div>
 <div class="widget-recent widget">

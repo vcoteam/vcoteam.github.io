@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>UCS on vCO Team</title>
-    <link>http://new.vcoteam.info/tags/ucs.html</link>
+    <link>http://www.vcoteam.info/tags/ucs.html</link>
     <description>Recent content in UCS on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Apr 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/tags/ucs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/tags/ucs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>VMware Blog posts a Sample scenario for the Cisco UCS Manager plug-in!</title>
-      <link>http://new.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</link>
       <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</guid>
       <description>As some of you may know, VMware recently launched an official vCenter Orchestrator blog! The team at VMware has put together a nice sample scenario post that walks you through the use of the Cisco UCS Manager plug-in. Be sure to stop by and check it out! To keep up on the posts there, feel free to follow their RSS Feed.</description>
     </item>
     
     <item>
       <title>VMware released the vCenter Orchestrator Plug-in for the Cisco UCS Manager</title>
-      <link>http://new.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</link>
+      <link>http://www.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</link>
       <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</guid>
+      <guid>http://www.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</guid>
       <description>With this release vCenter Orchestrator is extending his reach in the automation of the cloud infrastructure with managing the physical infrastructure supporting it. For those that do not know yet it is installed as part of vCenter (starting with version 4.0) and usable at no additional cost. It is the only Orchestrator platform supporting full functionality of vCenter and vCloud Director. With the release of the Cisco UCS Manager the end to end provisioning of physical resources - virtual infrastructure - multi-tenant cloud Organizations, virtual Datacenters, vApps is now possible.</description>
     </item>
     

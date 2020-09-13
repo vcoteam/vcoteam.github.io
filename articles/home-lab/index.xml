@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home Lab on vCO Team</title>
-    <link>http://new.vcoteam.info/articles/home-lab.html</link>
+    <link>http://www.vcoteam.info/articles/home-lab.html</link>
     <description>Recent content in Home Lab on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://new.vcoteam.info/articles/home-lab/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.vcoteam.info/articles/home-lab/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lightweight DNS Server for Home or Test Lab</title>
-      <link>http://new.vcoteam.info/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html</link>
+      <link>http://www.vcoteam.info/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html</guid>
+      <guid>http://www.vcoteam.info/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html</guid>
       <description>A power outage recently made a mess of my home lab due to a resulting issue with VSAN. As a result, I needed to setup a fresh Virtual Center Server Appliance (VCSA), but my DNS server was on the VSAN! vCenter now requires working DNS resolution during install&amp;hellip; What to do??
 Well, I&amp;rsquo;ve recently been getting started with Docker so figured this would be a good opportunity to use that to address an immediate need that I, and potentially others, would need: A quick and easy lightweight DNS server that could be used for resolving my lab domain.</description>
     </item>
     
     <item>
       <title>Nuc Nuc Nuc - vSAN !</title>
-      <link>http://new.vcoteam.info/articles/home-lab/320-nuc-nuc-nuc-vsan.html</link>
+      <link>http://www.vcoteam.info/articles/home-lab/320-nuc-nuc-nuc-vsan.html</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/home-lab/320-nuc-nuc-nuc-vsan.html</guid>
+      <guid>http://www.vcoteam.info/articles/home-lab/320-nuc-nuc-nuc-vsan.html</guid>
       <description>In a previous article VMworld 2016 Barcelona Hackathon, I noted that I had won an i3 NUC at VMworld in Barcelona. After playing with that for a few days and helping Alan Renouf test his Home Lab Deployment Script, I decided I wanted to have a full 3 node cluster - but with the i5 Processor &amp;hellip; so, I went shopping!
   Gear Intel NUC i5 Model:
 Intel NUC i5: NUC6i5SYH</description>
@@ -34,19 +34,19 @@ Intel NUC i5: NUC6i5SYH</description>
     
     <item>
       <title>How to create USB Boot stick for ESXi</title>
-      <link>http://new.vcoteam.info/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html</link>
+      <link>http://www.vcoteam.info/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html</link>
       <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html</guid>
+      <guid>http://www.vcoteam.info/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html</guid>
       <description>The Intel NUC has become a popular device for a variety of use cases. It&amp;rsquo;s quite a powerful little box that can be used as a regular Windows/Linux machine, a Home Theater PC (HTPC), or a techie Test/Dev box for many different types of software, including VMware ESXi - and even vSAN! This will be a short blog post on setting up a USB boot stick for the installation of ESXi on a SanDisk Ultra Fit 16GB USB.</description>
     </item>
     
     <item>
       <title>Burke&#39;s Home Lab</title>
-      <link>http://new.vcoteam.info/articles/home-lab/313-burke-s-home-lab.html</link>
+      <link>http://www.vcoteam.info/articles/home-lab/313-burke-s-home-lab.html</link>
       <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/home-lab/313-burke-s-home-lab.html</guid>
+      <guid>http://www.vcoteam.info/articles/home-lab/313-burke-s-home-lab.html</guid>
       <description>Since I&amp;rsquo;m preparing to write a short series of articles on my recent Home Lab purchases, I figured I should preface those articles with a little history on my current hardware&amp;hellip;
 During the summer of 2011 around June/July, I wanted to have a home environment to install, configure, and test things - you know, the typical techie Hands-On environment. My requirements were as follows:
  Try to keep costs down Try for quiet equipment Minimize power consumption  This article will describe the original purchase and progression of the lab.</description>
@@ -54,10 +54,10 @@ During the summer of 2011 around June/July, I wanted to have a home environment 
     
     <item>
       <title>VMworld 2016 Barcelona - Hackathon</title>
-      <link>http://new.vcoteam.info/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html</link>
+      <link>http://www.vcoteam.info/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html</link>
       <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://new.vcoteam.info/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html</guid>
+      <guid>http://www.vcoteam.info/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html</guid>
       <description>This post is about my experience with the VMworld 2016 Barcelona Hackathon. Since I had never participated in such an event, I wasn&amp;rsquo;t sure about signing up. I hope that after reading this post, you consider signing up for any such Hackathon in the future, whether it is an internal event, VMUG gathering, VMworld, or any similar gathering of tech-geeks like me and many of the readers of this blog!</description>
     </item>
     
