@@ -6,11 +6,7 @@
     <description>Recent content in LabManager on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2011 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/labmanager/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 24 Jun 2011 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/labmanager/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automate VMware LabManager with vCenter Orchestrator</title>
       <link>http://www.vcoteam.info/articles/learn-vco/168-how-to-automate-labmanager-with-vco.html</link>

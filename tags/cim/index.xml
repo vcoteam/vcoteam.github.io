@@ -6,11 +6,7 @@
     <description>Recent content in CIM on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Oct 2011 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/cim/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 18 Oct 2011 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/cim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMware Labs released the vCenter Orchestrator CIM Plug-in</title>
       <link>http://www.vcoteam.info/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</link>

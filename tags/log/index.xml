@@ -6,11 +6,7 @@
     <description>Recent content in log on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Apr 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/log/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 15 Apr 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/log/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Log plug-ins HTTP communications</title>
       <link>http://www.vcoteam.info/articles/learn-vco/303-log-plug-ins-http-communications.html</link>

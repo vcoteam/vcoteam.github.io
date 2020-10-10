@@ -6,11 +6,7 @@
     <description>Recent content in Twitter on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Apr 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 16 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dynamic Types tutorial : Implement your own Twitter plug-in without any scripting</title>
       <link>http://www.vcoteam.info/articles/learn-vco/282-dynamic-types-tutorial-implement-your-own-twitter-plug-in-without-any-scripting.html</link>

@@ -6,11 +6,7 @@
     <description>Recent content in vRA on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/vra/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/vra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a Kubernetes Blueprint for vRealize Automation - Intro</title>
       <link>http://www.vcoteam.info/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html</link>

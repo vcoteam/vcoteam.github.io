@@ -6,11 +6,7 @@
     <description>Recent content in VIX on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Nov 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/vix/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 26 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/vix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leveraging the Guest Script Manager package</title>
       <link>http://www.vcoteam.info/articles/learn-vco/272-leveraging-the-guest-script-manager-package.html</link>

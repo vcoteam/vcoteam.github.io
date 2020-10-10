@@ -6,11 +6,7 @@
     <description>Recent content in Development on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/question-answer/development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 17 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/question-answer/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vCO data refresh from vCD weirdness</title>
       <link>http://www.vcoteam.info/question-answer/development/232-vco-data-refresh-from-vcd.html</link>

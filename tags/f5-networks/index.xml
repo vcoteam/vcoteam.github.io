@@ -6,11 +6,7 @@
     <description>Recent content in F5 Networks on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Oct 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/f5-networks/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 13 Oct 2014 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/f5-networks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extend Automation Center with F5 AFM using vCO &#43; Dynamic Types </title>
       <link>http://www.vcoteam.info/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</link>

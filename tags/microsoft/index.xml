@@ -6,11 +6,7 @@
     <description>Recent content in Microsoft on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to create a Microsoft DNS Dynamic Types plug-in ?</title>
       <link>http://www.vcoteam.info/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</link>

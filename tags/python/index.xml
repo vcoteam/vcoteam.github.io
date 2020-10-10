@@ -6,11 +6,7 @@
     <description>Recent content in python on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Jan 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 29 Jan 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to use Python to start an Orchestrator Workflow</title>
       <link>http://www.vcoteam.info/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</link>

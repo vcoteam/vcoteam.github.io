@@ -6,11 +6,7 @@
     <description>Recent content in VSM on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jun 2011 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/vsm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 20 Jun 2011 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/vsm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMware released Service Manager 9.0 vCenter Orchestrator connector</title>
       <link>http://www.vcoteam.info/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</link>

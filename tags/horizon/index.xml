@@ -6,11 +6,7 @@
     <description>Recent content in Horizon on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jun 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/horizon/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 20 Jun 2014 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/horizon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMware Horizon vCenter Orchestrator Plug-in Released</title>
       <link>http://www.vcoteam.info/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</link>

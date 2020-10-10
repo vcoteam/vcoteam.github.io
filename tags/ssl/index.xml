@@ -6,11 +6,7 @@
     <description>Recent content in SSL on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Aug 2011 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Aug 2011 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Work with vCO over SSL</title>
       <link>http://www.vcoteam.info/articles/learn-vco/181-work-with-vco-over-ssl.html</link>

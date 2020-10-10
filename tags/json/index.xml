@@ -6,11 +6,7 @@
     <description>Recent content in json on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 May 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/json/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 29 May 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/json/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating json objects in Orchestrator</title>
       <link>http://www.vcoteam.info/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</link>

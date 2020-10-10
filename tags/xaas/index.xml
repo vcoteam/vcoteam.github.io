@@ -6,11 +6,7 @@
     <description>Recent content in XaaS on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Apr 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/xaas/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/xaas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Enabling VMware vCloud Automation Center XaaS with vCO dynamic types</title>
       <link>http://www.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</link>

@@ -6,11 +6,7 @@
     <description>Recent content in AD on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Oct 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/ad/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 Oct 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/ad/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Configure vRA&#39;s Embedded vRO to Allow Domain Account Login</title>
       <link>http://www.vcoteam.info/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</link>

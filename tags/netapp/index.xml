@@ -6,11 +6,7 @@
     <description>Recent content in NetApp on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 May 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/netapp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 07 May 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/netapp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Orchestrate NetApp OnCommand Workflow Automation (WFA)</title>
       <link>http://www.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</link>

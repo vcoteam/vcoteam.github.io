@@ -6,11 +6,7 @@
     <description>Recent content in ESXi on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Apr 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 24 Apr 2012 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Manage Services on your ESXi Hosts with vCO</title>
       <link>http://www.vcoteam.info/articles/learn-vco/240-manage-services-on-your-esxi-hosts-with-vco.html</link>

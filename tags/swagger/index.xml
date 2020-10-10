@@ -6,11 +6,7 @@
     <description>Recent content in Swagger on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/swagger/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 14 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/swagger/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introducing Swagger UI on vRO 7.0.1</title>
       <link>http://www.vcoteam.info/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</link>

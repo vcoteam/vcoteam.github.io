@@ -6,11 +6,7 @@
     <description>Recent content in vSphere on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Sep 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 14 Sep 2012 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vSphere 5.1 Web client - The single pane of glass I always wanted</title>
       <link>http://www.vcoteam.info/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</link>

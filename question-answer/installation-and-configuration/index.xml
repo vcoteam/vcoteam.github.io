@@ -6,11 +6,7 @@
     <description>Recent content in Installation and Configuration on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/question-answer/installation-and-configuration/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 17 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/question-answer/installation-and-configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to configure vCenter Orchestrator 4.1 with PostgreSQL</title>
       <link>http://www.vcoteam.info/question-answer/installation-and-configuration/91-how-to-configure-vcenter-orchestrator-41-with-postgresql.html</link>

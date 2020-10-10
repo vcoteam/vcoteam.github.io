@@ -5,10 +5,6 @@
     <link>http://www.vcoteam.info/authors/burke-azbill.html</link>
     <description>Recent content on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="http://www.vcoteam.info/authors/burke-azbill/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="http://www.vcoteam.info/authors/burke-azbill/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

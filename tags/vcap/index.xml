@@ -6,11 +6,7 @@
     <description>Recent content in vCAP on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jan 2011 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/vcap/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 Jan 2011 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/vcap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vCenter Orchestrator VCAP Topic Brown Bag</title>
       <link>http://www.vcoteam.info/articles/learn-vco/124-vcenter-orchestrator-vcap-topic-brown-bag.html</link>

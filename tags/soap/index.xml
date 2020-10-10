@@ -6,11 +6,7 @@
     <description>Recent content in SOAP on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/soap/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 07 Oct 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/soap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to use the SOAPInterceptor to see the SOAP Header and Body</title>
       <link>http://www.vcoteam.info/articles/learn-vco/267-how-to-use-the-soapinterceptor-to-see-the-soap-header-and-body.html</link>

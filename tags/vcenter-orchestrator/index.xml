@@ -6,11 +6,7 @@
     <description>Recent content in vCenter Orchestrator on vCO Team</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 May 2010 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.vcoteam.info/tags/vcenter-orchestrator/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 May 2010 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/vcenter-orchestrator/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vCO Help Topics Request</title>
       <link>http://www.vcoteam.info/articles/vco-features/51-vco-help-topics-request.html</link>
