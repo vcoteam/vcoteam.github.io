@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.vcoteam.info/articles/synthesis.html</loc>
+    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vcoteam.info/tags/review.html</loc>
+    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vcoteam.info/tags/saas.html</loc>
+    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vcoteam.info/tags.html</loc>
+    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vcoteam.info/tags/tts.html</loc>
+    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.vcoteam.info/articles/vco-features.html</loc>
     <lastmod>2020-06-13T15:53:08-04:00</lastmod>
   </url>
@@ -24,11 +49,6 @@
   
   <url>
     <loc>http://www.vcoteam.info/tags/kubernetes.html</loc>
-    <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.vcoteam.info/tags.html</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
   </url>
   
