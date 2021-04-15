@@ -10,9 +10,10 @@
 		<meta property="og:title" content="Postman &#43; vRO = HTTP-REST Plug-in Operations" />
 <meta property="og:description" content="&lt;!-- Start ScreenSteps Content --&gt;&lt;p&gt;In a previous article, I stepped through the process of 1using the RestClient add-on for FireFox. This was before I was introduced to my new favorite REST client: 1! (1) In this article, I&#34;ll provide a little detail on an approach you can use to improve your work with REST APIs and consuming them with Orchestrator&#34;s REST plug-in. Throughout the article, I will use a FreeNAS 9.3.x Virtual Appliance as my target endpoint since it is 1, quick to setup, and has 1. Please note that the technique described here can be used for any API that Postman can access!&lt;/p&gt;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.vcoteam.info/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html" />
-<meta property="article:published_time" content="2015-05-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2015-05-20T00:00:00+00:00" />
+<meta property="og:url" content="http://www.vcoteam.info/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2015-05-20T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2015-05-20T00:00:00&#43;00:00" />
+
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Postman &#43; vRO = HTTP-REST Plug-in Operations"/>
@@ -214,7 +215,7 @@ Click the <strong>Download</strong> button to download the JSON file that holds 
          alt="orchestrator_workflow_process_postman_collection.png" width="394" height="56"/> 
 </figure>
 
-The &ldquo;Process Postman Collection&rdquo; workflow I have written makes this a piece of cake! Since Postman has kindly provided us a json formatted file, this is easily processed by Orchestrator!</p>
+The &ldquo;<a href="/files/ProcessPostmanCollectionUpdate.workflow" >Process Postman Collection</a>&rdquo; workflow I have written makes this a piece of cake! Since Postman has kindly provided us a json formatted file, this is easily processed by Orchestrator!</p>
 <h2 id="workflow-inputs">Workflow Inputs</h2>
 <p><figure>
     <img src="/images/postman-vro/workflow_inputs.png"
@@ -258,6 +259,20 @@ Each operation may now be reviewed/tested or used via workflows/actions!</p>
 <p><strong>UPDATE:</strong> Be sure to take a look at <a href="http://twitter.com/grantorchard"  target="_blank" rel="noreferrer noopener" >Grant Orchard&lt;</a>&rsquo;s collection noted in his article here: <a href="http://grantorchard.com/vcac/postman-collection-for-the-vra7-api/"  target="_blank" rel="noreferrer noopener" >Postman Collection for the vRA7 API</a></p>
 
     </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/postman/" rel="tag">postman</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/workflow/" rel="tag">workflow</a>
+		</li>
+	</ul>
+</div>
+    </footer>
   </article>
 </main>
 
@@ -380,6 +395,7 @@ Each operation may now be reviewed/tested or used via workflows/actions!</p>
 		<a class="widget-taglist__link widget__link btn" href="/tags/persepctives.html" title="Persepctives">Persepctives (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-in.html" title="Plug-in">Plug-in (38)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/plug-ins.html" title="plug-ins">plug-ins (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/postman.html" title="postman">postman (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powercli.html" title="PowerCLI">PowerCLI (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powershell.html" title="PowerShell">PowerShell (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/presentation.html" title="presentation">presentation (1)</a>
@@ -421,6 +437,7 @@ Each operation may now be reviewed/tested or used via workflows/actions!</p>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsm.html" title="VSM">VSM (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vsphere.html" title="vSphere">vSphere (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vum.html" title="VUM">VUM (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/workflow.html" title="workflow">workflow (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/xaas.html" title="XaaS">XaaS (1)</a>
 	</div>
 </div>
@@ -430,7 +447,7 @@ Each operation may now be reviewed/tested or used via workflows/actions!</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 vCO Team.
+			&copy; 2021 vCO Team.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>workflow on vCO Team</title>
+    <link>http://www.vcoteam.info/tags/workflow.html</link>
+    <description>Recent content in workflow on vCO Team</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 May 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://www.vcoteam.info/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postman &#43; vRO = HTTP-REST Plug-in Operations</title>
+      <link>http://www.vcoteam.info/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.vcoteam.info/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html</guid>
+      <description>In a previous article, I stepped through the process of working with vRealize Orchestrator&amp;rsquo;s (vRO) REST API using the RestClient add-on for FireFox. This was before I was introduced to my new favorite REST client: POSTMAN! @postmanclient In this article, I&amp;rsquo;ll provide a little detail on an approach you can use to improve your work with REST APIs and consuming them with Orchestrator&amp;rsquo;s REST plug-in. Throughout the article, I will use a FreeNAS 9.</description>
+    </item>
+    
+  </channel>
+</rss>

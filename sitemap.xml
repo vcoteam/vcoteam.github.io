@@ -1,1725 +1,1041 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>http://www.vcoteam.info/articles/synthesis.html</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/review.html</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/saas.html</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags.html</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/tts.html</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features.html</loc>
     <lastmod>2020-06-13T15:53:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/contact.html</loc>
     <lastmod>2020-06-12T23:58:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/blueprint.html</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/326-building-a-kubernetes-blueprint-for-vra-intro.html</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/kubernetes.html</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vra.html</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/container.html</loc>
     <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/coredns.html</loc>
     <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/dns.html</loc>
     <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/docker.html</loc>
     <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/docker-compose.html</loc>
     <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/github.html</loc>
     <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/lab.html</loc>
     <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/home-lab/325-lightweight-dns-server-for-home-or-test-lab.html</loc>
     <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/324-please-share-your-code-at-the-sample-exchange.html</loc>
     <lastmod>2018-03-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vro.html</loc>
     <lastmod>2018-03-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/323-how-to-create-a-microsoft-dns-dynamic-types-plug-in.html</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/microsoft.html</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/plug-in.html</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vra-7.x.html</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vrealize-automation.html</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vrealize-orchestrator.html</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vro-7.x.html</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/curl.html</loc>
     <lastmod>2017-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/322-how-to-update-a-resource-element-script-s-contents-using-curl.html</loc>
     <lastmod>2017-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/321-how-to-retrieve-a-script-resource-from-vro-via-curl.html</loc>
     <lastmod>2017-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/homelab.html</loc>
     <lastmod>2016-12-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/nuc.html</loc>
     <lastmod>2016-12-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/home-lab/320-nuc-nuc-nuc-vsan.html</loc>
     <lastmod>2016-12-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vsan.html</loc>
     <lastmod>2016-12-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/319-how-to-disable-storage-i-o-stats-collection-with-powercli-or-vro.html</loc>
     <lastmod>2016-12-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/powercli.html</loc>
     <lastmod>2016-12-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/bootable-usb.html</loc>
     <lastmod>2016-12-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/home-lab/317-how-to-create-usb-boot-stick-for-esxi.html</loc>
     <lastmod>2016-12-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/home-lab/313-burke-s-home-lab.html</loc>
     <lastmod>2016-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/hackathon.html</loc>
     <lastmod>2016-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/home-lab.html</loc>
     <lastmod>2016-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vmworld.html</loc>
     <lastmod>2016-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/home-lab/314-vmworld-2016-barcelona-hackathon.html</loc>
     <lastmod>2016-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/ad.html</loc>
     <lastmod>2016-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/312-how-to-configure-vra-s-embedded-vro-to-allow-domain-account-login.html</loc>
     <lastmod>2016-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/311-how-to-limit-number-of-workflow-tokens.html</loc>
     <lastmod>2016-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/api.html</loc>
     <lastmod>2016-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features/310-introducing-swagger-ui-on-vro-7-0-x.html</loc>
     <lastmod>2016-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/rest.html</loc>
     <lastmod>2016-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/swagger.html</loc>
     <lastmod>2016-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/book.html</loc>
     <lastmod>2016-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/309-vro-essentials-book-update-for-7-x.html</loc>
     <lastmod>2016-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/308-configure-linux-networking-with-network-manager.html</loc>
     <lastmod>2015-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/linux.html</loc>
     <lastmod>2015-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/networkmanager.html</loc>
     <lastmod>2015-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/nmcli.html</loc>
     <lastmod>2015-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/307-leveraging-vcenter-6-vapi-rest-endpoint.html</loc>
     <lastmod>2015-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vapi.html</loc>
     <lastmod>2015-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/presentation.html</loc>
     <lastmod>2015-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/306-synchronize-presentation-settings-from-embedded-workflow.html</loc>
     <lastmod>2015-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/305-creating-json-objects-in-orchestrator.html</loc>
     <lastmod>2015-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/json.html</loc>
     <lastmod>2015-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>http://www.vcoteam.info/tags/postman.html</loc>
+    <lastmod>2015-05-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/304-postman-vro-http-rest-plug-in-operations.html</loc>
     <lastmod>2015-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>http://www.vcoteam.info/tags/workflow.html</loc>
+    <lastmod>2015-05-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/http.html</loc>
     <lastmod>2015-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/log.html</loc>
     <lastmod>2015-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/303-log-plug-ins-http-communications.html</loc>
     <lastmod>2015-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/dynamictypes.html</loc>
     <lastmod>2015-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/302-create-a-plug-in-for-orchestrator.html</loc>
     <lastmod>2015-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/301-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-4.html</loc>
     <lastmod>2015-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/300-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-3.html</loc>
     <lastmod>2015-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/299-create-a-plug-in-for-a-rest-based-web-service-in-minutes-part-2.html</loc>
     <lastmod>2015-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/298-create-a-plug-in-for-a-rest-web-service-in-minutes.html</loc>
     <lastmod>2015-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/nsx.html</loc>
     <lastmod>2015-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vcac.html</loc>
     <lastmod>2015-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/297-how-to-use-powershell-to-start-an-orchestrator-workflow-2.html</loc>
     <lastmod>2015-01-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/powershell.html</loc>
     <lastmod>2015-01-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/296-how-to-use-perl-to-start-an-orchestrator-workflow.html</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/295-how-to-use-python-to-start-an-orchestrator-workflow.html</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/perl.html</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/python.html</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vco.html</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/sql.html</loc>
     <lastmod>2015-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/294-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-3.html</loc>
     <lastmod>2015-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/293-get-addresses-in-range.html</loc>
     <lastmod>2015-01-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/292-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-2.html</loc>
     <lastmod>2014-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/291-sql-plug-in-dynamictypes-simple-cmdb-for-vcac-part-1.html</loc>
     <lastmod>2014-12-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/290-dynamic-input-values-based-on-other-inputs.html</loc>
     <lastmod>2014-11-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/289-extend-automation-center-with-f5-afm-using-vco-dynamic-types.html</loc>
     <lastmod>2014-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/f5-networks.html</loc>
     <lastmod>2014-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/horizon.html</loc>
     <lastmod>2014-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/288-vmware-horizon-vcenter-orchestrator-plug-in-released.html</loc>
     <lastmod>2014-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/286-extend-vcac-6-iaas-lifecycle-with-vco.html</loc>
     <lastmod>2014-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/287-vco-5-5-1-appliance-with-vmware-produced-content.html</loc>
     <lastmod>2014-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/285-how-many-workflow-and-actions-are-included-with-vco-5-5-1-ga.html</loc>
     <lastmod>2014-05-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/284-how-to-use-the-rest-api-to-resume-a-failed-workflow.html</loc>
     <lastmod>2014-04-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/283-vmware-released-new-and-updated-vco-plug-ins.html</loc>
     <lastmod>2014-04-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/282-dynamic-types-tutorial-implement-your-own-twitter-plug-in-without-any-scripting.html</loc>
     <lastmod>2014-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/twitter.html</loc>
     <lastmod>2014-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/281-enabling-vcloud-automation-center-xaas-with-vco-dynamic-types.html</loc>
     <lastmod>2014-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/xaas.html</loc>
     <lastmod>2014-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/domain.html</loc>
     <lastmod>2014-04-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/280-how-to-configure-vcac-s-embedded-vco-to-allow-domain-account-login.html</loc>
     <lastmod>2014-04-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/cifs.html</loc>
     <lastmod>2014-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/278-how-to-allow-the-vco-appliance-to-write-files-to-a-windows-cifs-share.html</loc>
     <lastmod>2014-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/279-vmware-released-vcenter-orchestrator-5-5-1.html</loc>
     <lastmod>2014-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/277-how-to-change-ad-usergroup-scope-and-type.html</loc>
     <lastmod>2014-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/276-getting-started-with-vco-and-vchs.html</loc>
     <lastmod>2014-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vchs.html</loc>
     <lastmod>2014-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/273-how-to-get-active-directory-user-properties.html</loc>
     <lastmod>2014-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/272-leveraging-the-guest-script-manager-package.html</loc>
     <lastmod>2013-11-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vix.html</loc>
     <lastmod>2013-11-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/271-code-snippet-find-a-workflow-by-name.html</loc>
     <lastmod>2013-11-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development.html</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/installation-and-configuration.html</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco.html</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product.html</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/service.html</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/vco-team-website.html</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/270-how-to-enable-vco-51x-to-log-api-requests.html</loc>
     <lastmod>2013-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/263-run-a-program-in-guest-from-vcloud-automation-center-.html</loc>
     <lastmod>2013-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/iaas.html</loc>
     <lastmod>2013-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/269-working-with-vcloud-automation-center-infrastructure-as-a-service-entities.html</loc>
     <lastmod>2013-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/268-how-to-use-the-rest-api-to-start-a-workflow.html</loc>
     <lastmod>2013-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/267-how-to-use-the-soapinterceptor-to-see-the-soap-header-and-body.html</loc>
     <lastmod>2013-10-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/soap.html</loc>
     <lastmod>2013-10-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/266-making-vco-workflow-wrappers.html</loc>
     <lastmod>2013-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/256-vmware-announced-vcenter-orchestrator-55.html</loc>
     <lastmod>2013-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/265-how-to-run-a-perl-script-from-a-vcenter-orchestrator-workflow.html</loc>
     <lastmod>2013-07-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/netapp.html</loc>
     <lastmod>2013-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/262-orchestrate-netapp-oncommand-workflow-automation-wfa.html</loc>
     <lastmod>2013-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/261-get-supported-hardware-versions-from-cluster.html</loc>
     <lastmod>2013-05-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/251-vco-on-facebook.html</loc>
     <lastmod>2013-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/255-vmware-released-vcenter-orchestrator-51-update-1.html</loc>
     <lastmod>2013-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/260-vmware-vcenter-orchestrator-51-quick-reference.html</loc>
     <lastmod>2013-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/259-remove-computer-from-ad-using-vco-during-vcac-decommission.html</loc>
     <lastmod>2013-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/257-enable-vcenter-orchestrator-vco-to-read-and-write-excel-files.html</loc>
     <lastmod>2013-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/excel.html</loc>
     <lastmod>2013-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vcd.html</loc>
     <lastmod>2013-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/254-vcloud-director-catalog-replication.html</loc>
     <lastmod>2013-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/253-extend-vcloud-director-with-service-builder.html</loc>
     <lastmod>2013-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/252-free-vmware-vcenter-orchestrator-instructional-videos.html</loc>
     <lastmod>2012-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/250-create-your-own-vcloud-download-lossless-vapp-template-workflow-in-less-than-5-minutes.html</loc>
     <lastmod>2012-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/249-code-snippets-using-vcloud-director-object-metadata.html</loc>
     <lastmod>2012-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vsphere.html</loc>
     <lastmod>2012-09-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/248-vsphere-51-web-client-the-single-pane-of-glass-i-always-wanted.html</loc>
     <lastmod>2012-09-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/245-time-to-get-your-hands-on-the-most-complete-cloud-orchestration.html</loc>
     <lastmod>2012-09-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vcat.html</loc>
     <lastmod>2012-09-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/246-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director-51.html</loc>
     <lastmod>2012-09-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/247-vmware-released-vcloud-architecture-toolkit-vcat-version-30.html</loc>
     <lastmod>2012-09-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/244-vmware-released-vsphere-51-including-a-major-upgrade-of-vcenter-orchestrator.html</loc>
     <lastmod>2012-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features/243-vmware-released-updated-vcenter-configuration-manager-vcenter-orchestrator-workflows.html</loc>
     <lastmod>2012-07-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/242-several-vcenter-orchestrator-plug-ins-updates.html</loc>
     <lastmod>2012-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/241-vmware-released-the-vcenter-orchestrator-plug-in-for-vshield-50.html</loc>
     <lastmod>2012-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vshield.html</loc>
     <lastmod>2012-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/esxi.html</loc>
     <lastmod>2012-04-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/240-manage-services-on-your-esxi-hosts-with-vco.html</loc>
     <lastmod>2012-04-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/239-leveraging-the-vmware-vcloud-director-query-service.html</loc>
     <lastmod>2012-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vcm.html</loc>
     <lastmod>2012-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/235-vmware-released-vcenter-configuration-manager-55-with-vcenter-orchestrator-integration.html</loc>
     <lastmod>2012-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/236-vmware-released-vcenter-orchestrator-421.html</loc>
     <lastmod>2012-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/234-pimp-my-vcenter-orchestrator-virtual-appliance.html</loc>
     <lastmod>2012-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/233-vmware-released-the-vcenter-orchestrator-plug-in-for-vmware-vcenter-chargeback-manager-20.html</loc>
     <lastmod>2012-03-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/232-vco-data-refresh-from-vcd.html</loc>
     <lastmod>2012-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/230-vcloud-director-custom-deploy-vapp-workflow.html</loc>
     <lastmod>2012-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/229-vmware-virtual-customer-labs-automated-with-vcenter-orchestrator.html</loc>
     <lastmod>2012-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/228-vmware-opens-online-virtualization-and-cloud-solutions-marketplace-featuring-vcenter-orchestrator-.html</loc>
     <lastmod>2012-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/227-powerscripting-chat-with-vco-managers.html</loc>
     <lastmod>2012-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/224-vcloud-director-blocking-tasks-and-notifications-integration-with-vco-implementation.html</loc>
     <lastmod>2012-01-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/221-vmware-released-the-vcenter-orchestrator-multi-node-plug-in.html</loc>
     <lastmod>2011-12-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/220-vmware-released-the-vcenter-orchestrator-plug-in-for-microsoft-windows-powershell.html</loc>
     <lastmod>2011-12-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/222-vmware-released-the-vcenter-orchestrator-plug-in-for-vsphere-auto-deploy.html</loc>
     <lastmod>2011-12-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/223-vmware-released-the-vcenter-orchestrator-sql-plug-in.html</loc>
     <lastmod>2011-12-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/uim.html</loc>
     <lastmod>2011-12-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/219-vcloud-director-orchestrated-infrastructure-provisioning-featuring-vce-uim-vco-plug-in-preview.html</loc>
     <lastmod>2011-12-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/198-building-your-custom-cloud-when-to-use-the-vcloud-api-or-the-vcenter-orchestrator-web-service.html</loc>
     <lastmod>2011-11-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/217-code-snippets-use-the-api-explorer-to-write-your-own-custom-workflows.html</loc>
     <lastmod>2011-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/216-how-many-actions-come-with-the-vcloud-15-plug-in.html</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/215-how-many-workflows-come-with-the-vcloud-15-plug-in.html</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/213-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-15.html</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/211-unnattended-deployment-of-vcenter-orchestrator-appliance.html</loc>
     <lastmod>2011-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/210-get-trained-on-vcenter-orchestrator-10-classes-planned-in-emea-.html</loc>
     <lastmod>2011-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/208-code-snippets-change-the-name-of-a-vcloud-director-organization.html</loc>
     <lastmod>2011-11-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/209-vmware-released-vfabric-application-performance-manager-featuring-vcenter-orchestrator-integration.html</loc>
     <lastmod>2011-11-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/199-how-to-handle-vcenter-orchestrator-logs.html</loc>
     <lastmod>2011-10-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/207-developing-your-first-vmware-vco-workflow-video-series.html</loc>
     <lastmod>2011-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/203-code-snippets-create-your-database-plug-in.html</loc>
     <lastmod>2011-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/amqp.html</loc>
     <lastmod>2011-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/206-emc-vmax-vnx-vmware-vsphere-vcloud-director-integration-powered-by-vcenter-orchestrator-.html</loc>
     <lastmod>2011-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/205-vmware-released-the-vcenter-orchestrator-virtual-appliance.html</loc>
     <lastmod>2011-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/cim.html</loc>
     <lastmod>2011-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/204-vmware-labs-released-the-vcenter-orchestrator-cim-plug-in.html</loc>
     <lastmod>2011-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/192-getting-started-with-perspectives-webview.html</loc>
     <lastmod>2011-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/201-code-snippets-change-the-name-of-a-workflow-run.html</loc>
     <lastmod>2011-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/persepctives.html</loc>
     <lastmod>2011-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/202-vmware-labs-released-the-perspectives-plug-in.html</loc>
     <lastmod>2011-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/200-no-code-required-for-functional-workflows.html</loc>
     <lastmod>2011-10-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/197-how-to-provide-vcenter-orchestrator-customized-workflows-to-your-customers.html</loc>
     <lastmod>2011-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/196-monitoring-the-vcenter-orchestrator-java-virtual-machine.html</loc>
     <lastmod>2011-09-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/195-vmware-published-the-vcenter-orchestrator-plug-ins-documentation-center.html</loc>
     <lastmod>2011-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/194-vmware-released-the-vcenter-orchestrator-plug-in-update-for-vcloud-director-101.html</loc>
     <lastmod>2011-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/infoblox.html</loc>
     <lastmod>2011-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/193-infoblox-released-a-tech-note-on-their-vcenter-orchestrator-plug-in.html</loc>
     <lastmod>2011-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/snmp.html</loc>
     <lastmod>2011-09-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vcenter.html</loc>
     <lastmod>2011-09-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/190-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-server-50.html</loc>
     <lastmod>2011-09-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/191-vmware-released-the-vcenter-orchestrator-snmp-plug-in.html</loc>
     <lastmod>2011-09-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/172-take-cloud-automation-scripting-to-another-level-with-cloud-orchestration.html</loc>
     <lastmod>2011-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/179-configure-the-amqp-plug-in.html</loc>
     <lastmod>2011-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/189-vmware-released-a-vcenter-orchestrator-training-course.html</loc>
     <lastmod>2011-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/188-free-preview-of-qautomating-vsphere-with-vmware-vcenter-orchestratorq-by-cody-bunch.html</loc>
     <lastmod>2011-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/187-infoblox-announced-a-vcenter-orchestrator-plug-in.html</loc>
     <lastmod>2011-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/180-extend-vcloud-director-with-vcenter-orchestrator.html</loc>
     <lastmod>2011-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/186-vcenter-orchestrator-at-vmworld-2011.html</loc>
     <lastmod>2011-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/185-vmware-released-vcenter-orchestrator-42.html</loc>
     <lastmod>2011-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/184-vmware-releases-vcloud-architecture-toolkit-vcat-version-20.html</loc>
     <lastmod>2011-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/ssl.html</loc>
     <lastmod>2011-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/182-tips-export-and-import-input-parameters.html</loc>
     <lastmod>2011-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/183-vmware-released-the-vcenter-orchestrator-plug-in-sdk.html</loc>
     <lastmod>2011-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/181-work-with-vco-over-ssl.html</loc>
     <lastmod>2011-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/177-vmware-released-the-amqp-plug-in.html</loc>
     <lastmod>2011-08-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/176-how-to-retrieve-workflow-execution-details.html</loc>
     <lastmod>2011-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features/175-release-management-for-vm-clones-with-vco.html</loc>
     <lastmod>2011-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features/174-radware-adc-virtualization-a-vmware-orchestrator-an-integration-demo.html</loc>
     <lastmod>2011-07-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/173-vcenter-orchestrator-new-plug-ins-covered-in-qthis-week-in-virtualizationq.html</loc>
     <lastmod>2011-06-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/171-vmware-is-seeking-for-vcenter-orchestrator-plug-ins-documentation-feedback.html</loc>
     <lastmod>2011-06-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/168-how-to-automate-labmanager-with-vco.html</loc>
     <lastmod>2011-06-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/labmanager.html</loc>
     <lastmod>2011-06-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/166-vmware-released-service-manager-90-vco-connector.html</loc>
     <lastmod>2011-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vsm.html</loc>
     <lastmod>2011-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/162-vmware-released-the-generic-soap-and-rest-plug-ins.html</loc>
     <lastmod>2011-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/169-code-snippets-get-vms-that-triggered-vcenter-alarms.html</loc>
     <lastmod>2011-06-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/158-tutorial-create-your-own-twitter-application-with-a-vco-workflow-in-a-few-minutes.html</loc>
     <lastmod>2011-06-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/170-vmware-released-the-vcenter-orchestrator-plug-in-for-vcenter-update-manager.html</loc>
     <lastmod>2011-06-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vum.html</loc>
     <lastmod>2011-06-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/164-force-a-vm-to-boot-from-several-devices.html</loc>
     <lastmod>2011-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/167-monitoring-solution-has-built-in-support-for-vco-based-remediation.html</loc>
     <lastmod>2011-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/163-automatic-delivery-of-customized-vms-into-vcloud-director.html</loc>
     <lastmod>2011-06-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/161-why-cant-i-re-install-vcenter-orchestrator.html</loc>
     <lastmod>2011-06-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/160-vmware-press-to-release-a-book-on-automating-vsphere-with-vcenter-orchestrator.html</loc>
     <lastmod>2011-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/159-vmware-blog-demonstrates-an-user-accounts-creation-scenario-with-the-active-directory-plug-in-for-vcenter-orchestrator.html</loc>
     <lastmod>2011-05-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/157-vmworld-2011-help-to-reveal-vmware-best-kept-secret-.html</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/156-automate-the-cloud-or-die-.html</loc>
     <lastmod>2011-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/155-how-many-workflows-come-with-the-microsoft-active-directory-plug-in.html</loc>
     <lastmod>2011-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/154-vcenter-orchestrator-plug-in-for-microsoft-active-directory-released.html</loc>
     <lastmod>2011-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/147-vcloud-director-vapp-hot-clone-in-less-than-one-hour-solution-video.html</loc>
     <lastmod>2011-04-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/ucs.html</loc>
     <lastmod>2011-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/146-vmware-blog-posts-a-sample-scenario-for-the-cisco-ucs-manager-plug-in.html</loc>
     <lastmod>2011-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/145-need-an-analogy-around-vco-and-vcloud-director.html</loc>
     <lastmod>2011-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/143-how-to-deploy-vms-form-template-in-orchestrator.html</loc>
     <lastmod>2011-04-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/142-vmware-released-the-vcenter-orchestrator-plug-in-for-the-cisco-ucs-manager.html</loc>
     <lastmod>2011-03-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/141-vmware-vcenter-orchestrator-blog-now-live.html</loc>
     <lastmod>2011-03-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/140-vcloud-director-vapp-hot-clone.html</loc>
     <lastmod>2011-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/138-vcenter-orchestrator-identify-permission-problems.html</loc>
     <lastmod>2011-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/137-vcloud-connector-and-other-delights-on-vmware-communities-roundtable.html</loc>
     <lastmod>2011-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/vco-team-website/136-may-i-use-vcoteaminfo-articles-andor-images.html</loc>
     <lastmod>2011-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features/135-burke-azbill-returns-to-the-vmware-communities-roundtable.html</loc>
     <lastmod>2011-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vcloud-director.html</loc>
     <lastmod>2011-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/133-vmware-kb-tv-how-to-install-and-configure-vmware-vcenter-orchestrator-plug-in-for-vcloud-director.html</loc>
     <lastmod>2011-02-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/132-how-many-javascript-objects-come-with-the-vcloud-plug-in.html</loc>
     <lastmod>2011-02-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/131-how-many-actions-come-with-the-vcloud-plug-in.html</loc>
     <lastmod>2011-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/130-how-many-workflows-come-with-the-vcloud-plug-in.html</loc>
     <lastmod>2011-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/129-vmware-released-the-vcenter-orchestrator-plug-in-for-vcloud-director.html</loc>
     <lastmod>2011-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/128-vmware-vcenter-orchestrator-411-released-.html</loc>
     <lastmod>2011-02-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/125-mightycare-vco-code-snippets.html</loc>
     <lastmod>2011-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vcap.html</loc>
     <lastmod>2011-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/124-vcenter-orchestrator-vcap-topic-brown-bag.html</loc>
     <lastmod>2011-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/123-code-snippets-cancel-one-of-your-running-workflows.html</loc>
     <lastmod>2011-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features/122-new-version-of-the-administration-and-developers-guides.html</loc>
     <lastmod>2011-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/plug-ins.html</loc>
     <lastmod>2011-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features/121-vco-plug-ins-wish-list.html</loc>
     <lastmod>2011-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/115-some-tips-for-new-vco-plug-in-developers-ii.html</loc>
     <lastmod>2010-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/114-some-tips-for-new-vco-plug-in-developers-i.html</loc>
     <lastmod>2010-12-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/113-expand-your-vco-library-with-onyx.html</loc>
     <lastmod>2010-10-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/onyx.html</loc>
     <lastmod>2010-10-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/112-did-you-miss-the-roundtable-podcast.html</loc>
     <lastmod>2010-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/110-see-and-hear-me-on-upcoming-podcasts.html</loc>
     <lastmod>2010-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/108-how-can-i-write-to-files.html</loc>
     <lastmod>2010-10-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/109-vmware-kb-tv-how-to-install-vmware-vcenter-orchestrator.html</loc>
     <lastmod>2010-10-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/107-create-a-simple-vco-self-service-vm-provisioning-portal-part-3.html</loc>
     <lastmod>2010-10-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/106-vco-simple-example-and-hints.html</loc>
     <lastmod>2010-10-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/105-vcloud-director-orchestrated-infrastructure-provisioning-featuring-netapp-vco-plug-in.html</loc>
     <lastmod>2010-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/104-vmware-vcloud-director-vco-plug-in-preview.html</loc>
     <lastmod>2010-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/103-vco-vix-plug-in-released.html</loc>
     <lastmod>2010-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/102-creating-workflow-loops.html</loc>
     <lastmod>2010-09-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/101-lifecycle-manager-reports-made-excel-friendly.html</loc>
     <lastmod>2010-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/100-how-do-i-create-a-webview.html</loc>
     <lastmod>2010-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/lcm.html</loc>
     <lastmod>2010-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/98-lifecycle-manager-end-of-availability.html</loc>
     <lastmod>2010-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/99-vco-web-views-not-deprecated-anymore.html</loc>
     <lastmod>2010-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/97-vmworld-2010-session-on-orchestrating-the-cloud.html</loc>
     <lastmod>2010-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/96-how-to-create-an-all-in-one-vco-dev-server-on-windows-2008-64-bit.html</loc>
     <lastmod>2010-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/95-vmware-releases-vcenter-lifecycle-manager-12.html</loc>
     <lastmod>2010-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/94-vcenter-orchestrator-vco-at-vmworld-2010.html</loc>
     <lastmod>2010-08-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/89-how-to-configure-vcenter-orchestrator-vco.html</loc>
     <lastmod>2010-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/installation-and-configuration/91-how-to-configure-vcenter-orchestrator-41-with-postgresql.html</loc>
     <lastmod>2010-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/installation-and-configuration/92-how-to-select-openldap-as-directory-service-in-vcenter-orchestrator-41.html</loc>
     <lastmod>2010-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/93-vcenter-orchestrator-41-released-.html</loc>
     <lastmod>2010-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/installation-and-configuration/90-does-vcenter-orchestrator-support-oracle-real-application-clusters-rac-.html</loc>
     <lastmod>2010-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/88-how-many-workflows-are-included-in-vcenter-orchestrator.html</loc>
     <lastmod>2010-06-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/87-create-a-simple-vco-self-service-vm-provisioning-portal-part-2.html</loc>
     <lastmod>2010-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/service/81-are-there-any-professional-services-available-for-vco-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/service/82-how-can-i-engage-vco-professional-services-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/77-how-can-vco-orchestrate-an-application-exposing-a-web-service-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/80-how-can-you-start-workflows-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/74-how-do-i-develop-workflows-actions-and-plug-ins-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/83-how-do-i-implement-the-xyz-functionality-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/installation-and-configuration/85-how-do-i-install-configure-enable-vco.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/68-how-does-it-ship-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/69-how-is-it-licensed-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/67-how-much-does-it-cost-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/installation-and-configuration/84-i-have-a-configuration-problem-with-xyz-how-do-i-solve-it-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/66-in-what-way-is-vco-different-to-other-orchestration-engines-run-book-automation-solutions-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/71-is-this-a-new-product-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/86-q-and-a-section-added.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/65-what-customers-do-with-vco-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/60-what-does-vco-do-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/58-what-does-vco-stand-for-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/78-what-features-does-a-plug-in-typically-provide-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/79-what-is-the-advantage-of-orchestration-over-scripting-or-programing-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/70-what-is-the-current-release.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/vco-team-website/61-what-is-the-goal-of-vco-team-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/76-what-programming-language-is-used-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/development/75-what-scripting-language-is-used-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/73-what-plug-ins-and-features-will-be-available-next-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/72-which-products-can-be-orchestrated-with-vco-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/vco-team-website/62-who-is-behind-vco-team-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/64-who-is-using-vco-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/59-who-owns-vco-.html</loc>
     <lastmod>2010-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles.html</loc>
     <lastmod>2010-06-13T15:54:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/</loc>
     <lastmod>2010-06-13T15:54:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash.html</loc>
     <lastmod>2010-06-13T15:54:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer.html</loc>
     <lastmod>2010-06-13T15:54:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/links.html</loc>
     <lastmod>2010-06-13T15:53:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/question-answer/product/56-how-many-actions-are-included-in-vcenter-orchestrator.html</loc>
     <lastmod>2010-06-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/54-create-a-simple-vco-self-service-vm-provisioning-portal-part-1.html</loc>
     <lastmod>2010-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/newsflash/52-vco-plugin-for-vsphere-client.html</loc>
     <lastmod>2010-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/vcenter-orchestrator.html</loc>
     <lastmod>2010-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/vco-features/51-vco-help-topics-request.html</loc>
     <lastmod>2010-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/articles/learn-vco/47-how-to-install-vcenter-orchestrator-vco.html</loc>
     <lastmod>2010-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/authors/burke-azbill.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/authors/christophe-decanini.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/authors.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/categories.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.vcoteam.info/tags/storage-i/o.html</loc>
   </url>
-  
 </urlset>
